@@ -1,0 +1,213 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/pgbuffercache.xml:3(title) xml/pgbuffercache.xml:5(primary)
+msgid "pg_buffercache"
+msgstr ""
+
+#: xml/pgbuffercache.xml:7(para)
+msgid "The <filename>pg_buffercache</filename>module provides a means for examining what's happening in the shared buffer cache in real time."
+msgstr ""
+
+#: xml/pgbuffercache.xml:12(primary)
+msgid "pg_buffercache_pages"
+msgstr ""
+
+#: xml/pgbuffercache.xml:14(para)
+msgid "The module provides a C function <function>pg_buffercache_pages</function>that returns a set of records, plus a view <structname>pg_buffercache</structname>that wraps the function for convenient use."
+msgstr ""
+
+#: xml/pgbuffercache.xml:19(para)
+msgid "By default public access is revoked from both of these, just in case there are security issues lurking."
+msgstr ""
+
+#: xml/pgbuffercache.xml:22(title)
+msgid "The <structname>pg_buffercache</structname>View"
+msgstr ""
+
+#: xml/pgbuffercache.xml:24(para)
+msgid "The definitions of the columns exposed by the view are shown in <xref linkend=\"pgbuffercache-columns\">.</xref>"
+msgstr ""
+
+#: xml/pgbuffercache.xml:28(title)
+msgid "<structname>pg_buffercache</structname>Columns"
+msgstr ""
+
+#: xml/pgbuffercache.xml:33(entry)
+msgid "Name"
+msgstr ""
+
+#: xml/pgbuffercache.xml:34(entry)
+msgid "Type"
+msgstr ""
+
+#: xml/pgbuffercache.xml:35(entry)
+msgid "References"
+msgstr ""
+
+#: xml/pgbuffercache.xml:36(entry)
+msgid "Description"
+msgstr ""
+
+#: xml/pgbuffercache.xml:42(structfield)
+msgid "bufferid"
+msgstr ""
+
+#: xml/pgbuffercache.xml:45(type) xml/pgbuffercache.xml:134(type)
+msgid "integer"
+msgstr ""
+
+#: xml/pgbuffercache.xml:49(varname)
+msgid "shared_buffers"
+msgstr ""
+
+#: xml/pgbuffercache.xml:48(entry)
+msgid "ID, in the range 1.. <placeholder-1/>"
+msgstr ""
+
+#: xml/pgbuffercache.xml:53(structfield)
+msgid "relfilenode"
+msgstr ""
+
+#: xml/pgbuffercache.xml:56(type) xml/pgbuffercache.xml:68(type) xml/pgbuffercache.xml:80(type)
+msgid "oid"
+msgstr ""
+
+#: xml/pgbuffercache.xml:59(literal)
+msgid "pg_class.relfilenode"
+msgstr ""
+
+#: xml/pgbuffercache.xml:61(entry)
+msgid "Filenode number of the relation"
+msgstr ""
+
+#: xml/pgbuffercache.xml:65(structfield)
+msgid "reltablespace"
+msgstr ""
+
+#: xml/pgbuffercache.xml:71(literal)
+msgid "pg_tablespace.oid"
+msgstr ""
+
+#: xml/pgbuffercache.xml:73(entry)
+msgid "Tablespace OID of the relation"
+msgstr ""
+
+#: xml/pgbuffercache.xml:77(structfield)
+msgid "reldatabase"
+msgstr ""
+
+#: xml/pgbuffercache.xml:83(literal)
+msgid "pg_database.oid"
+msgstr ""
+
+#: xml/pgbuffercache.xml:85(entry)
+msgid "Database OID of the relation"
+msgstr ""
+
+#: xml/pgbuffercache.xml:89(structfield)
+msgid "relforknumber"
+msgstr ""
+
+#: xml/pgbuffercache.xml:92(type) xml/pgbuffercache.xml:124(type)
+msgid "smallint"
+msgstr ""
+
+#: xml/pgbuffercache.xml:96(filename)
+msgid "include/storage/relfilenode.h"
+msgstr ""
+
+#: xml/pgbuffercache.xml:95(entry)
+msgid "Fork number within the relation; see <placeholder-1/>"
+msgstr ""
+
+#: xml/pgbuffercache.xml:101(structfield)
+msgid "relblocknumber"
+msgstr ""
+
+#: xml/pgbuffercache.xml:104(type)
+msgid "bigint"
+msgstr ""
+
+#: xml/pgbuffercache.xml:107(entry)
+msgid "Page number within the relation"
+msgstr ""
+
+#: xml/pgbuffercache.xml:111(structfield)
+msgid "isdirty"
+msgstr ""
+
+#: xml/pgbuffercache.xml:114(type)
+msgid "boolean"
+msgstr ""
+
+#: xml/pgbuffercache.xml:117(entry)
+msgid "Is the page dirty?"
+msgstr ""
+
+#: xml/pgbuffercache.xml:121(structfield)
+msgid "usagecount"
+msgstr ""
+
+#: xml/pgbuffercache.xml:127(entry)
+msgid "Clock-sweep access count"
+msgstr ""
+
+#: xml/pgbuffercache.xml:131(structfield)
+msgid "pinning_backends"
+msgstr ""
+
+#: xml/pgbuffercache.xml:137(entry)
+msgid "Number of backends pinning this buffer"
+msgstr ""
+
+#: xml/pgbuffercache.xml:142(para)
+msgid "There is one row for each buffer in the shared cache. Unused buffers are shown with all fields null except <structfield>bufferid</structfield>. Shared system catalogs are shown as belonging to database zero."
+msgstr ""
+
+#: xml/pgbuffercache.xml:146(para)
+msgid "Because the cache is shared by all the databases, there will normally be pages from relations not belonging to the current database. This means that there may not be matching join rows in <structname>pg_class</structname>for some rows, or that there could even be incorrect joins. If you are trying to join against <structname>pg_class</structname>, it's a good idea to restrict the join to rows having <structfield>reldatabase</structfield>equal to the current database's OID or zero."
+msgstr ""
+
+#: xml/pgbuffercache.xml:157(para)
+msgid "When the <structname>pg_buffercache</structname>view is accessed, internal buffer manager locks are taken for long enough to copy all the buffer state data that the view will display. This ensures that the view produces a consistent set of results, while not blocking normal buffer activity longer than necessary. Nonetheless there could be some impact on database performance if this view is read often."
+msgstr ""
+
+#: xml/pgbuffercache.xml:167(title)
+msgid "Sample Output"
+msgstr ""
+
+#: xml/pgbuffercache.xml:168(screen)
+#, no-wrap
+msgid "regression=# SELECT c.relname, count(*) AS buffers FROM\n    pg_buffercache b INNER JOIN pg_class c ON b.relfilenode =\n    pg_relation_filenode(c.oid) AND b.reldatabase IN (0, (SELECT\n    oid FROM pg_database WHERE datname = current_database())) GROUP\n    BY c.relname ORDER BY 2 DESC LIMIT 10; relname | buffers\n    ---------------------------------+--------- tenk2 | 345 tenk1 |\n    141 pg_proc | 46 pg_class | 45 pg_attribute | 43\n    pg_class_relname_nsp_index | 30 pg_proc_proname_args_nsp_index\n    | 28 pg_attribute_relid_attnam_index | 26 pg_depend | 22\n    pg_depend_reference_index | 20 (10 rows)"
+msgstr ""
+
+#: xml/pgbuffercache.xml:180(title)
+msgid "Authors"
+msgstr ""
+
+#: xml/pgbuffercache.xml:181(para)
+msgid "Mark Kirkwood <email>markir@paradise.net.nz</email>"
+msgstr ""
+
+#: xml/pgbuffercache.xml:183(para)
+msgid "Design suggestions: Neil Conway <email>neilc@samurai.com</email>"
+msgstr ""
+
+#: xml/pgbuffercache.xml:185(para)
+msgid "Debugging advice: Tom Lane <email>tgl@sss.pgh.pa.us</email>"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/pgbuffercache.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

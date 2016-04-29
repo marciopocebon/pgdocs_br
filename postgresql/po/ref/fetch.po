@@ -1,0 +1,270 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/fetch.xml:4(primary) xml/ref/fetch.xml:8(secondary) xml/ref/fetch.xml:11(refentrytitle) xml/ref/fetch.xml:16(refname)
+msgid "FETCH"
+msgstr ""
+
+#: xml/ref/fetch.xml:7(primary)
+msgid "cursor"
+msgstr ""
+
+#: xml/ref/fetch.xml:12(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/fetch.xml:13(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/fetch.xml:17(refpurpose)
+msgid "retrieve rows from a query using a cursor"
+msgstr ""
+
+#: xml/ref/fetch.xml:22(replaceable) xml/ref/fetch.xml:26(replaceable) xml/ref/fetch.xml:95(replaceable)
+msgid "direction"
+msgstr ""
+
+#: xml/ref/fetch.xml:24(replaceable) xml/ref/fetch.xml:288(replaceable)
+msgid "cursor_name"
+msgstr ""
+
+#: xml/ref/fetch.xml:25(phrase)
+msgid "where <placeholder-1/>can be empty or one of:"
+msgstr ""
+
+#: xml/ref/fetch.xml:28(replaceable) xml/ref/fetch.xml:29(replaceable) xml/ref/fetch.xml:30(replaceable) xml/ref/fetch.xml:32(replaceable) xml/ref/fetch.xml:34(replaceable) xml/ref/fetch.xml:142(replaceable) xml/ref/fetch.xml:165(replaceable) xml/ref/fetch.xml:183(replaceable) xml/ref/fetch.xml:215(replaceable) xml/ref/fetch.xml:246(replaceable) xml/ref/fetch.xml:271(replaceable)
+msgid "count"
+msgstr ""
+
+#: xml/ref/fetch.xml:21(synopsis)
+#, no-wrap
+msgid "FETCH [ \n    <placeholder-1/>[ FROM |\n    IN ] ] \n    <placeholder-2/>\n    <placeholder-3/>NEXT PRIOR FIRST LAST ABSOLUTE \n    <placeholder-4/>RELATIVE \n    <placeholder-5/>\n    <placeholder-6/>ALL FORWARD\n    FORWARD \n    <placeholder-7/>FORWARD ALL\n    BACKWARD BACKWARD \n    <placeholder-8/>BACKWARD\n    ALL"
+msgstr ""
+
+#: xml/ref/fetch.xml:38(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/fetch.xml:39(para)
+msgid "<command>FETCH</command>retrieves rows using a previously-created cursor."
+msgstr ""
+
+#: xml/ref/fetch.xml:42(para)
+msgid "A cursor has an associated position, which is used by <command>FETCH</command>. The cursor position can be before the first row of the query result, on any particular row of the result, or after the last row of the result. When created, a cursor is positioned before the first row. After fetching some rows, the cursor is positioned on the row most recently retrieved. If <command>FETCH</command>runs off the end of the available rows then the cursor is left positioned after the last row, or before the first row if fetching backward. <command>FETCH ALL</command>or <command>FETCH BACKWARD ALL</command>will always leave the cursor positioned after the last row or before the first row."
+msgstr ""
+
+#: xml/ref/fetch.xml:56(para)
+msgid "The forms <literal>NEXT</literal>, <literal>PRIOR</literal>, <literal>FIRST</literal>, <literal>LAST</literal>, <literal>ABSOLUTE</literal>, <literal>RELATIVE</literal>fetch a single row after moving the cursor appropriately. If there is no such row, an empty result is returned, and the cursor is left positioned before the first row or after the last row as appropriate."
+msgstr ""
+
+#: xml/ref/fetch.xml:66(para)
+msgid "The forms using <literal>FORWARD</literal>and <literal>BACKWARD</literal>retrieve the indicated number of rows moving in the forward or backward direction, leaving the cursor positioned on the last-returned row (or after/before all rows, if the <replaceable class=\"PARAMETER\">count</replaceable>exceeds the number of rows available)."
+msgstr ""
+
+#: xml/ref/fetch.xml:74(para)
+msgid "<literal>RELATIVE 0</literal>, <literal>FORWARD 0</literal>, and <literal>BACKWARD 0</literal>all request fetching the current row without moving the cursor, that is, re-fetching the most recently fetched row. This will succeed unless the cursor is positioned before the first row or after the last row; in which case, no row is returned."
+msgstr ""
+
+#: xml/ref/fetch.xml:83(para)
+msgid "This page describes usage of cursors at the SQL command level. If you are trying to use cursors inside a <application>PL/pgSQL</application>function, the rules are different see <xref linkend=\"plpgsql-cursors\">.</xref>"
+msgstr ""
+
+#: xml/ref/fetch.xml:91(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/fetch.xml:105(literal)
+msgid "NEXT"
+msgstr ""
+
+#: xml/ref/fetch.xml:108(para)
+msgid "Fetch the next row. This is the default if <replaceable class=\"PARAMETER\"> direction</replaceable>is omitted."
+msgstr ""
+
+#: xml/ref/fetch.xml:115(literal)
+msgid "PRIOR"
+msgstr ""
+
+#: xml/ref/fetch.xml:118(para)
+msgid "Fetch the prior row."
+msgstr ""
+
+#: xml/ref/fetch.xml:123(literal)
+msgid "FIRST"
+msgstr ""
+
+#: xml/ref/fetch.xml:126(para)
+msgid "Fetch the first row of the query (same as <literal>ABSOLUTE 1</literal>)."
+msgstr ""
+
+#: xml/ref/fetch.xml:132(literal)
+msgid "LAST"
+msgstr ""
+
+#: xml/ref/fetch.xml:135(para)
+msgid "Fetch the last row of the query (same as <literal>ABSOLUTE -1</literal>)."
+msgstr ""
+
+#: xml/ref/fetch.xml:141(literal)
+msgid "ABSOLUTE <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/fetch.xml:146(para)
+msgid "Fetch the <replaceable class=\"PARAMETER\"> count</replaceable>'th row of the query, or the <literal>abs( <replaceable class=\"PARAMETER\"> count</replaceable>)</literal>'th row from the end if <replaceable class=\"PARAMETER\"> count</replaceable>is negative. Position before first row or after last row if <replaceable class=\"PARAMETER\"> count</replaceable>is out of range; in particular, <literal>ABSOLUTE 0</literal>positions before the first row."
+msgstr ""
+
+#: xml/ref/fetch.xml:164(literal)
+msgid "RELATIVE <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/fetch.xml:169(para)
+msgid "Fetch the <replaceable class=\"PARAMETER\"> count</replaceable>'th succeeding row, or the <literal>abs( <replaceable class=\"PARAMETER\"> count</replaceable>)</literal>'th prior row if <replaceable class=\"PARAMETER\"> count</replaceable>is negative. <literal>RELATIVE 0</literal>re-fetches the current row, if any."
+msgstr ""
+
+#: xml/ref/fetch.xml:186(para)
+msgid "Fetch the next <replaceable class=\"PARAMETER\"> count</replaceable>rows (same as <literal>FORWARD <replaceable class=\"PARAMETER\"> count</replaceable></literal>)."
+msgstr ""
+
+#: xml/ref/fetch.xml:196(literal)
+msgid "ALL"
+msgstr ""
+
+#: xml/ref/fetch.xml:199(para)
+msgid "Fetch all remaining rows (same as <literal>FORWARD ALL</literal>)."
+msgstr ""
+
+#: xml/ref/fetch.xml:205(literal)
+msgid "FORWARD"
+msgstr ""
+
+#: xml/ref/fetch.xml:208(para)
+msgid "Fetch the next row (same as <literal>NEXT</literal>)."
+msgstr ""
+
+#: xml/ref/fetch.xml:214(literal)
+msgid "FORWARD <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/fetch.xml:219(para)
+msgid "Fetch the next <replaceable class=\"PARAMETER\"> count</replaceable>rows. <literal>FORWARD 0</literal>re-fetches the current row."
+msgstr ""
+
+#: xml/ref/fetch.xml:228(literal)
+msgid "FORWARD ALL"
+msgstr ""
+
+#: xml/ref/fetch.xml:231(para)
+msgid "Fetch all remaining rows."
+msgstr ""
+
+#: xml/ref/fetch.xml:236(literal)
+msgid "BACKWARD"
+msgstr ""
+
+#: xml/ref/fetch.xml:239(para)
+msgid "Fetch the prior row (same as <literal>PRIOR</literal>)."
+msgstr ""
+
+#: xml/ref/fetch.xml:245(literal)
+msgid "BACKWARD <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/fetch.xml:250(para)
+msgid "Fetch the prior <replaceable class=\"PARAMETER\"> count</replaceable>rows (scanning backwards). <literal>BACKWARD 0</literal>re-fetches the current row."
+msgstr ""
+
+#: xml/ref/fetch.xml:259(literal)
+msgid "BACKWARD ALL"
+msgstr ""
+
+#: xml/ref/fetch.xml:262(para)
+msgid "Fetch all prior rows (scanning backwards)."
+msgstr ""
+
+#: xml/ref/fetch.xml:98(para)
+msgid "<replaceable class=\"PARAMETER\"> direction</replaceable>defines the fetch direction and number of rows to fetch. It can be one of the following: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/fetch.xml:274(para)
+msgid "<replaceable class=\"PARAMETER\">count</replaceable>is a possibly-signed integer constant, determining the location or number of rows to fetch. For <literal>FORWARD</literal>and <literal>BACKWARD</literal>cases, specifying a negative <replaceable class=\"PARAMETER\">count</replaceable>is equivalent to changing the sense of <literal>FORWARD</literal>and <literal>BACKWARD</literal>."
+msgstr ""
+
+#: xml/ref/fetch.xml:291(para)
+msgid "An open cursor's name."
+msgstr ""
+
+#: xml/ref/fetch.xml:297(title)
+msgid "Outputs"
+msgstr ""
+
+#: xml/ref/fetch.xml:298(para)
+msgid "On successful completion, a <command>FETCH</command>command returns a command tag of the form <screen>FETCH \n    <replaceable class=\"parameter\">count</replaceable></screen>The <replaceable class=\"parameter\">count</replaceable>is the number of rows fetched (possibly zero). Note that in <application>psql</application>, the command tag will not actually be displayed, since <application>psql</application>displays the fetched rows instead."
+msgstr ""
+
+#: xml/ref/fetch.xml:311(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/fetch.xml:312(para)
+msgid "The cursor should be declared with the <literal>SCROLL</literal>option if one intends to use any variants of <command>FETCH</command>other than <command>FETCH NEXT</command>or <command>FETCH FORWARD</command>with a positive count. For simple queries <productname>PostgreSQL</productname>will allow backwards fetch from cursors not declared with <literal>SCROLL</literal>, but this behavior is best not relied on. If the cursor is declared with <literal>NO SCROLL</literal>, no backward fetches are allowed."
+msgstr ""
+
+#: xml/ref/fetch.xml:325(para)
+msgid "<literal>ABSOLUTE</literal>fetches are not any faster than navigating to the desired row with a relative move: the underlying implementation must traverse all the intermediate rows anyway. Negative absolute fetches are even worse: the query must be read to the end to find the last row, and then traversed backward from there. However, rewinding to the start of the query (as with <literal>FETCH ABSOLUTE 0</literal>) is fast."
+msgstr ""
+
+#: xml/ref/fetch.xml:336(xref)
+msgid "to change cursor position without retrieving data."
+msgstr ""
+
+#: xml/ref/fetch.xml:335(xref)
+msgid "is used to define a cursor. Use <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/fetch.xml:341(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/fetch.xml:343(programlisting)
+#, no-wrap
+msgid "BEGIN WORK; -- Set up a cursor: DECLARE liahona\n    SCROLL CURSOR FOR SELECT * FROM films; -- Fetch the first 5\n    rows in the cursor liahona: FETCH FORWARD 5 FROM liahona; code\n    | title | did | date_prod | kind | len\n    -------+-------------------------+-----+------------+----------+-------\n    BL101 | The Third Man | 101 | 1949-12-23 | Drama | 01:44 BL102\n    | The African Queen | 101 | 1951-08-11 | Romantic | 01:43 JL201\n    | Une Femme est une Femme | 102 | 1961-03-12 | Romantic | 01:25\n    P_301 | Vertigo | 103 | 1958-11-14 | Action | 02:08 P_302 |\n    Becket | 103 | 1964-02-03 | Drama | 02:28 -- Fetch the previous\n    row: FETCH PRIOR FROM liahona; code | title | did | date_prod |\n    kind | len\n    -------+---------+-----+------------+--------+------- P_301 |\n    Vertigo | 103 | 1958-11-14 | Action | 02:08 -- Close the cursor\n    and end the transaction: CLOSE liahona; COMMIT\n    WORK;"
+msgstr ""
+
+#: xml/ref/fetch.xml:342(para)
+msgid "The following example traverses a table using a cursor: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/fetch.xml:361(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/fetch.xml:362(para)
+msgid "The SQL standard defines <command>FETCH</command>for use in embedded SQL only. The variant of <command>FETCH</command>described here returns the data as if it were a <command>SELECT</command>result rather than placing it in host variables. Other than this point, <command>FETCH</command>is fully upward-compatible with the SQL standard."
+msgstr ""
+
+#: xml/ref/fetch.xml:371(para)
+msgid "The <command>FETCH</command>forms involving <literal>FORWARD</literal>and <literal>BACKWARD</literal>, as well as the forms <literal>FETCH <replaceable class=\"PARAMETER\">count</replaceable></literal>and <literal>FETCH ALL</literal>, in which <literal>FORWARD</literal>is implicit, are <productname>PostgreSQL</productname>extensions."
+msgstr ""
+
+#: xml/ref/fetch.xml:381(para)
+msgid "The SQL standard allows only <literal>FROM</literal>preceding the cursor name; the option to use <literal>IN</literal>, or to leave them out altogether, is an extension."
+msgstr ""
+
+#: xml/ref/fetch.xml:388(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/fetch.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

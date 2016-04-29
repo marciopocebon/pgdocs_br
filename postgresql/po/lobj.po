@@ -1,0 +1,445 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/lobj.xml:3(title)
+msgid "Large Objects"
+msgstr ""
+
+#: xml/lobj.xml:5(primary) xml/lobj.xml:9(see)
+msgid "large object"
+msgstr ""
+
+#: xml/lobj.xml:8(primary)
+msgid "BLOB"
+msgstr ""
+
+#: xml/lobj.xml:11(para)
+msgid "<productname>PostgreSQL</productname>has a <firstterm>large object</firstterm>facility, which provides stream-style access to user data that is stored in a special large-object structure. Streaming access is useful when working with data values that are too large to manipulate conveniently as a whole."
+msgstr ""
+
+#: xml/lobj.xml:18(para)
+msgid "This chapter describes the implementation and the programming and query language interfaces to <productname>PostgreSQL</productname>large object data. We use the <application>libpq</application>C library for the examples in this chapter, but most programming interfaces native to <productname>PostgreSQL</productname>support equivalent functionality. Other interfaces might use the large object interface internally to provide generic support for large values. This is not described here."
+msgstr ""
+
+#: xml/lobj.xml:29(title)
+msgid "Introduction"
+msgstr ""
+
+#: xml/lobj.xml:31(primary)
+msgid "TOAST"
+msgstr ""
+
+#: xml/lobj.xml:32(secondary)
+msgid "versus large objects"
+msgstr ""
+
+#: xml/lobj.xml:34(para)
+msgid "All large objects are stored in a single system table named <link linkend=\"catalog-pg-largeobject\"><structname>pg_largeobject</structname></link>. Each large object also has an entry in the system table <link linkend=\"catalog-pg-largeobject-metadata\"><structname>pg_largeobject_metadata</structname></link>. Large objects can be created, modified, and deleted using a read/write API that is similar to standard operations on files."
+msgstr ""
+
+#: xml/lobj.xml:45(para)
+msgid "<productname>PostgreSQL</productname>also supports a storage system called <link linkend=\"storage-toast\"><quote><acronym>TOAST</acronym></quote></link>, which automatically stores values larger than a single database page into a secondary storage area per table. This makes the large object facility partially obsolete. One remaining advantage of the large object facility is that it allows values up to 4 TB in size, whereas <acronym>TOAST</acronym>ed fields can be at most 1 GB. Also, reading and updating portions of a large object can be done efficiently, while most operations on a <acronym>TOAST</acronym>ed field will read or write the whole value as a unit."
+msgstr ""
+
+#: xml/lobj.xml:64(title)
+msgid "Implementation Features"
+msgstr ""
+
+#: xml/lobj.xml:65(para)
+msgid "The large object implementation breaks large objects up into <quote>chunks</quote>and stores the chunks in rows in the database. A B-tree index guarantees fast searches for the correct chunk number when doing random access reads and writes."
+msgstr ""
+
+#: xml/lobj.xml:71(para)
+msgid "The chunks stored for a large object do not have to be contiguous. For example, if an application opens a new large object, seeks to offset 1000000, and writes a few bytes there, this does not result in allocation of 1000000 bytes worth of storage; only of chunks covering the range of data bytes actually written. A read operation will, however, read out zeroes for any unallocated locations preceding the last existing chunk. This corresponds to the common behavior of <quote>sparsely allocated</quote>files in <acronym>Unix</acronym>file systems."
+msgstr ""
+
+#: xml/lobj.xml:81(para)
+msgid "As of <productname>PostgreSQL</productname>9.0, large objects have an owner and a set of access permissions, which can be managed using <xref linkend=\"sql-grant\">and <xref linkend=\"sql-revoke\">. <literal>SELECT</literal>privileges are required to read a large object, and <literal>UPDATE</literal>privileges are required to write or truncate it. Only the large object's owner (or a database superuser) can delete, comment on, or change the owner of a large object. To adjust this behavior for compatibility with prior releases, see the <xref linkend=\"guc-lo-compat-privileges\">run-time parameter.</xref></xref></xref>"
+msgstr ""
+
+#: xml/lobj.xml:98(title)
+msgid "Client Interfaces"
+msgstr ""
+
+#: xml/lobj.xml:99(para)
+msgid "This section describes the facilities that <productname>PostgreSQL</productname>'s <application>libpq</application>client interface library provides for accessing large objects. The <productname>PostgreSQL</productname>large object interface is modeled after the <acronym>Unix</acronym>file-system interface, with analogues of <function>open</function>, <function>read</function>, <function>write</function>, <function>lseek</function>, etc."
+msgstr ""
+
+#: xml/lobj.xml:111(para)
+msgid "All large object manipulation using these functions <emphasis>must</emphasis>take place within an SQL transaction block, since large object file descriptors are only valid for the duration of a transaction."
+msgstr ""
+
+#: xml/lobj.xml:115(para)
+msgid "If an error occurs while executing any one of these functions, the function will return an otherwise-impossible value, typically 0 or -1. A message describing the error is stored in the connection object and can be retrieved with <function>PQerrorMessage</function>."
+msgstr ""
+
+#: xml/lobj.xml:120(para)
+msgid "Client applications that use these functions should include the header file <filename>libpq/libpq-fs.h</filename>and link with the <application>libpq</application>library."
+msgstr ""
+
+#: xml/lobj.xml:125(title)
+msgid "Creating a Large Object"
+msgstr ""
+
+#: xml/lobj.xml:126(para)
+msgid "<indexterm><primary>lo_creat</primary></indexterm>The function <synopsis>Oid lo_creat(PGconn *conn, int\n      mode);</synopsis>creates a new large object. The return value is the OID that was assigned to the new large object, or <symbol>InvalidOid</symbol>(zero) on failure. <replaceable class=\"parameter\">mode</replaceable>is unused and ignored as of <productname>PostgreSQL</productname>8.1; however, for backward compatibility with earlier releases it is best to set it to <symbol>INV_READ</symbol>, <symbol>INV_WRITE</symbol>, or <symbol>INV_READ</symbol><literal>|</literal><symbol>INV_WRITE</symbol>. (These symbolic constants are defined in the header file <filename>libpq/libpq-fs.h</filename>.)"
+msgstr ""
+
+#: xml/lobj.xml:147(programlisting)
+#, no-wrap
+msgid "inv_oid = lo_creat(conn,\n      INV_READ|INV_WRITE);"
+msgstr ""
+
+#: xml/lobj.xml:146(para) xml/lobj.xml:171(para) xml/lobj.xml:286(para)
+msgid "An example: <placeholder-1/>"
+msgstr ""
+
+#: xml/lobj.xml:149(para)
+msgid "<indexterm><primary>lo_create</primary></indexterm>The function <synopsis>Oid lo_create(PGconn *conn, Oid\n      lobjId);</synopsis>also creates a new large object. The OID to be assigned can be specified by <replaceable class=\"parameter\">lobjId</replaceable>; if so, failure occurs if that OID is already in use for some large object. If <replaceable class=\"parameter\">lobjId</replaceable>is <symbol>InvalidOid</symbol>(zero) then <function>lo_create</function>assigns an unused OID (this is the same behavior as <function>lo_creat</function>). The return value is the OID that was assigned to the new large object, or <symbol>InvalidOid</symbol>(zero) on failure."
+msgstr ""
+
+#: xml/lobj.xml:166(para)
+msgid "<function>lo_create</function>is new as of <productname>PostgreSQL</productname>8.1; if this function is run against an older server version, it will fail and return <symbol>InvalidOid</symbol>."
+msgstr ""
+
+#: xml/lobj.xml:172(programlisting)
+#, no-wrap
+msgid "inv_oid = lo_create(conn,\n      desired_oid);"
+msgstr ""
+
+#: xml/lobj.xml:176(title)
+msgid "Importing a Large Object"
+msgstr ""
+
+#: xml/lobj.xml:177(para)
+msgid "<indexterm><primary>lo_import</primary></indexterm>To import an operating system file as a large object, call <synopsis>Oid lo_import(PGconn *conn, const char\n      *filename);</synopsis><replaceable class=\"parameter\"> filename</replaceable>specifies the operating system name of the file to be imported as a large object. The return value is the OID that was assigned to the new large object, or <symbol>InvalidOid</symbol>(zero) on failure. Note that the file is read by the client interface library, not by the server; so it must exist in the client file system and be readable by the client application."
+msgstr ""
+
+#: xml/lobj.xml:192(para)
+msgid "<indexterm><primary>lo_import_with_oid</primary></indexterm>The function <synopsis>Oid lo_import_with_oid(PGconn *conn, const char\n      *filename, Oid lobjId);</synopsis>also imports a new large object. The OID to be assigned can be specified by <replaceable class=\"parameter\">lobjId</replaceable>; if so, failure occurs if that OID is already in use for some large object. If <replaceable class=\"parameter\">lobjId</replaceable>is <symbol>InvalidOid</symbol>(zero) then <function>lo_import_with_oid</function>assigns an unused OID (this is the same behavior as <function>lo_import</function>). The return value is the OID that was assigned to the new large object, or <symbol>InvalidOid</symbol>(zero) on failure."
+msgstr ""
+
+#: xml/lobj.xml:209(para)
+msgid "<function>lo_import_with_oid</function>is new as of <productname>PostgreSQL</productname>8.4 and uses <function>lo_create</function>internally which is new in 8.1; if this function is run against 8.0 or before, it will fail and return <symbol>InvalidOid</symbol>."
+msgstr ""
+
+#: xml/lobj.xml:218(title)
+msgid "Exporting a Large Object"
+msgstr ""
+
+#: xml/lobj.xml:219(para)
+msgid "<indexterm><primary>lo_export</primary></indexterm>To export a large object into an operating system file, call <synopsis>int lo_export(PGconn *conn, Oid lobjId, const char\n      *filename);</synopsis>The <parameter>lobjId</parameter>argument specifies the OID of the large object to export and the <parameter>filename</parameter>argument specifies the operating system name of the file. Note that the file is written by the client interface library, not by the server. Returns 1 on success, -1 on failure."
+msgstr ""
+
+#: xml/lobj.xml:234(title)
+msgid "Opening an Existing Large Object"
+msgstr ""
+
+#: xml/lobj.xml:235(para)
+msgid "<indexterm><primary>lo_open</primary></indexterm>To open an existing large object for reading or writing, call <synopsis>int lo_open(PGconn *conn, Oid lobjId, int\n      mode);</synopsis>The <parameter>lobjId</parameter>argument specifies the OID of the large object to open. The <parameter>mode</parameter>bits control whether the object is opened for reading ( <symbol>INV_READ</symbol>), writing ( <symbol>INV_WRITE</symbol>), or both. (These symbolic constants are defined in the header file <filename>libpq/libpq-fs.h</filename>.) <function>lo_open</function>returns a (non-negative) large object descriptor for later use in <function>lo_read</function>, <function>lo_write</function>, <function>lo_lseek</function>, <function>lo_lseek64</function>, <function>lo_tell</function>, <function>lo_tell64</function>, <function>lo_truncate</function>, <function>lo_truncate64</function>, and <function>lo_close</function>. The descriptor is only valid for the duration of the current transaction. On failure, -1 is returned."
+msgstr ""
+
+#: xml/lobj.xml:263(para)
+msgid "The server currently does not distinguish between modes <symbol>INV_WRITE</symbol>and <symbol>INV_READ</symbol><literal>|</literal><symbol>INV_WRITE</symbol>: you are allowed to read from the descriptor in either case. However there is a significant difference between these modes and <symbol>INV_READ</symbol>alone: with <symbol>INV_READ</symbol>you cannot write on the descriptor, and the data read from it will reflect the contents of the large object at the time of the transaction snapshot that was active when <function>lo_open</function>was executed, regardless of later writes by this or other transactions. Reading from a descriptor opened with <symbol>INV_WRITE</symbol>returns data that reflects all writes of other committed transactions as well as writes of the current transaction. This is similar to the behavior of <literal>REPEATABLE READ</literal>versus <literal>READ COMMITTED</literal>transaction modes for ordinary SQL <command>SELECT</command>commands."
+msgstr ""
+
+#: xml/lobj.xml:287(programlisting)
+#, no-wrap
+msgid "inv_fd = lo_open(conn, inv_oid,\n      INV_READ|INV_WRITE);"
+msgstr ""
+
+#: xml/lobj.xml:291(title)
+msgid "Writing Data to a Large Object"
+msgstr ""
+
+#: xml/lobj.xml:292(para)
+msgid "<indexterm><primary>lo_write</primary></indexterm>The function <synopsis>int lo_write(PGconn *conn, int fd, const char *buf,\n      size_t len);</synopsis>writes <parameter>len</parameter>bytes from <parameter>buf</parameter>(which must be of size <parameter>len</parameter>) to large object descriptor <parameter>fd</parameter>. The <parameter>fd</parameter>argument must have been returned by a previous <function>lo_open</function>. The number of bytes actually written is returned (in the current implementation, this will always equal <parameter>len</parameter>unless there is an error). In the event of an error, the return value is -1."
+msgstr ""
+
+#: xml/lobj.xml:309(para) xml/lobj.xml:336(para)
+msgid "Although the <parameter>len</parameter>parameter is declared as <type>size_t</type>, this function will reject length values larger than <literal>INT_MAX</literal>. In practice, it's best to transfer data in chunks of at most a few megabytes anyway."
+msgstr ""
+
+#: xml/lobj.xml:318(title)
+msgid "Reading Data from a Large Object"
+msgstr ""
+
+#: xml/lobj.xml:319(para)
+msgid "<indexterm><primary>lo_read</primary></indexterm>The function <synopsis>int lo_read(PGconn *conn, int fd, char *buf, size_t\n      len);</synopsis>reads up to <parameter>len</parameter>bytes from large object descriptor <parameter>fd</parameter>into <parameter>buf</parameter>(which must be of size <parameter>len</parameter>). The <parameter>fd</parameter>argument must have been returned by a previous <function>lo_open</function>. The number of bytes actually read is returned; this will be less than <parameter>len</parameter>if the end of the large object is reached first. In the event of an error, the return value is -1."
+msgstr ""
+
+#: xml/lobj.xml:345(title)
+msgid "Seeking in a Large Object"
+msgstr ""
+
+#: xml/lobj.xml:346(para)
+msgid "<indexterm><primary>lo_lseek</primary></indexterm>To change the current read or write location associated with a large object descriptor, call <synopsis>int lo_lseek(PGconn *conn, int fd, int offset, int\n      whence);</synopsis>This function moves the current location pointer for the large object descriptor identified by <parameter>fd</parameter>to the new location specified by <parameter>offset</parameter>. The valid values for <parameter>whence</parameter>are <symbol>SEEK_SET</symbol>(seek from object start), <symbol>SEEK_CUR</symbol>(seek from current position), and <symbol>SEEK_END</symbol>(seek from object end). The return value is the new location pointer, or -1 on error."
+msgstr ""
+
+#: xml/lobj.xml:361(para)
+msgid "<indexterm><primary>lo_lseek64</primary></indexterm>When dealing with large objects that might exceed 2GB in size, instead use <synopsis>pg_int64 lo_lseek64(PGconn *conn, int fd, pg_int64\n      offset, int whence);</synopsis>This function has the same behavior as <function>lo_lseek</function>, but it can accept an <parameter>offset</parameter>larger than 2GB and/or deliver a result larger than 2GB. Note that <function>lo_lseek</function>will fail if the new location pointer would be greater than 2GB."
+msgstr ""
+
+#: xml/lobj.xml:374(para)
+msgid "<function>lo_lseek64</function>is new as of <productname>PostgreSQL</productname>9.3. If this function is run against an older server version, it will fail and return -1."
+msgstr ""
+
+#: xml/lobj.xml:381(title)
+msgid "Obtaining the Seek Position of a Large Object"
+msgstr ""
+
+#: xml/lobj.xml:382(para)
+msgid "<indexterm><primary>lo_tell</primary></indexterm>To obtain the current read or write location of a large object descriptor, call <synopsis>int lo_tell(PGconn *conn, int fd);</synopsis>If there is an error, the return value is -1."
+msgstr ""
+
+#: xml/lobj.xml:389(para)
+msgid "<indexterm><primary>lo_tell64</primary></indexterm>When dealing with large objects that might exceed 2GB in size, instead use <synopsis>pg_int64 lo_tell64(PGconn *conn, int\n      fd);</synopsis>This function has the same behavior as <function>lo_tell</function>, but it can deliver a result larger than 2GB. Note that <function>lo_tell</function>will fail if the current read/write location is greater than 2GB."
+msgstr ""
+
+#: xml/lobj.xml:400(para)
+msgid "<function>lo_tell64</function>is new as of <productname>PostgreSQL</productname>9.3. If this function is run against an older server version, it will fail and return -1."
+msgstr ""
+
+#: xml/lobj.xml:407(title)
+msgid "Truncating a Large Object"
+msgstr ""
+
+#: xml/lobj.xml:408(para)
+msgid "<indexterm><primary>lo_truncate</primary></indexterm>To truncate a large object to a given length, call <synopsis>int lo_truncate(PGcon *conn, int fd, size_t\n      len);</synopsis>This function truncates the large object descriptor <parameter>fd</parameter>to length <parameter>len</parameter>. The <parameter>fd</parameter>argument must have been returned by a previous <function>lo_open</function>. If <parameter>len</parameter>is greater than the large object's current length, the large object is extended to the specified length with null bytes ('\\0'). On success, <function>lo_truncate</function>returns zero. On error, the return value is -1."
+msgstr ""
+
+#: xml/lobj.xml:426(para)
+msgid "The read/write location associated with the descriptor <parameter>fd</parameter>is not changed."
+msgstr ""
+
+#: xml/lobj.xml:428(para)
+msgid "Although the <parameter>len</parameter>parameter is declared as <type>size_t</type>, <function>lo_truncate</function>will reject length values larger than <literal>INT_MAX</literal>."
+msgstr ""
+
+#: xml/lobj.xml:434(para)
+msgid "<indexterm><primary>lo_truncate64</primary></indexterm>When dealing with large objects that might exceed 2GB in size, instead use <synopsis>int lo_truncate64(PGcon *conn, int fd, pg_int64\n      len);</synopsis>This function has the same behavior as <function>lo_truncate</function>, but it can accept a <parameter>len</parameter>value exceeding 2GB."
+msgstr ""
+
+#: xml/lobj.xml:443(para)
+msgid "<function>lo_truncate</function>is new as of <productname>PostgreSQL</productname>8.3; if this function is run against an older server version, it will fail and return -1."
+msgstr ""
+
+#: xml/lobj.xml:448(para)
+msgid "<function>lo_truncate64</function>is new as of <productname>PostgreSQL</productname>9.3; if this function is run against an older server version, it will fail and return -1."
+msgstr ""
+
+#: xml/lobj.xml:455(title)
+msgid "Closing a Large Object Descriptor"
+msgstr ""
+
+#: xml/lobj.xml:456(para)
+msgid "<indexterm><primary>lo_close</primary></indexterm>A large object descriptor can be closed by calling <synopsis>int lo_close(PGconn *conn, int fd);</synopsis>where <parameter>fd</parameter>is a large object descriptor returned by <function>lo_open</function>. On success, <function>lo_close</function>returns zero. On error, the return value is -1."
+msgstr ""
+
+#: xml/lobj.xml:468(para)
+msgid "Any large object descriptors that remain open at the end of a transaction will be closed automatically."
+msgstr ""
+
+#: xml/lobj.xml:472(title)
+msgid "Removing a Large Object"
+msgstr ""
+
+#: xml/lobj.xml:473(para)
+msgid "<indexterm><primary>lo_unlink</primary></indexterm>To remove a large object from the database, call <synopsis>int lo_unlink(PGconn *conn, Oid\n      lobjId);</synopsis>The <parameter>lobjId</parameter>argument specifies the OID of the large object to remove. Returns 1 if successful, -1 on failure."
+msgstr ""
+
+#: xml/lobj.xml:485(title)
+msgid "Server-side Functions"
+msgstr ""
+
+#: xml/lobj.xml:486(para)
+msgid "Server-side functions tailored for manipulating large objects from SQL are listed in <xref linkend=\"lo-funcs-table\">.</xref>"
+msgstr ""
+
+#: xml/lobj.xml:490(title)
+msgid "SQL-oriented Large Object Functions"
+msgstr ""
+
+#: xml/lobj.xml:494(entry)
+msgid "Function"
+msgstr ""
+
+#: xml/lobj.xml:495(entry)
+msgid "Return Type"
+msgstr ""
+
+#: xml/lobj.xml:496(entry)
+msgid "Description"
+msgstr ""
+
+#: xml/lobj.xml:497(entry)
+msgid "Example"
+msgstr ""
+
+#: xml/lobj.xml:498(entry)
+msgid "Result"
+msgstr ""
+
+#: xml/lobj.xml:505(primary)
+msgid "lo_from_bytea"
+msgstr ""
+
+#: xml/lobj.xml:509(parameter) xml/lobj.xml:536(parameter) xml/lobj.xml:560(parameter)
+msgid "loid"
+msgstr ""
+
+#: xml/lobj.xml:510(type) xml/lobj.xml:516(type) xml/lobj.xml:537(type) xml/lobj.xml:561(type)
+msgid "oid"
+msgstr ""
+
+#: xml/lobj.xml:511(parameter)
+msgid "string"
+msgstr ""
+
+#: xml/lobj.xml:512(type) xml/lobj.xml:541(type) xml/lobj.xml:570(type)
+msgid "bytea"
+msgstr ""
+
+#: xml/lobj.xml:508(function)
+msgid "lo_from_bytea( <placeholder-1/><placeholder-2/>, <placeholder-3/><placeholder-4/>)"
+msgstr ""
+
+#: xml/lobj.xml:520(literal)
+msgid "0"
+msgstr ""
+
+#: xml/lobj.xml:518(entry)
+msgid "Create a large object and store data there, returning its OID. Pass <placeholder-1/>to have the system choose an OID."
+msgstr ""
+
+#: xml/lobj.xml:523(literal)
+msgid "lo_from_bytea(0, E'\\\\xffffff00')"
+msgstr ""
+
+#: xml/lobj.xml:526(literal)
+msgid "24528"
+msgstr ""
+
+#: xml/lobj.xml:532(primary)
+msgid "lo_put"
+msgstr ""
+
+#: xml/lobj.xml:538(parameter)
+msgid "offset"
+msgstr ""
+
+#: xml/lobj.xml:539(type) xml/lobj.xml:564(type)
+msgid "bigint"
+msgstr ""
+
+#: xml/lobj.xml:540(parameter)
+msgid "str"
+msgstr ""
+
+#: xml/lobj.xml:535(function)
+msgid "lo_put( <placeholder-1/><placeholder-2/>, <placeholder-3/><placeholder-4/>, <placeholder-5/><placeholder-6/>)"
+msgstr ""
+
+#: xml/lobj.xml:545(type)
+msgid "void"
+msgstr ""
+
+#: xml/lobj.xml:547(entry)
+msgid "Write data at the given offset."
+msgstr ""
+
+#: xml/lobj.xml:549(literal)
+msgid "lo_put(24528, 1, E'\\\\xaa')"
+msgstr ""
+
+#: xml/lobj.xml:556(primary)
+msgid "lo_get"
+msgstr ""
+
+#: xml/lobj.xml:563(parameter)
+msgid "from"
+msgstr ""
+
+#: xml/lobj.xml:565(parameter)
+msgid "for"
+msgstr ""
+
+#: xml/lobj.xml:566(type)
+msgid "int"
+msgstr ""
+
+#: xml/lobj.xml:562(optional)
+msgid ", <placeholder-1/><placeholder-2/>, <placeholder-3/><placeholder-4/>"
+msgstr ""
+
+#: xml/lobj.xml:559(function)
+msgid "lo_get( <placeholder-1/><placeholder-2/><placeholder-3/>)"
+msgstr ""
+
+#: xml/lobj.xml:572(entry)
+msgid "Extract contents or a substring thereof."
+msgstr ""
+
+#: xml/lobj.xml:574(literal)
+msgid "lo_get(24528, 0, 3)"
+msgstr ""
+
+#: xml/lobj.xml:577(literal)
+msgid "\\xffaaff"
+msgstr ""
+
+#: xml/lobj.xml:605(programlisting)
+#, no-wrap
+msgid "CREATE TABLE image ( name text, raster oid );\n    SELECT lo_creat(-1); -- returns OID of new, empty large object\n    SELECT lo_create(43213); -- attempts to create large object\n    with OID 43213 SELECT lo_unlink(173454); -- deletes large\n    object with OID 173454 INSERT INTO image (name, raster) VALUES\n    ('beautiful image', lo_import('/etc/motd')); INSERT INTO image\n    (name, raster) -- same as above, but specify OID to use VALUES\n    ('beautiful image', lo_import('/etc/motd', 68583)); SELECT\n    lo_export(image.raster, '/tmp/motd') FROM image WHERE name =\n    'beautiful image';"
+msgstr ""
+
+#: xml/lobj.xml:583(para)
+msgid "There are additional server-side functions corresponding to each of the client-side functions described earlier; indeed, for the most part the client-side functions are simply interfaces to the equivalent server-side functions. The ones just as convenient to call via SQL commands are <function>lo_creat</function><indexterm><primary>lo_creat</primary></indexterm>, <function>lo_create</function>, <function>lo_unlink</function><indexterm><primary>lo_unlink</primary></indexterm>, <function>lo_import</function><indexterm><primary>lo_import</primary></indexterm>, and <function>lo_export</function><indexterm><primary>lo_export</primary></indexterm>. Here are examples of their use: <placeholder-1/>"
+msgstr ""
+
+#: xml/lobj.xml:615(para)
+msgid "The server-side <function>lo_import</function>and <function>lo_export</function>functions behave considerably differently from their client-side analogs. These two functions read and write files in the server's file system, using the permissions of the database's owning user. Therefore, their use is restricted to superusers. In contrast, the client-side import and export functions read and write files in the client's file system, using the permissions of the client program. The client-side functions do not require superuser privilege."
+msgstr ""
+
+#: xml/lobj.xml:626(para)
+msgid "The functionality of <function>lo_read</function>and <function>lo_write</function>is also available via server-side calls, but the names of the server-side functions differ from the client side interfaces in that they do not contain underscores. You must call these functions as <function>loread</function>and <function>lowrite</function>."
+msgstr ""
+
+#: xml/lobj.xml:636(title)
+msgid "Example Program"
+msgstr ""
+
+#: xml/lobj.xml:640(application)
+msgid "libpq"
+msgstr ""
+
+#: xml/lobj.xml:643(filename)
+msgid "src/test/examples/testlo.c"
+msgstr ""
+
+#: xml/lobj.xml:638(xref)
+msgid "is a sample program which shows how the large object interface in <placeholder-1/>can be used. Parts of the program are commented out but are left in the source for the reader's benefit. This program can also be found in <placeholder-2/>in the source distribution."
+msgstr ""
+
+#: xml/lobj.xml:647(title)
+msgid "Large Objects with <application>libpq</application>Example Program"
+msgstr ""
+
+#: xml/lobj.xml:649(programlisting)
+#, no-wrap
+msgid "\n      /*-------------------------------------------------------------------------\n      * * testlo.c * test using large objects with libpq * *\n      Portions Copyright (c) 1996-2015, PostgreSQL Global\n      Development Group * Portions Copyright (c) 1994, Regents of\n      the University of California * * * IDENTIFICATION *\n      src/test/examples/testlo.c *\n      *-------------------------------------------------------------------------\n      */ #include &lt;stdio.h&gt; #include &lt;stdlib.h&gt;\n      #include &lt;sys/types.h&gt; #include &lt;sys/stat.h&gt;\n      #include &lt;fcntl.h&gt; #include &lt;unistd.h&gt; #include\n      \"libpq-fe.h\" #include \"libpq/libpq-fs.h\" #define BUFSIZE 1024\n      /* * importFile - * import file \"in_filename\" into database\n      as large object \"lobjOid\" * */ static Oid importFile(PGconn\n      *conn, char *filename) { Oid lobjId; int lobj_fd; char\n      buf[BUFSIZE]; int nbytes, tmp; int fd; /* * open the file to\n      be read in */ fd = open(filename, O_RDONLY, 0666); if (fd\n      &lt; 0) { /* error */ fprintf(stderr, \"cannot open unix\n      file\\\"%s\\\"\\n\", filename); } /* * create the large object */\n      lobjId = lo_creat(conn, INV_READ | INV_WRITE); if (lobjId ==\n      0) fprintf(stderr, \"cannot create large object\"); lobj_fd =\n      lo_open(conn, lobjId, INV_WRITE); /* * read in from the Unix\n      file and write to the inversion file */ while ((nbytes =\n      read(fd, buf, BUFSIZE)) &gt; 0) { tmp = lo_write(conn,\n      lobj_fd, buf, nbytes); if (tmp &lt; nbytes) fprintf(stderr,\n      \"error while reading \\\"%s\\\"\", filename); } close(fd);\n      lo_close(conn, lobj_fd); return lobjId; } static void\n      pickout(PGconn *conn, Oid lobjId, int start, int len) { int\n      lobj_fd; char *buf; int nbytes; int nread; lobj_fd =\n      lo_open(conn, lobjId, INV_READ); if (lobj_fd &lt; 0)\n      fprintf(stderr, \"cannot open large object %u\", lobjId);\n      lo_lseek(conn, lobj_fd, start, SEEK_SET); buf = malloc(len +\n      1); nread = 0; while (len - nread &gt; 0) { nbytes =\n      lo_read(conn, lobj_fd, buf, len - nread); buf[nbytes] = '\\0';\n      fprintf(stderr, \"&gt;&gt;&gt; %s\", buf); nread += nbytes; if\n      (nbytes &lt;= 0) break; /* no more data? */ } free(buf);\n      fprintf(stderr, \"\\n\"); lo_close(conn, lobj_fd); } static void\n      overwrite(PGconn *conn, Oid lobjId, int start, int len) { int\n      lobj_fd; char *buf; int nbytes; int nwritten; int i; lobj_fd\n      = lo_open(conn, lobjId, INV_WRITE); if (lobj_fd &lt; 0)\n      fprintf(stderr, \"cannot open large object %u\", lobjId);\n      lo_lseek(conn, lobj_fd, start, SEEK_SET); buf = malloc(len +\n      1); for (i = 0; i &lt; len; i++) buf[i] = 'X'; buf[i] = '\\0';\n      nwritten = 0; while (len - nwritten &gt; 0) { nbytes =\n      lo_write(conn, lobj_fd, buf + nwritten, len - nwritten);\n      nwritten += nbytes; if (nbytes &lt;= 0) { fprintf(stderr,\n      \"\\nWRITE FAILED!\\n\"); break; } } free(buf); fprintf(stderr,\n      \"\\n\"); lo_close(conn, lobj_fd); } /* * exportFile - * export\n      large object \"lobjOid\" to file \"out_filename\" * */ static\n      void exportFile(PGconn *conn, Oid lobjId, char *filename) {\n      int lobj_fd; char buf[BUFSIZE]; int nbytes, tmp; int fd; /* *\n      open the large object */ lobj_fd = lo_open(conn, lobjId,\n      INV_READ); if (lobj_fd &lt; 0) fprintf(stderr, \"cannot open\n      large object %u\", lobjId); /* * open the file to be written\n      to */ fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC,\n      0666); if (fd &lt; 0) { /* error */ fprintf(stderr, \"cannot\n      open unix file\\\"%s\\\"\", filename); } /* * read in from the\n      inversion file and write to the Unix file */ while ((nbytes =\n      lo_read(conn, lobj_fd, buf, BUFSIZE)) &gt; 0) { tmp =\n      write(fd, buf, nbytes); if (tmp &lt; nbytes) {\n      fprintf(stderr, \"error while writing \\\"%s\\\"\", filename); } }\n      lo_close(conn, lobj_fd); close(fd); return; } static void\n      exit_nicely(PGconn *conn) { PQfinish(conn); exit(1); } int\n      main(int argc, char **argv) { char *in_filename,\n      *out_filename; char *database; Oid lobjOid; PGconn *conn;\n      PGresult *res; if (argc != 4) { fprintf(stderr, \"Usage: %s\n      database_name in_filename out_filename\\n\", argv[0]); exit(1);\n      } database = argv[1]; in_filename = argv[2]; out_filename =\n      argv[3]; /* * set up the connection */ conn = PQsetdb(NULL,\n      NULL, NULL, NULL, database); /* check to see that the backend\n      connection was successfully made */ if (PQstatus(conn) !=\n      CONNECTION_OK) { fprintf(stderr, \"Connection to database\n      failed: %s\", PQerrorMessage(conn)); exit_nicely(conn); } res\n      = PQexec(conn, \"begin\"); PQclear(res); printf(\"importing file\n      \\\"%s\\\" ...\\n\", in_filename); /* lobjOid = importFile(conn,\n      in_filename); */ lobjOid = lo_import(conn, in_filename); if\n      (lobjOid == 0) fprintf(stderr, \"%s\\n\", PQerrorMessage(conn));\n      else { printf(\"\\tas large object %u.\\n\", lobjOid);\n      printf(\"picking out bytes 1000-2000 of the large object\\n\");\n      pickout(conn, lobjOid, 1000, 1000); printf(\"overwriting bytes\n      1000-2000 of the large object with X's\\n\"); overwrite(conn,\n      lobjOid, 1000, 1000); printf(\"exporting large object to file\n      \\\"%s\\\" ...\\n\", out_filename); /* exportFile(conn, lobjOid,\n      out_filename); */ if (lo_export(conn, lobjOid, out_filename)\n      &lt; 0) fprintf(stderr, \"%s\\n\", PQerrorMessage(conn)); } res\n      = PQexec(conn, \"end\"); PQclear(res); PQfinish(conn); return\n      0; }"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/lobj.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

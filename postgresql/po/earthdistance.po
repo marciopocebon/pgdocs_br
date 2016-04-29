@@ -1,0 +1,212 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/earthdistance.xml:3(title) xml/earthdistance.xml:5(primary)
+msgid "earthdistance"
+msgstr ""
+
+#: xml/earthdistance.xml:7(para)
+msgid "The <filename>earthdistance</filename>module provides two different approaches to calculating great circle distances on the surface of the Earth. The one described first depends on the <filename>cube</filename>module (which <emphasis>must</emphasis>be installed before <filename>earthdistance</filename>can be installed). The second one is based on the built-in <type>point</type>data type, using longitude and latitude for the coordinates."
+msgstr ""
+
+#: xml/earthdistance.xml:17(para)
+msgid "In this module, the Earth is assumed to be perfectly spherical. (If that's too inaccurate for you, you might want to look at the <application><ulink url=\"http://postgis.net/\">PostGIS</ulink></application>project.)"
+msgstr ""
+
+#: xml/earthdistance.xml:24(title)
+msgid "Cube-based Earth Distances"
+msgstr ""
+
+#: xml/earthdistance.xml:25(para)
+msgid "Data is stored in cubes that are points (both corners are the same) using 3 coordinates representing the x, y, and z distance from the center of the Earth. A domain <type>earth</type>over <type>cube</type>is provided, which includes constraint checks that the value meets these restrictions and is reasonably close to the actual surface of the Earth."
+msgstr ""
+
+#: xml/earthdistance.xml:32(para)
+msgid "The radius of the Earth is obtained from the <function>earth()</function>function. It is given in meters. But by changing this one function you can change the module to use some other units, or to use a different value of the radius that you feel is more appropriate."
+msgstr ""
+
+#: xml/earthdistance.xml:37(para)
+msgid "This package has applications to astronomical databases as well. Astronomers will probably want to change <function>earth()</function>to return a radius of <literal>180/pi()</literal>so that distances are in degrees."
+msgstr ""
+
+#: xml/earthdistance.xml:42(para)
+msgid "Functions are provided to support input in latitude and longitude (in degrees), to support output of latitude and longitude, to calculate the great circle distance between two points and to easily specify a bounding box usable for index searches."
+msgstr ""
+
+#: xml/earthdistance.xml:47(para)
+msgid "The provided functions are shown in <xref linkend=\"earthdistance-cube-functions\">.</xref>"
+msgstr ""
+
+#: xml/earthdistance.xml:50(title)
+msgid "Cube-based Earthdistance Functions"
+msgstr ""
+
+#: xml/earthdistance.xml:54(entry)
+msgid "Function"
+msgstr ""
+
+#: xml/earthdistance.xml:55(entry) xml/earthdistance.xml:194(entry)
+msgid "Returns"
+msgstr ""
+
+#: xml/earthdistance.xml:56(entry) xml/earthdistance.xml:195(entry)
+msgid "Description"
+msgstr ""
+
+#: xml/earthdistance.xml:62(function)
+msgid "earth()"
+msgstr ""
+
+#: xml/earthdistance.xml:64(primary) xml/earthdistance.xml:108(type)
+msgid "earth"
+msgstr ""
+
+#: xml/earthdistance.xml:68(type) xml/earthdistance.xml:80(type) xml/earthdistance.xml:94(type) xml/earthdistance.xml:122(type) xml/earthdistance.xml:135(type) xml/earthdistance.xml:148(type) xml/earthdistance.xml:206(type)
+msgid "float8"
+msgstr ""
+
+#: xml/earthdistance.xml:70(entry)
+msgid "Returns the assumed radius of the Earth."
+msgstr ""
+
+#: xml/earthdistance.xml:74(function)
+msgid "sec_to_gc(float8)"
+msgstr ""
+
+#: xml/earthdistance.xml:76(primary)
+msgid "sec_to_gc"
+msgstr ""
+
+#: xml/earthdistance.xml:82(entry)
+msgid "Converts the normal straight line (secant) distance between two points on the surface of the Earth to the great circle distance between them."
+msgstr ""
+
+#: xml/earthdistance.xml:88(function)
+msgid "gc_to_sec(float8)"
+msgstr ""
+
+#: xml/earthdistance.xml:90(primary)
+msgid "gc_to_sec"
+msgstr ""
+
+#: xml/earthdistance.xml:96(entry)
+msgid "Converts the great circle distance between two points on the surface of the Earth to the normal straight line (secant) distance between them."
+msgstr ""
+
+#: xml/earthdistance.xml:102(function)
+msgid "ll_to_earth(float8, float8)"
+msgstr ""
+
+#: xml/earthdistance.xml:104(primary)
+msgid "ll_to_earth"
+msgstr ""
+
+#: xml/earthdistance.xml:110(entry)
+msgid "Returns the location of a point on the surface of the Earth given its latitude (argument 1) and longitude (argument 2) in degrees."
+msgstr ""
+
+#: xml/earthdistance.xml:116(function)
+msgid "latitude(earth)"
+msgstr ""
+
+#: xml/earthdistance.xml:118(primary)
+msgid "latitude"
+msgstr ""
+
+#: xml/earthdistance.xml:124(entry)
+msgid "Returns the latitude in degrees of a point on the surface of the Earth."
+msgstr ""
+
+#: xml/earthdistance.xml:129(function)
+msgid "longitude(earth)"
+msgstr ""
+
+#: xml/earthdistance.xml:131(primary)
+msgid "longitude"
+msgstr ""
+
+#: xml/earthdistance.xml:137(entry)
+msgid "Returns the longitude in degrees of a point on the surface of the Earth."
+msgstr ""
+
+#: xml/earthdistance.xml:142(function)
+msgid "earth_distance(earth, earth)"
+msgstr ""
+
+#: xml/earthdistance.xml:144(primary) xml/earthdistance.xml:169(function)
+msgid "earth_distance"
+msgstr ""
+
+#: xml/earthdistance.xml:150(entry)
+msgid "Returns the great circle distance between two points on the surface of the Earth."
+msgstr ""
+
+#: xml/earthdistance.xml:155(function)
+msgid "earth_box(earth, float8)"
+msgstr ""
+
+#: xml/earthdistance.xml:157(primary)
+msgid "earth_box"
+msgstr ""
+
+#: xml/earthdistance.xml:161(type)
+msgid "cube"
+msgstr ""
+
+#: xml/earthdistance.xml:165(literal) xml/earthdistance.xml:202(literal)
+msgid "@"
+msgstr ""
+
+#: xml/earthdistance.xml:163(entry)
+msgid "Returns a box suitable for an indexed search using the cube <placeholder-1/>operator for points within a given great circle distance of a location. Some points in this box are further than the specified great circle distance from the location, so a second check using <placeholder-2/>should be included in the query."
+msgstr ""
+
+#: xml/earthdistance.xml:177(title)
+msgid "Point-based Earth Distances"
+msgstr ""
+
+#: xml/earthdistance.xml:178(para)
+msgid "The second part of the module relies on representing Earth locations as values of type <type>point</type>, in which the first component is taken to represent longitude in degrees, and the second component is taken to represent latitude in degrees. Points are taken as (longitude, latitude) and not vice versa because longitude is closer to the intuitive idea of x-axis and latitude to y-axis."
+msgstr ""
+
+#: xml/earthdistance.xml:186(para)
+msgid "A single operator is provided, shown in <xref linkend=\"earthdistance-point-operators\">.</xref>"
+msgstr ""
+
+#: xml/earthdistance.xml:189(title)
+msgid "Point-based Earthdistance Operators"
+msgstr ""
+
+#: xml/earthdistance.xml:193(entry)
+msgid "Operator"
+msgstr ""
+
+#: xml/earthdistance.xml:201(type) xml/earthdistance.xml:203(type)
+msgid "point"
+msgstr ""
+
+#: xml/earthdistance.xml:208(entry)
+msgid "Gives the distance in statute miles between two points on the Earth's surface."
+msgstr ""
+
+#: xml/earthdistance.xml:214(para)
+msgid "Note that unlike the <type>cube</type>-based part of the module, units are hardwired here: changing the <function>earth()</function>function will not affect the results of this operator."
+msgstr ""
+
+#: xml/earthdistance.xml:219(para)
+msgid "One disadvantage of the longitude/latitude representation is that you need to be careful about the edge conditions near the poles and near +/- 180 degrees of longitude. The <type>cube</type>-based representation avoids these discontinuities."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/earthdistance.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

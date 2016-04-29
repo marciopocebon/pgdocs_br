@@ -1,0 +1,98 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/abort.xml:4(primary) xml/ref/abort.xml:7(refentrytitle) xml/ref/abort.xml:12(refname)
+msgid "ABORT"
+msgstr ""
+
+#: xml/ref/abort.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/abort.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/abort.xml:13(refpurpose)
+msgid "abort the current transaction"
+msgstr ""
+
+#: xml/ref/abort.xml:16(synopsis)
+#, no-wrap
+msgid "ABORT [ WORK | TRANSACTION ]"
+msgstr ""
+
+#: xml/ref/abort.xml:19(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/abort.xml:20(para)
+msgid "<command>ABORT</command>rolls back the current transaction and causes all the updates made by the transaction to be discarded. This command is identical in behavior to the standard <acronym>SQL</acronym>command <xref linkend=\"SQL-ROLLBACK\">, and is present only for historical reasons.</xref>"
+msgstr ""
+
+#: xml/ref/abort.xml:29(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/abort.xml:33(literal)
+msgid "WORK"
+msgstr ""
+
+#: xml/ref/abort.xml:36(literal)
+msgid "TRANSACTION"
+msgstr ""
+
+#: xml/ref/abort.xml:39(para)
+msgid "Optional key words. They have no effect."
+msgstr ""
+
+#: xml/ref/abort.xml:45(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/abort.xml:46(para)
+msgid "Use <xref linkend=\"SQL-COMMIT\">to successfully terminate a transaction.</xref>"
+msgstr ""
+
+#: xml/ref/abort.xml:49(para)
+msgid "Issuing <command>ABORT</command>outside of a transaction block emits a warning and otherwise has no effect."
+msgstr ""
+
+#: xml/ref/abort.xml:54(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/abort.xml:56(programlisting)
+#, no-wrap
+msgid "ABORT;"
+msgstr ""
+
+#: xml/ref/abort.xml:55(para)
+msgid "To abort all changes: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/abort.xml:59(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/abort.xml:60(para)
+msgid "This command is a <productname>PostgreSQL</productname>extension present for historical reasons. <command>ROLLBACK</command>is the equivalent standard SQL command."
+msgstr ""
+
+#: xml/ref/abort.xml:67(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/abort.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

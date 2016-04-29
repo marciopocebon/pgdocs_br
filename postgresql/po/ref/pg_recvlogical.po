@@ -1,0 +1,396 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/pg_recvlogical.xml:4(primary) xml/ref/pg_recvlogical.xml:8(application) xml/ref/pg_recvlogical.xml:14(refname) xml/ref/pg_recvlogical.xml:21(command)
+msgid "pg_recvlogical"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:10(manvolnum)
+msgid "1"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:11(refmiscinfo)
+msgid "Application"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:16(productname)
+msgid "PostgreSQL"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:15(refpurpose)
+msgid "control <placeholder-1/>logical decoding streams"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:23(replaceable)
+msgid "option"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:28(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:29(para)
+msgid "<command>pg_recvlogical</command>controls logical decoding replication slots and streams data from such replication slots."
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:33(para)
+msgid "It creates a replication-mode connection, so it is subject to the same constraints as <xref linkend=\"app-pgreceivexlog\">, plus those for logical replication (see <xref linkend=\"logicaldecoding\">).</xref></xref>"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:40(title)
+msgid "Options"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:46(option)
+msgid "--create-slot"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:49(para)
+msgid "Create a new logical replication slot with the name specified by <option>--slot</option>, using the output plugin specified by <option>--plugin</option>, for the database specified by <option>--dbname</option>."
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:59(option)
+msgid "--drop-slot"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:62(para)
+msgid "Drop the replication slot with the name specified by <option>--slot</option>, then exit."
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:69(option)
+msgid "--start"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:72(para)
+msgid "Begin streaming changes from the logical replication slot specified by <option>--slot</option>, continuing until terminated by a signal. If the server side change stream ends with a server shutdown or disconnect, retry in a loop unless <option>--no-loop</option>is specified."
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:78(para)
+msgid "The stream format is determined by the output plugin specified when the slot was created."
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:80(para)
+msgid "The connection must be to the same database used to create the slot."
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:41(para)
+msgid "At least one of the following options must be specified to select an action: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:85(para)
+msgid "<option>--create-slot</option>and <option>--start</option>can be specified together. <option>--drop-slot</option>cannot be combined with another action."
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:96(replaceable) xml/ref/pg_recvlogical.xml:100(replaceable)
+msgid "filename"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:95(option)
+msgid "-f <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:99(option)
+msgid "--file= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:103(para)
+msgid "Write received and decoded transaction data into this file. Use <literal>-</literal>for <systemitem>stdout</systemitem>."
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:112(replaceable) xml/ref/pg_recvlogical.xml:116(replaceable) xml/ref/pg_recvlogical.xml:213(replaceable) xml/ref/pg_recvlogical.xml:217(replaceable)
+msgid "interval_seconds"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:111(option)
+msgid "-F <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:115(option)
+msgid "--fsync-interval= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:119(para)
+msgid "Specifies how often <application>pg_recvlogical</application>should issue <function>fsync()</function>calls to ensure the output file is safely flushed to disk."
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:123(para)
+msgid "The server will occasionally request the client to perform a flush and report the flush position to the server. This setting is in addition to that, to perform flushes more frequently."
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:127(para)
+msgid "Specifying an interval of <literal>0</literal>disables issuing <function>fsync()</function>calls altogether, while still reporting progress to the server. In this case, data could be lost in the event of a crash."
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:137(replaceable) xml/ref/pg_recvlogical.xml:141(replaceable)
+msgid "lsn"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:136(option)
+msgid "-I <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:140(option)
+msgid "--startpos= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:144(para)
+msgid "In <option>--start</option>mode, start replication from the given LSN. For details on the effect of this, see the documentation in <xref linkend=\"logicaldecoding\">and <xref linkend=\"protocol-replication\">. Ignored in other modes.</xref></xref>"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:155(option)
+msgid "--if-not-exists"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:158(para)
+msgid "Do not not error out when <option>--create-slot</option>is specified and a slot with the specified name already exists."
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:165(option)
+msgid "-n"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:168(option)
+msgid "--no-loop"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:171(para)
+msgid "When the connection to the server is lost, do not retry in a loop, just exit."
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:178(replaceable) xml/ref/pg_recvlogical.xml:183(replaceable)
+msgid "name"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:179(replaceable) xml/ref/pg_recvlogical.xml:184(replaceable)
+msgid "value"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:177(option)
+msgid "-o <placeholder-1/>[= <placeholder-2/>]"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:182(option)
+msgid "--option= <placeholder-1/>[= <placeholder-2/>]"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:187(para)
+msgid "Pass the option <replaceable>name</replaceable>to the output plugin with, if specified, the option value <replaceable>value</replaceable>. Which options exist and their effects depends on the used output plugin."
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:197(replaceable) xml/ref/pg_recvlogical.xml:201(replaceable)
+msgid "plugin"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:196(option)
+msgid "-P <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:200(option)
+msgid "--plugin= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:204(para)
+msgid "When creating a slot, use the specified logical decoding output plugin. See <xref linkend=\"logicaldecoding\">. This option has no effect if the slot already exists.</xref>"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:212(option)
+msgid "-s <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:216(option)
+msgid "--status-interval= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:220(para)
+msgid "This option has the same effect as the option of the same name in <xref linkend=\"app-pgreceivexlog\">. See the description there.</xref>"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:229(replaceable) xml/ref/pg_recvlogical.xml:233(replaceable)
+msgid "slot_name"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:228(option)
+msgid "-S <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:232(option)
+msgid "--slot= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:236(para)
+msgid "In <option>--start</option>mode, use the existing logical replication slot named <replaceable>slot_name</replaceable>. In <option>--create-slot</option>mode, create the slot with this name. In <option>--drop-slot</option>mode, delete the slot with this name."
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:248(option)
+msgid "-v"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:251(option)
+msgid "--verbose"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:254(para)
+msgid "Enables verbose mode."
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:90(para)
+msgid "The following command-line options control the location and format of the output and other replication behavior: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:264(replaceable) xml/ref/pg_recvlogical.xml:268(replaceable)
+msgid "database"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:263(option)
+msgid "-d <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:267(option)
+msgid "--dbname= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:271(para)
+msgid "The database to connect to. See the description of the actions for what this means in detail. This can be a <application>libpq</application>connection string; see <xref linkend=\"LIBPQ-CONNSTRING\">for more information. Defaults to user name.</xref>"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:281(replaceable) xml/ref/pg_recvlogical.xml:285(replaceable)
+msgid "hostname-or-ip"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:280(option)
+msgid "-h <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:284(option)
+msgid "--host= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:288(para)
+msgid "Specifies the host name of the machine on which the server is running. If the value begins with a slash, it is used as the directory for the Unix domain socket. The default is taken from the <envar>PGHOST</envar>environment variable, if set, else a Unix domain socket connection is attempted."
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:299(replaceable) xml/ref/pg_recvlogical.xml:303(replaceable)
+msgid "port"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:298(option)
+msgid "-p <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:302(option)
+msgid "--port= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:306(para)
+msgid "Specifies the TCP port or local Unix domain socket file extension on which the server is listening for connections. Defaults to the <envar>PGPORT</envar>environment variable, if set, or a compiled-in default."
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:316(replaceable) xml/ref/pg_recvlogical.xml:320(replaceable)
+msgid "user"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:315(option)
+msgid "-U <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:319(option)
+msgid "--username= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:323(para)
+msgid "User name to connect as. Defaults to current operating system user name."
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:329(option)
+msgid "-w"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:332(option)
+msgid "--no-password"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:335(para)
+msgid "Never issue a password prompt. If the server requires password authentication and a password is not available by other means such as a <filename>.pgpass</filename>file, the connection attempt will fail. This option can be useful in batch jobs and scripts where no user is present to enter a password."
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:346(option)
+msgid "-W"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:349(option)
+msgid "--password"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:352(para)
+msgid "Force <application>pg_recvlogical</application>to prompt for a password before connecting to a database."
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:355(para)
+msgid "This option is never essential, since <application>pg_recvlogical</application>will automatically prompt for a password if the server demands password authentication. However, <application>pg_recvlogical</application>will waste a connection attempt finding out that the server wants a password. In some cases it is worth typing <option>-W</option>to avoid the extra connection attempt."
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:258(para)
+msgid "The following command-line options control the database connection parameters. <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:371(option)
+msgid "-V"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:374(option)
+msgid "--version"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:377(para)
+msgid "Print the <application>pg_recvlogical</application>version and exit."
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:384(option)
+msgid "-?"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:387(option)
+msgid "--help"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:390(para)
+msgid "Show help about <application>pg_recvlogical</application>command line arguments, and exit."
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:367(para)
+msgid "The following additional options are available: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:398(title)
+msgid "Environment"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:399(para)
+msgid "This utility, like most other <productname>PostgreSQL</productname>utilities, uses the environment variables supported by <application>libpq</application>(see <xref linkend=\"libpq-envars\">).</xref>"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:406(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:407(para)
+msgid "See <xref linkend=\"logicaldecoding-example\">for an example.</xref>"
+msgstr ""
+
+#: xml/ref/pg_recvlogical.xml:412(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/pg_recvlogical.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

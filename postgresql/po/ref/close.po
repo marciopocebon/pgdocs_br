@@ -1,0 +1,114 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/close.xml:4(primary) xml/ref/close.xml:8(secondary) xml/ref/close.xml:11(refentrytitle) xml/ref/close.xml:16(refname)
+msgid "CLOSE"
+msgstr ""
+
+#: xml/ref/close.xml:7(primary)
+msgid "cursor"
+msgstr ""
+
+#: xml/ref/close.xml:12(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/close.xml:13(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/close.xml:17(refpurpose)
+msgid "close a cursor"
+msgstr ""
+
+#: xml/ref/close.xml:21(replaceable) xml/ref/close.xml:47(replaceable)
+msgid "name"
+msgstr ""
+
+#: xml/ref/close.xml:20(synopsis)
+#, no-wrap
+msgid "CLOSE { \n    <placeholder-1/>| ALL\n    }"
+msgstr ""
+
+#: xml/ref/close.xml:25(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/close.xml:26(para)
+msgid "<command>CLOSE</command>frees the resources associated with an open cursor. After the cursor is closed, no subsequent operations are allowed on it. A cursor should be closed when it is no longer needed."
+msgstr ""
+
+#: xml/ref/close.xml:31(para)
+msgid "Every non-holdable open cursor is implicitly closed when a transaction is terminated by <command>COMMIT</command>or <command>ROLLBACK</command>. A holdable cursor is implicitly closed if the transaction that created it aborts via <command>ROLLBACK</command>. If the creating transaction successfully commits, the holdable cursor remains open until an explicit <command>CLOSE</command>is executed, or the client disconnects."
+msgstr ""
+
+#: xml/ref/close.xml:43(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/close.xml:50(para)
+msgid "The name of an open cursor to close."
+msgstr ""
+
+#: xml/ref/close.xml:55(literal)
+msgid "ALL"
+msgstr ""
+
+#: xml/ref/close.xml:58(para)
+msgid "Close all open cursors."
+msgstr ""
+
+#: xml/ref/close.xml:64(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/close.xml:65(para)
+msgid "<productname>PostgreSQL</productname>does not have an explicit <command>OPEN</command>cursor statement; a cursor is considered open when it is declared. Use the <xref linkend=\"sql-declare\">statement to declare a cursor.</xref>"
+msgstr ""
+
+#: xml/ref/close.xml:71(para)
+msgid "You can see all available cursors by querying the <link linkend=\"view-pg-cursors\"><structname>pg_cursors</structname></link>system view."
+msgstr ""
+
+#: xml/ref/close.xml:75(para)
+msgid "If a cursor is closed after a savepoint which is later rolled back, the <command>CLOSE</command>is not rolled back; that is, the cursor remains closed."
+msgstr ""
+
+#: xml/ref/close.xml:81(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/close.xml:84(programlisting)
+#, no-wrap
+msgid "CLOSE liahona;"
+msgstr ""
+
+#: xml/ref/close.xml:82(para)
+msgid "Close the cursor <literal>liahona</literal>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/close.xml:87(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/close.xml:88(para)
+msgid "<command>CLOSE</command>is fully conforming with the SQL standard. <command>CLOSE ALL</command>is a <productname>PostgreSQL</productname>extension."
+msgstr ""
+
+#: xml/ref/close.xml:95(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/close.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

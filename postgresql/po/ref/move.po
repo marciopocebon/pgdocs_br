@@ -1,0 +1,98 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/move.xml:4(primary) xml/ref/move.xml:8(secondary) xml/ref/move.xml:11(refentrytitle) xml/ref/move.xml:16(refname)
+msgid "MOVE"
+msgstr ""
+
+#: xml/ref/move.xml:7(primary)
+msgid "cursor"
+msgstr ""
+
+#: xml/ref/move.xml:12(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/move.xml:13(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/move.xml:17(refpurpose)
+msgid "position a cursor"
+msgstr ""
+
+#: xml/ref/move.xml:21(replaceable) xml/ref/move.xml:25(replaceable)
+msgid "direction"
+msgstr ""
+
+#: xml/ref/move.xml:23(replaceable)
+msgid "cursor_name"
+msgstr ""
+
+#: xml/ref/move.xml:24(phrase)
+msgid "where <placeholder-1/>can be empty or one of:"
+msgstr ""
+
+#: xml/ref/move.xml:27(replaceable) xml/ref/move.xml:28(replaceable) xml/ref/move.xml:29(replaceable) xml/ref/move.xml:31(replaceable) xml/ref/move.xml:33(replaceable)
+msgid "count"
+msgstr ""
+
+#: xml/ref/move.xml:20(synopsis)
+#, no-wrap
+msgid "MOVE [ \n    <placeholder-1/>[ FROM |\n    IN ] ] \n    <placeholder-2/>\n    <placeholder-3/>NEXT PRIOR FIRST LAST ABSOLUTE \n    <placeholder-4/>RELATIVE \n    <placeholder-5/>\n    <placeholder-6/>ALL FORWARD\n    FORWARD \n    <placeholder-7/>FORWARD ALL\n    BACKWARD BACKWARD \n    <placeholder-8/>BACKWARD\n    ALL"
+msgstr ""
+
+#: xml/ref/move.xml:37(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/move.xml:38(para)
+msgid "<command>MOVE</command>repositions a cursor without retrieving any data. <command>MOVE</command>works exactly like the <command>FETCH</command>command, except it only positions the cursor and does not return rows."
+msgstr ""
+
+#: xml/ref/move.xml:44(para)
+msgid "The parameters for the <command>MOVE</command>command are identical to those of the <command>FETCH</command>command; refer to <xref linkend=\"sql-fetch\">for details on syntax and usage.</xref>"
+msgstr ""
+
+#: xml/ref/move.xml:51(title)
+msgid "Outputs"
+msgstr ""
+
+#: xml/ref/move.xml:52(para)
+msgid "On successful completion, a <command>MOVE</command>command returns a command tag of the form <screen>MOVE \n    <replaceable class=\"parameter\">count</replaceable></screen>The <replaceable class=\"parameter\">count</replaceable>is the number of rows that a <command>FETCH</command>command with the same parameters would have returned (possibly zero)."
+msgstr ""
+
+#: xml/ref/move.xml:63(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/move.xml:64(programlisting)
+#, no-wrap
+msgid "BEGIN WORK; DECLARE liahona CURSOR FOR SELECT *\n    FROM films; -- Skip the first 5 rows: MOVE FORWARD 5 IN\n    liahona; MOVE 5 -- Fetch the 6th row from the cursor liahona:\n    FETCH 1 FROM liahona; code | title | did | date_prod | kind |\n    len -------+--------+-----+------------+--------+------- P_303\n    | 48 Hrs | 103 | 1982-10-22 | Action | 01:37 (1 row) -- Close\n    the cursor liahona and end the transaction: CLOSE liahona;\n    COMMIT WORK;"
+msgstr ""
+
+#: xml/ref/move.xml:74(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/move.xml:75(para)
+msgid "There is no <command>MOVE</command>statement in the SQL standard."
+msgstr ""
+
+#: xml/ref/move.xml:79(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/move.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

@@ -1,0 +1,106 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/drop_collation.xml:4(primary) xml/ref/drop_collation.xml:7(refentrytitle) xml/ref/drop_collation.xml:12(refname)
+msgid "DROP COLLATION"
+msgstr ""
+
+#: xml/ref/drop_collation.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/drop_collation.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/drop_collation.xml:13(refpurpose)
+msgid "remove a collation"
+msgstr ""
+
+#: xml/ref/drop_collation.xml:17(replaceable) xml/ref/drop_collation.xml:41(replaceable)
+msgid "name"
+msgstr ""
+
+#: xml/ref/drop_collation.xml:16(synopsis)
+#, no-wrap
+msgid "DROP COLLATION [ IF EXISTS ] \n    <placeholder-1/>[ CASCADE | RESTRICT\n    ]"
+msgstr ""
+
+#: xml/ref/drop_collation.xml:21(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/drop_collation.xml:22(para)
+msgid "<command>DROP COLLATION</command>removes a previously defined collation. To be able to drop a collation, you must own the collation."
+msgstr ""
+
+#: xml/ref/drop_collation.xml:28(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/drop_collation.xml:32(literal)
+msgid "IF EXISTS"
+msgstr ""
+
+#: xml/ref/drop_collation.xml:35(para)
+msgid "Do not throw an error if the collation does not exist. A notice is issued in this case."
+msgstr ""
+
+#: xml/ref/drop_collation.xml:44(para)
+msgid "The name of the collation. The collation name can be schema-qualified."
+msgstr ""
+
+#: xml/ref/drop_collation.xml:50(literal)
+msgid "CASCADE"
+msgstr ""
+
+#: xml/ref/drop_collation.xml:53(para)
+msgid "Automatically drop objects that depend on the collation."
+msgstr ""
+
+#: xml/ref/drop_collation.xml:59(literal)
+msgid "RESTRICT"
+msgstr ""
+
+#: xml/ref/drop_collation.xml:62(para)
+msgid "Refuse to drop the collation if any objects depend on it. This is the default."
+msgstr ""
+
+#: xml/ref/drop_collation.xml:69(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/drop_collation.xml:72(programlisting)
+#, no-wrap
+msgid "DROP COLLATION german;"
+msgstr ""
+
+#: xml/ref/drop_collation.xml:70(para)
+msgid "To drop the collation named <literal>german</literal>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/drop_collation.xml:75(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/drop_collation.xml:76(para)
+msgid "The <command>DROP COLLATION</command>command conforms to the <acronym>SQL</acronym>standard, apart from the <literal>IF EXISTS</literal>option, which is a <productname>PostgreSQL</productname>extension."
+msgstr ""
+
+#: xml/ref/drop_collation.xml:83(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/drop_collation.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

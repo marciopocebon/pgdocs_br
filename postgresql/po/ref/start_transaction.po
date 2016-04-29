@@ -1,0 +1,85 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/start_transaction.xml:4(primary) xml/ref/start_transaction.xml:7(refentrytitle) xml/ref/start_transaction.xml:12(refname)
+msgid "START TRANSACTION"
+msgstr ""
+
+#: xml/ref/start_transaction.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/start_transaction.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/start_transaction.xml:13(refpurpose)
+msgid "start a transaction block"
+msgstr ""
+
+#: xml/ref/start_transaction.xml:17(replaceable) xml/ref/start_transaction.xml:20(replaceable)
+msgid "transaction_mode"
+msgstr ""
+
+#: xml/ref/start_transaction.xml:19(phrase)
+msgid "where <placeholder-1/>is one of:"
+msgstr ""
+
+#: xml/ref/start_transaction.xml:16(synopsis)
+#, no-wrap
+msgid "START TRANSACTION [ \n    <placeholder-1/>[,\n    ...] ] \n    <placeholder-2/>ISOLATION LEVEL { SERIALIZABLE | REPEATABLE\n    READ | READ COMMITTED | READ UNCOMMITTED } READ WRITE | READ\n    ONLY [ NOT ] DEFERRABLE"
+msgstr ""
+
+#: xml/ref/start_transaction.xml:26(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/start_transaction.xml:27(para)
+msgid "This command begins a new transaction block. If the isolation level, read/write mode, or deferrable mode is specified, the new transaction has those characteristics, as if <xref linkend=\"sql-set-transaction\">was executed. This is the same as the <xref linkend=\"sql-begin\">command.</xref></xref>"
+msgstr ""
+
+#: xml/ref/start_transaction.xml:36(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/start_transaction.xml:37(para)
+msgid "Refer to <xref linkend=\"sql-set-transaction\">for information on the meaning of the parameters to this statement.</xref>"
+msgstr ""
+
+#: xml/ref/start_transaction.xml:42(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/start_transaction.xml:43(para)
+msgid "In the standard, it is not necessary to issue <command>START TRANSACTION</command>to start a transaction block: any SQL command implicitly begins a block. <productname>PostgreSQL</productname>'s behavior can be seen as implicitly issuing a <command>COMMIT</command>after each command that does not follow <command>START TRANSACTION</command>(or <command>BEGIN</command>), and it is therefore often called <quote>autocommit</quote>. Other relational database systems might offer an autocommit feature as a convenience."
+msgstr ""
+
+#: xml/ref/start_transaction.xml:54(para)
+msgid "The <literal>DEFERRABLE</literal><replaceable class=\"parameter\">transaction_mode</replaceable>is a <productname>PostgreSQL</productname>language extension."
+msgstr ""
+
+#: xml/ref/start_transaction.xml:59(para)
+msgid "The SQL standard requires commas between successive <replaceable class=\"parameter\">transaction_modes</replaceable>, but for historical reasons <productname>PostgreSQL</productname>allows the commas to be omitted."
+msgstr ""
+
+#: xml/ref/start_transaction.xml:64(para)
+msgid "See also the compatibility section of <xref linkend=\"sql-set-transaction\">.</xref>"
+msgstr ""
+
+#: xml/ref/start_transaction.xml:68(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/start_transaction.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

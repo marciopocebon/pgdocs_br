@@ -1,0 +1,45 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/tcn.xml:3(title) xml/tcn.xml:5(primary)
+msgid "tcn"
+msgstr ""
+
+#: xml/tcn.xml:8(primary)
+msgid "triggered_change_notification"
+msgstr ""
+
+#: xml/tcn.xml:10(para)
+msgid "The <filename>tcn</filename>module provides a trigger function that notifies listeners of changes to any table on which it is attached. It must be used as an <literal>AFTER</literal>trigger <literal>FOR EACH ROW</literal>."
+msgstr ""
+
+#: xml/tcn.xml:16(para)
+msgid "Only one parameter may be supplied to the function in a <literal>CREATE TRIGGER</literal>statement, and that is optional. If supplied it will be used for the channel name for the notifications. If omitted <literal>tcn</literal>will be used for the channel name."
+msgstr ""
+
+#: xml/tcn.xml:21(para)
+msgid "The payload of the notifications consists of the table name, a letter to indicate which type of operation was performed, and column name/value pairs for primary key columns. Each part is separated from the next by a comma. For ease of parsing using regular expressions, table and column names are always wrapped in double quotes, and data values are always wrapped in single quotes. Embedded quotes are doubled."
+msgstr ""
+
+#: xml/tcn.xml:29(programlisting)
+#, no-wrap
+msgid "test=# create table tcndata test-# ( test(# a int\n  not null, test(# b date not null, test(# c text, test(# primary\n  key (a, b) test(# ); CREATE TABLE test=# create trigger\n  tcndata_tcn_trigger test-# after insert or update or delete on\n  tcndata test-# for each row execute procedure\n  triggered_change_notification(); CREATE TRIGGER test=# listen\n  tcn; LISTEN test=# insert into tcndata values (1, date\n  '2012-12-22', 'one'), test-# (1, date '2012-12-23', 'another'),\n  test-# (2, date '2012-12-23', 'two'); INSERT 0 3 Asynchronous\n  notification \"tcn\" with payload\n  \"\"tcndata\",I,\"a\"='1',\"b\"='2012-12-22'\" received from server\n  process with PID 22770. Asynchronous notification \"tcn\" with\n  payload \"\"tcndata\",I,\"a\"='1',\"b\"='2012-12-23'\" received from\n  server process with PID 22770. Asynchronous notification \"tcn\"\n  with payload \"\"tcndata\",I,\"a\"='2',\"b\"='2012-12-23'\" received from\n  server process with PID 22770. test=# update tcndata set c =\n  'uno' where a = 1; UPDATE 2 Asynchronous notification \"tcn\" with\n  payload \"\"tcndata\",U,\"a\"='1',\"b\"='2012-12-22'\" received from\n  server process with PID 22770. Asynchronous notification \"tcn\"\n  with payload \"\"tcndata\",U,\"a\"='1',\"b\"='2012-12-23'\" received from\n  server process with PID 22770. test=# delete from tcndata where a\n  = 1 and b = date '2012-12-22'; DELETE 1 Asynchronous notification\n  \"tcn\" with payload \"\"tcndata\",D,\"a\"='1',\"b\"='2012-12-22'\"\n  received from server process with PID\n  22770."
+msgstr ""
+
+#: xml/tcn.xml:28(para)
+msgid "A brief example of using the extension follows. <placeholder-1/>"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/tcn.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

@@ -1,0 +1,273 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/pg_config-ref.xml:4(primary) xml/ref/pg_config-ref.xml:7(refentrytitle) xml/ref/pg_config-ref.xml:12(refname) xml/ref/pg_config-ref.xml:19(command)
+msgid "pg_config"
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:9(refmiscinfo)
+msgid "Application"
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:15(productname)
+msgid "PostgreSQL"
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:13(refpurpose)
+msgid "retrieve information about the installed version of <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:21(replaceable)
+msgid "option"
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:26(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:27(para)
+msgid "The <application>pg_config</application>utility prints configuration parameters of the currently installed version of <productname>PostgreSQL</productname>. It is intended, for example, to be used by software packages that want to interface to <productname>PostgreSQL</productname>to facilitate finding the required header files and libraries."
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:37(title)
+msgid "Options"
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:44(option)
+msgid "--bindir"
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:47(para)
+msgid "Print the location of user executables. Use this, for example, to find the <command>psql</command>program. This is normally also the location where the <filename>pg_config</filename>program resides."
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:56(option)
+msgid "--docdir"
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:59(para)
+msgid "Print the location of documentation files."
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:64(option)
+msgid "--htmldir"
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:67(para)
+msgid "Print the location of HTML documentation files."
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:73(option)
+msgid "--includedir"
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:76(para)
+msgid "Print the location of C header files of the client interfaces."
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:82(option)
+msgid "--pkgincludedir"
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:85(para)
+msgid "Print the location of other C header files."
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:90(option)
+msgid "--includedir-server"
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:93(para)
+msgid "Print the location of C header files for server programming."
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:99(option)
+msgid "--libdir"
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:102(para)
+msgid "Print the location of object code libraries."
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:107(option)
+msgid "--pkglibdir"
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:110(para)
+msgid "Print the location of dynamically loadable modules, or where the server would search for them. (Other architecture-dependent data files might also be installed in this directory.)"
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:118(option)
+msgid "--localedir"
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:121(para)
+msgid "Print the location of locale support files. (This will be an empty string if locale support was not configured when <productname>PostgreSQL</productname>was built.)"
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:129(option)
+msgid "--mandir"
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:132(para)
+msgid "Print the location of manual pages."
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:137(option)
+msgid "--sharedir"
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:140(para)
+msgid "Print the location of architecture-independent support files."
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:146(option)
+msgid "--sysconfdir"
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:149(para)
+msgid "Print the location of system-wide configuration files."
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:155(option)
+msgid "--pgxs"
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:158(para)
+msgid "Print the location of extension makefiles."
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:163(option)
+msgid "--configure"
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:166(para)
+msgid "Print the options that were given to the <filename>configure</filename>script when <productname>PostgreSQL</productname>was configured for building. This can be used to reproduce the identical configuration, or to find out with what options a binary package was built. (Note however that binary packages often contain vendor-specific custom patches.) See also the examples below."
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:178(option)
+msgid "--cc"
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:181(para)
+msgid "Print the value of the <varname>CC</varname>variable that was used for building <productname>PostgreSQL</productname>. This shows the C compiler used."
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:189(option)
+msgid "--cppflags"
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:192(para)
+msgid "Print the value of the <varname>CPPFLAGS</varname>variable that was used for building <productname>PostgreSQL</productname>. This shows C compiler switches needed at preprocessing time (typically, <literal>-I</literal>switches)."
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:203(option)
+msgid "--cflags"
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:206(para)
+msgid "Print the value of the <varname>CFLAGS</varname>variable that was used for building <productname>PostgreSQL</productname>. This shows C compiler switches."
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:215(option)
+msgid "--cflags_sl"
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:218(para)
+msgid "Print the value of the <varname>CFLAGS_SL</varname>variable that was used for building <productname>PostgreSQL</productname>. This shows extra C compiler switches used for building shared libraries."
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:228(option)
+msgid "--ldflags"
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:231(para)
+msgid "Print the value of the <varname>LDFLAGS</varname>variable that was used for building <productname>PostgreSQL</productname>. This shows linker switches."
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:240(option)
+msgid "--ldflags_ex"
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:243(para)
+msgid "Print the value of the <varname>LDFLAGS_EX</varname>variable that was used for building <productname>PostgreSQL</productname>. This shows linker switches used for building executables only."
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:252(option)
+msgid "--ldflags_sl"
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:255(para)
+msgid "Print the value of the <varname>LDFLAGS_SL</varname>variable that was used for building <productname>PostgreSQL</productname>. This shows linker switches used for building shared libraries only."
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:264(option)
+msgid "--libs"
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:267(para)
+msgid "Print the value of the <varname>LIBS</varname>variable that was used for building <productname>PostgreSQL</productname>. This normally contains <literal>-l</literal>switches for external libraries linked into <productname>PostgreSQL</productname>."
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:279(option)
+msgid "--version"
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:282(para)
+msgid "Print the version of <productname>PostgreSQL</productname>."
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:288(option)
+msgid "-?"
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:291(option)
+msgid "--help"
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:294(para)
+msgid "Show help about <application>pg_config</application>command line arguments, and exit."
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:38(para)
+msgid "To use <application>pg_config</application>, supply one or more of the following options: <placeholder-1/>If more than one option is given, the information is printed in that order, one item per line. If no options are given, all available information is printed, with labels."
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:305(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:306(para)
+msgid "The options <option>--docdir</option>, <option>--pkgincludedir</option>, <option>--localedir</option>, <option>--mandir</option>, <option>--sharedir</option>, <option>--sysconfdir</option>, <option>--cc</option>, <option>--cppflags</option>, <option>--cflags</option>, <option>--cflags_sl</option>, <option>--ldflags</option>, <option>--ldflags_sl</option>, and <option>--libs</option>were added in <productname>PostgreSQL</productname>8.1. The option <option>--htmldir</option>was added in <productname>PostgreSQL</productname>8.4. The option <option>--ldflags_ex</option>was added in <productname>PostgreSQL</productname>9.0."
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:327(title)
+msgid "Example"
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:330(programlisting)
+#, no-wrap
+msgid "eval ./configure `pg_config\n    --configure`"
+msgstr ""
+
+#: xml/ref/pg_config-ref.xml:328(para)
+msgid "To reproduce the build configuration of the current PostgreSQL installation, run the following command: <placeholder-1/>The output of <literal>pg_config --configure</literal>contains shell quotation marks so arguments with spaces are represented correctly. Therefore, using <literal>eval</literal>is required for proper results."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/pg_config-ref.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

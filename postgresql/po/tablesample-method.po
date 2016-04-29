@@ -1,0 +1,171 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/tablesample-method.xml:3(title)
+msgid "Writing A Table Sampling Method"
+msgstr ""
+
+#: xml/tablesample-method.xml:5(primary)
+msgid "table sampling method"
+msgstr ""
+
+#: xml/tablesample-method.xml:9(literal)
+msgid "TABLESAMPLE"
+msgstr ""
+
+#: xml/tablesample-method.xml:8(primary)
+msgid "<placeholder-1/>method"
+msgstr ""
+
+#: xml/tablesample-method.xml:11(para)
+msgid "<productname>PostgreSQL</productname>'s implementation of the <literal>TABLESAMPLE</literal>clause supports custom table sampling methods, in addition to the <literal>BERNOULLI</literal>and <literal>SYSTEM</literal>methods that are required by the SQL standard. The sampling method determines which rows of the table will be selected when the <literal>TABLESAMPLE</literal>clause is used."
+msgstr ""
+
+#: xml/tablesample-method.xml:23(programlisting)
+#, no-wrap
+msgid "method_name(internal) RETURNS\n  tsm_handler"
+msgstr ""
+
+#: xml/tablesample-method.xml:20(para)
+msgid "At the SQL level, a table sampling method is represented by a single SQL function, typically implemented in C, having the signature <placeholder-1/>The name of the function is the same method name appearing in the <literal>TABLESAMPLE</literal>clause. The <type>internal</type>argument is a dummy (always having value zero) that simply serves to prevent this function from being called directly from a SQL command. The result of the function must be a palloc'd struct of type <type>TsmRoutine</type>, which contains pointers to support functions for the sampling method. These support functions are plain C functions and are not visible or callable at the SQL level. The support functions are described in <xref linkend=\"tablesample-support-functions\">.</xref>"
+msgstr ""
+
+#: xml/tablesample-method.xml:36(para)
+msgid "In addition to function pointers, the <type>TsmRoutine</type>struct must provide these additional fields:"
+msgstr ""
+
+#: xml/tablesample-method.xml:42(literal)
+msgid "List *parameterTypes"
+msgstr ""
+
+#: xml/tablesample-method.xml:45(para)
+msgid "This is an OID list containing the data type OIDs of the parameter(s) that will be accepted by the <literal>TABLESAMPLE</literal>clause when this sampling method is used. For example, for the built-in methods, this list contains a single item with value <literal>FLOAT4OID</literal>, which represents the sampling percentage. Custom sampling methods can have more or different parameters."
+msgstr ""
+
+#: xml/tablesample-method.xml:57(literal)
+msgid "bool repeatable_across_queries"
+msgstr ""
+
+#: xml/tablesample-method.xml:60(para)
+msgid "If <literal>true</literal>, the sampling method can deliver identical samples across successive queries, if the same parameters and <literal>REPEATABLE</literal>seed value are supplied each time and the table contents have not changed. When this is <literal>false</literal>, the <literal>REPEATABLE</literal>clause is not accepted for use with the sampling method."
+msgstr ""
+
+#: xml/tablesample-method.xml:73(literal)
+msgid "bool repeatable_across_scans"
+msgstr ""
+
+#: xml/tablesample-method.xml:76(para)
+msgid "If <literal>true</literal>, the sampling method can deliver identical samples across successive scans in the same query (assuming unchanging parameters, seed value, and snapshot). When this is <literal>false</literal>, the planner will not select plans that would require scanning the sampled table more than once, since that might result in inconsistent query output."
+msgstr ""
+
+#: xml/tablesample-method.xml:88(para)
+msgid "The <type>TsmRoutine</type>struct type is declared in <filename>src/include/access/tsmapi.h</filename>, which see for additional details."
+msgstr ""
+
+#: xml/tablesample-method.xml:92(para)
+msgid "The table sampling methods included in the standard distribution are good references when trying to write your own. Look into the <filename>src/backend/access/tablesample</filename>subdirectory of the source tree for the built-in sampling methods, and into the <filename>contrib</filename>subdirectory for add-on methods."
+msgstr ""
+
+#: xml/tablesample-method.xml:101(title)
+msgid "Sampling Method Support Functions"
+msgstr ""
+
+#: xml/tablesample-method.xml:102(para)
+msgid "The TSM handler function returns a palloc'd <type>TsmRoutine</type>struct containing pointers to the support functions described below. Most of the functions are required, but some are optional, and those pointers can be NULL."
+msgstr ""
+
+#: xml/tablesample-method.xml:108(programlisting)
+#, no-wrap
+msgid "void SampleScanGetSampleSize (PlannerInfo\n    *root, RelOptInfo *baserel, List *paramexprs, BlockNumber\n    *pages, double *tuples);"
+msgstr ""
+
+#: xml/tablesample-method.xml:107(para)
+msgid "<placeholder-1/>This function is called during planning. It must estimate the number of relation pages that will be read during a sample scan, and the number of tuples that will be selected by the scan. (For example, these might be determined by estimating the sampling fraction, and then multiplying the <literal>baserel-pages</literal>and <literal>baserel-tuples</literal>numbers by that, being sure to round the results to integral values.) The <literal>paramexprs</literal>list holds the expression(s) that are parameters to the <literal>TABLESAMPLE</literal>clause. It is recommended to use <function>estimate_expression_value()</function>to try to reduce these expressions to constants, if their values are needed for estimation purposes; but the function must provide size estimates even if they cannot be reduced, and it should not fail even if the values appear invalid (remember that they're only estimates of what the run-time values will be). The <literal>pages</literal>and <literal>tuples</literal>parameters are outputs."
+msgstr ""
+
+#: xml/tablesample-method.xml:132(programlisting)
+#, no-wrap
+msgid "void InitSampleScan (SampleScanState *node, int\n    eflags);"
+msgstr ""
+
+#: xml/tablesample-method.xml:131(para)
+msgid "<placeholder-1/>Initialize for execution of a SampleScan plan node. This is called during executor startup. It should perform any initialization needed before processing can start. The <structname>SampleScanState</structname>node has already been created, but its <structfield>tsm_state</structfield>field is NULL. The <function>InitSampleScan</function>function can palloc whatever internal state data is needed by the sampling method, and store a pointer to it in <literal>node-tsm_state</literal>. Information about the table to scan is accessible through other fields of the <structname>SampleScanState</structname>node (but note that the <literal>node-ss.ss_currentScanDesc</literal>scan descriptor is not set up yet). <literal>eflags</literal>contains flag bits describing the executor's operating mode for this plan node."
+msgstr ""
+
+#: xml/tablesample-method.xml:151(para)
+msgid "When <literal>(eflags EXEC_FLAG_EXPLAIN_ONLY)</literal>is true, the scan will not actually be performed, so this function should only do the minimum required to make the node state valid for <command>EXPLAIN</command>and <function>EndSampleScan</function>."
+msgstr ""
+
+#: xml/tablesample-method.xml:157(para)
+msgid "This function can be omitted (set the pointer to NULL), in which case <function>BeginSampleScan</function>must perform all initialization needed by the sampling method."
+msgstr ""
+
+#: xml/tablesample-method.xml:162(programlisting)
+#, no-wrap
+msgid "void BeginSampleScan (SampleScanState *node,\n    Datum *params, int nparams, uint32 seed);"
+msgstr ""
+
+#: xml/tablesample-method.xml:161(para)
+msgid "<placeholder-1/>Begin execution of a sampling scan. This is called just before the first attempt to fetch a tuple, and may be called again if the scan needs to be restarted. Information about the table to scan is accessible through fields of the <structname>SampleScanState</structname>node (but note that the <literal>node-ss.ss_currentScanDesc</literal>scan descriptor is not set up yet). The <literal>params</literal>array, of length <literal>nparams</literal>, contains the values of the parameters supplied in the <literal>TABLESAMPLE</literal>clause. These will have the number and types specified in the sampling method's <literal>parameterTypes</literal>list, and have been checked to not be null. <literal>seed</literal>contains a seed to use for any random numbers generated within the sampling method; it is either a hash derived from the <literal>REPEATABLE</literal>value if one was given, or the result of <literal>random()</literal>if not."
+msgstr ""
+
+#: xml/tablesample-method.xml:185(para)
+msgid "This function may adjust the fields <literal>node-use_bulkread</literal>and <literal>node-use_pagemode</literal>. If <literal>node-use_bulkread</literal>is <literal>true</literal>, which it is by default, the scan will use a buffer access strategy that encourages recycling buffers after use. It might be reasonable to set this to <literal>false</literal>if the scan will visit only a small fraction of the table's pages. If <literal>node-use_pagemode</literal>is <literal>true</literal>, which it is by default, the scan will perform visibility checking in a single pass for all tuples on each visited page. It might be reasonable to set this to <literal>false</literal>if the scan will select only a small fraction of the tuples on each visited page. That will result in fewer tuple visibility checks being performed, though each one will be more expensive because it will require more locking."
+msgstr ""
+
+#: xml/tablesample-method.xml:203(para)
+msgid "If the sampling method is marked <literal>repeatable_across_scans</literal>, it must be able to select the same set of tuples during a rescan as it did originally, that is a fresh call of <function>BeginSampleScan</function>must lead to selecting the same tuples as before (if the <literal>TABLESAMPLE</literal>parameters and seed don't change)."
+msgstr ""
+
+#: xml/tablesample-method.xml:212(programlisting)
+#, no-wrap
+msgid "BlockNumber NextSampleBlock (SampleScanState\n    *node);"
+msgstr ""
+
+#: xml/tablesample-method.xml:211(para)
+msgid "<placeholder-1/>Returns the block number of the next page to be scanned, or <literal>InvalidBlockNumber</literal>if no pages remain to be scanned."
+msgstr ""
+
+#: xml/tablesample-method.xml:217(para)
+msgid "This function can be omitted (set the pointer to NULL), in which case the core code will perform a sequential scan of the entire relation. Such a scan can use synchronized scanning, so that the sampling method cannot assume that the relation pages are visited in the same order on each scan."
+msgstr ""
+
+#: xml/tablesample-method.xml:223(programlisting)
+#, no-wrap
+msgid "OffsetNumber NextSampleTuple (SampleScanState\n    *node, BlockNumber blockno, OffsetNumber\n    maxoffset);"
+msgstr ""
+
+#: xml/tablesample-method.xml:222(para)
+msgid "<placeholder-1/>Returns the offset number of the next tuple to be sampled on the specified page, or <literal>InvalidOffsetNumber</literal>if no tuples remain to be sampled. <literal>maxoffset</literal>is the largest offset number in use on the page."
+msgstr ""
+
+#: xml/tablesample-method.xml:232(para)
+msgid "<function>NextSampleTuple</function>is not explicitly told which of the offset numbers in the range <literal>1 .. maxoffset</literal>actually contain valid tuples. This is not normally a problem since the core code ignores requests to sample missing or invisible tuples; that should not result in any bias in the sample. However, if necessary, the function can examine <literal> node-ss.ss_currentScanDesc-rs_vistuples[]</literal>to identify which tuples are valid and visible. (This requires <literal>node-use_pagemode</literal>to be <literal>true</literal>.)"
+msgstr ""
+
+#: xml/tablesample-method.xml:247(para)
+msgid "<function>NextSampleTuple</function>must <emphasis>not</emphasis>assume that <literal>blockno</literal>is the same page number returned by the most recent <function>NextSampleBlock</function>call. It was returned by some previous <function>NextSampleBlock</function>call, but the core code is allowed to call <function>NextSampleBlock</function>in advance of actually scanning pages, so as to support prefetching. It is OK to assume that once sampling of a given page begins, successive <function>NextSampleTuple</function>calls all refer to the same page until <literal>InvalidOffsetNumber</literal>is returned."
+msgstr ""
+
+#: xml/tablesample-method.xml:264(programlisting)
+#, no-wrap
+msgid "void EndSampleScan (SampleScanState\n    *node);"
+msgstr ""
+
+#: xml/tablesample-method.xml:263(para)
+msgid "<placeholder-1/>End the scan and release resources. It is normally not important to release palloc'd memory, but any externally-visible resources should be cleaned up. This function can be omitted (set the pointer to NULL) in the common case where no such resources exist."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/tablesample-method.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

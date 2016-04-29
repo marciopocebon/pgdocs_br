@@ -1,0 +1,268 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/alter_extension.xml:4(primary) xml/ref/alter_extension.xml:7(refentrytitle) xml/ref/alter_extension.xml:12(refname)
+msgid "ALTER EXTENSION"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:13(refpurpose)
+msgid "change the definition of an extension"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:17(replaceable) xml/ref/alter_extension.xml:20(replaceable) xml/ref/alter_extension.xml:23(replaceable) xml/ref/alter_extension.xml:26(replaceable) xml/ref/alter_extension.xml:171(replaceable)
+msgid "name"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:18(replaceable) xml/ref/alter_extension.xml:179(replaceable)
+msgid "new_version"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:21(replaceable) xml/ref/alter_extension.xml:193(replaceable)
+msgid "new_schema"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:24(replaceable) xml/ref/alter_extension.xml:27(replaceable) xml/ref/alter_extension.xml:29(replaceable) xml/ref/alter_extension.xml:132(replaceable) xml/ref/alter_extension.xml:146(replaceable)
+msgid "member_object"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:28(phrase)
+msgid "where <placeholder-1/>is:"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:31(replaceable) xml/ref/alter_extension.xml:205(replaceable)
+msgid "aggregate_name"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:32(replaceable) xml/ref/alter_extension.xml:88(replaceable)
+msgid "aggregate_signature"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:33(replaceable) xml/ref/alter_extension.xml:227(replaceable)
+msgid "source_type"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:34(replaceable) xml/ref/alter_extension.xml:236(replaceable)
+msgid "target_type"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:35(replaceable) xml/ref/alter_extension.xml:37(replaceable) xml/ref/alter_extension.xml:39(replaceable) xml/ref/alter_extension.xml:41(replaceable) xml/ref/alter_extension.xml:43(replaceable) xml/ref/alter_extension.xml:45(replaceable) xml/ref/alter_extension.xml:53(replaceable) xml/ref/alter_extension.xml:59(replaceable) xml/ref/alter_extension.xml:62(replaceable) xml/ref/alter_extension.xml:65(replaceable) xml/ref/alter_extension.xml:67(replaceable) xml/ref/alter_extension.xml:69(replaceable) xml/ref/alter_extension.xml:71(replaceable) xml/ref/alter_extension.xml:73(replaceable) xml/ref/alter_extension.xml:75(replaceable) xml/ref/alter_extension.xml:77(replaceable) xml/ref/alter_extension.xml:79(replaceable) xml/ref/alter_extension.xml:81(replaceable) xml/ref/alter_extension.xml:85(replaceable) xml/ref/alter_extension.xml:86(replaceable) xml/ref/alter_extension.xml:201(replaceable)
+msgid "object_name"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:47(replaceable) xml/ref/alter_extension.xml:209(replaceable)
+msgid "function_name"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:49(replaceable) xml/ref/alter_extension.xml:90(replaceable) xml/ref/alter_extension.xml:93(replaceable) xml/ref/alter_extension.xml:96(replaceable) xml/ref/alter_extension.xml:245(replaceable)
+msgid "argmode"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:50(replaceable) xml/ref/alter_extension.xml:91(replaceable) xml/ref/alter_extension.xml:94(replaceable) xml/ref/alter_extension.xml:97(replaceable) xml/ref/alter_extension.xml:267(replaceable)
+msgid "argname"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:51(replaceable) xml/ref/alter_extension.xml:92(replaceable) xml/ref/alter_extension.xml:95(replaceable) xml/ref/alter_extension.xml:98(replaceable) xml/ref/alter_extension.xml:280(replaceable)
+msgid "argtype"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:55(replaceable) xml/ref/alter_extension.xml:213(replaceable)
+msgid "operator_name"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:56(replaceable) xml/ref/alter_extension.xml:289(replaceable)
+msgid "left_type"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:57(replaceable) xml/ref/alter_extension.xml:292(replaceable)
+msgid "right_type"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:60(replaceable) xml/ref/alter_extension.xml:63(replaceable)
+msgid "index_method"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:83(replaceable) xml/ref/alter_extension.xml:311(replaceable)
+msgid "type_name"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:84(replaceable) xml/ref/alter_extension.xml:320(replaceable)
+msgid "lang_name"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:87(phrase)
+msgid "and <placeholder-1/>is:"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:16(synopsis)
+#, no-wrap
+msgid "ALTER EXTENSION \n    <placeholder-1/>UPDATE [ TO \n    <placeholder-2/>] ALTER\n    EXTENSION \n    <placeholder-3/>SET SCHEMA \n    <placeholder-4/>ALTER\n    EXTENSION \n    <placeholder-5/>ADD \n    <placeholder-6/>ALTER\n    EXTENSION \n    <placeholder-7/>DROP \n    <placeholder-8/>\n    <placeholder-9/>AGGREGATE \n    <placeholder-10/>( \n    <placeholder-11/>) | CAST ( \n    <placeholder-12/>AS \n    <placeholder-13/>) | COLLATION \n    <placeholder-14/>|\n    CONVERSION \n    <placeholder-15/>|\n    DOMAIN \n    <placeholder-16/>| EVENT\n    TRIGGER \n    <placeholder-17/>|\n    FOREIGN DATA WRAPPER \n    <placeholder-18/>|\n    FOREIGN TABLE \n    <placeholder-19/>|\n    FUNCTION \n    <placeholder-20/>( [ [\n    \n    <placeholder-21/>] [ \n    <placeholder-22/>] \n    <placeholder-23/>[, ...] ] )\n    | MATERIALIZED VIEW \n    <placeholder-24/>|\n    OPERATOR \n    <placeholder-25/>( \n    <placeholder-26/>, \n    <placeholder-27/>) |\n    OPERATOR CLASS \n    <placeholder-28/>USING \n    <placeholder-29/>|\n    OPERATOR FAMILY \n    <placeholder-30/>USING \n    <placeholder-31/>| [\n    PROCEDURAL ] LANGUAGE \n    <placeholder-32/>|\n    SCHEMA \n    <placeholder-33/>|\n    SEQUENCE \n    <placeholder-34/>|\n    SERVER \n    <placeholder-35/>| TABLE\n    \n    <placeholder-36/>| TEXT\n    SEARCH CONFIGURATION \n    <placeholder-37/>| TEXT\n    SEARCH DICTIONARY \n    <placeholder-38/>| TEXT\n    SEARCH PARSER \n    <placeholder-39/>| TEXT\n    SEARCH TEMPLATE \n    <placeholder-40/>|\n    TRANSFORM FOR \n    <placeholder-41/>LANGUAGE \n    <placeholder-42/>| TYPE \n    <placeholder-43/>| VIEW \n    <placeholder-44/>\n    <placeholder-45/>* | [\n    \n    <placeholder-46/>] [ \n    <placeholder-47/>] \n    <placeholder-48/>[ , ... ] | [ [ \n    <placeholder-49/>] [ \n    <placeholder-50/>] \n    <placeholder-51/>[ , ... ] ] ORDER BY [ \n    <placeholder-52/>] [ \n    <placeholder-53/>] \n    <placeholder-54/>[ , ... ]"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:101(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:108(literal)
+msgid "UPDATE"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:111(para)
+msgid "This form updates the extension to a newer version. The extension must supply a suitable update script (or series of scripts) that can modify the currently-installed version into the requested version."
+msgstr ""
+
+#: xml/ref/alter_extension.xml:120(literal)
+msgid "SET SCHEMA"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:123(para)
+msgid "This form moves the extension's objects into another schema. The extension has to be <firstterm>relocatable</firstterm>for this command to succeed."
+msgstr ""
+
+#: xml/ref/alter_extension.xml:131(literal)
+msgid "ADD <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:136(para)
+msgid "This form adds an existing object to the extension. This is mainly useful in extension update scripts. The object will subsequently be treated as a member of the extension; notably, it can only be dropped by dropping the extension."
+msgstr ""
+
+#: xml/ref/alter_extension.xml:145(literal)
+msgid "DROP <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:150(para)
+msgid "This form removes a member object from the extension. This is mainly useful in extension update scripts. The object is not dropped, only disassociated from the extension."
+msgstr ""
+
+#: xml/ref/alter_extension.xml:102(para)
+msgid "<command>ALTER EXTENSION</command>changes the definition of an installed extension. There are several subforms: <placeholder-1/>See <xref linkend=\"extend-extensions\">for more information about these operations.</xref>"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:159(para)
+msgid "You must own the extension to use <command>ALTER EXTENSION</command>. The <literal>ADD</literal>/ <literal>DROP</literal>forms require ownership of the added/dropped object as well."
+msgstr ""
+
+#: xml/ref/alter_extension.xml:166(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:174(para)
+msgid "The name of an installed extension."
+msgstr ""
+
+#: xml/ref/alter_extension.xml:183(para)
+msgid "The desired new version of the extension. This can be written as either an identifier or a string literal. If not specified, <command>ALTER EXTENSION UPDATE</command>attempts to update to whatever is shown as the default version in the extension's control file."
+msgstr ""
+
+#: xml/ref/alter_extension.xml:196(para)
+msgid "The new schema for the extension."
+msgstr ""
+
+#: xml/ref/alter_extension.xml:217(para)
+msgid "The name of an object to be added to or removed from the extension. Names of tables, aggregates, domains, foreign tables, functions, operators, operator classes, operator families, sequences, text search objects, types, and views can be schema-qualified."
+msgstr ""
+
+#: xml/ref/alter_extension.xml:230(para)
+msgid "The name of the source data type of the cast."
+msgstr ""
+
+#: xml/ref/alter_extension.xml:239(para)
+msgid "The name of the target data type of the cast."
+msgstr ""
+
+#: xml/ref/alter_extension.xml:248(para)
+msgid "The mode of a function or aggregate argument: <literal>IN</literal>, <literal>OUT</literal>, <literal>INOUT</literal>, or <literal>VARIADIC</literal>. If omitted, the default is <literal>IN</literal>. Note that <command>ALTER EXTENSION</command>does not actually pay any attention to <literal>OUT</literal>arguments, since only the input arguments are needed to determine the function's identity. So it is sufficient to list the <literal>IN</literal>, <literal>INOUT</literal>, and <literal>VARIADIC</literal>arguments."
+msgstr ""
+
+#: xml/ref/alter_extension.xml:270(para)
+msgid "The name of a function or aggregate argument. Note that <command>ALTER EXTENSION</command>does not actually pay any attention to argument names, since only the argument data types are needed to determine the function's identity."
+msgstr ""
+
+#: xml/ref/alter_extension.xml:283(para)
+msgid "The data type of a function or aggregate argument."
+msgstr ""
+
+#: xml/ref/alter_extension.xml:295(para)
+msgid "The data type(s) of the operator's arguments (optionally schema-qualified). Write <literal>NONE</literal>for the missing argument of a prefix or postfix operator."
+msgstr ""
+
+#: xml/ref/alter_extension.xml:303(literal)
+msgid "PROCEDURAL"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:306(para)
+msgid "This is a noise word."
+msgstr ""
+
+#: xml/ref/alter_extension.xml:314(para)
+msgid "The name of the data type of the transform."
+msgstr ""
+
+#: xml/ref/alter_extension.xml:323(para)
+msgid "The name of the language of the transform."
+msgstr ""
+
+#: xml/ref/alter_extension.xml:330(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:333(programlisting)
+#, no-wrap
+msgid "ALTER EXTENSION hstore UPDATE TO\n    '2.0';"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:331(para)
+msgid "To update the <literal>hstore</literal>extension to version 2.0: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:338(programlisting)
+#, no-wrap
+msgid "ALTER EXTENSION hstore SET SCHEMA\n    utils;"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:335(para)
+msgid "To change the schema of the <literal>hstore</literal>extension to <literal>utils</literal>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:342(programlisting)
+#, no-wrap
+msgid "ALTER EXTENSION hstore ADD FUNCTION\n    populate_record(anyelement, hstore);"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:340(para)
+msgid "To add an existing function to the <literal>hstore</literal>extension: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:346(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/alter_extension.xml:347(para)
+msgid "<command>ALTER EXTENSION</command>is a <productname>PostgreSQL</productname>extension."
+msgstr ""
+
+#: xml/ref/alter_extension.xml:352(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/alter_extension.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

@@ -1,0 +1,106 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/drop_tstemplate.xml:4(primary) xml/ref/drop_tstemplate.xml:7(refentrytitle) xml/ref/drop_tstemplate.xml:12(refname)
+msgid "DROP TEXT SEARCH TEMPLATE"
+msgstr ""
+
+#: xml/ref/drop_tstemplate.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/drop_tstemplate.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/drop_tstemplate.xml:13(refpurpose)
+msgid "remove a text search template"
+msgstr ""
+
+#: xml/ref/drop_tstemplate.xml:17(replaceable) xml/ref/drop_tstemplate.xml:41(replaceable)
+msgid "name"
+msgstr ""
+
+#: xml/ref/drop_tstemplate.xml:16(synopsis)
+#, no-wrap
+msgid "DROP TEXT SEARCH TEMPLATE [ IF EXISTS ] \n    <placeholder-1/>[ CASCADE |\n    RESTRICT ]"
+msgstr ""
+
+#: xml/ref/drop_tstemplate.xml:21(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/drop_tstemplate.xml:22(para)
+msgid "<command>DROP TEXT SEARCH TEMPLATE</command>drops an existing text search template. You must be a superuser to use this command."
+msgstr ""
+
+#: xml/ref/drop_tstemplate.xml:28(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/drop_tstemplate.xml:32(literal)
+msgid "IF EXISTS"
+msgstr ""
+
+#: xml/ref/drop_tstemplate.xml:35(para)
+msgid "Do not throw an error if the text search template does not exist. A notice is issued in this case."
+msgstr ""
+
+#: xml/ref/drop_tstemplate.xml:44(para)
+msgid "The name (optionally schema-qualified) of an existing text search template."
+msgstr ""
+
+#: xml/ref/drop_tstemplate.xml:50(literal)
+msgid "CASCADE"
+msgstr ""
+
+#: xml/ref/drop_tstemplate.xml:53(para)
+msgid "Automatically drop objects that depend on the text search template."
+msgstr ""
+
+#: xml/ref/drop_tstemplate.xml:59(literal)
+msgid "RESTRICT"
+msgstr ""
+
+#: xml/ref/drop_tstemplate.xml:62(para)
+msgid "Refuse to drop the text search template if any objects depend on it. This is the default."
+msgstr ""
+
+#: xml/ref/drop_tstemplate.xml:69(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/drop_tstemplate.xml:72(programlisting)
+#, no-wrap
+msgid "DROP TEXT SEARCH TEMPLATE\n    thesaurus;"
+msgstr ""
+
+#: xml/ref/drop_tstemplate.xml:70(para)
+msgid "Remove the text search template <literal>thesaurus</literal>: <placeholder-1/>This command will not succeed if there are any existing text search dictionaries that use the template. Add <literal>CASCADE</literal>to drop such dictionaries along with the template."
+msgstr ""
+
+#: xml/ref/drop_tstemplate.xml:80(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/drop_tstemplate.xml:81(para)
+msgid "There is no <command>DROP TEXT SEARCH TEMPLATE</command>statement in the SQL standard."
+msgstr ""
+
+#: xml/ref/drop_tstemplate.xml:86(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/drop_tstemplate.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

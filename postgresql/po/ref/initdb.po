@@ -1,0 +1,404 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/initdb.xml:4(primary) xml/ref/initdb.xml:7(refentrytitle) xml/ref/initdb.xml:12(refname) xml/ref/initdb.xml:19(command)
+msgid "initdb"
+msgstr ""
+
+#: xml/ref/initdb.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: xml/ref/initdb.xml:9(refmiscinfo)
+msgid "Application"
+msgstr ""
+
+#: xml/ref/initdb.xml:14(productname)
+msgid "PostgreSQL"
+msgstr ""
+
+#: xml/ref/initdb.xml:13(refpurpose)
+msgid "create a new <placeholder-1/>database cluster"
+msgstr ""
+
+#: xml/ref/initdb.xml:21(replaceable)
+msgid "option"
+msgstr ""
+
+#: xml/ref/initdb.xml:26(option)
+msgid "--pgdata"
+msgstr ""
+
+#: xml/ref/initdb.xml:29(option)
+msgid "-D"
+msgstr ""
+
+#: xml/ref/initdb.xml:32(replaceable) xml/ref/initdb.xml:165(replaceable) xml/ref/initdb.xml:170(replaceable) xml/ref/initdb.xml:381(replaceable) xml/ref/initdb.xml:386(replaceable) xml/ref/initdb.xml:417(replaceable)
+msgid "directory"
+msgstr ""
+
+#: xml/ref/initdb.xml:37(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/initdb.xml:38(para)
+msgid "<command>initdb</command>creates a new <productname>PostgreSQL</productname>database cluster. A database cluster is a collection of databases that are managed by a single server instance."
+msgstr ""
+
+#: xml/ref/initdb.xml:43(para)
+msgid "Creating a database cluster consists of creating the directories in which the database data will live, generating the shared catalog tables (tables that belong to the whole cluster rather than to any particular database), and creating the <literal>template1</literal>and <literal>postgres</literal>databases. When you later create a new database, everything in the <literal>template1</literal>database is copied. (Therefore, anything installed in <literal>template1</literal>is automatically copied into each database created later.) The <literal>postgres</literal>database is a default database meant for use by users, utilities and third party applications."
+msgstr ""
+
+#: xml/ref/initdb.xml:58(para)
+msgid "Although <command>initdb</command>will attempt to create the specified data directory, it might not have permission if the parent directory of the desired data directory is root-owned. To initialize in such a setup, create an empty data directory as root, then use <command>chown</command>to assign ownership of that directory to the database user account, then <command>su</command>to become the database user to run <command>initdb</command>."
+msgstr ""
+
+#: xml/ref/initdb.xml:68(para)
+msgid "<command>initdb</command>must be run as the user that will own the server process, because the server needs to have access to the files and directories that <command>initdb</command>creates. Since the server cannot be run as root, you must not run <command>initdb</command>as root either. (It will in fact refuse to do so.)"
+msgstr ""
+
+#: xml/ref/initdb.xml:76(para)
+msgid "<command>initdb</command>initializes the database cluster's default locale and character set encoding. The character set encoding, collation order ( <literal>LC_COLLATE</literal>) and character set classes ( <literal>LC_CTYPE</literal>, e.g. upper, lower, digit) can be set separately for a database when it is created. <command>initdb</command>determines those settings for the <literal>template1</literal>database, which will serve as the default for all other databases."
+msgstr ""
+
+#: xml/ref/initdb.xml:86(para)
+msgid "To alter the default collation order or character set classes, use the <option>--lc-collate</option>and <option>--lc-ctype</option>options. Collation orders other than <literal>C</literal>or <literal>POSIX</literal>also have a performance penalty. For these reasons it is important to choose the right locale when running <command>initdb</command>."
+msgstr ""
+
+#: xml/ref/initdb.xml:96(para)
+msgid "The remaining locale categories can be changed later when the server is started. You can also use <option>--locale</option>to set the default for all locale categories, including collation order and character set classes. All server locale values ( <literal>lc_*</literal>) can be displayed via <command>SHOW ALL</command>. More details can be found in <xref linkend=\"locale\">.</xref>"
+msgstr ""
+
+#: xml/ref/initdb.xml:104(para)
+msgid "To alter the default encoding, use the <option>--encoding</option>. More details can be found in <xref linkend=\"multibyte\">.</xref>"
+msgstr ""
+
+#: xml/ref/initdb.xml:109(title)
+msgid "Options"
+msgstr ""
+
+#: xml/ref/initdb.xml:115(replaceable) xml/ref/initdb.xml:120(replaceable) xml/ref/initdb.xml:138(replaceable) xml/ref/initdb.xml:151(replaceable)
+msgid "authmethod"
+msgstr ""
+
+#: xml/ref/initdb.xml:114(option)
+msgid "-A <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/initdb.xml:119(option)
+msgid "--auth= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/initdb.xml:124(para)
+msgid "This option specifies the authentication method for local users used in <filename>pg_hba.conf</filename>( <literal>host</literal>and <literal>local</literal>lines). Do not use <literal>trust</literal>unless you trust all local users on your system. <literal>trust</literal>is the default for ease of installation."
+msgstr ""
+
+#: xml/ref/initdb.xml:137(option)
+msgid "--auth-host= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/initdb.xml:142(para)
+msgid "This option specifies the authentication method for local users via TCP/IP connections used in <filename>pg_hba.conf</filename>( <literal>host</literal>lines)."
+msgstr ""
+
+#: xml/ref/initdb.xml:150(option)
+msgid "--auth-local= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/initdb.xml:155(para)
+msgid "This option specifies the authentication method for local users via Unix-domain socket connections used in <filename>pg_hba.conf</filename>( <literal>local</literal>lines)."
+msgstr ""
+
+#: xml/ref/initdb.xml:164(option)
+msgid "-D <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/initdb.xml:169(option)
+msgid "--pgdata= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/initdb.xml:174(para)
+msgid "This option specifies the directory where the database cluster should be stored. This is the only information required by <command>initdb</command>, but you can avoid writing it by setting the <envar>PGDATA</envar>environment variable, which can be convenient since the database server ( <command>postgres</command>) can find the database directory later by the same variable."
+msgstr ""
+
+#: xml/ref/initdb.xml:188(replaceable) xml/ref/initdb.xml:193(replaceable)
+msgid "encoding"
+msgstr ""
+
+#: xml/ref/initdb.xml:187(option)
+msgid "-E <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/initdb.xml:192(option)
+msgid "--encoding= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/initdb.xml:197(para)
+msgid "Selects the encoding of the template database. This will also be the default encoding of any database you create later, unless you override it there. The default is derived from the locale, or <literal>SQL_ASCII</literal>if that does not work. The character sets supported by the <productname>PostgreSQL</productname>server are described in <xref linkend=\"multibyte-charset-supported\"> .</xref>"
+msgstr ""
+
+#: xml/ref/initdb.xml:212(option)
+msgid "-k"
+msgstr ""
+
+#: xml/ref/initdb.xml:215(option)
+msgid "--data-checksums"
+msgstr ""
+
+#: xml/ref/initdb.xml:218(para)
+msgid "Use checksums on data pages to help detect corruption by the I/O system that would otherwise be silent. Enabling checksums may incur a noticeable performance penalty. This option can only be set during initialization, and cannot be changed later. If set, checksums are calculated for all objects, in all databases."
+msgstr ""
+
+#: xml/ref/initdb.xml:230(replaceable) xml/ref/initdb.xml:244(replaceable) xml/ref/initdb.xml:248(replaceable) xml/ref/initdb.xml:252(replaceable) xml/ref/initdb.xml:256(replaceable) xml/ref/initdb.xml:260(replaceable) xml/ref/initdb.xml:264(replaceable)
+msgid "locale"
+msgstr ""
+
+#: xml/ref/initdb.xml:229(option)
+msgid "--locale= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/initdb.xml:233(para)
+msgid "Sets the default locale for the database cluster. If this option is not specified, the locale is inherited from the environment that <command>initdb</command>runs in. Locale support is described in <xref linkend=\"locale\">.</xref>"
+msgstr ""
+
+#: xml/ref/initdb.xml:243(option)
+msgid "--lc-collate= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/initdb.xml:247(option)
+msgid "--lc-ctype= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/initdb.xml:251(option)
+msgid "--lc-messages= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/initdb.xml:255(option)
+msgid "--lc-monetary= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/initdb.xml:259(option)
+msgid "--lc-numeric= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/initdb.xml:263(option)
+msgid "--lc-time= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/initdb.xml:267(para)
+msgid "Like <option>--locale</option>, but only sets the locale in the specified category."
+msgstr ""
+
+#: xml/ref/initdb.xml:274(option)
+msgid "--no-locale"
+msgstr ""
+
+#: xml/ref/initdb.xml:277(para)
+msgid "Equivalent to <option>--locale=C</option>."
+msgstr ""
+
+#: xml/ref/initdb.xml:283(option)
+msgid "-N"
+msgstr ""
+
+#: xml/ref/initdb.xml:286(option)
+msgid "--nosync"
+msgstr ""
+
+#: xml/ref/initdb.xml:289(para)
+msgid "By default, <command>initdb</command>will wait for all files to be written safely to disk. This option causes <command>initdb</command>to return without waiting, which is faster, but means that a subsequent operating system crash can leave the data directory corrupt. Generally, this option is useful for testing, but should not be used when creating a production installation."
+msgstr ""
+
+#: xml/ref/initdb.xml:303(replaceable)
+msgid "filename"
+msgstr ""
+
+#: xml/ref/initdb.xml:302(option)
+msgid "--pwfile= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/initdb.xml:306(para)
+msgid "Makes <command>initdb</command>read the database superuser's password from a file. The first line of the file is taken as the password."
+msgstr ""
+
+#: xml/ref/initdb.xml:314(option)
+msgid "-S"
+msgstr ""
+
+#: xml/ref/initdb.xml:317(option)
+msgid "--sync-only"
+msgstr ""
+
+#: xml/ref/initdb.xml:320(para)
+msgid "Safely write all database files to disk and exit. This does not perform any of the normal <application>initdb</application>operations."
+msgstr ""
+
+#: xml/ref/initdb.xml:328(replaceable) xml/ref/initdb.xml:332(replaceable)
+msgid "CFG"
+msgstr ""
+
+#: xml/ref/initdb.xml:327(option)
+msgid "-T <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/initdb.xml:331(option)
+msgid "--text-search-config= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/initdb.xml:335(para)
+msgid "Sets the default text search configuration. See <xref linkend=\"guc-default-text-search-config\">for further information.</xref>"
+msgstr ""
+
+#: xml/ref/initdb.xml:343(replaceable) xml/ref/initdb.xml:348(replaceable)
+msgid "username"
+msgstr ""
+
+#: xml/ref/initdb.xml:342(option)
+msgid "-U <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/initdb.xml:347(option)
+msgid "--username= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/initdb.xml:352(para)
+msgid "Selects the user name of the database superuser. This defaults to the name of the effective user running <command>initdb</command>. It is really not important what the superuser's name is, but one might choose to keep the customary name <systemitem>postgres</systemitem>, even if the operating system user's name is different."
+msgstr ""
+
+#: xml/ref/initdb.xml:364(option)
+msgid "-W"
+msgstr ""
+
+#: xml/ref/initdb.xml:367(option)
+msgid "--pwprompt"
+msgstr ""
+
+#: xml/ref/initdb.xml:370(para)
+msgid "Makes <command>initdb</command>prompt for a password to give the database superuser. If you don't plan on using password authentication, this is not important. Otherwise you won't be able to use password authentication until you have a password set up."
+msgstr ""
+
+#: xml/ref/initdb.xml:380(option)
+msgid "-X <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/initdb.xml:385(option)
+msgid "--xlogdir= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/initdb.xml:390(para)
+msgid "This option specifies the directory where the transaction log should be stored."
+msgstr ""
+
+#: xml/ref/initdb.xml:400(option)
+msgid "-d"
+msgstr ""
+
+#: xml/ref/initdb.xml:403(option)
+msgid "--debug"
+msgstr ""
+
+#: xml/ref/initdb.xml:406(para)
+msgid "Print debugging output from the bootstrap backend and a few other messages of lesser interest for the general public. The bootstrap backend is the program <command>initdb</command>uses to create the catalog tables. This option generates a tremendous amount of extremely boring output."
+msgstr ""
+
+#: xml/ref/initdb.xml:416(option)
+msgid "-L <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/initdb.xml:421(para)
+msgid "Specifies where <command>initdb</command>should find its input files to initialize the database cluster. This is normally not necessary. You will be told if you need to specify their location explicitly."
+msgstr ""
+
+#: xml/ref/initdb.xml:430(option)
+msgid "-n"
+msgstr ""
+
+#: xml/ref/initdb.xml:433(option)
+msgid "--noclean"
+msgstr ""
+
+#: xml/ref/initdb.xml:436(para)
+msgid "By default, when <command>initdb</command>determines that an error prevented it from completely creating the database cluster, it removes any files it might have created before discovering that it cannot finish the job. This option inhibits tidying-up and is thus useful for debugging."
+msgstr ""
+
+#: xml/ref/initdb.xml:396(para)
+msgid "Other, less commonly used, options are also available: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/initdb.xml:450(option)
+msgid "-V"
+msgstr ""
+
+#: xml/ref/initdb.xml:453(option)
+msgid "--version"
+msgstr ""
+
+#: xml/ref/initdb.xml:456(para)
+msgid "Print the <application>initdb</application>version and exit."
+msgstr ""
+
+#: xml/ref/initdb.xml:462(option)
+msgid "-?"
+msgstr ""
+
+#: xml/ref/initdb.xml:465(option)
+msgid "--help"
+msgstr ""
+
+#: xml/ref/initdb.xml:468(para)
+msgid "Show help about <application>initdb</application>command line arguments, and exit."
+msgstr ""
+
+#: xml/ref/initdb.xml:446(para)
+msgid "Other options: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/initdb.xml:476(title)
+msgid "Environment"
+msgstr ""
+
+#: xml/ref/initdb.xml:480(envar)
+msgid "PGDATA"
+msgstr ""
+
+#: xml/ref/initdb.xml:483(para)
+msgid "Specifies the directory where the database cluster is to be stored; can be overridden using the <option>-D</option>option."
+msgstr ""
+
+#: xml/ref/initdb.xml:490(envar)
+msgid "TZ"
+msgstr ""
+
+#: xml/ref/initdb.xml:493(para)
+msgid "Specifies the default time zone of the created database cluster. The value should be a full time zone name (see <xref linkend=\"datatype-timezones\">).</xref>"
+msgstr ""
+
+#: xml/ref/initdb.xml:500(para)
+msgid "This utility, like most other <productname>PostgreSQL</productname>utilities, also uses the environment variables supported by <application>libpq</application>(see <xref linkend=\"libpq-envars\">).</xref>"
+msgstr ""
+
+#: xml/ref/initdb.xml:507(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/initdb.xml:508(para)
+msgid "<command>initdb</command>can also be invoked via <command>pg_ctl initdb</command>."
+msgstr ""
+
+#: xml/ref/initdb.xml:513(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/initdb.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

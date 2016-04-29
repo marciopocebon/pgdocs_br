@@ -1,0 +1,1312 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/queries.xml:3(title)
+msgid "Queries"
+msgstr ""
+
+#: xml/queries.xml:5(primary)
+msgid "query"
+msgstr ""
+
+#: xml/queries.xml:8(primary) xml/queries.xml:1229(primary)
+msgid "SELECT"
+msgstr ""
+
+#: xml/queries.xml:10(para)
+msgid "The previous chapters explained how to create tables, how to fill them with data, and how to manipulate that data. Now we finally discuss how to retrieve the data from the database."
+msgstr ""
+
+#: xml/queries.xml:15(title)
+msgid "Overview"
+msgstr ""
+
+#: xml/queries.xml:16(para)
+msgid "The process of retrieving or the command to retrieve data from a database is called a <firstterm>query</firstterm>. In SQL the <xref linkend=\"sql-select\">command is used to specify queries. The general syntax of the <command>SELECT</command>command is <synopsis>\n    <optional>WITH \n    <replaceable>with_queries</replaceable></optional>SELECT \n    <replaceable>select_list</replaceable>FROM \n    <replaceable>table_expression</replaceable>\n    <optional>\n      <replaceable>sort_specification</replaceable>\n    </optional></synopsis>The following sections describe the details of the select list, the table expression, and the sort specification. <literal>WITH</literal>queries are treated last since they are an advanced feature.</xref>"
+msgstr ""
+
+#: xml/queries.xml:35(programlisting)
+#, no-wrap
+msgid "SELECT * FROM table1;"
+msgstr ""
+
+#: xml/queries.xml:54(programlisting)
+#, no-wrap
+msgid "SELECT a, b + c FROM\n    table1;"
+msgstr ""
+
+#: xml/queries.xml:34(para)
+msgid "A simple kind of query has the form: <placeholder-1/>Assuming that there is a table called <literal>table1</literal>, this command would retrieve all rows and all user-defined columns from <literal>table1</literal>. (The method of retrieval depends on the client application. For example, the <application>psql</application>program will display an ASCII-art table on the screen, while client libraries will offer functions to extract individual values from the query result.) The select list specification <literal>*</literal>means all columns that the table expression happens to provide. A select list can also select a subset of the available columns or make calculations using the columns. For example, if <literal>table1</literal>has columns named <literal>a</literal>, <literal>b</literal>, and <literal>c</literal>(and perhaps others) you can make the following query: <placeholder-2/>(assuming that <literal>b</literal>and <literal>c</literal>are of a numerical data type). See <xref linkend=\"queries-select-lists\">for more details.</xref>"
+msgstr ""
+
+#: xml/queries.xml:67(programlisting)
+#, no-wrap
+msgid "SELECT 3 * 4;"
+msgstr ""
+
+#: xml/queries.xml:70(programlisting)
+#, no-wrap
+msgid "SELECT random();"
+msgstr ""
+
+#: xml/queries.xml:60(para)
+msgid "<literal>FROM table1</literal>is a simple kind of table expression: it reads just one table. In general, table expressions can be complex constructs of base tables, joins, and subqueries. But you can also omit the table expression entirely and use the <command>SELECT</command>command as a calculator: <placeholder-1/>This is more useful if the expressions in the select list return varying results. For example, you could call a function this way: <placeholder-2/>"
+msgstr ""
+
+#: xml/queries.xml:73(title)
+msgid "Table Expressions"
+msgstr ""
+
+#: xml/queries.xml:75(primary)
+msgid "table expression"
+msgstr ""
+
+#: xml/queries.xml:77(para)
+msgid "A <firstterm>table expression</firstterm>computes a table. The table expression contains a <literal>FROM</literal>clause that is optionally followed by <literal>WHERE</literal>, <literal>GROUP BY</literal>, and <literal>HAVING</literal>clauses. Trivial table expressions simply refer to a table on disk, a so-called base table, but more complex expressions can be used to modify or combine base tables in various ways."
+msgstr ""
+
+#: xml/queries.xml:87(para)
+msgid "The optional <literal>WHERE</literal>, <literal>GROUP BY</literal>, and <literal>HAVING</literal>clauses in the table expression specify a pipeline of successive transformations performed on the table derived in the <literal>FROM</literal>clause. All these transformations produce a virtual table that provides the rows that are passed to the select list to compute the output rows of the query."
+msgstr ""
+
+#: xml/queries.xml:98(title)
+msgid "The <literal>FROM</literal>Clause"
+msgstr ""
+
+#: xml/queries.xml:100(para)
+msgid "The <xref linkend=\"sql-from\" endterm=\"sql-from-title\">derives a table from one or more other tables given in a comma-separated table reference list. <synopsis>FROM \n      <replaceable>table_reference</replaceable>\n      <optional>, \n      <replaceable>table_reference</replaceable>\n      <optional>, ...</optional></optional></synopsis>A table reference can be a table name (possibly schema-qualified), or a derived table such as a subquery, a <literal>JOIN</literal>construct, or complex combinations of these. If more than one table reference is listed in the <literal>FROM</literal>clause, the tables are cross-joined (that is, the Cartesian product of their rows is formed; see below). The result of the <literal>FROM</literal>list is an intermediate virtual table that can then be subject to transformations by the <literal>WHERE</literal>, <literal>GROUP BY</literal>, and <literal>HAVING</literal>clauses and is finally the result of the overall table expression.</xref>"
+msgstr ""
+
+#: xml/queries.xml:123(primary)
+msgid "ONLY"
+msgstr ""
+
+#: xml/queries.xml:125(para)
+msgid "When a table reference names a table that is the parent of a table inheritance hierarchy, the table reference produces rows of not only that table but all of its descendant tables, unless the key word <literal>ONLY</literal>precedes the table name. However, the reference produces only the columns that appear in the named table any columns added in subtables are ignored."
+msgstr ""
+
+#: xml/queries.xml:132(para)
+msgid "Instead of writing <literal>ONLY</literal>before the table name, you can write <literal>*</literal>after the table name to explicitly specify that descendant tables are included. Writing <literal>*</literal>is not necessary since that behavior is the default (unless you have changed the setting of the <xref linkend=\"guc-sql-inheritance\">configuration option). However writing <literal>*</literal>might be useful to emphasize that additional tables will be searched.</xref>"
+msgstr ""
+
+#: xml/queries.xml:143(title)
+msgid "Joined Tables"
+msgstr ""
+
+#: xml/queries.xml:145(primary) xml/queries.xml:285(primary) xml/queries.xml:305(primary)
+msgid "join"
+msgstr ""
+
+#: xml/queries.xml:147(para)
+msgid "A joined table is a table derived from two other (real or derived) tables according to the rules of the particular join type. Inner, outer, and cross-joins are available. The general syntax of a joined table is <synopsis>\n          <replaceable>T1</replaceable>\n          <replaceable>join_type</replaceable>\n          <replaceable>T2</replaceable>\n          <optional>\n            <replaceable>join_condition</replaceable>\n          </optional>\n        </synopsis>Joins of all types can be chained together, or nested: either or both <replaceable>T1</replaceable>and <replaceable>T2</replaceable>can be joined tables. Parentheses can be used around <literal>JOIN</literal>clauses to control the join order. In the absence of parentheses, <literal>JOIN</literal>clauses nest left-to-right."
+msgstr ""
+
+#: xml/queries.xml:167(title)
+msgid "Join Types"
+msgstr ""
+
+#: xml/queries.xml:169(term)
+msgid "Cross join <indexterm><primary>join</primary><secondary>cross</secondary></indexterm><indexterm><primary>cross join</primary></indexterm>"
+msgstr ""
+
+#: xml/queries.xml:179(replaceable) xml/queries.xml:237(replaceable) xml/queries.xml:242(replaceable) xml/queries.xml:247(replaceable)
+msgid "T1"
+msgstr ""
+
+#: xml/queries.xml:180(replaceable) xml/queries.xml:240(replaceable) xml/queries.xml:245(replaceable) xml/queries.xml:250(replaceable)
+msgid "T2"
+msgstr ""
+
+#: xml/queries.xml:178(synopsis)
+#, no-wrap
+msgid "\n              <placeholder-1/>CROSS JOIN \n              <placeholder-2/>"
+msgstr ""
+
+#: xml/queries.xml:181(para)
+msgid "For every possible combination of rows from <replaceable>T1</replaceable>and <replaceable>T2</replaceable>(i.e., a Cartesian product), the joined table will contain a row consisting of all columns in <replaceable>T1</replaceable>followed by all columns in <replaceable>T2</replaceable>. If the tables have N and M rows respectively, the joined table will have N * M rows."
+msgstr ""
+
+#: xml/queries.xml:204(para)
+msgid "This latter equivalence does not hold exactly when more than two tables appear, because <literal>JOIN</literal>binds more tightly than comma. For example <literal>FROM <replaceable>T1</replaceable>CROSS JOIN <replaceable>T2</replaceable>INNER JOIN <replaceable>T3</replaceable>ON <replaceable>condition</replaceable></literal>is not the same as <literal>FROM <replaceable>T1</replaceable>, <replaceable>T2</replaceable>INNER JOIN <replaceable>T3</replaceable>ON <replaceable> condition</replaceable></literal>because the <replaceable>condition</replaceable>can reference <replaceable>T1</replaceable>in the first case but not the second."
+msgstr ""
+
+#: xml/queries.xml:191(para)
+msgid "<literal>FROM <replaceable>T1</replaceable>CROSS JOIN <replaceable>T2</replaceable></literal>is equivalent to <literal>FROM <replaceable>T1</replaceable>INNER JOIN <replaceable>T2</replaceable>ON TRUE</literal>(see below). It is also equivalent to <literal>FROM <replaceable>T1</replaceable>, <replaceable>T2</replaceable></literal>. <placeholder-1/>"
+msgstr ""
+
+#: xml/queries.xml:227(term)
+msgid "Qualified joins <indexterm><primary>join</primary><secondary>outer</secondary></indexterm><indexterm><primary>outer join</primary></indexterm>"
+msgstr ""
+
+#: xml/queries.xml:238(optional) xml/queries.xml:243(optional) xml/queries.xml:248(optional)
+msgid "INNER"
+msgstr ""
+
+#: xml/queries.xml:239(optional) xml/queries.xml:244(optional) xml/queries.xml:249(optional)
+msgid "OUTER"
+msgstr ""
+
+#: xml/queries.xml:241(replaceable)
+msgid "boolean_expression"
+msgstr ""
+
+#: xml/queries.xml:246(replaceable)
+msgid "join column list"
+msgstr ""
+
+#: xml/queries.xml:236(synopsis)
+#, no-wrap
+msgid "\n              <placeholder-1/>{ \n              <placeholder-2/>| { LEFT | RIGHT | FULL } \n              <placeholder-3/>} JOIN \n              <placeholder-4/>ON \n              <placeholder-5/>\n              <placeholder-6/>{ \n              <placeholder-7/>| { LEFT | RIGHT | FULL } \n              <placeholder-8/>} JOIN \n              <placeholder-9/>USING ( \n              <placeholder-10/>) \n              <placeholder-11/>NATURAL { \n              <placeholder-12/>| { LEFT | RIGHT | FULL } \n              <placeholder-13/>} JOIN \n              <placeholder-14/>"
+msgstr ""
+
+#: xml/queries.xml:251(para)
+msgid "The words <literal>INNER</literal>and <literal>OUTER</literal>are optional in all forms. <literal>INNER</literal>is the default; <literal>LEFT</literal>, <literal>RIGHT</literal>, and <literal>FULL</literal>imply an outer join."
+msgstr ""
+
+#: xml/queries.xml:258(para)
+msgid "The <firstterm>join condition</firstterm>is specified in the <literal>ON</literal>or <literal>USING</literal>clause, or implicitly by the word <literal>NATURAL</literal>. The join condition determines which rows from the two source tables are considered to <quote>match</quote>, as explained in detail below."
+msgstr ""
+
+#: xml/queries.xml:273(literal)
+msgid "INNER JOIN"
+msgstr ""
+
+#: xml/queries.xml:276(para)
+msgid "For each row R1 of T1, the joined table has a row for each row in T2 that satisfies the join condition with R1."
+msgstr ""
+
+#: xml/queries.xml:283(literal)
+msgid "LEFT OUTER JOIN"
+msgstr ""
+
+#: xml/queries.xml:286(secondary)
+msgid "left"
+msgstr ""
+
+#: xml/queries.xml:289(primary)
+msgid "left join"
+msgstr ""
+
+#: xml/queries.xml:293(para)
+msgid "First, an inner join is performed. Then, for each row in T1 that does not satisfy the join condition with any row in T2, a joined row is added with null values in columns of T2. Thus, the joined table always has at least one row for each row in T1."
+msgstr ""
+
+#: xml/queries.xml:303(literal)
+msgid "RIGHT OUTER JOIN"
+msgstr ""
+
+#: xml/queries.xml:306(secondary)
+msgid "right"
+msgstr ""
+
+#: xml/queries.xml:309(primary)
+msgid "right join"
+msgstr ""
+
+#: xml/queries.xml:313(para)
+msgid "First, an inner join is performed. Then, for each row in T2 that does not satisfy the join condition with any row in T1, a joined row is added with null values in columns of T1. This is the converse of a left join: the result table will always have a row for each row in T2."
+msgstr ""
+
+#: xml/queries.xml:324(literal)
+msgid "FULL OUTER JOIN"
+msgstr ""
+
+#: xml/queries.xml:327(para)
+msgid "First, an inner join is performed. Then, for each row in T1 that does not satisfy the join condition with any row in T2, a joined row is added with null values in columns of T2. Also, for each row of T2 that does not satisfy the join condition with any row in T1, a joined row with null values in the columns of T1 is added."
+msgstr ""
+
+#: xml/queries.xml:269(para)
+msgid "The possible types of qualified join are: <placeholder-1/>"
+msgstr ""
+
+#: xml/queries.xml:338(para)
+msgid "The <literal>ON</literal>clause is the most general kind of join condition: it takes a Boolean value expression of the same kind as is used in a <literal>WHERE</literal>clause. A pair of rows from <replaceable>T1</replaceable>and <replaceable>T2</replaceable>match if the <literal>ON</literal>expression evaluates to true."
+msgstr ""
+
+#: xml/queries.xml:347(para)
+msgid "The <literal>USING</literal>clause is a shorthand that allows you to take advantage of the specific situation where both sides of the join use the same name for the joining column(s). It takes a comma-separated list of the shared column names and forms a join condition that includes an equality comparison for each one. For example, joining <replaceable>T1</replaceable>and <replaceable>T2</replaceable>with <literal>USING (a, b)</literal>produces the join condition <literal>ON <replaceable>T1</replaceable>.a = <replaceable>T2</replaceable>.a AND <replaceable>T1</replaceable>.b = <replaceable>T2</replaceable>.b</literal>."
+msgstr ""
+
+#: xml/queries.xml:364(para)
+msgid "Furthermore, the output of <literal>JOIN USING</literal>suppresses redundant columns: there is no need to print both of the matched columns, since they must have equal values. While <literal>JOIN ON</literal>produces all columns from <replaceable>T1</replaceable>followed by all columns from <replaceable>T2</replaceable>, <literal>JOIN USING</literal>produces one output column for each of the listed column pairs (in the listed order), followed by any remaining columns from <replaceable>T1</replaceable>, followed by any remaining columns from <replaceable>T2</replaceable>."
+msgstr ""
+
+#: xml/queries.xml:380(para)
+msgid "<indexterm><primary>join</primary><secondary>natural</secondary></indexterm><indexterm><primary>natural join</primary></indexterm>Finally, <literal>NATURAL</literal>is a shorthand form of <literal>USING</literal>: it forms a <literal>USING</literal>list consisting of all column names that appear in both input tables. As with <literal>USING</literal>, these columns appear only once in the output table. If there are no common column names, <literal>NATURAL</literal>behaves like <literal>CROSS JOIN</literal>."
+msgstr ""
+
+#: xml/queries.xml:398(para)
+msgid "<literal>USING</literal>is reasonably safe from column changes in the joined relations since only the listed columns are combined. <literal>NATURAL</literal>is considerably more risky since any schema changes to either relation that cause a new matching column name to be present will cause the join to combine that new column as well."
+msgstr ""
+
+#: xml/queries.xml:413(programlisting)
+#, no-wrap
+msgid "num | name -----+------ 1 | a 2 | b 3 |\n        c"
+msgstr ""
+
+#: xml/queries.xml:416(programlisting)
+#, no-wrap
+msgid "num | value -----+------- 1 | xxx 3 | yyy 5\n        | zzz"
+msgstr ""
+
+#: xml/queries.xml:411(para)
+msgid "To put this together, assume we have tables <literal>t1</literal>: <placeholder-1/>and <literal>t2</literal>: <placeholder-2/>then we get the following results for the various joins: <screen>\n        <prompt>=</prompt>\n        <userinput>SELECT * FROM t1 CROSS JOIN t2;</userinput>num |\n        name | num | value -----+------+-----+------- 1 | a | 1 |\n        xxx 1 | a | 3 | yyy 1 | a | 5 | zzz 2 | b | 1 | xxx 2 | b |\n        3 | yyy 2 | b | 5 | zzz 3 | c | 1 | xxx 3 | c | 3 | yyy 3 |\n        c | 5 | zzz (9 rows) \n        <prompt>=</prompt>\n        <userinput>SELECT * FROM t1 INNER JOIN t2 ON t1.num =\n        t2.num;</userinput>num | name | num | value\n        -----+------+-----+------- 1 | a | 1 | xxx 3 | c | 3 | yyy\n        (2 rows) \n        <prompt>=</prompt>\n        <userinput>SELECT * FROM t1 INNER JOIN t2 USING\n        (num);</userinput>num | name | value -----+------+------- 1\n        | a | xxx 3 | c | yyy (2 rows) \n        <prompt>=</prompt>\n        <userinput>SELECT * FROM t1 NATURAL INNER JOIN\n        t2;</userinput>num | name | value -----+------+------- 1 |\n        a | xxx 3 | c | yyy (2 rows) \n        <prompt>=</prompt>\n        <userinput>SELECT * FROM t1 LEFT JOIN t2 ON t1.num =\n        t2.num;</userinput>num | name | num | value\n        -----+------+-----+------- 1 | a | 1 | xxx 2 | b | | 3 | c\n        | 3 | yyy (3 rows) \n        <prompt>=</prompt>\n        <userinput>SELECT * FROM t1 LEFT JOIN t2 USING\n        (num);</userinput>num | name | value -----+------+------- 1\n        | a | xxx 2 | b | 3 | c | yyy (3 rows) \n        <prompt>=</prompt>\n        <userinput>SELECT * FROM t1 RIGHT JOIN t2 ON t1.num =\n        t2.num;</userinput>num | name | num | value\n        -----+------+-----+------- 1 | a | 1 | xxx 3 | c | 3 | yyy\n        | | 5 | zzz (3 rows) \n        <prompt>=</prompt>\n        <userinput>SELECT * FROM t1 FULL JOIN t2 ON t1.num =\n        t2.num;</userinput>num | name | num | value\n        -----+------+-----+------- 1 | a | 1 | xxx 2 | b | | 3 | c\n        | 3 | yyy | | 5 | zzz (4 rows)</screen>"
+msgstr ""
+
+#: xml/queries.xml:458(para)
+msgid "The join condition specified with <literal>ON</literal>can also contain conditions that do not relate directly to the join. This can prove useful for some queries but needs to be thought out carefully. For example: <screen>\n        <prompt>=</prompt>\n        <userinput>SELECT * FROM t1 LEFT JOIN t2 ON t1.num = t2.num\n        AND t2.value = 'xxx';</userinput>num | name | num | value\n        -----+------+-----+------- 1 | a | 1 | xxx 2 | b | | 3 | c\n        | | (3 rows)</screen>Notice that placing the restriction in the <literal>WHERE</literal>clause produces a different result: <screen>\n        <prompt>=</prompt>\n        <userinput>SELECT * FROM t1 LEFT JOIN t2 ON t1.num = t2.num\n        WHERE t2.value = 'xxx';</userinput>num | name | num | value\n        -----+------+-----+------- 1 | a | 1 | xxx (1\n        row)</screen>This is because a restriction placed in the <literal>ON</literal>clause is processed <emphasis>before</emphasis>the join, while a restriction placed in the <literal>WHERE</literal>clause is processed <emphasis>after</emphasis>the join. That does not matter with inner joins, but it matters a lot with outer joins."
+msgstr ""
+
+#: xml/queries.xml:487(title)
+msgid "Table and Column Aliases"
+msgstr ""
+
+#: xml/queries.xml:489(primary) xml/queries.xml:494(see) xml/queries.xml:695(replaceable) xml/queries.xml:700(replaceable) xml/queries.xml:1288(primary)
+msgid "alias"
+msgstr ""
+
+#: xml/queries.xml:490(secondary) xml/queries.xml:597(secondary) xml/queries.xml:741(secondary)
+msgid "in the FROM clause"
+msgstr ""
+
+#: xml/queries.xml:493(primary)
+msgid "label"
+msgstr ""
+
+#: xml/queries.xml:496(para)
+msgid "A temporary name can be given to tables and complex table references to be used for references to the derived table in the rest of the query. This is called a <firstterm>table alias</firstterm>."
+msgstr ""
+
+#: xml/queries.xml:500(para)
+msgid "To create a table alias, write <synopsis>FROM \n        <replaceable>table_reference</replaceable>AS \n        <replaceable>alias</replaceable></synopsis>or <synopsis>FROM \n        <replaceable>table_reference</replaceable>\n        <replaceable>alias</replaceable></synopsis>The <literal>AS</literal>key word is optional noise. <replaceable>alias</replaceable>can be any identifier."
+msgstr ""
+
+#: xml/queries.xml:513(programlisting)
+#, no-wrap
+msgid "SELECT * FROM some_very_long_table_name s\n        JOIN another_fairly_long_name a ON s.id =\n        a.num;"
+msgstr ""
+
+#: xml/queries.xml:510(para)
+msgid "A typical application of table aliases is to assign short identifiers to long table names to keep the join clauses readable. For example: <placeholder-1/>"
+msgstr ""
+
+#: xml/queries.xml:520(programlisting)
+#, no-wrap
+msgid "SELECT * FROM my_table AS m WHERE\n        my_table.a 5; -- wrong"
+msgstr ""
+
+#: xml/queries.xml:516(para)
+msgid "The alias becomes the new name of the table reference so far as the current query is concerned it is not allowed to refer to the table by the original name elsewhere in the query. Thus, this is not valid: <placeholder-1/>"
+msgstr ""
+
+#: xml/queries.xml:525(programlisting)
+#, no-wrap
+msgid "SELECT * FROM people AS mother JOIN people\n        AS child ON mother.id =\n        child.mother_id;"
+msgstr ""
+
+#: xml/queries.xml:522(para)
+msgid "Table aliases are mainly for notational convenience, but it is necessary to use them when joining a table to itself, e.g.: <placeholder-1/>Additionally, an alias is required if the table reference is a subquery (see <xref linkend=\"queries-subqueries\">).</xref>"
+msgstr ""
+
+#: xml/queries.xml:535(programlisting)
+#, no-wrap
+msgid "SELECT * FROM my_table AS a CROSS JOIN\n        my_table AS b ... SELECT * FROM (my_table AS a CROSS JOIN\n        my_table) AS b ..."
+msgstr ""
+
+#: xml/queries.xml:530(para)
+msgid "Parentheses are used to resolve ambiguities. In the following example, the first statement assigns the alias <literal>b</literal>to the second instance of <literal>my_table</literal>, but the second statement assigns the alias to the result of the join: <placeholder-1/>"
+msgstr ""
+
+#: xml/queries.xml:538(para)
+msgid "Another form of table aliasing gives temporary names to the columns of the table, as well as the table itself: <synopsis>FROM \n        <replaceable>table_reference</replaceable>\n        <optional>AS</optional>\n        <replaceable>alias</replaceable>( \n        <replaceable>column1</replaceable>\n        <optional>, \n        <replaceable>column2</replaceable>\n        <optional>, ...</optional></optional>)</synopsis>If fewer column aliases are specified than the actual table has columns, the remaining columns are not renamed. This syntax is especially useful for self-joins or subqueries."
+msgstr ""
+
+#: xml/queries.xml:555(programlisting)
+#, no-wrap
+msgid "SELECT a.* FROM my_table AS a JOIN\n        your_table AS b ON ..."
+msgstr ""
+
+#: xml/queries.xml:557(programlisting)
+#, no-wrap
+msgid "SELECT a.* FROM (my_table AS a JOIN\n        your_table AS b ON ...) AS c"
+msgstr ""
+
+#: xml/queries.xml:551(para)
+msgid "When an alias is applied to the output of a <literal>JOIN</literal>clause, the alias hides the original name(s) within the <literal>JOIN</literal>. For example: <placeholder-1/>is valid SQL, but: <placeholder-2/>is not valid; the table alias <literal>a</literal>is not visible outside the alias <literal>c</literal>."
+msgstr ""
+
+#: xml/queries.xml:564(title)
+msgid "Subqueries"
+msgstr ""
+
+#: xml/queries.xml:566(primary)
+msgid "subquery"
+msgstr ""
+
+#: xml/queries.xml:573(programlisting)
+#, no-wrap
+msgid "FROM (SELECT * FROM table1) AS\n        alias_name"
+msgstr ""
+
+#: xml/queries.xml:568(para)
+msgid "Subqueries specifying a derived table must be enclosed in parentheses and <emphasis>must</emphasis>be assigned a table alias name (as in <xref linkend=\"queries-table-aliases\">). For example: <placeholder-1/></xref>"
+msgstr ""
+
+#: xml/queries.xml:575(para)
+msgid "This example is equivalent to <literal>FROM table1 AS alias_name</literal>. More interesting cases, which cannot be reduced to a plain join, arise when the subquery involves grouping or aggregation."
+msgstr ""
+
+#: xml/queries.xml:582(programlisting)
+#, no-wrap
+msgid "FROM (VALUES ('anne', 'smith'), ('bob',\n        'jones'), ('joe', 'blow')) AS names(first,\n        last)"
+msgstr ""
+
+#: xml/queries.xml:580(para)
+msgid "A subquery can also be a <command>VALUES</command>list: <placeholder-1/>Again, a table alias is required. Assigning alias names to the columns of the <command>VALUES</command>list is optional, but is good practice. For more information see <xref linkend=\"queries-values\">.</xref>"
+msgstr ""
+
+#: xml/queries.xml:591(title)
+msgid "Table Functions"
+msgstr ""
+
+#: xml/queries.xml:593(primary)
+msgid "table function"
+msgstr ""
+
+#: xml/queries.xml:596(primary)
+msgid "function"
+msgstr ""
+
+#: xml/queries.xml:599(para)
+msgid "Table functions are functions that produce a set of rows, made up of either base data types (scalar types) or composite data types (table rows). They are used like a table, view, or subquery in the <literal>FROM</literal>clause of a query. Columns returned by table functions can be included in <literal>SELECT</literal>, <literal>JOIN</literal>, or <literal>WHERE</literal>clauses in the same manner as columns of a table, view, or subquery."
+msgstr ""
+
+#: xml/queries.xml:609(para)
+msgid "Table functions may also be combined using the <literal>ROWS FROM</literal>syntax, with the results returned in parallel columns; the number of result rows in this case is that of the largest function result, with smaller results padded with null values to match."
+msgstr ""
+
+#: xml/queries.xml:615(replaceable) xml/queries.xml:624(replaceable) xml/queries.xml:693(replaceable) xml/queries.xml:698(replaceable) xml/queries.xml:704(replaceable)
+msgid "function_call"
+msgstr ""
+
+#: xml/queries.xml:616(optional) xml/queries.xml:626(optional) xml/queries.xml:657(optional)
+msgid "WITH ORDINALITY"
+msgstr ""
+
+#: xml/queries.xml:618(optional) xml/queries.xml:628(optional) xml/queries.xml:659(optional) xml/queries.xml:694(optional)
+msgid "AS"
+msgstr ""
+
+#: xml/queries.xml:619(replaceable) xml/queries.xml:629(replaceable) xml/queries.xml:660(replaceable)
+msgid "table_alias"
+msgstr ""
+
+#: xml/queries.xml:621(replaceable) xml/queries.xml:631(replaceable) xml/queries.xml:662(replaceable)
+msgid "column_alias"
+msgstr ""
+
+#: xml/queries.xml:622(optional) xml/queries.xml:625(optional) xml/queries.xml:632(optional) xml/queries.xml:656(optional) xml/queries.xml:663(optional) xml/queries.xml:697(optional) xml/queries.xml:703(optional) xml/queries.xml:706(optional) xml/queries.xml:707(optional)
+msgid ", ..."
+msgstr ""
+
+#: xml/queries.xml:620(optional) xml/queries.xml:630(optional) xml/queries.xml:661(optional)
+msgid "( <placeholder-1/><placeholder-2/>)"
+msgstr ""
+
+#: xml/queries.xml:614(synopsis)
+#, no-wrap
+msgid "\n        <placeholder-1/>\n        <placeholder-2/>\n        <optional>\n          <placeholder-3/>\n          <placeholder-4/>\n          <placeholder-5/>\n        </optional>ROWS FROM( \n        <placeholder-6/>\n        <placeholder-7/>) \n        <placeholder-8/>\n        <optional>\n          <placeholder-9/>\n          <placeholder-10/>\n          <placeholder-11/>\n        </optional>"
+msgstr ""
+
+#: xml/queries.xml:634(para)
+msgid "If the <literal>WITH ORDINALITY</literal>clause is specified, an additional column of type <type>bigint</type>will be added to the function result columns. This column numbers the rows of the function result set, starting from 1. (This is a generalization of the SQL-standard syntax for <literal>UNNEST ... WITH ORDINALITY</literal>.) By default, the ordinal column is called <literal>ordinality</literal>, but a different column name can be assigned to it using an <literal>AS</literal>clause."
+msgstr ""
+
+#: xml/queries.xml:646(para)
+msgid "The special table function <literal>UNNEST</literal>may be called with any number of array parameters, and it returns a corresponding number of columns, as if <literal>UNNEST</literal>( <xref linkend=\"functions-array\">) had been called on each parameter separately and combined using the <literal>ROWS FROM</literal>construct.</xref>"
+msgstr ""
+
+#: xml/queries.xml:655(replaceable)
+msgid "array_expression"
+msgstr ""
+
+#: xml/queries.xml:654(synopsis)
+#, no-wrap
+msgid "UNNEST( \n        <placeholder-1/>\n        <placeholder-2/>) \n        <placeholder-3/>\n        <optional>\n          <placeholder-4/>\n          <placeholder-5/>\n          <placeholder-6/>\n        </optional>"
+msgstr ""
+
+#: xml/queries.xml:665(para)
+msgid "If no <replaceable>table_alias</replaceable>is specified, the function name is used as the table name; in the case of a <literal>ROWS FROM()</literal>construct, the first function's name is used."
+msgstr ""
+
+#: xml/queries.xml:670(para)
+msgid "If column aliases are not supplied, then for a function returning a base data type, the column name is also the same as the function name. For a function returning a composite type, the result columns get the names of the individual attributes of the type."
+msgstr ""
+
+#: xml/queries.xml:676(programlisting)
+#, no-wrap
+msgid "CREATE TABLE foo (fooid int, foosubid int,\n        fooname text); CREATE FUNCTION getfoo(int) RETURNS SETOF\n        foo AS $$ SELECT * FROM foo WHERE fooid = $1; $$ LANGUAGE\n        SQL; SELECT * FROM getfoo(1) AS t1; SELECT * FROM foo WHERE\n        foosubid IN ( SELECT foosubid FROM getfoo(foo.fooid) z\n        WHERE z.fooid = foo.fooid ); CREATE VIEW vw_getfoo AS\n        SELECT * FROM getfoo(1); SELECT * FROM\n        vw_getfoo;"
+msgstr ""
+
+#: xml/queries.xml:675(para)
+msgid "Some examples: <placeholder-1/>"
+msgstr ""
+
+#: xml/queries.xml:684(para)
+msgid "In some cases it is useful to define table functions that can return different column sets depending on how they are invoked. To support this, the table function can be declared as returning the pseudotype <type>record</type>. When such a function is used in a query, the expected row structure must be specified in the query itself, so that the system can know how to parse and plan the query. This syntax looks like:"
+msgstr ""
+
+#: xml/queries.xml:696(replaceable) xml/queries.xml:702(replaceable) xml/queries.xml:705(replaceable)
+msgid "column_definition"
+msgstr ""
+
+#: xml/queries.xml:692(synopsis)
+#, no-wrap
+msgid "\n        <placeholder-1/>\n        <placeholder-2/>\n        <placeholder-3/>( \n        <placeholder-4/>\n        <placeholder-5/>) \n        <placeholder-6/>AS \n        <optional>\n          <placeholder-7/>\n        </optional>( \n        <placeholder-8/>\n        <placeholder-9/>) ROWS FROM( ... \n        <placeholder-10/>AS ( \n        <placeholder-11/>\n        <placeholder-12/>) \n        <placeholder-13/>)"
+msgstr ""
+
+#: xml/queries.xml:708(para)
+msgid "When not using the <literal>ROWS FROM()</literal>syntax, the <replaceable>column_definition</replaceable>list replaces the column alias list that could otherwise be attached to the <literal>FROM</literal>item; the names in the column definitions serve as column aliases. When using the <literal>ROWS FROM()</literal>syntax, a <replaceable>column_definition</replaceable>list can be attached to each member function separately; or if there is only one member function and no <literal>WITH ORDINALITY</literal>clause, a <replaceable>column_definition</replaceable>list can be written in place of a column alias list following <literal>ROWS FROM()</literal>."
+msgstr ""
+
+#: xml/queries.xml:724(programlisting)
+#, no-wrap
+msgid "SELECT * FROM dblink('dbname=mydb', 'SELECT\n        proname, prosrc FROM pg_proc') AS t1(proname name, prosrc\n        text) WHERE proname LIKE 'bytea%';"
+msgstr ""
+
+#: xml/queries.xml:723(para)
+msgid "Consider this example: <placeholder-1/>The <xref linkend=\"CONTRIB-DBLINK-FUNCTION\">function (part of the <xref linkend=\"dblink\">module) executes a remote query. It is declared to return <type>record</type>since it might be used for any kind of query. The actual column set must be specified in the calling query so that the parser knows, for example, what <literal>*</literal>should expand to.</xref></xref>"
+msgstr ""
+
+#: xml/queries.xml:737(title)
+msgid "<literal>LATERAL</literal>Subqueries"
+msgstr ""
+
+#: xml/queries.xml:740(primary)
+msgid "LATERAL"
+msgstr ""
+
+#: xml/queries.xml:743(para)
+msgid "Subqueries appearing in <literal>FROM</literal>can be preceded by the key word <literal>LATERAL</literal>. This allows them to reference columns provided by preceding <literal>FROM</literal>items. (Without <literal>LATERAL</literal>, each subquery is evaluated independently and so cannot cross-reference any other <literal>FROM</literal>item.)"
+msgstr ""
+
+#: xml/queries.xml:751(para)
+msgid "Table functions appearing in <literal>FROM</literal>can also be preceded by the key word <literal>LATERAL</literal>, but for functions the key word is optional; the function's arguments can contain references to columns provided by preceding <literal>FROM</literal>items in any case."
+msgstr ""
+
+#: xml/queries.xml:758(para)
+msgid "A <literal>LATERAL</literal>item can appear at top level in the <literal>FROM</literal>list, or within a <literal>JOIN</literal>tree. In the latter case it can also refer to any items that are on the left-hand side of a <literal>JOIN</literal>that it is on the right-hand side of."
+msgstr ""
+
+#: xml/queries.xml:766(para)
+msgid "When a <literal>FROM</literal>item contains <literal>LATERAL</literal>cross-references, evaluation proceeds as follows: for each row of the <literal>FROM</literal>item providing the cross-referenced column(s), or set of rows of multiple <literal>FROM</literal>items providing the columns, the <literal>LATERAL</literal>item is evaluated using that row or row set's values of the columns. The resulting row(s) are joined as usual with the rows they were computed from. This is repeated for each row or set of rows from the column source table(s)."
+msgstr ""
+
+#: xml/queries.xml:780(programlisting)
+#, no-wrap
+msgid "SELECT * FROM foo, LATERAL (SELECT * FROM\n        bar WHERE bar.id = foo.bar_id) ss;"
+msgstr ""
+
+#: xml/queries.xml:784(programlisting)
+#, no-wrap
+msgid "SELECT * FROM foo, bar WHERE bar.id =\n        foo.bar_id;"
+msgstr ""
+
+#: xml/queries.xml:794(programlisting)
+#, no-wrap
+msgid "SELECT p1.id, p2.id, v1, v2 FROM polygons\n        p1, polygons p2, LATERAL vertices(p1.poly) v1, LATERAL\n        vertices(p2.poly) v2 WHERE (v1 - v2) 10 AND p1.id !=\n        p2.id;"
+msgstr ""
+
+#: xml/queries.xml:798(programlisting)
+#, no-wrap
+msgid "SELECT p1.id, p2.id, v1, v2 FROM polygons\n        p1 CROSS JOIN LATERAL vertices(p1.poly) v1, polygons p2\n        CROSS JOIN LATERAL vertices(p2.poly) v2 WHERE (v1 - v2) 10\n        AND p1.id != p2.id;"
+msgstr ""
+
+#: xml/queries.xml:778(para)
+msgid "A trivial example of <literal>LATERAL</literal>is <placeholder-1/>This is not especially useful since it has exactly the same result as the more conventional <placeholder-2/><literal>LATERAL</literal>is primarily useful when the cross-referenced column is necessary for computing the row(s) to be joined. A common application is providing an argument value for a set-returning function. For example, supposing that <function>vertices(polygon)</function>returns the set of vertices of a polygon, we could identify close-together vertices of polygons stored in a table with: <placeholder-3/>This query could also be written <placeholder-4/>or in several other equivalent formulations. (As already mentioned, the <literal>LATERAL</literal>key word is unnecessary in this example, but we use it for clarity.)"
+msgstr ""
+
+#: xml/queries.xml:815(programlisting)
+#, no-wrap
+msgid "SELECT m.name FROM manufacturers m LEFT\n        JOIN LATERAL get_product_names(m.id) pname ON true WHERE\n        pname IS NULL;"
+msgstr ""
+
+#: xml/queries.xml:805(para)
+msgid "It is often particularly handy to <literal>LEFT JOIN</literal>to a <literal>LATERAL</literal>subquery, so that source rows will appear in the result even if the <literal>LATERAL</literal>subquery produces no rows for them. For example, if <function>get_product_names()</function>returns the names of products made by a manufacturer, but some manufacturers in our table currently produce no products, we could find out which ones those are like this: <placeholder-1/>"
+msgstr ""
+
+#: xml/queries.xml:821(title)
+msgid "The <literal>WHERE</literal>Clause"
+msgstr ""
+
+#: xml/queries.xml:824(primary)
+msgid "WHERE"
+msgstr ""
+
+#: xml/queries.xml:826(para)
+msgid "The syntax of the <xref linkend=\"sql-where\" endterm=\"sql-where-title\">is <synopsis>WHERE \n      <replaceable>search_condition</replaceable></synopsis>where <replaceable>search_condition</replaceable>is any value expression (see <xref linkend=\"sql-expressions\">) that returns a value of type <type>boolean</type>.</xref></xref>"
+msgstr ""
+
+#: xml/queries.xml:835(para)
+msgid "After the processing of the <literal>FROM</literal>clause is done, each row of the derived virtual table is checked against the search condition. If the result of the condition is true, the row is kept in the output table, otherwise (i.e., if the result is false or null) it is discarded. The search condition typically references at least one column of the table generated in the <literal>FROM</literal>clause; this is not required, but otherwise the <literal>WHERE</literal>clause will be fairly useless."
+msgstr ""
+
+#: xml/queries.xml:852(programlisting)
+#, no-wrap
+msgid "FROM a, b WHERE a.id = b.id AND b.val\n        5"
+msgstr ""
+
+#: xml/queries.xml:854(programlisting)
+#, no-wrap
+msgid "FROM a INNER JOIN b ON (a.id = b.id) WHERE\n        b.val 5"
+msgstr ""
+
+#: xml/queries.xml:856(programlisting)
+#, no-wrap
+msgid "FROM a NATURAL JOIN b WHERE b.val\n        5"
+msgstr ""
+
+#: xml/queries.xml:847(para)
+msgid "The join condition of an inner join can be written either in the <literal>WHERE</literal>clause or in the <literal>JOIN</literal>clause. For example, these table expressions are equivalent: <placeholder-1/>and: <placeholder-2/>or perhaps even: <placeholder-3/>Which one of these you use is mainly a matter of style. The <literal>JOIN</literal>syntax in the <literal>FROM</literal>clause is probably not as portable to other SQL database management systems, even though it is in the SQL standard. For outer joins there is no choice: they must be done in the <literal>FROM</literal>clause. The <literal>ON</literal>or <literal>USING</literal>clause of an outer join is <emphasis>not</emphasis>equivalent to a <literal>WHERE</literal>condition, because it results in the addition of rows (for unmatched input rows) as well as the removal of rows in the final result."
+msgstr ""
+
+#: xml/queries.xml:874(programlisting)
+#, no-wrap
+msgid "SELECT ... FROM fdt WHERE c1 5 SELECT ...\n      FROM fdt WHERE c1 IN (1, 2, 3) SELECT ... FROM fdt WHERE c1\n      IN (SELECT c1 FROM t2) SELECT ... FROM fdt WHERE c1 IN\n      (SELECT c3 FROM t2 WHERE c2 = fdt.c1 + 10) SELECT ... FROM\n      fdt WHERE c1 BETWEEN (SELECT c3 FROM t2 WHERE c2 = fdt.c1 +\n      10) AND 100 SELECT ... FROM fdt WHERE EXISTS (SELECT c1 FROM\n      t2 WHERE c2 fdt.c1)"
+msgstr ""
+
+#: xml/queries.xml:872(para)
+msgid "Here are some examples of <literal>WHERE</literal>clauses: <placeholder-1/><literal>fdt</literal>is the table derived in the <literal>FROM</literal>clause. Rows that do not meet the search condition of the <literal>WHERE</literal>clause are eliminated from <literal>fdt</literal>. Notice the use of scalar subqueries as value expressions. Just like any other query, the subqueries can employ complex table expressions. Notice also how <literal>fdt</literal>is referenced in the subqueries. Qualifying <literal>c1</literal>as <literal>fdt.c1</literal>is only necessary if <literal>c1</literal>is also the name of a column in the derived input table of the subquery. But qualifying the column name adds clarity even when it is not needed. This example shows how the column naming scope of an outer query extends into its inner queries."
+msgstr ""
+
+#: xml/queries.xml:900(title)
+msgid "The <literal>GROUP BY</literal>and <literal>HAVING</literal>Clauses"
+msgstr ""
+
+#: xml/queries.xml:904(primary)
+msgid "GROUP BY"
+msgstr ""
+
+#: xml/queries.xml:907(primary)
+msgid "grouping"
+msgstr ""
+
+#: xml/queries.xml:909(para)
+msgid "After passing the <literal>WHERE</literal>filter, the derived input table might be subject to grouping, using the <literal>GROUP BY</literal>clause, and elimination of group rows using the <literal>HAVING</literal>clause."
+msgstr ""
+
+#: xml/queries.xml:916(replaceable)
+msgid "select_list"
+msgstr ""
+
+#: xml/queries.xml:917(optional)
+msgid "WHERE ..."
+msgstr ""
+
+#: xml/queries.xml:918(replaceable) xml/queries.xml:920(replaceable)
+msgid "grouping_column_reference"
+msgstr ""
+
+#: xml/queries.xml:919(optional)
+msgid ", <placeholder-1/>"
+msgstr ""
+
+#: xml/queries.xml:915(synopsis)
+#, no-wrap
+msgid "SELECT \n      <placeholder-1/>FROM ... \n      <placeholder-2/>GROUP BY \n      <placeholder-3/>\n      <placeholder-4/>..."
+msgstr ""
+
+#: xml/queries.xml:922(para)
+msgid "The <xref linkend=\"sql-groupby\" endterm=\"sql-groupby-title\">is used to group together those rows in a table that have the same values in all the columns listed. The order in which the columns are listed does not matter. The effect is to combine each set of rows having common values into one group row that represents all rows in the group. This is done to eliminate redundancy in the output and/or compute aggregates that apply to these groups. For instance: <screen>\n      <prompt>=</prompt>\n      <userinput>SELECT * FROM test1;</userinput>x | y ---+--- a |\n      3 c | 2 b | 5 a | 1 (4 rows) \n      <prompt>=</prompt>\n      <userinput>SELECT x FROM test1 GROUP BY x;</userinput>x --- a\n      b c (3 rows)</screen></xref>"
+msgstr ""
+
+#: xml/queries.xml:938(para)
+msgid "In the second query, we could not have written <literal>SELECT * FROM test1 GROUP BY x</literal>, because there is no single value for the column <literal>y</literal>that could be associated with each group. The grouped-by columns can be referenced in the select list since they have a single value in each group."
+msgstr ""
+
+#: xml/queries.xml:944(para)
+msgid "In general, if a table is grouped, columns that are not listed in <literal>GROUP BY</literal>cannot be referenced except in aggregate expressions. An example with aggregate expressions is: <screen>\n      <prompt>=</prompt>\n      <userinput>SELECT x, sum(y) FROM test1 GROUP BY\n      x;</userinput>x | sum ---+----- a | 4 b | 5 c | 2 (3\n      rows)</screen>Here <literal>sum</literal>is an aggregate function that computes a single value over the entire group. More information about the available aggregate functions can be found in <xref linkend=\"functions-aggregate\">.</xref>"
+msgstr ""
+
+#: xml/queries.xml:959(para)
+msgid "Grouping without aggregate expressions effectively calculates the set of distinct values in a column. This can also be achieved using the <literal>DISTINCT</literal>clause (see <xref linkend=\"queries-distinct\">).</xref>"
+msgstr ""
+
+#: xml/queries.xml:968(programlisting)
+#, no-wrap
+msgid "SELECT product_id, p.name, (sum(s.units) *\n      p.price) AS sales FROM products p LEFT JOIN sales s USING\n      (product_id) GROUP BY product_id, p.name,\n      p.price;"
+msgstr ""
+
+#: xml/queries.xml:965(para)
+msgid "Here is another example: it calculates the total sales for each product (rather than the total sales of all products): <placeholder-1/>In this example, the columns <literal>product_id</literal>, <literal>p.name</literal>, and <literal>p.price</literal>must be in the <literal>GROUP BY</literal>clause since they are referenced in the query select list (but see below). The column <literal>s.units</literal>does not have to be in the <literal>GROUP BY</literal>list since it is only used in an aggregate expression ( <literal>sum(...)</literal>), which represents the sales of a product. For each product, the query returns a summary row about all sales of the product."
+msgstr ""
+
+#: xml/queries.xml:984(primary)
+msgid "functional dependency"
+msgstr ""
+
+#: xml/queries.xml:986(para)
+msgid "If the products table is set up so that, say, <literal>product_id</literal>is the primary key, then it would be enough to group by <literal>product_id</literal>in the above example, since name and price would be <firstterm>functionally dependent</firstterm>on the product ID, and so there would be no ambiguity about which name and price value to return for each product ID group."
+msgstr ""
+
+#: xml/queries.xml:994(para)
+msgid "In strict SQL, <literal>GROUP BY</literal>can only group by columns of the source table but <productname>PostgreSQL</productname>extends this to also allow <literal>GROUP BY</literal>to group by columns in the select list. Grouping by value expressions instead of simple column names is also allowed."
+msgstr ""
+
+#: xml/queries.xml:1003(primary)
+msgid "HAVING"
+msgstr ""
+
+#: xml/queries.xml:1005(para)
+msgid "If a table has been grouped using <literal>GROUP BY</literal>, but only certain groups are of interest, the <literal>HAVING</literal>clause can be used, much like a <literal>WHERE</literal>clause, to eliminate groups from the result. The syntax is: <synopsis>SELECT \n      <replaceable>select_list</replaceable>FROM ... \n      <optional>WHERE ...</optional>GROUP BY ... HAVING \n      <replaceable>\n      boolean_expression</replaceable></synopsis>Expressions in the <literal>HAVING</literal>clause can refer both to grouped expressions and to ungrouped expressions (which necessarily involve an aggregate function)."
+msgstr ""
+
+#: xml/queries.xml:1020(para)
+msgid "Example: <screen>\n      <prompt>=</prompt>\n      <userinput>SELECT x, sum(y) FROM test1 GROUP BY x HAVING\n      sum(y) 3;</userinput>x | sum ---+----- a | 4 b | 5 (2 rows) \n      <prompt>=</prompt>\n      <userinput>SELECT x, sum(y) FROM test1 GROUP BY x HAVING x\n      'c';</userinput>x | sum ---+----- a | 4 b | 5 (2\n      rows)</screen>"
+msgstr ""
+
+#: xml/queries.xml:1030(programlisting)
+#, no-wrap
+msgid "SELECT product_id, p.name, (sum(s.units) *\n      (p.price - p.cost)) AS profit FROM products p LEFT JOIN sales\n      s USING (product_id) WHERE s.date CURRENT_DATE - INTERVAL '4\n      weeks' GROUP BY product_id, p.name, p.price, p.cost HAVING\n      sum(p.price * s.units) 5000;"
+msgstr ""
+
+#: xml/queries.xml:1029(para)
+msgid "Again, a more realistic example: <placeholder-1/>In the example above, the <literal>WHERE</literal>clause is selecting rows by a column that is not grouped (the expression is only true for sales during the last four weeks), while the <literal>HAVING</literal>clause restricts the output to groups with total gross sales over 5000. Note that the aggregate expressions do not necessarily need to be the same in all parts of the query."
+msgstr ""
+
+#: xml/queries.xml:1043(para)
+msgid "If a query contains aggregate function calls, but no <literal>GROUP BY</literal>clause, grouping still occurs: the result is a single group row (or perhaps no rows at all, if the single row is then eliminated by <literal>HAVING</literal>). The same is true if it contains a <literal>HAVING</literal>clause, even without any aggregate function calls or <literal>GROUP BY</literal>clause."
+msgstr ""
+
+#: xml/queries.xml:1054(title)
+msgid "<literal>GROUPING SETS</literal>, <literal>CUBE</literal>, and <literal>ROLLUP</literal>"
+msgstr ""
+
+#: xml/queries.xml:1059(primary)
+msgid "GROUPING SETS"
+msgstr ""
+
+#: xml/queries.xml:1062(primary)
+msgid "CUBE"
+msgstr ""
+
+#: xml/queries.xml:1065(primary)
+msgid "ROLLUP"
+msgstr ""
+
+#: xml/queries.xml:1067(para)
+msgid "More complex grouping operations than those described above are possible using the concept of <firstterm>grouping sets</firstterm>. The data selected by the <literal>FROM</literal>and <literal>WHERE</literal>clauses is grouped separately by each specified grouping set, aggregates computed for each group just as for simple <literal>GROUP BY</literal>clauses, and then the results returned. For example: <screen>\n      <prompt>=</prompt>\n      <userinput>SELECT * FROM items_sold;</userinput>brand | size\n      | sales -------+------+------- Foo | L | 10 Foo | M | 20 Bar\n      | M | 15 Bar | L | 5 (4 rows) \n      <prompt>=</prompt>\n      <userinput>SELECT brand, size, sum(sales) FROM items_sold\n      GROUP BY GROUPING SETS ((brand), (size),\n      ());</userinput>brand | size | sum -------+------+----- Foo |\n      | 30 Bar | | 20 | L | 15 | M | 35 | | 50 (5\n      rows)</screen>"
+msgstr ""
+
+#: xml/queries.xml:1088(para)
+msgid "Each sublist of <literal>GROUPING SETS</literal>may specify zero or more columns or expressions and is interpreted the same way as though it were directly in the <literal>GROUP BY</literal>clause. An empty grouping set means that all rows are aggregated down to a single group (which is output even if no input rows were present), as described above for the case of aggregate functions with no <literal>GROUP BY</literal>clause."
+msgstr ""
+
+#: xml/queries.xml:1097(para)
+msgid "References to the grouping columns or expressions are replaced by null values in result rows for grouping sets in which those columns do not appear. To distinguish which grouping a particular output row resulted from, see <xref linkend=\"functions-grouping-table\">.</xref>"
+msgstr ""
+
+#: xml/queries.xml:1104(programlisting)
+#, no-wrap
+msgid "ROLLUP ( \n      <replaceable>e1</replaceable>, \n      <replaceable>e2</replaceable>, \n      <replaceable>e3</replaceable>, ...\n      )"
+msgstr ""
+
+#: xml/queries.xml:1111(programlisting)
+#, no-wrap
+msgid "GROUPING SETS ( ( \n      <replaceable>e1</replaceable>, \n      <replaceable>e2</replaceable>, \n      <replaceable>e3</replaceable>, ... ), ... ( \n      <replaceable>e1</replaceable>, \n      <replaceable>e2</replaceable>), ( \n      <replaceable>e1</replaceable>), ( ) )"
+msgstr ""
+
+#: xml/queries.xml:1102(para)
+msgid "A shorthand notation is provided for specifying two common types of grouping set. A clause of the form <placeholder-1/>represents the given list of expressions and all prefixes of the list including the empty list; thus it is equivalent to <placeholder-2/>This is commonly used for analysis over hierarchical data; e.g. total salary by department, division, and company-wide total."
+msgstr ""
+
+#: xml/queries.xml:1122(programlisting)
+#, no-wrap
+msgid "CUBE ( \n      <replaceable>e1</replaceable>, \n      <replaceable>e2</replaceable>, ...\n      )"
+msgstr ""
+
+#: xml/queries.xml:1127(programlisting)
+#, no-wrap
+msgid "CUBE ( a, b, c )"
+msgstr ""
+
+#: xml/queries.xml:1129(programlisting)
+#, no-wrap
+msgid "GROUPING SETS ( ( a, b, c ), ( a, b ), ( a, c\n      ), ( a ), ( b, c ), ( b ), ( c ), ( )\n      )"
+msgstr ""
+
+#: xml/queries.xml:1121(para)
+msgid "A clause of the form <placeholder-1/>represents the given list and all of its possible subsets (i.e. the power set). Thus <placeholder-2/>is equivalent to <placeholder-3/>"
+msgstr ""
+
+#: xml/queries.xml:1139(programlisting)
+#, no-wrap
+msgid "CUBE ( (a, b), (c, d) )"
+msgstr ""
+
+#: xml/queries.xml:1141(programlisting)
+#, no-wrap
+msgid "GROUPING SETS ( ( a, b, c, d ), ( a, b ), (\n      c, d ), ( ) )"
+msgstr ""
+
+#: xml/queries.xml:1143(programlisting)
+#, no-wrap
+msgid "ROLLUP ( a, (b, c), d )"
+msgstr ""
+
+#: xml/queries.xml:1145(programlisting)
+#, no-wrap
+msgid "GROUPING SETS ( ( a, b, c, d ), ( a, b, c ),\n      ( a ), ( ) )"
+msgstr ""
+
+#: xml/queries.xml:1132(para)
+msgid "The individual elements of a <literal>CUBE</literal>or <literal>ROLLUP</literal>clause may be either individual expressions, or sublists of elements in parentheses. In the latter case, the sublists are treated as single units for the purposes of generating the individual grouping sets. For example: <placeholder-1/>is equivalent to <placeholder-2/>and <placeholder-3/>is equivalent to <placeholder-4/>"
+msgstr ""
+
+#: xml/queries.xml:1147(para)
+msgid "The <literal>CUBE</literal>and <literal>ROLLUP</literal>constructs can be used either directly in the <literal>GROUP BY</literal>clause, or nested inside a <literal>GROUPING SETS</literal>clause. If one <literal>GROUPING SETS</literal>clause is nested inside another, the effect is the same as if all the elements of the inner clause had been written directly in the outer clause."
+msgstr ""
+
+#: xml/queries.xml:1161(programlisting)
+#, no-wrap
+msgid "GROUP BY a, CUBE (b, c), GROUPING SETS ((d),\n      (e))"
+msgstr ""
+
+#: xml/queries.xml:1163(programlisting)
+#, no-wrap
+msgid "GROUP BY GROUPING SETS ( (a, b, c, d), (a, b,\n      c, e), (a, b, d), (a, b, e), (a, c, d), (a, c, e), (a, d),\n      (a, e) )"
+msgstr ""
+
+#: xml/queries.xml:1157(para)
+msgid "If multiple grouping items are specified in a single <literal>GROUP BY</literal>clause, then the final list of grouping sets is the cross product of the individual items. For example: <placeholder-1/>is equivalent to <placeholder-2/>"
+msgstr ""
+
+#: xml/queries.xml:1167(para)
+msgid "The construct <literal>(a, b)</literal>is normally recognized in expressions as a <link linkend=\"sql-syntax-row-constructors\">row constructor</link>. Within the <literal>GROUP BY</literal>clause, this does not apply at the top levels of expressions, and <literal>(a, b)</literal>is parsed as a list of expressions as described above. If for some reason you <emphasis>need</emphasis>a row constructor in a grouping expression, use <literal>ROW(a, b)</literal>."
+msgstr ""
+
+#: xml/queries.xml:1182(title)
+msgid "Window Function Processing"
+msgstr ""
+
+#: xml/queries.xml:1184(primary)
+msgid "window function"
+msgstr ""
+
+#: xml/queries.xml:1185(secondary)
+msgid "order of execution"
+msgstr ""
+
+#: xml/queries.xml:1187(para)
+msgid "If the query contains any window functions (see <xref linkend=\"tutorial-window\">, <xref linkend=\"functions-window\">and <xref linkend=\"syntax-window-functions\">), these functions are evaluated after any grouping, aggregation, and <literal>HAVING</literal>filtering is performed. That is, if the query uses any aggregates, <literal>GROUP BY</literal>, or <literal>HAVING</literal>, then the rows seen by the window functions are the group rows instead of the original table rows from <literal>FROM</literal>/ <literal>WHERE</literal>.</xref></xref></xref>"
+msgstr ""
+
+#: xml/queries.xml:1200(para)
+msgid "When multiple window functions are used, all the window functions having syntactically equivalent <literal>PARTITION BY</literal>and <literal>ORDER BY</literal>clauses in their window definitions are guaranteed to be evaluated in a single pass over the data. Therefore they will see the same sort ordering, even if the <literal>ORDER BY</literal>does not uniquely determine an ordering. However, no guarantees are made about the evaluation of functions having different <literal>PARTITION BY</literal>or <literal>ORDER BY</literal>specifications. (In such cases a sort step is typically required between the passes of window function evaluations, and the sort is not guaranteed to preserve ordering of rows that its <literal>ORDER BY</literal>sees as equivalent.)"
+msgstr ""
+
+#: xml/queries.xml:1216(para)
+msgid "Currently, window functions always require presorted data, and so the query output will be ordered according to one or another of the window functions' <literal>PARTITION BY</literal>/ <literal>ORDER BY</literal>clauses. It is not recommended to rely on this, however. Use an explicit top-level <literal>ORDER BY</literal>clause if you want to be sure the results are sorted in a particular way."
+msgstr ""
+
+#: xml/queries.xml:1227(title)
+msgid "Select Lists"
+msgstr ""
+
+#: xml/queries.xml:1230(secondary)
+msgid "select list"
+msgstr ""
+
+#: xml/queries.xml:1232(para)
+msgid "As shown in the previous section, the table expression in the <command>SELECT</command>command constructs an intermediate virtual table by possibly combining tables, views, eliminating rows, grouping, etc. This table is finally passed on to processing by the <firstterm>select list</firstterm>. The select list determines which <emphasis>columns</emphasis>of the intermediate table are actually output."
+msgstr ""
+
+#: xml/queries.xml:1243(title)
+msgid "Select-List Items"
+msgstr ""
+
+#: xml/queries.xml:1245(primary)
+msgid "*"
+msgstr ""
+
+#: xml/queries.xml:1253(programlisting)
+#, no-wrap
+msgid "SELECT a, b, c FROM ..."
+msgstr ""
+
+#: xml/queries.xml:1247(para)
+msgid "The simplest kind of select list is <literal>*</literal>which emits all columns that the table expression produces. Otherwise, a select list is a comma-separated list of value expressions (as defined in <xref linkend=\"sql-expressions\">). For instance, it could be a list of column names: <placeholder-1/>The columns names <literal>a</literal>, <literal>b</literal>, and <literal>c</literal>are either the actual names of the columns of tables referenced in the <literal>FROM</literal>clause, or the aliases given to them as explained in <xref linkend=\"queries-table-aliases\">. The name space available in the select list is the same as in the <literal>WHERE</literal>clause, unless grouping is used, in which case it is the same as in the <literal>HAVING</literal>clause.</xref></xref>"
+msgstr ""
+
+#: xml/queries.xml:1268(programlisting)
+#, no-wrap
+msgid "SELECT tbl1.a, tbl2.a, tbl1.b FROM\n      ..."
+msgstr ""
+
+#: xml/queries.xml:1272(programlisting)
+#, no-wrap
+msgid "SELECT tbl1.*, tbl2.a FROM\n      ..."
+msgstr ""
+
+#: xml/queries.xml:1266(para)
+msgid "If more than one table has a column of the same name, the table name must also be given, as in: <placeholder-1/>When working with multiple tables, it can also be useful to ask for all the columns of a particular table: <placeholder-2/>(See also <xref linkend=\"queries-where\">.)</xref>"
+msgstr ""
+
+#: xml/queries.xml:1275(para)
+msgid "If an arbitrary value expression is used in the select list, it conceptually adds a new virtual column to the returned table. The value expression is evaluated once for each result row, with the row's values substituted for any column references. But the expressions in the select list do not have to reference any columns in the table expression of the <literal>FROM</literal>clause; they can be constant arithmetic expressions, for instance."
+msgstr ""
+
+#: xml/queries.xml:1286(title)
+msgid "Column Labels"
+msgstr ""
+
+#: xml/queries.xml:1289(secondary)
+msgid "in the select list"
+msgstr ""
+
+#: xml/queries.xml:1295(programlisting)
+#, no-wrap
+msgid "SELECT a AS value, b + c AS sum FROM\n      ..."
+msgstr ""
+
+#: xml/queries.xml:1291(para)
+msgid "The entries in the select list can be assigned names for subsequent processing, such as for use in an <literal>ORDER BY</literal>clause or for display by the client application. For example: <placeholder-1/>"
+msgstr ""
+
+#: xml/queries.xml:1297(para)
+msgid "If no output column name is specified using <literal>AS</literal>, the system assigns a default column name. For simple column references, this is the name of the referenced column. For function calls, this is the name of the function. For complex expressions, the system will generate a generic name."
+msgstr ""
+
+#: xml/queries.xml:1311(programlisting)
+#, no-wrap
+msgid "SELECT a value, b + c AS sum FROM\n      ..."
+msgstr ""
+
+#: xml/queries.xml:1313(programlisting)
+#, no-wrap
+msgid "SELECT a \"value\", b + c AS sum FROM\n      ..."
+msgstr ""
+
+#: xml/queries.xml:1303(para)
+msgid "The <literal>AS</literal>keyword is optional, but only if the new column name does not match any <productname>PostgreSQL</productname>keyword (see <xref linkend=\"sql-keywords-appendix\">). To avoid an accidental match to a keyword, you can double-quote the column name. For example, <literal>VALUE</literal>is a keyword, so this does not work: <placeholder-1/>but this does: <placeholder-2/>For protection against possible future keyword additions, it is recommended that you always either write <literal>AS</literal>or double-quote the output column name.</xref>"
+msgstr ""
+
+#: xml/queries.xml:1320(para)
+msgid "The naming of output columns here is different from that done in the <literal>FROM</literal>clause (see <xref linkend=\"queries-table-aliases\">). It is possible to rename the same column twice, but the name assigned in the select list is the one that will be passed on.</xref>"
+msgstr ""
+
+#: xml/queries.xml:1331(literal) xml/queries.xml:1334(primary)
+msgid "DISTINCT"
+msgstr ""
+
+#: xml/queries.xml:1337(primary)
+msgid "duplicates"
+msgstr ""
+
+#: xml/queries.xml:1339(para)
+msgid "After the select list has been processed, the result table can optionally be subject to the elimination of duplicate rows. The <literal>DISTINCT</literal>key word is written directly after <literal>SELECT</literal>to specify this: <synopsis>SELECT DISTINCT \n      <replaceable>select_list</replaceable>...</synopsis>(Instead of <literal>DISTINCT</literal>the key word <literal>ALL</literal>can be used to specify the default behavior of retaining all rows.)"
+msgstr ""
+
+#: xml/queries.xml:1352(primary)
+msgid "null value"
+msgstr ""
+
+#: xml/queries.xml:1353(secondary)
+msgid "in DISTINCT"
+msgstr ""
+
+#: xml/queries.xml:1355(para)
+msgid "Obviously, two rows are considered distinct if they differ in at least one column value. Null values are considered equal in this comparison."
+msgstr ""
+
+#: xml/queries.xml:1358(para)
+msgid "Alternatively, an arbitrary expression can determine what rows are to be considered distinct: <synopsis>SELECT DISTINCT ON ( \n      <replaceable>expression</replaceable>\n      <optional>, \n      <replaceable>expression</replaceable>...</optional>) \n      <replaceable>select_list</replaceable>...</synopsis>Here <replaceable>expression</replaceable>is an arbitrary value expression that is evaluated for all rows. A set of rows for which all the expressions are equal are considered duplicates, and only the first row of the set is kept in the output. Note that the <quote>first row</quote>of a set is unpredictable unless the query is sorted on enough columns to guarantee a unique ordering of the rows arriving at the <literal>DISTINCT</literal>filter. ( <literal>DISTINCT ON</literal>processing occurs after <literal>ORDER BY</literal>sorting.)"
+msgstr ""
+
+#: xml/queries.xml:1376(para)
+msgid "The <literal>DISTINCT ON</literal>clause is not part of the SQL standard and is sometimes considered bad style because of the potentially indeterminate nature of its results. With judicious use of <literal>GROUP BY</literal>and subqueries in <literal>FROM</literal>, this construct can be avoided, but it is often the most convenient alternative."
+msgstr ""
+
+#: xml/queries.xml:1387(title)
+msgid "Combining Queries"
+msgstr ""
+
+#: xml/queries.xml:1389(primary)
+msgid "UNION"
+msgstr ""
+
+#: xml/queries.xml:1392(primary)
+msgid "INTERSECT"
+msgstr ""
+
+#: xml/queries.xml:1395(primary)
+msgid "EXCEPT"
+msgstr ""
+
+#: xml/queries.xml:1398(primary)
+msgid "set union"
+msgstr ""
+
+#: xml/queries.xml:1401(primary)
+msgid "set intersection"
+msgstr ""
+
+#: xml/queries.xml:1404(primary)
+msgid "set difference"
+msgstr ""
+
+#: xml/queries.xml:1407(primary)
+msgid "set operation"
+msgstr ""
+
+#: xml/queries.xml:1409(para)
+msgid "The results of two queries can be combined using the set operations union, intersection, and difference. The syntax is <synopsis>\n    <replaceable>query1</replaceable>UNION \n    <optional>ALL</optional>\n    <replaceable>query2</replaceable>\n    <replaceable>query1</replaceable>INTERSECT \n    <optional>ALL</optional>\n    <replaceable>query2</replaceable>\n    <replaceable>query1</replaceable>EXCEPT \n    <optional>ALL</optional>\n    <replaceable>query2</replaceable></synopsis><replaceable>query1</replaceable>and <replaceable>query2</replaceable>are queries that can use any of the features discussed up to this point. Set operations can also be nested and chained, for example <synopsis>\n    <replaceable>query1</replaceable>UNION \n    <replaceable>query2</replaceable>UNION \n    <replaceable>query3</replaceable></synopsis>which is executed as: <synopsis>( \n    <replaceable>query1</replaceable>UNION \n    <replaceable>query2</replaceable>) UNION \n    <replaceable>query3</replaceable></synopsis>"
+msgstr ""
+
+#: xml/queries.xml:1434(para)
+msgid "<literal>UNION</literal>effectively appends the result of <replaceable>query2</replaceable>to the result of <replaceable>query1</replaceable>(although there is no guarantee that this is the order in which the rows are actually returned). Furthermore, it eliminates duplicate rows from its result, in the same way as <literal>DISTINCT</literal>, unless <literal>UNION ALL</literal>is used."
+msgstr ""
+
+#: xml/queries.xml:1443(para)
+msgid "<literal>INTERSECT</literal>returns all rows that are both in the result of <replaceable>query1</replaceable>and in the result of <replaceable>query2</replaceable>. Duplicate rows are eliminated unless <literal>INTERSECT ALL</literal>is used."
+msgstr ""
+
+#: xml/queries.xml:1450(para)
+msgid "<literal>EXCEPT</literal>returns all rows that are in the result of <replaceable>query1</replaceable>but not in the result of <replaceable>query2</replaceable>. (This is sometimes called the <firstterm>difference</firstterm>between two queries.) Again, duplicates are eliminated unless <literal>EXCEPT ALL</literal>is used."
+msgstr ""
+
+#: xml/queries.xml:1459(para)
+msgid "In order to calculate the union, intersection, or difference of two queries, the two queries must be <quote>union compatible</quote>, which means that they return the same number of columns and the corresponding columns have compatible data types, as described in <xref linkend=\"typeconv-union-case\">.</xref>"
+msgstr ""
+
+#: xml/queries.xml:1467(title)
+msgid "Sorting Rows"
+msgstr ""
+
+#: xml/queries.xml:1469(primary)
+msgid "sorting"
+msgstr ""
+
+#: xml/queries.xml:1472(primary)
+msgid "ORDER BY"
+msgstr ""
+
+#: xml/queries.xml:1474(para)
+msgid "After a query has produced an output table (after the select list has been processed) it can optionally be sorted. If sorting is not chosen, the rows will be returned in an unspecified order. The actual order in that case will depend on the scan and join plan types and the order on disk, but it must not be relied on. A particular output ordering can only be guaranteed if the sort step is explicitly chosen."
+msgstr ""
+
+#: xml/queries.xml:1496(programlisting)
+#, no-wrap
+msgid "SELECT a, b FROM table1 ORDER BY a + b,\n    c;"
+msgstr ""
+
+#: xml/queries.xml:1511(para)
+msgid "Actually, <productname>PostgreSQL</productname>uses the <firstterm>default B-tree operator class</firstterm>for the expression's data type to determine the sort ordering for <literal>ASC</literal>and <literal>DESC</literal>. Conventionally, data types will be set up so that the <literal/>and <literal/>operators correspond to this sort ordering, but a user-defined data type's designer could choose to do something different."
+msgstr ""
+
+#: xml/queries.xml:1481(para)
+msgid "The <literal>ORDER BY</literal>clause specifies the sort order: <synopsis>SELECT \n    <replaceable>select_list</replaceable>FROM \n    <replaceable>table_expression</replaceable>ORDER BY \n    <replaceable>sort_expression1</replaceable>\n    <optional>ASC | DESC</optional>\n    <optional>NULLS { FIRST | LAST }</optional>\n    <optional>, \n    <replaceable>sort_expression2</replaceable>\n    <optional>ASC | DESC</optional>\n    <optional>NULLS { FIRST | LAST\n    }</optional>...</optional></synopsis>The sort expression(s) can be any expression that would be valid in the query's select list. An example is: <placeholder-1/>When more than one expression is specified, the later values are used to sort rows that are equal according to the earlier values. Each expression can be followed by an optional <literal>ASC</literal>or <literal>DESC</literal>keyword to set the sort direction to ascending or descending. <literal>ASC</literal>order is the default. Ascending order puts smaller values first, where <quote>smaller</quote>is defined in terms of the <literal/>operator. Similarly, descending order is determined with the <literal/>operator. <placeholder-2/>"
+msgstr ""
+
+#: xml/queries.xml:1523(para)
+msgid "The <literal>NULLS FIRST</literal>and <literal>NULLS LAST</literal>options can be used to determine whether nulls appear before or after non-null values in the sort ordering. By default, null values sort as if larger than any non-null value; that is, <literal>NULLS FIRST</literal>is the default for <literal>DESC</literal>order, and <literal>NULLS LAST</literal>otherwise."
+msgstr ""
+
+#: xml/queries.xml:1532(para)
+msgid "Note that the ordering options are considered independently for each sort column. For example <literal>ORDER BY x, y DESC</literal>means <literal>ORDER BY x ASC, y DESC</literal>, which is not the same as <literal>ORDER BY x DESC, y DESC</literal>."
+msgstr ""
+
+#: xml/queries.xml:1541(programlisting)
+#, no-wrap
+msgid "SELECT a + b AS sum, c FROM table1 ORDER BY\n    sum; SELECT a, max(b) FROM table1 GROUP BY a ORDER BY\n    1;"
+msgstr ""
+
+#: xml/queries.xml:1548(programlisting)
+#, no-wrap
+msgid "SELECT a + b AS sum, c FROM table1 ORDER BY sum\n    + c; -- wrong"
+msgstr ""
+
+#: xml/queries.xml:1538(para)
+msgid "A <replaceable>sort_expression</replaceable>can also be the column label or number of an output column, as in: <placeholder-1/>both of which sort by the first output column. Note that an output column name has to stand alone, that is, it cannot be used in an expression for example, this is <emphasis>not</emphasis>correct: <placeholder-2/>This restriction is made to reduce ambiguity. There is still ambiguity if an <literal>ORDER BY</literal>item is a simple name that could match either an output column name or a column from the table expression. The output column is used in such cases. This would only cause confusion if you use <literal>AS</literal>to rename an output column to match some other table column's name."
+msgstr ""
+
+#: xml/queries.xml:1557(para)
+msgid "<literal>ORDER BY</literal>can be applied to the result of a <literal>UNION</literal>, <literal>INTERSECT</literal>, or <literal>EXCEPT</literal>combination, but in this case it is only permitted to sort by output column names or numbers, not by expressions."
+msgstr ""
+
+#: xml/queries.xml:1566(title)
+msgid "<literal>LIMIT</literal>and <literal>OFFSET</literal>"
+msgstr ""
+
+#: xml/queries.xml:1570(primary)
+msgid "LIMIT"
+msgstr ""
+
+#: xml/queries.xml:1573(primary)
+msgid "OFFSET"
+msgstr ""
+
+#: xml/queries.xml:1575(para)
+msgid "<literal>LIMIT</literal>and <literal>OFFSET</literal>allow you to retrieve just a portion of the rows that are generated by the rest of the query: <synopsis>SELECT \n    <replaceable>select_list</replaceable>FROM \n    <replaceable>table_expression</replaceable>\n    <optional>ORDER BY ...</optional>\n    <optional>LIMIT { \n    <replaceable>number</replaceable>| ALL }</optional>\n    <optional>OFFSET \n    <replaceable>number</replaceable></optional></synopsis>"
+msgstr ""
+
+#: xml/queries.xml:1587(para)
+msgid "If a limit count is given, no more than that many rows will be returned (but possibly less, if the query itself yields less rows). <literal>LIMIT ALL</literal>is the same as omitting the <literal>LIMIT</literal>clause."
+msgstr ""
+
+#: xml/queries.xml:1592(para)
+msgid "<literal>OFFSET</literal>says to skip that many rows before beginning to return rows. <literal>OFFSET 0</literal>is the same as omitting the <literal>OFFSET</literal>clause, and <literal>LIMIT NULL</literal>is the same as omitting the <literal>LIMIT</literal>clause. If both <literal>OFFSET</literal>and <literal>LIMIT</literal>appear, then <literal>OFFSET</literal>rows are skipped before starting to count the <literal>LIMIT</literal>rows that are returned."
+msgstr ""
+
+#: xml/queries.xml:1604(para)
+msgid "When using <literal>LIMIT</literal>, it is important to use an <literal>ORDER BY</literal>clause that constrains the result rows into a unique order. Otherwise you will get an unpredictable subset of the query's rows. You might be asking for the tenth through twentieth rows, but tenth through twentieth in what ordering? The ordering is unknown, unless you specified <literal>ORDER BY</literal>."
+msgstr ""
+
+#: xml/queries.xml:1613(para)
+msgid "The query optimizer takes <literal>LIMIT</literal>into account when generating query plans, so you are very likely to get different plans (yielding different row orders) depending on what you give for <literal>LIMIT</literal>and <literal>OFFSET</literal>. Thus, using different <literal>LIMIT</literal>/ <literal>OFFSET</literal>values to select different subsets of a query result <emphasis>will give inconsistent results</emphasis>unless you enforce a predictable result ordering with <literal>ORDER BY</literal>. This is not a bug; it is an inherent consequence of the fact that SQL does not promise to deliver the results of a query in any particular order unless <literal>ORDER BY</literal>is used to constrain the order."
+msgstr ""
+
+#: xml/queries.xml:1629(para)
+msgid "The rows skipped by an <literal>OFFSET</literal>clause still have to be computed inside the server; therefore a large <literal>OFFSET</literal>might be inefficient."
+msgstr ""
+
+#: xml/queries.xml:1635(title)
+msgid "<literal>VALUES</literal>Lists"
+msgstr ""
+
+#: xml/queries.xml:1638(primary)
+msgid "VALUES"
+msgstr ""
+
+#: xml/queries.xml:1640(para)
+msgid "<literal>VALUES</literal>provides a way to generate a <quote>constant table</quote>that can be used in a query without having to actually create and populate a table on-disk. The syntax is <synopsis>VALUES ( \n    <replaceable class=\"PARAMETER\">expression</replaceable>[, ...]\n    ) [, ...]</synopsis>Each parenthesized list of expressions generates a row in the table. The lists must all have the same number of elements (i.e., the number of columns in the table), and corresponding entries in each list must have compatible data types. The actual data type assigned to each column of the result is determined using the same rules as for <literal>UNION</literal>(see <xref linkend=\"typeconv-union-case\">).</xref>"
+msgstr ""
+
+#: xml/queries.xml:1656(programlisting)
+#, no-wrap
+msgid "VALUES (1, 'one'), (2, 'two'), (3,\n    'three');"
+msgstr ""
+
+#: xml/queries.xml:1659(programlisting)
+#, no-wrap
+msgid "SELECT 1 AS column1, 'one' AS column2 UNION ALL\n    SELECT 2, 'two' UNION ALL SELECT 3, 'three';"
+msgstr ""
+
+#: xml/queries.xml:1669(programlisting)
+#, no-wrap
+msgid "=&gt; SELECT * FROM (VALUES (1, 'one'), (2,\n    'two'), (3, 'three')) AS t (num,letter); num | letter\n    -----+-------- 1 | one 2 | two 3 | three (3\n    rows)"
+msgstr ""
+
+#: xml/queries.xml:1655(para)
+msgid "As an example: <placeholder-1/>will return a table of two columns and three rows. It's effectively equivalent to: <placeholder-2/>By default, <productname>PostgreSQL</productname>assigns the names <literal>column1</literal>, <literal>column2</literal>, etc. to the columns of a <literal>VALUES</literal>table. The column names are not specified by the SQL standard and different database systems do it differently, so it's usually better to override the default names with a table alias list, like this: <placeholder-3/>"
+msgstr ""
+
+#: xml/queries.xml:1673(para)
+msgid "Syntactically, <literal>VALUES</literal>followed by expression lists is treated as equivalent to: <synopsis>SELECT \n    <replaceable>select_list</replaceable>FROM \n    <replaceable>table_expression</replaceable></synopsis>and can appear anywhere a <literal>SELECT</literal>can. For example, you can use it as part of a <literal>UNION</literal>, or attach a <replaceable>sort_specification</replaceable>( <literal>ORDER BY</literal>, <literal>LIMIT</literal>, and/or <literal>OFFSET</literal>) to it. <literal>VALUES</literal>is most commonly used as the data source in an <command>INSERT</command>command, and next most commonly as a subquery."
+msgstr ""
+
+#: xml/queries.xml:1691(para)
+msgid "For more information see <xref linkend=\"sql-values\">.</xref>"
+msgstr ""
+
+#: xml/queries.xml:1695(title)
+msgid "<literal>WITH</literal>Queries (Common Table Expressions)"
+msgstr ""
+
+#: xml/queries.xml:1699(primary) xml/queries.xml:1704(see)
+msgid "WITH"
+msgstr ""
+
+#: xml/queries.xml:1700(secondary)
+msgid "in SELECT"
+msgstr ""
+
+#: xml/queries.xml:1703(primary)
+msgid "common table expression"
+msgstr ""
+
+#: xml/queries.xml:1706(para)
+msgid "<literal>WITH</literal>provides a way to write auxiliary statements for use in a larger query. These statements, which are often referred to as Common Table Expressions or <acronym>CTE</acronym>s, can be thought of as defining temporary tables that exist just for one query. Each auxiliary statement in a <literal>WITH</literal>clause can be a <command>SELECT</command>, <command>INSERT</command>, <command>UPDATE</command>, or <command>DELETE</command>; and the <literal>WITH</literal>clause itself is attached to a primary statement that can also be a <command>SELECT</command>, <command>INSERT</command>, <command>UPDATE</command>, or <command>DELETE</command>."
+msgstr ""
+
+#: xml/queries.xml:1725(title)
+msgid "<command>SELECT</command>in <literal>WITH</literal>"
+msgstr ""
+
+#: xml/queries.xml:1732(programlisting)
+#, no-wrap
+msgid "WITH regional_sales AS ( SELECT region,\n      SUM(amount) AS total_sales FROM orders GROUP BY region ),\n      top_regions AS ( SELECT region FROM regional_sales WHERE\n      total_sales (SELECT SUM(total_sales)/10 FROM regional_sales)\n      ) SELECT region, product, SUM(quantity) AS product_units,\n      SUM(amount) AS product_sales FROM orders WHERE region IN\n      (SELECT region FROM top_regions) GROUP BY region,\n      product;"
+msgstr ""
+
+#: xml/queries.xml:1728(para)
+msgid "The basic value of <command>SELECT</command>in <literal>WITH</literal>is to break down complicated queries into simpler parts. An example is: <placeholder-1/>which displays per-product sales totals in only the top sales regions. The <literal>WITH</literal>clause defines two auxiliary statements named <structname>regional_sales</structname>and <structname>top_regions</structname>, where the output of <structname>regional_sales</structname>is used in <structname>top_regions</structname>and the output of <structname>top_regions</structname>is used in the primary <command>SELECT</command>query. This example could have been written without <literal>WITH</literal>, but we'd have needed two levels of nested sub- <command>SELECT</command>s. It's a bit easier to follow this way."
+msgstr ""
+
+#: xml/queries.xml:1763(programlisting)
+#, no-wrap
+msgid "WITH RECURSIVE t(n) AS ( VALUES (1) UNION ALL\n      SELECT n+1 FROM t WHERE n 100 ) SELECT sum(n) FROM\n      t;"
+msgstr ""
+
+#: xml/queries.xml:1754(para)
+msgid "The optional <literal>RECURSIVE</literal>modifier changes <literal>WITH</literal>from a mere syntactic convenience into a feature that accomplishes things not otherwise possible in standard SQL. Using <literal>RECURSIVE</literal>, a <literal>WITH</literal>query can refer to its own output. A very simple example is this query to sum the integers from 1 through 100: <placeholder-1/>The general form of a recursive <literal>WITH</literal>query is always a <firstterm>non-recursive term</firstterm>, then <literal>UNION</literal>(or <literal>UNION ALL</literal>), then a <firstterm>recursive term</firstterm>, where only the recursive term can contain a reference to the query's own output. Such a query is executed as follows:"
+msgstr ""
+
+#: xml/queries.xml:1774(title)
+msgid "Recursive Query Evaluation"
+msgstr ""
+
+#: xml/queries.xml:1776(para)
+msgid "Evaluate the non-recursive term. For <literal>UNION</literal>(but not <literal>UNION ALL</literal>), discard duplicate rows. Include all remaining rows in the result of the recursive query, and also place them in a temporary <firstterm>working table</firstterm>."
+msgstr ""
+
+#: xml/queries.xml:1784(para)
+msgid "So long as the working table is not empty, repeat these steps:"
+msgstr ""
+
+#: xml/queries.xml:1788(para)
+msgid "Evaluate the recursive term, substituting the current contents of the working table for the recursive self-reference. For <literal>UNION</literal>(but not <literal>UNION ALL</literal>), discard duplicate rows and rows that duplicate any previous result row. Include all remaining rows in the result of the recursive query, and also place them in a temporary <firstterm>intermediate table</firstterm>."
+msgstr ""
+
+#: xml/queries.xml:1799(para)
+msgid "Replace the contents of the working table with the contents of the intermediate table, then empty the intermediate table."
+msgstr ""
+
+#: xml/queries.xml:1807(para)
+msgid "Strictly speaking, this process is iteration not recursion, but <literal>RECURSIVE</literal>is the terminology chosen by the SQL standards committee."
+msgstr ""
+
+#: xml/queries.xml:1812(para)
+msgid "In the example above, the working table has just a single row in each step, and it takes on the values from 1 through 100 in successive steps. In the 100th step, there is no output because of the <literal>WHERE</literal>clause, and so the query terminates."
+msgstr ""
+
+#: xml/queries.xml:1822(programlisting)
+#, no-wrap
+msgid "WITH RECURSIVE included_parts(sub_part, part,\n      quantity) AS ( SELECT sub_part, part, quantity FROM parts\n      WHERE part = 'our_product' UNION ALL SELECT p.sub_part,\n      p.part, p.quantity FROM included_parts pr, parts p WHERE\n      p.part = pr.sub_part ) SELECT sub_part, SUM(quantity) as\n      total_quantity FROM included_parts GROUP BY\n      sub_part"
+msgstr ""
+
+#: xml/queries.xml:1818(para)
+msgid "Recursive queries are typically used to deal with hierarchical or tree-structured data. A useful example is this query to find all the direct and indirect sub-parts of a product, given only a table that shows immediate inclusions: <placeholder-1/>"
+msgstr ""
+
+#: xml/queries.xml:1844(programlisting)
+#, no-wrap
+msgid "WITH RECURSIVE search_graph(id, link, data,\n      depth) AS ( SELECT g.id, g.link, g.data, 1 FROM graph g UNION\n      ALL SELECT g.id, g.link, g.data, sg.depth + 1 FROM graph g,\n      search_graph sg WHERE g.id = sg.link ) SELECT * FROM\n      search_graph;"
+msgstr ""
+
+#: xml/queries.xml:1859(programlisting)
+#, no-wrap
+msgid "WITH RECURSIVE search_graph(id, link, data,\n      depth, path, cycle) AS ( SELECT g.id, g.link, g.data, 1,\n      ARRAY[g.id], false FROM graph g UNION ALL SELECT g.id,\n      g.link, g.data, sg.depth + 1, path || g.id, g.id = ANY(path)\n      FROM graph g, search_graph sg WHERE g.id = sg.link AND NOT\n      cycle ) SELECT * FROM search_graph;"
+msgstr ""
+
+#: xml/queries.xml:1829(para)
+msgid "When working with recursive queries it is important to be sure that the recursive part of the query will eventually return no tuples, or else the query will loop indefinitely. Sometimes, using <literal>UNION</literal>instead of <literal>UNION ALL</literal>can accomplish this by discarding rows that duplicate previous output rows. However, often a cycle does not involve output rows that are completely duplicate: it may be necessary to check just one or a few fields to see if the same point has been reached before. The standard method for handling such situations is to compute an array of the already-visited values. For example, consider the following query that searches a table <structname>graph</structname>using a <structfield>link</structfield>field: <placeholder-1/>This query will loop if the <structfield>link</structfield>relationships contain cycles. Because we require a <quote>depth</quote>output, just changing <literal>UNION ALL</literal>to <literal>UNION</literal>would not eliminate the looping. Instead we need to recognize whether we have reached the same row again while following a particular path of links. We add two columns <structfield>path</structfield>and <structfield>cycle</structfield>to the loop-prone query: <placeholder-2/>Aside from preventing cycles, the array value is often useful in its own right as representing the <quote>path</quote>taken to reach any particular row."
+msgstr ""
+
+#: xml/queries.xml:1873(programlisting)
+#, no-wrap
+msgid "WITH RECURSIVE search_graph(id, link, data,\n      depth, path, cycle) AS ( SELECT g.id, g.link, g.data, 1,\n      ARRAY[ROW(g.f1, g.f2)], false FROM graph g UNION ALL SELECT\n      g.id, g.link, g.data, sg.depth + 1, path || ROW(g.f1, g.f2),\n      ROW(g.f1, g.f2) = ANY(path) FROM graph g, search_graph sg\n      WHERE g.id = sg.link AND NOT cycle ) SELECT * FROM\n      search_graph;"
+msgstr ""
+
+#: xml/queries.xml:1868(para)
+msgid "In the general case where more than one field needs to be checked to recognize a cycle, use an array of rows. For example, if we needed to compare fields <structfield>f1</structfield>and <structfield>f2</structfield>: <placeholder-1/>"
+msgstr ""
+
+#: xml/queries.xml:1881(para)
+msgid "Omit the <literal>ROW()</literal>syntax in the common case where only one field needs to be checked to recognize a cycle. This allows a simple array rather than a composite-type array to be used, gaining efficiency."
+msgstr ""
+
+#: xml/queries.xml:1888(para)
+msgid "The recursive query evaluation algorithm produces its output in breadth-first search order. You can display the results in depth-first search order by making the outer query <literal>ORDER BY</literal>a <quote>path</quote>column constructed in this way."
+msgstr ""
+
+#: xml/queries.xml:1900(programlisting)
+#, no-wrap
+msgid "WITH RECURSIVE t(n) AS ( SELECT 1 UNION ALL\n      SELECT n+1 FROM t ) SELECT n FROM t LIMIT\n      100;"
+msgstr ""
+
+#: xml/queries.xml:1895(para)
+msgid "A helpful trick for testing queries when you are not certain if they might loop is to place a <literal>LIMIT</literal>in the parent query. For example, this query would loop forever without the <literal>LIMIT</literal>: <placeholder-1/>This works because <productname>PostgreSQL</productname>'s implementation evaluates only as many rows of a <literal>WITH</literal>query as are actually fetched by the parent query. Using this trick in production is not recommended, because other systems might work differently. Also, it usually won't work if you make the outer query sort the recursive query's results or join them to some other table, because in such cases the outer query will usually try to fetch all of the <literal>WITH</literal>query's output anyway."
+msgstr ""
+
+#: xml/queries.xml:1913(para)
+msgid "A useful property of <literal>WITH</literal>queries is that they are evaluated only once per execution of the parent query, even if they are referred to more than once by the parent query or sibling <literal>WITH</literal>queries. Thus, expensive calculations that are needed in multiple places can be placed within a <literal>WITH</literal>query to avoid redundant work. Another possible application is to prevent unwanted multiple evaluations of functions with side-effects. However, the other side of this coin is that the optimizer is less able to push restrictions from the parent query down into a <literal>WITH</literal>query than an ordinary subquery. The <literal>WITH</literal>query will generally be evaluated as written, without suppression of rows that the parent query might discard afterwards. (But, as mentioned above, evaluation might stop early if the reference(s) to the query demand only a limited number of rows.)"
+msgstr ""
+
+#: xml/queries.xml:1930(para)
+msgid "The examples above only show <literal>WITH</literal>being used with <command>SELECT</command>, but it can be attached in the same way to <command>INSERT</command>, <command>UPDATE</command>, or <command>DELETE</command>. In each case it effectively provides temporary table(s) that can be referred to in the main command."
+msgstr ""
+
+#: xml/queries.xml:1941(title)
+msgid "Data-Modifying Statements in <literal>WITH</literal>"
+msgstr ""
+
+#: xml/queries.xml:1949(programlisting)
+#, no-wrap
+msgid "WITH moved_rows AS ( DELETE FROM products\n      WHERE \"date\" = '2010-10-01' AND \"date\" '2010-11-01' RETURNING\n      * ) INSERT INTO products_log SELECT * FROM\n      moved_rows;"
+msgstr ""
+
+#: xml/queries.xml:1943(para)
+msgid "You can use data-modifying statements ( <command>INSERT</command>, <command>UPDATE</command>, or <command>DELETE</command>) in <literal>WITH</literal>. This allows you to perform several different operations in the same query. An example is: <placeholder-1/>This query effectively moves rows from <structname>products</structname>to <structname>products_log</structname>. The <command>DELETE</command>in <literal>WITH</literal>deletes the specified rows from <structname>products</structname>, returning their contents by means of its <literal>RETURNING</literal>clause; and then the primary query reads that output and inserts it into <structname>products_log</structname>."
+msgstr ""
+
+#: xml/queries.xml:1963(para)
+msgid "A fine point of the above example is that the <literal>WITH</literal>clause is attached to the <command>INSERT</command>, not the sub- <command>SELECT</command>within the <command>INSERT</command>. This is necessary because data-modifying statements are only allowed in <literal>WITH</literal>clauses that are attached to the top-level statement. However, normal <literal>WITH</literal>visibility rules apply, so it is possible to refer to the <literal>WITH</literal>statement's output from the sub- <command>SELECT</command>."
+msgstr ""
+
+#: xml/queries.xml:1989(programlisting)
+#, no-wrap
+msgid "WITH t AS ( DELETE FROM foo ) DELETE FROM\n      bar;"
+msgstr ""
+
+#: xml/queries.xml:1975(para)
+msgid "Data-modifying statements in <literal>WITH</literal>usually have <literal>RETURNING</literal>clauses, as seen in the example above. It is the output of the <literal>RETURNING</literal>clause, <emphasis>not</emphasis>the target table of the data-modifying statement, that forms the temporary table that can be referred to by the rest of the query. If a data-modifying statement in <literal>WITH</literal>lacks a <literal>RETURNING</literal>clause, then it forms no temporary table and cannot be referred to in the rest of the query. Such a statement will be executed nonetheless. A not-particularly-useful example is: <placeholder-1/>This example would remove all rows from tables <structname>foo</structname>and <structname>bar</structname>. The number of affected rows reported to the client would only include rows removed from <structname>bar</structname>."
+msgstr ""
+
+#: xml/queries.xml:2000(programlisting)
+#, no-wrap
+msgid "WITH RECURSIVE included_parts(sub_part, part)\n      AS ( SELECT sub_part, part FROM parts WHERE part =\n      'our_product' UNION ALL SELECT p.sub_part, p.part FROM\n      included_parts pr, parts p WHERE p.part = pr.sub_part )\n      DELETE FROM parts WHERE part IN (SELECT part FROM\n      included_parts);"
+msgstr ""
+
+#: xml/queries.xml:1996(para)
+msgid "Recursive self-references in data-modifying statements are not allowed. In some cases it is possible to work around this limitation by referring to the output of a recursive <literal>WITH</literal>, for example: <placeholder-1/>This query would remove all direct and indirect subparts of a product."
+msgstr ""
+
+#: xml/queries.xml:2007(para)
+msgid "Data-modifying statements in <literal>WITH</literal>are executed exactly once, and always to completion, independently of whether the primary query reads all (or indeed any) of their output. Notice that this is different from the rule for <command>SELECT</command>in <literal>WITH</literal>: as stated in the previous section, execution of a <command>SELECT</command>is carried only as far as the primary query demands its output."
+msgstr ""
+
+#: xml/queries.xml:2033(programlisting)
+#, no-wrap
+msgid "WITH t AS ( UPDATE products SET price = price\n      * 1.05 RETURNING * ) SELECT * FROM\n      products;"
+msgstr ""
+
+#: xml/queries.xml:2039(programlisting)
+#, no-wrap
+msgid "WITH t AS ( UPDATE products SET price = price\n      * 1.05 RETURNING * ) SELECT * FROM t;"
+msgstr ""
+
+#: xml/queries.xml:2017(para)
+msgid "The sub-statements in <literal>WITH</literal>are executed concurrently with each other and with the main query. Therefore, when using data-modifying statements in <literal>WITH</literal>, the order in which the specified updates actually happen is unpredictable. All the statements are executed with the same <firstterm>snapshot</firstterm>(see <xref linkend=\"mvcc\">), so they cannot <quote>see</quote>one another's effects on the target tables. This alleviates the effects of the unpredictability of the actual order of row updates, and means that <literal>RETURNING</literal>data is the only way to communicate changes between different <literal>WITH</literal>sub-statements and the main query. An example of this is that in <placeholder-1/>the outer <command>SELECT</command>would return the original prices before the action of the <command>UPDATE</command>, while in <placeholder-2/>the outer <command>SELECT</command>would return the updated data.</xref>"
+msgstr ""
+
+#: xml/queries.xml:2044(para)
+msgid "Trying to update the same row twice in a single statement is not supported. Only one of the modifications takes place, but it is not easy (and sometimes not possible) to reliably predict which one. This also applies to deleting a row that was already updated in the same statement: only the update is performed. Therefore you should generally avoid trying to modify a single row twice in a single statement. In particular avoid writing <literal>WITH</literal>sub-statements that could affect the same rows changed by the main statement or a sibling sub-statement. The effects of such a statement will not be predictable."
+msgstr ""
+
+#: xml/queries.xml:2056(para)
+msgid "At present, any table used as the target of a data-modifying statement in <literal>WITH</literal>must not have a conditional rule, nor an <literal>ALSO</literal>rule, nor an <literal>INSTEAD</literal>rule that expands to multiple statements."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/queries.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

@@ -1,0 +1,364 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/createdb.xml:4(primary) xml/ref/createdb.xml:8(application) xml/ref/createdb.xml:14(refname) xml/ref/createdb.xml:20(command)
+msgid "createdb"
+msgstr ""
+
+#: xml/ref/createdb.xml:10(manvolnum)
+msgid "1"
+msgstr ""
+
+#: xml/ref/createdb.xml:11(refmiscinfo)
+msgid "Application"
+msgstr ""
+
+#: xml/ref/createdb.xml:16(productname)
+msgid "PostgreSQL"
+msgstr ""
+
+#: xml/ref/createdb.xml:15(refpurpose)
+msgid "create a new <placeholder-1/>database"
+msgstr ""
+
+#: xml/ref/createdb.xml:22(replaceable)
+msgid "connection-option"
+msgstr ""
+
+#: xml/ref/createdb.xml:25(replaceable)
+msgid "option"
+msgstr ""
+
+#: xml/ref/createdb.xml:28(replaceable) xml/ref/createdb.xml:60(replaceable) xml/ref/createdb.xml:335(replaceable)
+msgid "dbname"
+msgstr ""
+
+#: xml/ref/createdb.xml:30(replaceable) xml/ref/createdb.xml:72(replaceable)
+msgid "description"
+msgstr ""
+
+#: xml/ref/createdb.xml:36(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/createdb.xml:37(para)
+msgid "<application>createdb</application>creates a new <productname>PostgreSQL</productname>database."
+msgstr ""
+
+#: xml/ref/createdb.xml:40(para)
+msgid "Normally, the database user who executes this command becomes the owner of the new database. However, a different owner can be specified via the <option>-O</option>option, if the executing user has appropriate privileges."
+msgstr ""
+
+#: xml/ref/createdb.xml:45(para)
+msgid "<application>createdb</application>is a wrapper around the <acronym>SQL</acronym>command <xref linkend=\"SQL-CREATEDATABASE\">. There is no effective difference between creating databases via this utility and via other methods for accessing the server.</xref>"
+msgstr ""
+
+#: xml/ref/createdb.xml:53(title)
+msgid "Options"
+msgstr ""
+
+#: xml/ref/createdb.xml:63(para)
+msgid "Specifies the name of the database to be created. The name must be unique among all <productname>PostgreSQL</productname>databases in this cluster. The default is to create a database with the same name as the current system user."
+msgstr ""
+
+#: xml/ref/createdb.xml:75(para)
+msgid "Specifies a comment to be associated with the newly created database."
+msgstr ""
+
+#: xml/ref/createdb.xml:82(replaceable) xml/ref/createdb.xml:87(replaceable)
+msgid "tablespace"
+msgstr ""
+
+#: xml/ref/createdb.xml:81(option)
+msgid "-D <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/createdb.xml:86(option)
+msgid "--tablespace= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/createdb.xml:91(para)
+msgid "Specifies the default tablespace for the database. (This name is processed as a double-quoted identifier.)"
+msgstr ""
+
+#: xml/ref/createdb.xml:98(option)
+msgid "-e"
+msgstr ""
+
+#: xml/ref/createdb.xml:101(option)
+msgid "--echo"
+msgstr ""
+
+#: xml/ref/createdb.xml:104(para)
+msgid "Echo the commands that <application>createdb</application>generates and sends to the server."
+msgstr ""
+
+#: xml/ref/createdb.xml:112(replaceable) xml/ref/createdb.xml:117(replaceable)
+msgid "encoding"
+msgstr ""
+
+#: xml/ref/createdb.xml:111(option)
+msgid "-E <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/createdb.xml:116(option)
+msgid "--encoding= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/createdb.xml:121(para)
+msgid "Specifies the character encoding scheme to be used in this database. The character sets supported by the <productname>PostgreSQL</productname>server are described in <xref linkend=\"multibyte-charset-supported\"> .</xref>"
+msgstr ""
+
+#: xml/ref/createdb.xml:132(replaceable) xml/ref/createdb.xml:137(replaceable) xml/ref/createdb.xml:150(replaceable) xml/ref/createdb.xml:161(replaceable)
+msgid "locale"
+msgstr ""
+
+#: xml/ref/createdb.xml:131(option)
+msgid "-l <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/createdb.xml:136(option)
+msgid "--locale= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/createdb.xml:141(para)
+msgid "Specifies the locale to be used in this database. This is equivalent to specifying both <option>--lc-collate</option>and <option>--lc-ctype</option>."
+msgstr ""
+
+#: xml/ref/createdb.xml:149(option)
+msgid "--lc-collate= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/createdb.xml:154(para)
+msgid "Specifies the LC_COLLATE setting to be used in this database."
+msgstr ""
+
+#: xml/ref/createdb.xml:160(option)
+msgid "--lc-ctype= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/createdb.xml:165(para)
+msgid "Specifies the LC_CTYPE setting to be used in this database."
+msgstr ""
+
+#: xml/ref/createdb.xml:172(replaceable) xml/ref/createdb.xml:177(replaceable)
+msgid "owner"
+msgstr ""
+
+#: xml/ref/createdb.xml:171(option)
+msgid "-O <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/createdb.xml:176(option)
+msgid "--owner= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/createdb.xml:181(para)
+msgid "Specifies the database user who will own the new database. (This name is processed as a double-quoted identifier.)"
+msgstr ""
+
+#: xml/ref/createdb.xml:189(replaceable) xml/ref/createdb.xml:194(replaceable)
+msgid "template"
+msgstr ""
+
+#: xml/ref/createdb.xml:188(option)
+msgid "-T <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/createdb.xml:193(option)
+msgid "--template= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/createdb.xml:198(para)
+msgid "Specifies the template database from which to build this database. (This name is processed as a double-quoted identifier.)"
+msgstr ""
+
+#: xml/ref/createdb.xml:205(option)
+msgid "-V"
+msgstr ""
+
+#: xml/ref/createdb.xml:208(option)
+msgid "--version"
+msgstr ""
+
+#: xml/ref/createdb.xml:211(para)
+msgid "Print the <application>createdb</application>version and exit."
+msgstr ""
+
+#: xml/ref/createdb.xml:218(option)
+msgid "-?"
+msgstr ""
+
+#: xml/ref/createdb.xml:221(option)
+msgid "--help"
+msgstr ""
+
+#: xml/ref/createdb.xml:224(para)
+msgid "Show help about <application>createdb</application>command line arguments, and exit."
+msgstr ""
+
+#: xml/ref/createdb.xml:54(para)
+msgid "<application>createdb</application>accepts the following command-line arguments: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/createdb.xml:230(para)
+msgid "The options <option>-D</option>, <option>-l</option>, <option>-E</option>, <option>-O</option>, and <option>-T</option>correspond to options of the underlying SQL command <xref linkend=\"SQL-CREATEDATABASE\">; see there for more information about them.</xref>"
+msgstr ""
+
+#: xml/ref/createdb.xml:246(replaceable) xml/ref/createdb.xml:251(replaceable)
+msgid "host"
+msgstr ""
+
+#: xml/ref/createdb.xml:245(option)
+msgid "-h <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/createdb.xml:250(option)
+msgid "--host= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/createdb.xml:255(para)
+msgid "Specifies the host name of the machine on which the server is running. If the value begins with a slash, it is used as the directory for the Unix domain socket."
+msgstr ""
+
+#: xml/ref/createdb.xml:264(replaceable) xml/ref/createdb.xml:269(replaceable)
+msgid "port"
+msgstr ""
+
+#: xml/ref/createdb.xml:263(option)
+msgid "-p <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/createdb.xml:268(option)
+msgid "--port= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/createdb.xml:273(para)
+msgid "Specifies the TCP port or the local Unix domain socket file extension on which the server is listening for connections."
+msgstr ""
+
+#: xml/ref/createdb.xml:281(replaceable) xml/ref/createdb.xml:286(replaceable)
+msgid "username"
+msgstr ""
+
+#: xml/ref/createdb.xml:280(option)
+msgid "-U <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/createdb.xml:285(option)
+msgid "--username= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/createdb.xml:290(para)
+msgid "User name to connect as."
+msgstr ""
+
+#: xml/ref/createdb.xml:295(option)
+msgid "-w"
+msgstr ""
+
+#: xml/ref/createdb.xml:298(option)
+msgid "--no-password"
+msgstr ""
+
+#: xml/ref/createdb.xml:301(para)
+msgid "Never issue a password prompt. If the server requires password authentication and a password is not available by other means such as a <filename>.pgpass</filename>file, the connection attempt will fail. This option can be useful in batch jobs and scripts where no user is present to enter a password."
+msgstr ""
+
+#: xml/ref/createdb.xml:312(option)
+msgid "-W"
+msgstr ""
+
+#: xml/ref/createdb.xml:315(option)
+msgid "--password"
+msgstr ""
+
+#: xml/ref/createdb.xml:318(para)
+msgid "Force <application>createdb</application>to prompt for a password before connecting to a database."
+msgstr ""
+
+#: xml/ref/createdb.xml:321(para)
+msgid "This option is never essential, since <application>createdb</application>will automatically prompt for a password if the server demands password authentication. However, <application>createdb</application>will waste a connection attempt finding out that the server wants a password. In some cases it is worth typing <option>-W</option>to avoid the extra connection attempt."
+msgstr ""
+
+#: xml/ref/createdb.xml:334(option)
+msgid "--maintenance-db= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/createdb.xml:339(para)
+msgid "Specifies the name of the database to connect to when creating the new database. If not specified, the <literal>postgres</literal>database will be used; if that does not exist (or if it is the name of the new database being created), <literal>template1</literal>will be used."
+msgstr ""
+
+#: xml/ref/createdb.xml:239(para)
+msgid "<application>createdb</application>also accepts the following command-line arguments for connection parameters: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/createdb.xml:350(title)
+msgid "Environment"
+msgstr ""
+
+#: xml/ref/createdb.xml:354(envar)
+msgid "PGDATABASE"
+msgstr ""
+
+#: xml/ref/createdb.xml:357(para)
+msgid "If set, the name of the database to create, unless overridden on the command line."
+msgstr ""
+
+#: xml/ref/createdb.xml:363(envar)
+msgid "PGHOST"
+msgstr ""
+
+#: xml/ref/createdb.xml:366(envar)
+msgid "PGPORT"
+msgstr ""
+
+#: xml/ref/createdb.xml:369(envar)
+msgid "PGUSER"
+msgstr ""
+
+#: xml/ref/createdb.xml:372(para)
+msgid "Default connection parameters. <envar>PGUSER</envar>also determines the name of the database to create, if it is not specified on the command line or by <envar>PGDATABASE</envar>."
+msgstr ""
+
+#: xml/ref/createdb.xml:380(para)
+msgid "This utility, like most other <productname>PostgreSQL</productname>utilities, also uses the environment variables supported by <application>libpq</application>(see <xref linkend=\"libpq-envars\">).</xref>"
+msgstr ""
+
+#: xml/ref/createdb.xml:387(title)
+msgid "Diagnostics"
+msgstr ""
+
+#: xml/ref/createdb.xml:388(para)
+msgid "In case of difficulty, see <xref linkend=\"SQL-CREATEDATABASE\">and <xref linkend=\"APP-PSQL\">for discussions of potential problems and error messages. The database server must be running at the targeted host. Also, any default connection settings and environment variables used by the <application>libpq</application>front-end library will apply.</xref></xref>"
+msgstr ""
+
+#: xml/ref/createdb.xml:398(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/createdb.xml:399(para)
+msgid "To create the database <literal>demo</literal>using the default database server: <screen>\n      <prompt>$</prompt>\n      <userinput>createdb demo</userinput>\n    </screen>"
+msgstr ""
+
+#: xml/ref/createdb.xml:405(para)
+msgid "To create the database <literal>demo</literal>using the server on host <literal>eden</literal>, port 5000, using the <literal>LATIN1</literal>encoding scheme with a look at the underlying command: <screen>\n      <prompt>$</prompt>\n      <userinput>createdb -p 5000 -h eden -E LATIN1 -e\n      demo</userinput>\n      <computeroutput>CREATE DATABASE demo ENCODING\n      'LATIN1';</computeroutput>\n    </screen>"
+msgstr ""
+
+#: xml/ref/createdb.xml:419(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/createdb.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

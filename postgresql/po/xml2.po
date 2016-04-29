@@ -1,0 +1,294 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:03+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/xml2.xml:3(title) xml/xml2.xml:5(primary)
+msgid "xml2"
+msgstr ""
+
+#: xml/xml2.xml:7(para)
+msgid "The <filename>xml2</filename>module provides XPath querying and XSLT functionality."
+msgstr ""
+
+#: xml/xml2.xml:11(title)
+msgid "Deprecation Notice"
+msgstr ""
+
+#: xml/xml2.xml:12(para)
+msgid "From <productname>PostgreSQL</productname>8.3 on, there is XML-related functionality based on the SQL/XML standard in the core server. That functionality covers XML syntax checking and XPath queries, which is what this module does, and more, but the API is not at all compatible. It is planned that this module will be removed in a future version of PostgreSQL in favor of the newer standard API, so you are encouraged to try converting your applications. If you find that some of the functionality of this module is not available in an adequate form with the newer API, please explain your issue to <email>pgsql-hackers@postgresql.org</email>so that the deficiency can be addressed."
+msgstr ""
+
+#: xml/xml2.xml:27(title)
+msgid "Description of Functions"
+msgstr ""
+
+#: xml/xml2.xml:33(type) xml/xml2.xml:69(type) xml/xml2.xml:99(type) xml/xml2.xml:118(type) xml/xml2.xml:132(type) xml/xml2.xml:147(type) xml/xml2.xml:162(type)
+msgid "text"
+msgstr ""
+
+#: xml/xml2.xml:29(xref)
+msgid "shows the functions provided by this module. These functions provide straightforward XML parsing and XPath queries. All arguments are of type <placeholder-1/>, so for brevity that is not shown."
+msgstr ""
+
+#: xml/xml2.xml:36(title)
+msgid "Functions"
+msgstr ""
+
+#: xml/xml2.xml:40(entry)
+msgid "Function"
+msgstr ""
+
+#: xml/xml2.xml:41(entry)
+msgid "Returns"
+msgstr ""
+
+#: xml/xml2.xml:42(entry) xml/xml2.xml:196(entry)
+msgid "Description"
+msgstr ""
+
+#: xml/xml2.xml:48(function)
+msgid "xml_is_well_formed(document)"
+msgstr ""
+
+#: xml/xml2.xml:51(type) xml/xml2.xml:90(type)
+msgid "bool"
+msgstr ""
+
+#: xml/xml2.xml:54(para)
+msgid "This parses the document text in its parameter and returns true if the document is well-formed XML. (Note: before PostgreSQL 8.2, this function was called <function>xml_valid()</function>. That is the wrong name since validity and well-formedness have different meanings in XML. The old name is still available, but is deprecated.)"
+msgstr ""
+
+#: xml/xml2.xml:66(function)
+msgid "xpath_string(document, query)"
+msgstr ""
+
+#: xml/xml2.xml:72(para)
+msgid "These functions evaluate the XPath query on the supplied document, and cast the result to the specified type."
+msgstr ""
+
+#: xml/xml2.xml:79(function)
+msgid "xpath_number(document, query)"
+msgstr ""
+
+#: xml/xml2.xml:82(type)
+msgid "float4"
+msgstr ""
+
+#: xml/xml2.xml:87(function)
+msgid "xpath_bool(document, query)"
+msgstr ""
+
+#: xml/xml2.xml:95(function)
+msgid "xpath_nodeset(document, query, toptag, itemtag)"
+msgstr ""
+
+#: xml/xml2.xml:102(para)
+msgid "This evaluates query on document and wraps the result in XML tags. If the result is multivalued, the output will look like: <synopsis>toptag itemtagValue 1 which could be an XML\n              fragment/itemtag itemtagValue 2..../itemtag\n              /toptag</synopsis>If either <literal>toptag</literal>or <literal>itemtag</literal>is an empty string, the relevant tag is omitted."
+msgstr ""
+
+#: xml/xml2.xml:115(function)
+msgid "xpath_nodeset(document, query)"
+msgstr ""
+
+#: xml/xml2.xml:121(para)
+msgid "Like <function>xpath_nodeset(document, query, toptag, itemtag)</function>but result omits both tags."
+msgstr ""
+
+#: xml/xml2.xml:128(function)
+msgid "xpath_nodeset(document, query, itemtag)"
+msgstr ""
+
+#: xml/xml2.xml:135(para)
+msgid "Like <function>xpath_nodeset(document, query, toptag, itemtag)</function>but result omits <literal>toptag</literal>."
+msgstr ""
+
+#: xml/xml2.xml:143(function)
+msgid "xpath_list(document, query, separator)"
+msgstr ""
+
+#: xml/xml2.xml:150(para)
+msgid "This function returns multiple values separated by the specified separator, for example <literal>Value 1,Value 2,Value 3</literal>if separator is <literal>,</literal>."
+msgstr ""
+
+#: xml/xml2.xml:159(function)
+msgid "xpath_list(document, query)"
+msgstr ""
+
+#: xml/xml2.xml:166(literal)
+msgid ","
+msgstr ""
+
+#: xml/xml2.xml:164(entry)
+msgid "This is a wrapper for the above function that uses <placeholder-1/>as the separator."
+msgstr ""
+
+#: xml/xml2.xml:174(literal) xml/xml2.xml:177(primary)
+msgid "xpath_table"
+msgstr ""
+
+#: xml/xml2.xml:179(synopsis)
+#, no-wrap
+msgid "xpath_table(text key, text document, text relation,\n    text xpaths, text criteria) returns setof record"
+msgstr ""
+
+#: xml/xml2.xml:181(para)
+msgid "<function>xpath_table</function>is a table function that evaluates a set of XPath queries on each of a set of documents and returns the results as a table. The primary key field from the original document table is returned as the first column of the result so that the result set can readily be used in joins. The parameters are described in <xref linkend=\"xml2-xpath-table-parameters\">.</xref>"
+msgstr ""
+
+#: xml/xml2.xml:190(title)
+msgid "<function>xpath_table</function>Parameters"
+msgstr ""
+
+#: xml/xml2.xml:195(entry)
+msgid "Parameter"
+msgstr ""
+
+#: xml/xml2.xml:202(parameter)
+msgid "key"
+msgstr ""
+
+#: xml/xml2.xml:205(para)
+msgid "the name of the <quote>key</quote>field this is just a field to be used as the first column of the output table, i.e., it identifies the record from which each output row came (see note below about multiple values)"
+msgstr ""
+
+#: xml/xml2.xml:214(parameter)
+msgid "document"
+msgstr ""
+
+#: xml/xml2.xml:217(para)
+msgid "the name of the field containing the XML document"
+msgstr ""
+
+#: xml/xml2.xml:223(parameter)
+msgid "relation"
+msgstr ""
+
+#: xml/xml2.xml:226(para)
+msgid "the name of the table or view containing the documents"
+msgstr ""
+
+#: xml/xml2.xml:232(parameter)
+msgid "xpaths"
+msgstr ""
+
+#: xml/xml2.xml:235(para)
+msgid "one or more XPath expressions, separated by <literal>|</literal>"
+msgstr ""
+
+#: xml/xml2.xml:241(parameter)
+msgid "criteria"
+msgstr ""
+
+#: xml/xml2.xml:244(para)
+msgid "the contents of the WHERE clause. This cannot be omitted, so use <literal>true</literal>or <literal>1=1</literal>if you want to process all the rows in the relation"
+msgstr ""
+
+#: xml/xml2.xml:254(para)
+msgid "These parameters (except the XPath strings) are just substituted into a plain SQL SELECT statement, so you have some flexibility the statement is"
+msgstr ""
+
+#: xml/xml2.xml:258(literal)
+msgid "SELECT key, document FROM relation WHERE criteria"
+msgstr ""
+
+#: xml/xml2.xml:261(para)
+msgid "so those parameters can be <emphasis>anything</emphasis>valid in those particular locations. The result from this SELECT needs to return exactly two columns (which it will unless you try to list multiple fields for key or document). Beware that this simplistic approach requires that you validate any user-supplied values to avoid SQL injection attacks."
+msgstr ""
+
+#: xml/xml2.xml:272(programlisting)
+#, no-wrap
+msgid "SELECT * FROM xpath_table('article_id',\n    'article_xml', 'articles',\n    '/article/author|/article/pages|/article/title', 'date_entered\n    &gt; ''2003-01-01'' ') AS t(article_id integer, author text,\n    page_count integer, title text);"
+msgstr ""
+
+#: xml/xml2.xml:268(para)
+msgid "The function has to be used in a <literal>FROM</literal>expression, with an <literal>AS</literal>clause to specify the output columns; for example <placeholder-1/>The <literal>AS</literal>clause defines the names and types of the columns in the output table. The first is the <quote>key</quote>field and the rest correspond to the XPath queries. If there are more XPath queries than result columns, the extra queries will be ignored. If there are more result columns than XPath queries, the extra columns will be NULL."
+msgstr ""
+
+#: xml/xml2.xml:284(para)
+msgid "Notice that this example defines the <structname>page_count</structname>result column as an integer. The function deals internally with string representations, so when you say you want an integer in the output, it will take the string representation of the XPath result and use PostgreSQL input functions to transform it into an integer (or whatever type the <type>AS</type>clause requests). An error will result if it can't do this for example if the result is empty so you may wish to just stick to <type>text</type>as the column type if you think your data has any problems."
+msgstr ""
+
+#: xml/xml2.xml:304(programlisting)
+#, no-wrap
+msgid "SELECT t.title, p.fullname, p.email FROM\n    xpath_table('article_id', 'article_xml', 'articles',\n    '/article/title|/article/author/@id',\n    'xpath_string(article_xml,''/article/@date'') &gt;\n    ''2003-03-20'' ') AS t(article_id integer, title text,\n    author_id integer), tblPeopleInfo AS p WHERE t.author_id =\n    p.person_id;"
+msgstr ""
+
+#: xml/xml2.xml:296(para)
+msgid "The calling <command>SELECT</command>statement doesn't necessarily have be just <literal>SELECT *</literal>it can reference the output columns by name or join them to other tables. The function produces a virtual table with which you can perform any operation you wish (e.g. aggregation, joining, sorting etc). So we could also have: <placeholder-1/>as a more complicated example. Of course, you could wrap all of this in a view for convenience."
+msgstr ""
+
+#: xml/xml2.xml:314(title)
+msgid "Multivalued Results"
+msgstr ""
+
+#: xml/xml2.xml:315(para)
+msgid "The <function>xpath_table</function>function assumes that the results of each XPath query might be multivalued, so the number of rows returned by the function may not be the same as the number of input documents. The first row returned contains the first result from each query, the second row the second result from each query. If one of the queries has fewer values than the others, null values will be returned instead."
+msgstr ""
+
+#: xml/xml2.xml:331(programlisting)
+#, no-wrap
+msgid "CREATE TABLE test ( id int PRIMARY KEY, xml\n      text ); INSERT INTO test VALUES (1, 'doc num=\"C1\" line\n      num=\"L1\"a1/ab2/bc3/c/line line num=\"L2\"a11/ab22/bc33/c/line\n      /doc'); INSERT INTO test VALUES (2, 'doc num=\"C2\" line\n      num=\"L1\"a111/ab222/bc333/c/line line\n      num=\"L2\"a111/ab222/bc333/c/line /doc'); SELECT * FROM\n      xpath_table('id','xml','test',\n      '/doc/@num|/doc/line/@num|/doc/line/a|/doc/line/b|/doc/line/c',\n      'true') AS t(id int, doc_num varchar(10), line_num\n      varchar(10), val1 int, val2 int, val3 int) WHERE id = 1 ORDER\n      BY doc_num, line_num id | doc_num | line_num | val1 | val2 |\n      val3 ----+---------+----------+------+------+------ 1 | C1 |\n      L1 | 1 | 2 | 3 1 | | L2 | 11 | 22 |\n      33"
+msgstr ""
+
+#: xml/xml2.xml:324(para)
+msgid "In some cases, a user will know that a given XPath query will return only a single result (perhaps a unique document identifier) if used alongside an XPath query returning multiple results, the single-valued result will appear only on the first row of the result. The solution to this is to use the key field as part of a join against a simpler XPath query. As an example: <placeholder-1/>"
+msgstr ""
+
+#: xml/xml2.xml:349(programlisting)
+#, no-wrap
+msgid "SELECT t.*,i.doc_num FROM xpath_table('id',\n      'xml', 'test',\n      '/doc/line/@num|/doc/line/a|/doc/line/b|/doc/line/c', 'true')\n      AS t(id int, line_num varchar(10), val1 int, val2 int, val3\n      int), xpath_table('id', 'xml', 'test', '/doc/@num', 'true')\n      AS i(id int, doc_num varchar(10)) WHERE i.id=t.id AND i.id=1\n      ORDER BY doc_num, line_num; id | line_num | val1 | val2 |\n      val3 | doc_num ----+----------+------+------+------+---------\n      1 | L1 | 1 | 2 | 3 | C1 1 | L2 | 11 | 22 | 33 | C1 (2\n      rows)"
+msgstr ""
+
+#: xml/xml2.xml:345(para)
+msgid "To get <literal>doc_num</literal>on every line, the solution is to use two invocations of <function>xpath_table</function>and join the results: <placeholder-1/>"
+msgstr ""
+
+#: xml/xml2.xml:362(title)
+msgid "XSLT Functions"
+msgstr ""
+
+#: xml/xml2.xml:363(para)
+msgid "The following functions are available if libxslt is installed:"
+msgstr ""
+
+#: xml/xml2.xml:367(literal) xml/xml2.xml:370(primary)
+msgid "xslt_process"
+msgstr ""
+
+#: xml/xml2.xml:372(synopsis)
+#, no-wrap
+msgid "xslt_process(text document, text stylesheet, text\n      paramlist) returns text"
+msgstr ""
+
+#: xml/xml2.xml:374(para)
+msgid "This function applies the XSL stylesheet to the document and returns the transformed result. The <literal>paramlist</literal>is a list of parameter assignments to be used in the transformation, specified in the form <literal>a=1,b=2</literal>. Note that the parameter parsing is very simple-minded: parameter values cannot contain commas!"
+msgstr ""
+
+#: xml/xml2.xml:382(para)
+msgid "There is also a two-parameter version of <function>xslt_process</function>which does not pass any parameters to the transformation."
+msgstr ""
+
+#: xml/xml2.xml:388(title)
+msgid "Author"
+msgstr ""
+
+#: xml/xml2.xml:389(para)
+msgid "John Gray <email>jgray@azuli.co.uk</email>"
+msgstr ""
+
+#: xml/xml2.xml:391(para)
+msgid "Development of this module was sponsored by Torchbox Ltd. (www.torchbox.com). It has the same BSD license as PostgreSQL."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/xml2.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

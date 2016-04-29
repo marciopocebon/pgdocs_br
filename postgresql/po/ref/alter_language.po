@@ -1,0 +1,85 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/alter_language.xml:4(primary) xml/ref/alter_language.xml:7(refentrytitle) xml/ref/alter_language.xml:12(refname)
+msgid "ALTER LANGUAGE"
+msgstr ""
+
+#: xml/ref/alter_language.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/alter_language.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/alter_language.xml:13(refpurpose)
+msgid "change the definition of a procedural language"
+msgstr ""
+
+#: xml/ref/alter_language.xml:18(replaceable) xml/ref/alter_language.xml:21(replaceable) xml/ref/alter_language.xml:39(replaceable)
+msgid "name"
+msgstr ""
+
+#: xml/ref/alter_language.xml:19(replaceable) xml/ref/alter_language.xml:47(replaceable)
+msgid "new_name"
+msgstr ""
+
+#: xml/ref/alter_language.xml:22(replaceable) xml/ref/alter_language.xml:55(replaceable)
+msgid "new_owner"
+msgstr ""
+
+#: xml/ref/alter_language.xml:17(synopsis)
+#, no-wrap
+msgid "ALTER [ PROCEDURAL ] LANGUAGE \n    <placeholder-1/>RENAME TO \n    <placeholder-2/>ALTER [ PROCEDURAL ]\n    LANGUAGE \n    <placeholder-3/>OWNER TO { \n    <placeholder-4/>| CURRENT_USER |\n    SESSION_USER }"
+msgstr ""
+
+#: xml/ref/alter_language.xml:26(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/alter_language.xml:27(para)
+msgid "<command>ALTER LANGUAGE</command>changes the definition of a procedural language. The only functionality is to rename the language or assign a new owner. You must be superuser or owner of the language to use <command>ALTER LANGUAGE</command>."
+msgstr ""
+
+#: xml/ref/alter_language.xml:35(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/alter_language.xml:42(para)
+msgid "Name of a language"
+msgstr ""
+
+#: xml/ref/alter_language.xml:50(para)
+msgid "The new name of the language"
+msgstr ""
+
+#: xml/ref/alter_language.xml:58(para)
+msgid "The new owner of the language"
+msgstr ""
+
+#: xml/ref/alter_language.xml:64(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/alter_language.xml:65(para)
+msgid "There is no <command>ALTER LANGUAGE</command>statement in the SQL standard."
+msgstr ""
+
+#: xml/ref/alter_language.xml:70(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/alter_language.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

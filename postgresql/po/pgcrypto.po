@@ -1,0 +1,1440 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/pgcrypto.xml:3(title) xml/pgcrypto.xml:5(primary)
+msgid "pgcrypto"
+msgstr ""
+
+#: xml/pgcrypto.xml:8(primary)
+msgid "encryption"
+msgstr ""
+
+#: xml/pgcrypto.xml:9(secondary)
+msgid "for specific columns"
+msgstr ""
+
+#: xml/pgcrypto.xml:11(para)
+msgid "The <filename>pgcrypto</filename>module provides cryptographic functions for <productname>PostgreSQL</productname>."
+msgstr ""
+
+#: xml/pgcrypto.xml:16(title)
+msgid "General Hashing Functions"
+msgstr ""
+
+#: xml/pgcrypto.xml:19(function)
+msgid "digest()"
+msgstr ""
+
+#: xml/pgcrypto.xml:22(primary)
+msgid "digest"
+msgstr ""
+
+#: xml/pgcrypto.xml:24(synopsis)
+#, no-wrap
+msgid "digest(data text, type text) returns bytea\n      digest(data bytea, type text) returns bytea"
+msgstr ""
+
+#: xml/pgcrypto.xml:26(para)
+msgid "Computes a binary hash of the given <parameter>data</parameter>. <parameter>type</parameter>is the algorithm to use. Standard algorithms are <literal>md5</literal>, <literal>sha1</literal>, <literal>sha224</literal>, <literal>sha256</literal>, <literal>sha384</literal>and <literal>sha512</literal>. If <filename>pgcrypto</filename>was built with OpenSSL, more algorithms are available, as detailed in <xref linkend=\"pgcrypto-with-without-openssl\">.</xref>"
+msgstr ""
+
+#: xml/pgcrypto.xml:41(programlisting)
+#, no-wrap
+msgid "CREATE OR REPLACE FUNCTION sha1(bytea)\n      returns text AS $$ SELECT encode(digest($1, 'sha1'), 'hex')\n      $$ LANGUAGE SQL STRICT IMMUTABLE;"
+msgstr ""
+
+#: xml/pgcrypto.xml:39(para)
+msgid "If you want the digest as a hexadecimal string, use <function>encode()</function>on the result. For example: <placeholder-1/>"
+msgstr ""
+
+#: xml/pgcrypto.xml:47(function)
+msgid "hmac()"
+msgstr ""
+
+#: xml/pgcrypto.xml:50(primary)
+msgid "hmac"
+msgstr ""
+
+#: xml/pgcrypto.xml:52(synopsis)
+#, no-wrap
+msgid "hmac(data text, key text, type text) returns bytea\n      hmac(data bytea, key text, type text) returns\n      bytea"
+msgstr ""
+
+#: xml/pgcrypto.xml:55(para)
+msgid "Calculates hashed MAC for <parameter>data</parameter>with key <parameter>key</parameter>. <parameter>type</parameter>is the same as in <function>digest()</function>."
+msgstr ""
+
+#: xml/pgcrypto.xml:60(para)
+msgid "This is similar to <function>digest()</function>but the hash can only be recalculated knowing the key. This prevents the scenario of someone altering data and also changing the hash to match."
+msgstr ""
+
+#: xml/pgcrypto.xml:65(para)
+msgid "If the key is larger than the hash block size it will first be hashed and the result will be used as key."
+msgstr ""
+
+#: xml/pgcrypto.xml:70(title)
+msgid "Password Hashing Functions"
+msgstr ""
+
+#: xml/pgcrypto.xml:71(para)
+msgid "The functions <function>crypt()</function>and <function>gen_salt()</function>are specifically designed for hashing passwords. <function>crypt()</function>does the hashing and <function>gen_salt()</function>prepares algorithm parameters for it."
+msgstr ""
+
+#: xml/pgcrypto.xml:78(para)
+msgid "The algorithms in <function>crypt()</function>differ from the usual MD5 or SHA1 hashing algorithms in the following respects:"
+msgstr ""
+
+#: xml/pgcrypto.xml:83(para)
+msgid "They are slow. As the amount of data is so small, this is the only way to make brute-forcing passwords hard."
+msgstr ""
+
+#: xml/pgcrypto.xml:88(para)
+msgid "They use a random value, called the <firstterm>salt</firstterm>, so that users having the same password will have different encrypted passwords. This is also an additional defense against reversing the algorithm."
+msgstr ""
+
+#: xml/pgcrypto.xml:95(para)
+msgid "They include the algorithm type in the result, so passwords hashed with different algorithms can co-exist."
+msgstr ""
+
+#: xml/pgcrypto.xml:100(para)
+msgid "Some of them are adaptive that means when computers get faster, you can tune the algorithm to be slower, without introducing incompatibility with existing passwords."
+msgstr ""
+
+#: xml/pgcrypto.xml:109(function) xml/pgcrypto.xml:171(function)
+msgid "crypt()"
+msgstr ""
+
+#: xml/pgcrypto.xml:107(xref)
+msgid "lists the algorithms supported by the <placeholder-1/>function."
+msgstr ""
+
+#: xml/pgcrypto.xml:112(title)
+msgid "Supported Algorithms for <function>crypt()</function>"
+msgstr ""
+
+#: xml/pgcrypto.xml:117(entry) xml/pgcrypto.xml:233(entry) xml/pgcrypto.xml:285(entry) xml/pgcrypto.xml:1185(entry)
+msgid "Algorithm"
+msgstr ""
+
+#: xml/pgcrypto.xml:118(entry)
+msgid "Max Password Length"
+msgstr ""
+
+#: xml/pgcrypto.xml:119(entry)
+msgid "Adaptive?"
+msgstr ""
+
+#: xml/pgcrypto.xml:120(entry)
+msgid "Salt Bits"
+msgstr ""
+
+#: xml/pgcrypto.xml:121(entry)
+msgid "Output Length"
+msgstr ""
+
+#: xml/pgcrypto.xml:122(entry)
+msgid "Description"
+msgstr ""
+
+#: xml/pgcrypto.xml:128(literal) xml/pgcrypto.xml:250(literal)
+msgid "bf"
+msgstr ""
+
+#: xml/pgcrypto.xml:130(entry)
+msgid "72"
+msgstr ""
+
+#: xml/pgcrypto.xml:131(entry) xml/pgcrypto.xml:151(entry) xml/pgcrypto.xml:974(entry) xml/pgcrypto.xml:975(entry) xml/pgcrypto.xml:979(entry) xml/pgcrypto.xml:980(entry) xml/pgcrypto.xml:984(entry) xml/pgcrypto.xml:994(entry) xml/pgcrypto.xml:995(entry) xml/pgcrypto.xml:999(entry) xml/pgcrypto.xml:1005(entry) xml/pgcrypto.xml:1009(entry) xml/pgcrypto.xml:1010(entry) xml/pgcrypto.xml:1014(entry) xml/pgcrypto.xml:1015(entry) xml/pgcrypto.xml:1019(entry) xml/pgcrypto.xml:1020(entry)
+msgid "yes"
+msgstr ""
+
+#: xml/pgcrypto.xml:132(entry)
+msgid "128"
+msgstr ""
+
+#: xml/pgcrypto.xml:133(entry)
+msgid "60"
+msgstr ""
+
+#: xml/pgcrypto.xml:134(entry)
+msgid "Blowfish-based, variant 2a"
+msgstr ""
+
+#: xml/pgcrypto.xml:138(literal) xml/pgcrypto.xml:361(literal)
+msgid "md5"
+msgstr ""
+
+#: xml/pgcrypto.xml:140(entry)
+msgid "unlimited"
+msgstr ""
+
+#: xml/pgcrypto.xml:141(entry) xml/pgcrypto.xml:161(entry) xml/pgcrypto.xml:989(entry) xml/pgcrypto.xml:1004(entry)
+msgid "no"
+msgstr ""
+
+#: xml/pgcrypto.xml:142(entry)
+msgid "48"
+msgstr ""
+
+#: xml/pgcrypto.xml:143(entry)
+msgid "34"
+msgstr ""
+
+#: xml/pgcrypto.xml:144(entry)
+msgid "MD5-based crypt"
+msgstr ""
+
+#: xml/pgcrypto.xml:148(literal) xml/pgcrypto.xml:242(literal)
+msgid "xdes"
+msgstr ""
+
+#: xml/pgcrypto.xml:150(entry) xml/pgcrypto.xml:160(entry)
+msgid "8"
+msgstr ""
+
+#: xml/pgcrypto.xml:152(entry)
+msgid "24"
+msgstr ""
+
+#: xml/pgcrypto.xml:153(entry)
+msgid "20"
+msgstr ""
+
+#: xml/pgcrypto.xml:154(entry)
+msgid "Extended DES"
+msgstr ""
+
+#: xml/pgcrypto.xml:158(literal)
+msgid "des"
+msgstr ""
+
+#: xml/pgcrypto.xml:162(entry)
+msgid "12"
+msgstr ""
+
+#: xml/pgcrypto.xml:163(entry)
+msgid "13"
+msgstr ""
+
+#: xml/pgcrypto.xml:164(entry)
+msgid "Original UNIX crypt"
+msgstr ""
+
+#: xml/pgcrypto.xml:174(primary)
+msgid "crypt"
+msgstr ""
+
+#: xml/pgcrypto.xml:176(synopsis)
+#, no-wrap
+msgid "crypt(password text, salt text) returns\n      text"
+msgstr ""
+
+#: xml/pgcrypto.xml:178(para)
+msgid "Calculates a crypt(3)-style hash of <parameter>password</parameter>. When storing a new password, you need to use <function>gen_salt()</function>to generate a new <parameter>salt</parameter>value. To check a password, pass the stored hash value as <parameter>salt</parameter>, and test whether the result matches the stored value."
+msgstr ""
+
+#: xml/pgcrypto.xml:187(programlisting)
+#, no-wrap
+msgid "UPDATE ... SET pswhash = crypt('new\n      password', gen_salt('md5'));"
+msgstr ""
+
+#: xml/pgcrypto.xml:186(para)
+msgid "Example of setting a new password: <placeholder-1/>"
+msgstr ""
+
+#: xml/pgcrypto.xml:190(programlisting)
+#, no-wrap
+msgid "SELECT (pswhash = crypt('entered password',\n      pswhash)) AS pswmatch FROM ... ;"
+msgstr ""
+
+#: xml/pgcrypto.xml:189(para)
+msgid "Example of authentication: <placeholder-1/>This returns <literal>true</literal>if the entered password is correct."
+msgstr ""
+
+#: xml/pgcrypto.xml:198(function)
+msgid "gen_salt()"
+msgstr ""
+
+#: xml/pgcrypto.xml:201(primary) xml/pgcrypto.xml:278(function)
+msgid "gen_salt"
+msgstr ""
+
+#: xml/pgcrypto.xml:203(synopsis)
+#, no-wrap
+msgid "gen_salt(type text [, iter_count integer ]) returns\n      text"
+msgstr ""
+
+#: xml/pgcrypto.xml:205(para)
+msgid "Generates a new random salt string for use in <function>crypt()</function>. The salt string also tells <function>crypt()</function>which algorithm to use."
+msgstr ""
+
+#: xml/pgcrypto.xml:208(para)
+msgid "The <parameter>type</parameter>parameter specifies the hashing algorithm. The accepted types are: <literal>des</literal>, <literal>xdes</literal>, <literal>md5</literal>and <literal>bf</literal>."
+msgstr ""
+
+#: xml/pgcrypto.xml:215(para)
+msgid "The <parameter>iter_count</parameter>parameter lets the user specify the iteration count, for algorithms that have one. The higher the count, the more time it takes to hash the password and therefore the more time to break it. Although with too high a count the time to calculate a hash may be several years which is somewhat impractical. If the <parameter>iter_count</parameter>parameter is omitted, the default iteration count is used. Allowed values for <parameter>iter_count</parameter>depend on the algorithm and are shown in <xref linkend=\"pgcrypto-icfc-table\">.</xref>"
+msgstr ""
+
+#: xml/pgcrypto.xml:228(title)
+msgid "Iteration Counts for <function>crypt()</function>"
+msgstr ""
+
+#: xml/pgcrypto.xml:234(entry)
+msgid "Default"
+msgstr ""
+
+#: xml/pgcrypto.xml:235(entry)
+msgid "Min"
+msgstr ""
+
+#: xml/pgcrypto.xml:236(entry)
+msgid "Max"
+msgstr ""
+
+#: xml/pgcrypto.xml:244(entry)
+msgid "725"
+msgstr ""
+
+#: xml/pgcrypto.xml:245(entry) xml/pgcrypto.xml:365(entry)
+msgid "1"
+msgstr ""
+
+#: xml/pgcrypto.xml:246(entry)
+msgid "16777215"
+msgstr ""
+
+#: xml/pgcrypto.xml:252(entry)
+msgid "6"
+msgstr ""
+
+#: xml/pgcrypto.xml:253(entry) xml/pgcrypto.xml:357(entry)
+msgid "4"
+msgstr ""
+
+#: xml/pgcrypto.xml:254(entry)
+msgid "31"
+msgstr ""
+
+#: xml/pgcrypto.xml:259(para)
+msgid "For <literal>xdes</literal>there is an additional limitation that the iteration count must be an odd number."
+msgstr ""
+
+#: xml/pgcrypto.xml:262(para)
+msgid "To pick an appropriate iteration count, consider that the original DES crypt was designed to have the speed of 4 hashes per second on the hardware of that time. Slower than 4 hashes per second would probably dampen usability. Faster than 100 hashes per second is probably too fast."
+msgstr ""
+
+#: xml/pgcrypto.xml:275(literal)
+msgid "crypt-bf"
+msgstr ""
+
+#: xml/pgcrypto.xml:277(parameter)
+msgid "iter_count"
+msgstr ""
+
+#: xml/pgcrypto.xml:268(xref)
+msgid "gives an overview of the relative slowness of different hashing algorithms. The table shows how much time it would take to try all combinations of characters in an 8-character password, assuming that the password contains either only lower case letters, or upper- and lower-case letters and numbers. In the <placeholder-1/>entries, the number after a slash is the <placeholder-2/>parameter of <placeholder-3/>."
+msgstr ""
+
+#: xml/pgcrypto.xml:281(title)
+msgid "Hash Algorithm Speeds"
+msgstr ""
+
+#: xml/pgcrypto.xml:286(entry)
+msgid "Hashes/sec"
+msgstr ""
+
+#: xml/pgcrypto.xml:288(literal)
+msgid "[a-z]"
+msgstr ""
+
+#: xml/pgcrypto.xml:287(entry) xml/pgcrypto.xml:289(entry)
+msgid "For <placeholder-1/>"
+msgstr ""
+
+#: xml/pgcrypto.xml:290(literal)
+msgid "[A-Za-z0-9]"
+msgstr ""
+
+#: xml/pgcrypto.xml:292(literal)
+msgid "md5 hash"
+msgstr ""
+
+#: xml/pgcrypto.xml:291(entry)
+msgid "Duration relative to <placeholder-1/>"
+msgstr ""
+
+#: xml/pgcrypto.xml:298(literal)
+msgid "crypt-bf/8"
+msgstr ""
+
+#: xml/pgcrypto.xml:300(entry)
+msgid "1792"
+msgstr ""
+
+#: xml/pgcrypto.xml:301(entry)
+msgid "4 years"
+msgstr ""
+
+#: xml/pgcrypto.xml:302(entry)
+msgid "3927 years"
+msgstr ""
+
+#: xml/pgcrypto.xml:303(entry)
+msgid "100k"
+msgstr ""
+
+#: xml/pgcrypto.xml:307(literal)
+msgid "crypt-bf/7"
+msgstr ""
+
+#: xml/pgcrypto.xml:309(entry)
+msgid "3648"
+msgstr ""
+
+#: xml/pgcrypto.xml:310(entry)
+msgid "2 years"
+msgstr ""
+
+#: xml/pgcrypto.xml:311(entry)
+msgid "1929 years"
+msgstr ""
+
+#: xml/pgcrypto.xml:312(entry)
+msgid "50k"
+msgstr ""
+
+#: xml/pgcrypto.xml:316(literal)
+msgid "crypt-bf/6"
+msgstr ""
+
+#: xml/pgcrypto.xml:318(entry)
+msgid "7168"
+msgstr ""
+
+#: xml/pgcrypto.xml:319(entry)
+msgid "1 year"
+msgstr ""
+
+#: xml/pgcrypto.xml:320(entry)
+msgid "982 years"
+msgstr ""
+
+#: xml/pgcrypto.xml:321(entry)
+msgid "25k"
+msgstr ""
+
+#: xml/pgcrypto.xml:325(literal)
+msgid "crypt-bf/5"
+msgstr ""
+
+#: xml/pgcrypto.xml:327(entry)
+msgid "13504"
+msgstr ""
+
+#: xml/pgcrypto.xml:328(entry)
+msgid "188 days"
+msgstr ""
+
+#: xml/pgcrypto.xml:329(entry)
+msgid "521 years"
+msgstr ""
+
+#: xml/pgcrypto.xml:330(entry)
+msgid "12.5k"
+msgstr ""
+
+#: xml/pgcrypto.xml:334(literal)
+msgid "crypt-md5"
+msgstr ""
+
+#: xml/pgcrypto.xml:336(entry)
+msgid "171584"
+msgstr ""
+
+#: xml/pgcrypto.xml:337(entry)
+msgid "15 days"
+msgstr ""
+
+#: xml/pgcrypto.xml:338(entry)
+msgid "41 years"
+msgstr ""
+
+#: xml/pgcrypto.xml:339(entry)
+msgid "1k"
+msgstr ""
+
+#: xml/pgcrypto.xml:343(literal)
+msgid "crypt-des"
+msgstr ""
+
+#: xml/pgcrypto.xml:345(entry)
+msgid "23221568"
+msgstr ""
+
+#: xml/pgcrypto.xml:346(entry)
+msgid "157.5 minutes"
+msgstr ""
+
+#: xml/pgcrypto.xml:347(entry)
+msgid "108 days"
+msgstr ""
+
+#: xml/pgcrypto.xml:348(entry)
+msgid "7"
+msgstr ""
+
+#: xml/pgcrypto.xml:352(literal)
+msgid "sha1"
+msgstr ""
+
+#: xml/pgcrypto.xml:354(entry)
+msgid "37774272"
+msgstr ""
+
+#: xml/pgcrypto.xml:355(entry)
+msgid "90 minutes"
+msgstr ""
+
+#: xml/pgcrypto.xml:356(entry)
+msgid "68 days"
+msgstr ""
+
+#: xml/pgcrypto.xml:360(entry)
+msgid "<placeholder-1/>(hash)"
+msgstr ""
+
+#: xml/pgcrypto.xml:362(entry)
+msgid "150085504"
+msgstr ""
+
+#: xml/pgcrypto.xml:363(entry)
+msgid "22.5 minutes"
+msgstr ""
+
+#: xml/pgcrypto.xml:364(entry)
+msgid "17 days"
+msgstr ""
+
+#: xml/pgcrypto.xml:370(para) xml/pgcrypto.xml:1025(para)
+msgid "Notes:"
+msgstr ""
+
+#: xml/pgcrypto.xml:373(para)
+msgid "The machine used is an Intel Mobile Core i3."
+msgstr ""
+
+#: xml/pgcrypto.xml:376(para)
+msgid "<literal>crypt-des</literal>and <literal>crypt-md5</literal>algorithm numbers are taken from John the Ripper v1.6.38 <literal>-test</literal>output."
+msgstr ""
+
+#: xml/pgcrypto.xml:383(para)
+msgid "<literal>md5 hash</literal>numbers are from mdcrack 1.2."
+msgstr ""
+
+#: xml/pgcrypto.xml:388(para)
+msgid "<literal>sha1</literal>numbers are from lcrack-20031130-beta."
+msgstr ""
+
+#: xml/pgcrypto.xml:393(para)
+msgid "<literal>crypt-bf</literal>numbers are taken using a simple program that loops over 1000 8-character passwords. That way I can show the speed with different numbers of iterations. For reference: <literal>john -test</literal>shows 213 loops/sec for <literal>crypt-bf/5</literal>. (The very small difference in results is in accordance with the fact that the <literal>crypt-bf</literal>implementation in <filename>pgcrypto</filename>is the same one used in John the Ripper.)"
+msgstr ""
+
+#: xml/pgcrypto.xml:406(para)
+msgid "Note that <quote>try all combinations</quote>is not a realistic exercise. Usually password cracking is done with the help of dictionaries, which contain both regular words and various mutations of them. So, even somewhat word-like passwords could be cracked much faster than the above numbers suggest, while a 6-character non-word-like password may escape cracking. Or not."
+msgstr ""
+
+#: xml/pgcrypto.xml:417(title)
+msgid "PGP Encryption Functions"
+msgstr ""
+
+#: xml/pgcrypto.xml:418(para)
+msgid "The functions here implement the encryption part of the OpenPGP (RFC 4880) standard. Supported are both symmetric-key and public-key encryption."
+msgstr ""
+
+#: xml/pgcrypto.xml:421(para)
+msgid "An encrypted PGP message consists of 2 parts, or <firstterm>packets</firstterm>:"
+msgstr ""
+
+#: xml/pgcrypto.xml:425(para)
+msgid "Packet containing a session key either symmetric-key or public-key encrypted."
+msgstr ""
+
+#: xml/pgcrypto.xml:429(para)
+msgid "Packet containing data encrypted with the session key."
+msgstr ""
+
+#: xml/pgcrypto.xml:433(para)
+msgid "When encrypting with a symmetric key (i.e., a password):"
+msgstr ""
+
+#: xml/pgcrypto.xml:437(para)
+msgid "The given password is hashed using a String2Key (S2K) algorithm. This is rather similar to <function>crypt()</function>algorithms purposefully slow and with random salt but it produces a full-length binary key."
+msgstr ""
+
+#: xml/pgcrypto.xml:444(para)
+msgid "If a separate session key is requested, a new random key will be generated. Otherwise the S2K key will be used directly as the session key."
+msgstr ""
+
+#: xml/pgcrypto.xml:449(para)
+msgid "If the S2K key is to be used directly, then only S2K settings will be put into the session key packet. Otherwise the session key will be encrypted with the S2K key and put into the session key packet."
+msgstr ""
+
+#: xml/pgcrypto.xml:455(para)
+msgid "When encrypting with a public key:"
+msgstr ""
+
+#: xml/pgcrypto.xml:458(para)
+msgid "A new random session key is generated."
+msgstr ""
+
+#: xml/pgcrypto.xml:461(para)
+msgid "It is encrypted using the public key and put into the session key packet."
+msgstr ""
+
+#: xml/pgcrypto.xml:465(para)
+msgid "In either case the data to be encrypted is processed as follows:"
+msgstr ""
+
+#: xml/pgcrypto.xml:469(para)
+msgid "Optional data-manipulation: compression, conversion to UTF-8, and/or conversion of line-endings."
+msgstr ""
+
+#: xml/pgcrypto.xml:473(para)
+msgid "The data is prefixed with a block of random bytes. This is equivalent to using a random IV."
+msgstr ""
+
+#: xml/pgcrypto.xml:477(para)
+msgid "An SHA1 hash of the random prefix and data is appended."
+msgstr ""
+
+#: xml/pgcrypto.xml:481(para)
+msgid "All this is encrypted with the session key and placed in the data packet."
+msgstr ""
+
+#: xml/pgcrypto.xml:487(function)
+msgid "pgp_sym_encrypt()"
+msgstr ""
+
+#: xml/pgcrypto.xml:490(primary)
+msgid "pgp_sym_encrypt"
+msgstr ""
+
+#: xml/pgcrypto.xml:493(primary)
+msgid "pgp_sym_encrypt_bytea"
+msgstr ""
+
+#: xml/pgcrypto.xml:495(synopsis)
+#, no-wrap
+msgid "pgp_sym_encrypt(data text, psw text [, options text\n      ]) returns bytea pgp_sym_encrypt_bytea(data bytea, psw text\n      [, options text ]) returns bytea"
+msgstr ""
+
+#: xml/pgcrypto.xml:498(para)
+msgid "Encrypt <parameter>data</parameter>with a symmetric PGP key <parameter>psw</parameter>. The <parameter>options</parameter>parameter can contain option settings, as described below."
+msgstr ""
+
+#: xml/pgcrypto.xml:506(function)
+msgid "pgp_sym_decrypt()"
+msgstr ""
+
+#: xml/pgcrypto.xml:509(primary)
+msgid "pgp_sym_decrypt"
+msgstr ""
+
+#: xml/pgcrypto.xml:512(primary)
+msgid "pgp_sym_decrypt_bytea"
+msgstr ""
+
+#: xml/pgcrypto.xml:514(synopsis)
+#, no-wrap
+msgid "pgp_sym_decrypt(msg bytea, psw text [, options text\n      ]) returns text pgp_sym_decrypt_bytea(msg bytea, psw text [,\n      options text ]) returns bytea"
+msgstr ""
+
+#: xml/pgcrypto.xml:517(para)
+msgid "Decrypt a symmetric-key-encrypted PGP message."
+msgstr ""
+
+#: xml/pgcrypto.xml:518(para)
+msgid "Decrypting <type>bytea</type>data with <function>pgp_sym_decrypt</function>is disallowed. This is to avoid outputting invalid character data. Decrypting originally textual data with <function>pgp_sym_decrypt_bytea</function>is fine."
+msgstr ""
+
+#: xml/pgcrypto.xml:524(para) xml/pgcrypto.xml:545(para) xml/pgcrypto.xml:577(para)
+msgid "The <parameter>options</parameter>parameter can contain option settings, as described below."
+msgstr ""
+
+#: xml/pgcrypto.xml:530(function)
+msgid "pgp_pub_encrypt()"
+msgstr ""
+
+#: xml/pgcrypto.xml:533(primary)
+msgid "pgp_pub_encrypt"
+msgstr ""
+
+#: xml/pgcrypto.xml:536(primary)
+msgid "pgp_pub_encrypt_bytea"
+msgstr ""
+
+#: xml/pgcrypto.xml:538(synopsis)
+#, no-wrap
+msgid "pgp_pub_encrypt(data text, key bytea [, options\n      text ]) returns bytea pgp_pub_encrypt_bytea(data bytea, key\n      bytea [, options text ]) returns bytea"
+msgstr ""
+
+#: xml/pgcrypto.xml:541(para)
+msgid "Encrypt <parameter>data</parameter>with a public PGP key <parameter>key</parameter>. Giving this function a secret key will produce an error."
+msgstr ""
+
+#: xml/pgcrypto.xml:551(function)
+msgid "pgp_pub_decrypt()"
+msgstr ""
+
+#: xml/pgcrypto.xml:554(primary)
+msgid "pgp_pub_decrypt"
+msgstr ""
+
+#: xml/pgcrypto.xml:557(primary)
+msgid "pgp_pub_decrypt_bytea"
+msgstr ""
+
+#: xml/pgcrypto.xml:559(synopsis)
+#, no-wrap
+msgid "pgp_pub_decrypt(msg bytea, key bytea [, psw text [,\n      options text ]]) returns text pgp_pub_decrypt_bytea(msg\n      bytea, key bytea [, psw text [, options text ]]) returns\n      bytea"
+msgstr ""
+
+#: xml/pgcrypto.xml:563(para)
+msgid "Decrypt a public-key-encrypted message. <parameter>key</parameter>must be the secret key corresponding to the public key that was used to encrypt. If the secret key is password-protected, you must give the password in <parameter>psw</parameter>. If there is no password, but you want to specify options, you need to give an empty password."
+msgstr ""
+
+#: xml/pgcrypto.xml:571(para)
+msgid "Decrypting <type>bytea</type>data with <function>pgp_pub_decrypt</function>is disallowed. This is to avoid outputting invalid character data. Decrypting originally textual data with <function>pgp_pub_decrypt_bytea</function>is fine."
+msgstr ""
+
+#: xml/pgcrypto.xml:583(function)
+msgid "pgp_key_id()"
+msgstr ""
+
+#: xml/pgcrypto.xml:586(primary)
+msgid "pgp_key_id"
+msgstr ""
+
+#: xml/pgcrypto.xml:588(synopsis)
+#, no-wrap
+msgid "pgp_key_id(bytea) returns text"
+msgstr ""
+
+#: xml/pgcrypto.xml:589(para)
+msgid "<function>pgp_key_id</function>extracts the key ID of a PGP public or secret key. Or it gives the key ID that was used for encrypting the data, if given an encrypted message."
+msgstr ""
+
+#: xml/pgcrypto.xml:594(para)
+msgid "It can return 2 special key IDs:"
+msgstr ""
+
+#: xml/pgcrypto.xml:598(literal)
+msgid "SYMKEY"
+msgstr ""
+
+#: xml/pgcrypto.xml:600(para)
+msgid "The message is encrypted with a symmetric key."
+msgstr ""
+
+#: xml/pgcrypto.xml:605(literal)
+msgid "ANYKEY"
+msgstr ""
+
+#: xml/pgcrypto.xml:607(para)
+msgid "The message is public-key encrypted, but the key ID has been removed. That means you will need to try all your secret keys on it to see which one decrypts it. <filename>pgcrypto</filename>itself does not produce such messages."
+msgstr ""
+
+#: xml/pgcrypto.xml:614(para)
+msgid "Note that different keys may have the same ID. This is rare but a normal event. The client application should then try to decrypt with each one, to see which fits like handling <literal>ANYKEY</literal>."
+msgstr ""
+
+#: xml/pgcrypto.xml:621(title)
+msgid "<function>armor()</function>, <function>dearmor()</function>"
+msgstr ""
+
+#: xml/pgcrypto.xml:625(primary)
+msgid "armor"
+msgstr ""
+
+#: xml/pgcrypto.xml:628(primary)
+msgid "dearmor"
+msgstr ""
+
+#: xml/pgcrypto.xml:630(synopsis)
+#, no-wrap
+msgid "armor(data bytea [ , keys text[], values text[] ])\n      returns text dearmor(data text) returns bytea"
+msgstr ""
+
+#: xml/pgcrypto.xml:632(para)
+msgid "These functions wrap/unwrap binary data into PGP ASCII-armor format, which is basically Base64 with CRC and additional formatting."
+msgstr ""
+
+#: xml/pgcrypto.xml:635(para)
+msgid "If the <parameter>keys</parameter>and <parameter>values</parameter>arrays are specified, an <firstterm>armor header</firstterm>is added to the armored format for each key/value pair. Both arrays must be single-dimensional, and they must be of the same length. The keys and values cannot contain any non-ASCII characters."
+msgstr ""
+
+#: xml/pgcrypto.xml:646(function) xml/pgcrypto.xml:649(primary)
+msgid "pgp_armor_headers"
+msgstr ""
+
+#: xml/pgcrypto.xml:651(synopsis)
+#, no-wrap
+msgid "pgp_armor_headers(data text, key out text, value\n      out text) returns setof record"
+msgstr ""
+
+#: xml/pgcrypto.xml:653(para)
+msgid "<function>pgp_armor_headers()</function>extracts the armor headers from <parameter>data</parameter>. The return value is a set of rows with two columns, key and value. If the keys or values contain any non-ASCII characters, they are treated as UTF-8."
+msgstr ""
+
+#: xml/pgcrypto.xml:662(title)
+msgid "Options for PGP Functions"
+msgstr ""
+
+#: xml/pgcrypto.xml:666(programlisting)
+#, no-wrap
+msgid "pgp_sym_encrypt(data, psw, 'compress-algo=1,\n      cipher-algo=aes256')"
+msgstr ""
+
+#: xml/pgcrypto.xml:663(para)
+msgid "Options are named to be similar to GnuPG. An option's value should be given after an equal sign; separate options from each other with commas. For example: <placeholder-1/>"
+msgstr ""
+
+#: xml/pgcrypto.xml:668(para)
+msgid "All of the options except <literal>convert-crlf</literal>apply only to encrypt functions. Decrypt functions get the parameters from the PGP data."
+msgstr ""
+
+#: xml/pgcrypto.xml:672(para)
+msgid "The most interesting options are probably <literal>compress-algo</literal>and <literal>unicode-mode</literal>. The rest should have reasonable defaults."
+msgstr ""
+
+#: xml/pgcrypto.xml:677(title)
+msgid "cipher-algo"
+msgstr ""
+
+#: xml/pgcrypto.xml:678(para)
+msgid "Which cipher algorithm to use."
+msgstr ""
+
+#: xml/pgcrypto.xml:681(literal)
+msgid "3des"
+msgstr ""
+
+#: xml/pgcrypto.xml:682(literal)
+msgid "cast5"
+msgstr ""
+
+#: xml/pgcrypto.xml:679(literallayout)
+#, no-wrap
+msgid "Values: bf, aes128, aes192, aes256\n        (OpenSSL-only: \n        <placeholder-1/>, \n        <placeholder-2/>) Default: aes128 Applies to:\n        pgp_sym_encrypt, pgp_pub_encrypt"
+msgstr ""
+
+#: xml/pgcrypto.xml:686(title)
+msgid "compress-algo"
+msgstr ""
+
+#: xml/pgcrypto.xml:687(para)
+msgid "Which compression algorithm to use. Only available if <productname>PostgreSQL</productname>was built with zlib."
+msgstr ""
+
+#: xml/pgcrypto.xml:691(literallayout)
+#, no-wrap
+msgid "Values: 0 - no compression 1 - ZIP\n        compression 2 - ZLIB compression (= ZIP plus meta-data and\n        block CRCs) Default: 0 Applies to: pgp_sym_encrypt,\n        pgp_pub_encrypt"
+msgstr ""
+
+#: xml/pgcrypto.xml:697(title)
+msgid "compress-level"
+msgstr ""
+
+#: xml/pgcrypto.xml:698(para)
+msgid "How much to compress. Higher levels compress smaller but are slower. 0 disables compression."
+msgstr ""
+
+#: xml/pgcrypto.xml:700(literallayout)
+#, no-wrap
+msgid "Values: 0, 1-9 Default: 6 Applies to:\n        pgp_sym_encrypt, pgp_pub_encrypt"
+msgstr ""
+
+#: xml/pgcrypto.xml:704(title)
+msgid "convert-crlf"
+msgstr ""
+
+#: xml/pgcrypto.xml:705(para)
+msgid "Whether to convert <literal>\\n</literal>into <literal>\\r\\n</literal>when encrypting and <literal>\\r\\n</literal>to <literal>\\n</literal>when decrypting. RFC 4880 specifies that text data should be stored using <literal>\\r\\n</literal>line-feeds. Use this to get fully RFC-compliant behavior."
+msgstr ""
+
+#: xml/pgcrypto.xml:713(literallayout)
+#, no-wrap
+msgid "Values: 0, 1 Default: 0 Applies to:\n        pgp_sym_encrypt, pgp_pub_encrypt, pgp_sym_decrypt,\n        pgp_pub_decrypt"
+msgstr ""
+
+#: xml/pgcrypto.xml:718(title)
+msgid "disable-mdc"
+msgstr ""
+
+#: xml/pgcrypto.xml:719(para)
+msgid "Do not protect data with SHA-1. The only good reason to use this option is to achieve compatibility with ancient PGP products, predating the addition of SHA-1 protected packets to RFC 4880. Recent gnupg.org and pgp.com software supports it fine."
+msgstr ""
+
+#: xml/pgcrypto.xml:724(literallayout) xml/pgcrypto.xml:766(literallayout)
+#, no-wrap
+msgid "Values: 0, 1 Default: 0 Applies to:\n        pgp_sym_encrypt, pgp_pub_encrypt"
+msgstr ""
+
+#: xml/pgcrypto.xml:728(title)
+msgid "sess-key"
+msgstr ""
+
+#: xml/pgcrypto.xml:729(para)
+msgid "Use separate session key. Public-key encryption always uses a separate session key; this option is for symmetric-key encryption, which by default uses the S2K key directly."
+msgstr ""
+
+#: xml/pgcrypto.xml:733(literallayout)
+#, no-wrap
+msgid "Values: 0, 1 Default: 0 Applies to:\n        pgp_sym_encrypt"
+msgstr ""
+
+#: xml/pgcrypto.xml:737(title)
+msgid "s2k-mode"
+msgstr ""
+
+#: xml/pgcrypto.xml:738(para)
+msgid "Which S2K algorithm to use."
+msgstr ""
+
+#: xml/pgcrypto.xml:739(literallayout)
+#, no-wrap
+msgid "Values: 0 - Without salt. Dangerous! 1 -\n        With salt but with fixed iteration count. 3 - Variable\n        iteration count. Default: 3 Applies to:\n        pgp_sym_encrypt"
+msgstr ""
+
+#: xml/pgcrypto.xml:745(title)
+msgid "s2k-digest-algo"
+msgstr ""
+
+#: xml/pgcrypto.xml:746(para)
+msgid "Which digest algorithm to use in S2K calculation."
+msgstr ""
+
+#: xml/pgcrypto.xml:748(literallayout)
+#, no-wrap
+msgid "Values: md5, sha1 Default: sha1 Applies to:\n        pgp_sym_encrypt"
+msgstr ""
+
+#: xml/pgcrypto.xml:752(title)
+msgid "s2k-cipher-algo"
+msgstr ""
+
+#: xml/pgcrypto.xml:753(para)
+msgid "Which cipher to use for encrypting separate session key."
+msgstr ""
+
+#: xml/pgcrypto.xml:755(literallayout)
+#, no-wrap
+msgid "Values: bf, aes, aes128, aes192, aes256\n        Default: use cipher-algo Applies to:\n        pgp_sym_encrypt"
+msgstr ""
+
+#: xml/pgcrypto.xml:760(title)
+msgid "unicode-mode"
+msgstr ""
+
+#: xml/pgcrypto.xml:761(para)
+msgid "Whether to convert textual data from database internal encoding to UTF-8 and back. If your database already is UTF-8, no conversion will be done, but the message will be tagged as UTF-8. Without this option it will not be."
+msgstr ""
+
+#: xml/pgcrypto.xml:771(title)
+msgid "Generating PGP Keys with GnuPG"
+msgstr ""
+
+#: xml/pgcrypto.xml:773(programlisting)
+#, no-wrap
+msgid "gpg --gen-key"
+msgstr ""
+
+#: xml/pgcrypto.xml:772(para)
+msgid "To generate a new key: <placeholder-1/>"
+msgstr ""
+
+#: xml/pgcrypto.xml:774(para)
+msgid "The preferred key type is <quote>DSA and Elgamal</quote>."
+msgstr ""
+
+#: xml/pgcrypto.xml:776(para)
+msgid "For RSA encryption you must create either DSA or RSA sign-only key as master and then add an RSA encryption subkey with <literal>gpg --edit-key</literal>."
+msgstr ""
+
+#: xml/pgcrypto.xml:781(programlisting)
+#, no-wrap
+msgid "gpg\n      --list-secret-keys"
+msgstr ""
+
+#: xml/pgcrypto.xml:780(para)
+msgid "To list keys: <placeholder-1/>"
+msgstr ""
+
+#: xml/pgcrypto.xml:784(programlisting)
+#, no-wrap
+msgid "gpg -a --export KEYID &gt;\n      public.key"
+msgstr ""
+
+#: xml/pgcrypto.xml:783(para)
+msgid "To export a public key in ASCII-armor format: <placeholder-1/>"
+msgstr ""
+
+#: xml/pgcrypto.xml:787(programlisting)
+#, no-wrap
+msgid "gpg -a --export-secret-keys KEYID &gt;\n      secret.key"
+msgstr ""
+
+#: xml/pgcrypto.xml:786(para)
+msgid "To export a secret key in ASCII-armor format: <placeholder-1/>"
+msgstr ""
+
+#: xml/pgcrypto.xml:789(para)
+msgid "You need to use <function>dearmor()</function>on these keys before giving them to the PGP functions. Or if you can handle binary data, you can drop <literal>-a</literal>from the command."
+msgstr ""
+
+#: xml/pgcrypto.xml:794(para)
+msgid "For more details see <literal>man gpg</literal>, <ulink url=\"http://www.gnupg.org/gph/en/manual.html\">The GNU Privacy Handbook</ulink>and other documentation on <ulink url=\"http://www.gnupg.org\"/>."
+msgstr ""
+
+#: xml/pgcrypto.xml:801(title)
+msgid "Limitations of PGP Code"
+msgstr ""
+
+#: xml/pgcrypto.xml:804(para)
+msgid "No support for signing. That also means that it is not checked whether the encryption subkey belongs to the master key."
+msgstr ""
+
+#: xml/pgcrypto.xml:809(para)
+msgid "No support for encryption key as master key. As such practice is generally discouraged, this should not be a problem."
+msgstr ""
+
+#: xml/pgcrypto.xml:814(para)
+msgid "No support for several subkeys. This may seem like a problem, as this is common practice. On the other hand, you should not use your regular GPG/PGP keys with <filename>pgcrypto</filename>, but create new ones, as the usage scenario is rather different."
+msgstr ""
+
+#: xml/pgcrypto.xml:824(title)
+msgid "Raw Encryption Functions"
+msgstr ""
+
+#: xml/pgcrypto.xml:825(para)
+msgid "These functions only run a cipher over data; they don't have any advanced features of PGP encryption. Therefore they have some major problems:"
+msgstr ""
+
+#: xml/pgcrypto.xml:830(para)
+msgid "They use user key directly as cipher key."
+msgstr ""
+
+#: xml/pgcrypto.xml:833(para)
+msgid "They don't provide any integrity checking, to see if the encrypted data was modified."
+msgstr ""
+
+#: xml/pgcrypto.xml:837(para)
+msgid "They expect that users manage all encryption parameters themselves, even IV."
+msgstr ""
+
+#: xml/pgcrypto.xml:841(para)
+msgid "They don't handle text."
+msgstr ""
+
+#: xml/pgcrypto.xml:844(para)
+msgid "So, with the introduction of PGP encryption, usage of raw encryption functions is discouraged."
+msgstr ""
+
+#: xml/pgcrypto.xml:847(primary)
+msgid "encrypt"
+msgstr ""
+
+#: xml/pgcrypto.xml:850(primary)
+msgid "decrypt"
+msgstr ""
+
+#: xml/pgcrypto.xml:853(primary)
+msgid "encrypt_iv"
+msgstr ""
+
+#: xml/pgcrypto.xml:856(primary)
+msgid "decrypt_iv"
+msgstr ""
+
+#: xml/pgcrypto.xml:858(synopsis)
+#, no-wrap
+msgid "encrypt(data bytea, key bytea, type text) returns\n    bytea decrypt(data bytea, key bytea, type text) returns bytea\n    encrypt_iv(data bytea, key bytea, iv bytea, type text) returns\n    bytea decrypt_iv(data bytea, key bytea, iv bytea, type text)\n    returns bytea"
+msgstr ""
+
+#: xml/pgcrypto.xml:881(para)
+msgid "<literal>bf</literal>Blowfish"
+msgstr ""
+
+#: xml/pgcrypto.xml:885(para)
+msgid "<literal>aes</literal>AES (Rijndael-128)"
+msgstr ""
+
+#: xml/pgcrypto.xml:892(para)
+msgid "<literal>cbc</literal>next block depends on previous (default)"
+msgstr ""
+
+#: xml/pgcrypto.xml:897(para)
+msgid "<literal>ecb</literal>each block is encrypted separately (for testing only)"
+msgstr ""
+
+#: xml/pgcrypto.xml:905(para)
+msgid "<literal>pkcs</literal>data may be any length (default)"
+msgstr ""
+
+#: xml/pgcrypto.xml:910(para)
+msgid "<literal>none</literal>data must be multiple of cipher block size"
+msgstr ""
+
+#: xml/pgcrypto.xml:863(para)
+msgid "Encrypt/decrypt data using the cipher method specified by <parameter>type</parameter>. The syntax of the <parameter>type</parameter>string is: <synopsis>\n      <replaceable>algorithm</replaceable>\n      <optional>\n        <literal>-</literal>\n        <replaceable>mode</replaceable>\n      </optional>\n      <optional>\n        <literal>/pad:</literal>\n        <replaceable>padding</replaceable>\n      </optional>\n    </synopsis>where <replaceable>algorithm</replaceable>is one of: <placeholder-1/>and <replaceable>mode</replaceable>is one of: <placeholder-2/>and <replaceable>padding</replaceable>is one of: <placeholder-3/>"
+msgstr ""
+
+#: xml/pgcrypto.xml:916(programlisting)
+#, no-wrap
+msgid "encrypt(data, 'fooz', 'bf') encrypt(data,\n    'fooz', 'bf-cbc/pad:pkcs')"
+msgstr ""
+
+#: xml/pgcrypto.xml:915(para)
+msgid "So, for example, these are equivalent: <placeholder-1/>"
+msgstr ""
+
+#: xml/pgcrypto.xml:918(para)
+msgid "In <function>encrypt_iv</function>and <function>decrypt_iv</function>, the <parameter>iv</parameter>parameter is the initial value for the CBC mode; it is ignored for ECB. It is clipped or padded with zeroes if not exactly block size. It defaults to all zeroes in the functions without this parameter."
+msgstr ""
+
+#: xml/pgcrypto.xml:927(title)
+msgid "Random-Data Functions"
+msgstr ""
+
+#: xml/pgcrypto.xml:929(primary)
+msgid "gen_random_bytes"
+msgstr ""
+
+#: xml/pgcrypto.xml:931(synopsis)
+#, no-wrap
+msgid "gen_random_bytes(count integer) returns\n    bytea"
+msgstr ""
+
+#: xml/pgcrypto.xml:933(para)
+msgid "Returns <parameter>count</parameter>cryptographically strong random bytes. At most 1024 bytes can be extracted at a time. This is to avoid draining the randomness generator pool."
+msgstr ""
+
+#: xml/pgcrypto.xml:938(primary)
+msgid "gen_random_uuid"
+msgstr ""
+
+#: xml/pgcrypto.xml:940(synopsis)
+#, no-wrap
+msgid "gen_random_uuid() returns uuid"
+msgstr ""
+
+#: xml/pgcrypto.xml:941(para)
+msgid "Returns a version 4 (random) UUID."
+msgstr ""
+
+#: xml/pgcrypto.xml:944(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/pgcrypto.xml:946(title)
+msgid "Configuration"
+msgstr ""
+
+#: xml/pgcrypto.xml:947(para)
+msgid "<filename>pgcrypto</filename>configures itself according to the findings of the main PostgreSQL <literal>configure</literal>script. The options that affect it are <literal>--with-zlib</literal>and <literal>--with-openssl</literal>."
+msgstr ""
+
+#: xml/pgcrypto.xml:954(para)
+msgid "When compiled with zlib, PGP encryption functions are able to compress data before encrypting."
+msgstr ""
+
+#: xml/pgcrypto.xml:956(para)
+msgid "When compiled with OpenSSL, there will be more algorithms available. Also public-key encryption functions will be faster as OpenSSL has more optimized BIGNUM functions."
+msgstr ""
+
+#: xml/pgcrypto.xml:961(title)
+msgid "Summary of Functionality with and without OpenSSL"
+msgstr ""
+
+#: xml/pgcrypto.xml:966(entry)
+msgid "Functionality"
+msgstr ""
+
+#: xml/pgcrypto.xml:967(entry)
+msgid "Built-in"
+msgstr ""
+
+#: xml/pgcrypto.xml:968(entry)
+msgid "With OpenSSL"
+msgstr ""
+
+#: xml/pgcrypto.xml:973(entry)
+msgid "MD5"
+msgstr ""
+
+#: xml/pgcrypto.xml:978(entry)
+msgid "SHA1"
+msgstr ""
+
+#: xml/pgcrypto.xml:983(entry)
+msgid "SHA224/256/384/512"
+msgstr ""
+
+#: xml/pgcrypto.xml:985(entry)
+msgid "yes (Note 1)"
+msgstr ""
+
+#: xml/pgcrypto.xml:988(entry)
+msgid "Other digest algorithms"
+msgstr ""
+
+#: xml/pgcrypto.xml:990(entry)
+msgid "yes (Note 2)"
+msgstr ""
+
+#: xml/pgcrypto.xml:993(entry)
+msgid "Blowfish"
+msgstr ""
+
+#: xml/pgcrypto.xml:998(entry)
+msgid "AES"
+msgstr ""
+
+#: xml/pgcrypto.xml:1000(entry)
+msgid "yes (Note 3)"
+msgstr ""
+
+#: xml/pgcrypto.xml:1003(entry)
+msgid "DES/3DES/CAST5"
+msgstr ""
+
+#: xml/pgcrypto.xml:1008(entry)
+msgid "Raw encryption"
+msgstr ""
+
+#: xml/pgcrypto.xml:1013(entry)
+msgid "PGP Symmetric encryption"
+msgstr ""
+
+#: xml/pgcrypto.xml:1018(entry)
+msgid "PGP Public-Key encryption"
+msgstr ""
+
+#: xml/pgcrypto.xml:1028(para)
+msgid "SHA2 algorithms were added to OpenSSL in version 0.9.8. For older versions, <filename>pgcrypto</filename>will use built-in code."
+msgstr ""
+
+#: xml/pgcrypto.xml:1034(para)
+msgid "Any digest algorithm OpenSSL supports is automatically picked up. This is not possible with ciphers, which need to be supported explicitly."
+msgstr ""
+
+#: xml/pgcrypto.xml:1039(para)
+msgid "AES is included in OpenSSL since version 0.9.7. For older versions, <filename>pgcrypto</filename>will use built-in code."
+msgstr ""
+
+#: xml/pgcrypto.xml:1047(title)
+msgid "NULL Handling"
+msgstr ""
+
+#: xml/pgcrypto.xml:1048(para)
+msgid "As is standard in SQL, all functions return NULL, if any of the arguments are NULL. This may create security risks on careless usage."
+msgstr ""
+
+#: xml/pgcrypto.xml:1053(title)
+msgid "Security Limitations"
+msgstr ""
+
+#: xml/pgcrypto.xml:1054(para)
+msgid "All <filename>pgcrypto</filename>functions run inside the database server. That means that all the data and passwords move between <filename>pgcrypto</filename>and client applications in clear text. Thus you must:"
+msgstr ""
+
+#: xml/pgcrypto.xml:1062(para)
+msgid "Connect locally or use SSL connections."
+msgstr ""
+
+#: xml/pgcrypto.xml:1065(para)
+msgid "Trust both system and database administrator."
+msgstr ""
+
+#: xml/pgcrypto.xml:1069(para)
+msgid "If you cannot, then better do crypto inside client application."
+msgstr ""
+
+#: xml/pgcrypto.xml:1071(para)
+msgid "The implementation does not resist <ulink url=\"http://en.wikipedia.org/wiki/Side-channel_attack\"> side-channel attacks</ulink>. For example, the time required for a <filename>pgcrypto</filename>decryption function to complete varies among ciphertexts of a given size."
+msgstr ""
+
+#: xml/pgcrypto.xml:1079(title)
+msgid "Useful Reading"
+msgstr ""
+
+#: xml/pgcrypto.xml:1086(para)
+msgid "The GNU Privacy Handbook."
+msgstr ""
+
+#: xml/pgcrypto.xml:1092(para)
+msgid "Describes the crypt-blowfish algorithm."
+msgstr ""
+
+#: xml/pgcrypto.xml:1099(para)
+msgid "How to choose a good password."
+msgstr ""
+
+#: xml/pgcrypto.xml:1106(para)
+msgid "Interesting idea for picking passwords."
+msgstr ""
+
+#: xml/pgcrypto.xml:1113(para)
+msgid "Describes good and bad cryptography."
+msgstr ""
+
+#: xml/pgcrypto.xml:1118(title)
+msgid "Technical References"
+msgstr ""
+
+#: xml/pgcrypto.xml:1125(para)
+msgid "OpenPGP message format."
+msgstr ""
+
+#: xml/pgcrypto.xml:1132(para)
+msgid "The MD5 Message-Digest Algorithm."
+msgstr ""
+
+#: xml/pgcrypto.xml:1139(para)
+msgid "HMAC: Keyed-Hashing for Message Authentication."
+msgstr ""
+
+#: xml/pgcrypto.xml:1147(para)
+msgid "Comparison of crypt-des, crypt-md5 and bcrypt algorithms."
+msgstr ""
+
+#: xml/pgcrypto.xml:1155(para)
+msgid "Description of Fortuna CSPRNG."
+msgstr ""
+
+#: xml/pgcrypto.xml:1161(para)
+msgid "Jean-Luc Cooke Fortuna-based <filename>/dev/random</filename>driver for Linux."
+msgstr ""
+
+#: xml/pgcrypto.xml:1169(para)
+msgid "Collection of cryptology pointers."
+msgstr ""
+
+#: xml/pgcrypto.xml:1175(title) xml/pgcrypto.xml:1186(entry)
+msgid "Author"
+msgstr ""
+
+#: xml/pgcrypto.xml:1176(para)
+msgid "Marko Kreen <email>markokr@gmail.com</email>"
+msgstr ""
+
+#: xml/pgcrypto.xml:1178(para)
+msgid "<filename>pgcrypto</filename>uses code from the following sources:"
+msgstr ""
+
+#: xml/pgcrypto.xml:1187(entry)
+msgid "Source origin"
+msgstr ""
+
+#: xml/pgcrypto.xml:1192(entry)
+msgid "DES crypt"
+msgstr ""
+
+#: xml/pgcrypto.xml:1193(entry)
+msgid "David Burren and others"
+msgstr ""
+
+#: xml/pgcrypto.xml:1194(entry) xml/pgcrypto.xml:1199(entry)
+msgid "FreeBSD libcrypt"
+msgstr ""
+
+#: xml/pgcrypto.xml:1197(entry)
+msgid "MD5 crypt"
+msgstr ""
+
+#: xml/pgcrypto.xml:1198(entry)
+msgid "Poul-Henning Kamp"
+msgstr ""
+
+#: xml/pgcrypto.xml:1202(entry)
+msgid "Blowfish crypt"
+msgstr ""
+
+#: xml/pgcrypto.xml:1203(entry)
+msgid "Solar Designer"
+msgstr ""
+
+#: xml/pgcrypto.xml:1204(entry)
+msgid "www.openwall.com"
+msgstr ""
+
+#: xml/pgcrypto.xml:1207(entry)
+msgid "Blowfish cipher"
+msgstr ""
+
+#: xml/pgcrypto.xml:1208(entry)
+msgid "Simon Tatham"
+msgstr ""
+
+#: xml/pgcrypto.xml:1209(entry)
+msgid "PuTTY"
+msgstr ""
+
+#: xml/pgcrypto.xml:1212(entry)
+msgid "Rijndael cipher"
+msgstr ""
+
+#: xml/pgcrypto.xml:1213(entry)
+msgid "Brian Gladman"
+msgstr ""
+
+#: xml/pgcrypto.xml:1214(entry) xml/pgcrypto.xml:1224(entry)
+msgid "OpenBSD sys/crypto"
+msgstr ""
+
+#: xml/pgcrypto.xml:1217(entry)
+msgid "MD5 hash and SHA1"
+msgstr ""
+
+#: xml/pgcrypto.xml:1218(entry)
+msgid "WIDE Project"
+msgstr ""
+
+#: xml/pgcrypto.xml:1219(entry)
+msgid "KAME kame/sys/crypto"
+msgstr ""
+
+#: xml/pgcrypto.xml:1222(entry)
+msgid "SHA256/384/512"
+msgstr ""
+
+#: xml/pgcrypto.xml:1223(entry)
+msgid "Aaron D. Gifford"
+msgstr ""
+
+#: xml/pgcrypto.xml:1227(entry)
+msgid "BIGNUM math"
+msgstr ""
+
+#: xml/pgcrypto.xml:1228(entry)
+msgid "Michael J. Fromberger"
+msgstr ""
+
+#: xml/pgcrypto.xml:1229(entry)
+msgid "dartmouth.edu/~sting/sw/imath"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/pgcrypto.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

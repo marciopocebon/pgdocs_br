@@ -1,0 +1,268 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/comment.xml:4(primary) xml/ref/comment.xml:7(refentrytitle) xml/ref/comment.xml:12(refname)
+msgid "COMMENT"
+msgstr ""
+
+#: xml/ref/comment.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/comment.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/comment.xml:13(refpurpose)
+msgid "define or change the comment of an object"
+msgstr ""
+
+#: xml/ref/comment.xml:18(replaceable) xml/ref/comment.xml:157(replaceable)
+msgid "aggregate_name"
+msgstr ""
+
+#: xml/ref/comment.xml:19(replaceable) xml/ref/comment.xml:104(replaceable)
+msgid "aggregate_signature"
+msgstr ""
+
+#: xml/ref/comment.xml:20(replaceable) xml/ref/comment.xml:209(replaceable)
+msgid "source_type"
+msgstr ""
+
+#: xml/ref/comment.xml:21(replaceable) xml/ref/comment.xml:218(replaceable)
+msgid "target_type"
+msgstr ""
+
+#: xml/ref/comment.xml:22(replaceable) xml/ref/comment.xml:34(replaceable) xml/ref/comment.xml:36(replaceable) xml/ref/comment.xml:38(replaceable) xml/ref/comment.xml:40(replaceable) xml/ref/comment.xml:42(replaceable) xml/ref/comment.xml:44(replaceable) xml/ref/comment.xml:46(replaceable) xml/ref/comment.xml:54(replaceable) xml/ref/comment.xml:58(replaceable) xml/ref/comment.xml:64(replaceable) xml/ref/comment.xml:67(replaceable) xml/ref/comment.xml:73(replaceable) xml/ref/comment.xml:74(replaceable) xml/ref/comment.xml:78(replaceable) xml/ref/comment.xml:80(replaceable) xml/ref/comment.xml:82(replaceable) xml/ref/comment.xml:84(replaceable) xml/ref/comment.xml:86(replaceable) xml/ref/comment.xml:88(replaceable) xml/ref/comment.xml:90(replaceable) xml/ref/comment.xml:92(replaceable) xml/ref/comment.xml:94(replaceable) xml/ref/comment.xml:100(replaceable) xml/ref/comment.xml:101(replaceable) xml/ref/comment.xml:150(replaceable)
+msgid "object_name"
+msgstr ""
+
+#: xml/ref/comment.xml:24(replaceable)
+msgid "relation_name"
+msgstr ""
+
+#: xml/ref/comment.xml:25(replaceable)
+msgid "column_name"
+msgstr ""
+
+#: xml/ref/comment.xml:27(replaceable) xml/ref/comment.xml:30(replaceable) xml/ref/comment.xml:161(replaceable)
+msgid "constraint_name"
+msgstr ""
+
+#: xml/ref/comment.xml:28(replaceable) xml/ref/comment.xml:71(replaceable) xml/ref/comment.xml:76(replaceable) xml/ref/comment.xml:99(replaceable) xml/ref/comment.xml:195(replaceable)
+msgid "table_name"
+msgstr ""
+
+#: xml/ref/comment.xml:32(replaceable) xml/ref/comment.xml:198(replaceable)
+msgid "domain_name"
+msgstr ""
+
+#: xml/ref/comment.xml:48(replaceable) xml/ref/comment.xml:165(replaceable)
+msgid "function_name"
+msgstr ""
+
+#: xml/ref/comment.xml:50(replaceable) xml/ref/comment.xml:106(replaceable) xml/ref/comment.xml:109(replaceable) xml/ref/comment.xml:112(replaceable) xml/ref/comment.xml:227(replaceable)
+msgid "argmode"
+msgstr ""
+
+#: xml/ref/comment.xml:51(replaceable) xml/ref/comment.xml:107(replaceable) xml/ref/comment.xml:110(replaceable) xml/ref/comment.xml:113(replaceable) xml/ref/comment.xml:248(replaceable)
+msgid "argname"
+msgstr ""
+
+#: xml/ref/comment.xml:52(replaceable) xml/ref/comment.xml:108(replaceable) xml/ref/comment.xml:111(replaceable) xml/ref/comment.xml:114(replaceable) xml/ref/comment.xml:261(replaceable)
+msgid "argtype"
+msgstr ""
+
+#: xml/ref/comment.xml:56(replaceable) xml/ref/comment.xml:270(replaceable)
+msgid "large_object_oid"
+msgstr ""
+
+#: xml/ref/comment.xml:60(replaceable) xml/ref/comment.xml:169(replaceable)
+msgid "operator_name"
+msgstr ""
+
+#: xml/ref/comment.xml:61(replaceable) xml/ref/comment.xml:279(replaceable)
+msgid "left_type"
+msgstr ""
+
+#: xml/ref/comment.xml:62(replaceable) xml/ref/comment.xml:282(replaceable)
+msgid "right_type"
+msgstr ""
+
+#: xml/ref/comment.xml:65(replaceable) xml/ref/comment.xml:68(replaceable)
+msgid "index_method"
+msgstr ""
+
+#: xml/ref/comment.xml:70(replaceable) xml/ref/comment.xml:173(replaceable)
+msgid "policy_name"
+msgstr ""
+
+#: xml/ref/comment.xml:75(replaceable) xml/ref/comment.xml:176(replaceable)
+msgid "rule_name"
+msgstr ""
+
+#: xml/ref/comment.xml:96(replaceable) xml/ref/comment.xml:301(replaceable)
+msgid "type_name"
+msgstr ""
+
+#: xml/ref/comment.xml:97(replaceable) xml/ref/comment.xml:309(replaceable)
+msgid "lang_name"
+msgstr ""
+
+#: xml/ref/comment.xml:98(replaceable) xml/ref/comment.xml:179(replaceable)
+msgid "trigger_name"
+msgstr ""
+
+#: xml/ref/comment.xml:102(replaceable) xml/ref/comment.xml:317(replaceable)
+msgid "text"
+msgstr ""
+
+#: xml/ref/comment.xml:103(phrase)
+msgid "where <placeholder-1/>is:"
+msgstr ""
+
+#: xml/ref/comment.xml:17(synopsis)
+#, no-wrap
+msgid "COMMENT ON { AGGREGATE \n    <placeholder-1/>( \n    <placeholder-2/>) | CAST ( \n    <placeholder-3/>AS \n    <placeholder-4/>) | COLLATION \n    <placeholder-5/>|\n    COLUMN \n    <placeholder-6/>. \n    <placeholder-7/>|\n    CONSTRAINT \n    <placeholder-8/>ON \n    <placeholder-9/>|\n    CONSTRAINT \n    <placeholder-10/>ON\n    DOMAIN \n    <placeholder-11/>|\n    CONVERSION \n    <placeholder-12/>|\n    DATABASE \n    <placeholder-13/>|\n    DOMAIN \n    <placeholder-14/>|\n    EXTENSION \n    <placeholder-15/>| EVENT\n    TRIGGER \n    <placeholder-16/>|\n    FOREIGN DATA WRAPPER \n    <placeholder-17/>|\n    FOREIGN TABLE \n    <placeholder-18/>|\n    FUNCTION \n    <placeholder-19/>( [ [\n    \n    <placeholder-20/>] [ \n    <placeholder-21/>] \n    <placeholder-22/>[, ...] ] )\n    | INDEX \n    <placeholder-23/>| LARGE\n    OBJECT \n    <placeholder-24/>|\n    MATERIALIZED VIEW \n    <placeholder-25/>|\n    OPERATOR \n    <placeholder-26/>( \n    <placeholder-27/>, \n    <placeholder-28/>) |\n    OPERATOR CLASS \n    <placeholder-29/>USING \n    <placeholder-30/>|\n    OPERATOR FAMILY \n    <placeholder-31/>USING \n    <placeholder-32/>|\n    POLICY \n    <placeholder-33/>ON \n    <placeholder-34/>| [\n    PROCEDURAL ] LANGUAGE \n    <placeholder-35/>| ROLE \n    <placeholder-36/>| RULE \n    <placeholder-37/>ON \n    <placeholder-38/>| SCHEMA\n    \n    <placeholder-39/>|\n    SEQUENCE \n    <placeholder-40/>|\n    SERVER \n    <placeholder-41/>| TABLE\n    \n    <placeholder-42/>|\n    TABLESPACE \n    <placeholder-43/>| TEXT\n    SEARCH CONFIGURATION \n    <placeholder-44/>| TEXT\n    SEARCH DICTIONARY \n    <placeholder-45/>| TEXT\n    SEARCH PARSER \n    <placeholder-46/>| TEXT\n    SEARCH TEMPLATE \n    <placeholder-47/>|\n    TRANSFORM FOR \n    <placeholder-48/>LANGUAGE \n    <placeholder-49/>| TRIGGER \n    <placeholder-50/>ON \n    <placeholder-51/>| TYPE \n    <placeholder-52/>| VIEW \n    <placeholder-53/>} IS ' \n    <placeholder-54/>' \n    <placeholder-55/>* | [\n    \n    <placeholder-56/>] [ \n    <placeholder-57/>] \n    <placeholder-58/>[ , ... ] | [ [ \n    <placeholder-59/>] [ \n    <placeholder-60/>] \n    <placeholder-61/>[ , ... ] ] ORDER BY [ \n    <placeholder-62/>] [ \n    <placeholder-63/>] \n    <placeholder-64/>[ , ... ]"
+msgstr ""
+
+#: xml/ref/comment.xml:117(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/comment.xml:118(para)
+msgid "<command>COMMENT</command>stores a comment about a database object."
+msgstr ""
+
+#: xml/ref/comment.xml:121(para)
+msgid "Only one comment string is stored for each object, so to modify a comment, issue a new <command>COMMENT</command>command for the same object. To remove a comment, write <literal>NULL</literal>in place of the text string. Comments are automatically dropped when their object is dropped."
+msgstr ""
+
+#: xml/ref/comment.xml:127(para)
+msgid "For most kinds of object, only the object's owner can set the comment. Roles don't have owners, so the rule for <literal>COMMENT ON ROLE</literal>is that you must be superuser to comment on a superuser role, or have the <literal>CREATEROLE</literal>privilege to comment on non-superuser roles. Of course, a superuser can comment on anything."
+msgstr ""
+
+#: xml/ref/comment.xml:134(para)
+msgid "Comments can be viewed using <application>psql</application>'s <command>\\d</command>family of commands. Other user interfaces to retrieve comments can be built atop the same built-in functions that <application>psql</application>uses, namely <function>obj_description</function>, <function>col_description</function>, and <function>shobj_description</function>(see <xref linkend=\"functions-info-comment-table\">).</xref>"
+msgstr ""
+
+#: xml/ref/comment.xml:146(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/comment.xml:152(term)
+msgid "<replaceable class=\"parameter\">relation_name</replaceable>. <replaceable>column_name</replaceable>"
+msgstr ""
+
+#: xml/ref/comment.xml:182(para)
+msgid "The name of the object to be commented. Names of tables, aggregates, collations, conversions, domains, foreign tables, functions, indexes, operators, operator classes, operator families, sequences, text search objects, types, and views can be schema-qualified. When commenting on a column, <replaceable class=\"parameter\"> relation_name</replaceable>must refer to a table, view, composite type, or foreign table."
+msgstr ""
+
+#: xml/ref/comment.xml:201(para)
+msgid "When creating a comment on a constraint, a table, a domain or a policy these parameters specify the name of the table or domain on which the constraint is defined."
+msgstr ""
+
+#: xml/ref/comment.xml:212(para)
+msgid "The name of the source data type of the cast."
+msgstr ""
+
+#: xml/ref/comment.xml:221(para)
+msgid "The name of the target data type of the cast."
+msgstr ""
+
+#: xml/ref/comment.xml:230(para)
+msgid "The mode of a function or aggregate argument: <literal>IN</literal>, <literal>OUT</literal>, <literal>INOUT</literal>, or <literal>VARIADIC</literal>. If omitted, the default is <literal>IN</literal>. Note that <command>COMMENT</command>does not actually pay any attention to <literal>OUT</literal>arguments, since only the input arguments are needed to determine the function's identity. So it is sufficient to list the <literal>IN</literal>, <literal>INOUT</literal>, and <literal>VARIADIC</literal>arguments."
+msgstr ""
+
+#: xml/ref/comment.xml:251(para)
+msgid "The name of a function or aggregate argument. Note that <command>COMMENT</command>does not actually pay any attention to argument names, since only the argument data types are needed to determine the function's identity."
+msgstr ""
+
+#: xml/ref/comment.xml:264(para)
+msgid "The data type of a function or aggregate argument."
+msgstr ""
+
+#: xml/ref/comment.xml:274(para)
+msgid "The OID of the large object."
+msgstr ""
+
+#: xml/ref/comment.xml:285(para)
+msgid "The data type(s) of the operator's arguments (optionally schema-qualified). Write <literal>NONE</literal>for the missing argument of a prefix or postfix operator."
+msgstr ""
+
+#: xml/ref/comment.xml:293(literal)
+msgid "PROCEDURAL"
+msgstr ""
+
+#: xml/ref/comment.xml:296(para)
+msgid "This is a noise word."
+msgstr ""
+
+#: xml/ref/comment.xml:304(para)
+msgid "The name of the data type of the transform."
+msgstr ""
+
+#: xml/ref/comment.xml:312(para)
+msgid "The name of the language of the transform."
+msgstr ""
+
+#: xml/ref/comment.xml:320(para)
+msgid "The new comment, written as a string literal; or <literal>NULL</literal>to drop the comment."
+msgstr ""
+
+#: xml/ref/comment.xml:327(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/comment.xml:328(para)
+msgid "There is presently no security mechanism for viewing comments: any user connected to a database can see all the comments for objects in that database. For shared objects such as databases, roles, and tablespaces, comments are stored globally so any user connected to any database in the cluster can see all the comments for shared objects. Therefore, don't put security-critical information in comments."
+msgstr ""
+
+#: xml/ref/comment.xml:337(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/comment.xml:340(programlisting)
+#, no-wrap
+msgid "COMMENT ON TABLE mytable IS 'This is my\n    table.';"
+msgstr ""
+
+#: xml/ref/comment.xml:342(programlisting)
+#, no-wrap
+msgid "COMMENT ON TABLE mytable IS\n    NULL;"
+msgstr ""
+
+#: xml/ref/comment.xml:338(para)
+msgid "Attach a comment to the table <literal>mytable</literal>: <placeholder-1/>Remove it again: <placeholder-2/>"
+msgstr ""
+
+#: xml/ref/comment.xml:345(programlisting)
+#, no-wrap
+msgid "COMMENT ON AGGREGATE my_aggregate (double\n    precision) IS 'Computes sample variance'; COMMENT ON CAST (text\n    AS int4) IS 'Allow casts from text to int4'; COMMENT ON\n    COLLATION \"fr_CA\" IS 'Canadian French'; COMMENT ON COLUMN\n    my_table.my_column IS 'Employee ID number'; COMMENT ON\n    CONVERSION my_conv IS 'Conversion to UTF8'; COMMENT ON\n    CONSTRAINT bar_col_cons ON bar IS 'Constrains column col';\n    COMMENT ON CONSTRAINT dom_col_constr ON DOMAIN dom IS\n    'Constrains col of domain'; COMMENT ON DATABASE my_database IS\n    'Development Database'; COMMENT ON DOMAIN my_domain IS 'Email\n    Address Domain'; COMMENT ON EXTENSION hstore IS 'implements the\n    hstore data type'; COMMENT ON FOREIGN DATA WRAPPER mywrapper IS\n    'my foreign data wrapper'; COMMENT ON FOREIGN TABLE\n    my_foreign_table IS 'Employee Information in other database';\n    COMMENT ON FUNCTION my_function (timestamp) IS 'Returns Roman\n    Numeral'; COMMENT ON INDEX my_index IS 'Enforces uniqueness on\n    employee ID'; COMMENT ON LANGUAGE plpython IS 'Python support\n    for stored procedures'; COMMENT ON LARGE OBJECT 346344 IS\n    'Planning document'; COMMENT ON MATERIALIZED VIEW my_matview IS\n    'Summary of order history'; COMMENT ON OPERATOR ^ (text, text)\n    IS 'Performs intersection of two texts'; COMMENT ON OPERATOR -\n    (NONE, integer) IS 'Unary minus'; COMMENT ON OPERATOR CLASS\n    int4ops USING btree IS '4 byte integer operators for btrees';\n    COMMENT ON OPERATOR FAMILY integer_ops USING btree IS 'all\n    integer operators for btrees'; COMMENT ON POLICY my_policy ON\n    mytable IS 'Filter rows by users'; COMMENT ON ROLE my_role IS\n    'Administration group for finance tables'; COMMENT ON RULE\n    my_rule ON my_table IS 'Logs updates of employee records';\n    COMMENT ON SCHEMA my_schema IS 'Departmental data'; COMMENT ON\n    SEQUENCE my_sequence IS 'Used to generate primary keys';\n    COMMENT ON SERVER myserver IS 'my foreign server'; COMMENT ON\n    TABLE my_schema.my_table IS 'Employee Information'; COMMENT ON\n    TABLESPACE my_tablespace IS 'Tablespace for indexes'; COMMENT\n    ON TEXT SEARCH CONFIGURATION my_config IS 'Special word\n    filtering'; COMMENT ON TEXT SEARCH DICTIONARY swedish IS\n    'Snowball stemmer for Swedish language'; COMMENT ON TEXT SEARCH\n    PARSER my_parser IS 'Splits text into words'; COMMENT ON TEXT\n    SEARCH TEMPLATE snowball IS 'Snowball stemmer'; COMMENT ON\n    TRANSFORM FOR hstore LANGUAGE plpythonu IS 'Transform between\n    hstore and Python dict'; COMMENT ON TRIGGER my_trigger ON\n    my_table IS 'Used for RI'; COMMENT ON TYPE complex IS 'Complex\n    number data type'; COMMENT ON VIEW my_view IS 'View of\n    departmental costs';"
+msgstr ""
+
+#: xml/ref/comment.xml:344(para)
+msgid "Some more examples: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/comment.xml:390(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/comment.xml:391(para)
+msgid "There is no <command>COMMENT</command>command in the SQL standard."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/comment.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

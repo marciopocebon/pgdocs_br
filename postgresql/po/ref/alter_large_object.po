@@ -1,0 +1,77 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/alter_large_object.xml:4(primary) xml/ref/alter_large_object.xml:7(refentrytitle) xml/ref/alter_large_object.xml:12(refname)
+msgid "ALTER LARGE OBJECT"
+msgstr ""
+
+#: xml/ref/alter_large_object.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/alter_large_object.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/alter_large_object.xml:13(refpurpose)
+msgid "change the definition of a large object"
+msgstr ""
+
+#: xml/ref/alter_large_object.xml:18(replaceable) xml/ref/alter_large_object.xml:37(replaceable)
+msgid "large_object_oid"
+msgstr ""
+
+#: xml/ref/alter_large_object.xml:20(replaceable) xml/ref/alter_large_object.xml:45(replaceable)
+msgid "new_owner"
+msgstr ""
+
+#: xml/ref/alter_large_object.xml:17(synopsis)
+#, no-wrap
+msgid "ALTER LARGE OBJECT \n    <placeholder-1/>OWNER TO { \n    <placeholder-2/>| CURRENT_USER |\n    SESSION_USER }"
+msgstr ""
+
+#: xml/ref/alter_large_object.xml:24(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/alter_large_object.xml:25(para)
+msgid "<command>ALTER LARGE OBJECT</command>changes the definition of a large object. The only functionality is to assign a new owner. You must be superuser or owner of the large object to use <command>ALTER LARGE OBJECT</command>."
+msgstr ""
+
+#: xml/ref/alter_large_object.xml:33(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/alter_large_object.xml:40(para)
+msgid "OID of the large object to be altered"
+msgstr ""
+
+#: xml/ref/alter_large_object.xml:48(para)
+msgid "The new owner of the large object"
+msgstr ""
+
+#: xml/ref/alter_large_object.xml:54(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/alter_large_object.xml:55(para)
+msgid "There is no <command>ALTER LARGE OBJECT</command>statement in the SQL standard."
+msgstr ""
+
+#: xml/ref/alter_large_object.xml:60(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/alter_large_object.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

@@ -1,0 +1,164 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/fuzzystrmatch.xml:3(title) xml/fuzzystrmatch.xml:5(primary)
+msgid "fuzzystrmatch"
+msgstr ""
+
+#: xml/fuzzystrmatch.xml:7(para)
+msgid "The <filename>fuzzystrmatch</filename>module provides several functions to determine similarities and distance between strings."
+msgstr ""
+
+#: xml/fuzzystrmatch.xml:12(para)
+msgid "At present, the <function>soundex</function>, <function>metaphone</function>, <function>dmetaphone</function>, and <function>dmetaphone_alt</function>functions do not work well with multibyte encodings (such as UTF-8)."
+msgstr ""
+
+#: xml/fuzzystrmatch.xml:20(title)
+msgid "Soundex"
+msgstr ""
+
+#: xml/fuzzystrmatch.xml:21(para)
+msgid "The Soundex system is a method of matching similar-sounding names by converting them to the same code. It was initially used by the United States Census in 1880, 1900, and 1910. Note that Soundex is not very useful for non-English names."
+msgstr ""
+
+#: xml/fuzzystrmatch.xml:26(para)
+msgid "The <filename>fuzzystrmatch</filename>module provides two functions for working with Soundex codes:"
+msgstr ""
+
+#: xml/fuzzystrmatch.xml:30(primary)
+msgid "soundex"
+msgstr ""
+
+#: xml/fuzzystrmatch.xml:33(primary)
+msgid "difference"
+msgstr ""
+
+#: xml/fuzzystrmatch.xml:35(synopsis)
+#, no-wrap
+msgid "soundex(text) returns text difference(text, text)\n    returns int"
+msgstr ""
+
+#: xml/fuzzystrmatch.xml:37(para)
+msgid "The <function>soundex</function>function converts a string to its Soundex code. The <function>difference</function>function converts two strings to their Soundex codes and then reports the number of matching code positions. Since Soundex codes have four characters, the result ranges from zero to four, with zero being no match and four being an exact match. (Thus, the function is misnamed <function>similarity</function>would have been a better name.)"
+msgstr ""
+
+#: xml/fuzzystrmatch.xml:47(para)
+msgid "Here are some usage examples:"
+msgstr ""
+
+#: xml/fuzzystrmatch.xml:48(programlisting)
+#, no-wrap
+msgid "SELECT soundex('hello world!'); SELECT\n    soundex('Anne'), soundex('Ann'), difference('Anne', 'Ann');\n    SELECT soundex('Anne'), soundex('Andrew'), difference('Anne',\n    'Andrew'); SELECT soundex('Anne'), soundex('Margaret'),\n    difference('Anne', 'Margaret'); CREATE TABLE s (nm text);\n    INSERT INTO s VALUES ('john'); INSERT INTO s VALUES ('joan');\n    INSERT INTO s VALUES ('wobbly'); INSERT INTO s VALUES ('jack');\n    SELECT * FROM s WHERE soundex(nm) = soundex('john'); SELECT *\n    FROM s WHERE difference(s.nm, 'john') 2;"
+msgstr ""
+
+#: xml/fuzzystrmatch.xml:59(title)
+msgid "Levenshtein"
+msgstr ""
+
+#: xml/fuzzystrmatch.xml:60(para)
+msgid "This function calculates the Levenshtein distance between two strings:"
+msgstr ""
+
+#: xml/fuzzystrmatch.xml:63(primary)
+msgid "levenshtein"
+msgstr ""
+
+#: xml/fuzzystrmatch.xml:66(primary)
+msgid "levenshtein_less_equal"
+msgstr ""
+
+#: xml/fuzzystrmatch.xml:68(synopsis)
+#, no-wrap
+msgid "levenshtein(text source, text target, int ins_cost,\n    int del_cost, int sub_cost) returns int levenshtein(text\n    source, text target) returns int levenshtein_less_equal(text\n    source, text target, int ins_cost, int del_cost, int sub_cost,\n    int max_d) returns int levenshtein_less_equal(text source, text\n    target, int max_d) returns int"
+msgstr ""
+
+#: xml/fuzzystrmatch.xml:74(para)
+msgid "Both <literal>source</literal>and <literal>target</literal>can be any non-null string, with a maximum of 255 bytes. The cost parameters specify how much to charge for a character insertion, deletion, or substitution, respectively. You can omit the cost parameters, as in the second version of the function; in that case they all default to 1. <literal>levenshtein_less_equal</literal>is accelerated version of levenshtein function for low values of distance. If actual distance is less or equal then max_d, then <literal>levenshtein_less_equal</literal>returns accurate value of it. Otherwise this function returns value which is greater than max_d."
+msgstr ""
+
+#: xml/fuzzystrmatch.xml:88(para)
+msgid "Examples:"
+msgstr ""
+
+#: xml/fuzzystrmatch.xml:89(screen)
+#, no-wrap
+msgid "test=# SELECT levenshtein('GUMBO', 'GAMBOL');\n    levenshtein ------------- 2 (1 row) test=# SELECT\n    levenshtein('GUMBO', 'GAMBOL', 2,1,1); levenshtein\n    ------------- 3 (1 row) test=# SELECT\n    levenshtein_less_equal('extensive', 'exhaustive',2);\n    levenshtein_less_equal ------------------------ 3 (1 row)\n    test=# SELECT levenshtein_less_equal('extensive',\n    'exhaustive',4); levenshtein_less_equal\n    ------------------------ 4 (1 row)"
+msgstr ""
+
+#: xml/fuzzystrmatch.xml:100(title)
+msgid "Metaphone"
+msgstr ""
+
+#: xml/fuzzystrmatch.xml:101(para)
+msgid "Metaphone, like Soundex, is based on the idea of constructing a representative code for an input string. Two strings are then deemed similar if they have the same codes."
+msgstr ""
+
+#: xml/fuzzystrmatch.xml:105(para)
+msgid "This function calculates the metaphone code of an input string:"
+msgstr ""
+
+#: xml/fuzzystrmatch.xml:108(primary)
+msgid "metaphone"
+msgstr ""
+
+#: xml/fuzzystrmatch.xml:110(synopsis)
+#, no-wrap
+msgid "metaphone(text source, int max_output_length) returns\n    text"
+msgstr ""
+
+#: xml/fuzzystrmatch.xml:112(para)
+msgid "<literal>source</literal>has to be a non-null string with a maximum of 255 characters. <literal>max_output_length</literal>sets the maximum length of the output metaphone code; if longer, the output is truncated to this length."
+msgstr ""
+
+#: xml/fuzzystrmatch.xml:118(para) xml/fuzzystrmatch.xml:140(para)
+msgid "Example:"
+msgstr ""
+
+#: xml/fuzzystrmatch.xml:119(screen)
+#, no-wrap
+msgid "test=# SELECT metaphone('GUMBO', 4); metaphone\n    ----------- KM (1 row)"
+msgstr ""
+
+#: xml/fuzzystrmatch.xml:123(title)
+msgid "Double Metaphone"
+msgstr ""
+
+#: xml/fuzzystrmatch.xml:124(para)
+msgid "The Double Metaphone system computes two <quote>sounds like</quote>strings for a given input string a <quote>primary</quote>and an <quote>alternate</quote>. In most cases they are the same, but for non-English names especially they can be a bit different, depending on pronunciation. These functions compute the primary and alternate codes:"
+msgstr ""
+
+#: xml/fuzzystrmatch.xml:132(primary)
+msgid "dmetaphone"
+msgstr ""
+
+#: xml/fuzzystrmatch.xml:135(primary)
+msgid "dmetaphone_alt"
+msgstr ""
+
+#: xml/fuzzystrmatch.xml:137(synopsis)
+#, no-wrap
+msgid "dmetaphone(text source) returns text\n    dmetaphone_alt(text source) returns text"
+msgstr ""
+
+#: xml/fuzzystrmatch.xml:139(para)
+msgid "There is no length limit on the input strings."
+msgstr ""
+
+#: xml/fuzzystrmatch.xml:141(screen)
+#, no-wrap
+msgid "test=# select dmetaphone('gumbo'); dmetaphone\n    ------------ KMP (1 row)"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/fuzzystrmatch.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

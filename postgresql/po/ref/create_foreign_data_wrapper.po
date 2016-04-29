@@ -1,0 +1,164 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/create_foreign_data_wrapper.xml:4(primary) xml/ref/create_foreign_data_wrapper.xml:7(refentrytitle) xml/ref/create_foreign_data_wrapper.xml:12(refname)
+msgid "CREATE FOREIGN DATA WRAPPER"
+msgstr ""
+
+#: xml/ref/create_foreign_data_wrapper.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/create_foreign_data_wrapper.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/create_foreign_data_wrapper.xml:13(refpurpose)
+msgid "define a new foreign-data wrapper"
+msgstr ""
+
+#: xml/ref/create_foreign_data_wrapper.xml:17(replaceable) xml/ref/create_foreign_data_wrapper.xml:41(replaceable)
+msgid "name"
+msgstr ""
+
+#: xml/ref/create_foreign_data_wrapper.xml:18(replaceable) xml/ref/create_foreign_data_wrapper.xml:51(replaceable)
+msgid "handler_function"
+msgstr ""
+
+#: xml/ref/create_foreign_data_wrapper.xml:20(replaceable) xml/ref/create_foreign_data_wrapper.xml:71(replaceable)
+msgid "validator_function"
+msgstr ""
+
+#: xml/ref/create_foreign_data_wrapper.xml:22(replaceable) xml/ref/create_foreign_data_wrapper.xml:102(replaceable)
+msgid "option"
+msgstr ""
+
+#: xml/ref/create_foreign_data_wrapper.xml:23(replaceable) xml/ref/create_foreign_data_wrapper.xml:103(replaceable)
+msgid "value"
+msgstr ""
+
+#: xml/ref/create_foreign_data_wrapper.xml:16(synopsis)
+#, no-wrap
+msgid "CREATE FOREIGN DATA WRAPPER \n    <placeholder-1/>[ HANDLER \n    <placeholder-2/>|\n    NO HANDLER ] [ VALIDATOR \n    <placeholder-3/>| NO VALIDATOR ] [ OPTIONS ( \n    <placeholder-4/>' \n    <placeholder-5/>' [, ... ] )\n    ]"
+msgstr ""
+
+#: xml/ref/create_foreign_data_wrapper.xml:27(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/create_foreign_data_wrapper.xml:28(para)
+msgid "<command>CREATE FOREIGN DATA WRAPPER</command>creates a new foreign-data wrapper. The user who defines a foreign-data wrapper becomes its owner."
+msgstr ""
+
+#: xml/ref/create_foreign_data_wrapper.xml:32(para)
+msgid "The foreign-data wrapper name must be unique within the database."
+msgstr ""
+
+#: xml/ref/create_foreign_data_wrapper.xml:34(para)
+msgid "Only superusers can create foreign-data wrappers."
+msgstr ""
+
+#: xml/ref/create_foreign_data_wrapper.xml:37(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/create_foreign_data_wrapper.xml:44(para)
+msgid "The name of the foreign-data wrapper to be created."
+msgstr ""
+
+#: xml/ref/create_foreign_data_wrapper.xml:50(literal)
+msgid "HANDLER <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_foreign_data_wrapper.xml:55(para)
+msgid "<replaceable class=\"parameter\"> handler_function</replaceable>is the name of a previously registered function that will be called to retrieve the execution functions for foreign tables. The handler function must take no arguments, and its return type must be <type>fdw_handler</type>."
+msgstr ""
+
+#: xml/ref/create_foreign_data_wrapper.xml:63(para)
+msgid "It is possible to create a foreign-data wrapper with no handler function, but foreign tables using such a wrapper can only be declared, not accessed."
+msgstr ""
+
+#: xml/ref/create_foreign_data_wrapper.xml:70(literal)
+msgid "VALIDATOR <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_foreign_data_wrapper.xml:75(para)
+msgid "<replaceable class=\"parameter\"> validator_function</replaceable>is the name of a previously registered function that will be called to check the generic options given to the foreign-data wrapper, as well as options for foreign servers, user mappings and foreign tables using the foreign-data wrapper. If no validator function or <literal>NO VALIDATOR</literal>is specified, then options will not be checked at creation time. (Foreign-data wrappers will possibly ignore or reject invalid option specifications at run time, depending on the implementation.) The validator function must take two arguments: one of type <type>text[]</type>, which will contain the array of options as stored in the system catalogs, and one of type <type>oid</type>, which will be the OID of the system catalog containing the options. The return type is ignored; the function should report invalid options using the <function>ereport(ERROR)</function>function."
+msgstr ""
+
+#: xml/ref/create_foreign_data_wrapper.xml:101(literal)
+msgid "OPTIONS ( <placeholder-1/>' <placeholder-2/>' [, ... ] )"
+msgstr ""
+
+#: xml/ref/create_foreign_data_wrapper.xml:107(para)
+msgid "This clause specifies options for the new foreign-data wrapper. The allowed option names and values are specific to each foreign data wrapper and are validated using the foreign-data wrapper's validator function. Option names must be unique."
+msgstr ""
+
+#: xml/ref/create_foreign_data_wrapper.xml:117(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/create_foreign_data_wrapper.xml:118(para)
+msgid "<productname>PostgreSQL</productname>'s foreign-data functionality is still under active development. Optimization of queries is primitive (and mostly left to the wrapper, too). Thus, there is considerable room for future performance improvements."
+msgstr ""
+
+#: xml/ref/create_foreign_data_wrapper.xml:126(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/create_foreign_data_wrapper.xml:129(programlisting)
+#, no-wrap
+msgid "CREATE FOREIGN DATA WRAPPER\n    dummy;"
+msgstr ""
+
+#: xml/ref/create_foreign_data_wrapper.xml:127(para)
+msgid "Create a useless foreign-data wrapper <literal>dummy</literal>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_foreign_data_wrapper.xml:134(programlisting)
+#, no-wrap
+msgid "CREATE FOREIGN DATA WRAPPER file HANDLER\n    file_fdw_handler;"
+msgstr ""
+
+#: xml/ref/create_foreign_data_wrapper.xml:131(para)
+msgid "Create a foreign-data wrapper <literal>file</literal>with handler function <literal>file_fdw_handler</literal>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_foreign_data_wrapper.xml:138(programlisting)
+#, no-wrap
+msgid "CREATE FOREIGN DATA WRAPPER mywrapper OPTIONS\n    (debug 'true');"
+msgstr ""
+
+#: xml/ref/create_foreign_data_wrapper.xml:136(para)
+msgid "Create a foreign-data wrapper <literal>mywrapper</literal>with some options: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_foreign_data_wrapper.xml:142(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/create_foreign_data_wrapper.xml:143(para)
+msgid "<command>CREATE FOREIGN DATA WRAPPER</command>conforms to ISO/IEC 9075-9 (SQL/MED), with the exception that the <literal>HANDLER</literal>and <literal>VALIDATOR</literal>clauses are extensions and the standard clauses <literal>LIBRARY</literal>and <literal>LANGUAGE</literal>are not implemented in <productname>PostgreSQL</productname>."
+msgstr ""
+
+#: xml/ref/create_foreign_data_wrapper.xml:152(para)
+msgid "Note, however, that the SQL/MED functionality as a whole is not yet conforming."
+msgstr ""
+
+#: xml/ref/create_foreign_data_wrapper.xml:156(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/create_foreign_data_wrapper.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

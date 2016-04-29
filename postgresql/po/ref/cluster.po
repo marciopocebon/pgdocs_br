@@ -1,0 +1,168 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/cluster.xml:4(primary) xml/ref/cluster.xml:7(refentrytitle) xml/ref/cluster.xml:12(refname)
+msgid "CLUSTER"
+msgstr ""
+
+#: xml/ref/cluster.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/cluster.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/cluster.xml:13(refpurpose)
+msgid "cluster a table according to an index"
+msgstr ""
+
+#: xml/ref/cluster.xml:17(replaceable) xml/ref/cluster.xml:73(replaceable)
+msgid "table_name"
+msgstr ""
+
+#: xml/ref/cluster.xml:18(replaceable) xml/ref/cluster.xml:82(replaceable)
+msgid "index_name"
+msgstr ""
+
+#: xml/ref/cluster.xml:16(synopsis)
+#, no-wrap
+msgid "CLUSTER [VERBOSE] \n    <placeholder-1/>[ USING \n    <placeholder-2/>]\n    CLUSTER [VERBOSE]"
+msgstr ""
+
+#: xml/ref/cluster.xml:22(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/cluster.xml:23(para)
+msgid "<command>CLUSTER</command>instructs <productname>PostgreSQL</productname>to cluster the table specified by <replaceable class=\"parameter\">table_name</replaceable>based on the index specified by <replaceable class=\"parameter\">index_name</replaceable>. The index must already have been defined on <replaceable class=\"parameter\">table_name</replaceable>."
+msgstr ""
+
+#: xml/ref/cluster.xml:32(para)
+msgid "When a table is clustered, it is physically reordered based on the index information. Clustering is a one-time operation: when the table is subsequently updated, the changes are not clustered. That is, no attempt is made to store new or updated rows according to their index order. (If one wishes, one can periodically recluster by issuing the command again. Also, setting the table's <literal>fillfactor</literal>storage parameter to less than 100% can aid in preserving cluster ordering during updates, since updated rows are kept on the same page if enough space is available there.)"
+msgstr ""
+
+#: xml/ref/cluster.xml:43(para)
+msgid "When a table is clustered, <productname>PostgreSQL</productname>remembers which index it was clustered by. The form <command>CLUSTER <replaceable class=\"parameter\"> table_name</replaceable></command>reclusters the table using the same index as before. You can also use the <literal>CLUSTER</literal>or <literal>SET WITHOUT CLUSTER</literal>forms of <xref linkend=\"SQL-ALTERTABLE\">to set the index to be used for future cluster operations, or to clear any previous setting.</xref>"
+msgstr ""
+
+#: xml/ref/cluster.xml:55(para)
+msgid "<command>CLUSTER</command>without any parameter reclusters all the previously-clustered tables in the current database that the calling user owns, or all such tables if called by a superuser. This form of <command>CLUSTER</command>cannot be executed inside a transaction block."
+msgstr ""
+
+#: xml/ref/cluster.xml:62(para)
+msgid "When a table is being clustered, an <literal>ACCESS EXCLUSIVE</literal>lock is acquired on it. This prevents any other database operations (both reads and writes) from operating on the table until the <command>CLUSTER</command>is finished."
+msgstr ""
+
+#: xml/ref/cluster.xml:69(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/cluster.xml:76(para)
+msgid "The name (possibly schema-qualified) of a table."
+msgstr ""
+
+#: xml/ref/cluster.xml:85(para)
+msgid "The name of an index."
+msgstr ""
+
+#: xml/ref/cluster.xml:90(literal)
+msgid "VERBOSE"
+msgstr ""
+
+#: xml/ref/cluster.xml:93(para)
+msgid "Prints a progress report as each table is clustered."
+msgstr ""
+
+#: xml/ref/cluster.xml:100(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/cluster.xml:101(para)
+msgid "In cases where you are accessing single rows randomly within a table, the actual order of the data in the table is unimportant. However, if you tend to access some data more than others, and there is an index that groups them together, you will benefit from using <command>CLUSTER</command>. If you are requesting a range of indexed values from a table, or a single indexed value that has multiple rows that match, <command>CLUSTER</command>will help because once the index identifies the table page for the first row that matches, all other rows that match are probably already on the same table page, and so you save disk accesses and speed up the query."
+msgstr ""
+
+#: xml/ref/cluster.xml:114(para)
+msgid "<command>CLUSTER</command>can re-sort the table using either an index scan on the specified index, or (if the index is a b-tree) a sequential scan followed by sorting. It will attempt to choose the method that will be faster, based on planner cost parameters and available statistical information."
+msgstr ""
+
+#: xml/ref/cluster.xml:120(para)
+msgid "When an index scan is used, a temporary copy of the table is created that contains the table data in the index order. Temporary copies of each index on the table are created as well. Therefore, you need free space on disk at least equal to the sum of the table size and the index sizes."
+msgstr ""
+
+#: xml/ref/cluster.xml:125(para)
+msgid "When a sequential scan and sort is used, a temporary sort file is also created, so that the peak temporary space requirement is as much as double the table size, plus the index sizes. This method is often faster than the index scan method, but if the disk space requirement is intolerable, you can disable this choice by temporarily setting <xref linkend=\"guc-enable-sort\">to <literal>off</literal>.</xref>"
+msgstr ""
+
+#: xml/ref/cluster.xml:133(para)
+msgid "It is advisable to set <xref linkend=\"guc-maintenance-work-mem\">to a reasonably large value (but not more than the amount of RAM you can dedicate to the <command>CLUSTER</command>operation) before clustering.</xref>"
+msgstr ""
+
+#: xml/ref/cluster.xml:139(para)
+msgid "Because the planner records statistics about the ordering of tables, it is advisable to run <xref linkend=\"sql-analyze\">on the newly clustered table. Otherwise, the planner might make poor choices of query plans.</xref>"
+msgstr ""
+
+#: xml/ref/cluster.xml:144(para)
+msgid "Because <command>CLUSTER</command>remembers which indexes are clustered, one can cluster the tables one wants clustered manually the first time, then set up a periodic maintenance script that executes <command>CLUSTER</command>without any parameters, so that the desired tables are periodically reclustered."
+msgstr ""
+
+#: xml/ref/cluster.xml:153(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/cluster.xml:157(programlisting)
+#, no-wrap
+msgid "CLUSTER employees USING\n    employees_ind;"
+msgstr ""
+
+#: xml/ref/cluster.xml:154(para)
+msgid "Cluster the table <literal>employees</literal>on the basis of its index <literal>employees_ind</literal>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/cluster.xml:162(programlisting)
+#, no-wrap
+msgid "CLUSTER employees;"
+msgstr ""
+
+#: xml/ref/cluster.xml:159(para)
+msgid "Cluster the <literal>employees</literal>table using the same index that was used before: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/cluster.xml:165(programlisting)
+#, no-wrap
+msgid "CLUSTER;"
+msgstr ""
+
+#: xml/ref/cluster.xml:163(para)
+msgid "Cluster all tables in the database that have previously been clustered: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/cluster.xml:168(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/cluster.xml:169(para)
+msgid "There is no <command>CLUSTER</command>statement in the SQL standard."
+msgstr ""
+
+#: xml/ref/cluster.xml:171(para)
+msgid "The syntax <synopsis>CLUSTER \n    <replaceable class=\"PARAMETER\">index_name</replaceable>ON \n    <replaceable class=\"PARAMETER\">\n    table_name</replaceable></synopsis>is also supported for compatibility with pre-8.3 <productname>PostgreSQL</productname>versions."
+msgstr ""
+
+#: xml/ref/cluster.xml:180(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/cluster.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

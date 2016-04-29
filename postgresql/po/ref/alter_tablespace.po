@@ -1,0 +1,123 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/alter_tablespace.xml:4(primary) xml/ref/alter_tablespace.xml:7(refentrytitle) xml/ref/alter_tablespace.xml:12(refname)
+msgid "ALTER TABLESPACE"
+msgstr ""
+
+#: xml/ref/alter_tablespace.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/alter_tablespace.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/alter_tablespace.xml:13(refpurpose)
+msgid "change the definition of a tablespace"
+msgstr ""
+
+#: xml/ref/alter_tablespace.xml:17(replaceable) xml/ref/alter_tablespace.xml:19(replaceable) xml/ref/alter_tablespace.xml:22(replaceable) xml/ref/alter_tablespace.xml:27(replaceable) xml/ref/alter_tablespace.xml:46(replaceable)
+msgid "name"
+msgstr ""
+
+#: xml/ref/alter_tablespace.xml:18(replaceable) xml/ref/alter_tablespace.xml:54(replaceable)
+msgid "new_name"
+msgstr ""
+
+#: xml/ref/alter_tablespace.xml:20(replaceable) xml/ref/alter_tablespace.xml:65(replaceable)
+msgid "new_owner"
+msgstr ""
+
+#: xml/ref/alter_tablespace.xml:23(replaceable) xml/ref/alter_tablespace.xml:28(replaceable) xml/ref/alter_tablespace.xml:73(replaceable)
+msgid "tablespace_option"
+msgstr ""
+
+#: xml/ref/alter_tablespace.xml:25(replaceable)
+msgid "value"
+msgstr ""
+
+#: xml/ref/alter_tablespace.xml:16(synopsis)
+#, no-wrap
+msgid "ALTER TABLESPACE \n    <placeholder-1/>RENAME TO \n    <placeholder-2/>ALTER TABLESPACE \n    <placeholder-3/>OWNER TO { \n    <placeholder-4/>| CURRENT_USER |\n    SESSION_USER } ALTER TABLESPACE \n    <placeholder-5/>SET ( \n    <placeholder-6/>=\n    \n    <placeholder-7/>[, ... ] )\n    ALTER TABLESPACE \n    <placeholder-8/>RESET ( \n    <placeholder-9/>[, ... ] )"
+msgstr ""
+
+#: xml/ref/alter_tablespace.xml:32(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/alter_tablespace.xml:33(para)
+msgid "<command>ALTER TABLESPACE</command>can be used to change the definition of a tablespace."
+msgstr ""
+
+#: xml/ref/alter_tablespace.xml:36(para)
+msgid "You must own the tablespace to change the definition of a tablespace. To alter the owner, you must also be a direct or indirect member of the new owning role. (Note that superusers have these privileges automatically.)"
+msgstr ""
+
+#: xml/ref/alter_tablespace.xml:42(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/alter_tablespace.xml:49(para)
+msgid "The name of an existing tablespace."
+msgstr ""
+
+#: xml/ref/alter_tablespace.xml:57(para)
+msgid "The new name of the tablespace. The new name cannot begin with <literal>pg_</literal>, as such names are reserved for system tablespaces."
+msgstr ""
+
+#: xml/ref/alter_tablespace.xml:68(para)
+msgid "The new owner of the tablespace."
+msgstr ""
+
+#: xml/ref/alter_tablespace.xml:77(para)
+msgid "A tablespace parameter to be set or reset. Currently, the only available parameters are <varname>seq_page_cost</varname>and <varname>random_page_cost</varname>. Setting either value for a particular tablespace will override the planner's usual estimate of the cost of reading pages from tables in that tablespace, as established by the configuration parameters of the same name (see <xref linkend=\"guc-seq-page-cost\">, <xref linkend=\"guc-random-page-cost\">). This may be useful if one tablespace is located on a disk which is faster or slower than the remainder of the I/O subsystem.</xref></xref>"
+msgstr ""
+
+#: xml/ref/alter_tablespace.xml:95(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/alter_tablespace.xml:99(programlisting)
+#, no-wrap
+msgid "ALTER TABLESPACE index_space RENAME TO\n    fast_raid;"
+msgstr ""
+
+#: xml/ref/alter_tablespace.xml:96(para)
+msgid "Rename tablespace <literal>index_space</literal>to <literal>fast_raid</literal>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_tablespace.xml:103(programlisting)
+#, no-wrap
+msgid "ALTER TABLESPACE index_space OWNER TO\n    mary;"
+msgstr ""
+
+#: xml/ref/alter_tablespace.xml:101(para)
+msgid "Change the owner of tablespace <literal>index_space</literal>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_tablespace.xml:107(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/alter_tablespace.xml:108(para)
+msgid "There is no <command>ALTER TABLESPACE</command>statement in the SQL standard."
+msgstr ""
+
+#: xml/ref/alter_tablespace.xml:113(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/alter_tablespace.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

@@ -1,0 +1,3092 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:03+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/keywords.xml:3(title) xml/keywords.xml:71(title)
+msgid "<acronym>SQL</acronym>Key Words"
+msgstr ""
+
+#: xml/keywords.xml:6(primary)
+msgid "key word"
+msgstr ""
+
+#: xml/keywords.xml:7(secondary)
+msgid "list of"
+msgstr ""
+
+#: xml/keywords.xml:12(productname) xml/keywords.xml:78(productname)
+msgid "PostgreSQL"
+msgstr ""
+
+#: xml/keywords.xml:14(xref)
+msgid ". (For space reasons, only the latest two versions of the SQL standard, and SQL-92 for historical comparison, are included. The differences between those and the other intermediate standard versions are small.)"
+msgstr ""
+
+#: xml/keywords.xml:10(xref)
+msgid "lists all tokens that are key words in the SQL standard and in <placeholder-1/>. Background information can be found in <placeholder-2/>"
+msgstr ""
+
+#: xml/keywords.xml:20(para)
+msgid "SQL distinguishes between <firstterm>reserved</firstterm>and <firstterm>non-reserved</firstterm>key words. According to the standard, reserved key words are the only real key words; they are never allowed as identifiers. Non-reserved key words only have a special meaning in particular contexts and can be used as identifiers in other contexts. Most non-reserved key words are actually the names of built-in tables and functions specified by SQL. The concept of non-reserved key words essentially only exists to declare that some predefined meaning is attached to a word in some contexts."
+msgstr ""
+
+#: xml/keywords.xml:31(para)
+msgid "In the <productname>PostgreSQL</productname>parser life is a bit more complicated. There are several different classes of tokens ranging from those that can never be used as an identifier to those that have absolutely no special status in the parser as compared to an ordinary identifier. (The latter is usually the case for functions specified by SQL.) Even reserved key words are not completely reserved in <productname>PostgreSQL</productname>, but can be used as column labels (for example, <literal>SELECT 55 AS CHECK</literal>, even though <token>CHECK</token>is a reserved key word)."
+msgstr ""
+
+#: xml/keywords.xml:43(para)
+msgid "In <xref linkend=\"keywords-table\">in the column for <productname>PostgreSQL</productname>we classify as <quote>non-reserved</quote>those key words that are explicitly known to the parser but are allowed as column or table names. Some key words that are otherwise non-reserved cannot be used as function or data type names and are marked accordingly. (Most of these words represent built-in functions or data types with special syntax. The function or type is still available but it cannot be redefined by the user.) Labeled <quote>reserved</quote>are those tokens that are not allowed as column or table names. Some reserved key words are allowable as names for functions or data types; this is also shown in the table. If not so marked, a reserved key word is only allowed as an <quote>AS</quote>column label name.</xref>"
+msgstr ""
+
+#: xml/keywords.xml:59(para)
+msgid "As a general rule, if you get spurious parser errors for commands that contain any of the listed key words as an identifier you should try to quote the identifier to see if the problem goes away."
+msgstr ""
+
+#: xml/keywords.xml:63(para)
+msgid "It is important to understand before studying <xref linkend=\"keywords-table\">that the fact that a key word is not reserved in <productname>PostgreSQL</productname>does not mean that the feature related to the word is not implemented. Conversely, the presence of a key word does not indicate the existence of a feature.</xref>"
+msgstr ""
+
+#: xml/keywords.xml:76(entry)
+msgid "Key Word"
+msgstr ""
+
+#: xml/keywords.xml:80(entry)
+msgid "SQL:2011"
+msgstr ""
+
+#: xml/keywords.xml:81(entry)
+msgid "SQL:2008"
+msgstr ""
+
+#: xml/keywords.xml:82(entry)
+msgid "SQL-92"
+msgstr ""
+
+#: xml/keywords.xml:88(token)
+msgid "A"
+msgstr ""
+
+#: xml/keywords.xml:91(entry) xml/keywords.xml:92(entry) xml/keywords.xml:99(entry) xml/keywords.xml:118(entry) xml/keywords.xml:119(entry) xml/keywords.xml:126(entry) xml/keywords.xml:127(entry) xml/keywords.xml:128(entry) xml/keywords.xml:135(entry) xml/keywords.xml:145(entry) xml/keywords.xml:146(entry) xml/keywords.xml:153(entry) xml/keywords.xml:154(entry) xml/keywords.xml:155(entry) xml/keywords.xml:163(entry) xml/keywords.xml:164(entry) xml/keywords.xml:165(entry) xml/keywords.xml:171(entry) xml/keywords.xml:172(entry) xml/keywords.xml:173(entry) xml/keywords.xml:180(entry) xml/keywords.xml:181(entry) xml/keywords.xml:182(entry) xml/keywords.xml:189(entry) xml/keywords.xml:190(entry) xml/keywords.xml:191(entry) xml/keywords.xml:198(entry) xml/keywords.xml:225(entry) xml/keywords.xml:234(entry) xml/keywords.xml:243(entry) xml/keywords.xml:244(entry) xml/keywords.xml:245(entry) xml/keywords.xml:334(entry) xml/keywords.xml:335(entry) xml/keywords.xml:351(entry) xml/keywords.xml:352(entry) xml/keywords.xml:353(entry) xml/keywords.xml:360(entry) xml/keywords.xml:361(entry) xml/keywords.xml:362(entry) xml/keywords.xml:378(entry) xml/keywords.xml:396(entry) xml/keywords.xml:397(entry) xml/keywords.xml:398(entry) xml/keywords.xml:406(entry) xml/keywords.xml:407(entry) xml/keywords.xml:432(entry) xml/keywords.xml:442(entry) xml/keywords.xml:443(entry) xml/keywords.xml:450(entry) xml/keywords.xml:451(entry) xml/keywords.xml:452(entry) xml/keywords.xml:459(entry) xml/keywords.xml:487(entry) xml/keywords.xml:488(entry) xml/keywords.xml:550(entry) xml/keywords.xml:551(entry) xml/keywords.xml:559(entry) xml/keywords.xml:560(entry) xml/keywords.xml:586(entry) xml/keywords.xml:587(entry) xml/keywords.xml:594(entry) xml/keywords.xml:604(entry) xml/keywords.xml:605(entry) xml/keywords.xml:606(entry) xml/keywords.xml:612(entry) xml/keywords.xml:630(entry) xml/keywords.xml:648(entry) xml/keywords.xml:649(entry) xml/keywords.xml:650(entry) xml/keywords.xml:657(entry) xml/keywords.xml:684(entry) xml/keywords.xml:685(entry) xml/keywords.xml:686(entry) xml/keywords.xml:694(entry) xml/keywords.xml:695(entry) xml/keywords.xml:696(entry) xml/keywords.xml:720(entry) xml/keywords.xml:721(entry) xml/keywords.xml:722(entry) xml/keywords.xml:747(entry) xml/keywords.xml:748(entry) xml/keywords.xml:749(entry) xml/keywords.xml:757(entry) xml/keywords.xml:758(entry) xml/keywords.xml:775(entry) xml/keywords.xml:776(entry) xml/keywords.xml:777(entry) xml/keywords.xml:784(entry) xml/keywords.xml:785(entry) xml/keywords.xml:786(entry) xml/keywords.xml:793(entry) xml/keywords.xml:794(entry) xml/keywords.xml:795(entry) xml/keywords.xml:819(entry) xml/keywords.xml:828(entry) xml/keywords.xml:838(entry) xml/keywords.xml:839(entry) xml/keywords.xml:840(entry) xml/keywords.xml:855(entry) xml/keywords.xml:864(entry) xml/keywords.xml:883(entry) xml/keywords.xml:884(entry) xml/keywords.xml:885(entry) xml/keywords.xml:901(entry) xml/keywords.xml:902(entry) xml/keywords.xml:910(entry) xml/keywords.xml:911(entry) xml/keywords.xml:912(entry) xml/keywords.xml:919(entry) xml/keywords.xml:920(entry) xml/keywords.xml:921(entry) xml/keywords.xml:928(entry) xml/keywords.xml:929(entry) xml/keywords.xml:930(entry) xml/keywords.xml:955(entry) xml/keywords.xml:956(entry) xml/keywords.xml:964(entry) xml/keywords.xml:965(entry) xml/keywords.xml:966(entry) xml/keywords.xml:973(entry) xml/keywords.xml:974(entry) xml/keywords.xml:975(entry) xml/keywords.xml:982(entry) xml/keywords.xml:983(entry) xml/keywords.xml:990(entry) xml/keywords.xml:999(entry) xml/keywords.xml:1008(entry) xml/keywords.xml:1017(entry) xml/keywords.xml:1018(entry) xml/keywords.xml:1019(entry) xml/keywords.xml:1020(entry) xml/keywords.xml:1045(entry) xml/keywords.xml:1046(entry) xml/keywords.xml:1047(entry) xml/keywords.xml:1053(entry) xml/keywords.xml:1062(entry) xml/keywords.xml:1080(entry) xml/keywords.xml:1081(entry) xml/keywords.xml:1082(entry) xml/keywords.xml:1090(entry) xml/keywords.xml:1091(entry) xml/keywords.xml:1092(entry) xml/keywords.xml:1107(entry) xml/keywords.xml:1108(entry) xml/keywords.xml:1109(entry) xml/keywords.xml:1117(entry) xml/keywords.xml:1118(entry) xml/keywords.xml:1119(entry) xml/keywords.xml:1126(entry) xml/keywords.xml:1127(entry) xml/keywords.xml:1128(entry) xml/keywords.xml:1135(entry) xml/keywords.xml:1136(entry) xml/keywords.xml:1137(entry) xml/keywords.xml:1144(entry) xml/keywords.xml:1145(entry) xml/keywords.xml:1154(entry) xml/keywords.xml:1161(entry) xml/keywords.xml:1162(entry) xml/keywords.xml:1163(entry) xml/keywords.xml:1170(entry) xml/keywords.xml:1171(entry) xml/keywords.xml:1172(entry) xml/keywords.xml:1180(entry) xml/keywords.xml:1181(entry) xml/keywords.xml:1188(entry) xml/keywords.xml:1206(entry) xml/keywords.xml:1233(entry) xml/keywords.xml:1287(entry) xml/keywords.xml:1296(entry) xml/keywords.xml:1314(entry) xml/keywords.xml:1422(entry) xml/keywords.xml:1432(entry) xml/keywords.xml:1433(entry) xml/keywords.xml:1434(entry) xml/keywords.xml:1440(entry) xml/keywords.xml:1449(entry) xml/keywords.xml:1450(entry) xml/keywords.xml:1451(entry) xml/keywords.xml:1452(entry) xml/keywords.xml:1458(entry) xml/keywords.xml:1486(entry) xml/keywords.xml:1487(entry) xml/keywords.xml:1488(entry) xml/keywords.xml:1495(entry) xml/keywords.xml:1496(entry) xml/keywords.xml:1497(entry) xml/keywords.xml:1503(entry) xml/keywords.xml:1513(entry) xml/keywords.xml:1514(entry) xml/keywords.xml:1521(entry) xml/keywords.xml:1548(entry) xml/keywords.xml:1566(entry) xml/keywords.xml:1567(entry) xml/keywords.xml:1568(entry) xml/keywords.xml:1576(entry) xml/keywords.xml:1577(entry) xml/keywords.xml:1584(entry) xml/keywords.xml:1585(entry) xml/keywords.xml:1586(entry) xml/keywords.xml:1594(entry) xml/keywords.xml:1595(entry) xml/keywords.xml:1602(entry) xml/keywords.xml:1603(entry) xml/keywords.xml:1604(entry) xml/keywords.xml:1612(entry) xml/keywords.xml:1613(entry) xml/keywords.xml:1620(entry) xml/keywords.xml:1629(entry) xml/keywords.xml:1638(entry) xml/keywords.xml:1657(entry) xml/keywords.xml:1658(entry) xml/keywords.xml:1675(entry) xml/keywords.xml:1676(entry) xml/keywords.xml:1684(entry) xml/keywords.xml:1685(entry) xml/keywords.xml:1702(entry) xml/keywords.xml:1703(entry) xml/keywords.xml:1720(entry) xml/keywords.xml:1721(entry) xml/keywords.xml:1728(entry) xml/keywords.xml:1737(entry) xml/keywords.xml:1746(entry) xml/keywords.xml:1765(entry) xml/keywords.xml:1766(entry) xml/keywords.xml:1890(entry) xml/keywords.xml:1891(entry) xml/keywords.xml:1892(entry) xml/keywords.xml:1899(entry) xml/keywords.xml:1900(entry) xml/keywords.xml:1901(entry) xml/keywords.xml:1908(entry) xml/keywords.xml:1917(entry) xml/keywords.xml:1936(entry) xml/keywords.xml:1937(entry) xml/keywords.xml:1938(entry) xml/keywords.xml:1945(entry) xml/keywords.xml:1946(entry) xml/keywords.xml:1953(entry) xml/keywords.xml:1981(entry) xml/keywords.xml:1982(entry) xml/keywords.xml:1989(entry) xml/keywords.xml:1998(entry) xml/keywords.xml:1999(entry) xml/keywords.xml:2000(entry) xml/keywords.xml:2007(entry) xml/keywords.xml:2053(entry) xml/keywords.xml:2061(entry) xml/keywords.xml:2072(entry) xml/keywords.xml:2079(entry) xml/keywords.xml:2088(entry) xml/keywords.xml:2124(entry) xml/keywords.xml:2125(entry) xml/keywords.xml:2126(entry) xml/keywords.xml:2133(entry) xml/keywords.xml:2134(entry) xml/keywords.xml:2135(entry) xml/keywords.xml:2142(entry) xml/keywords.xml:2160(entry) xml/keywords.xml:2187(entry) xml/keywords.xml:2197(entry) xml/keywords.xml:2205(entry) xml/keywords.xml:2214(entry) xml/keywords.xml:2241(entry) xml/keywords.xml:2260(entry) xml/keywords.xml:2261(entry) xml/keywords.xml:2268(entry) xml/keywords.xml:2278(entry) xml/keywords.xml:2279(entry) xml/keywords.xml:2286(entry) xml/keywords.xml:2287(entry) xml/keywords.xml:2288(entry) xml/keywords.xml:2305(entry) xml/keywords.xml:2306(entry) xml/keywords.xml:2331(entry) xml/keywords.xml:2332(entry) xml/keywords.xml:2333(entry) xml/keywords.xml:2349(entry) xml/keywords.xml:2368(entry) xml/keywords.xml:2369(entry) xml/keywords.xml:2370(entry) xml/keywords.xml:2376(entry) xml/keywords.xml:2386(entry) xml/keywords.xml:2387(entry) xml/keywords.xml:2431(entry) xml/keywords.xml:2432(entry) xml/keywords.xml:2448(entry) xml/keywords.xml:2457(entry) xml/keywords.xml:2476(entry) xml/keywords.xml:2477(entry) xml/keywords.xml:2485(entry) xml/keywords.xml:2486(entry) xml/keywords.xml:2494(entry) xml/keywords.xml:2495(entry) xml/keywords.xml:2511(entry) xml/keywords.xml:2521(entry) xml/keywords.xml:2522(entry) xml/keywords.xml:2530(entry) xml/keywords.xml:2531(entry) xml/keywords.xml:2547(entry) xml/keywords.xml:2548(entry) xml/keywords.xml:2549(entry) xml/keywords.xml:2592(entry) xml/keywords.xml:2610(entry) xml/keywords.xml:2620(entry) xml/keywords.xml:2621(entry) xml/keywords.xml:2629(entry) xml/keywords.xml:2630(entry) xml/keywords.xml:2637(entry) xml/keywords.xml:2646(entry) xml/keywords.xml:2656(entry) xml/keywords.xml:2657(entry) xml/keywords.xml:2664(entry) xml/keywords.xml:2673(entry) xml/keywords.xml:2683(entry) xml/keywords.xml:2684(entry) xml/keywords.xml:2700(entry) xml/keywords.xml:2701(entry) xml/keywords.xml:2702(entry) xml/keywords.xml:2710(entry) xml/keywords.xml:2718(entry) xml/keywords.xml:2728(entry) xml/keywords.xml:2729(entry) xml/keywords.xml:2736(entry) xml/keywords.xml:2745(entry) xml/keywords.xml:2763(entry) xml/keywords.xml:2764(entry) xml/keywords.xml:2765(entry) xml/keywords.xml:2772(entry) xml/keywords.xml:2773(entry) xml/keywords.xml:2774(entry) xml/keywords.xml:2782(entry) xml/keywords.xml:2783(entry) xml/keywords.xml:2790(entry) xml/keywords.xml:2799(entry) xml/keywords.xml:2817(entry) xml/keywords.xml:2826(entry) xml/keywords.xml:2836(entry) xml/keywords.xml:2837(entry) xml/keywords.xml:2844(entry) xml/keywords.xml:2871(entry) xml/keywords.xml:2872(entry) xml/keywords.xml:2873(entry) xml/keywords.xml:2880(entry) xml/keywords.xml:2889(entry) xml/keywords.xml:2899(entry) xml/keywords.xml:2900(entry) xml/keywords.xml:2908(entry) xml/keywords.xml:2909(entry) xml/keywords.xml:2916(entry) xml/keywords.xml:2917(entry) xml/keywords.xml:2918(entry) xml/keywords.xml:2944(entry) xml/keywords.xml:2945(entry) xml/keywords.xml:2988(entry) xml/keywords.xml:2989(entry) xml/keywords.xml:2990(entry) xml/keywords.xml:3015(entry) xml/keywords.xml:3016(entry) xml/keywords.xml:3017(entry) xml/keywords.xml:3034(entry) xml/keywords.xml:3035(entry) xml/keywords.xml:3042(entry) xml/keywords.xml:3043(entry) xml/keywords.xml:3044(entry) xml/keywords.xml:3052(entry) xml/keywords.xml:3053(entry) xml/keywords.xml:3061(entry) xml/keywords.xml:3062(entry) xml/keywords.xml:3069(entry) xml/keywords.xml:3087(entry) xml/keywords.xml:3096(entry) xml/keywords.xml:3105(entry) xml/keywords.xml:3106(entry) xml/keywords.xml:3107(entry) xml/keywords.xml:3150(entry) xml/keywords.xml:3178(entry) xml/keywords.xml:3179(entry) xml/keywords.xml:3180(entry) xml/keywords.xml:3186(entry) xml/keywords.xml:3187(entry) xml/keywords.xml:3188(entry) xml/keywords.xml:3196(entry) xml/keywords.xml:3197(entry) xml/keywords.xml:3223(entry) xml/keywords.xml:3224(entry) xml/keywords.xml:3232(entry) xml/keywords.xml:3233(entry) xml/keywords.xml:3240(entry) xml/keywords.xml:3258(entry) xml/keywords.xml:3267(entry) xml/keywords.xml:3294(entry) xml/keywords.xml:3295(entry) xml/keywords.xml:3296(entry) xml/keywords.xml:3304(entry) xml/keywords.xml:3305(entry) xml/keywords.xml:3312(entry) xml/keywords.xml:3321(entry) xml/keywords.xml:3330(entry) xml/keywords.xml:3349(entry) xml/keywords.xml:3350(entry) xml/keywords.xml:3358(entry) xml/keywords.xml:3359(entry) xml/keywords.xml:3366(entry) xml/keywords.xml:3367(entry) xml/keywords.xml:3368(entry) xml/keywords.xml:3375(entry) xml/keywords.xml:3385(entry) xml/keywords.xml:3386(entry) xml/keywords.xml:3393(entry) xml/keywords.xml:3411(entry) xml/keywords.xml:3412(entry) xml/keywords.xml:3413(entry) xml/keywords.xml:3448(entry) xml/keywords.xml:3449(entry) xml/keywords.xml:3450(entry) xml/keywords.xml:3457(entry) xml/keywords.xml:3458(entry) xml/keywords.xml:3459(entry) xml/keywords.xml:3466(entry) xml/keywords.xml:3467(entry) xml/keywords.xml:3468(entry) xml/keywords.xml:3492(entry) xml/keywords.xml:3501(entry) xml/keywords.xml:3502(entry) xml/keywords.xml:3503(entry) xml/keywords.xml:3519(entry) xml/keywords.xml:3546(entry) xml/keywords.xml:3556(entry) xml/keywords.xml:3557(entry) xml/keywords.xml:3558(entry) xml/keywords.xml:3564(entry) xml/keywords.xml:3583(entry) xml/keywords.xml:3584(entry) xml/keywords.xml:3585(entry) xml/keywords.xml:3591(entry) xml/keywords.xml:3592(entry) xml/keywords.xml:3593(entry) xml/keywords.xml:3594(entry) xml/keywords.xml:3600(entry) xml/keywords.xml:3601(entry) xml/keywords.xml:3602(entry) xml/keywords.xml:3610(entry) xml/keywords.xml:3611(entry) xml/keywords.xml:3655(entry) xml/keywords.xml:3656(entry) xml/keywords.xml:3672(entry) xml/keywords.xml:3673(entry) xml/keywords.xml:3674(entry) xml/keywords.xml:3682(entry) xml/keywords.xml:3683(entry) xml/keywords.xml:3691(entry) xml/keywords.xml:3692(entry) xml/keywords.xml:3700(entry) xml/keywords.xml:3701(entry) xml/keywords.xml:3709(entry) xml/keywords.xml:3710(entry) xml/keywords.xml:3718(entry) xml/keywords.xml:3719(entry) xml/keywords.xml:3726(entry) xml/keywords.xml:3754(entry) xml/keywords.xml:3755(entry) xml/keywords.xml:3771(entry) xml/keywords.xml:3780(entry) xml/keywords.xml:3798(entry) xml/keywords.xml:3835(entry) xml/keywords.xml:3836(entry) xml/keywords.xml:3837(entry) xml/keywords.xml:3852(entry) xml/keywords.xml:3853(entry) xml/keywords.xml:3854(entry) xml/keywords.xml:3862(entry) xml/keywords.xml:3863(entry) xml/keywords.xml:3864(entry) xml/keywords.xml:3879(entry) xml/keywords.xml:3880(entry) xml/keywords.xml:3881(entry) xml/keywords.xml:3898(entry) xml/keywords.xml:3899(entry) xml/keywords.xml:3915(entry) xml/keywords.xml:3924(entry) xml/keywords.xml:3925(entry) xml/keywords.xml:3926(entry) xml/keywords.xml:3942(entry) xml/keywords.xml:3987(entry) xml/keywords.xml:3996(entry) xml/keywords.xml:3997(entry) xml/keywords.xml:3998(entry) xml/keywords.xml:4005(entry) xml/keywords.xml:4006(entry) xml/keywords.xml:4007(entry) xml/keywords.xml:4033(entry) xml/keywords.xml:4034(entry) xml/keywords.xml:4041(entry) xml/keywords.xml:4042(entry) xml/keywords.xml:4043(entry) xml/keywords.xml:4051(entry) xml/keywords.xml:4052(entry) xml/keywords.xml:4078(entry) xml/keywords.xml:4079(entry) xml/keywords.xml:4086(entry) xml/keywords.xml:4114(entry) xml/keywords.xml:4115(entry) xml/keywords.xml:4122(entry) xml/keywords.xml:4131(entry) xml/keywords.xml:4141(entry) xml/keywords.xml:4142(entry) xml/keywords.xml:4150(entry) xml/keywords.xml:4151(entry) xml/keywords.xml:4168(entry) xml/keywords.xml:4169(entry) xml/keywords.xml:4177(entry) xml/keywords.xml:4178(entry) xml/keywords.xml:4186(entry) xml/keywords.xml:4187(entry) xml/keywords.xml:4195(entry) xml/keywords.xml:4196(entry) xml/keywords.xml:4204(entry) xml/keywords.xml:4205(entry) xml/keywords.xml:4213(entry) xml/keywords.xml:4214(entry) xml/keywords.xml:4221(entry) xml/keywords.xml:4230(entry) xml/keywords.xml:4231(entry) xml/keywords.xml:4232(entry) xml/keywords.xml:4239(entry) xml/keywords.xml:4249(entry) xml/keywords.xml:4250(entry) xml/keywords.xml:4251(entry) xml/keywords.xml:4257(entry) xml/keywords.xml:4258(entry) xml/keywords.xml:4259(entry) xml/keywords.xml:4267(entry) xml/keywords.xml:4268(entry) xml/keywords.xml:4275(entry) xml/keywords.xml:4285(entry) xml/keywords.xml:4286(entry) xml/keywords.xml:4339(entry) xml/keywords.xml:4340(entry) xml/keywords.xml:4348(entry) xml/keywords.xml:4349(entry) xml/keywords.xml:4356(entry) xml/keywords.xml:4366(entry) xml/keywords.xml:4367(entry) xml/keywords.xml:4368(entry) xml/keywords.xml:4374(entry) xml/keywords.xml:4428(entry) xml/keywords.xml:4429(entry) xml/keywords.xml:4430(entry) xml/keywords.xml:4446(entry) xml/keywords.xml:4455(entry) xml/keywords.xml:4464(entry) xml/keywords.xml:4465(entry) xml/keywords.xml:4466(entry) xml/keywords.xml:4482(entry) xml/keywords.xml:4483(entry) xml/keywords.xml:4484(entry) xml/keywords.xml:4491(entry) xml/keywords.xml:4492(entry) xml/keywords.xml:4493(entry) xml/keywords.xml:4500(entry) xml/keywords.xml:4509(entry) xml/keywords.xml:4518(entry) xml/keywords.xml:4528(entry) xml/keywords.xml:4529(entry) xml/keywords.xml:4536(entry) xml/keywords.xml:4545(entry) xml/keywords.xml:4563(entry) xml/keywords.xml:4564(entry) xml/keywords.xml:4565(entry) xml/keywords.xml:4590(entry) xml/keywords.xml:4599(entry) xml/keywords.xml:4609(entry) xml/keywords.xml:4610(entry) xml/keywords.xml:4617(entry) xml/keywords.xml:4626(entry) xml/keywords.xml:4653(entry) xml/keywords.xml:4743(entry) xml/keywords.xml:4752(entry) xml/keywords.xml:4753(entry) xml/keywords.xml:4754(entry) xml/keywords.xml:4761(entry) xml/keywords.xml:4770(entry) xml/keywords.xml:4779(entry) xml/keywords.xml:4780(entry) xml/keywords.xml:4781(entry) xml/keywords.xml:4782(entry) xml/keywords.xml:4788(entry) xml/keywords.xml:4797(entry) xml/keywords.xml:4807(entry) xml/keywords.xml:4808(entry) xml/keywords.xml:4815(entry) xml/keywords.xml:4825(entry) xml/keywords.xml:4826(entry) xml/keywords.xml:4833(entry) xml/keywords.xml:4834(entry) xml/keywords.xml:4835(entry) xml/keywords.xml:4843(entry) xml/keywords.xml:4844(entry) xml/keywords.xml:4851(entry) xml/keywords.xml:4852(entry) xml/keywords.xml:4853(entry) xml/keywords.xml:4879(entry) xml/keywords.xml:4880(entry) xml/keywords.xml:4888(entry) xml/keywords.xml:4889(entry) xml/keywords.xml:4890(entry) xml/keywords.xml:4897(entry) xml/keywords.xml:4898(entry) xml/keywords.xml:4899(entry) xml/keywords.xml:4906(entry) xml/keywords.xml:4907(entry) xml/keywords.xml:4908(entry) xml/keywords.xml:4915(entry) xml/keywords.xml:4916(entry) xml/keywords.xml:4923(entry) xml/keywords.xml:4932(entry) xml/keywords.xml:4950(entry) xml/keywords.xml:4951(entry) xml/keywords.xml:4952(entry) xml/keywords.xml:4959(entry) xml/keywords.xml:4968(entry) xml/keywords.xml:4978(entry) xml/keywords.xml:4979(entry) xml/keywords.xml:4987(entry) xml/keywords.xml:4988(entry) xml/keywords.xml:4996(entry) xml/keywords.xml:4997(entry) xml/keywords.xml:5005(entry) xml/keywords.xml:5006(entry) xml/keywords.xml:5022(entry) xml/keywords.xml:5032(entry) xml/keywords.xml:5033(entry) xml/keywords.xml:5034(entry) xml/keywords.xml:5049(entry) xml/keywords.xml:5058(entry) xml/keywords.xml:5068(entry) xml/keywords.xml:5069(entry) xml/keywords.xml:5070(entry) xml/keywords.xml:5076(entry) xml/keywords.xml:5077(entry) xml/keywords.xml:5078(entry) xml/keywords.xml:5086(entry) xml/keywords.xml:5087(entry) xml/keywords.xml:5088(entry) xml/keywords.xml:5104(entry) xml/keywords.xml:5105(entry) xml/keywords.xml:5113(entry) xml/keywords.xml:5114(entry) xml/keywords.xml:5122(entry) xml/keywords.xml:5123(entry) xml/keywords.xml:5130(entry) xml/keywords.xml:5139(entry) xml/keywords.xml:5148(entry) xml/keywords.xml:5158(entry) xml/keywords.xml:5159(entry) xml/keywords.xml:5166(entry) xml/keywords.xml:5167(entry) xml/keywords.xml:5168(entry) xml/keywords.xml:5185(entry) xml/keywords.xml:5186(entry) xml/keywords.xml:5194(entry) xml/keywords.xml:5195(entry) xml/keywords.xml:5211(entry) xml/keywords.xml:5212(entry) xml/keywords.xml:5213(entry) xml/keywords.xml:5220(entry) xml/keywords.xml:5229(entry) xml/keywords.xml:5230(entry) xml/keywords.xml:5231(entry) xml/keywords.xml:5232(entry) xml/keywords.xml:5238(entry) xml/keywords.xml:5239(entry) xml/keywords.xml:5240(entry) xml/keywords.xml:5248(entry) xml/keywords.xml:5249(entry) xml/keywords.xml:5250(entry) xml/keywords.xml:5256(entry) xml/keywords.xml:5257(entry) xml/keywords.xml:5258(entry) xml/keywords.xml:5274(entry) xml/keywords.xml:5292(entry) xml/keywords.xml:5293(entry) xml/keywords.xml:5294(entry) xml/keywords.xml:5301(entry) xml/keywords.xml:5310(entry) xml/keywords.xml:5328(entry) xml/keywords.xml:5329(entry) xml/keywords.xml:5330(entry) xml/keywords.xml:5338(entry) xml/keywords.xml:5339(entry) xml/keywords.xml:5346(entry) xml/keywords.xml:5364(entry) xml/keywords.xml:5383(entry) xml/keywords.xml:5384(entry) xml/keywords.xml:5392(entry) xml/keywords.xml:5393(entry) xml/keywords.xml:5419(entry) xml/keywords.xml:5420(entry) xml/keywords.xml:5427(entry) xml/keywords.xml:5490(entry) xml/keywords.xml:5499(entry) xml/keywords.xml:5500(entry) xml/keywords.xml:5501(entry) xml/keywords.xml:5508(entry) xml/keywords.xml:5518(entry) xml/keywords.xml:5519(entry) xml/keywords.xml:5526(entry) xml/keywords.xml:5527(entry) xml/keywords.xml:5528(entry) xml/keywords.xml:5544(entry) xml/keywords.xml:5571(entry) xml/keywords.xml:5580(entry) xml/keywords.xml:5589(entry) xml/keywords.xml:5598(entry) xml/keywords.xml:5607(entry) xml/keywords.xml:5608(entry) xml/keywords.xml:5609(entry) xml/keywords.xml:5617(entry) xml/keywords.xml:5618(entry) xml/keywords.xml:5626(entry) xml/keywords.xml:5627(entry) xml/keywords.xml:5635(entry) xml/keywords.xml:5636(entry) xml/keywords.xml:5637(entry) xml/keywords.xml:5697(entry) xml/keywords.xml:5706(entry) xml/keywords.xml:5734(entry) xml/keywords.xml:5735(entry) xml/keywords.xml:5751(entry) xml/keywords.xml:5769(entry) xml/keywords.xml:5779(entry) xml/keywords.xml:5780(entry) xml/keywords.xml:5781(entry) xml/keywords.xml:5787(entry) xml/keywords.xml:5796(entry) xml/keywords.xml:5805(entry) xml/keywords.xml:5806(entry) xml/keywords.xml:5807(entry) xml/keywords.xml:5814(entry) xml/keywords.xml:5833(entry) xml/keywords.xml:5834(entry) xml/keywords.xml:5887(entry) xml/keywords.xml:5888(entry) xml/keywords.xml:5896(entry) xml/keywords.xml:5897(entry) xml/keywords.xml:5913(entry) xml/keywords.xml:5914(entry) xml/keywords.xml:5915(entry) xml/keywords.xml:5923(entry) xml/keywords.xml:5924(entry) xml/keywords.xml:5932(entry) xml/keywords.xml:5933(entry) xml/keywords.xml:5941(entry) xml/keywords.xml:5942(entry) xml/keywords.xml:5949(entry) xml/keywords.xml:5950(entry) xml/keywords.xml:5951(entry) xml/keywords.xml:5959(entry) xml/keywords.xml:5960(entry) xml/keywords.xml:6003(entry) xml/keywords.xml:6013(entry) xml/keywords.xml:6014(entry) xml/keywords.xml:6022(entry) xml/keywords.xml:6023(entry) xml/keywords.xml:6031(entry) xml/keywords.xml:6032(entry) xml/keywords.xml:6066(entry) xml/keywords.xml:6075(entry) xml/keywords.xml:6084(entry) xml/keywords.xml:6085(entry) xml/keywords.xml:6086(entry) xml/keywords.xml:6087(entry) xml/keywords.xml:6093(entry) xml/keywords.xml:6111(entry) xml/keywords.xml:6112(entry) xml/keywords.xml:6113(entry) xml/keywords.xml:6120(entry) xml/keywords.xml:6121(entry) xml/keywords.xml:6122(entry) xml/keywords.xml:6123(entry) xml/keywords.xml:6130(entry) xml/keywords.xml:6131(entry) xml/keywords.xml:6138(entry) xml/keywords.xml:6165(entry) xml/keywords.xml:6175(entry) xml/keywords.xml:6176(entry) xml/keywords.xml:6183(entry) xml/keywords.xml:6192(entry) xml/keywords.xml:6202(entry) xml/keywords.xml:6203(entry) xml/keywords.xml:6204(entry) xml/keywords.xml:6219(entry) xml/keywords.xml:6229(entry) xml/keywords.xml:6230(entry) xml/keywords.xml:6237(entry) xml/keywords.xml:6256(entry) xml/keywords.xml:6257(entry) xml/keywords.xml:6265(entry) xml/keywords.xml:6266(entry) xml/keywords.xml:6283(entry) xml/keywords.xml:6284(entry) xml/keywords.xml:6292(entry) xml/keywords.xml:6293(entry) xml/keywords.xml:6301(entry) xml/keywords.xml:6302(entry) xml/keywords.xml:6310(entry) xml/keywords.xml:6311(entry) xml/keywords.xml:6327(entry) xml/keywords.xml:6336(entry) xml/keywords.xml:6337(entry) xml/keywords.xml:6338(entry) xml/keywords.xml:6345(entry) xml/keywords.xml:6354(entry) xml/keywords.xml:6363(entry) xml/keywords.xml:6417(entry) xml/keywords.xml:6453(entry) xml/keywords.xml:6454(entry) xml/keywords.xml:6455(entry) xml/keywords.xml:6471(entry) xml/keywords.xml:6472(entry) xml/keywords.xml:6473(entry) xml/keywords.xml:6480(entry) xml/keywords.xml:6489(entry) xml/keywords.xml:6525(entry) xml/keywords.xml:6526(entry) xml/keywords.xml:6527(entry) xml/keywords.xml:6561(entry) xml/keywords.xml:6570(entry) xml/keywords.xml:6579(entry) xml/keywords.xml:6580(entry) xml/keywords.xml:6581(entry) xml/keywords.xml:6588(entry) xml/keywords.xml:6589(entry) xml/keywords.xml:6590(entry) xml/keywords.xml:6597(entry) xml/keywords.xml:6598(entry) xml/keywords.xml:6599(entry) xml/keywords.xml:6606(entry) xml/keywords.xml:6670(entry) xml/keywords.xml:6671(entry) xml/keywords.xml:6769(entry) xml/keywords.xml:6770(entry) xml/keywords.xml:6813(entry) xml/keywords.xml:6822(entry) xml/keywords.xml:6823(entry) xml/keywords.xml:6824(entry) xml/keywords.xml:6831(entry) xml/keywords.xml:6832(entry) xml/keywords.xml:6833(entry)
+msgid "non-reserved"
+msgstr ""
+
+#: xml/keywords.xml:97(token)
+msgid "ABORT"
+msgstr ""
+
+#: xml/keywords.xml:106(token)
+msgid "ABS"
+msgstr ""
+
+#: xml/keywords.xml:109(entry) xml/keywords.xml:110(entry) xml/keywords.xml:129(entry) xml/keywords.xml:156(entry) xml/keywords.xml:174(entry) xml/keywords.xml:207(entry) xml/keywords.xml:208(entry) xml/keywords.xml:209(entry) xml/keywords.xml:210(entry) xml/keywords.xml:217(entry) xml/keywords.xml:218(entry) xml/keywords.xml:219(entry) xml/keywords.xml:235(entry) xml/keywords.xml:236(entry) xml/keywords.xml:237(entry) xml/keywords.xml:252(entry) xml/keywords.xml:261(entry) xml/keywords.xml:270(entry) xml/keywords.xml:271(entry) xml/keywords.xml:272(entry) xml/keywords.xml:273(entry) xml/keywords.xml:279(entry) xml/keywords.xml:280(entry) xml/keywords.xml:281(entry) xml/keywords.xml:282(entry) xml/keywords.xml:289(entry) xml/keywords.xml:290(entry) xml/keywords.xml:291(entry) xml/keywords.xml:297(entry) xml/keywords.xml:298(entry) xml/keywords.xml:299(entry) xml/keywords.xml:307(entry) xml/keywords.xml:308(entry) xml/keywords.xml:316(entry) xml/keywords.xml:324(entry) xml/keywords.xml:325(entry) xml/keywords.xml:326(entry) xml/keywords.xml:327(entry) xml/keywords.xml:333(entry) xml/keywords.xml:336(entry) xml/keywords.xml:343(entry) xml/keywords.xml:344(entry) xml/keywords.xml:354(entry) xml/keywords.xml:369(entry) xml/keywords.xml:370(entry) xml/keywords.xml:371(entry) xml/keywords.xml:379(entry) xml/keywords.xml:380(entry) xml/keywords.xml:381(entry) xml/keywords.xml:388(entry) xml/keywords.xml:389(entry) xml/keywords.xml:415(entry) xml/keywords.xml:416(entry) xml/keywords.xml:417(entry) xml/keywords.xml:424(entry) xml/keywords.xml:425(entry) xml/keywords.xml:426(entry) xml/keywords.xml:460(entry) xml/keywords.xml:461(entry) xml/keywords.xml:462(entry) xml/keywords.xml:469(entry) xml/keywords.xml:478(entry) xml/keywords.xml:496(entry) xml/keywords.xml:497(entry) xml/keywords.xml:498(entry) xml/keywords.xml:505(entry) xml/keywords.xml:506(entry) xml/keywords.xml:514(entry) xml/keywords.xml:515(entry) xml/keywords.xml:525(entry) xml/keywords.xml:534(entry) xml/keywords.xml:541(entry) xml/keywords.xml:542(entry) xml/keywords.xml:568(entry) xml/keywords.xml:569(entry) xml/keywords.xml:576(entry) xml/keywords.xml:577(entry) xml/keywords.xml:578(entry) xml/keywords.xml:579(entry) xml/keywords.xml:595(entry) xml/keywords.xml:596(entry) xml/keywords.xml:597(entry) xml/keywords.xml:622(entry) xml/keywords.xml:623(entry) xml/keywords.xml:631(entry) xml/keywords.xml:632(entry) xml/keywords.xml:640(entry) xml/keywords.xml:641(entry) xml/keywords.xml:651(entry) xml/keywords.xml:658(entry) xml/keywords.xml:659(entry) xml/keywords.xml:660(entry) xml/keywords.xml:666(entry) xml/keywords.xml:667(entry) xml/keywords.xml:668(entry) xml/keywords.xml:669(entry) xml/keywords.xml:675(entry) xml/keywords.xml:676(entry) xml/keywords.xml:677(entry) xml/keywords.xml:678(entry) xml/keywords.xml:687(entry) xml/keywords.xml:703(entry) xml/keywords.xml:704(entry) xml/keywords.xml:712(entry) xml/keywords.xml:713(entry) xml/keywords.xml:730(entry) xml/keywords.xml:731(entry) xml/keywords.xml:732(entry) xml/keywords.xml:739(entry) xml/keywords.xml:740(entry) xml/keywords.xml:741(entry) xml/keywords.xml:766(entry) xml/keywords.xml:767(entry) xml/keywords.xml:768(entry) xml/keywords.xml:802(entry) xml/keywords.xml:803(entry) xml/keywords.xml:804(entry) xml/keywords.xml:810(entry) xml/keywords.xml:811(entry) xml/keywords.xml:812(entry) xml/keywords.xml:813(entry) xml/keywords.xml:847(entry) xml/keywords.xml:848(entry) xml/keywords.xml:856(entry) xml/keywords.xml:857(entry) xml/keywords.xml:858(entry) xml/keywords.xml:874(entry) xml/keywords.xml:875(entry) xml/keywords.xml:876(entry) xml/keywords.xml:891(entry) xml/keywords.xml:892(entry) xml/keywords.xml:893(entry) xml/keywords.xml:894(entry) xml/keywords.xml:903(entry) xml/keywords.xml:937(entry) xml/keywords.xml:938(entry) xml/keywords.xml:945(entry) xml/keywords.xml:946(entry) xml/keywords.xml:947(entry) xml/keywords.xml:948(entry) xml/keywords.xml:1009(entry) xml/keywords.xml:1010(entry) xml/keywords.xml:1011(entry) xml/keywords.xml:1036(entry) xml/keywords.xml:1037(entry) xml/keywords.xml:1072(entry) xml/keywords.xml:1073(entry) xml/keywords.xml:1074(entry) xml/keywords.xml:1083(entry) xml/keywords.xml:1098(entry) xml/keywords.xml:1099(entry) xml/keywords.xml:1100(entry) xml/keywords.xml:1101(entry) xml/keywords.xml:1110(entry) xml/keywords.xml:1153(entry) xml/keywords.xml:1173(entry) xml/keywords.xml:1198(entry) xml/keywords.xml:1199(entry) xml/keywords.xml:1200(entry) xml/keywords.xml:1216(entry) xml/keywords.xml:1217(entry) xml/keywords.xml:1225(entry) xml/keywords.xml:1226(entry) xml/keywords.xml:1227(entry) xml/keywords.xml:1243(entry) xml/keywords.xml:1244(entry) xml/keywords.xml:1245(entry) xml/keywords.xml:1252(entry) xml/keywords.xml:1253(entry) xml/keywords.xml:1261(entry) xml/keywords.xml:1262(entry) xml/keywords.xml:1269(entry) xml/keywords.xml:1270(entry) xml/keywords.xml:1271(entry) xml/keywords.xml:1272(entry) xml/keywords.xml:1279(entry) xml/keywords.xml:1280(entry) xml/keywords.xml:1281(entry) xml/keywords.xml:1297(entry) xml/keywords.xml:1298(entry) xml/keywords.xml:1306(entry) xml/keywords.xml:1307(entry) xml/keywords.xml:1315(entry) xml/keywords.xml:1316(entry) xml/keywords.xml:1317(entry) xml/keywords.xml:1323(entry) xml/keywords.xml:1324(entry) xml/keywords.xml:1325(entry) xml/keywords.xml:1332(entry) xml/keywords.xml:1333(entry) xml/keywords.xml:1334(entry) xml/keywords.xml:1335(entry) xml/keywords.xml:1342(entry) xml/keywords.xml:1343(entry) xml/keywords.xml:1351(entry) xml/keywords.xml:1352(entry) xml/keywords.xml:1359(entry) xml/keywords.xml:1360(entry) xml/keywords.xml:1361(entry) xml/keywords.xml:1369(entry) xml/keywords.xml:1378(entry) xml/keywords.xml:1379(entry) xml/keywords.xml:1386(entry) xml/keywords.xml:1387(entry) xml/keywords.xml:1388(entry) xml/keywords.xml:1389(entry) xml/keywords.xml:1395(entry) xml/keywords.xml:1396(entry) xml/keywords.xml:1397(entry) xml/keywords.xml:1398(entry) xml/keywords.xml:1405(entry) xml/keywords.xml:1406(entry) xml/keywords.xml:1413(entry) xml/keywords.xml:1414(entry) xml/keywords.xml:1415(entry) xml/keywords.xml:1416(entry) xml/keywords.xml:1423(entry) xml/keywords.xml:1424(entry) xml/keywords.xml:1425(entry) xml/keywords.xml:1441(entry) xml/keywords.xml:1442(entry) xml/keywords.xml:1468(entry) xml/keywords.xml:1469(entry) xml/keywords.xml:1477(entry) xml/keywords.xml:1478(entry) xml/keywords.xml:1479(entry) xml/keywords.xml:1504(entry) xml/keywords.xml:1505(entry) xml/keywords.xml:1506(entry) xml/keywords.xml:1522(entry) xml/keywords.xml:1523(entry) xml/keywords.xml:1524(entry) xml/keywords.xml:1531(entry) xml/keywords.xml:1532(entry) xml/keywords.xml:1533(entry) xml/keywords.xml:1540(entry) xml/keywords.xml:1541(entry) xml/keywords.xml:1542(entry) xml/keywords.xml:1549(entry) xml/keywords.xml:1550(entry) xml/keywords.xml:1551(entry) xml/keywords.xml:1557(entry) xml/keywords.xml:1558(entry) xml/keywords.xml:1559(entry) xml/keywords.xml:1560(entry) xml/keywords.xml:1575(entry) xml/keywords.xml:1578(entry) xml/keywords.xml:1587(entry) xml/keywords.xml:1621(entry) xml/keywords.xml:1622(entry) xml/keywords.xml:1623(entry) xml/keywords.xml:1648(entry) xml/keywords.xml:1649(entry) xml/keywords.xml:1666(entry) xml/keywords.xml:1667(entry) xml/keywords.xml:1683(entry) xml/keywords.xml:1686(entry) xml/keywords.xml:1693(entry) xml/keywords.xml:1694(entry) xml/keywords.xml:1695(entry) xml/keywords.xml:1704(entry) xml/keywords.xml:1711(entry) xml/keywords.xml:1712(entry) xml/keywords.xml:1722(entry) xml/keywords.xml:1756(entry) xml/keywords.xml:1757(entry) xml/keywords.xml:1758(entry) xml/keywords.xml:1773(entry) xml/keywords.xml:1774(entry) xml/keywords.xml:1775(entry) xml/keywords.xml:1776(entry) xml/keywords.xml:1783(entry) xml/keywords.xml:1784(entry) xml/keywords.xml:1792(entry) xml/keywords.xml:1793(entry) xml/keywords.xml:1801(entry) xml/keywords.xml:1802(entry) xml/keywords.xml:1810(entry) xml/keywords.xml:1811(entry) xml/keywords.xml:1819(entry) xml/keywords.xml:1820(entry) xml/keywords.xml:1828(entry) xml/keywords.xml:1829(entry) xml/keywords.xml:1837(entry) xml/keywords.xml:1838(entry) xml/keywords.xml:1846(entry) xml/keywords.xml:1847(entry) xml/keywords.xml:1855(entry) xml/keywords.xml:1856(entry) xml/keywords.xml:1864(entry) xml/keywords.xml:1865(entry) xml/keywords.xml:1873(entry) xml/keywords.xml:1874(entry) xml/keywords.xml:1881(entry) xml/keywords.xml:1902(entry) xml/keywords.xml:1909(entry) xml/keywords.xml:1910(entry) xml/keywords.xml:1911(entry) xml/keywords.xml:1918(entry) xml/keywords.xml:1919(entry) xml/keywords.xml:1920(entry) xml/keywords.xml:1927(entry) xml/keywords.xml:1928(entry) xml/keywords.xml:1954(entry) xml/keywords.xml:1955(entry) xml/keywords.xml:1963(entry) xml/keywords.xml:1964(entry) xml/keywords.xml:1971(entry) xml/keywords.xml:1972(entry) xml/keywords.xml:1973(entry) xml/keywords.xml:1974(entry) xml/keywords.xml:2016(entry) xml/keywords.xml:2017(entry) xml/keywords.xml:2018(entry) xml/keywords.xml:2019(entry) xml/keywords.xml:2026(entry) xml/keywords.xml:2027(entry) xml/keywords.xml:2028(entry) xml/keywords.xml:2035(entry) xml/keywords.xml:2044(entry) xml/keywords.xml:2071(entry) xml/keywords.xml:2080(entry) xml/keywords.xml:2081(entry) xml/keywords.xml:2082(entry) xml/keywords.xml:2098(entry) xml/keywords.xml:2099(entry) xml/keywords.xml:2106(entry) xml/keywords.xml:2107(entry) xml/keywords.xml:2108(entry) xml/keywords.xml:2109(entry) xml/keywords.xml:2118(entry) xml/keywords.xml:2152(entry) xml/keywords.xml:2153(entry) xml/keywords.xml:2154(entry) xml/keywords.xml:2161(entry) xml/keywords.xml:2162(entry) xml/keywords.xml:2163(entry) xml/keywords.xml:2170(entry) xml/keywords.xml:2171(entry) xml/keywords.xml:2172(entry) xml/keywords.xml:2179(entry) xml/keywords.xml:2180(entry) xml/keywords.xml:2215(entry) xml/keywords.xml:2216(entry) xml/keywords.xml:2217(entry) xml/keywords.xml:2224(entry) xml/keywords.xml:2225(entry) xml/keywords.xml:2226(entry) xml/keywords.xml:2232(entry) xml/keywords.xml:2233(entry) xml/keywords.xml:2234(entry) xml/keywords.xml:2235(entry) xml/keywords.xml:2250(entry) xml/keywords.xml:2251(entry) xml/keywords.xml:2252(entry) xml/keywords.xml:2253(entry) xml/keywords.xml:2269(entry) xml/keywords.xml:2270(entry) xml/keywords.xml:2289(entry) xml/keywords.xml:2296(entry) xml/keywords.xml:2297(entry) xml/keywords.xml:2314(entry) xml/keywords.xml:2315(entry) xml/keywords.xml:2316(entry) xml/keywords.xml:2323(entry) xml/keywords.xml:2324(entry) xml/keywords.xml:2340(entry) xml/keywords.xml:2341(entry) xml/keywords.xml:2342(entry) xml/keywords.xml:2343(entry) xml/keywords.xml:2358(entry) xml/keywords.xml:2359(entry) xml/keywords.xml:2360(entry) xml/keywords.xml:2361(entry) xml/keywords.xml:2388(entry) xml/keywords.xml:2395(entry) xml/keywords.xml:2404(entry) xml/keywords.xml:2405(entry) xml/keywords.xml:2421(entry) xml/keywords.xml:2422(entry) xml/keywords.xml:2423(entry) xml/keywords.xml:2424(entry) xml/keywords.xml:2440(entry) xml/keywords.xml:2441(entry) xml/keywords.xml:2442(entry) xml/keywords.xml:2449(entry) xml/keywords.xml:2450(entry) xml/keywords.xml:2467(entry) xml/keywords.xml:2468(entry) xml/keywords.xml:2503(entry) xml/keywords.xml:2504(entry) xml/keywords.xml:2505(entry) xml/keywords.xml:2512(entry) xml/keywords.xml:2513(entry) xml/keywords.xml:2514(entry) xml/keywords.xml:2523(entry) xml/keywords.xml:2532(entry) xml/keywords.xml:2538(entry) xml/keywords.xml:2539(entry) xml/keywords.xml:2540(entry) xml/keywords.xml:2541(entry) xml/keywords.xml:2565(entry) xml/keywords.xml:2566(entry) xml/keywords.xml:2567(entry) xml/keywords.xml:2568(entry) xml/keywords.xml:2575(entry) xml/keywords.xml:2576(entry) xml/keywords.xml:2584(entry) xml/keywords.xml:2601(entry) xml/keywords.xml:2602(entry) xml/keywords.xml:2603(entry) xml/keywords.xml:2604(entry) xml/keywords.xml:2638(entry) xml/keywords.xml:2639(entry) xml/keywords.xml:2647(entry) xml/keywords.xml:2648(entry) xml/keywords.xml:2649(entry) xml/keywords.xml:2665(entry) xml/keywords.xml:2666(entry) xml/keywords.xml:2667(entry) xml/keywords.xml:2703(entry) xml/keywords.xml:2746(entry) xml/keywords.xml:2747(entry) xml/keywords.xml:2754(entry) xml/keywords.xml:2755(entry) xml/keywords.xml:2756(entry) xml/keywords.xml:2757(entry) xml/keywords.xml:2809(entry) xml/keywords.xml:2810(entry) xml/keywords.xml:2811(entry) xml/keywords.xml:2835(entry) xml/keywords.xml:2838(entry) xml/keywords.xml:2854(entry) xml/keywords.xml:2855(entry) xml/keywords.xml:2856(entry) xml/keywords.xml:2863(entry) xml/keywords.xml:2864(entry) xml/keywords.xml:2874(entry) xml/keywords.xml:2881(entry) xml/keywords.xml:2882(entry) xml/keywords.xml:2883(entry) xml/keywords.xml:2890(entry) xml/keywords.xml:2891(entry) xml/keywords.xml:2892(entry) xml/keywords.xml:2926(entry) xml/keywords.xml:2927(entry) xml/keywords.xml:2928(entry) xml/keywords.xml:2935(entry) xml/keywords.xml:2936(entry) xml/keywords.xml:2937(entry) xml/keywords.xml:2952(entry) xml/keywords.xml:2953(entry) xml/keywords.xml:2954(entry) xml/keywords.xml:2955(entry) xml/keywords.xml:2962(entry) xml/keywords.xml:2963(entry) xml/keywords.xml:2971(entry) xml/keywords.xml:2972(entry) xml/keywords.xml:2973(entry) xml/keywords.xml:2979(entry) xml/keywords.xml:2980(entry) xml/keywords.xml:2981(entry) xml/keywords.xml:2982(entry) xml/keywords.xml:2998(entry) xml/keywords.xml:2999(entry) xml/keywords.xml:3000(entry) xml/keywords.xml:3018(entry) xml/keywords.xml:3025(entry) xml/keywords.xml:3026(entry) xml/keywords.xml:3027(entry) xml/keywords.xml:3045(entry) xml/keywords.xml:3079(entry) xml/keywords.xml:3080(entry) xml/keywords.xml:3088(entry) xml/keywords.xml:3089(entry) xml/keywords.xml:3090(entry) xml/keywords.xml:3097(entry) xml/keywords.xml:3098(entry) xml/keywords.xml:3108(entry) xml/keywords.xml:3115(entry) xml/keywords.xml:3116(entry) xml/keywords.xml:3123(entry) xml/keywords.xml:3124(entry) xml/keywords.xml:3125(entry) xml/keywords.xml:3133(entry) xml/keywords.xml:3134(entry) xml/keywords.xml:3141(entry) xml/keywords.xml:3142(entry) xml/keywords.xml:3143(entry) xml/keywords.xml:3144(entry) xml/keywords.xml:3169(entry) xml/keywords.xml:3170(entry) xml/keywords.xml:3171(entry) xml/keywords.xml:3189(entry) xml/keywords.xml:3205(entry) xml/keywords.xml:3206(entry) xml/keywords.xml:3207(entry) xml/keywords.xml:3214(entry) xml/keywords.xml:3215(entry) xml/keywords.xml:3222(entry) xml/keywords.xml:3250(entry) xml/keywords.xml:3251(entry) xml/keywords.xml:3268(entry) xml/keywords.xml:3269(entry) xml/keywords.xml:3270(entry) xml/keywords.xml:3276(entry) xml/keywords.xml:3277(entry) xml/keywords.xml:3278(entry) xml/keywords.xml:3285(entry) xml/keywords.xml:3286(entry) xml/keywords.xml:3287(entry) xml/keywords.xml:3340(entry) xml/keywords.xml:3341(entry) xml/keywords.xml:3342(entry) xml/keywords.xml:3376(entry) xml/keywords.xml:3377(entry) xml/keywords.xml:3378(entry) xml/keywords.xml:3403(entry) xml/keywords.xml:3404(entry) xml/keywords.xml:3405(entry) xml/keywords.xml:3422(entry) xml/keywords.xml:3430(entry) xml/keywords.xml:3431(entry) xml/keywords.xml:3439(entry) xml/keywords.xml:3440(entry) xml/keywords.xml:3475(entry) xml/keywords.xml:3476(entry) xml/keywords.xml:3484(entry) xml/keywords.xml:3485(entry) xml/keywords.xml:3486(entry) xml/keywords.xml:3493(entry) xml/keywords.xml:3494(entry) xml/keywords.xml:3495(entry) xml/keywords.xml:3511(entry) xml/keywords.xml:3512(entry) xml/keywords.xml:3529(entry) xml/keywords.xml:3530(entry) xml/keywords.xml:3538(entry) xml/keywords.xml:3539(entry) xml/keywords.xml:3540(entry) xml/keywords.xml:3547(entry) xml/keywords.xml:3548(entry) xml/keywords.xml:3549(entry) xml/keywords.xml:3574(entry) xml/keywords.xml:3575(entry) xml/keywords.xml:3603(entry) xml/keywords.xml:3619(entry) xml/keywords.xml:3620(entry) xml/keywords.xml:3621(entry) xml/keywords.xml:3628(entry) xml/keywords.xml:3629(entry) xml/keywords.xml:3630(entry) xml/keywords.xml:3637(entry) xml/keywords.xml:3638(entry) xml/keywords.xml:3639(entry) xml/keywords.xml:3646(entry) xml/keywords.xml:3647(entry) xml/keywords.xml:3664(entry) xml/keywords.xml:3665(entry) xml/keywords.xml:3675(entry) xml/keywords.xml:3727(entry) xml/keywords.xml:3728(entry) xml/keywords.xml:3729(entry) xml/keywords.xml:3736(entry) xml/keywords.xml:3737(entry) xml/keywords.xml:3745(entry) xml/keywords.xml:3746(entry) xml/keywords.xml:3762(entry) xml/keywords.xml:3763(entry) xml/keywords.xml:3764(entry) xml/keywords.xml:3765(entry) xml/keywords.xml:3808(entry) xml/keywords.xml:3809(entry) xml/keywords.xml:3817(entry) xml/keywords.xml:3818(entry) xml/keywords.xml:3825(entry) xml/keywords.xml:3826(entry) xml/keywords.xml:3827(entry) xml/keywords.xml:3828(entry) xml/keywords.xml:3844(entry) xml/keywords.xml:3845(entry) xml/keywords.xml:3846(entry) xml/keywords.xml:3871(entry) xml/keywords.xml:3872(entry) xml/keywords.xml:3873(entry) xml/keywords.xml:3889(entry) xml/keywords.xml:3890(entry) xml/keywords.xml:3907(entry) xml/keywords.xml:3908(entry) xml/keywords.xml:3909(entry) xml/keywords.xml:3916(entry) xml/keywords.xml:3917(entry) xml/keywords.xml:3918(entry) xml/keywords.xml:3933(entry) xml/keywords.xml:3934(entry) xml/keywords.xml:3935(entry) xml/keywords.xml:3952(entry) xml/keywords.xml:3953(entry) xml/keywords.xml:3960(entry) xml/keywords.xml:3961(entry) xml/keywords.xml:3962(entry) xml/keywords.xml:3963(entry) xml/keywords.xml:3969(entry) xml/keywords.xml:3970(entry) xml/keywords.xml:3971(entry) xml/keywords.xml:3972(entry) xml/keywords.xml:3979(entry) xml/keywords.xml:3980(entry) xml/keywords.xml:3981(entry) xml/keywords.xml:3999(entry) xml/keywords.xml:4014(entry) xml/keywords.xml:4015(entry) xml/keywords.xml:4016(entry) xml/keywords.xml:4017(entry) xml/keywords.xml:4023(entry) xml/keywords.xml:4024(entry) xml/keywords.xml:4025(entry) xml/keywords.xml:4026(entry) xml/keywords.xml:4060(entry) xml/keywords.xml:4061(entry) xml/keywords.xml:4069(entry) xml/keywords.xml:4070(entry) xml/keywords.xml:4071(entry) xml/keywords.xml:4080(entry) xml/keywords.xml:4087(entry) xml/keywords.xml:4088(entry) xml/keywords.xml:4096(entry) xml/keywords.xml:4097(entry) xml/keywords.xml:4098(entry) xml/keywords.xml:4105(entry) xml/keywords.xml:4106(entry) xml/keywords.xml:4152(entry) xml/keywords.xml:4159(entry) xml/keywords.xml:4160(entry) xml/keywords.xml:4233(entry) xml/keywords.xml:4240(entry) xml/keywords.xml:4241(entry) xml/keywords.xml:4294(entry) xml/keywords.xml:4303(entry) xml/keywords.xml:4304(entry) xml/keywords.xml:4312(entry) xml/keywords.xml:4313(entry) xml/keywords.xml:4321(entry) xml/keywords.xml:4322(entry) xml/keywords.xml:4330(entry) xml/keywords.xml:4347(entry) xml/keywords.xml:4384(entry) xml/keywords.xml:4393(entry) xml/keywords.xml:4394(entry) xml/keywords.xml:4395(entry) xml/keywords.xml:4402(entry) xml/keywords.xml:4403(entry) xml/keywords.xml:4411(entry) xml/keywords.xml:4412(entry) xml/keywords.xml:4420(entry) xml/keywords.xml:4438(entry) xml/keywords.xml:4439(entry) xml/keywords.xml:4440(entry) xml/keywords.xml:4447(entry) xml/keywords.xml:4448(entry) xml/keywords.xml:4449(entry) xml/keywords.xml:4467(entry) xml/keywords.xml:4473(entry) xml/keywords.xml:4474(entry) xml/keywords.xml:4475(entry) xml/keywords.xml:4476(entry) xml/keywords.xml:4485(entry) xml/keywords.xml:4494(entry) xml/keywords.xml:4510(entry) xml/keywords.xml:4511(entry) xml/keywords.xml:4512(entry) xml/keywords.xml:4530(entry) xml/keywords.xml:4546(entry) xml/keywords.xml:4547(entry) xml/keywords.xml:4555(entry) xml/keywords.xml:4556(entry) xml/keywords.xml:4566(entry) xml/keywords.xml:4573(entry) xml/keywords.xml:4574(entry) xml/keywords.xml:4582(entry) xml/keywords.xml:4583(entry) xml/keywords.xml:4584(entry) xml/keywords.xml:4618(entry) xml/keywords.xml:4619(entry) xml/keywords.xml:4627(entry) xml/keywords.xml:4628(entry) xml/keywords.xml:4635(entry) xml/keywords.xml:4636(entry) xml/keywords.xml:4637(entry) xml/keywords.xml:4638(entry) xml/keywords.xml:4645(entry) xml/keywords.xml:4646(entry) xml/keywords.xml:4663(entry) xml/keywords.xml:4664(entry) xml/keywords.xml:4672(entry) xml/keywords.xml:4673(entry) xml/keywords.xml:4681(entry) xml/keywords.xml:4682(entry) xml/keywords.xml:4690(entry) xml/keywords.xml:4691(entry) xml/keywords.xml:4699(entry) xml/keywords.xml:4700(entry) xml/keywords.xml:4708(entry) xml/keywords.xml:4709(entry) xml/keywords.xml:4717(entry) xml/keywords.xml:4718(entry) xml/keywords.xml:4726(entry) xml/keywords.xml:4727(entry) xml/keywords.xml:4735(entry) xml/keywords.xml:4736(entry) xml/keywords.xml:4755(entry) xml/keywords.xml:4762(entry) xml/keywords.xml:4763(entry) xml/keywords.xml:4854(entry) xml/keywords.xml:4861(entry) xml/keywords.xml:4862(entry) xml/keywords.xml:4870(entry) xml/keywords.xml:4871(entry) xml/keywords.xml:4914(entry) xml/keywords.xml:4924(entry) xml/keywords.xml:4925(entry) xml/keywords.xml:4933(entry) xml/keywords.xml:4934(entry) xml/keywords.xml:4935(entry) xml/keywords.xml:4942(entry) xml/keywords.xml:4943(entry) xml/keywords.xml:4944(entry) xml/keywords.xml:4960(entry) xml/keywords.xml:4961(entry) xml/keywords.xml:4962(entry) xml/keywords.xml:4969(entry) xml/keywords.xml:4970(entry) xml/keywords.xml:5014(entry) xml/keywords.xml:5015(entry) xml/keywords.xml:5023(entry) xml/keywords.xml:5024(entry) xml/keywords.xml:5025(entry) xml/keywords.xml:5041(entry) xml/keywords.xml:5042(entry) xml/keywords.xml:5059(entry) xml/keywords.xml:5060(entry) xml/keywords.xml:5079(entry) xml/keywords.xml:5095(entry) xml/keywords.xml:5096(entry) xml/keywords.xml:5131(entry) xml/keywords.xml:5132(entry) xml/keywords.xml:5133(entry) xml/keywords.xml:5140(entry) xml/keywords.xml:5141(entry) xml/keywords.xml:5149(entry) xml/keywords.xml:5150(entry) xml/keywords.xml:5151(entry) xml/keywords.xml:5160(entry) xml/keywords.xml:5175(entry) xml/keywords.xml:5176(entry) xml/keywords.xml:5177(entry) xml/keywords.xml:5178(entry) xml/keywords.xml:5203(entry) xml/keywords.xml:5204(entry) xml/keywords.xml:5259(entry) xml/keywords.xml:5265(entry) xml/keywords.xml:5266(entry) xml/keywords.xml:5267(entry) xml/keywords.xml:5268(entry) xml/keywords.xml:5275(entry) xml/keywords.xml:5276(entry) xml/keywords.xml:5277(entry) xml/keywords.xml:5320(entry) xml/keywords.xml:5321(entry) xml/keywords.xml:5340(entry) xml/keywords.xml:5356(entry) xml/keywords.xml:5357(entry) xml/keywords.xml:5358(entry) xml/keywords.xml:5373(entry) xml/keywords.xml:5374(entry) xml/keywords.xml:5375(entry) xml/keywords.xml:5376(entry) xml/keywords.xml:5394(entry) xml/keywords.xml:5401(entry) xml/keywords.xml:5402(entry) xml/keywords.xml:5410(entry) xml/keywords.xml:5411(entry) xml/keywords.xml:5428(entry) xml/keywords.xml:5429(entry) xml/keywords.xml:5430(entry) xml/keywords.xml:5439(entry) xml/keywords.xml:5448(entry) xml/keywords.xml:5455(entry) xml/keywords.xml:5456(entry) xml/keywords.xml:5464(entry) xml/keywords.xml:5465(entry) xml/keywords.xml:5466(entry) xml/keywords.xml:5473(entry) xml/keywords.xml:5474(entry) xml/keywords.xml:5482(entry) xml/keywords.xml:5483(entry) xml/keywords.xml:5509(entry) xml/keywords.xml:5510(entry) xml/keywords.xml:5536(entry) xml/keywords.xml:5537(entry) xml/keywords.xml:5554(entry) xml/keywords.xml:5555(entry) xml/keywords.xml:5563(entry) xml/keywords.xml:5564(entry) xml/keywords.xml:5644(entry) xml/keywords.xml:5645(entry) xml/keywords.xml:5653(entry) xml/keywords.xml:5654(entry) xml/keywords.xml:5655(entry) xml/keywords.xml:5662(entry) xml/keywords.xml:5663(entry) xml/keywords.xml:5671(entry) xml/keywords.xml:5680(entry) xml/keywords.xml:5681(entry) xml/keywords.xml:5682(entry) xml/keywords.xml:5688(entry) xml/keywords.xml:5689(entry) xml/keywords.xml:5690(entry) xml/keywords.xml:5707(entry) xml/keywords.xml:5708(entry) xml/keywords.xml:5716(entry) xml/keywords.xml:5725(entry) xml/keywords.xml:5726(entry) xml/keywords.xml:5727(entry) xml/keywords.xml:5742(entry) xml/keywords.xml:5743(entry) xml/keywords.xml:5744(entry) xml/keywords.xml:5745(entry) xml/keywords.xml:5761(entry) xml/keywords.xml:5762(entry) xml/keywords.xml:5808(entry) xml/keywords.xml:5823(entry) xml/keywords.xml:5824(entry) xml/keywords.xml:5825(entry) xml/keywords.xml:5826(entry) xml/keywords.xml:5842(entry) xml/keywords.xml:5843(entry) xml/keywords.xml:5844(entry) xml/keywords.xml:5851(entry) xml/keywords.xml:5852(entry) xml/keywords.xml:5853(entry) xml/keywords.xml:5860(entry) xml/keywords.xml:5861(entry) xml/keywords.xml:5862(entry) xml/keywords.xml:5869(entry) xml/keywords.xml:5870(entry) xml/keywords.xml:5871(entry) xml/keywords.xml:5877(entry) xml/keywords.xml:5878(entry) xml/keywords.xml:5879(entry) xml/keywords.xml:5880(entry) xml/keywords.xml:5904(entry) xml/keywords.xml:5905(entry) xml/keywords.xml:5906(entry) xml/keywords.xml:5907(entry) xml/keywords.xml:5916(entry) xml/keywords.xml:5968(entry) xml/keywords.xml:5969(entry) xml/keywords.xml:5970(entry) xml/keywords.xml:5977(entry) xml/keywords.xml:5978(entry) xml/keywords.xml:5986(entry) xml/keywords.xml:5987(entry) xml/keywords.xml:5988(entry) xml/keywords.xml:5995(entry) xml/keywords.xml:5996(entry) xml/keywords.xml:6004(entry) xml/keywords.xml:6005(entry) xml/keywords.xml:6040(entry) xml/keywords.xml:6041(entry) xml/keywords.xml:6042(entry) xml/keywords.xml:6049(entry) xml/keywords.xml:6050(entry) xml/keywords.xml:6057(entry) xml/keywords.xml:6058(entry) xml/keywords.xml:6059(entry) xml/keywords.xml:6060(entry) xml/keywords.xml:6067(entry) xml/keywords.xml:6068(entry) xml/keywords.xml:6103(entry) xml/keywords.xml:6104(entry) xml/keywords.xml:6147(entry) xml/keywords.xml:6148(entry) xml/keywords.xml:6149(entry) xml/keywords.xml:6150(entry) xml/keywords.xml:6156(entry) xml/keywords.xml:6157(entry) xml/keywords.xml:6158(entry) xml/keywords.xml:6159(entry) xml/keywords.xml:6166(entry) xml/keywords.xml:6167(entry) xml/keywords.xml:6168(entry) xml/keywords.xml:6211(entry) xml/keywords.xml:6212(entry) xml/keywords.xml:6238(entry) xml/keywords.xml:6239(entry) xml/keywords.xml:6240(entry) xml/keywords.xml:6247(entry) xml/keywords.xml:6248(entry) xml/keywords.xml:6249(entry) xml/keywords.xml:6267(entry) xml/keywords.xml:6273(entry) xml/keywords.xml:6274(entry) xml/keywords.xml:6275(entry) xml/keywords.xml:6276(entry) xml/keywords.xml:6318(entry) xml/keywords.xml:6319(entry) xml/keywords.xml:6320(entry) xml/keywords.xml:6321(entry) xml/keywords.xml:6364(entry) xml/keywords.xml:6365(entry) xml/keywords.xml:6366(entry) xml/keywords.xml:6373(entry) xml/keywords.xml:6374(entry) xml/keywords.xml:6375(entry) xml/keywords.xml:6382(entry) xml/keywords.xml:6391(entry) xml/keywords.xml:6392(entry) xml/keywords.xml:6400(entry) xml/keywords.xml:6401(entry) xml/keywords.xml:6402(entry) xml/keywords.xml:6408(entry) xml/keywords.xml:6418(entry) xml/keywords.xml:6419(entry) xml/keywords.xml:6420(entry) xml/keywords.xml:6427(entry) xml/keywords.xml:6428(entry) xml/keywords.xml:6436(entry) xml/keywords.xml:6437(entry) xml/keywords.xml:6463(entry) xml/keywords.xml:6474(entry) xml/keywords.xml:6498(entry) xml/keywords.xml:6499(entry) xml/keywords.xml:6500(entry) xml/keywords.xml:6501(entry) xml/keywords.xml:6508(entry) xml/keywords.xml:6509(entry) xml/keywords.xml:6510(entry) xml/keywords.xml:6516(entry) xml/keywords.xml:6517(entry) xml/keywords.xml:6518(entry) xml/keywords.xml:6519(entry) xml/keywords.xml:6535(entry) xml/keywords.xml:6536(entry) xml/keywords.xml:6543(entry) xml/keywords.xml:6544(entry) xml/keywords.xml:6545(entry) xml/keywords.xml:6552(entry) xml/keywords.xml:6553(entry) xml/keywords.xml:6554(entry) xml/keywords.xml:6555(entry) xml/keywords.xml:6562(entry) xml/keywords.xml:6563(entry) xml/keywords.xml:6571(entry) xml/keywords.xml:6572(entry) xml/keywords.xml:6582(entry) xml/keywords.xml:6600(entry) xml/keywords.xml:6607(entry) xml/keywords.xml:6608(entry) xml/keywords.xml:6616(entry) xml/keywords.xml:6617(entry) xml/keywords.xml:6625(entry) xml/keywords.xml:6626(entry) xml/keywords.xml:6634(entry) xml/keywords.xml:6635(entry) xml/keywords.xml:6643(entry) xml/keywords.xml:6644(entry) xml/keywords.xml:6652(entry) xml/keywords.xml:6653(entry) xml/keywords.xml:6661(entry) xml/keywords.xml:6662(entry) xml/keywords.xml:6679(entry) xml/keywords.xml:6680(entry) xml/keywords.xml:6688(entry) xml/keywords.xml:6689(entry) xml/keywords.xml:6697(entry) xml/keywords.xml:6698(entry) xml/keywords.xml:6706(entry) xml/keywords.xml:6707(entry) xml/keywords.xml:6715(entry) xml/keywords.xml:6716(entry) xml/keywords.xml:6724(entry) xml/keywords.xml:6725(entry) xml/keywords.xml:6733(entry) xml/keywords.xml:6734(entry) xml/keywords.xml:6742(entry) xml/keywords.xml:6743(entry) xml/keywords.xml:6751(entry) xml/keywords.xml:6752(entry) xml/keywords.xml:6778(entry) xml/keywords.xml:6779(entry) xml/keywords.xml:6787(entry) xml/keywords.xml:6788(entry) xml/keywords.xml:6796(entry) xml/keywords.xml:6797(entry) xml/keywords.xml:6805(entry) xml/keywords.xml:6806(entry) xml/keywords.xml:6814(entry) xml/keywords.xml:6815(entry) xml/keywords.xml:6816(entry) xml/keywords.xml:6834(entry)
+msgid "reserved"
+msgstr ""
+
+#: xml/keywords.xml:115(token)
+msgid "ABSENT"
+msgstr ""
+
+#: xml/keywords.xml:124(token)
+msgid "ABSOLUTE"
+msgstr ""
+
+#: xml/keywords.xml:133(token)
+msgid "ACCESS"
+msgstr ""
+
+#: xml/keywords.xml:142(token)
+msgid "ACCORDING"
+msgstr ""
+
+#: xml/keywords.xml:151(token)
+msgid "ACTION"
+msgstr ""
+
+#: xml/keywords.xml:160(token)
+msgid "ADA"
+msgstr ""
+
+#: xml/keywords.xml:169(token)
+msgid "ADD"
+msgstr ""
+
+#: xml/keywords.xml:178(token)
+msgid "ADMIN"
+msgstr ""
+
+#: xml/keywords.xml:187(token)
+msgid "AFTER"
+msgstr ""
+
+#: xml/keywords.xml:196(token)
+msgid "AGGREGATE"
+msgstr ""
+
+#: xml/keywords.xml:205(token)
+msgid "ALL"
+msgstr ""
+
+#: xml/keywords.xml:214(token)
+msgid "ALLOCATE"
+msgstr ""
+
+#: xml/keywords.xml:223(token)
+msgid "ALSO"
+msgstr ""
+
+#: xml/keywords.xml:232(token)
+msgid "ALTER"
+msgstr ""
+
+#: xml/keywords.xml:241(token)
+msgid "ALWAYS"
+msgstr ""
+
+#: xml/keywords.xml:250(token)
+msgid "ANALYSE"
+msgstr ""
+
+#: xml/keywords.xml:259(token)
+msgid "ANALYZE"
+msgstr ""
+
+#: xml/keywords.xml:268(token)
+msgid "AND"
+msgstr ""
+
+#: xml/keywords.xml:277(token)
+msgid "ANY"
+msgstr ""
+
+#: xml/keywords.xml:286(token)
+msgid "ARE"
+msgstr ""
+
+#: xml/keywords.xml:295(token)
+msgid "ARRAY"
+msgstr ""
+
+#: xml/keywords.xml:304(token)
+msgid "ARRAY_AGG"
+msgstr ""
+
+#: xml/keywords.xml:313(token)
+msgid "ARRAY_MAX_CARDINALITY"
+msgstr ""
+
+#: xml/keywords.xml:322(token)
+msgid "AS"
+msgstr ""
+
+#: xml/keywords.xml:331(token)
+msgid "ASC"
+msgstr ""
+
+#: xml/keywords.xml:340(token)
+msgid "ASENSITIVE"
+msgstr ""
+
+#: xml/keywords.xml:349(token)
+msgid "ASSERTION"
+msgstr ""
+
+#: xml/keywords.xml:358(token)
+msgid "ASSIGNMENT"
+msgstr ""
+
+#: xml/keywords.xml:367(token)
+msgid "ASYMMETRIC"
+msgstr ""
+
+#: xml/keywords.xml:376(token)
+msgid "AT"
+msgstr ""
+
+#: xml/keywords.xml:385(token)
+msgid "ATOMIC"
+msgstr ""
+
+#: xml/keywords.xml:394(token)
+msgid "ATTRIBUTE"
+msgstr ""
+
+#: xml/keywords.xml:403(token)
+msgid "ATTRIBUTES"
+msgstr ""
+
+#: xml/keywords.xml:412(token)
+msgid "AUTHORIZATION"
+msgstr ""
+
+#: xml/keywords.xml:414(entry) xml/keywords.xml:513(entry) xml/keywords.xml:900(entry) xml/keywords.xml:1026(entry) xml/keywords.xml:1278(entry) xml/keywords.xml:1377(entry) xml/keywords.xml:2412(entry) xml/keywords.xml:2439(entry) xml/keywords.xml:2691(entry) xml/keywords.xml:2853(entry) xml/keywords.xml:2997(entry) xml/keywords.xml:3006(entry) xml/keywords.xml:3024(entry) xml/keywords.xml:3168(entry) xml/keywords.xml:3204(entry) xml/keywords.xml:3627(entry) xml/keywords.xml:3789(entry) xml/keywords.xml:4068(entry) xml/keywords.xml:4095(entry) xml/keywords.xml:4941(entry) xml/keywords.xml:5319(entry) xml/keywords.xml:5760(entry) xml/keywords.xml:6444(entry)
+msgid "reserved (can be function or type)"
+msgstr ""
+
+#: xml/keywords.xml:421(token)
+msgid "AVG"
+msgstr ""
+
+#: xml/keywords.xml:430(token)
+msgid "BACKWARD"
+msgstr ""
+
+#: xml/keywords.xml:439(token)
+msgid "BASE64"
+msgstr ""
+
+#: xml/keywords.xml:448(token)
+msgid "BEFORE"
+msgstr ""
+
+#: xml/keywords.xml:457(token)
+msgid "BEGIN"
+msgstr ""
+
+#: xml/keywords.xml:466(token)
+msgid "BEGIN_FRAME"
+msgstr ""
+
+#: xml/keywords.xml:475(token)
+msgid "BEGIN_PARTITION"
+msgstr ""
+
+#: xml/keywords.xml:484(token)
+msgid "BERNOULLI"
+msgstr ""
+
+#: xml/keywords.xml:493(token)
+msgid "BETWEEN"
+msgstr ""
+
+#: xml/keywords.xml:495(entry) xml/keywords.xml:504(entry) xml/keywords.xml:522(entry) xml/keywords.xml:567(entry) xml/keywords.xml:729(entry) xml/keywords.xml:738(entry) xml/keywords.xml:873(entry) xml/keywords.xml:1530(entry) xml/keywords.xml:1539(entry) xml/keywords.xml:2169(entry) xml/keywords.xml:2223(entry) xml/keywords.xml:2313(entry) xml/keywords.xml:2556(entry) xml/keywords.xml:2574(entry) xml/keywords.xml:2862(entry) xml/keywords.xml:2925(entry) xml/keywords.xml:2934(entry) xml/keywords.xml:2970(entry) xml/keywords.xml:3159(entry) xml/keywords.xml:3618(entry) xml/keywords.xml:3636(entry) xml/keywords.xml:3735(entry) xml/keywords.xml:3843(entry) xml/keywords.xml:3870(entry) xml/keywords.xml:4059(entry) xml/keywords.xml:4104(entry) xml/keywords.xml:4392(entry) xml/keywords.xml:4437(entry) xml/keywords.xml:4581(entry) xml/keywords.xml:5013(entry) xml/keywords.xml:5283(entry) xml/keywords.xml:5355(entry) xml/keywords.xml:5652(entry) xml/keywords.xml:5841(entry) xml/keywords.xml:5850(entry) xml/keywords.xml:5994(entry) xml/keywords.xml:6039(entry) xml/keywords.xml:6372(entry) xml/keywords.xml:6399(entry) xml/keywords.xml:6624(entry) xml/keywords.xml:6660(entry) xml/keywords.xml:6687(entry) xml/keywords.xml:6696(entry) xml/keywords.xml:6705(entry) xml/keywords.xml:6732(entry) xml/keywords.xml:6741(entry) xml/keywords.xml:6759(entry) xml/keywords.xml:6777(entry)
+msgid "non-reserved (cannot be function or type)"
+msgstr ""
+
+#: xml/keywords.xml:502(token)
+msgid "BIGINT"
+msgstr ""
+
+#: xml/keywords.xml:511(token)
+msgid "BINARY"
+msgstr ""
+
+#: xml/keywords.xml:520(token)
+msgid "BIT"
+msgstr ""
+
+#: xml/keywords.xml:529(token)
+msgid "BIT_LENGTH"
+msgstr ""
+
+#: xml/keywords.xml:538(token)
+msgid "BLOB"
+msgstr ""
+
+#: xml/keywords.xml:547(token)
+msgid "BLOCKED"
+msgstr ""
+
+#: xml/keywords.xml:556(token)
+msgid "BOM"
+msgstr ""
+
+#: xml/keywords.xml:565(token)
+msgid "BOOLEAN"
+msgstr ""
+
+#: xml/keywords.xml:574(token)
+msgid "BOTH"
+msgstr ""
+
+#: xml/keywords.xml:583(token)
+msgid "BREADTH"
+msgstr ""
+
+#: xml/keywords.xml:592(token)
+msgid "BY"
+msgstr ""
+
+#: xml/keywords.xml:601(token)
+msgid "C"
+msgstr ""
+
+#: xml/keywords.xml:610(token)
+msgid "CACHE"
+msgstr ""
+
+#: xml/keywords.xml:619(token)
+msgid "CALL"
+msgstr ""
+
+#: xml/keywords.xml:628(token)
+msgid "CALLED"
+msgstr ""
+
+#: xml/keywords.xml:637(token)
+msgid "CARDINALITY"
+msgstr ""
+
+#: xml/keywords.xml:646(token)
+msgid "CASCADE"
+msgstr ""
+
+#: xml/keywords.xml:655(token)
+msgid "CASCADED"
+msgstr ""
+
+#: xml/keywords.xml:664(token)
+msgid "CASE"
+msgstr ""
+
+#: xml/keywords.xml:673(token)
+msgid "CAST"
+msgstr ""
+
+#: xml/keywords.xml:682(token)
+msgid "CATALOG"
+msgstr ""
+
+#: xml/keywords.xml:691(token)
+msgid "CATALOG_NAME"
+msgstr ""
+
+#: xml/keywords.xml:700(token)
+msgid "CEIL"
+msgstr ""
+
+#: xml/keywords.xml:709(token)
+msgid "CEILING"
+msgstr ""
+
+#: xml/keywords.xml:718(token)
+msgid "CHAIN"
+msgstr ""
+
+#: xml/keywords.xml:727(token)
+msgid "CHAR"
+msgstr ""
+
+#: xml/keywords.xml:736(token)
+msgid "CHARACTER"
+msgstr ""
+
+#: xml/keywords.xml:745(token)
+msgid "CHARACTERISTICS"
+msgstr ""
+
+#: xml/keywords.xml:754(token)
+msgid "CHARACTERS"
+msgstr ""
+
+#: xml/keywords.xml:763(token)
+msgid "CHARACTER_LENGTH"
+msgstr ""
+
+#: xml/keywords.xml:772(token)
+msgid "CHARACTER_SET_CATALOG"
+msgstr ""
+
+#: xml/keywords.xml:781(token)
+msgid "CHARACTER_SET_NAME"
+msgstr ""
+
+#: xml/keywords.xml:790(token)
+msgid "CHARACTER_SET_SCHEMA"
+msgstr ""
+
+#: xml/keywords.xml:799(token)
+msgid "CHAR_LENGTH"
+msgstr ""
+
+#: xml/keywords.xml:808(token)
+msgid "CHECK"
+msgstr ""
+
+#: xml/keywords.xml:817(token)
+msgid "CHECKPOINT"
+msgstr ""
+
+#: xml/keywords.xml:826(token)
+msgid "CLASS"
+msgstr ""
+
+#: xml/keywords.xml:835(token)
+msgid "CLASS_ORIGIN"
+msgstr ""
+
+#: xml/keywords.xml:844(token)
+msgid "CLOB"
+msgstr ""
+
+#: xml/keywords.xml:853(token)
+msgid "CLOSE"
+msgstr ""
+
+#: xml/keywords.xml:862(token)
+msgid "CLUSTER"
+msgstr ""
+
+#: xml/keywords.xml:871(token)
+msgid "COALESCE"
+msgstr ""
+
+#: xml/keywords.xml:880(token)
+msgid "COBOL"
+msgstr ""
+
+#: xml/keywords.xml:889(token)
+msgid "COLLATE"
+msgstr ""
+
+#: xml/keywords.xml:898(token)
+msgid "COLLATION"
+msgstr ""
+
+#: xml/keywords.xml:907(token)
+msgid "COLLATION_CATALOG"
+msgstr ""
+
+#: xml/keywords.xml:916(token)
+msgid "COLLATION_NAME"
+msgstr ""
+
+#: xml/keywords.xml:925(token)
+msgid "COLLATION_SCHEMA"
+msgstr ""
+
+#: xml/keywords.xml:934(token)
+msgid "COLLECT"
+msgstr ""
+
+#: xml/keywords.xml:943(token)
+msgid "COLUMN"
+msgstr ""
+
+#: xml/keywords.xml:952(token)
+msgid "COLUMNS"
+msgstr ""
+
+#: xml/keywords.xml:961(token)
+msgid "COLUMN_NAME"
+msgstr ""
+
+#: xml/keywords.xml:970(token)
+msgid "COMMAND_FUNCTION"
+msgstr ""
+
+#: xml/keywords.xml:979(token)
+msgid "COMMAND_FUNCTION_CODE"
+msgstr ""
+
+#: xml/keywords.xml:988(token)
+msgid "COMMENT"
+msgstr ""
+
+#: xml/keywords.xml:997(token)
+msgid "COMMENTS"
+msgstr ""
+
+#: xml/keywords.xml:1006(token)
+msgid "COMMIT"
+msgstr ""
+
+#: xml/keywords.xml:1015(token)
+msgid "COMMITTED"
+msgstr ""
+
+#: xml/keywords.xml:1024(token)
+msgid "CONCURRENTLY"
+msgstr ""
+
+#: xml/keywords.xml:1033(token)
+msgid "CONDITION"
+msgstr ""
+
+#: xml/keywords.xml:1042(token)
+msgid "CONDITION_NUMBER"
+msgstr ""
+
+#: xml/keywords.xml:1051(token)
+msgid "CONFIGURATION"
+msgstr ""
+
+#: xml/keywords.xml:1060(token)
+msgid "CONFLICT"
+msgstr ""
+
+#: xml/keywords.xml:1069(token)
+msgid "CONNECT"
+msgstr ""
+
+#: xml/keywords.xml:1078(token)
+msgid "CONNECTION"
+msgstr ""
+
+#: xml/keywords.xml:1087(token)
+msgid "CONNECTION_NAME"
+msgstr ""
+
+#: xml/keywords.xml:1096(token)
+msgid "CONSTRAINT"
+msgstr ""
+
+#: xml/keywords.xml:1105(token)
+msgid "CONSTRAINTS"
+msgstr ""
+
+#: xml/keywords.xml:1114(token)
+msgid "CONSTRAINT_CATALOG"
+msgstr ""
+
+#: xml/keywords.xml:1123(token)
+msgid "CONSTRAINT_NAME"
+msgstr ""
+
+#: xml/keywords.xml:1132(token)
+msgid "CONSTRAINT_SCHEMA"
+msgstr ""
+
+#: xml/keywords.xml:1141(token)
+msgid "CONSTRUCTOR"
+msgstr ""
+
+#: xml/keywords.xml:1150(token)
+msgid "CONTAINS"
+msgstr ""
+
+#: xml/keywords.xml:1159(token)
+msgid "CONTENT"
+msgstr ""
+
+#: xml/keywords.xml:1168(token)
+msgid "CONTINUE"
+msgstr ""
+
+#: xml/keywords.xml:1177(token)
+msgid "CONTROL"
+msgstr ""
+
+#: xml/keywords.xml:1186(token)
+msgid "CONVERSION"
+msgstr ""
+
+#: xml/keywords.xml:1195(token)
+msgid "CONVERT"
+msgstr ""
+
+#: xml/keywords.xml:1204(token)
+msgid "COPY"
+msgstr ""
+
+#: xml/keywords.xml:1213(token)
+msgid "CORR"
+msgstr ""
+
+#: xml/keywords.xml:1222(token)
+msgid "CORRESPONDING"
+msgstr ""
+
+#: xml/keywords.xml:1231(token)
+msgid "COST"
+msgstr ""
+
+#: xml/keywords.xml:1240(token)
+msgid "COUNT"
+msgstr ""
+
+#: xml/keywords.xml:1249(token)
+msgid "COVAR_POP"
+msgstr ""
+
+#: xml/keywords.xml:1258(token)
+msgid "COVAR_SAMP"
+msgstr ""
+
+#: xml/keywords.xml:1267(token)
+msgid "CREATE"
+msgstr ""
+
+#: xml/keywords.xml:1276(token)
+msgid "CROSS"
+msgstr ""
+
+#: xml/keywords.xml:1285(token)
+msgid "CSV"
+msgstr ""
+
+#: xml/keywords.xml:1294(token)
+msgid "CUBE"
+msgstr ""
+
+#: xml/keywords.xml:1303(token)
+msgid "CUME_DIST"
+msgstr ""
+
+#: xml/keywords.xml:1312(token)
+msgid "CURRENT"
+msgstr ""
+
+#: xml/keywords.xml:1321(token)
+msgid "CURRENT_CATALOG"
+msgstr ""
+
+#: xml/keywords.xml:1330(token)
+msgid "CURRENT_DATE"
+msgstr ""
+
+#: xml/keywords.xml:1339(token)
+msgid "CURRENT_DEFAULT_TRANSFORM_GROUP"
+msgstr ""
+
+#: xml/keywords.xml:1348(token)
+msgid "CURRENT_PATH"
+msgstr ""
+
+#: xml/keywords.xml:1357(token)
+msgid "CURRENT_ROLE"
+msgstr ""
+
+#: xml/keywords.xml:1366(token)
+msgid "CURRENT_ROW"
+msgstr ""
+
+#: xml/keywords.xml:1375(token)
+msgid "CURRENT_SCHEMA"
+msgstr ""
+
+#: xml/keywords.xml:1384(token)
+msgid "CURRENT_TIME"
+msgstr ""
+
+#: xml/keywords.xml:1393(token)
+msgid "CURRENT_TIMESTAMP"
+msgstr ""
+
+#: xml/keywords.xml:1402(token)
+msgid "CURRENT_TRANSFORM_GROUP_FOR_TYPE"
+msgstr ""
+
+#: xml/keywords.xml:1411(token)
+msgid "CURRENT_USER"
+msgstr ""
+
+#: xml/keywords.xml:1420(token)
+msgid "CURSOR"
+msgstr ""
+
+#: xml/keywords.xml:1429(token)
+msgid "CURSOR_NAME"
+msgstr ""
+
+#: xml/keywords.xml:1438(token)
+msgid "CYCLE"
+msgstr ""
+
+#: xml/keywords.xml:1447(token)
+msgid "DATA"
+msgstr ""
+
+#: xml/keywords.xml:1456(token)
+msgid "DATABASE"
+msgstr ""
+
+#: xml/keywords.xml:1465(token)
+msgid "DATALINK"
+msgstr ""
+
+#: xml/keywords.xml:1474(token)
+msgid "DATE"
+msgstr ""
+
+#: xml/keywords.xml:1483(token)
+msgid "DATETIME_INTERVAL_CODE"
+msgstr ""
+
+#: xml/keywords.xml:1492(token)
+msgid "DATETIME_INTERVAL_PRECISION"
+msgstr ""
+
+#: xml/keywords.xml:1501(token)
+msgid "DAY"
+msgstr ""
+
+#: xml/keywords.xml:1510(token)
+msgid "DB"
+msgstr ""
+
+#: xml/keywords.xml:1519(token)
+msgid "DEALLOCATE"
+msgstr ""
+
+#: xml/keywords.xml:1528(token)
+msgid "DEC"
+msgstr ""
+
+#: xml/keywords.xml:1537(token)
+msgid "DECIMAL"
+msgstr ""
+
+#: xml/keywords.xml:1546(token)
+msgid "DECLARE"
+msgstr ""
+
+#: xml/keywords.xml:1555(token)
+msgid "DEFAULT"
+msgstr ""
+
+#: xml/keywords.xml:1564(token)
+msgid "DEFAULTS"
+msgstr ""
+
+#: xml/keywords.xml:1573(token)
+msgid "DEFERRABLE"
+msgstr ""
+
+#: xml/keywords.xml:1582(token)
+msgid "DEFERRED"
+msgstr ""
+
+#: xml/keywords.xml:1591(token)
+msgid "DEFINED"
+msgstr ""
+
+#: xml/keywords.xml:1600(token)
+msgid "DEFINER"
+msgstr ""
+
+#: xml/keywords.xml:1609(token)
+msgid "DEGREE"
+msgstr ""
+
+#: xml/keywords.xml:1618(token)
+msgid "DELETE"
+msgstr ""
+
+#: xml/keywords.xml:1627(token)
+msgid "DELIMITER"
+msgstr ""
+
+#: xml/keywords.xml:1636(token)
+msgid "DELIMITERS"
+msgstr ""
+
+#: xml/keywords.xml:1645(token)
+msgid "DENSE_RANK"
+msgstr ""
+
+#: xml/keywords.xml:1654(token)
+msgid "DEPTH"
+msgstr ""
+
+#: xml/keywords.xml:1663(token)
+msgid "DEREF"
+msgstr ""
+
+#: xml/keywords.xml:1672(token)
+msgid "DERIVED"
+msgstr ""
+
+#: xml/keywords.xml:1681(token)
+msgid "DESC"
+msgstr ""
+
+#: xml/keywords.xml:1690(token)
+msgid "DESCRIBE"
+msgstr ""
+
+#: xml/keywords.xml:1699(token)
+msgid "DESCRIPTOR"
+msgstr ""
+
+#: xml/keywords.xml:1708(token)
+msgid "DETERMINISTIC"
+msgstr ""
+
+#: xml/keywords.xml:1717(token)
+msgid "DIAGNOSTICS"
+msgstr ""
+
+#: xml/keywords.xml:1726(token)
+msgid "DICTIONARY"
+msgstr ""
+
+#: xml/keywords.xml:1735(token)
+msgid "DISABLE"
+msgstr ""
+
+#: xml/keywords.xml:1744(token)
+msgid "DISCARD"
+msgstr ""
+
+#: xml/keywords.xml:1753(token)
+msgid "DISCONNECT"
+msgstr ""
+
+#: xml/keywords.xml:1762(token)
+msgid "DISPATCH"
+msgstr ""
+
+#: xml/keywords.xml:1771(token)
+msgid "DISTINCT"
+msgstr ""
+
+#: xml/keywords.xml:1780(token)
+msgid "DLNEWCOPY"
+msgstr ""
+
+#: xml/keywords.xml:1789(token)
+msgid "DLPREVIOUSCOPY"
+msgstr ""
+
+#: xml/keywords.xml:1798(token)
+msgid "DLURLCOMPLETE"
+msgstr ""
+
+#: xml/keywords.xml:1807(token)
+msgid "DLURLCOMPLETEONLY"
+msgstr ""
+
+#: xml/keywords.xml:1816(token)
+msgid "DLURLCOMPLETEWRITE"
+msgstr ""
+
+#: xml/keywords.xml:1825(token)
+msgid "DLURLPATH"
+msgstr ""
+
+#: xml/keywords.xml:1834(token)
+msgid "DLURLPATHONLY"
+msgstr ""
+
+#: xml/keywords.xml:1843(token)
+msgid "DLURLPATHWRITE"
+msgstr ""
+
+#: xml/keywords.xml:1852(token)
+msgid "DLURLSCHEME"
+msgstr ""
+
+#: xml/keywords.xml:1861(token)
+msgid "DLURLSERVER"
+msgstr ""
+
+#: xml/keywords.xml:1870(token)
+msgid "DLVALUE"
+msgstr ""
+
+#: xml/keywords.xml:1879(token)
+msgid "DO"
+msgstr ""
+
+#: xml/keywords.xml:1888(token)
+msgid "DOCUMENT"
+msgstr ""
+
+#: xml/keywords.xml:1897(token)
+msgid "DOMAIN"
+msgstr ""
+
+#: xml/keywords.xml:1906(token)
+msgid "DOUBLE"
+msgstr ""
+
+#: xml/keywords.xml:1915(token)
+msgid "DROP"
+msgstr ""
+
+#: xml/keywords.xml:1924(token)
+msgid "DYNAMIC"
+msgstr ""
+
+#: xml/keywords.xml:1933(token)
+msgid "DYNAMIC_FUNCTION"
+msgstr ""
+
+#: xml/keywords.xml:1942(token)
+msgid "DYNAMIC_FUNCTION_CODE"
+msgstr ""
+
+#: xml/keywords.xml:1951(token)
+msgid "EACH"
+msgstr ""
+
+#: xml/keywords.xml:1960(token)
+msgid "ELEMENT"
+msgstr ""
+
+#: xml/keywords.xml:1969(token)
+msgid "ELSE"
+msgstr ""
+
+#: xml/keywords.xml:1978(token)
+msgid "EMPTY"
+msgstr ""
+
+#: xml/keywords.xml:1987(token)
+msgid "ENABLE"
+msgstr ""
+
+#: xml/keywords.xml:1996(token)
+msgid "ENCODING"
+msgstr ""
+
+#: xml/keywords.xml:2005(token)
+msgid "ENCRYPTED"
+msgstr ""
+
+#: xml/keywords.xml:2014(token)
+msgid "END"
+msgstr ""
+
+#: xml/keywords.xml:2023(token)
+msgid "END-EXEC"
+msgstr ""
+
+#: xml/keywords.xml:2032(token)
+msgid "END_FRAME"
+msgstr ""
+
+#: xml/keywords.xml:2041(token)
+msgid "END_PARTITION"
+msgstr ""
+
+#: xml/keywords.xml:2050(token)
+msgid "ENFORCED"
+msgstr ""
+
+#: xml/keywords.xml:2059(token)
+msgid "ENUM"
+msgstr ""
+
+#: xml/keywords.xml:2068(token)
+msgid "EQUALS"
+msgstr ""
+
+#: xml/keywords.xml:2077(token)
+msgid "ESCAPE"
+msgstr ""
+
+#: xml/keywords.xml:2086(token)
+msgid "EVENT"
+msgstr ""
+
+#: xml/keywords.xml:2095(token)
+msgid "EVERY"
+msgstr ""
+
+#: xml/keywords.xml:2104(token)
+msgid "EXCEPT"
+msgstr ""
+
+#: xml/keywords.xml:2113(token)
+msgid "EXCEPTION"
+msgstr ""
+
+#: xml/keywords.xml:2122(token)
+msgid "EXCLUDE"
+msgstr ""
+
+#: xml/keywords.xml:2131(token)
+msgid "EXCLUDING"
+msgstr ""
+
+#: xml/keywords.xml:2140(token)
+msgid "EXCLUSIVE"
+msgstr ""
+
+#: xml/keywords.xml:2149(token)
+msgid "EXEC"
+msgstr ""
+
+#: xml/keywords.xml:2158(token)
+msgid "EXECUTE"
+msgstr ""
+
+#: xml/keywords.xml:2167(token)
+msgid "EXISTS"
+msgstr ""
+
+#: xml/keywords.xml:2176(token)
+msgid "EXP"
+msgstr ""
+
+#: xml/keywords.xml:2185(token)
+msgid "EXPLAIN"
+msgstr ""
+
+#: xml/keywords.xml:2194(token)
+msgid "EXPRESSION"
+msgstr ""
+
+#: xml/keywords.xml:2203(token)
+msgid "EXTENSION"
+msgstr ""
+
+#: xml/keywords.xml:2212(token)
+msgid "EXTERNAL"
+msgstr ""
+
+#: xml/keywords.xml:2221(token)
+msgid "EXTRACT"
+msgstr ""
+
+#: xml/keywords.xml:2230(token)
+msgid "FALSE"
+msgstr ""
+
+#: xml/keywords.xml:2239(token)
+msgid "FAMILY"
+msgstr ""
+
+#: xml/keywords.xml:2248(token)
+msgid "FETCH"
+msgstr ""
+
+#: xml/keywords.xml:2257(token)
+msgid "FILE"
+msgstr ""
+
+#: xml/keywords.xml:2266(token)
+msgid "FILTER"
+msgstr ""
+
+#: xml/keywords.xml:2275(token)
+msgid "FINAL"
+msgstr ""
+
+#: xml/keywords.xml:2284(token)
+msgid "FIRST"
+msgstr ""
+
+#: xml/keywords.xml:2293(token)
+msgid "FIRST_VALUE"
+msgstr ""
+
+#: xml/keywords.xml:2302(token)
+msgid "FLAG"
+msgstr ""
+
+#: xml/keywords.xml:2311(token)
+msgid "FLOAT"
+msgstr ""
+
+#: xml/keywords.xml:2320(token)
+msgid "FLOOR"
+msgstr ""
+
+#: xml/keywords.xml:2329(token)
+msgid "FOLLOWING"
+msgstr ""
+
+#: xml/keywords.xml:2338(token)
+msgid "FOR"
+msgstr ""
+
+#: xml/keywords.xml:2347(token)
+msgid "FORCE"
+msgstr ""
+
+#: xml/keywords.xml:2356(token)
+msgid "FOREIGN"
+msgstr ""
+
+#: xml/keywords.xml:2365(token)
+msgid "FORTRAN"
+msgstr ""
+
+#: xml/keywords.xml:2374(token)
+msgid "FORWARD"
+msgstr ""
+
+#: xml/keywords.xml:2383(token)
+msgid "FOUND"
+msgstr ""
+
+#: xml/keywords.xml:2392(token)
+msgid "FRAME_ROW"
+msgstr ""
+
+#: xml/keywords.xml:2401(token)
+msgid "FREE"
+msgstr ""
+
+#: xml/keywords.xml:2410(token)
+msgid "FREEZE"
+msgstr ""
+
+#: xml/keywords.xml:2419(token)
+msgid "FROM"
+msgstr ""
+
+#: xml/keywords.xml:2428(token)
+msgid "FS"
+msgstr ""
+
+#: xml/keywords.xml:2437(token)
+msgid "FULL"
+msgstr ""
+
+#: xml/keywords.xml:2446(token)
+msgid "FUNCTION"
+msgstr ""
+
+#: xml/keywords.xml:2455(token)
+msgid "FUNCTIONS"
+msgstr ""
+
+#: xml/keywords.xml:2464(token)
+msgid "FUSION"
+msgstr ""
+
+#: xml/keywords.xml:2473(token)
+msgid "G"
+msgstr ""
+
+#: xml/keywords.xml:2482(token)
+msgid "GENERAL"
+msgstr ""
+
+#: xml/keywords.xml:2491(token)
+msgid "GENERATED"
+msgstr ""
+
+#: xml/keywords.xml:2500(token)
+msgid "GET"
+msgstr ""
+
+#: xml/keywords.xml:2509(token)
+msgid "GLOBAL"
+msgstr ""
+
+#: xml/keywords.xml:2518(token)
+msgid "GO"
+msgstr ""
+
+#: xml/keywords.xml:2527(token)
+msgid "GOTO"
+msgstr ""
+
+#: xml/keywords.xml:2536(token)
+msgid "GRANT"
+msgstr ""
+
+#: xml/keywords.xml:2545(token)
+msgid "GRANTED"
+msgstr ""
+
+#: xml/keywords.xml:2554(token)
+msgid "GREATEST"
+msgstr ""
+
+#: xml/keywords.xml:2563(token)
+msgid "GROUP"
+msgstr ""
+
+#: xml/keywords.xml:2572(token)
+msgid "GROUPING"
+msgstr ""
+
+#: xml/keywords.xml:2581(token)
+msgid "GROUPS"
+msgstr ""
+
+#: xml/keywords.xml:2590(token)
+msgid "HANDLER"
+msgstr ""
+
+#: xml/keywords.xml:2599(token)
+msgid "HAVING"
+msgstr ""
+
+#: xml/keywords.xml:2608(token)
+msgid "HEADER"
+msgstr ""
+
+#: xml/keywords.xml:2617(token)
+msgid "HEX"
+msgstr ""
+
+#: xml/keywords.xml:2626(token)
+msgid "HIERARCHY"
+msgstr ""
+
+#: xml/keywords.xml:2635(token)
+msgid "HOLD"
+msgstr ""
+
+#: xml/keywords.xml:2644(token)
+msgid "HOUR"
+msgstr ""
+
+#: xml/keywords.xml:2653(token)
+msgid "ID"
+msgstr ""
+
+#: xml/keywords.xml:2662(token)
+msgid "IDENTITY"
+msgstr ""
+
+#: xml/keywords.xml:2671(token)
+msgid "IF"
+msgstr ""
+
+#: xml/keywords.xml:2680(token)
+msgid "IGNORE"
+msgstr ""
+
+#: xml/keywords.xml:2689(token)
+msgid "ILIKE"
+msgstr ""
+
+#: xml/keywords.xml:2698(token)
+msgid "IMMEDIATE"
+msgstr ""
+
+#: xml/keywords.xml:2707(token)
+msgid "IMMEDIATELY"
+msgstr ""
+
+#: xml/keywords.xml:2716(token)
+msgid "IMMUTABLE"
+msgstr ""
+
+#: xml/keywords.xml:2725(token)
+msgid "IMPLEMENTATION"
+msgstr ""
+
+#: xml/keywords.xml:2734(token)
+msgid "IMPLICIT"
+msgstr ""
+
+#: xml/keywords.xml:2743(token)
+msgid "IMPORT"
+msgstr ""
+
+#: xml/keywords.xml:2752(token)
+msgid "IN"
+msgstr ""
+
+#: xml/keywords.xml:2761(token)
+msgid "INCLUDING"
+msgstr ""
+
+#: xml/keywords.xml:2770(token)
+msgid "INCREMENT"
+msgstr ""
+
+#: xml/keywords.xml:2779(token)
+msgid "INDENT"
+msgstr ""
+
+#: xml/keywords.xml:2788(token)
+msgid "INDEX"
+msgstr ""
+
+#: xml/keywords.xml:2797(token)
+msgid "INDEXES"
+msgstr ""
+
+#: xml/keywords.xml:2806(token)
+msgid "INDICATOR"
+msgstr ""
+
+#: xml/keywords.xml:2815(token)
+msgid "INHERIT"
+msgstr ""
+
+#: xml/keywords.xml:2824(token)
+msgid "INHERITS"
+msgstr ""
+
+#: xml/keywords.xml:2833(token)
+msgid "INITIALLY"
+msgstr ""
+
+#: xml/keywords.xml:2842(token)
+msgid "INLINE"
+msgstr ""
+
+#: xml/keywords.xml:2851(token)
+msgid "INNER"
+msgstr ""
+
+#: xml/keywords.xml:2860(token)
+msgid "INOUT"
+msgstr ""
+
+#: xml/keywords.xml:2869(token)
+msgid "INPUT"
+msgstr ""
+
+#: xml/keywords.xml:2878(token)
+msgid "INSENSITIVE"
+msgstr ""
+
+#: xml/keywords.xml:2887(token)
+msgid "INSERT"
+msgstr ""
+
+#: xml/keywords.xml:2896(token)
+msgid "INSTANCE"
+msgstr ""
+
+#: xml/keywords.xml:2905(token)
+msgid "INSTANTIABLE"
+msgstr ""
+
+#: xml/keywords.xml:2914(token)
+msgid "INSTEAD"
+msgstr ""
+
+#: xml/keywords.xml:2923(token)
+msgid "INT"
+msgstr ""
+
+#: xml/keywords.xml:2932(token)
+msgid "INTEGER"
+msgstr ""
+
+#: xml/keywords.xml:2941(token)
+msgid "INTEGRITY"
+msgstr ""
+
+#: xml/keywords.xml:2950(token)
+msgid "INTERSECT"
+msgstr ""
+
+#: xml/keywords.xml:2959(token)
+msgid "INTERSECTION"
+msgstr ""
+
+#: xml/keywords.xml:2968(token)
+msgid "INTERVAL"
+msgstr ""
+
+#: xml/keywords.xml:2977(token)
+msgid "INTO"
+msgstr ""
+
+#: xml/keywords.xml:2986(token)
+msgid "INVOKER"
+msgstr ""
+
+#: xml/keywords.xml:2995(token)
+msgid "IS"
+msgstr ""
+
+#: xml/keywords.xml:3004(token)
+msgid "ISNULL"
+msgstr ""
+
+#: xml/keywords.xml:3013(token)
+msgid "ISOLATION"
+msgstr ""
+
+#: xml/keywords.xml:3022(token)
+msgid "JOIN"
+msgstr ""
+
+#: xml/keywords.xml:3031(token)
+msgid "K"
+msgstr ""
+
+#: xml/keywords.xml:3040(token)
+msgid "KEY"
+msgstr ""
+
+#: xml/keywords.xml:3049(token)
+msgid "KEY_MEMBER"
+msgstr ""
+
+#: xml/keywords.xml:3058(token)
+msgid "KEY_TYPE"
+msgstr ""
+
+#: xml/keywords.xml:3067(token)
+msgid "LABEL"
+msgstr ""
+
+#: xml/keywords.xml:3076(token)
+msgid "LAG"
+msgstr ""
+
+#: xml/keywords.xml:3085(token)
+msgid "LANGUAGE"
+msgstr ""
+
+#: xml/keywords.xml:3094(token)
+msgid "LARGE"
+msgstr ""
+
+#: xml/keywords.xml:3103(token)
+msgid "LAST"
+msgstr ""
+
+#: xml/keywords.xml:3112(token)
+msgid "LAST_VALUE"
+msgstr ""
+
+#: xml/keywords.xml:3121(token)
+msgid "LATERAL"
+msgstr ""
+
+#: xml/keywords.xml:3130(token)
+msgid "LEAD"
+msgstr ""
+
+#: xml/keywords.xml:3139(token)
+msgid "LEADING"
+msgstr ""
+
+#: xml/keywords.xml:3148(token)
+msgid "LEAKPROOF"
+msgstr ""
+
+#: xml/keywords.xml:3157(token)
+msgid "LEAST"
+msgstr ""
+
+#: xml/keywords.xml:3166(token)
+msgid "LEFT"
+msgstr ""
+
+#: xml/keywords.xml:3175(token)
+msgid "LENGTH"
+msgstr ""
+
+#: xml/keywords.xml:3184(token)
+msgid "LEVEL"
+msgstr ""
+
+#: xml/keywords.xml:3193(token)
+msgid "LIBRARY"
+msgstr ""
+
+#: xml/keywords.xml:3202(token)
+msgid "LIKE"
+msgstr ""
+
+#: xml/keywords.xml:3211(token)
+msgid "LIKE_REGEX"
+msgstr ""
+
+#: xml/keywords.xml:3220(token)
+msgid "LIMIT"
+msgstr ""
+
+#: xml/keywords.xml:3229(token)
+msgid "LINK"
+msgstr ""
+
+#: xml/keywords.xml:3238(token)
+msgid "LISTEN"
+msgstr ""
+
+#: xml/keywords.xml:3247(token)
+msgid "LN"
+msgstr ""
+
+#: xml/keywords.xml:3256(token)
+msgid "LOAD"
+msgstr ""
+
+#: xml/keywords.xml:3265(token)
+msgid "LOCAL"
+msgstr ""
+
+#: xml/keywords.xml:3274(token)
+msgid "LOCALTIME"
+msgstr ""
+
+#: xml/keywords.xml:3283(token)
+msgid "LOCALTIMESTAMP"
+msgstr ""
+
+#: xml/keywords.xml:3292(token)
+msgid "LOCATION"
+msgstr ""
+
+#: xml/keywords.xml:3301(token)
+msgid "LOCATOR"
+msgstr ""
+
+#: xml/keywords.xml:3310(token)
+msgid "LOCK"
+msgstr ""
+
+#: xml/keywords.xml:3319(token)
+msgid "LOCKED"
+msgstr ""
+
+#: xml/keywords.xml:3328(token)
+msgid "LOGGED"
+msgstr ""
+
+#: xml/keywords.xml:3337(token)
+msgid "LOWER"
+msgstr ""
+
+#: xml/keywords.xml:3346(token)
+msgid "M"
+msgstr ""
+
+#: xml/keywords.xml:3355(token)
+msgid "MAP"
+msgstr ""
+
+#: xml/keywords.xml:3364(token)
+msgid "MAPPING"
+msgstr ""
+
+#: xml/keywords.xml:3373(token)
+msgid "MATCH"
+msgstr ""
+
+#: xml/keywords.xml:3382(token)
+msgid "MATCHED"
+msgstr ""
+
+#: xml/keywords.xml:3391(token)
+msgid "MATERIALIZED"
+msgstr ""
+
+#: xml/keywords.xml:3400(token)
+msgid "MAX"
+msgstr ""
+
+#: xml/keywords.xml:3409(token)
+msgid "MAXVALUE"
+msgstr ""
+
+#: xml/keywords.xml:3418(token)
+msgid "MAX_CARDINALITY"
+msgstr ""
+
+#: xml/keywords.xml:3427(token)
+msgid "MEMBER"
+msgstr ""
+
+#: xml/keywords.xml:3436(token)
+msgid "MERGE"
+msgstr ""
+
+#: xml/keywords.xml:3445(token)
+msgid "MESSAGE_LENGTH"
+msgstr ""
+
+#: xml/keywords.xml:3454(token)
+msgid "MESSAGE_OCTET_LENGTH"
+msgstr ""
+
+#: xml/keywords.xml:3463(token)
+msgid "MESSAGE_TEXT"
+msgstr ""
+
+#: xml/keywords.xml:3472(token)
+msgid "METHOD"
+msgstr ""
+
+#: xml/keywords.xml:3481(token)
+msgid "MIN"
+msgstr ""
+
+#: xml/keywords.xml:3490(token)
+msgid "MINUTE"
+msgstr ""
+
+#: xml/keywords.xml:3499(token)
+msgid "MINVALUE"
+msgstr ""
+
+#: xml/keywords.xml:3508(token)
+msgid "MOD"
+msgstr ""
+
+#: xml/keywords.xml:3517(token)
+msgid "MODE"
+msgstr ""
+
+#: xml/keywords.xml:3526(token)
+msgid "MODIFIES"
+msgstr ""
+
+#: xml/keywords.xml:3535(token)
+msgid "MODULE"
+msgstr ""
+
+#: xml/keywords.xml:3544(token)
+msgid "MONTH"
+msgstr ""
+
+#: xml/keywords.xml:3553(token)
+msgid "MORE"
+msgstr ""
+
+#: xml/keywords.xml:3562(token)
+msgid "MOVE"
+msgstr ""
+
+#: xml/keywords.xml:3571(token)
+msgid "MULTISET"
+msgstr ""
+
+#: xml/keywords.xml:3580(token)
+msgid "MUMPS"
+msgstr ""
+
+#: xml/keywords.xml:3589(token)
+msgid "NAME"
+msgstr ""
+
+#: xml/keywords.xml:3598(token)
+msgid "NAMES"
+msgstr ""
+
+#: xml/keywords.xml:3607(token)
+msgid "NAMESPACE"
+msgstr ""
+
+#: xml/keywords.xml:3616(token)
+msgid "NATIONAL"
+msgstr ""
+
+#: xml/keywords.xml:3625(token)
+msgid "NATURAL"
+msgstr ""
+
+#: xml/keywords.xml:3634(token)
+msgid "NCHAR"
+msgstr ""
+
+#: xml/keywords.xml:3643(token)
+msgid "NCLOB"
+msgstr ""
+
+#: xml/keywords.xml:3652(token)
+msgid "NESTING"
+msgstr ""
+
+#: xml/keywords.xml:3661(token)
+msgid "NEW"
+msgstr ""
+
+#: xml/keywords.xml:3670(token)
+msgid "NEXT"
+msgstr ""
+
+#: xml/keywords.xml:3679(token)
+msgid "NFC"
+msgstr ""
+
+#: xml/keywords.xml:3688(token)
+msgid "NFD"
+msgstr ""
+
+#: xml/keywords.xml:3697(token)
+msgid "NFKC"
+msgstr ""
+
+#: xml/keywords.xml:3706(token)
+msgid "NFKD"
+msgstr ""
+
+#: xml/keywords.xml:3715(token)
+msgid "NIL"
+msgstr ""
+
+#: xml/keywords.xml:3724(token)
+msgid "NO"
+msgstr ""
+
+#: xml/keywords.xml:3733(token)
+msgid "NONE"
+msgstr ""
+
+#: xml/keywords.xml:3742(token)
+msgid "NORMALIZE"
+msgstr ""
+
+#: xml/keywords.xml:3751(token)
+msgid "NORMALIZED"
+msgstr ""
+
+#: xml/keywords.xml:3760(token)
+msgid "NOT"
+msgstr ""
+
+#: xml/keywords.xml:3769(token)
+msgid "NOTHING"
+msgstr ""
+
+#: xml/keywords.xml:3778(token)
+msgid "NOTIFY"
+msgstr ""
+
+#: xml/keywords.xml:3787(token)
+msgid "NOTNULL"
+msgstr ""
+
+#: xml/keywords.xml:3796(token)
+msgid "NOWAIT"
+msgstr ""
+
+#: xml/keywords.xml:3805(token)
+msgid "NTH_VALUE"
+msgstr ""
+
+#: xml/keywords.xml:3814(token)
+msgid "NTILE"
+msgstr ""
+
+#: xml/keywords.xml:3823(token)
+msgid "NULL"
+msgstr ""
+
+#: xml/keywords.xml:3832(token)
+msgid "NULLABLE"
+msgstr ""
+
+#: xml/keywords.xml:3841(token)
+msgid "NULLIF"
+msgstr ""
+
+#: xml/keywords.xml:3850(token)
+msgid "NULLS"
+msgstr ""
+
+#: xml/keywords.xml:3859(token)
+msgid "NUMBER"
+msgstr ""
+
+#: xml/keywords.xml:3868(token)
+msgid "NUMERIC"
+msgstr ""
+
+#: xml/keywords.xml:3877(token)
+msgid "OBJECT"
+msgstr ""
+
+#: xml/keywords.xml:3886(token)
+msgid "OCCURRENCES_REGEX"
+msgstr ""
+
+#: xml/keywords.xml:3895(token)
+msgid "OCTETS"
+msgstr ""
+
+#: xml/keywords.xml:3904(token)
+msgid "OCTET_LENGTH"
+msgstr ""
+
+#: xml/keywords.xml:3913(token)
+msgid "OF"
+msgstr ""
+
+#: xml/keywords.xml:3922(token)
+msgid "OFF"
+msgstr ""
+
+#: xml/keywords.xml:3931(token)
+msgid "OFFSET"
+msgstr ""
+
+#: xml/keywords.xml:3940(token)
+msgid "OIDS"
+msgstr ""
+
+#: xml/keywords.xml:3949(token)
+msgid "OLD"
+msgstr ""
+
+#: xml/keywords.xml:3958(token)
+msgid "ON"
+msgstr ""
+
+#: xml/keywords.xml:3967(token)
+msgid "ONLY"
+msgstr ""
+
+#: xml/keywords.xml:3976(token)
+msgid "OPEN"
+msgstr ""
+
+#: xml/keywords.xml:3985(token)
+msgid "OPERATOR"
+msgstr ""
+
+#: xml/keywords.xml:3994(token)
+msgid "OPTION"
+msgstr ""
+
+#: xml/keywords.xml:4003(token)
+msgid "OPTIONS"
+msgstr ""
+
+#: xml/keywords.xml:4012(token)
+msgid "OR"
+msgstr ""
+
+#: xml/keywords.xml:4021(token)
+msgid "ORDER"
+msgstr ""
+
+#: xml/keywords.xml:4030(token)
+msgid "ORDERING"
+msgstr ""
+
+#: xml/keywords.xml:4039(token)
+msgid "ORDINALITY"
+msgstr ""
+
+#: xml/keywords.xml:4048(token)
+msgid "OTHERS"
+msgstr ""
+
+#: xml/keywords.xml:4057(token)
+msgid "OUT"
+msgstr ""
+
+#: xml/keywords.xml:4066(token)
+msgid "OUTER"
+msgstr ""
+
+#: xml/keywords.xml:4075(token)
+msgid "OUTPUT"
+msgstr ""
+
+#: xml/keywords.xml:4084(token)
+msgid "OVER"
+msgstr ""
+
+#: xml/keywords.xml:4093(token)
+msgid "OVERLAPS"
+msgstr ""
+
+#: xml/keywords.xml:4102(token)
+msgid "OVERLAY"
+msgstr ""
+
+#: xml/keywords.xml:4111(token)
+msgid "OVERRIDING"
+msgstr ""
+
+#: xml/keywords.xml:4120(token)
+msgid "OWNED"
+msgstr ""
+
+#: xml/keywords.xml:4129(token)
+msgid "OWNER"
+msgstr ""
+
+#: xml/keywords.xml:4138(token)
+msgid "P"
+msgstr ""
+
+#: xml/keywords.xml:4147(token)
+msgid "PAD"
+msgstr ""
+
+#: xml/keywords.xml:4156(token)
+msgid "PARAMETER"
+msgstr ""
+
+#: xml/keywords.xml:4165(token)
+msgid "PARAMETER_MODE"
+msgstr ""
+
+#: xml/keywords.xml:4174(token)
+msgid "PARAMETER_NAME"
+msgstr ""
+
+#: xml/keywords.xml:4183(token)
+msgid "PARAMETER_ORDINAL_POSITION"
+msgstr ""
+
+#: xml/keywords.xml:4192(token)
+msgid "PARAMETER_SPECIFIC_CATALOG"
+msgstr ""
+
+#: xml/keywords.xml:4201(token)
+msgid "PARAMETER_SPECIFIC_NAME"
+msgstr ""
+
+#: xml/keywords.xml:4210(token)
+msgid "PARAMETER_SPECIFIC_SCHEMA"
+msgstr ""
+
+#: xml/keywords.xml:4219(token)
+msgid "PARSER"
+msgstr ""
+
+#: xml/keywords.xml:4228(token)
+msgid "PARTIAL"
+msgstr ""
+
+#: xml/keywords.xml:4237(token)
+msgid "PARTITION"
+msgstr ""
+
+#: xml/keywords.xml:4246(token)
+msgid "PASCAL"
+msgstr ""
+
+#: xml/keywords.xml:4255(token)
+msgid "PASSING"
+msgstr ""
+
+#: xml/keywords.xml:4264(token)
+msgid "PASSTHROUGH"
+msgstr ""
+
+#: xml/keywords.xml:4273(token)
+msgid "PASSWORD"
+msgstr ""
+
+#: xml/keywords.xml:4282(token)
+msgid "PATH"
+msgstr ""
+
+#: xml/keywords.xml:4291(token)
+msgid "PERCENT"
+msgstr ""
+
+#: xml/keywords.xml:4300(token)
+msgid "PERCENTILE_CONT"
+msgstr ""
+
+#: xml/keywords.xml:4309(token)
+msgid "PERCENTILE_DISC"
+msgstr ""
+
+#: xml/keywords.xml:4318(token)
+msgid "PERCENT_RANK"
+msgstr ""
+
+#: xml/keywords.xml:4327(token)
+msgid "PERIOD"
+msgstr ""
+
+#: xml/keywords.xml:4336(token)
+msgid "PERMISSION"
+msgstr ""
+
+#: xml/keywords.xml:4345(token)
+msgid "PLACING"
+msgstr ""
+
+#: xml/keywords.xml:4354(token)
+msgid "PLANS"
+msgstr ""
+
+#: xml/keywords.xml:4363(token)
+msgid "PLI"
+msgstr ""
+
+#: xml/keywords.xml:4372(token)
+msgid "POLICY"
+msgstr ""
+
+#: xml/keywords.xml:4381(token)
+msgid "PORTION"
+msgstr ""
+
+#: xml/keywords.xml:4390(token)
+msgid "POSITION"
+msgstr ""
+
+#: xml/keywords.xml:4399(token)
+msgid "POSITION_REGEX"
+msgstr ""
+
+#: xml/keywords.xml:4408(token)
+msgid "POWER"
+msgstr ""
+
+#: xml/keywords.xml:4417(token)
+msgid "PRECEDES"
+msgstr ""
+
+#: xml/keywords.xml:4426(token)
+msgid "PRECEDING"
+msgstr ""
+
+#: xml/keywords.xml:4435(token)
+msgid "PRECISION"
+msgstr ""
+
+#: xml/keywords.xml:4444(token)
+msgid "PREPARE"
+msgstr ""
+
+#: xml/keywords.xml:4453(token)
+msgid "PREPARED"
+msgstr ""
+
+#: xml/keywords.xml:4462(token)
+msgid "PRESERVE"
+msgstr ""
+
+#: xml/keywords.xml:4471(token)
+msgid "PRIMARY"
+msgstr ""
+
+#: xml/keywords.xml:4480(token)
+msgid "PRIOR"
+msgstr ""
+
+#: xml/keywords.xml:4489(token)
+msgid "PRIVILEGES"
+msgstr ""
+
+#: xml/keywords.xml:4498(token)
+msgid "PROCEDURAL"
+msgstr ""
+
+#: xml/keywords.xml:4507(token)
+msgid "PROCEDURE"
+msgstr ""
+
+#: xml/keywords.xml:4516(token)
+msgid "PROGRAM"
+msgstr ""
+
+#: xml/keywords.xml:4525(token)
+msgid "PUBLIC"
+msgstr ""
+
+#: xml/keywords.xml:4534(token)
+msgid "QUOTE"
+msgstr ""
+
+#: xml/keywords.xml:4543(token)
+msgid "RANGE"
+msgstr ""
+
+#: xml/keywords.xml:4552(token)
+msgid "RANK"
+msgstr ""
+
+#: xml/keywords.xml:4561(token)
+msgid "READ"
+msgstr ""
+
+#: xml/keywords.xml:4570(token)
+msgid "READS"
+msgstr ""
+
+#: xml/keywords.xml:4579(token)
+msgid "REAL"
+msgstr ""
+
+#: xml/keywords.xml:4588(token)
+msgid "REASSIGN"
+msgstr ""
+
+#: xml/keywords.xml:4597(token)
+msgid "RECHECK"
+msgstr ""
+
+#: xml/keywords.xml:4606(token)
+msgid "RECOVERY"
+msgstr ""
+
+#: xml/keywords.xml:4615(token)
+msgid "RECURSIVE"
+msgstr ""
+
+#: xml/keywords.xml:4624(token)
+msgid "REF"
+msgstr ""
+
+#: xml/keywords.xml:4633(token)
+msgid "REFERENCES"
+msgstr ""
+
+#: xml/keywords.xml:4642(token)
+msgid "REFERENCING"
+msgstr ""
+
+#: xml/keywords.xml:4651(token)
+msgid "REFRESH"
+msgstr ""
+
+#: xml/keywords.xml:4660(token)
+msgid "REGR_AVGX"
+msgstr ""
+
+#: xml/keywords.xml:4669(token)
+msgid "REGR_AVGY"
+msgstr ""
+
+#: xml/keywords.xml:4678(token)
+msgid "REGR_COUNT"
+msgstr ""
+
+#: xml/keywords.xml:4687(token)
+msgid "REGR_INTERCEPT"
+msgstr ""
+
+#: xml/keywords.xml:4696(token)
+msgid "REGR_R2"
+msgstr ""
+
+#: xml/keywords.xml:4705(token)
+msgid "REGR_SLOPE"
+msgstr ""
+
+#: xml/keywords.xml:4714(token)
+msgid "REGR_SXX"
+msgstr ""
+
+#: xml/keywords.xml:4723(token)
+msgid "REGR_SXY"
+msgstr ""
+
+#: xml/keywords.xml:4732(token)
+msgid "REGR_SYY"
+msgstr ""
+
+#: xml/keywords.xml:4741(token)
+msgid "REINDEX"
+msgstr ""
+
+#: xml/keywords.xml:4750(token)
+msgid "RELATIVE"
+msgstr ""
+
+#: xml/keywords.xml:4759(token)
+msgid "RELEASE"
+msgstr ""
+
+#: xml/keywords.xml:4768(token)
+msgid "RENAME"
+msgstr ""
+
+#: xml/keywords.xml:4777(token)
+msgid "REPEATABLE"
+msgstr ""
+
+#: xml/keywords.xml:4786(token)
+msgid "REPLACE"
+msgstr ""
+
+#: xml/keywords.xml:4795(token)
+msgid "REPLICA"
+msgstr ""
+
+#: xml/keywords.xml:4804(token)
+msgid "REQUIRING"
+msgstr ""
+
+#: xml/keywords.xml:4813(token)
+msgid "RESET"
+msgstr ""
+
+#: xml/keywords.xml:4822(token)
+msgid "RESPECT"
+msgstr ""
+
+#: xml/keywords.xml:4831(token)
+msgid "RESTART"
+msgstr ""
+
+#: xml/keywords.xml:4840(token)
+msgid "RESTORE"
+msgstr ""
+
+#: xml/keywords.xml:4849(token)
+msgid "RESTRICT"
+msgstr ""
+
+#: xml/keywords.xml:4858(token)
+msgid "RESULT"
+msgstr ""
+
+#: xml/keywords.xml:4867(token)
+msgid "RETURN"
+msgstr ""
+
+#: xml/keywords.xml:4876(token)
+msgid "RETURNED_CARDINALITY"
+msgstr ""
+
+#: xml/keywords.xml:4885(token)
+msgid "RETURNED_LENGTH"
+msgstr ""
+
+#: xml/keywords.xml:4894(token)
+msgid "RETURNED_OCTET_LENGTH"
+msgstr ""
+
+#: xml/keywords.xml:4903(token)
+msgid "RETURNED_SQLSTATE"
+msgstr ""
+
+#: xml/keywords.xml:4912(token)
+msgid "RETURNING"
+msgstr ""
+
+#: xml/keywords.xml:4921(token)
+msgid "RETURNS"
+msgstr ""
+
+#: xml/keywords.xml:4930(token)
+msgid "REVOKE"
+msgstr ""
+
+#: xml/keywords.xml:4939(token)
+msgid "RIGHT"
+msgstr ""
+
+#: xml/keywords.xml:4948(token)
+msgid "ROLE"
+msgstr ""
+
+#: xml/keywords.xml:4957(token)
+msgid "ROLLBACK"
+msgstr ""
+
+#: xml/keywords.xml:4966(token)
+msgid "ROLLUP"
+msgstr ""
+
+#: xml/keywords.xml:4975(token)
+msgid "ROUTINE"
+msgstr ""
+
+#: xml/keywords.xml:4984(token)
+msgid "ROUTINE_CATALOG"
+msgstr ""
+
+#: xml/keywords.xml:4993(token)
+msgid "ROUTINE_NAME"
+msgstr ""
+
+#: xml/keywords.xml:5002(token)
+msgid "ROUTINE_SCHEMA"
+msgstr ""
+
+#: xml/keywords.xml:5011(token)
+msgid "ROW"
+msgstr ""
+
+#: xml/keywords.xml:5020(token)
+msgid "ROWS"
+msgstr ""
+
+#: xml/keywords.xml:5029(token)
+msgid "ROW_COUNT"
+msgstr ""
+
+#: xml/keywords.xml:5038(token)
+msgid "ROW_NUMBER"
+msgstr ""
+
+#: xml/keywords.xml:5047(token)
+msgid "RULE"
+msgstr ""
+
+#: xml/keywords.xml:5056(token)
+msgid "SAVEPOINT"
+msgstr ""
+
+#: xml/keywords.xml:5065(token)
+msgid "SCALE"
+msgstr ""
+
+#: xml/keywords.xml:5074(token)
+msgid "SCHEMA"
+msgstr ""
+
+#: xml/keywords.xml:5083(token)
+msgid "SCHEMA_NAME"
+msgstr ""
+
+#: xml/keywords.xml:5092(token)
+msgid "SCOPE"
+msgstr ""
+
+#: xml/keywords.xml:5101(token)
+msgid "SCOPE_CATALOG"
+msgstr ""
+
+#: xml/keywords.xml:5110(token)
+msgid "SCOPE_NAME"
+msgstr ""
+
+#: xml/keywords.xml:5119(token)
+msgid "SCOPE_SCHEMA"
+msgstr ""
+
+#: xml/keywords.xml:5128(token)
+msgid "SCROLL"
+msgstr ""
+
+#: xml/keywords.xml:5137(token)
+msgid "SEARCH"
+msgstr ""
+
+#: xml/keywords.xml:5146(token)
+msgid "SECOND"
+msgstr ""
+
+#: xml/keywords.xml:5155(token)
+msgid "SECTION"
+msgstr ""
+
+#: xml/keywords.xml:5164(token)
+msgid "SECURITY"
+msgstr ""
+
+#: xml/keywords.xml:5173(token)
+msgid "SELECT"
+msgstr ""
+
+#: xml/keywords.xml:5182(token)
+msgid "SELECTIVE"
+msgstr ""
+
+#: xml/keywords.xml:5191(token)
+msgid "SELF"
+msgstr ""
+
+#: xml/keywords.xml:5200(token)
+msgid "SENSITIVE"
+msgstr ""
+
+#: xml/keywords.xml:5209(token)
+msgid "SEQUENCE"
+msgstr ""
+
+#: xml/keywords.xml:5218(token)
+msgid "SEQUENCES"
+msgstr ""
+
+#: xml/keywords.xml:5227(token)
+msgid "SERIALIZABLE"
+msgstr ""
+
+#: xml/keywords.xml:5236(token)
+msgid "SERVER"
+msgstr ""
+
+#: xml/keywords.xml:5245(token)
+msgid "SERVER_NAME"
+msgstr ""
+
+#: xml/keywords.xml:5254(token)
+msgid "SESSION"
+msgstr ""
+
+#: xml/keywords.xml:5263(token)
+msgid "SESSION_USER"
+msgstr ""
+
+#: xml/keywords.xml:5272(token)
+msgid "SET"
+msgstr ""
+
+#: xml/keywords.xml:5281(token)
+msgid "SETOF"
+msgstr ""
+
+#: xml/keywords.xml:5290(token)
+msgid "SETS"
+msgstr ""
+
+#: xml/keywords.xml:5299(token)
+msgid "SHARE"
+msgstr ""
+
+#: xml/keywords.xml:5308(token)
+msgid "SHOW"
+msgstr ""
+
+#: xml/keywords.xml:5317(token)
+msgid "SIMILAR"
+msgstr ""
+
+#: xml/keywords.xml:5326(token)
+msgid "SIMPLE"
+msgstr ""
+
+#: xml/keywords.xml:5335(token)
+msgid "SIZE"
+msgstr ""
+
+#: xml/keywords.xml:5344(token)
+msgid "SKIP"
+msgstr ""
+
+#: xml/keywords.xml:5353(token)
+msgid "SMALLINT"
+msgstr ""
+
+#: xml/keywords.xml:5362(token)
+msgid "SNAPSHOT"
+msgstr ""
+
+#: xml/keywords.xml:5371(token)
+msgid "SOME"
+msgstr ""
+
+#: xml/keywords.xml:5380(token)
+msgid "SOURCE"
+msgstr ""
+
+#: xml/keywords.xml:5389(token)
+msgid "SPACE"
+msgstr ""
+
+#: xml/keywords.xml:5398(token)
+msgid "SPECIFIC"
+msgstr ""
+
+#: xml/keywords.xml:5407(token)
+msgid "SPECIFICTYPE"
+msgstr ""
+
+#: xml/keywords.xml:5416(token)
+msgid "SPECIFIC_NAME"
+msgstr ""
+
+#: xml/keywords.xml:5425(token)
+msgid "SQL"
+msgstr ""
+
+#: xml/keywords.xml:5434(token)
+msgid "SQLCODE"
+msgstr ""
+
+#: xml/keywords.xml:5443(token)
+msgid "SQLERROR"
+msgstr ""
+
+#: xml/keywords.xml:5452(token)
+msgid "SQLEXCEPTION"
+msgstr ""
+
+#: xml/keywords.xml:5461(token)
+msgid "SQLSTATE"
+msgstr ""
+
+#: xml/keywords.xml:5470(token)
+msgid "SQLWARNING"
+msgstr ""
+
+#: xml/keywords.xml:5479(token)
+msgid "SQRT"
+msgstr ""
+
+#: xml/keywords.xml:5488(token)
+msgid "STABLE"
+msgstr ""
+
+#: xml/keywords.xml:5497(token)
+msgid "STANDALONE"
+msgstr ""
+
+#: xml/keywords.xml:5506(token)
+msgid "START"
+msgstr ""
+
+#: xml/keywords.xml:5515(token)
+msgid "STATE"
+msgstr ""
+
+#: xml/keywords.xml:5524(token)
+msgid "STATEMENT"
+msgstr ""
+
+#: xml/keywords.xml:5533(token)
+msgid "STATIC"
+msgstr ""
+
+#: xml/keywords.xml:5542(token)
+msgid "STATISTICS"
+msgstr ""
+
+#: xml/keywords.xml:5551(token)
+msgid "STDDEV_POP"
+msgstr ""
+
+#: xml/keywords.xml:5560(token)
+msgid "STDDEV_SAMP"
+msgstr ""
+
+#: xml/keywords.xml:5569(token)
+msgid "STDIN"
+msgstr ""
+
+#: xml/keywords.xml:5578(token)
+msgid "STDOUT"
+msgstr ""
+
+#: xml/keywords.xml:5587(token)
+msgid "STORAGE"
+msgstr ""
+
+#: xml/keywords.xml:5596(token)
+msgid "STRICT"
+msgstr ""
+
+#: xml/keywords.xml:5605(token)
+msgid "STRIP"
+msgstr ""
+
+#: xml/keywords.xml:5614(token)
+msgid "STRUCTURE"
+msgstr ""
+
+#: xml/keywords.xml:5623(token)
+msgid "STYLE"
+msgstr ""
+
+#: xml/keywords.xml:5632(token)
+msgid "SUBCLASS_ORIGIN"
+msgstr ""
+
+#: xml/keywords.xml:5641(token)
+msgid "SUBMULTISET"
+msgstr ""
+
+#: xml/keywords.xml:5650(token)
+msgid "SUBSTRING"
+msgstr ""
+
+#: xml/keywords.xml:5659(token)
+msgid "SUBSTRING_REGEX"
+msgstr ""
+
+#: xml/keywords.xml:5668(token)
+msgid "SUCCEEDS"
+msgstr ""
+
+#: xml/keywords.xml:5677(token)
+msgid "SUM"
+msgstr ""
+
+#: xml/keywords.xml:5686(token)
+msgid "SYMMETRIC"
+msgstr ""
+
+#: xml/keywords.xml:5695(token)
+msgid "SYSID"
+msgstr ""
+
+#: xml/keywords.xml:5704(token)
+msgid "SYSTEM"
+msgstr ""
+
+#: xml/keywords.xml:5713(token)
+msgid "SYSTEM_TIME"
+msgstr ""
+
+#: xml/keywords.xml:5722(token)
+msgid "SYSTEM_USER"
+msgstr ""
+
+#: xml/keywords.xml:5731(token)
+msgid "T"
+msgstr ""
+
+#: xml/keywords.xml:5740(token)
+msgid "TABLE"
+msgstr ""
+
+#: xml/keywords.xml:5749(token)
+msgid "TABLES"
+msgstr ""
+
+#: xml/keywords.xml:5758(token)
+msgid "TABLESAMPLE"
+msgstr ""
+
+#: xml/keywords.xml:5767(token)
+msgid "TABLESPACE"
+msgstr ""
+
+#: xml/keywords.xml:5776(token)
+msgid "TABLE_NAME"
+msgstr ""
+
+#: xml/keywords.xml:5785(token)
+msgid "TEMP"
+msgstr ""
+
+#: xml/keywords.xml:5794(token)
+msgid "TEMPLATE"
+msgstr ""
+
+#: xml/keywords.xml:5803(token)
+msgid "TEMPORARY"
+msgstr ""
+
+#: xml/keywords.xml:5812(token)
+msgid "TEXT"
+msgstr ""
+
+#: xml/keywords.xml:5821(token)
+msgid "THEN"
+msgstr ""
+
+#: xml/keywords.xml:5830(token)
+msgid "TIES"
+msgstr ""
+
+#: xml/keywords.xml:5839(token)
+msgid "TIME"
+msgstr ""
+
+#: xml/keywords.xml:5848(token)
+msgid "TIMESTAMP"
+msgstr ""
+
+#: xml/keywords.xml:5857(token)
+msgid "TIMEZONE_HOUR"
+msgstr ""
+
+#: xml/keywords.xml:5866(token)
+msgid "TIMEZONE_MINUTE"
+msgstr ""
+
+#: xml/keywords.xml:5875(token)
+msgid "TO"
+msgstr ""
+
+#: xml/keywords.xml:5884(token)
+msgid "TOKEN"
+msgstr ""
+
+#: xml/keywords.xml:5893(token)
+msgid "TOP_LEVEL_COUNT"
+msgstr ""
+
+#: xml/keywords.xml:5902(token)
+msgid "TRAILING"
+msgstr ""
+
+#: xml/keywords.xml:5911(token)
+msgid "TRANSACTION"
+msgstr ""
+
+#: xml/keywords.xml:5920(token)
+msgid "TRANSACTIONS_COMMITTED"
+msgstr ""
+
+#: xml/keywords.xml:5929(token)
+msgid "TRANSACTIONS_ROLLED_BACK"
+msgstr ""
+
+#: xml/keywords.xml:5938(token)
+msgid "TRANSACTION_ACTIVE"
+msgstr ""
+
+#: xml/keywords.xml:5947(token)
+msgid "TRANSFORM"
+msgstr ""
+
+#: xml/keywords.xml:5956(token)
+msgid "TRANSFORMS"
+msgstr ""
+
+#: xml/keywords.xml:5965(token)
+msgid "TRANSLATE"
+msgstr ""
+
+#: xml/keywords.xml:5974(token)
+msgid "TRANSLATE_REGEX"
+msgstr ""
+
+#: xml/keywords.xml:5983(token)
+msgid "TRANSLATION"
+msgstr ""
+
+#: xml/keywords.xml:5992(token)
+msgid "TREAT"
+msgstr ""
+
+#: xml/keywords.xml:6001(token)
+msgid "TRIGGER"
+msgstr ""
+
+#: xml/keywords.xml:6010(token)
+msgid "TRIGGER_CATALOG"
+msgstr ""
+
+#: xml/keywords.xml:6019(token)
+msgid "TRIGGER_NAME"
+msgstr ""
+
+#: xml/keywords.xml:6028(token)
+msgid "TRIGGER_SCHEMA"
+msgstr ""
+
+#: xml/keywords.xml:6037(token)
+msgid "TRIM"
+msgstr ""
+
+#: xml/keywords.xml:6046(token)
+msgid "TRIM_ARRAY"
+msgstr ""
+
+#: xml/keywords.xml:6055(token)
+msgid "TRUE"
+msgstr ""
+
+#: xml/keywords.xml:6064(token)
+msgid "TRUNCATE"
+msgstr ""
+
+#: xml/keywords.xml:6073(token)
+msgid "TRUSTED"
+msgstr ""
+
+#: xml/keywords.xml:6082(token)
+msgid "TYPE"
+msgstr ""
+
+#: xml/keywords.xml:6091(token)
+msgid "TYPES"
+msgstr ""
+
+#: xml/keywords.xml:6100(token)
+msgid "UESCAPE"
+msgstr ""
+
+#: xml/keywords.xml:6109(token)
+msgid "UNBOUNDED"
+msgstr ""
+
+#: xml/keywords.xml:6118(token)
+msgid "UNCOMMITTED"
+msgstr ""
+
+#: xml/keywords.xml:6127(token)
+msgid "UNDER"
+msgstr ""
+
+#: xml/keywords.xml:6136(token)
+msgid "UNENCRYPTED"
+msgstr ""
+
+#: xml/keywords.xml:6145(token)
+msgid "UNION"
+msgstr ""
+
+#: xml/keywords.xml:6154(token)
+msgid "UNIQUE"
+msgstr ""
+
+#: xml/keywords.xml:6163(token)
+msgid "UNKNOWN"
+msgstr ""
+
+#: xml/keywords.xml:6172(token)
+msgid "UNLINK"
+msgstr ""
+
+#: xml/keywords.xml:6181(token)
+msgid "UNLISTEN"
+msgstr ""
+
+#: xml/keywords.xml:6190(token)
+msgid "UNLOGGED"
+msgstr ""
+
+#: xml/keywords.xml:6199(token)
+msgid "UNNAMED"
+msgstr ""
+
+#: xml/keywords.xml:6208(token)
+msgid "UNNEST"
+msgstr ""
+
+#: xml/keywords.xml:6217(token)
+msgid "UNTIL"
+msgstr ""
+
+#: xml/keywords.xml:6226(token)
+msgid "UNTYPED"
+msgstr ""
+
+#: xml/keywords.xml:6235(token)
+msgid "UPDATE"
+msgstr ""
+
+#: xml/keywords.xml:6244(token)
+msgid "UPPER"
+msgstr ""
+
+#: xml/keywords.xml:6253(token)
+msgid "URI"
+msgstr ""
+
+#: xml/keywords.xml:6262(token)
+msgid "USAGE"
+msgstr ""
+
+#: xml/keywords.xml:6271(token)
+msgid "USER"
+msgstr ""
+
+#: xml/keywords.xml:6280(token)
+msgid "USER_DEFINED_TYPE_CATALOG"
+msgstr ""
+
+#: xml/keywords.xml:6289(token)
+msgid "USER_DEFINED_TYPE_CODE"
+msgstr ""
+
+#: xml/keywords.xml:6298(token)
+msgid "USER_DEFINED_TYPE_NAME"
+msgstr ""
+
+#: xml/keywords.xml:6307(token)
+msgid "USER_DEFINED_TYPE_SCHEMA"
+msgstr ""
+
+#: xml/keywords.xml:6316(token)
+msgid "USING"
+msgstr ""
+
+#: xml/keywords.xml:6325(token)
+msgid "VACUUM"
+msgstr ""
+
+#: xml/keywords.xml:6334(token)
+msgid "VALID"
+msgstr ""
+
+#: xml/keywords.xml:6343(token)
+msgid "VALIDATE"
+msgstr ""
+
+#: xml/keywords.xml:6352(token)
+msgid "VALIDATOR"
+msgstr ""
+
+#: xml/keywords.xml:6361(token)
+msgid "VALUE"
+msgstr ""
+
+#: xml/keywords.xml:6370(token)
+msgid "VALUES"
+msgstr ""
+
+#: xml/keywords.xml:6379(token)
+msgid "VALUE_OF"
+msgstr ""
+
+#: xml/keywords.xml:6388(token)
+msgid "VARBINARY"
+msgstr ""
+
+#: xml/keywords.xml:6397(token)
+msgid "VARCHAR"
+msgstr ""
+
+#: xml/keywords.xml:6406(token)
+msgid "VARIADIC"
+msgstr ""
+
+#: xml/keywords.xml:6415(token)
+msgid "VARYING"
+msgstr ""
+
+#: xml/keywords.xml:6424(token)
+msgid "VAR_POP"
+msgstr ""
+
+#: xml/keywords.xml:6433(token)
+msgid "VAR_SAMP"
+msgstr ""
+
+#: xml/keywords.xml:6442(token)
+msgid "VERBOSE"
+msgstr ""
+
+#: xml/keywords.xml:6451(token)
+msgid "VERSION"
+msgstr ""
+
+#: xml/keywords.xml:6460(token)
+msgid "VERSIONING"
+msgstr ""
+
+#: xml/keywords.xml:6469(token)
+msgid "VIEW"
+msgstr ""
+
+#: xml/keywords.xml:6478(token)
+msgid "VIEWS"
+msgstr ""
+
+#: xml/keywords.xml:6487(token)
+msgid "VOLATILE"
+msgstr ""
+
+#: xml/keywords.xml:6496(token)
+msgid "WHEN"
+msgstr ""
+
+#: xml/keywords.xml:6505(token)
+msgid "WHENEVER"
+msgstr ""
+
+#: xml/keywords.xml:6514(token)
+msgid "WHERE"
+msgstr ""
+
+#: xml/keywords.xml:6523(token)
+msgid "WHITESPACE"
+msgstr ""
+
+#: xml/keywords.xml:6532(token)
+msgid "WIDTH_BUCKET"
+msgstr ""
+
+#: xml/keywords.xml:6541(token)
+msgid "WINDOW"
+msgstr ""
+
+#: xml/keywords.xml:6550(token)
+msgid "WITH"
+msgstr ""
+
+#: xml/keywords.xml:6559(token)
+msgid "WITHIN"
+msgstr ""
+
+#: xml/keywords.xml:6568(token)
+msgid "WITHOUT"
+msgstr ""
+
+#: xml/keywords.xml:6577(token)
+msgid "WORK"
+msgstr ""
+
+#: xml/keywords.xml:6586(token)
+msgid "WRAPPER"
+msgstr ""
+
+#: xml/keywords.xml:6595(token)
+msgid "WRITE"
+msgstr ""
+
+#: xml/keywords.xml:6604(token)
+msgid "XML"
+msgstr ""
+
+#: xml/keywords.xml:6613(token)
+msgid "XMLAGG"
+msgstr ""
+
+#: xml/keywords.xml:6622(token)
+msgid "XMLATTRIBUTES"
+msgstr ""
+
+#: xml/keywords.xml:6631(token)
+msgid "XMLBINARY"
+msgstr ""
+
+#: xml/keywords.xml:6640(token)
+msgid "XMLCAST"
+msgstr ""
+
+#: xml/keywords.xml:6649(token)
+msgid "XMLCOMMENT"
+msgstr ""
+
+#: xml/keywords.xml:6658(token)
+msgid "XMLCONCAT"
+msgstr ""
+
+#: xml/keywords.xml:6667(token)
+msgid "XMLDECLARATION"
+msgstr ""
+
+#: xml/keywords.xml:6676(token)
+msgid "XMLDOCUMENT"
+msgstr ""
+
+#: xml/keywords.xml:6685(token)
+msgid "XMLELEMENT"
+msgstr ""
+
+#: xml/keywords.xml:6694(token)
+msgid "XMLEXISTS"
+msgstr ""
+
+#: xml/keywords.xml:6703(token)
+msgid "XMLFOREST"
+msgstr ""
+
+#: xml/keywords.xml:6712(token)
+msgid "XMLITERATE"
+msgstr ""
+
+#: xml/keywords.xml:6721(token)
+msgid "XMLNAMESPACES"
+msgstr ""
+
+#: xml/keywords.xml:6730(token)
+msgid "XMLPARSE"
+msgstr ""
+
+#: xml/keywords.xml:6739(token)
+msgid "XMLPI"
+msgstr ""
+
+#: xml/keywords.xml:6748(token)
+msgid "XMLQUERY"
+msgstr ""
+
+#: xml/keywords.xml:6757(token)
+msgid "XMLROOT"
+msgstr ""
+
+#: xml/keywords.xml:6766(token)
+msgid "XMLSCHEMA"
+msgstr ""
+
+#: xml/keywords.xml:6775(token)
+msgid "XMLSERIALIZE"
+msgstr ""
+
+#: xml/keywords.xml:6784(token)
+msgid "XMLTABLE"
+msgstr ""
+
+#: xml/keywords.xml:6793(token)
+msgid "XMLTEXT"
+msgstr ""
+
+#: xml/keywords.xml:6802(token)
+msgid "XMLVALIDATE"
+msgstr ""
+
+#: xml/keywords.xml:6811(token)
+msgid "YEAR"
+msgstr ""
+
+#: xml/keywords.xml:6820(token)
+msgid "YES"
+msgstr ""
+
+#: xml/keywords.xml:6829(token)
+msgid "ZONE"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/keywords.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

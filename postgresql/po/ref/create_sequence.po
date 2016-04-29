@@ -1,0 +1,267 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/create_sequence.xml:4(primary) xml/ref/create_sequence.xml:7(refentrytitle) xml/ref/create_sequence.xml:12(refname)
+msgid "CREATE SEQUENCE"
+msgstr ""
+
+#: xml/ref/create_sequence.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/create_sequence.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/create_sequence.xml:13(refpurpose)
+msgid "define a new sequence generator"
+msgstr ""
+
+#: xml/ref/create_sequence.xml:18(replaceable) xml/ref/create_sequence.xml:95(replaceable)
+msgid "name"
+msgstr ""
+
+#: xml/ref/create_sequence.xml:20(replaceable) xml/ref/create_sequence.xml:104(replaceable)
+msgid "increment"
+msgstr ""
+
+#: xml/ref/create_sequence.xml:22(replaceable) xml/ref/create_sequence.xml:119(replaceable)
+msgid "minvalue"
+msgstr ""
+
+#: xml/ref/create_sequence.xml:24(replaceable) xml/ref/create_sequence.xml:139(replaceable)
+msgid "maxvalue"
+msgstr ""
+
+#: xml/ref/create_sequence.xml:26(replaceable) xml/ref/create_sequence.xml:159(replaceable)
+msgid "start"
+msgstr ""
+
+#: xml/ref/create_sequence.xml:27(replaceable) xml/ref/create_sequence.xml:175(replaceable)
+msgid "cache"
+msgstr ""
+
+#: xml/ref/create_sequence.xml:29(replaceable)
+msgid "table_name"
+msgstr ""
+
+#: xml/ref/create_sequence.xml:30(replaceable)
+msgid "column_name"
+msgstr ""
+
+#: xml/ref/create_sequence.xml:16(synopsis)
+#, no-wrap
+msgid "CREATE [ TEMPORARY | TEMP ] SEQUENCE [ IF NOT EXISTS\n    ] \n    <placeholder-1/>[ INCREMENT [\n    BY ] \n    <placeholder-2/>] [\n    MINVALUE \n    <placeholder-3/>| NO\n    MINVALUE ] [ MAXVALUE \n    <placeholder-4/>| NO\n    MAXVALUE ] [ START [ WITH ] \n    <placeholder-5/>] [ CACHE \n    <placeholder-6/>] [ [ NO ]\n    CYCLE ] [ OWNED BY { \n    <placeholder-7/>. \n    <placeholder-8/>| NONE\n    } ]"
+msgstr ""
+
+#: xml/ref/create_sequence.xml:34(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/create_sequence.xml:35(para)
+msgid "<command>CREATE SEQUENCE</command>creates a new sequence number generator. This involves creating and initializing a new special single-row table with the name <replaceable class=\"parameter\">name</replaceable>. The generator will be owned by the user issuing the command."
+msgstr ""
+
+#: xml/ref/create_sequence.xml:41(para)
+msgid "If a schema name is given then the sequence is created in the specified schema. Otherwise it is created in the current schema. Temporary sequences exist in a special schema, so a schema name cannot be given when creating a temporary sequence. The sequence name must be distinct from the name of any other sequence, table, index, view, or foreign table in the same schema."
+msgstr ""
+
+#: xml/ref/create_sequence.xml:48(para)
+msgid "After a sequence is created, you use the functions <function>nextval</function>, <function>currval</function>, and <function>setval</function>to operate on the sequence. These functions are documented in <xref linkend=\"functions-sequence\">.</xref>"
+msgstr ""
+
+#: xml/ref/create_sequence.xml:56(programlisting)
+#, no-wrap
+msgid "SELECT * FROM \n    <replaceable>name</replaceable>;"
+msgstr ""
+
+#: xml/ref/create_sequence.xml:54(para)
+msgid "Although you cannot update a sequence directly, you can use a query like: <placeholder-1/>to examine the parameters and current state of a sequence. In particular, the <literal>last_value</literal>field of the sequence shows the last value allocated by any session. (Of course, this value might be obsolete by the time it's printed, if other sessions are actively doing <function>nextval</function>calls.)"
+msgstr ""
+
+#: xml/ref/create_sequence.xml:66(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/create_sequence.xml:69(term)
+msgid "<literal>TEMPORARY</literal>or <literal>TEMP</literal>"
+msgstr ""
+
+#: xml/ref/create_sequence.xml:73(para)
+msgid "If specified, the sequence object is created only for this session, and is automatically dropped on session exit. Existing permanent sequences with the same name are not visible (in this session) while the temporary sequence exists, unless they are referenced with schema-qualified names."
+msgstr ""
+
+#: xml/ref/create_sequence.xml:83(literal)
+msgid "IF NOT EXISTS"
+msgstr ""
+
+#: xml/ref/create_sequence.xml:86(para)
+msgid "Do not throw an error if a relation with the same name already exists. A notice is issued in this case. Note that there is no guarantee that the existing relation is anything like the sequence that would have been created - it might not even be a sequence."
+msgstr ""
+
+#: xml/ref/create_sequence.xml:98(para)
+msgid "The name (optionally schema-qualified) of the sequence to be created."
+msgstr ""
+
+#: xml/ref/create_sequence.xml:107(para)
+msgid "The optional clause <literal>INCREMENT BY <replaceable class=\"parameter\"> increment</replaceable></literal>specifies which value is added to the current sequence value to create a new value. A positive value will make an ascending sequence, a negative one a descending sequence. The default value is 1."
+msgstr ""
+
+#: xml/ref/create_sequence.xml:122(literal)
+msgid "NO MINVALUE"
+msgstr ""
+
+#: xml/ref/create_sequence.xml:125(para)
+msgid "The optional clause <literal>MINVALUE <replaceable class=\"parameter\"> minvalue</replaceable></literal>determines the minimum value a sequence can generate. If this clause is not supplied or <option>NO MINVALUE</option>is specified, then defaults will be used. The defaults are 1 and -2 <superscript>63</superscript>-1 for ascending and descending sequences, respectively."
+msgstr ""
+
+#: xml/ref/create_sequence.xml:142(literal)
+msgid "NO MAXVALUE"
+msgstr ""
+
+#: xml/ref/create_sequence.xml:145(para)
+msgid "The optional clause <literal>MAXVALUE <replaceable class=\"parameter\"> maxvalue</replaceable></literal>determines the maximum value for the sequence. If this clause is not supplied or <option>NO MAXVALUE</option>is specified, then default values will be used. The defaults are 2 <superscript>63</superscript>-1 and -1 for ascending and descending sequences, respectively."
+msgstr ""
+
+#: xml/ref/create_sequence.xml:162(para)
+msgid "The optional clause <literal>START WITH <replaceable class=\"parameter\"> start</replaceable></literal>allows the sequence to begin anywhere. The default starting value is <replaceable class=\"parameter\">minvalue</replaceable>for ascending sequences and <replaceable class=\"parameter\">maxvalue</replaceable>for descending ones."
+msgstr ""
+
+#: xml/ref/create_sequence.xml:178(para)
+msgid "The optional clause <literal>CACHE <replaceable class=\"parameter\"> cache</replaceable></literal>specifies how many sequence numbers are to be preallocated and stored in memory for faster access. The minimum value is 1 (only one value can be generated at a time, i.e., no cache), and this is also the default."
+msgstr ""
+
+#: xml/ref/create_sequence.xml:190(literal)
+msgid "CYCLE"
+msgstr ""
+
+#: xml/ref/create_sequence.xml:193(literal)
+msgid "NO CYCLE"
+msgstr ""
+
+#: xml/ref/create_sequence.xml:196(para)
+msgid "The <literal>CYCLE</literal>option allows the sequence to wrap around when the <replaceable class=\"parameter\">maxvalue</replaceable>or <replaceable class=\"parameter\">minvalue</replaceable>has been reached by an ascending or descending sequence respectively. If the limit is reached, the next number generated will be the <replaceable class=\"parameter\">minvalue</replaceable>or <replaceable class=\"parameter\">maxvalue</replaceable>, respectively."
+msgstr ""
+
+#: xml/ref/create_sequence.xml:207(para)
+msgid "If <literal>NO CYCLE</literal>is specified, any calls to <function>nextval</function>after the sequence has reached its maximum value will return an error. If neither <literal>CYCLE</literal>or <literal>NO CYCLE</literal>are specified, <literal>NO CYCLE</literal>is the default."
+msgstr ""
+
+#: xml/ref/create_sequence.xml:218(term)
+msgid "<literal>OWNED BY</literal><replaceable class=\"parameter\">table_name</replaceable>. <replaceable class=\"parameter\"> column_name</replaceable>"
+msgstr ""
+
+#: xml/ref/create_sequence.xml:224(literal)
+msgid "OWNED BY NONE"
+msgstr ""
+
+#: xml/ref/create_sequence.xml:227(para)
+msgid "The <literal>OWNED BY</literal>option causes the sequence to be associated with a specific table column, such that if that column (or its whole table) is dropped, the sequence will be automatically dropped as well. The specified table must have the same owner and be in the same schema as the sequence. <literal>OWNED BY NONE</literal>, the default, specifies that there is no such association."
+msgstr ""
+
+#: xml/ref/create_sequence.xml:241(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/create_sequence.xml:242(para)
+msgid "Use <command>DROP SEQUENCE</command>to remove a sequence."
+msgstr ""
+
+#: xml/ref/create_sequence.xml:244(para)
+msgid "Sequences are based on <type>bigint</type>arithmetic, so the range cannot exceed the range of an eight-byte integer (-9223372036854775808 to 9223372036854775807)."
+msgstr ""
+
+#: xml/ref/create_sequence.xml:248(para)
+msgid "Unexpected results might be obtained if a <replaceable class=\"parameter\">cache</replaceable>setting greater than one is used for a sequence object that will be used concurrently by multiple sessions. Each session will allocate and cache successive sequence values during one access to the sequence object and increase the sequence object's <literal>last_value</literal>accordingly. Then, the next <replaceable class=\"parameter\">cache</replaceable>-1 uses of <function>nextval</function>within that session simply return the preallocated values without touching the sequence object. So, any numbers allocated but not used within a session will be lost when that session ends, resulting in <quote>holes</quote>in the sequence."
+msgstr ""
+
+#: xml/ref/create_sequence.xml:261(para)
+msgid "Furthermore, although multiple sessions are guaranteed to allocate distinct sequence values, the values might be generated out of sequence when all the sessions are considered. For example, with a <replaceable class=\"parameter\">cache</replaceable>setting of 10, session A might reserve values 1..10 and return <function>nextval</function>=1, then session B might reserve values 11..20 and return <function>nextval</function>=11 before session A has generated <literal>nextval</literal>=2. Thus, with a <replaceable class=\"parameter\">cache</replaceable>setting of one it is safe to assume that <function>nextval</function>values are generated sequentially; with a <replaceable class=\"parameter\">cache</replaceable>setting greater than one you should only assume that the <function>nextval</function>values are all distinct, not that they are generated purely sequentially. Also, <literal>last_value</literal>will reflect the latest value reserved by any session, whether or not it has yet been returned by <function>nextval</function>."
+msgstr ""
+
+#: xml/ref/create_sequence.xml:283(para)
+msgid "Another consideration is that a <function>setval</function>executed on such a sequence will not be noticed by other sessions until they have used up any preallocated values they have cached."
+msgstr ""
+
+#: xml/ref/create_sequence.xml:289(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/create_sequence.xml:292(programlisting)
+#, no-wrap
+msgid "CREATE SEQUENCE serial START\n    101;"
+msgstr ""
+
+#: xml/ref/create_sequence.xml:290(para)
+msgid "Create an ascending sequence called <literal>serial</literal>, starting at 101: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_sequence.xml:295(programlisting)
+#, no-wrap
+msgid "SELECT nextval('serial'); nextval ---------\n    101"
+msgstr ""
+
+#: xml/ref/create_sequence.xml:294(para) xml/ref/create_sequence.xml:297(para)
+msgid "Select the next number from this sequence: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_sequence.xml:298(programlisting)
+#, no-wrap
+msgid "SELECT nextval('serial'); nextval ---------\n    102"
+msgstr ""
+
+#: xml/ref/create_sequence.xml:302(programlisting)
+#, no-wrap
+msgid "INSERT INTO distributors VALUES\n    (nextval('serial'), 'nothing');"
+msgstr ""
+
+#: xml/ref/create_sequence.xml:300(para)
+msgid "Use this sequence in an <command>INSERT</command>command: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_sequence.xml:306(programlisting)
+#, no-wrap
+msgid "BEGIN; COPY distributors FROM 'input_file';\n    SELECT setval('serial', max(id)) FROM distributors;\n    END;"
+msgstr ""
+
+#: xml/ref/create_sequence.xml:304(para)
+msgid "Update the sequence value after a <command>COPY FROM</command>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_sequence.xml:311(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/create_sequence.xml:317(para)
+msgid "The standard's <literal>AS data type</literal>expression is not supported."
+msgstr ""
+
+#: xml/ref/create_sequence.xml:322(para)
+msgid "Obtaining the next value is done using the <function>nextval()</function>function instead of the standard's <command>NEXT VALUE FOR</command>expression."
+msgstr ""
+
+#: xml/ref/create_sequence.xml:328(para)
+msgid "The <literal>OWNED BY</literal>clause is a <productname>PostgreSQL</productname>extension."
+msgstr ""
+
+#: xml/ref/create_sequence.xml:312(para)
+msgid "<command>CREATE SEQUENCE</command>conforms to the <acronym>SQL</acronym>standard, with the following exceptions: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_sequence.xml:335(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/create_sequence.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

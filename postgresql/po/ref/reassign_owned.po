@@ -1,0 +1,101 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/reassign_owned.xml:4(primary) xml/ref/reassign_owned.xml:7(refentrytitle) xml/ref/reassign_owned.xml:12(refname)
+msgid "REASSIGN OWNED"
+msgstr ""
+
+#: xml/ref/reassign_owned.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/reassign_owned.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/reassign_owned.xml:13(refpurpose)
+msgid "change the ownership of database objects owned by a database role"
+msgstr ""
+
+#: xml/ref/reassign_owned.xml:18(replaceable) xml/ref/reassign_owned.xml:36(replaceable)
+msgid "old_role"
+msgstr ""
+
+#: xml/ref/reassign_owned.xml:20(replaceable) xml/ref/reassign_owned.xml:49(replaceable)
+msgid "new_role"
+msgstr ""
+
+#: xml/ref/reassign_owned.xml:17(synopsis)
+#, no-wrap
+msgid "REASSIGN OWNED BY { \n    <placeholder-1/>|\n    CURRENT_USER | SESSION_USER } [, ...] TO { \n    <placeholder-2/>|\n    CURRENT_USER | SESSION_USER }"
+msgstr ""
+
+#: xml/ref/reassign_owned.xml:24(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/reassign_owned.xml:25(para)
+msgid "<command>REASSIGN OWNED</command>instructs the system to change the ownership of database objects owned by any of the <replaceable class=\"PARAMETER\">old_roles</replaceable>to <replaceable class=\"PARAMETER\">new_role</replaceable>."
+msgstr ""
+
+#: xml/ref/reassign_owned.xml:32(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/reassign_owned.xml:39(para)
+msgid "The name of a role. The ownership of all the objects within the current database, and of all shared objects (databases, tablespaces), owned by this role will be reassigned to <replaceable class=\"PARAMETER\"> new_role</replaceable>."
+msgstr ""
+
+#: xml/ref/reassign_owned.xml:52(para)
+msgid "The name of the role that will be made the new owner of the affected objects."
+msgstr ""
+
+#: xml/ref/reassign_owned.xml:59(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/reassign_owned.xml:60(para)
+msgid "<command>REASSIGN OWNED</command>is often used to prepare for the removal of one or more roles. Because <command>REASSIGN OWNED</command>does not affect objects within other databases, it is usually necessary to execute this command in each database that contains objects owned by a role that is to be removed."
+msgstr ""
+
+#: xml/ref/reassign_owned.xml:67(para)
+msgid "<command>REASSIGN OWNED</command>requires privileges on both the source role(s) and the target role."
+msgstr ""
+
+#: xml/ref/reassign_owned.xml:70(para)
+msgid "The <xref linkend=\"sql-drop-owned\">command is an alternative that simply drops all the database objects owned by one or more roles.</xref>"
+msgstr ""
+
+#: xml/ref/reassign_owned.xml:74(para)
+msgid "The <command>REASSIGN OWNED</command>command does not affect any privileges granted to the <replaceable class=\"PARAMETER\">old_roles</replaceable>for objects that are not owned by them. Use <command>DROP OWNED</command>to revoke such privileges."
+msgstr ""
+
+#: xml/ref/reassign_owned.xml:80(para)
+msgid "See <xref linkend=\"role-removal\">for more discussion.</xref>"
+msgstr ""
+
+#: xml/ref/reassign_owned.xml:84(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/reassign_owned.xml:85(para)
+msgid "The <command>REASSIGN OWNED</command>command is a <productname>PostgreSQL</productname>extension."
+msgstr ""
+
+#: xml/ref/reassign_owned.xml:90(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/reassign_owned.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

@@ -1,0 +1,98 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/rollback.xml:4(primary) xml/ref/rollback.xml:7(refentrytitle) xml/ref/rollback.xml:12(refname)
+msgid "ROLLBACK"
+msgstr ""
+
+#: xml/ref/rollback.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/rollback.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/rollback.xml:13(refpurpose)
+msgid "abort the current transaction"
+msgstr ""
+
+#: xml/ref/rollback.xml:16(synopsis)
+#, no-wrap
+msgid "ROLLBACK [ WORK | TRANSACTION ]"
+msgstr ""
+
+#: xml/ref/rollback.xml:19(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/rollback.xml:20(para)
+msgid "<command>ROLLBACK</command>rolls back the current transaction and causes all the updates made by the transaction to be discarded."
+msgstr ""
+
+#: xml/ref/rollback.xml:26(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/rollback.xml:30(literal)
+msgid "WORK"
+msgstr ""
+
+#: xml/ref/rollback.xml:33(literal)
+msgid "TRANSACTION"
+msgstr ""
+
+#: xml/ref/rollback.xml:36(para)
+msgid "Optional key words. They have no effect."
+msgstr ""
+
+#: xml/ref/rollback.xml:42(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/rollback.xml:43(para)
+msgid "Use <xref linkend=\"SQL-COMMIT\">to successfully terminate a transaction.</xref>"
+msgstr ""
+
+#: xml/ref/rollback.xml:46(para)
+msgid "Issuing <command>ROLLBACK</command>outside of a transaction block emits a warning and otherwise has no effect."
+msgstr ""
+
+#: xml/ref/rollback.xml:51(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/rollback.xml:53(programlisting)
+#, no-wrap
+msgid "ROLLBACK;"
+msgstr ""
+
+#: xml/ref/rollback.xml:52(para)
+msgid "To abort all changes: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/rollback.xml:56(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/rollback.xml:57(para)
+msgid "The SQL standard only specifies the two forms <literal>ROLLBACK</literal>and <literal>ROLLBACK WORK</literal>. Otherwise, this command is fully conforming."
+msgstr ""
+
+#: xml/ref/rollback.xml:63(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/rollback.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

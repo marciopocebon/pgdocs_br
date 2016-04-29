@@ -1,0 +1,1281 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/release-9.5.xml:3(title)
+msgid "Release 9.5"
+msgstr ""
+
+#: xml/release-9.5.xml:5(title)
+msgid "Release Date"
+msgstr ""
+
+#: xml/release-9.5.xml:6(simpara)
+msgid "2016-01-07"
+msgstr ""
+
+#: xml/release-9.5.xml:9(title)
+msgid "Overview"
+msgstr ""
+
+#: xml/release-9.5.xml:10(para)
+msgid "Major enhancements in <productname>PostgreSQL</productname>9.5 include:"
+msgstr ""
+
+#: xml/release-9.5.xml:14(para)
+msgid "Allow <link linkend=\"sql-on-conflict\"><command>INSERT</command></link>s that would generate constraint conflicts to be turned into <command>UPDATE</command>s or ignored"
+msgstr ""
+
+#: xml/release-9.5.xml:22(para)
+msgid "Add <literal>GROUP BY</literal>analysis features <link linkend=\"queries-grouping-sets\"><literal>GROUPING SETS</literal></link>, <link linkend=\"queries-grouping-sets\"><literal>CUBE</literal></link>and <link linkend=\"queries-grouping-sets\"><literal>ROLLUP</literal></link>"
+msgstr ""
+
+#: xml/release-9.5.xml:35(para)
+msgid "Add <link linkend=\"ddl-rowsecurity\">row-level security control</link>"
+msgstr ""
+
+#: xml/release-9.5.xml:40(para)
+msgid "Create mechanisms for tracking the <link linkend=\"replication-origins\">progress of replication</link>, including methods for identifying the origin of individual changes during logical replication"
+msgstr ""
+
+#: xml/release-9.5.xml:47(para)
+msgid "Add <link linkend=\"BRIN\">Block Range Indexes</link>( <acronym>BRIN</acronym>)"
+msgstr ""
+
+#: xml/release-9.5.xml:52(para)
+msgid "Substantial performance improvements for sorting"
+msgstr ""
+
+#: xml/release-9.5.xml:56(para)
+msgid "Substantial performance improvements for multi-CPU machines"
+msgstr ""
+
+#: xml/release-9.5.xml:60(para)
+msgid "The above items are explained in more detail in the sections below."
+msgstr ""
+
+#: xml/release-9.5.xml:64(title)
+msgid "Migration to Version 9.5"
+msgstr ""
+
+#: xml/release-9.5.xml:65(para)
+msgid "A dump/restore using <xref linkend=\"app-pg-dumpall\">, or use of <xref linkend=\"pgupgrade\">, is required for those wishing to migrate data from any previous release.</xref></xref>"
+msgstr ""
+
+#: xml/release-9.5.xml:69(para)
+msgid "Version 9.5 contains a number of changes that may affect compatibility with previous releases. Observe the following incompatibilities:"
+msgstr ""
+
+#: xml/release-9.5.xml:74(para)
+msgid "Adjust <link linkend=\"sql-precedence\">operator precedence</link>to match the <acronym>SQL</acronym>standard (Tom Lane)"
+msgstr ""
+
+#: xml/release-9.5.xml:78(para)
+msgid "The precedence of <literal>=</literal>, <literal>=</literal>and <literal/>has been reduced to match that of <literal/>, <literal/>and <literal>=</literal>. The precedence of <literal>IS</literal>tests (e.g., <replaceable>x</replaceable><literal>IS NULL</literal>) has been reduced to be just below these six comparison operators. Also, multi-keyword operators beginning with <literal>NOT</literal>now have the precedence of their base operator (for example, <literal>NOT BETWEEN</literal>now has the same precedence as <literal>BETWEEN</literal>) whereas before they had inconsistent precedence, behaving like <literal>NOT</literal>with respect to their left operand but like their base operator with respect to their right operand. The new configuration parameter <xref linkend=\"guc-operator-precedence-warning\">can be enabled to warn about queries in which these precedence changes result in different parsing choices.</xref>"
+msgstr ""
+
+#: xml/release-9.5.xml:104(para)
+msgid "Change <xref linkend=\"app-pg-ctl\">'s default shutdown mode from <literal>smart</literal>to <literal>fast</literal>(Bruce Momjian)</xref>"
+msgstr ""
+
+#: xml/release-9.5.xml:108(para)
+msgid "This means the default behavior will be to forcibly cancel existing database sessions, not simply wait for them to exit."
+msgstr ""
+
+#: xml/release-9.5.xml:113(para)
+msgid "Use assignment cast behavior for data type conversions in <application>PL/pgSQL</application>assignments, rather than converting to and from text (Tom Lane)"
+msgstr ""
+
+#: xml/release-9.5.xml:117(para)
+msgid "This change causes conversions of Booleans to strings to produce <literal>true</literal>or <literal>false</literal>, not <literal>t</literal>or <literal>f</literal>. Other type conversions may succeed in more cases than before; for example, assigning a numeric value <literal>3.9</literal>to an integer variable will now assign 4 rather than failing. If no assignment-grade cast is defined for the particular source and destination types, <application>PL/pgSQL</application>will fall back to its old I/O conversion behavior."
+msgstr ""
+
+#: xml/release-9.5.xml:133(para)
+msgid "Allow characters in <link linkend=\"libpq-connect-options\">server command-line options</link>to be escaped with a backslash (Andres Freund)"
+msgstr ""
+
+#: xml/release-9.5.xml:137(para)
+msgid "Formerly, spaces in the options string always separated options, so there was no way to include a space in an option value. Including a backslash in an option value now requires writing <literal>\\\\</literal>."
+msgstr ""
+
+#: xml/release-9.5.xml:144(para)
+msgid "Change the default value of the GSSAPI <link linkend=\"gssapi-auth\"><varname>include_realm</varname></link>parameter to 1, so that by default the realm is not removed from a <acronym>GSS</acronym>or <acronym>SSPI</acronym>principal name (Stephen Frost)"
+msgstr ""
+
+#: xml/release-9.5.xml:154(para) xml/release-9.5.xml:478(para)
+msgid "Replace configuration parameter <varname>checkpoint_segments</varname>with <xref linkend=\"guc-min-wal-size\">and <xref linkend=\"guc-max-wal-size\">(Heikki Linnakangas)</xref></xref>"
+msgstr ""
+
+#: xml/release-9.5.xml:162(programlisting)
+#, no-wrap
+msgid "max_wal_size = (3 * checkpoint_segments) *\n        16MB"
+msgstr ""
+
+#: xml/release-9.5.xml:159(para)
+msgid "If you previously adjusted <varname>checkpoint_segments</varname>, the following formula will give you an approximately equivalent setting: <placeholder-1/>Note that the default setting for <varname>max_wal_size</varname>is much higher than the default <varname>checkpoint_segments</varname>used to be, so adjusting it might no longer be necessary."
+msgstr ""
+
+#: xml/release-9.5.xml:170(para)
+msgid "Control the Linux <acronym>OOM</acronym>killer via new environment variables <link linkend=\"linux-memory-overcommit\"><envar>PG_OOM_ADJUST_FILE</envar></link>and <link linkend=\"linux-memory-overcommit\"><envar>PG_OOM_ADJUST_VALUE</envar></link>, instead of compile-time options <literal>LINUX_OOM_SCORE_ADJ</literal>and <literal>LINUX_OOM_ADJ</literal>(Gurjeet Singh)"
+msgstr ""
+
+#: xml/release-9.5.xml:182(para)
+msgid "Decommission server configuration parameter <varname>ssl_renegotiation_limit</varname>, which was deprecated in earlier releases (Andres Freund)"
+msgstr ""
+
+#: xml/release-9.5.xml:185(para)
+msgid "While SSL renegotiation is a good idea in theory, it has caused enough bugs to be considered a net negative in practice, and it is due to be removed from future versions of the relevant standards. We have therefore removed support for it from <productname>PostgreSQL</productname>. The <varname>ssl_renegotiation_limit</varname>parameter still exists, but cannot be set to anything but zero (disabled). It's not documented anymore, either."
+msgstr ""
+
+#: xml/release-9.5.xml:196(para)
+msgid "Remove server configuration parameter <varname>autocommit</varname>, which was already deprecated and non-operational (Tom Lane)"
+msgstr ""
+
+#: xml/release-9.5.xml:201(para)
+msgid "Remove the <link linkend=\"catalog-pg-authid\"><structname>pg_authid</structname></link>catalog's <structfield>rolcatupdate</structfield>field, as it had no usefulness (Adam Brightwell)"
+msgstr ""
+
+#: xml/release-9.5.xml:209(para)
+msgid "The <link linkend=\"monitoring-stats-views-table\"><structname>pg_stat_replication</structname></link>system view's <structfield>sent</structfield>field is now NULL, not zero, when it has no valid value (Magnus Hagander)"
+msgstr ""
+
+#: xml/release-9.5.xml:217(para)
+msgid "Allow <type>json</type>and <type>jsonb</type>array extraction operators to accept negative subscripts, which count from the end of JSON arrays (Peter Geoghegan, Andrew Dunstan)"
+msgstr ""
+
+#: xml/release-9.5.xml:222(para)
+msgid "Previously, these operators returned <literal>NULL</literal>for negative subscripts."
+msgstr ""
+
+#: xml/release-9.5.xml:228(title)
+msgid "Changes"
+msgstr ""
+
+#: xml/release-9.5.xml:229(para)
+msgid "Below you will find a detailed account of the changes between <productname>PostgreSQL</productname>9.5 and the previous major release."
+msgstr ""
+
+#: xml/release-9.5.xml:234(title)
+msgid "Server"
+msgstr ""
+
+#: xml/release-9.5.xml:236(title)
+msgid "Indexes"
+msgstr ""
+
+#: xml/release-9.5.xml:239(para)
+msgid "Add <link linkend=\"BRIN\">Block Range Indexes</link>( <acronym>BRIN</acronym>) (lvaro Herrera)"
+msgstr ""
+
+#: xml/release-9.5.xml:242(para)
+msgid "<acronym>BRIN</acronym>indexes store only summary data (such as minimum and maximum values) for ranges of heap blocks. They are therefore very compact and cheap to update; but if the data is naturally clustered, they can still provide substantial speedup of searches."
+msgstr ""
+
+#: xml/release-9.5.xml:251(para)
+msgid "Allow queries to perform accurate distance filtering of bounding-box-indexed objects (polygons, circles) using <link linkend=\"GiST\">GiST</link>indexes (Alexander Korotkov, Heikki Linnakangas)"
+msgstr ""
+
+#: xml/release-9.5.xml:256(para)
+msgid "Previously, to exploit such an index a subquery had to be used to select a large number of rows ordered by bounding-box distance, and the result then had to be filtered further with a more accurate distance calculation."
+msgstr ""
+
+#: xml/release-9.5.xml:263(para)
+msgid "Allow <link linkend=\"GiST\">GiST</link>indexes to perform index-only scans (Anastasia Lubennikova, Heikki Linnakangas, Andreas Karlsson)"
+msgstr ""
+
+#: xml/release-9.5.xml:269(para)
+msgid "Add configuration parameter <xref linkend=\"guc-gin-pending-list-limit\">to control the size of <acronym>GIN</acronym>pending lists (Fujii Masao)</xref>"
+msgstr ""
+
+#: xml/release-9.5.xml:274(para)
+msgid "This value can also be set on a per-index basis as an index storage parameter. Previously the pending-list size was controlled by <xref linkend=\"guc-work-mem\">, which was awkward because appropriate values for <varname>work_mem</varname>are often much too large for this purpose.</xref>"
+msgstr ""
+
+#: xml/release-9.5.xml:283(para)
+msgid "Issue a warning during the creation of <link linkend=\"indexes-types\">hash</link>indexes because they are not crash-safe (Bruce Momjian)"
+msgstr ""
+
+#: xml/release-9.5.xml:290(title)
+msgid "General Performance"
+msgstr ""
+
+#: xml/release-9.5.xml:293(para)
+msgid "Improve the speed of sorting of <type>varchar</type>, <type>text</type>, and <type>numeric</type>fields via <quote>abbreviated</quote>keys (Peter Geoghegan, Andrew Gierth, Robert Haas)"
+msgstr ""
+
+#: xml/release-9.5.xml:301(para)
+msgid "Extend the infrastructure that allows sorting to be performed by inlined, non- <acronym>SQL</acronym>-callable comparison functions to cover <command>CREATE INDEX</command>, <command>REINDEX</command>, and <command>CLUSTER</command>(Peter Geoghegan)"
+msgstr ""
+
+#: xml/release-9.5.xml:310(para)
+msgid "Improve performance of hash joins (Tomas Vondra, Robert Haas)"
+msgstr ""
+
+#: xml/release-9.5.xml:314(para)
+msgid "Improve concurrency of shared buffer replacement (Robert Haas, Amit Kapila, Andres Freund)"
+msgstr ""
+
+#: xml/release-9.5.xml:318(para)
+msgid "Reduce the number of page locks and pins during index scans (Kevin Grittner)"
+msgstr ""
+
+#: xml/release-9.5.xml:320(para)
+msgid "The primary benefit of this is to allow index vacuums to be blocked less often."
+msgstr ""
+
+#: xml/release-9.5.xml:324(para)
+msgid "Make per-backend tracking of buffer pins more memory-efficient (Andres Freund)"
+msgstr ""
+
+#: xml/release-9.5.xml:328(para)
+msgid "Improve lock scalability (Andres Freund)"
+msgstr ""
+
+#: xml/release-9.5.xml:329(para)
+msgid "This particularly addresses scalability problems when running on systems with multiple <acronym>CPU</acronym>sockets."
+msgstr ""
+
+#: xml/release-9.5.xml:334(para)
+msgid "Allow the optimizer to remove unnecessary references to left-joined subqueries (David Rowley)"
+msgstr ""
+
+#: xml/release-9.5.xml:339(para)
+msgid "Allow pushdown of query restrictions into subqueries with <link linkend=\"tutorial-window\">window functions</link>, where appropriate (David Rowley)"
+msgstr ""
+
+#: xml/release-9.5.xml:346(para)
+msgid "Allow a non-leakproof function to be pushed down into a security barrier view if the function does not receive any view output columns (Dean Rasheed)"
+msgstr ""
+
+#: xml/release-9.5.xml:351(para)
+msgid "Teach the planner to use statistics obtained from an expression index on a boolean-returning function, when a matching function call appears in <literal>WHERE</literal>(Tom Lane)"
+msgstr ""
+
+#: xml/release-9.5.xml:357(para)
+msgid "Make <command>ANALYZE</command>compute basic statistics (null fraction and average column width) even for columns whose data type lacks an equality function (Oleksandr Shulgin)"
+msgstr ""
+
+#: xml/release-9.5.xml:364(para)
+msgid "Speed up <acronym>CRC</acronym>(cyclic redundancy check) computations and switch to CRC-32C (Abhijit Menon-Sen, Heikki Linnakangas)"
+msgstr ""
+
+#: xml/release-9.5.xml:370(para)
+msgid "Improve bitmap index scan performance (Teodor Sigaev, Tom Lane)"
+msgstr ""
+
+#: xml/release-9.5.xml:374(para)
+msgid "Speed up <command>CREATE INDEX</command>by avoiding unnecessary memory copies (Robert Haas)"
+msgstr ""
+
+#: xml/release-9.5.xml:379(para)
+msgid "Increase the number of buffer mapping partitions (Amit Kapila, Andres Freund, Robert Haas)"
+msgstr ""
+
+#: xml/release-9.5.xml:381(para)
+msgid "This improves performance for highly concurrent workloads."
+msgstr ""
+
+#: xml/release-9.5.xml:387(title)
+msgid "Monitoring"
+msgstr ""
+
+#: xml/release-9.5.xml:390(para)
+msgid "Add per-table autovacuum logging control via new <varname>log_min_autovacuum_duration</varname>storage parameter (Michael Paquier)"
+msgstr ""
+
+#: xml/release-9.5.xml:395(para)
+msgid "Add new configuration parameter <xref linkend=\"guc-cluster-name\">(Thomas Munro)</xref>"
+msgstr ""
+
+#: xml/release-9.5.xml:398(para)
+msgid "This string, typically set in <link linkend=\"config-setting-configuration-file\"><filename>postgresql.conf</filename></link>, allows clients to identify the cluster. This name also appears in the process title of all server processes, allowing for easier identification of processes belonging to the same cluster."
+msgstr ""
+
+#: xml/release-9.5.xml:407(para)
+msgid "Prevent non-superusers from changing <xref linkend=\"guc-log-disconnections\">on connection startup (Fujii Masao)</xref>"
+msgstr ""
+
+#: xml/release-9.5.xml:415(acronym)
+msgid "SSL"
+msgstr ""
+
+#: xml/release-9.5.xml:419(para)
+msgid "Check <link linkend=\"libpq-ssl\"><quote>Subject Alternative Names</quote></link>in <acronym>SSL</acronym>server certificates, if present (Alexey Klyukin)"
+msgstr ""
+
+#: xml/release-9.5.xml:425(para)
+msgid "When they are present, this replaces checks against the certificate's <quote>Common Name</quote>."
+msgstr ""
+
+#: xml/release-9.5.xml:430(para)
+msgid "Add system view <link linkend=\"pg-stat-ssl-view\"><structname>pg_stat_ssl</structname></link>to report <acronym>SSL</acronym>connection information (Magnus Hagander)"
+msgstr ""
+
+#: xml/release-9.5.xml:438(para)
+msgid "Add <application>libpq</application>functions to return <acronym>SSL</acronym>information in an implementation-independent way (Heikki Linnakangas)"
+msgstr ""
+
+#: xml/release-9.5.xml:443(para)
+msgid "While <link linkend=\"libpq-pqgetssl\"><function>PQgetssl()</function></link>can still be used to call <productname>OpenSSL</productname>functions, it is now considered deprecated because future versions of <application>libpq</application>might support other <acronym>SSL</acronym>implementations. When possible, use the new functions <link linkend=\"libpq-pqsslattribute\"><function>PQsslAttribute()</function></link>, <link linkend=\"libpq-pqsslattributenames\"><function>PQsslAttributeNames()</function></link>, and <link linkend=\"libpq-pqsslinuse\"><function>PQsslInUse()</function></link>to obtain <acronym>SSL</acronym>information in an <acronym>SSL</acronym>-implementation-independent way."
+msgstr ""
+
+#: xml/release-9.5.xml:466(para)
+msgid "Make <application>libpq</application>honor any <productname>OpenSSL</productname>thread callbacks (Jan Urbanski)"
+msgstr ""
+
+#: xml/release-9.5.xml:470(para)
+msgid "Previously they were overwritten."
+msgstr ""
+
+#: xml/release-9.5.xml:475(title)
+msgid "Server Settings"
+msgstr ""
+
+#: xml/release-9.5.xml:483(para)
+msgid "This change allows the allocation of a large number of <acronym>WAL</acronym>files without keeping them after they are no longer needed. Therefore the default for <varname>max_wal_size</varname>has been set to <literal>1GB</literal>, much larger than the old default for <varname>checkpoint_segments</varname>. Also note that standby servers perform restartpoints to try to limit their WAL space consumption to <varname>max_wal_size</varname>; previously they did not pay any attention to <varname>checkpoint_segments</varname>."
+msgstr ""
+
+#: xml/release-9.5.xml:498(para)
+msgid "Control the Linux <acronym>OOM</acronym>killer via new environment variables <link linkend=\"linux-memory-overcommit\"><envar>PG_OOM_ADJUST_FILE</envar></link>and <link linkend=\"linux-memory-overcommit\"><envar>PG_OOM_ADJUST_VALUE</envar></link>(Gurjeet Singh)"
+msgstr ""
+
+#: xml/release-9.5.xml:507(para)
+msgid "The previous <acronym>OOM</acronym>control infrastructure involved compile-time options <literal>LINUX_OOM_SCORE_ADJ</literal>and <literal>LINUX_OOM_ADJ</literal>, which are no longer supported. The new behavior is available in all builds."
+msgstr ""
+
+#: xml/release-9.5.xml:516(para)
+msgid "Allow recording of transaction commit time stamps when configuration parameter <xref linkend=\"guc-track-commit-timestamp\">is enabled (lvaro Herrera, Petr Jelnek)</xref>"
+msgstr ""
+
+#: xml/release-9.5.xml:520(para)
+msgid "Time stamp information can be accessed using functions <link linkend=\"functions-commit-timestamp\"><function>pg_xact_commit_timestamp()</function></link>and <function>pg_last_committed_xact()</function>."
+msgstr ""
+
+#: xml/release-9.5.xml:528(para)
+msgid "Allow <xref linkend=\"guc-local-preload-libraries\">to be set by <command>ALTER ROLE SET</command>(Peter Eisentraut, Kyotaro Horiguchi)</xref>"
+msgstr ""
+
+#: xml/release-9.5.xml:535(para)
+msgid "Allow <link linkend=\"autovacuum\">autovacuum workers</link>to respond to configuration parameter changes during a run (Michael Paquier)"
+msgstr ""
+
+#: xml/release-9.5.xml:541(para)
+msgid "Make configuration parameter <xref linkend=\"guc-debug-assertions\">read-only (Andres Freund)</xref>"
+msgstr ""
+
+#: xml/release-9.5.xml:544(para)
+msgid "This means that assertions can no longer be turned off if they were enabled at compile time, allowing for more efficient code optimization. This change also removes the <link linkend=\"app-postgres-options\">postgres</link><option>-A</option>option."
+msgstr ""
+
+#: xml/release-9.5.xml:552(para)
+msgid "Allow setting <xref linkend=\"guc-effective-io-concurrency\">on systems where it has no effect (Peter Eisentraut)</xref>"
+msgstr ""
+
+#: xml/release-9.5.xml:557(para)
+msgid "Add system view <link linkend=\"view-pg-file-settings\"><structname>pg_file_settings</structname></link>to show the contents of the server's configuration files (Sawada Masahiko)"
+msgstr ""
+
+#: xml/release-9.5.xml:564(para)
+msgid "Add <structname>pending_restart</structname>to the system view <link linkend=\"view-pg-settings\"><structname>pg_settings</structname></link>to indicate a change has been made but will not take effect until a database restart (Peter Eisentraut)"
+msgstr ""
+
+#: xml/release-9.5.xml:574(para)
+msgid "Allow <link linkend=\"SQL-ALTERSYSTEM\"><command>ALTER SYSTEM</command></link>values to be reset with <command>ALTER SYSTEM RESET</command>(Vik Fearing)"
+msgstr ""
+
+#: xml/release-9.5.xml:580(para)
+msgid "This command removes the specified setting from <filename>postgresql.auto.conf</filename>."
+msgstr ""
+
+#: xml/release-9.5.xml:587(title)
+msgid "Replication and Recovery"
+msgstr ""
+
+#: xml/release-9.5.xml:590(para)
+msgid "Create mechanisms for tracking the <link linkend=\"replication-origins\">progress of replication</link>, including methods for identifying the origin of individual changes during logical replication (Andres Freund)"
+msgstr ""
+
+#: xml/release-9.5.xml:595(para)
+msgid "This is helpful when implementing replication solutions."
+msgstr ""
+
+#: xml/release-9.5.xml:599(para)
+msgid "Rework truncation of the multixact commit log to be properly WAL-logged (Andres Freund)"
+msgstr ""
+
+#: xml/release-9.5.xml:601(para)
+msgid "This makes things substantially simpler and more robust."
+msgstr ""
+
+#: xml/release-9.5.xml:605(para)
+msgid "Add <link linkend=\"recovery-config\"><filename>recovery.conf</filename></link>parameter <link linkend=\"recovery-target-action\"><varname>recovery_target_action</varname></link>to control post-recovery activity (Petr Jelnek)"
+msgstr ""
+
+#: xml/release-9.5.xml:613(para)
+msgid "This replaces the old parameter <varname>pause_at_recovery_target</varname>."
+msgstr ""
+
+#: xml/release-9.5.xml:617(para)
+msgid "Add new <xref linkend=\"guc-archive-mode\">value <literal>always</literal>to allow standbys to always archive received <acronym>WAL</acronym>files (Fujii Masao)</xref>"
+msgstr ""
+
+#: xml/release-9.5.xml:624(para)
+msgid "Add configuration parameter <xref linkend=\"guc-wal-retrieve-retry-interval\">to control <acronym>WAL</acronym>read retry after failure (Alexey Vasiliev, Michael Paquier)</xref>"
+msgstr ""
+
+#: xml/release-9.5.xml:629(para)
+msgid "This is particularly helpful for warm standbys."
+msgstr ""
+
+#: xml/release-9.5.xml:633(para)
+msgid "Allow compression of full-page images stored in <acronym>WAL</acronym>(Rahila Syed, Michael Paquier)"
+msgstr ""
+
+#: xml/release-9.5.xml:636(para)
+msgid "This feature reduces WAL volume, at the cost of more CPU time spent on WAL logging and WAL replay. It is controlled by a new configuration parameter <xref linkend=\"guc-wal-compression\">, which currently is off by default.</xref>"
+msgstr ""
+
+#: xml/release-9.5.xml:643(para)
+msgid "Archive <acronym>WAL</acronym>files with suffix <literal>.partial</literal>during standby promotion (Heikki Linnakangas)"
+msgstr ""
+
+#: xml/release-9.5.xml:649(para)
+msgid "Add configuration parameter <xref linkend=\"guc-log-replication-commands\">to log replication commands (Fujii Masao)</xref>"
+msgstr ""
+
+#: xml/release-9.5.xml:652(para)
+msgid "By default, replication commands, e.g. <link linkend=\"protocol-replication\"><literal>IDENTIFY_SYSTEM</literal></link>, are not logged, even when <xref linkend=\"guc-log-statement\">is set to <literal>all</literal>.</xref>"
+msgstr ""
+
+#: xml/release-9.5.xml:660(para)
+msgid "Report the processes holding replication slots in <link linkend=\"catalog-pg-replication-slots\"><structname>pg_replication_slots</structname></link>(Craig Ringer)"
+msgstr ""
+
+#: xml/release-9.5.xml:664(para)
+msgid "The new output column is <structname>active_pid</structname>."
+msgstr ""
+
+#: xml/release-9.5.xml:668(para)
+msgid "Allow <filename>recovery.conf</filename>'s <link linkend=\"primary-conninfo\"><varname>primary_conninfo</varname></link>setting to use connection <acronym>URI</acronym>s, e.g. <literal>postgres://</literal>(Alexander Shulgin)"
+msgstr ""
+
+#: xml/release-9.5.xml:679(title)
+msgid "Queries"
+msgstr ""
+
+#: xml/release-9.5.xml:682(para)
+msgid "Allow <link linkend=\"sql-on-conflict\"><command>INSERT</command></link>s that would generate constraint conflicts to be turned into <command>UPDATE</command>s or ignored (Peter Geoghegan, Heikki Linnakangas, Andres Freund)"
+msgstr ""
+
+#: xml/release-9.5.xml:689(para)
+msgid "The syntax is <command>INSERT ... ON CONFLICT DO NOTHING/UPDATE</command>. This is the Postgres implementation of the popular <command>UPSERT</command>command."
+msgstr ""
+
+#: xml/release-9.5.xml:696(para)
+msgid "Add <literal>GROUP BY</literal>analysis features <link linkend=\"queries-grouping-sets\"><literal>GROUPING SETS</literal></link>, <link linkend=\"queries-grouping-sets\"><literal>CUBE</literal></link>and <link linkend=\"queries-grouping-sets\"><literal>ROLLUP</literal></link>(Andrew Gierth, Atri Sharma)"
+msgstr ""
+
+#: xml/release-9.5.xml:709(para)
+msgid "Allow setting multiple target columns in an <link linkend=\"SQL-UPDATE\"><command>UPDATE</command></link>from the result of a single sub-SELECT (Tom Lane)"
+msgstr ""
+
+#: xml/release-9.5.xml:714(para)
+msgid "This is accomplished using the syntax <command>UPDATE tab SET (col1, col2, ...) = (SELECT ...)</command>."
+msgstr ""
+
+#: xml/release-9.5.xml:719(para)
+msgid "Add <link linkend=\"SQL-SELECT\"><command>SELECT</command></link>option <literal>SKIP LOCKED</literal>to skip locked rows (Thomas Munro)"
+msgstr ""
+
+#: xml/release-9.5.xml:725(para)
+msgid "This does not throw an error for locked rows like <literal>NOWAIT</literal>does."
+msgstr ""
+
+#: xml/release-9.5.xml:729(para)
+msgid "Add <link linkend=\"SQL-SELECT\"><command>SELECT</command></link>option <literal>TABLESAMPLE</literal>to return a subset of a table (Petr Jelnek)"
+msgstr ""
+
+#: xml/release-9.5.xml:735(para)
+msgid "This feature supports the SQL-standard table sampling methods. In addition, there are provisions for <link linkend=\"tablesample-method\">user-defined table sampling methods</link>."
+msgstr ""
+
+#: xml/release-9.5.xml:741(para)
+msgid "Suggest possible matches for mistyped column names (Peter Geoghegan, Robert Haas)"
+msgstr ""
+
+#: xml/release-9.5.xml:747(title)
+msgid "Utility Commands"
+msgstr ""
+
+#: xml/release-9.5.xml:750(para)
+msgid "Add more details about sort ordering in <link linkend=\"SQL-EXPLAIN\"><command>EXPLAIN</command></link>output (Marius Timmer, Lukas Kreft, Arne Scheffer)"
+msgstr ""
+
+#: xml/release-9.5.xml:755(para)
+msgid "Details include <literal>COLLATE</literal>, <literal>DESC</literal>, <literal>USING</literal>, and <literal>NULLS FIRST</literal><literal>/LAST</literal>."
+msgstr ""
+
+#: xml/release-9.5.xml:763(para)
+msgid "Make <link linkend=\"SQL-VACUUM\"><command>VACUUM</command></link>log the number of pages skipped due to pins (Jim Nasby)"
+msgstr ""
+
+#: xml/release-9.5.xml:770(para)
+msgid "Make <link linkend=\"SQL-TRUNCATE\"><command>TRUNCATE</command></link>properly update the <literal>pg_stat</literal>* tuple counters (Alexander Shulgin)"
+msgstr ""
+
+#: xml/release-9.5.xml:784(para)
+msgid "Allow <command>REINDEX</command>to reindex an entire schema using the <literal>SCHEMA</literal>option (Sawada Masahiko)"
+msgstr ""
+
+#: xml/release-9.5.xml:791(para)
+msgid "Add <literal>VERBOSE</literal>option to <command>REINDEX</command>(Sawada Masahiko)"
+msgstr ""
+
+#: xml/release-9.5.xml:796(para)
+msgid "Prevent <command>REINDEX DATABASE</command>and <command>SCHEMA</command>from outputting object names, unless <literal>VERBOSE</literal>is used (Simon Riggs)"
+msgstr ""
+
+#: xml/release-9.5.xml:803(para)
+msgid "Remove obsolete <literal>FORCE</literal>option from <command>REINDEX</command>(Fujii Masao)"
+msgstr ""
+
+#: xml/release-9.5.xml:811(title)
+msgid "Object Manipulation"
+msgstr ""
+
+#: xml/release-9.5.xml:814(para)
+msgid "Add <link linkend=\"ddl-rowsecurity\">row-level security control</link>(Craig Ringer, KaiGai Kohei, Adam Brightwell, Dean Rasheed, Stephen Frost)"
+msgstr ""
+
+#: xml/release-9.5.xml:818(para)
+msgid "This feature allows row-by-row control over which users can add, modify, or even see rows in a table. This is controlled by new commands <link linkend=\"SQL-CREATEPOLICY\"><command>CREATE</command></link>/ <link linkend=\"SQL-ALTERPOLICY\"><command>ALTER</command></link>/ <link linkend=\"SQL-DROPPOLICY\"><command>DROP POLICY</command></link>and <link linkend=\"SQL-ALTERTABLE\"><command>ALTER TABLE ... ENABLE/DISABLE ROW SECURITY</command></link>."
+msgstr ""
+
+#: xml/release-9.5.xml:836(para)
+msgid "Allow changing of the <acronym>WAL</acronym>logging status of a table after creation with <link linkend=\"SQL-ALTERTABLE\"><command>ALTER TABLE ... SET LOGGED / UNLOGGED</command></link>(Fabrzio de Royes Mello)"
+msgstr ""
+
+#: xml/release-9.5.xml:845(para)
+msgid "Add <literal>IF NOT EXISTS</literal>clause to <link linkend=\"SQL-CREATETABLEAS\"><command>CREATE TABLE AS</command></link>, <link linkend=\"SQL-CREATEINDEX\"><command>CREATE INDEX</command></link>, <link linkend=\"SQL-CREATESEQUENCE\"><command>CREATE SEQUENCE</command></link>, and <link linkend=\"SQL-CREATEMATERIALIZEDVIEW\"><command>CREATE MATERIALIZED VIEW</command></link>(Fabrzio de Royes Mello)"
+msgstr ""
+
+#: xml/release-9.5.xml:861(para)
+msgid "Add support for <literal>IF EXISTS</literal>to <link linkend=\"SQL-ALTERTABLE\"><command>ALTER TABLE ... RENAME CONSTRAINT</command></link>(Bruce Momjian)"
+msgstr ""
+
+#: xml/release-9.5.xml:868(para)
+msgid "Allow some DDL commands to accept <literal>CURRENT_USER</literal>or <literal>SESSION_USER</literal>, meaning the current user or session user, in place of a specific user name (Kyotaro Horiguchi, lvaro Herrera)"
+msgstr ""
+
+#: xml/release-9.5.xml:873(para)
+msgid "This feature is now supported in <xref linkend=\"SQL-ALTERUSER\">, <xref linkend=\"SQL-ALTERGROUP\">, <xref linkend=\"SQL-ALTERROLE\">, <xref linkend=\"SQL-GRANT\">, and <command>ALTER <replaceable>object</replaceable>OWNER TO</command>commands.</xref></xref></xref></xref>"
+msgstr ""
+
+#: xml/release-9.5.xml:883(para)
+msgid "Support comments on <link linkend=\"SQL-CREATEDOMAIN\">domain constraints</link>(lvaro Herrera)"
+msgstr ""
+
+#: xml/release-9.5.xml:888(para)
+msgid "Reduce lock levels of some create and alter trigger and foreign key commands (Simon Riggs, Andreas Karlsson)"
+msgstr ""
+
+#: xml/release-9.5.xml:893(para)
+msgid "Allow <link linkend=\"SQL-LOCK\"><command>LOCK TABLE ... ROW EXCLUSIVE MODE</command></link>for those with <command>INSERT</command>privileges on the target table (Stephen Frost)"
+msgstr ""
+
+#: xml/release-9.5.xml:899(para)
+msgid "Previously this command required <command>UPDATE</command>, <command>DELETE</command>, or <command>TRUNCATE</command>privileges."
+msgstr ""
+
+#: xml/release-9.5.xml:905(para)
+msgid "Apply table and domain <literal>CHECK</literal>constraints in order by name (Tom Lane)"
+msgstr ""
+
+#: xml/release-9.5.xml:908(para)
+msgid "The previous ordering was indeterminate."
+msgstr ""
+
+#: xml/release-9.5.xml:911(para)
+msgid "Allow <link linkend=\"SQL-CREATEDATABASE\"><command>CREATE</command></link>/ <link linkend=\"SQL-ALTERDATABASE\"><command>ALTER DATABASE</command></link>to manipulate <structname>datistemplate</structname>and <structname>datallowconn</structname>(Vik Fearing)"
+msgstr ""
+
+#: xml/release-9.5.xml:920(para)
+msgid "This allows these per-database settings to be changed without manually modifying the <link linkend=\"catalog-pg-database\"><structname>pg_database</structname></link>system catalog."
+msgstr ""
+
+#: xml/release-9.5.xml:929(link)
+msgid "Foreign Tables"
+msgstr ""
+
+#: xml/release-9.5.xml:933(para)
+msgid "Add support for <xref linkend=\"SQL-IMPORTFOREIGNSCHEMA\">(Ronan Dunklau, Michael Paquier, Tom Lane)</xref>"
+msgstr ""
+
+#: xml/release-9.5.xml:936(para)
+msgid "This command allows automatic creation of local foreign tables that match the structure of existing tables on a remote server."
+msgstr ""
+
+#: xml/release-9.5.xml:941(para)
+msgid "Allow <literal>CHECK</literal>constraints to be placed on foreign tables (Shigeru Hanada, Etsuro Fujita)"
+msgstr ""
+
+#: xml/release-9.5.xml:944(para)
+msgid "Such constraints are assumed to be enforced on the remote server, and are not enforced locally. However, they are assumed to hold for purposes of query optimization, such as <link linkend=\"ddl-partitioning-constraint-exclusion\"> constraint exclusion</link>."
+msgstr ""
+
+#: xml/release-9.5.xml:952(para)
+msgid "Allow foreign tables to participate in inheritance (Shigeru Hanada, Etsuro Fujita)"
+msgstr ""
+
+#: xml/release-9.5.xml:954(para)
+msgid "To let this work naturally, foreign tables are now allowed to have check constraints marked as not valid, and to set storage and <type>OID</type>characteristics, even though these operations are effectively no-ops for a foreign table."
+msgstr ""
+
+#: xml/release-9.5.xml:962(para)
+msgid "Allow foreign data wrappers and custom scans to implement join pushdown (KaiGai Kohei)"
+msgstr ""
+
+#: xml/release-9.5.xml:969(link)
+msgid "Event Triggers"
+msgstr ""
+
+#: xml/release-9.5.xml:973(para)
+msgid "Whenever a <literal>ddl_command_end</literal>event trigger is installed, capture details of <acronym>DDL</acronym>activity for it to inspect (lvaro Herrera)"
+msgstr ""
+
+#: xml/release-9.5.xml:978(para)
+msgid "This information is available through a set-returning function <link linkend=\"pg-event-trigger-ddl-command-end-functions\"><function>pg_event_trigger_ddl_commands()</function></link>, or by inspection of C data structures if that function doesn't provide enough detail."
+msgstr ""
+
+#: xml/release-9.5.xml:987(para)
+msgid "Allow event triggers on table rewrites caused by <link linkend=\"SQL-ALTERTABLE\"><command>ALTER TABLE</command></link>(Dimitri Fontaine)"
+msgstr ""
+
+#: xml/release-9.5.xml:993(para)
+msgid "Add event trigger support for database-level <link linkend=\"SQL-COMMENT\"><command>COMMENT</command></link>, <link linkend=\"SQL-SECURITY-LABEL\"><command>SECURITY LABEL</command></link>, and <link linkend=\"SQL-GRANT\"><command>GRANT</command></link>/ <link linkend=\"SQL-REVOKE\"><command>REVOKE</command></link>(lvaro Herrera)"
+msgstr ""
+
+#: xml/release-9.5.xml:1008(para)
+msgid "Add columns to the output of <link linkend=\"pg-event-trigger-sql-drop-functions\"><function>pg_event_trigger_dropped_objects</function></link>(lvaro Herrera)"
+msgstr ""
+
+#: xml/release-9.5.xml:1012(para)
+msgid "This allows simpler processing of delete operations."
+msgstr ""
+
+#: xml/release-9.5.xml:1019(title)
+msgid "Data Types"
+msgstr ""
+
+#: xml/release-9.5.xml:1022(para)
+msgid "Allow the <link linkend=\"datatype-xml\"><type>xml</type></link>data type to accept empty or all-whitespace content values (Peter Eisentraut)"
+msgstr ""
+
+#: xml/release-9.5.xml:1027(para)
+msgid "This is required by the <acronym>SQL</acronym>/ <acronym>XML</acronym>specification."
+msgstr ""
+
+#: xml/release-9.5.xml:1032(para)
+msgid "Allow <link linkend=\"datatype-macaddr\"><type>macaddr</type></link>input using the format <literal>xxxx-xxxx-xxxx</literal>(Herwin Weststrate)"
+msgstr ""
+
+#: xml/release-9.5.xml:1040(para)
+msgid "Disallow non-SQL-standard syntax for <link linkend=\"datatype-interval-input\"><type>interval</type></link>with both precision and field specifications (Bruce Momjian)"
+msgstr ""
+
+#: xml/release-9.5.xml:1045(para)
+msgid "Per the standard, such type specifications should be written as, for example, <literal>INTERVAL MINUTE TO SECOND(2)</literal>. <productname>PostgreSQL</productname>formerly allowed this to be written as <literal>INTERVAL(2) MINUTE TO SECOND</literal>, but it must now be written in the standard way."
+msgstr ""
+
+#: xml/release-9.5.xml:1054(para)
+msgid "Add selectivity estimators for <link linkend=\"datatype-inet\"><type>inet</type></link>/ <link linkend=\"datatype-cidr\"><type>cidr</type></link>operators and improve estimators for text search functions (Emre Hasegeli, Tom Lane)"
+msgstr ""
+
+#: xml/release-9.5.xml:1064(para)
+msgid "Add data types <link linkend=\"datatype-oid-table\"><type>regrole</type></link>and <link linkend=\"datatype-oid-table\"><type>regnamespace</type></link>to simplify entering and pretty-printing the <type>OID</type>of a role or namespace (Kyotaro Horiguchi)"
+msgstr ""
+
+#: xml/release-9.5.xml:1078(acronym)
+msgid "JSON"
+msgstr ""
+
+#: xml/release-9.5.xml:1083(para)
+msgid "Add <type>jsonb</type>functions <link linkend=\"functions-json-processing-table\"><function>jsonb_set()</function></link>and <link linkend=\"functions-json-processing-table\"><function>jsonb_pretty()</function></link>(Dmitry Dolgov, Andrew Dunstan, Petr Jelnek)"
+msgstr ""
+
+#: xml/release-9.5.xml:1094(para)
+msgid "Add <type>jsonb</type>generator functions <link linkend=\"functions-json-creation-table\"><function>to_jsonb()</function></link>, <link linkend=\"functions-json-creation-table\"><function>jsonb_object()</function></link>, <link linkend=\"functions-json-creation-table\"><function>jsonb_build_object()</function></link>, <link linkend=\"functions-json-creation-table\"><function>jsonb_build_array()</function></link>, <link linkend=\"functions-aggregate-table\"><function>jsonb_agg()</function></link>, and <link linkend=\"functions-aggregate-table\"><function>jsonb_object_agg()</function></link>(Andrew Dunstan)"
+msgstr ""
+
+#: xml/release-9.5.xml:1114(para)
+msgid "Equivalent functions already existed for type <type>json</type>."
+msgstr ""
+
+#: xml/release-9.5.xml:1118(para)
+msgid "Reduce casting requirements to/from <link linkend=\"datatype-json\"><type>json</type></link>and <link linkend=\"datatype-json\"><type>jsonb</type></link>(Tom Lane)"
+msgstr ""
+
+#: xml/release-9.5.xml:1127(para)
+msgid "Allow <type>text</type>, <type>text</type>array, and <type>integer</type>values to be <link linkend=\"functions-jsonb-op-table\"> subtracted</link>from <type>jsonb</type>documents (Dmitry Dolgov, Andrew Dunstan)"
+msgstr ""
+
+#: xml/release-9.5.xml:1137(para)
+msgid "Add <type>jsonb</type><link linkend=\"functions-jsonb-op-table\"><literal>||</literal></link>operator (Dmitry Dolgov, Andrew Dunstan)"
+msgstr ""
+
+#: xml/release-9.5.xml:1144(para)
+msgid "Add <link linkend=\"functions-json-processing-table\"><function>json_strip_nulls()</function></link>and <link linkend=\"functions-json-processing-table\"><function>jsonb_strip_nulls()</function></link>functions to remove JSON null values from documents (Andrew Dunstan)"
+msgstr ""
+
+#: xml/release-9.5.xml:1157(title)
+msgid "Functions"
+msgstr ""
+
+#: xml/release-9.5.xml:1160(para)
+msgid "Add <link linkend=\"functions-srf\"><function>generate_series()</function></link>for <type>numeric</type>values (Plato Malugin)"
+msgstr ""
+
+#: xml/release-9.5.xml:1167(para)
+msgid "Allow <link linkend=\"functions-aggregate-table\"><function>array_agg()</function></link>and <function>ARRAY()</function>to take arrays as inputs (Ali Akbar, Tom Lane)"
+msgstr ""
+
+#: xml/release-9.5.xml:1175(para)
+msgid "Add functions <link linkend=\"array-functions-table\"><function>array_position()</function></link>and <link linkend=\"array-functions-table\"><function>array_positions()</function></link>to return subscripts of array values (Pavel Stehule)"
+msgstr ""
+
+#: xml/release-9.5.xml:1185(para)
+msgid "Add a <type>point</type>-to- <type>polygon</type>distance operator <link linkend=\"functions-geometry-op-table\"> -</link>(Alexander Korotkov)"
+msgstr ""
+
+#: xml/release-9.5.xml:1192(para)
+msgid "Allow multibyte characters as escapes in <link linkend=\"functions-similarto-regexp\"><literal>SIMILAR TO</literal></link>and <link linkend=\"functions-string-sql\"><literal>SUBSTRING</literal></link>(Jeff Davis)"
+msgstr ""
+
+#: xml/release-9.5.xml:1199(para)
+msgid "Previously, only a single-byte character was allowed as an escape."
+msgstr ""
+
+#: xml/release-9.5.xml:1203(para)
+msgid "Add a <link linkend=\"functions-math-func-table\"><function>width_bucket()</function></link>variant that supports any sortable data type and non-uniform bucket widths (Petr Jelnek)"
+msgstr ""
+
+#: xml/release-9.5.xml:1210(para)
+msgid "Add an optional <replaceable>missing_ok</replaceable>argument to <link linkend=\"functions-admin-genfile-table\"><function>pg_read_file()</function></link>and related functions (Michael Paquier, Heikki Linnakangas)"
+msgstr ""
+
+#: xml/release-9.5.xml:1218(para)
+msgid "Allow <link linkend=\"sql-syntax-calling-funcs\"><literal>=</literal></link>to specify named parameters in function calls (Pavel Stehule)"
+msgstr ""
+
+#: xml/release-9.5.xml:1223(para)
+msgid "Previously only <literal>:=</literal>could be used. This requires removing the possibility for <literal>=</literal>to be a user-defined operator. Creation of user-defined <literal>=</literal>operators has been issuing warnings since PostgreSQL 9.0."
+msgstr ""
+
+#: xml/release-9.5.xml:1232(para)
+msgid "Add <acronym>POSIX</acronym>-compliant rounding for platforms that use PostgreSQL-supplied rounding functions (Pedro Gimeno Fortea)"
+msgstr ""
+
+#: xml/release-9.5.xml:1239(title)
+msgid "System Information Functions and Views"
+msgstr ""
+
+#: xml/release-9.5.xml:1242(para)
+msgid "Add function <link linkend=\"functions-info-object-table\"><function>pg_get_object_address()</function></link>to return <type>OID</type>s that uniquely identify an object, and function <link linkend=\"functions-info-object-table\"><function>pg_identify_object_as_address()</function></link>to return object information based on <type>OID</type>s (lvaro Herrera)"
+msgstr ""
+
+#: xml/release-9.5.xml:1254(para)
+msgid "Loosen security checks for viewing queries in <link linkend=\"pg-stat-activity-view\"><structname>pg_stat_activity</structname></link>, executing <link linkend=\"functions-admin-signal-table\"><function>pg_cancel_backend()</function></link>, and executing <link linkend=\"functions-admin-signal-table\"><function>pg_terminate_backend()</function></link>(Stephen Frost)"
+msgstr ""
+
+#: xml/release-9.5.xml:1264(para)
+msgid "Previously, only the specific role owning the target session could perform these operations; now membership in that role is sufficient."
+msgstr ""
+
+#: xml/release-9.5.xml:1269(para)
+msgid "Add <link linkend=\"monitoring-stats-funcs-table\"><function>pg_stat_get_snapshot_timestamp()</function></link>to output the time stamp of the statistics snapshot (Matt Kelly)"
+msgstr ""
+
+#: xml/release-9.5.xml:1274(para)
+msgid "This represents the last time the snapshot file was written to the file system."
+msgstr ""
+
+#: xml/release-9.5.xml:1278(para)
+msgid "Add <link linkend=\"vacuum-for-multixact-wraparound\"><function>mxid_age()</function></link>to compute multi-xid age (Bruce Momjian)"
+msgstr ""
+
+#: xml/release-9.5.xml:1286(title)
+msgid "Aggregates"
+msgstr ""
+
+#: xml/release-9.5.xml:1289(para)
+msgid "Add <function>min()</function>/ <function>max()</function>aggregates for <link linkend=\"datatype-inet\"><type>inet</type></link>/ <link linkend=\"datatype-cidr\"><type>cidr</type></link>data types (Haribabu Kommi)"
+msgstr ""
+
+#: xml/release-9.5.xml:1300(para)
+msgid "Use 128-bit integers, where supported, as accumulators for some aggregate functions (Andreas Karlsson)"
+msgstr ""
+
+#: xml/release-9.5.xml:1308(title)
+msgid "Server-Side Languages"
+msgstr ""
+
+#: xml/release-9.5.xml:1311(para)
+msgid "Improve support for composite types in <link linkend=\"plpython\"><application>PL/Python</application></link>(Ed Behn, Ronan Dunklau)"
+msgstr ""
+
+#: xml/release-9.5.xml:1315(para)
+msgid "This allows <application>PL/Python</application>functions to return arrays of composite types."
+msgstr ""
+
+#: xml/release-9.5.xml:1320(para)
+msgid "Reduce lossiness of <link linkend=\"plpython\"><application>PL/Python</application></link>floating-point value conversions (Marko Kreen)"
+msgstr ""
+
+#: xml/release-9.5.xml:1327(para)
+msgid "Allow specification of conversion routines between <acronym>SQL</acronym>data types and data types of procedural languages (Peter Eisentraut)"
+msgstr ""
+
+#: xml/release-9.5.xml:1330(para)
+msgid "This change adds new commands <link linkend=\"SQL-CREATETRANSFORM\"><command>CREATE</command></link>/ <link linkend=\"SQL-DROPTRANSFORM\"><command>DROP TRANSFORM</command></link>. This also adds optional transformations between the <link linkend=\"hstore\"><application>hstore</application></link>and <link linkend=\"ltree\"><application>ltree</application></link>types to/from <link linkend=\"plperl\"><application>PL/Perl</application></link>and <link linkend=\"plpython\"><application>PL/Python</application></link>."
+msgstr ""
+
+#: xml/release-9.5.xml:1353(title)
+msgid "<link linkend=\"plpgsql\">PL/pgSQL</link>Server-Side Language"
+msgstr ""
+
+#: xml/release-9.5.xml:1358(para)
+msgid "Improve <link linkend=\"plpgsql\"><application>PL/pgSQL</application></link>array performance (Tom Lane)"
+msgstr ""
+
+#: xml/release-9.5.xml:1364(para)
+msgid "Add an <link linkend=\"plpgsql-statements-assert\"><command>ASSERT</command></link>statement in <application>PL/pgSQL</application>(Pavel Stehule)"
+msgstr ""
+
+#: xml/release-9.5.xml:1372(para)
+msgid "Allow more <link linkend=\"plpgsql\"><application>PL/pgSQL</application></link>keywords to be used as identifiers (Tom Lane)"
+msgstr ""
+
+#: xml/release-9.5.xml:1382(title)
+msgid "Client Applications"
+msgstr ""
+
+#: xml/release-9.5.xml:1385(para)
+msgid "Move <link linkend=\"pgarchivecleanup\"><application>pg_archivecleanup</application></link>, <link linkend=\"pgtestfsync\"><application>pg_test_fsync</application></link>, <link linkend=\"pgtesttiming\"><application>pg_test_timing</application></link>, and <link linkend=\"pgxlogdump\"><application>pg_xlogdump</application></link>from <filename>contrib</filename>to <filename>src/bin</filename>(Peter Eisentraut)"
+msgstr ""
+
+#: xml/release-9.5.xml:1400(para)
+msgid "This should result in these programs being installed by default in most installations."
+msgstr ""
+
+#: xml/release-9.5.xml:1404(para)
+msgid "Add <link linkend=\"app-pgrewind\"><application>pg_rewind</application></link>, which allows re-synchronizing a master server after failback (Heikki Linnakangas)"
+msgstr ""
+
+#: xml/release-9.5.xml:1411(para)
+msgid "Allow <link linkend=\"app-pgreceivexlog\"><application>pg_receivexlog</application></link>to manage physical replication slots (Michael Paquier)"
+msgstr ""
+
+#: xml/release-9.5.xml:1416(para)
+msgid "This is controlled via new <option>--create-slot</option>and <option>--drop-slot</option>options."
+msgstr ""
+
+#: xml/release-9.5.xml:1421(para)
+msgid "Allow <link linkend=\"app-pgreceivexlog\"><application>pg_receivexlog</application></link>to synchronously flush <acronym>WAL</acronym>to storage using new <option>--synchronous</option>option (Furuya Osamu, Fujii Masao)"
+msgstr ""
+
+#: xml/release-9.5.xml:1428(para)
+msgid "Without this, <acronym>WAL</acronym>files are fsync'ed only on close."
+msgstr ""
+
+#: xml/release-9.5.xml:1433(para)
+msgid "Allow <link linkend=\"APP-VACUUMDB\"><application>vacuumdb</application></link>to vacuum in parallel using new <option>--jobs</option>option (Dilip Kumar)"
+msgstr ""
+
+#: xml/release-9.5.xml:1440(para)
+msgid "In <link linkend=\"APP-VACUUMDB\"><application>vacuumdb</application></link>, do not prompt for the same password repeatedly when multiple connections are necessary (Haribabu Kommi, Michael Paquier)"
+msgstr ""
+
+#: xml/release-9.5.xml:1448(para)
+msgid "Add <option>--verbose</option>option to <link linkend=\"APP-REINDEXDB\"><application>reindexdb</application></link>(Sawada Masahiko)"
+msgstr ""
+
+#: xml/release-9.5.xml:1455(para)
+msgid "Make <link linkend=\"app-pgbasebackup\"><application>pg_basebackup</application></link>use a tablespace mapping file when using <application>tar</application>format, to support symbolic links and file paths of 100+ characters in length on <systemitem class=\"osname\">MS Windows</systemitem>(Amit Kapila)"
+msgstr ""
+
+#: xml/release-9.5.xml:1465(para)
+msgid "Add <link linkend=\"pgxlogdump\"><application>pg_xlogdump</application></link>option <option>--stats</option>to display summary statistics (Abhijit Menon-Sen)"
+msgstr ""
+
+#: xml/release-9.5.xml:1479(para)
+msgid "Allow <application>psql</application>to produce AsciiDoc output (Szymon Guz)"
+msgstr ""
+
+#: xml/release-9.5.xml:1484(para)
+msgid "Add an <literal>errors</literal>mode that displays only failed commands to <application>psql</application>'s <varname>ECHO</varname>variable (Pavel Stehule)"
+msgstr ""
+
+#: xml/release-9.5.xml:1489(para)
+msgid "This behavior can also be selected with <application>psql</application>'s <option>-b</option>option."
+msgstr ""
+
+#: xml/release-9.5.xml:1494(para)
+msgid "Provide separate column, header, and border linestyle control in <application>psql</application>'s unicode linestyle (Pavel Stehule)"
+msgstr ""
+
+#: xml/release-9.5.xml:1498(para)
+msgid "Single or double lines are supported; the default is <literal>single</literal>."
+msgstr ""
+
+#: xml/release-9.5.xml:1503(para)
+msgid "Add new option <literal>%l</literal>in <application>psql</application>'s <link linkend=\"APP-PSQL-variables\"><envar>PROMPT</envar></link>variables to display the current multiline statement line number (Sawada Masahiko)"
+msgstr ""
+
+#: xml/release-9.5.xml:1512(para)
+msgid "Add <literal>\\pset</literal>option <link linkend=\"APP-PSQL-meta-commands\"><varname>pager_min_lines</varname></link>to control pager invocation (Andrew Dunstan)"
+msgstr ""
+
+#: xml/release-9.5.xml:1520(para)
+msgid "Improve <application>psql</application>line counting used when deciding to invoke the pager (Andrew Dunstan)"
+msgstr ""
+
+#: xml/release-9.5.xml:1525(para)
+msgid "<application>psql</application>now fails if the file specified by an <option>--output</option>or <option>--log-file</option>switch cannot be written (Tom Lane, Daniel Verite)"
+msgstr ""
+
+#: xml/release-9.5.xml:1531(para)
+msgid "Previously, it effectively ignored the switch in such cases."
+msgstr ""
+
+#: xml/release-9.5.xml:1535(para)
+msgid "Add <application>psql</application>tab completion when setting the <xref linkend=\"guc-search-path\">variable (Jeff Janes)</xref>"
+msgstr ""
+
+#: xml/release-9.5.xml:1540(para)
+msgid "Currently only the first schema can be tab-completed."
+msgstr ""
+
+#: xml/release-9.5.xml:1544(para)
+msgid "Improve <application>psql</application>'s tab completion for triggers and rules (Andreas Karlsson)"
+msgstr ""
+
+#: xml/release-9.5.xml:1551(link)
+msgid "Backslash Commands"
+msgstr ""
+
+#: xml/release-9.5.xml:1556(para)
+msgid "Add <application>psql</application><command>\\?</command>help sections <literal>variables</literal>and <literal>options</literal>(Pavel Stehule)"
+msgstr ""
+
+#: xml/release-9.5.xml:1561(para)
+msgid "<literal>\\? variables</literal>shows <application>psql</application>'s special variables and <literal>\\? options</literal>shows the command-line options. <command>\\? commands</command>shows the meta-commands, which is the traditional output and remains the default. These help displays can also be obtained with the command-line option <literal>--help= <replaceable>section</replaceable></literal>."
+msgstr ""
+
+#: xml/release-9.5.xml:1575(para)
+msgid "Show tablespace size in <application>psql</application>'s <literal>\\db+</literal>(Fabrzio de Royes Mello)"
+msgstr ""
+
+#: xml/release-9.5.xml:1581(para)
+msgid "Show data type owners in <application>psql</application>'s <literal>\\dT+</literal>(Magnus Hagander)"
+msgstr ""
+
+#: xml/release-9.5.xml:1586(para)
+msgid "Allow <application>psql</application>'s <command>\\watch</command>to output <command>\\timing</command>information (Fujii Masao)"
+msgstr ""
+
+#: xml/release-9.5.xml:1591(para)
+msgid "Also prevent <option>--echo-hidden</option>from echoing <command>\\watch</command>queries, since that is generally unwanted."
+msgstr ""
+
+#: xml/release-9.5.xml:1597(para)
+msgid "Make <application>psql</application>'s <literal>\\sf</literal>and <literal>\\ef</literal>commands honor <envar>ECHO_HIDDEN</envar>(Andrew Dunstan)"
+msgstr ""
+
+#: xml/release-9.5.xml:1604(para)
+msgid "Improve <application>psql</application>tab completion for <command>\\set</command>, <command>\\unset</command>, and <literal>:variable</literal>names (Pavel Stehule)"
+msgstr ""
+
+#: xml/release-9.5.xml:1612(para)
+msgid "Allow tab completion of role names in <application>psql</application><literal>\\c</literal>commands (Ian Barwick)"
+msgstr ""
+
+#: xml/release-9.5.xml:1625(para)
+msgid "Allow <application>pg_dump</application>to share a snapshot taken by another session using <option>--snapshot</option>(Simon Riggs, Michael Paquier)"
+msgstr ""
+
+#: xml/release-9.5.xml:1630(para)
+msgid "The remote snapshot must have been exported by <function>pg_export_snapshot()</function>or logical replication slot creation. This can be used to share a consistent snapshot across multiple <application>pg_dump</application>processes."
+msgstr ""
+
+#: xml/release-9.5.xml:1637(para)
+msgid "Support table sizes exceeding 8GB in tar archive format (Tom Lane)"
+msgstr ""
+
+#: xml/release-9.5.xml:1639(para)
+msgid "The POSIX standard for tar format does not allow elements of a tar archive to exceed 8GB, but most modern implementations of tar support an extension that does allow it. Use the extension format when necessary, rather than failing."
+msgstr ""
+
+#: xml/release-9.5.xml:1646(para)
+msgid "Make <application>pg_dump</application>always print the server and <application>pg_dump</application>versions (Jing Wang)"
+msgstr ""
+
+#: xml/release-9.5.xml:1651(para)
+msgid "Previously, version information was only printed in <option>--verbose</option>mode."
+msgstr ""
+
+#: xml/release-9.5.xml:1656(para)
+msgid "Remove the long-ignored <option>-i</option>/ <option>--ignore-version</option>option from <application>pg_dump</application>, <application>pg_dumpall</application>, and <application>pg_restore</application>(Fujii Masao)"
+msgstr ""
+
+#: xml/release-9.5.xml:1672(para)
+msgid "Support multiple <application>pg_ctl</application><option>-o</option>options, concatenating their values (Bruce Momjian)"
+msgstr ""
+
+#: xml/release-9.5.xml:1678(para)
+msgid "Allow control of <application>pg_ctl</application>'s event source logging on <systemitem class=\"osname\">MS Windows</systemitem>(MauMau)"
+msgstr ""
+
+#: xml/release-9.5.xml:1683(para)
+msgid "This only controls <application>pg_ctl</application>, not the server, which has separate settings in <filename>postgresql.conf</filename>."
+msgstr ""
+
+#: xml/release-9.5.xml:1689(para)
+msgid "If the server's listen address is set to a wildcard value ( <literal>0.0.0.0</literal>in IPv4 or <literal>::</literal>in IPv6), connect via the loopback address rather than trying to use the wildcard address literally (Kondo Yuta)"
+msgstr ""
+
+#: xml/release-9.5.xml:1695(para)
+msgid "This fix primarily affects Windows, since on other platforms <application>pg_ctl</application>will prefer to use a Unix-domain socket."
+msgstr ""
+
+#: xml/release-9.5.xml:1708(para)
+msgid "Move <application>pg_upgrade</application>from <filename>contrib</filename>to <filename>src/bin</filename>(Peter Eisentraut)"
+msgstr ""
+
+#: xml/release-9.5.xml:1712(para)
+msgid "In connection with this change, the functionality previously provided by the <application>pg_upgrade_support</application>module has been moved into the core server."
+msgstr ""
+
+#: xml/release-9.5.xml:1718(para)
+msgid "Support multiple <application>pg_upgrade</application><option>-o</option>/ <option>-O</option>options, concatenating their values (Bruce Momjian)"
+msgstr ""
+
+#: xml/release-9.5.xml:1725(para)
+msgid "Improve database collation comparisons in <application>pg_upgrade</application>(Heikki Linnakangas)"
+msgstr ""
+
+#: xml/release-9.5.xml:1730(para)
+msgid "Remove support for upgrading from 8.3 clusters (Bruce Momjian)"
+msgstr ""
+
+#: xml/release-9.5.xml:1741(para)
+msgid "Move pgbench from <filename>contrib</filename>to <filename>src/bin</filename>(Peter Eisentraut)"
+msgstr ""
+
+#: xml/release-9.5.xml:1746(para)
+msgid "Fix calculation of TPS number <quote>excluding connections establishing</quote>(Tatsuo Ishii, Fabien Coelho)"
+msgstr ""
+
+#: xml/release-9.5.xml:1750(para)
+msgid "The overhead for connection establishment was miscalculated whenever the number of pgbench threads was less than the number of client connections. Although this is clearly a bug, we won't back-patch it into pre-9.5 branches since it makes TPS numbers not comparable to previous results."
+msgstr ""
+
+#: xml/release-9.5.xml:1758(para)
+msgid "Allow counting of pgbench transactions that take over a specified amount of time (Fabien Coelho)"
+msgstr ""
+
+#: xml/release-9.5.xml:1760(para)
+msgid "This is controlled by a new <option>--latency-limit</option>option."
+msgstr ""
+
+#: xml/release-9.5.xml:1764(para)
+msgid "Allow pgbench to generate Gaussian/exponential distributions using <command>\\setrandom</command>(Kondo Mitsumasa, Fabien Coelho)"
+msgstr ""
+
+#: xml/release-9.5.xml:1770(para)
+msgid "Allow <application>pgbench</application>'s <command>\\set</command>command to handle arithmetic expressions containing more than one operator, and add <literal>%</literal>(modulo) to the set of operators it supports (Robert Haas, Fabien Coelho)"
+msgstr ""
+
+#: xml/release-9.5.xml:1781(title)
+msgid "Source Code"
+msgstr ""
+
+#: xml/release-9.5.xml:1784(para)
+msgid "Simplify <link linkend=\"wal\"><acronym>WAL</acronym></link>record format (Heikki Linnakangas)"
+msgstr ""
+
+#: xml/release-9.5.xml:1788(para)
+msgid "This allows external tools to more easily track what blocks are modified."
+msgstr ""
+
+#: xml/release-9.5.xml:1792(para)
+msgid "Improve the representation of transaction commit and abort WAL records (Andres Freund)"
+msgstr ""
+
+#: xml/release-9.5.xml:1796(para)
+msgid "Add atomic memory operations <acronym>API</acronym>(Andres Freund)"
+msgstr ""
+
+#: xml/release-9.5.xml:1800(para)
+msgid "Allow custom path and scan methods (KaiGai Kohei, Tom Lane)"
+msgstr ""
+
+#: xml/release-9.5.xml:1802(para)
+msgid "This allows extensions greater control over the optimizer and executor."
+msgstr ""
+
+#: xml/release-9.5.xml:1806(para)
+msgid "Allow foreign data wrappers to do post-filter locking (Etsuro Fujita)"
+msgstr ""
+
+#: xml/release-9.5.xml:1810(para)
+msgid "Foreign tables can now take part in <command>INSERT ... ON CONFLICT DO NOTHING</command>queries (Peter Geoghegan, Heikki Linnakangas, Andres Freund)"
+msgstr ""
+
+#: xml/release-9.5.xml:1814(para)
+msgid "Foreign data wrappers must be modified to handle this. <command>INSERT ... ON CONFLICT DO UPDATE</command>is not supported on foreign tables."
+msgstr ""
+
+#: xml/release-9.5.xml:1820(para)
+msgid "Improve <function>hash_create()</function>'s API for selecting simple-binary-key hash functions (Teodor Sigaev, Tom Lane)"
+msgstr ""
+
+#: xml/release-9.5.xml:1826(para)
+msgid "Improve parallel execution infrastructure (Robert Haas, Amit Kapila, Noah Misch, Rushabh Lathia, Jeevan Chalke)"
+msgstr ""
+
+#: xml/release-9.5.xml:1831(para)
+msgid "Remove <productname>Alpha</productname>( <acronym>CPU</acronym>) and <systemitem class=\"osname\">Tru64</systemitem>(OS) ports (Andres Freund)"
+msgstr ""
+
+#: xml/release-9.5.xml:1838(para)
+msgid "Remove swap-byte-based spinlock implementation for <acronym>ARM</acronym>v5 and earlier <acronym>CPU</acronym>s (Robert Haas)"
+msgstr ""
+
+#: xml/release-9.5.xml:1841(para)
+msgid "<acronym>ARM</acronym>v5's weak memory ordering made this locking implementation unsafe. Spinlock support is still possible on newer gcc implementations with atomics support."
+msgstr ""
+
+#: xml/release-9.5.xml:1848(para)
+msgid "Generate an error when excessively long (100+ character) file paths are written to tar files (Peter Eisentraut)"
+msgstr ""
+
+#: xml/release-9.5.xml:1851(para)
+msgid "Tar does not support such overly-long paths."
+msgstr ""
+
+#: xml/release-9.5.xml:1854(para)
+msgid "Change index operator class for columns <link linkend=\"catalog-pg-seclabel\"><structname>pg_seclabel</structname></link>. <structname>provider</structname>and <link linkend=\"catalog-pg-shseclabel\"><structname>pg_shseclabel</structname></link>. <structname>provider</structname>to be <literal>text_pattern_ops</literal>(Tom Lane)"
+msgstr ""
+
+#: xml/release-9.5.xml:1864(para)
+msgid "This avoids possible problems with these indexes when different databases of a cluster have different default collations."
+msgstr ""
+
+#: xml/release-9.5.xml:1869(para)
+msgid "Change the spinlock primitives to function as compiler barriers (Robert Haas)"
+msgstr ""
+
+#: xml/release-9.5.xml:1874(title)
+msgid "MS Windows"
+msgstr ""
+
+#: xml/release-9.5.xml:1877(para)
+msgid "Allow higher-precision time stamp resolution on <systemitem class=\"osname\">Windows 8</systemitem>, <systemitem class=\"osname\">Windows Server 2012</systemitem>, and later Windows systems (Craig Ringer)"
+msgstr ""
+
+#: xml/release-9.5.xml:1884(para)
+msgid "Install shared libraries to <filename>bin</filename>in <systemitem class=\"osname\">MS Windows</systemitem>(Peter Eisentraut, Michael Paquier)"
+msgstr ""
+
+#: xml/release-9.5.xml:1891(para)
+msgid "Install <filename>src/test/modules</filename>together with <filename>contrib</filename>on <productname>MSVC</productname>builds (Michael Paquier)"
+msgstr ""
+
+#: xml/release-9.5.xml:1898(para)
+msgid "Allow <link linkend=\"install-procedure\">configure</link>'s <option>--with-extra-version</option>option to be honored by the <productname>MSVC</productname>build (Michael Paquier)"
+msgstr ""
+
+#: xml/release-9.5.xml:1906(para)
+msgid "Pass <envar>PGFILEDESC</envar>into <productname>MSVC</productname>contrib builds (Michael Paquier)"
+msgstr ""
+
+#: xml/release-9.5.xml:1912(para)
+msgid "Add icons to all <productname>MSVC</productname>-built binaries and version information to all <systemitem class=\"osname\">MS Windows</systemitem>binaries (Noah Misch)"
+msgstr ""
+
+#: xml/release-9.5.xml:1917(para)
+msgid "MinGW already had such icons."
+msgstr ""
+
+#: xml/release-9.5.xml:1920(para)
+msgid "Add optional-argument support to the internal <function>getopt_long()</function>implementation (Michael Paquier, Andres Freund)"
+msgstr ""
+
+#: xml/release-9.5.xml:1923(para)
+msgid "This is used by the <productname>MSVC</productname>build."
+msgstr ""
+
+#: xml/release-9.5.xml:1930(title)
+msgid "Additional Modules"
+msgstr ""
+
+#: xml/release-9.5.xml:1933(para)
+msgid "Add statistics for minimum, maximum, mean, and standard deviation times to <link linkend=\"pgstatstatements-columns\"><application>pg_stat_statements</application></link>(Mitsumasa Kondo, Andrew Dunstan)"
+msgstr ""
+
+#: xml/release-9.5.xml:1940(para)
+msgid "Add <link linkend=\"pgcrypto\"><application>pgcrypto</application></link>function <function>pgp_armor_headers()</function>to extract <productname>PGP</productname>armor headers (Marko Tiikkaja, Heikki Linnakangas)"
+msgstr ""
+
+#: xml/release-9.5.xml:1949(para)
+msgid "Allow empty replacement strings in <link linkend=\"unaccent\"><application>unaccent</application></link>(Mohammad Alhashash)"
+msgstr ""
+
+#: xml/release-9.5.xml:1953(para)
+msgid "This is useful in languages where diacritic signs are represented as separate characters."
+msgstr ""
+
+#: xml/release-9.5.xml:1957(para)
+msgid "Allow multicharacter source strings in <link linkend=\"unaccent\"><application>unaccent</application></link>(Tom Lane)"
+msgstr ""
+
+#: xml/release-9.5.xml:1961(para)
+msgid "This could be useful in languages where diacritic signs are represented as separate characters. It also allows more complex unaccent dictionaries."
+msgstr ""
+
+#: xml/release-9.5.xml:1966(para)
+msgid "Add <filename>contrib</filename>modules <link linkend=\"tsm-system-rows\"><application>tsm_system_rows</application></link>and <link linkend=\"tsm-system-time\"><application>tsm_system_time</application></link>to allow additional table sampling methods (Petr Jelnek)"
+msgstr ""
+
+#: xml/release-9.5.xml:1977(para)
+msgid "Add <link linkend=\"GIN\"><acronym>GIN</acronym></link>index inspection functions to <link linkend=\"pageinspect\"><application>pageinspect</application></link>(Heikki Linnakangas, Peter Geoghegan, Michael Paquier)"
+msgstr ""
+
+#: xml/release-9.5.xml:1987(para)
+msgid "Add information about buffer pins to <link linkend=\"pgbuffercache\"><application>pg_buffercache</application></link>display (Andres Freund)"
+msgstr ""
+
+#: xml/release-9.5.xml:1993(para)
+msgid "Allow <link linkend=\"pgstattuple\"><application>pgstattuple</application></link>to report approximate answers with less overhead using <function>pgstattuple_approx()</function>(Abhijit Menon-Sen)"
+msgstr ""
+
+#: xml/release-9.5.xml:2002(para)
+msgid "Move <application>dummy_seclabel</application>, <application>test_shm_mq</application>, <application>test_parser</application>, and <application>worker_spi</application>from <filename>contrib</filename>to <filename>src/test/modules</filename>(lvaro Herrera)"
+msgstr ""
+
+#: xml/release-9.5.xml:2010(para)
+msgid "These modules are only meant for server testing, so they do not need to be built or installed when packaging <productname>PostgreSQL</productname>."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/release-9.5.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

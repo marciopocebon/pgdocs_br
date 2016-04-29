@@ -1,0 +1,317 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/isn.xml:3(title) xml/isn.xml:5(primary) xml/isn.xml:26(filename) xml/isn.xml:238(type)
+msgid "isn"
+msgstr ""
+
+#: xml/isn.xml:7(para)
+msgid "The <filename>isn</filename>module provides data types for the following international product numbering standards: EAN13, UPC, ISBN (books), ISMN (music), and ISSN (serials). Numbers are validated on input according to a hard-coded list of prefixes; this list of prefixes is also used to hyphenate numbers on output. Since new prefixes are assigned from time to time, the list of prefixes may be out of date. It is hoped that a future version of this module will obtained the prefix list from one or more tables that can be easily updated by users as needed; however, at present, the list can only be updated by modifying the source code and recompiling. Alternatively, prefix validation and hyphenation support may be dropped from a future version of this module."
+msgstr ""
+
+#: xml/isn.xml:22(title)
+msgid "Data Types"
+msgstr ""
+
+#: xml/isn.xml:24(xref)
+msgid "shows the data types provided by the <placeholder-1/>module."
+msgstr ""
+
+#: xml/isn.xml:29(title)
+msgid "<filename>isn</filename>Data Types"
+msgstr ""
+
+#: xml/isn.xml:34(entry)
+msgid "Data Type"
+msgstr ""
+
+#: xml/isn.xml:35(entry) xml/isn.xml:204(entry)
+msgid "Description"
+msgstr ""
+
+#: xml/isn.xml:41(type)
+msgid "EAN13"
+msgstr ""
+
+#: xml/isn.xml:43(entry)
+msgid "European Article Numbers, always displayed in the EAN13 display format"
+msgstr ""
+
+#: xml/isn.xml:48(type)
+msgid "ISBN13"
+msgstr ""
+
+#: xml/isn.xml:50(entry)
+msgid "International Standard Book Numbers to be displayed in the new EAN13 display format"
+msgstr ""
+
+#: xml/isn.xml:55(type)
+msgid "ISMN13"
+msgstr ""
+
+#: xml/isn.xml:57(entry)
+msgid "International Standard Music Numbers to be displayed in the new EAN13 display format"
+msgstr ""
+
+#: xml/isn.xml:62(type)
+msgid "ISSN13"
+msgstr ""
+
+#: xml/isn.xml:64(entry)
+msgid "International Standard Serial Numbers to be displayed in the new EAN13 display format"
+msgstr ""
+
+#: xml/isn.xml:69(type)
+msgid "ISBN"
+msgstr ""
+
+#: xml/isn.xml:71(entry)
+msgid "International Standard Book Numbers to be displayed in the old short display format"
+msgstr ""
+
+#: xml/isn.xml:76(type)
+msgid "ISMN"
+msgstr ""
+
+#: xml/isn.xml:78(entry)
+msgid "International Standard Music Numbers to be displayed in the old short display format"
+msgstr ""
+
+#: xml/isn.xml:83(type)
+msgid "ISSN"
+msgstr ""
+
+#: xml/isn.xml:85(entry)
+msgid "International Standard Serial Numbers to be displayed in the old short display format"
+msgstr ""
+
+#: xml/isn.xml:90(type)
+msgid "UPC"
+msgstr ""
+
+#: xml/isn.xml:92(entry)
+msgid "Universal Product Codes"
+msgstr ""
+
+#: xml/isn.xml:97(para)
+msgid "Some notes:"
+msgstr ""
+
+#: xml/isn.xml:100(para)
+msgid "ISBN13, ISMN13, ISSN13 numbers are all EAN13 numbers."
+msgstr ""
+
+#: xml/isn.xml:104(para)
+msgid "EAN13 numbers aren't always ISBN13, ISMN13 or ISSN13 (some are)."
+msgstr ""
+
+#: xml/isn.xml:108(para)
+msgid "Some ISBN13 numbers can be displayed as ISBN."
+msgstr ""
+
+#: xml/isn.xml:111(para)
+msgid "Some ISMN13 numbers can be displayed as ISMN."
+msgstr ""
+
+#: xml/isn.xml:114(para)
+msgid "Some ISSN13 numbers can be displayed as ISSN."
+msgstr ""
+
+#: xml/isn.xml:117(para)
+msgid "UPC numbers are a subset of the EAN13 numbers (they are basically EAN13 without the first <literal>0</literal>digit)."
+msgstr ""
+
+#: xml/isn.xml:122(para)
+msgid "All UPC, ISBN, ISMN and ISSN numbers can be represented as EAN13 numbers."
+msgstr ""
+
+#: xml/isn.xml:126(para)
+msgid "Internally, all these types use the same representation (a 64-bit integer), and all are interchangeable. Multiple types are provided to control display formatting and to permit tighter validity checking of input that is supposed to denote one particular type of number."
+msgstr ""
+
+#: xml/isn.xml:131(para)
+msgid "The <type>ISBN</type>, <type>ISMN</type>, and <type>ISSN</type>types will display the short version of the number (ISxN 10) whenever it's possible, and will show ISxN 13 format for numbers that do not fit in the short version. The <type>EAN13</type>, <type>ISBN13</type>, <type>ISMN13</type>and <type>ISSN13</type>types will always display the long version of the ISxN (EAN13)."
+msgstr ""
+
+#: xml/isn.xml:144(title)
+msgid "Casts"
+msgstr ""
+
+#: xml/isn.xml:145(para)
+msgid "The <filename>isn</filename>module provides the following pairs of type casts:"
+msgstr ""
+
+#: xml/isn.xml:150(para)
+msgid "ISBN13 = EAN13"
+msgstr ""
+
+#: xml/isn.xml:153(para)
+msgid "ISMN13 = EAN13"
+msgstr ""
+
+#: xml/isn.xml:156(para)
+msgid "ISSN13 = EAN13"
+msgstr ""
+
+#: xml/isn.xml:159(para)
+msgid "ISBN = EAN13"
+msgstr ""
+
+#: xml/isn.xml:162(para)
+msgid "ISMN = EAN13"
+msgstr ""
+
+#: xml/isn.xml:165(para)
+msgid "ISSN = EAN13"
+msgstr ""
+
+#: xml/isn.xml:168(para)
+msgid "UPC = EAN13"
+msgstr ""
+
+#: xml/isn.xml:171(para)
+msgid "ISBN = ISBN13"
+msgstr ""
+
+#: xml/isn.xml:174(para)
+msgid "ISMN = ISMN13"
+msgstr ""
+
+#: xml/isn.xml:177(para)
+msgid "ISSN = ISSN13"
+msgstr ""
+
+#: xml/isn.xml:180(para)
+msgid "When casting from <type>EAN13</type>to another type, there is a run-time check that the value is within the domain of the other type, and an error is thrown if not. The other casts are simply relabelings that will always succeed."
+msgstr ""
+
+#: xml/isn.xml:187(title)
+msgid "Functions and Operators"
+msgstr ""
+
+#: xml/isn.xml:188(para)
+msgid "The <filename>isn</filename>module provides the standard comparison operators, plus B-tree and hash indexing support for all these data types. In addition there are several specialized functions; shown in <xref linkend=\"isn-functions\">. In this table, <type>isn</type>means any one of the module's data types.</xref>"
+msgstr ""
+
+#: xml/isn.xml:197(title)
+msgid "<filename>isn</filename>Functions"
+msgstr ""
+
+#: xml/isn.xml:202(entry)
+msgid "Function"
+msgstr ""
+
+#: xml/isn.xml:203(entry)
+msgid "Returns"
+msgstr ""
+
+#: xml/isn.xml:210(function)
+msgid "isn_weak(boolean)"
+msgstr ""
+
+#: xml/isn.xml:212(primary)
+msgid "isn_weak"
+msgstr ""
+
+#: xml/isn.xml:216(type) xml/isn.xml:226(type) xml/isn.xml:251(type)
+msgid "boolean"
+msgstr ""
+
+#: xml/isn.xml:218(entry)
+msgid "Sets the weak input mode (returns new setting)"
+msgstr ""
+
+#: xml/isn.xml:223(function)
+msgid "isn_weak()"
+msgstr ""
+
+#: xml/isn.xml:228(entry)
+msgid "Gets the current status of the weak mode"
+msgstr ""
+
+#: xml/isn.xml:232(function)
+msgid "make_valid(isn)"
+msgstr ""
+
+#: xml/isn.xml:234(primary)
+msgid "make_valid"
+msgstr ""
+
+#: xml/isn.xml:240(entry)
+msgid "Validates an invalid number (clears the invalid flag)"
+msgstr ""
+
+#: xml/isn.xml:245(function)
+msgid "is_valid(isn)"
+msgstr ""
+
+#: xml/isn.xml:247(primary)
+msgid "is_valid"
+msgstr ""
+
+#: xml/isn.xml:253(entry)
+msgid "Checks for the presence of the invalid flag"
+msgstr ""
+
+#: xml/isn.xml:259(para)
+msgid "<firstterm>Weak</firstterm>mode is used to be able to insert invalid data into a table. Invalid means the check digit is wrong, not that there are missing numbers."
+msgstr ""
+
+#: xml/isn.xml:263(para)
+msgid "Why would you want to use the weak mode? Well, it could be that you have a huge collection of ISBN numbers, and that there are so many of them that for weird reasons some have the wrong check digit (perhaps the numbers were scanned from a printed list and the OCR got the numbers wrong, perhaps the numbers were manually captured... who knows). Anyway, the point is you might want to clean the mess up, but you still want to be able to have all the numbers in your database and maybe use an external tool to locate the invalid numbers in the database so you can verify the information and validate it more easily; so for example you'd want to select all the invalid numbers in the table."
+msgstr ""
+
+#: xml/isn.xml:275(para)
+msgid "When you insert invalid numbers in a table using the weak mode, the number will be inserted with the corrected check digit, but it will be displayed with an exclamation mark ( <literal>!</literal>) at the end, for example <literal>0-11-000322-5!</literal>. This invalid marker can be checked with the <function>is_valid</function>function and cleared with the <function>make_valid</function>function."
+msgstr ""
+
+#: xml/isn.xml:283(para)
+msgid "You can also force the insertion of invalid numbers even when not in the weak mode, by appending the <literal>!</literal>character at the end of the number."
+msgstr ""
+
+#: xml/isn.xml:286(para)
+msgid "Another special feature is that during input, you can write <literal>?</literal>in place of the check digit, and the correct check digit will be inserted automatically."
+msgstr ""
+
+#: xml/isn.xml:292(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/isn.xml:293(programlisting)
+#, no-wrap
+msgid "--Using the types directly: SELECT\n    isbn('978-0-393-04002-9'); SELECT isbn13('0901690546'); SELECT\n    issn('1436-4522'); --Casting types: -- note that you can only\n    cast from ean13 to another type when the -- number would be\n    valid in the realm of the target type; -- thus, the following\n    will NOT work: select isbn(ean13('0220356483481')); -- but\n    these will: SELECT upc(ean13('0220356483481')); SELECT\n    ean13(upc('220356483481')); --Create a table with a single\n    column to hold ISBN numbers: CREATE TABLE test (id isbn);\n    INSERT INTO test VALUES('9780393040029'); --Automatically\n    calculate check digits (observe the '?'): INSERT INTO test\n    VALUES('220500896?'); INSERT INTO test VALUES('978055215372?');\n    SELECT issn('3251231?'); SELECT ismn('979047213542?'); --Using\n    the weak mode: SELECT isn_weak(true); INSERT INTO test\n    VALUES('978-0-11-000533-4'); INSERT INTO test\n    VALUES('9780141219307'); INSERT INTO test\n    VALUES('2-205-00876-X'); SELECT isn_weak(false); SELECT id FROM\n    test WHERE NOT is_valid(id); UPDATE test SET id =\n    make_valid(id) WHERE id = '2-205-00876-X!'; SELECT * FROM test;\n    SELECT isbn13(id) FROM test;"
+msgstr ""
+
+#: xml/isn.xml:315(title)
+msgid "Bibliography"
+msgstr ""
+
+#: xml/isn.xml:316(para)
+msgid "The information to implement this module was collected from several sites, including: <placeholder-1/>The prefixes used for hyphenation were also compiled from: <placeholder-2/>Care was taken during the creation of the algorithms and they were meticulously verified against the suggested algorithms in the official ISBN, ISMN, ISSN User Manuals."
+msgstr ""
+
+#: xml/isn.xml:378(title)
+msgid "Author"
+msgstr ""
+
+#: xml/isn.xml:379(para)
+msgid "Germn Mndez Bravo (Kronuz), 2004 - 2006"
+msgstr ""
+
+#: xml/isn.xml:380(para)
+msgid "This module was inspired by Garrett A. Wollman's <filename>isbn_issn</filename>code."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/isn.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

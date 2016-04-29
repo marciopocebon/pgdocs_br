@@ -1,0 +1,388 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/release-9.3.xml:3(title)
+msgid "Release 9.3.10"
+msgstr ""
+
+#: xml/release-9.3.xml:5(title)
+msgid "Release Date"
+msgstr ""
+
+#: xml/release-9.3.xml:6(simpara)
+msgid "2015-10-08"
+msgstr ""
+
+#: xml/release-9.3.xml:8(para)
+msgid "This release contains a variety of fixes from 9.3.9. For information about new features in the 9.3 major release, see <xref linkend=\"release-9-3\">.</xref>"
+msgstr ""
+
+#: xml/release-9.3.xml:12(title)
+msgid "Migration to Version 9.3.10"
+msgstr ""
+
+#: xml/release-9.3.xml:13(para)
+msgid "A dump/restore is not required for those running 9.3.X."
+msgstr ""
+
+#: xml/release-9.3.xml:15(para)
+msgid "However, if you are upgrading from a version earlier than 9.3.9, see <xref linkend=\"release-9-3-9\">.</xref>"
+msgstr ""
+
+#: xml/release-9.3.xml:20(title)
+msgid "Changes"
+msgstr ""
+
+#: xml/release-9.3.xml:23(para)
+msgid "Guard against stack overflows in <type>json</type>parsing (Oskari Saarenmaa)"
+msgstr ""
+
+#: xml/release-9.3.xml:25(para)
+msgid "If an application constructs PostgreSQL <type>json</type>or <type>jsonb</type>values from arbitrary user input, the application's users can reliably crash the PostgreSQL server, causing momentary denial of service. (CVE-2015-5289)"
+msgstr ""
+
+#: xml/release-9.3.xml:33(para)
+msgid "Fix <filename>contrib/pgcrypto</filename>to detect and report too-short <function>crypt()</function>salts (Josh Kupershmidt)"
+msgstr ""
+
+#: xml/release-9.3.xml:37(para)
+msgid "Certain invalid salt arguments crashed the server or disclosed a few bytes of server memory. We have not ruled out the viability of attacks that arrange for presence of confidential information in the disclosed bytes, but they seem unlikely. (CVE-2015-5288)"
+msgstr ""
+
+#: xml/release-9.3.xml:44(para)
+msgid "Fix subtransaction cleanup after a portal (cursor) belonging to an outer subtransaction fails (Tom Lane, Michael Paquier)"
+msgstr ""
+
+#: xml/release-9.3.xml:47(para)
+msgid "A function executed in an outer-subtransaction cursor could cause an assertion failure or crash by referencing a relation created within an inner subtransaction."
+msgstr ""
+
+#: xml/release-9.3.xml:52(para)
+msgid "Ensure all relations referred to by an updatable view are properly locked during an update statement (Dean Rasheed)"
+msgstr ""
+
+#: xml/release-9.3.xml:57(para)
+msgid "Fix insertion of relations into the relation cache <quote>init file</quote>(Tom Lane)"
+msgstr ""
+
+#: xml/release-9.3.xml:59(para)
+msgid "An oversight in a patch in the most recent minor releases caused <structname>pg_trigger_tgrelid_tgname_index</structname>to be omitted from the init file. Subsequent sessions detected this, then deemed the init file to be broken and silently ignored it, resulting in a significant degradation in session startup time. In addition to fixing the bug, install some guards so that any similar future mistake will be more obvious."
+msgstr ""
+
+#: xml/release-9.3.xml:70(para)
+msgid "Avoid O(N^2) behavior when inserting many tuples into a SPI query result (Neil Conway)"
+msgstr ""
+
+#: xml/release-9.3.xml:74(para)
+msgid "Improve <command>LISTEN</command>startup time when there are many unread notifications (Matt Newell)"
+msgstr ""
+
+#: xml/release-9.3.xml:79(para)
+msgid "Fix performance problem when a session alters large numbers of foreign key constraints (Jan Wieck, Tom Lane)"
+msgstr ""
+
+#: xml/release-9.3.xml:82(para)
+msgid "This was seen primarily when restoring <application>pg_dump</application>output for databases with many thousands of tables."
+msgstr ""
+
+#: xml/release-9.3.xml:87(para)
+msgid "Disable SSL renegotiation by default (Michael Paquier, Andres Freund)"
+msgstr ""
+
+#: xml/release-9.3.xml:89(para)
+msgid "While use of SSL renegotiation is a good idea in theory, we have seen too many bugs in practice, both in the underlying OpenSSL library and in our usage of it. Renegotiation will be removed entirely in 9.5 and later. In the older branches, just change the default value of <varname>ssl_renegotiation_limit</varname>to zero (disabled)."
+msgstr ""
+
+#: xml/release-9.3.xml:98(para)
+msgid "Lower the minimum values of the <literal>*_freeze_max_age</literal>parameters (Andres Freund)"
+msgstr ""
+
+#: xml/release-9.3.xml:101(para)
+msgid "This is mainly to make tests of related behavior less time-consuming, but it may also be of value for installations with limited disk space."
+msgstr ""
+
+#: xml/release-9.3.xml:106(para)
+msgid "Limit the maximum value of <varname>wal_buffers</varname>to 2GB to avoid server crashes (Josh Berkus)"
+msgstr ""
+
+#: xml/release-9.3.xml:111(para)
+msgid "Avoid logging complaints when a parameter that can only be set at server start appears multiple times in <filename>postgresql.conf</filename>, and fix counting of line numbers after an <literal>include_dir</literal>directive (Tom Lane)"
+msgstr ""
+
+#: xml/release-9.3.xml:118(para)
+msgid "Fix rare internal overflow in multiplication of <type>numeric</type>values (Dean Rasheed)"
+msgstr ""
+
+#: xml/release-9.3.xml:122(para)
+msgid "Guard against hard-to-reach stack overflows involving record types, range types, <type>json</type>, <type>jsonb</type>, <type>tsquery</type>, <type>ltxtquery</type>and <type>query_int</type>(Noah Misch)"
+msgstr ""
+
+#: xml/release-9.3.xml:131(para)
+msgid "Fix handling of <literal>DOW</literal>and <literal>DOY</literal>in datetime input (Greg Stark)"
+msgstr ""
+
+#: xml/release-9.3.xml:134(para)
+msgid "These tokens aren't meant to be used in datetime values, but previously they resulted in opaque internal error messages rather than <quote>invalid input syntax</quote>."
+msgstr ""
+
+#: xml/release-9.3.xml:140(para)
+msgid "Add more query-cancel checks to regular expression matching (Tom Lane)"
+msgstr ""
+
+#: xml/release-9.3.xml:144(para)
+msgid "Add recursion depth protections to regular expression, <literal>SIMILAR TO</literal>, and <literal>LIKE</literal>matching (Tom Lane)"
+msgstr ""
+
+#: xml/release-9.3.xml:148(para)
+msgid "Suitable search patterns and a low stack depth limit could lead to stack-overrun crashes."
+msgstr ""
+
+#: xml/release-9.3.xml:152(para)
+msgid "Fix potential infinite loop in regular expression execution (Tom Lane)"
+msgstr ""
+
+#: xml/release-9.3.xml:154(para)
+msgid "A search pattern that can apparently match a zero-length string, but actually doesn't match because of a back reference, could lead to an infinite loop."
+msgstr ""
+
+#: xml/release-9.3.xml:159(para)
+msgid "In regular expression execution, correctly record match data for capturing parentheses within a quantifier even when the match is zero-length (Tom Lane)"
+msgstr ""
+
+#: xml/release-9.3.xml:164(para)
+msgid "Fix low-memory failures in regular expression compilation (Andreas Seltenreich)"
+msgstr ""
+
+#: xml/release-9.3.xml:168(para)
+msgid "Fix low-probability memory leak during regular expression execution (Tom Lane)"
+msgstr ""
+
+#: xml/release-9.3.xml:172(para)
+msgid "Fix rare low-memory failure in lock cleanup during transaction abort (Tom Lane)"
+msgstr ""
+
+#: xml/release-9.3.xml:176(para)
+msgid "Fix <quote>unexpected out-of-memory situation during sort</quote>errors when using tuplestores with small <varname>work_mem</varname>settings (Tom Lane)"
+msgstr ""
+
+#: xml/release-9.3.xml:182(para)
+msgid "Fix very-low-probability stack overrun in <function>qsort</function>(Tom Lane)"
+msgstr ""
+
+#: xml/release-9.3.xml:186(para)
+msgid "Fix <quote>invalid memory alloc request size</quote>failure in hash joins with large <varname>work_mem</varname>settings (Tomas Vondra, Tom Lane)"
+msgstr ""
+
+#: xml/release-9.3.xml:193(para)
+msgid "Fix assorted planner bugs (Tom Lane)"
+msgstr ""
+
+#: xml/release-9.3.xml:194(para)
+msgid "These mistakes could lead to incorrect query plans that would give wrong answers, or to assertion failures in assert-enabled builds, or to odd planner errors such as <quote>could not devise a query plan for the given query</quote>, <quote>could not find pathkey item to sort</quote>, <quote>plan should not reference subplan's variable</quote>, or <quote>failed to assign all NestLoopParams to plan nodes</quote>. Thanks are due to Andreas Seltenreich and Piotr Stefaniak for fuzz testing that exposed these problems."
+msgstr ""
+
+#: xml/release-9.3.xml:208(para)
+msgid "Improve planner's performance for <command>UPDATE</command>/ <command>DELETE</command>on large inheritance sets (Tom Lane, Dean Rasheed)"
+msgstr ""
+
+#: xml/release-9.3.xml:214(para)
+msgid "Ensure standby promotion trigger files are removed at postmaster startup (Michael Paquier, Fujii Masao)"
+msgstr ""
+
+#: xml/release-9.3.xml:216(para)
+msgid "This prevents unwanted promotion from occurring if these files appear in a database backup that is used to initialize a new standby server."
+msgstr ""
+
+#: xml/release-9.3.xml:221(para)
+msgid "During postmaster shutdown, ensure that per-socket lock files are removed and listen sockets are closed before we remove the <filename>postmaster.pid</filename>file (Tom Lane)"
+msgstr ""
+
+#: xml/release-9.3.xml:225(para)
+msgid "This avoids race-condition failures if an external script attempts to start a new postmaster as soon as <literal>pg_ctl stop</literal>returns."
+msgstr ""
+
+#: xml/release-9.3.xml:230(para)
+msgid "Fix postmaster's handling of a startup-process crash during crash recovery (Tom Lane)"
+msgstr ""
+
+#: xml/release-9.3.xml:232(para)
+msgid "If, during a crash recovery cycle, the startup process crashes without having restored database consistency, we'd try to launch a new startup process, which typically would just crash again, leading to an infinite loop."
+msgstr ""
+
+#: xml/release-9.3.xml:239(para)
+msgid "Make emergency autovacuuming for multixact wraparound more robust (Andres Freund)"
+msgstr ""
+
+#: xml/release-9.3.xml:243(para)
+msgid "Do not print a <literal>WARNING</literal>when an autovacuum worker is already gone when we attempt to signal it, and reduce log verbosity for such signals (Tom Lane)"
+msgstr ""
+
+#: xml/release-9.3.xml:249(para)
+msgid "Prevent autovacuum launcher from sleeping unduly long if the server clock is moved backwards a large amount (lvaro Herrera)"
+msgstr ""
+
+#: xml/release-9.3.xml:254(para)
+msgid "Ensure that cleanup of a GIN index's pending-insertions list is interruptable by cancel requests (Jeff Janes)"
+msgstr ""
+
+#: xml/release-9.3.xml:259(para)
+msgid "Allow all-zeroes pages in GIN indexes to be reused (Heikki Linnakangas)"
+msgstr ""
+
+#: xml/release-9.3.xml:261(para)
+msgid "Such a page might be left behind after a crash."
+msgstr ""
+
+#: xml/release-9.3.xml:265(para)
+msgid "Fix handling of all-zeroes pages in SP-GiST indexes (Heikki Linnakangas)"
+msgstr ""
+
+#: xml/release-9.3.xml:267(para)
+msgid "<command>VACUUM</command>attempted to recycle such pages, but did so in a way that wasn't crash-safe."
+msgstr ""
+
+#: xml/release-9.3.xml:272(para)
+msgid "Fix off-by-one error that led to otherwise-harmless warnings about <quote>apparent wraparound</quote>in subtrans/multixact truncation (Thomas Munro)"
+msgstr ""
+
+#: xml/release-9.3.xml:278(para)
+msgid "Fix misreporting of <command>CONTINUE</command>and <command>MOVE</command>statement types in <application>PL/pgSQL</application>'s error context messages (Pavel Stehule, Tom Lane)"
+msgstr ""
+
+#: xml/release-9.3.xml:285(para)
+msgid "Fix <application>PL/Perl</application>to handle non- <acronym>ASCII</acronym>error message texts correctly (Alex Hunsaker)"
+msgstr ""
+
+#: xml/release-9.3.xml:291(para)
+msgid "Fix <application>PL/Python</application>crash when returning the string representation of a <type>record</type>result (Tom Lane)"
+msgstr ""
+
+#: xml/release-9.3.xml:297(para)
+msgid "Fix some places in <application>PL/Tcl</application>that neglected to check for failure of <function>malloc()</function>calls (Michael Paquier, lvaro Herrera)"
+msgstr ""
+
+#: xml/release-9.3.xml:304(para)
+msgid "In <filename>contrib/isn</filename>, fix output of ISBN-13 numbers that begin with 979 (Fabien Coelho)"
+msgstr ""
+
+#: xml/release-9.3.xml:307(para)
+msgid "EANs beginning with 979 (but not 9790) are considered ISBNs, but they must be printed in the new 13-digit format, not the 10-digit format."
+msgstr ""
+
+#: xml/release-9.3.xml:312(para)
+msgid "Improve <filename>contrib/postgres_fdw</filename>'s handling of collation-related decisions (Tom Lane)"
+msgstr ""
+
+#: xml/release-9.3.xml:315(para)
+msgid "The main user-visible effect is expected to be that comparisons involving <type>varchar</type>columns will be sent to the remote server for execution in more cases than before."
+msgstr ""
+
+#: xml/release-9.3.xml:321(para)
+msgid "Improve <application>libpq</application>'s handling of out-of-memory conditions (Michael Paquier, Heikki Linnakangas)"
+msgstr ""
+
+#: xml/release-9.3.xml:327(para)
+msgid "Fix memory leaks and missing out-of-memory checks in <application>ecpg</application>(Michael Paquier)"
+msgstr ""
+
+#: xml/release-9.3.xml:331(para)
+msgid "Fix <application>psql</application>'s code for locale-aware formatting of numeric output (Tom Lane)"
+msgstr ""
+
+#: xml/release-9.3.xml:334(para)
+msgid "The formatting code invoked by <literal>\\pset numericlocale on</literal>did the wrong thing for some uncommon cases such as numbers with an exponent but no decimal point. It could also mangle already-localized output from the <type>money</type>data type."
+msgstr ""
+
+#: xml/release-9.3.xml:342(para)
+msgid "Prevent crash in <application>psql</application>'s <command>\\c</command>command when there is no current connection (Noah Misch)"
+msgstr ""
+
+#: xml/release-9.3.xml:348(para)
+msgid "Make <application>pg_dump</application>handle inherited <literal>NOT VALID</literal>check constraints correctly (Tom Lane)"
+msgstr ""
+
+#: xml/release-9.3.xml:354(para)
+msgid "Fix selection of default <application>zlib</application>compression level in <application>pg_dump</application>'s directory output format (Andrew Dunstan)"
+msgstr ""
+
+#: xml/release-9.3.xml:360(para)
+msgid "Ensure that temporary files created during a <application>pg_dump</application>run with <acronym>tar</acronym>-format output are not world-readable (Michael Paquier)"
+msgstr ""
+
+#: xml/release-9.3.xml:366(para)
+msgid "Fix <application>pg_dump</application>and <application>pg_upgrade</application>to support cases where the <literal>postgres</literal>or <literal>template1</literal>database is in a non-default tablespace (Marti Raudsepp, Bruce Momjian)"
+msgstr ""
+
+#: xml/release-9.3.xml:375(para)
+msgid "Fix <application>pg_dump</application>to handle object privileges sanely when dumping from a server too old to have a particular privilege type (Tom Lane)"
+msgstr ""
+
+#: xml/release-9.3.xml:379(para)
+msgid "When dumping data types from pre-9.2 servers, and when dumping functions or procedural languages from pre-7.3 servers, <application>pg_dump</application>would produce <command>GRANT</command>/ <command>REVOKE</command>commands that revoked the owner's grantable privileges and instead granted all privileges to <literal>PUBLIC</literal>. Since the privileges involved are just <literal>USAGE</literal>and <literal>EXECUTE</literal>, this isn't a security problem, but it's certainly a surprising representation of the older systems' behavior. Fix it to leave the default privilege state alone in these cases."
+msgstr ""
+
+#: xml/release-9.3.xml:395(para)
+msgid "Fix <application>pg_dump</application>to dump shell types (Tom Lane)"
+msgstr ""
+
+#: xml/release-9.3.xml:398(para)
+msgid "Shell types (that is, not-yet-fully-defined types) aren't useful for much, but nonetheless <application>pg_dump</application>should dump them."
+msgstr ""
+
+#: xml/release-9.3.xml:403(para)
+msgid "Fix assorted minor memory leaks in <application>pg_dump</application>and other client-side programs (Michael Paquier)"
+msgstr ""
+
+#: xml/release-9.3.xml:408(para)
+msgid "Fix spinlock assembly code for PPC hardware to be compatible with <acronym>AIX</acronym>'s native assembler (Tom Lane)"
+msgstr ""
+
+#: xml/release-9.3.xml:411(para)
+msgid "Building with <application>gcc</application>didn't work if <application>gcc</application>had been configured to use the native assembler, which is becoming more common."
+msgstr ""
+
+#: xml/release-9.3.xml:417(para)
+msgid "On <acronym>AIX</acronym>, test the <literal>-qlonglong</literal>compiler option rather than just assuming it's safe to use (Noah Misch)"
+msgstr ""
+
+#: xml/release-9.3.xml:423(para)
+msgid "On <acronym>AIX</acronym>, use <literal>-Wl,-brtllib</literal>link option to allow symbols to be resolved at runtime (Noah Misch)"
+msgstr ""
+
+#: xml/release-9.3.xml:427(para)
+msgid "Perl relies on this ability in 5.8.0 and later."
+msgstr ""
+
+#: xml/release-9.3.xml:431(para)
+msgid "Avoid use of inline functions when compiling with 32-bit <application>xlc</application>, due to compiler bugs (Noah Misch)"
+msgstr ""
+
+#: xml/release-9.3.xml:437(para)
+msgid "Use <filename>librt</filename>for <function>sched_yield()</function>when necessary, which it is on some Solaris versions (Oskari Saarenmaa)"
+msgstr ""
+
+#: xml/release-9.3.xml:443(para)
+msgid "Fix Windows <filename>install.bat</filename>script to handle target directory names that contain spaces (Heikki Linnakangas)"
+msgstr ""
+
+#: xml/release-9.3.xml:449(para)
+msgid "Make the numeric form of the <productname>PostgreSQL</productname>version number (e.g., <literal>90405</literal>) readily available to extension Makefiles, as a variable named <varname>VERSION_NUM</varname>(Michael Paquier)"
+msgstr ""
+
+#: xml/release-9.3.xml:456(para)
+msgid "Update time zone data files to <application>tzdata</application>release 2015g for DST law changes in Cayman Islands, Fiji, Moldova, Morocco, Norfolk Island, North Korea, Turkey, and Uruguay. There is a new zone name <literal>America/Fort_Nelson</literal>for the Canadian Northern Rockies."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/release-9.3.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

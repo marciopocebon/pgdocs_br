@@ -1,0 +1,62 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/contrib.xml:3(title)
+msgid "Additional Supplied Modules"
+msgstr ""
+
+#: xml/contrib.xml:4(para)
+msgid "This appendix and the next one contain information regarding the modules that can be found in the <literal>contrib</literal>directory of the <productname>PostgreSQL</productname>distribution. These include porting tools, analysis utilities, and plug-in features that are not part of the core PostgreSQL system, mainly because they address a limited audience or are too experimental to be part of the main source tree. This does not preclude their usefulness."
+msgstr ""
+
+#: xml/contrib.xml:13(para)
+msgid "This appendix covers extensions and other server plug-in modules found in <literal>contrib</literal>. <xref linkend=\"contrib-prog\">covers utility programs.</xref>"
+msgstr ""
+
+#: xml/contrib.xml:18(para)
+msgid "When building from the source distribution, these components are not built automatically, unless you build the \"world\" target (see <xref linkend=\"build\">). You can build and install all of them by running: <screen>\n    <userinput>make</userinput>\n    <userinput>make install</userinput>\n  </screen>in the <literal>contrib</literal>directory of a configured source tree; or to build and install just one selected module, do the same in that module's subdirectory. Many of the modules have regression tests, which can be executed by running: <screen>\n    <userinput>make check</userinput>\n  </screen>before installation or <screen>\n    <userinput>make installcheck</userinput>\n  </screen>once you have a <productname>PostgreSQL</productname>server running.</xref>"
+msgstr ""
+
+#: xml/contrib.xml:39(para)
+msgid "If you are using a pre-packaged version of <productname>PostgreSQL</productname>, these modules are typically made available as a separate subpackage, such as <literal>postgresql-contrib</literal>."
+msgstr ""
+
+#: xml/contrib.xml:51(programlisting)
+#, no-wrap
+msgid "CREATE EXTENSION \n  <replaceable>module_name</replaceable>;"
+msgstr ""
+
+#: xml/contrib.xml:43(para)
+msgid "Many modules supply new user-defined functions, operators, or types. To make use of one of these modules, after you have installed the code you need to register the new SQL objects in the database system. In <productname>PostgreSQL</productname>9.1 and later, this is done by executing a <xref linkend=\"sql-createextension\">command. In a fresh database, you can simply do <placeholder-1/>This command must be run by a database superuser. This registers the new SQL objects in the current database only, so you need to run this command in each database that you want the module's facilities to be available in. Alternatively, run it in database <literal>template1</literal>so that the extension will be copied into subsequently-created databases by default.</xref>"
+msgstr ""
+
+#: xml/contrib.xml:59(para)
+msgid "Many modules allow you to install their objects in a schema of your choice. To do that, add <literal>SCHEMA <replaceable>schema_name</replaceable></literal>to the <command>CREATE EXTENSION</command>command. By default, the objects will be placed in your current creation target schema, typically <literal>public</literal>."
+msgstr ""
+
+#: xml/contrib.xml:71(programlisting)
+#, no-wrap
+msgid "CREATE EXTENSION \n  <replaceable>module_name</replaceable>FROM\n  unpackaged;"
+msgstr ""
+
+#: xml/contrib.xml:67(para)
+msgid "If your database was brought forward by dump and reload from a pre-9.1 version of <productname>PostgreSQL</productname>, and you had been using the pre-9.1 version of the module in it, you should instead do <placeholder-1/>This will update the pre-9.1 objects of the module into a proper <firstterm>extension</firstterm>object. Future updates to the module will be managed by <xref linkend=\"sql-alterextension\">. For more information about extension updates, see <xref linkend=\"extend-extensions\">.</xref></xref>"
+msgstr ""
+
+#: xml/contrib.xml:80(para)
+msgid "Note, however, that some of these modules are not <quote>extensions</quote>in this sense, but are loaded into the server in some other way, for instance by way of <xref linkend=\"guc-shared-preload-libraries\">. See the documentation of each module for details.</xref>"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/contrib.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

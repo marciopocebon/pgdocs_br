@@ -1,0 +1,85 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/create_group.xml:4(primary) xml/ref/create_group.xml:7(refentrytitle) xml/ref/create_group.xml:12(refname)
+msgid "CREATE GROUP"
+msgstr ""
+
+#: xml/ref/create_group.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/create_group.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/create_group.xml:13(refpurpose)
+msgid "define a new database role"
+msgstr ""
+
+#: xml/ref/create_group.xml:17(replaceable)
+msgid "name"
+msgstr ""
+
+#: xml/ref/create_group.xml:18(replaceable) xml/ref/create_group.xml:20(replaceable)
+msgid "option"
+msgstr ""
+
+#: xml/ref/create_group.xml:19(phrase)
+msgid "where <placeholder-1/>can be:"
+msgstr ""
+
+#: xml/ref/create_group.xml:25(replaceable)
+msgid "password"
+msgstr ""
+
+#: xml/ref/create_group.xml:27(replaceable)
+msgid "timestamp"
+msgstr ""
+
+#: xml/ref/create_group.xml:29(replaceable) xml/ref/create_group.xml:31(replaceable) xml/ref/create_group.xml:33(replaceable) xml/ref/create_group.xml:35(replaceable) xml/ref/create_group.xml:37(replaceable)
+msgid "role_name"
+msgstr ""
+
+#: xml/ref/create_group.xml:39(replaceable)
+msgid "uid"
+msgstr ""
+
+#: xml/ref/create_group.xml:16(synopsis)
+#, no-wrap
+msgid "CREATE GROUP \n    <placeholder-1/>[ [ WITH ] \n    <placeholder-2/>[ ... ] ] \n    <placeholder-3/>SUPERUSER | NOSUPERUSER | CREATEDB | NOCREATEDB |\n    CREATEROLE | NOCREATEROLE | CREATEUSER | NOCREATEUSER | INHERIT\n    | NOINHERIT | LOGIN | NOLOGIN | [ ENCRYPTED | UNENCRYPTED ]\n    PASSWORD ' \n    <placeholder-4/>' | VALID\n    UNTIL ' \n    <placeholder-5/>' | IN\n    ROLE \n    <placeholder-6/>[, ...] |\n    IN GROUP \n    <placeholder-7/>[, ...] |\n    ROLE \n    <placeholder-8/>[, ...] |\n    ADMIN \n    <placeholder-9/>[, ...] |\n    USER \n    <placeholder-10/>[, ...] |\n    SYSID \n    <placeholder-11/>"
+msgstr ""
+
+#: xml/ref/create_group.xml:42(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/create_group.xml:43(para)
+msgid "<command>CREATE GROUP</command>is now an alias for <xref linkend=\"sql-createrole\">.</xref>"
+msgstr ""
+
+#: xml/ref/create_group.xml:48(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/create_group.xml:49(para)
+msgid "There is no <command>CREATE GROUP</command>statement in the SQL standard."
+msgstr ""
+
+#: xml/ref/create_group.xml:54(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/create_group.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

@@ -1,0 +1,344 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/pg_receivexlog.xml:4(primary) xml/ref/pg_receivexlog.xml:7(refentrytitle) xml/ref/pg_receivexlog.xml:12(refname) xml/ref/pg_receivexlog.xml:18(command)
+msgid "pg_receivexlog"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:9(refmiscinfo)
+msgid "Application"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:14(productname)
+msgid "PostgreSQL"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:13(refpurpose)
+msgid "stream transaction logs from a <placeholder-1/>server"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:20(replaceable)
+msgid "option"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:25(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:26(para)
+msgid "<application>pg_receivexlog</application>is used to stream the transaction log from a running <productname>PostgreSQL</productname>cluster. The transaction log is streamed using the streaming replication protocol, and is written to a local directory of files. This directory can be used as the archive location for doing a restore using point-in-time recovery (see <xref linkend=\"continuous-archiving\">).</xref>"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:35(para)
+msgid "<application>pg_receivexlog</application>streams the transaction log in real time as it's being generated on the server, and does not wait for segments to complete like <xref linkend=\"guc-archive-command\">does. For this reason, it is not necessary to set <xref linkend=\"guc-archive-timeout\">when using <application>pg_receivexlog</application>.</xref></xref>"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:43(para)
+msgid "Unlike the WAL receiver of a PostgreSQL standby server, <application>pg_receivexlog</application>by default flushes WAL data only when a WAL file is closed. The option <option>--synchronous</option>must be specified to flush WAL data in real time."
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:48(para)
+msgid "The transaction log is streamed over a regular <productname>PostgreSQL</productname>connection and uses the replication protocol. The connection must be made with a superuser or a user having <literal>REPLICATION</literal>permissions (see <xref linkend=\"role-attributes\">), and <filename>pg_hba.conf</filename>must permit the replication connection. The server must also be configured with <xref linkend=\"guc-max-wal-senders\">set high enough to leave at least one session available for the stream.</xref></xref>"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:59(para)
+msgid "If the connection is lost, or if it cannot be initially established, with a non-fatal error, <application>pg_receivexlog</application>will retry the connection indefinitely, and reestablish streaming as soon as possible. To avoid this behavior, use the <literal>-n</literal>parameter."
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:67(title)
+msgid "Options"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:72(replaceable) xml/ref/pg_receivexlog.xml:77(replaceable)
+msgid "directory"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:71(option)
+msgid "-D <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:76(option)
+msgid "--directory= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:81(para)
+msgid "Directory to write the output to."
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:82(para)
+msgid "This parameter is required."
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:87(option)
+msgid "--if-not-exists"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:90(para)
+msgid "Do not not error out when <option>--create-slot</option>is specified and a slot with the specified name already exists."
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:97(option)
+msgid "-n"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:100(option)
+msgid "--no-loop"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:103(para)
+msgid "Don't loop on connection errors. Instead, exit right away with an error."
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:110(replaceable) xml/ref/pg_receivexlog.xml:115(replaceable)
+msgid "interval"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:109(option)
+msgid "-s <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:114(option)
+msgid "--status-interval= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:119(para)
+msgid "Specifies the number of seconds between status packets sent back to the server. This allows for easier monitoring of the progress from server. A value of zero disables the periodic status updates completely, although an update will still be sent when requested by the server, to avoid timeout disconnect. The default value is 10 seconds."
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:131(replaceable) xml/ref/pg_receivexlog.xml:135(replaceable)
+msgid "slotname"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:130(option)
+msgid "-S <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:134(option)
+msgid "--slot= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:139(para)
+msgid "Require <application>pg_receivexlog</application>to use an existing replication slot (see <xref linkend=\"streaming-replication-slots\">). When this option is used, <application>pg_receivexlog</application>will report a flush position to the server, indicating when each segment has been synchronized to disk so that the server can remove that segment if it is not otherwise needed.</xref>"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:149(para)
+msgid "When the replication client of <application>pg_receivexlog</application>is configured on the server as a synchronous standby, then using a replication slot will report the flush position to the server, but only when a WAL file is closed. Therefore, that configuration will cause transactions on the primary to wait for a long time and effectively not work satisfactorily. The option <literal>--synchronous</literal>(see below) must be specified in addition to make this work correctly."
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:163(option)
+msgid "--synchronous"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:166(para)
+msgid "Flush the WAL data to disk immediately after it has been received. Also send a status packet back to the server immediately after flushing, regardless of <literal>--status-interval</literal>."
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:170(para)
+msgid "This option should be specified if the replication client of <application>pg_receivexlog</application>is configured on the server as a synchronous standby, to ensure that timely feedback is sent to the server."
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:179(option)
+msgid "-v"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:182(option)
+msgid "--verbose"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:185(para)
+msgid "Enables verbose mode."
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:195(replaceable) xml/ref/pg_receivexlog.xml:200(replaceable)
+msgid "connstr"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:194(option)
+msgid "-d <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:199(option)
+msgid "--dbname= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:204(para)
+msgid "Specifies parameters used to connect to the server, as a connection string. See <xref linkend=\"libpq-connstring\">for more information.</xref>"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:208(para)
+msgid "The option is called <literal>--dbname</literal>for consistency with other client applications, but because <application>pg_receivexlog</application>doesn't connect to any particular database in the cluster, database name in the connection string will be ignored."
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:219(replaceable) xml/ref/pg_receivexlog.xml:224(replaceable)
+msgid "host"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:218(option)
+msgid "-h <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:223(option)
+msgid "--host= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:228(para)
+msgid "Specifies the host name of the machine on which the server is running. If the value begins with a slash, it is used as the directory for the Unix domain socket. The default is taken from the <envar>PGHOST</envar>environment variable, if set, else a Unix domain socket connection is attempted."
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:239(replaceable) xml/ref/pg_receivexlog.xml:244(replaceable)
+msgid "port"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:238(option)
+msgid "-p <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:243(option)
+msgid "--port= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:248(para)
+msgid "Specifies the TCP port or local Unix domain socket file extension on which the server is listening for connections. Defaults to the <envar>PGPORT</envar>environment variable, if set, or a compiled-in default."
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:258(replaceable) xml/ref/pg_receivexlog.xml:262(replaceable)
+msgid "username"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:257(option)
+msgid "-U <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:261(option)
+msgid "--username= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:266(para)
+msgid "User name to connect as."
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:271(option)
+msgid "-w"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:274(option)
+msgid "--no-password"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:277(para)
+msgid "Never issue a password prompt. If the server requires password authentication and a password is not available by other means such as a <filename>.pgpass</filename>file, the connection attempt will fail. This option can be useful in batch jobs and scripts where no user is present to enter a password."
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:288(option)
+msgid "-W"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:291(option)
+msgid "--password"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:294(para)
+msgid "Force <application>pg_receivexlog</application>to prompt for a password before connecting to a database."
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:297(para)
+msgid "This option is never essential, since <application>pg_receivexlog</application>will automatically prompt for a password if the server demands password authentication. However, <application>pg_receivexlog</application>will waste a connection attempt finding out that the server wants a password. In some cases it is worth typing <option>-W</option>to avoid the extra connection attempt."
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:189(para)
+msgid "The following command-line options control the database connection parameters. <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:316(option)
+msgid "--create-slot"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:319(para)
+msgid "Create a new physical replication slot with the name specified in <option>--slot</option>, then exit."
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:326(option)
+msgid "--drop-slot"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:329(para)
+msgid "Drop the replication slot with the name specified in <option>--slot</option>, then exit."
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:309(para)
+msgid "<application>pg_receivexlog</application>can perform one of the two following actions in order to control physical replication slots: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:339(option)
+msgid "-V"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:342(option)
+msgid "--version"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:345(para)
+msgid "Print the <application>pg_receivexlog</application>version and exit."
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:352(option)
+msgid "-?"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:355(option)
+msgid "--help"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:358(para)
+msgid "Show help about <application>pg_receivexlog</application>command line arguments, and exit."
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:335(para)
+msgid "Other options are also available: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:366(title)
+msgid "Environment"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:367(para)
+msgid "This utility, like most other <productname>PostgreSQL</productname>utilities, uses the environment variables supported by <application>libpq</application>(see <xref linkend=\"libpq-envars\">).</xref>"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:374(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:375(para)
+msgid "When using <application>pg_receivexlog</application>instead of <xref linkend=\"guc-archive-command\">as the main WAL backup method, it is strongly recommended to use replication slots. Otherwise, the server is free to recycle or remove transaction log files before they are backed up, because it does not have any information, either from <xref linkend=\"guc-archive-command\">or the replication slots, about how far the WAL stream has been archived. Note, however, that a replication slot will fill up the server's disk space if the receiver does not keep up with fetching the WAL data.</xref></xref>"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:389(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:390(para)
+msgid "To stream the transaction log from the server at <literal>mydbserver</literal>and store it in the local directory <filename>/usr/local/pgsql/archive</filename>: <screen>\n      <prompt>$</prompt>\n      <userinput>pg_receivexlog -h mydbserver -D\n      /usr/local/pgsql/archive</userinput>\n    </screen>"
+msgstr ""
+
+#: xml/ref/pg_receivexlog.xml:401(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/pg_receivexlog.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

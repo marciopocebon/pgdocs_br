@@ -1,0 +1,212 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:03+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/release-8.4.xml:3(title)
+msgid "Release 8.4.22"
+msgstr ""
+
+#: xml/release-8.4.xml:5(title)
+msgid "Release Date"
+msgstr ""
+
+#: xml/release-8.4.xml:6(simpara)
+msgid "2014-07-24"
+msgstr ""
+
+#: xml/release-8.4.xml:8(para)
+msgid "This release contains a variety of fixes from 8.4.21. For information about new features in the 8.4 major release, see <xref linkend=\"release-8-4\">.</xref>"
+msgstr ""
+
+#: xml/release-8.4.xml:11(para)
+msgid "This is expected to be the last <productname>PostgreSQL</productname>release in the 8.4.X series. Users are encouraged to update to a newer release branch soon."
+msgstr ""
+
+#: xml/release-8.4.xml:16(title)
+msgid "Migration to Version 8.4.22"
+msgstr ""
+
+#: xml/release-8.4.xml:17(para)
+msgid "A dump/restore is not required for those running 8.4.X."
+msgstr ""
+
+#: xml/release-8.4.xml:19(para)
+msgid "However, this release corrects an index corruption problem in some GiST indexes. See the first changelog entry below to find out whether your installation has been affected and what steps you should take if so."
+msgstr ""
+
+#: xml/release-8.4.xml:23(para)
+msgid "Also, if you are upgrading from a version earlier than 8.4.19, see <xref linkend=\"release-8-4-19\">.</xref>"
+msgstr ""
+
+#: xml/release-8.4.xml:28(title)
+msgid "Changes"
+msgstr ""
+
+#: xml/release-8.4.xml:31(para)
+msgid "Correctly initialize padding bytes in <filename>contrib/btree_gist</filename>indexes on <type>bit</type>columns (Heikki Linnakangas)"
+msgstr ""
+
+#: xml/release-8.4.xml:34(para)
+msgid "This error could result in incorrect query results due to values that should compare equal not being seen as equal. Users with GiST indexes on <type>bit</type>or <type>bit varying</type>columns should <command>REINDEX</command>those indexes after installing this update."
+msgstr ""
+
+#: xml/release-8.4.xml:43(para)
+msgid "Protect against torn pages when deleting GIN list pages (Heikki Linnakangas)"
+msgstr ""
+
+#: xml/release-8.4.xml:45(para)
+msgid "This fix prevents possible index corruption if a system crash occurs while the page update is being written to disk."
+msgstr ""
+
+#: xml/release-8.4.xml:50(para)
+msgid "Fix possibly-incorrect cache invalidation during nested calls to <function>ReceiveSharedInvalidMessages</function>(Andres Freund)"
+msgstr ""
+
+#: xml/release-8.4.xml:56(para)
+msgid "Don't assume a subquery's output is unique if there's a set-returning function in its targetlist (David Rowley)"
+msgstr ""
+
+#: xml/release-8.4.xml:59(para)
+msgid "This oversight could lead to misoptimization of constructs like <literal>WHERE x IN (SELECT y, generate_series(1,10) FROM t GROUP BY y)</literal>."
+msgstr ""
+
+#: xml/release-8.4.xml:65(para)
+msgid "Fix failure to detoast fields in composite elements of structured types (Tom Lane)"
+msgstr ""
+
+#: xml/release-8.4.xml:67(para)
+msgid "This corrects cases where TOAST pointers could be copied into other tables without being dereferenced. If the original data is later deleted, it would lead to errors like <quote>missing chunk number 0 for toast value ...</quote>when the now-dangling pointer is used."
+msgstr ""
+
+#: xml/release-8.4.xml:75(para)
+msgid "Fix <quote>record type has not been registered</quote>failures with whole-row references to the output of Append plan nodes (Tom Lane)"
+msgstr ""
+
+#: xml/release-8.4.xml:81(para)
+msgid "Fix possible crash when invoking a user-defined function while rewinding a cursor (Tom Lane)"
+msgstr ""
+
+#: xml/release-8.4.xml:85(para)
+msgid "Fix query-lifespan memory leak while evaluating the arguments for a function in <literal>FROM</literal>(Tom Lane)"
+msgstr ""
+
+#: xml/release-8.4.xml:90(para)
+msgid "Fix session-lifespan memory leaks in regular-expression processing (Tom Lane, Arthur O'Dwyer, Greg Stark)"
+msgstr ""
+
+#: xml/release-8.4.xml:95(para)
+msgid "Fix data encoding error in <filename>hungarian.stop</filename>(Tom Lane)"
+msgstr ""
+
+#: xml/release-8.4.xml:99(para)
+msgid "Fix liveness checks for rows that were inserted in the current transaction and then deleted by a now-rolled-back subtransaction (Andres Freund)"
+msgstr ""
+
+#: xml/release-8.4.xml:102(para)
+msgid "This could cause problems (at least spurious warnings, and at worst an infinite loop) if <command>CREATE INDEX</command>or <command>CLUSTER</command>were done later in the same transaction."
+msgstr ""
+
+#: xml/release-8.4.xml:109(para)
+msgid "Clear <structname>pg_stat_activity</structname>. <structfield>xact_start</structfield>during <command>PREPARE TRANSACTION</command>(Andres Freund)"
+msgstr ""
+
+#: xml/release-8.4.xml:114(para)
+msgid "After the <command>PREPARE</command>, the originating session is no longer in a transaction, so it should not continue to display a transaction start time."
+msgstr ""
+
+#: xml/release-8.4.xml:120(para)
+msgid "Fix <command>REASSIGN OWNED</command>to not fail for text search objects (lvaro Herrera)"
+msgstr ""
+
+#: xml/release-8.4.xml:125(para)
+msgid "Block signals during postmaster startup (Tom Lane)"
+msgstr ""
+
+#: xml/release-8.4.xml:127(para)
+msgid "This ensures that the postmaster will properly clean up after itself if, for example, it receives <systemitem>SIGINT</systemitem>while still starting up."
+msgstr ""
+
+#: xml/release-8.4.xml:133(para)
+msgid "Secure Unix-domain sockets of temporary postmasters started during <literal>make check</literal>(Noah Misch)"
+msgstr ""
+
+#: xml/release-8.4.xml:136(para)
+msgid "Any local user able to access the socket file could connect as the server's bootstrap superuser, then proceed to execute arbitrary code as the operating-system user running the test, as we previously noted in CVE-2014-0067. This change defends against that risk by placing the server's socket in a temporary, mode 0700 subdirectory of <filename>/tmp</filename>. The hazard remains however on platforms where Unix sockets are not supported, notably Windows, because then the temporary postmaster must accept local TCP connections."
+msgstr ""
+
+#: xml/release-8.4.xml:146(para)
+msgid "A useful side effect of this change is to simplify <literal>make check</literal>testing in builds that override <literal>DEFAULT_PGSOCKET_DIR</literal>. Popular non-default values like <filename>/var/run/postgresql</filename>are often not writable by the build user, requiring workarounds that will no longer be necessary."
+msgstr ""
+
+#: xml/release-8.4.xml:156(para)
+msgid "On Windows, allow new sessions to absorb values of PGC_BACKEND parameters (such as <xref linkend=\"guc-log-connections\">) from the configuration file (Amit Kapila)</xref>"
+msgstr ""
+
+#: xml/release-8.4.xml:160(para)
+msgid "Previously, if such a parameter were changed in the file post-startup, the change would have no effect."
+msgstr ""
+
+#: xml/release-8.4.xml:164(para)
+msgid "Properly quote executable path names on Windows (Nikhil Deshpande)"
+msgstr ""
+
+#: xml/release-8.4.xml:166(para)
+msgid "This oversight could cause <application>initdb</application>and <application>pg_upgrade</application>to fail on Windows, if the installation path contained both spaces and <literal>@</literal>signs."
+msgstr ""
+
+#: xml/release-8.4.xml:173(para)
+msgid "Fix linking of <application>libpython</application>on OS X (Tom Lane)"
+msgstr ""
+
+#: xml/release-8.4.xml:176(para)
+msgid "The method we previously used can fail with the Python library supplied by Xcode 5.0 and later."
+msgstr ""
+
+#: xml/release-8.4.xml:180(para)
+msgid "Avoid buffer bloat in <application>libpq</application>when the server consistently sends data faster than the client can absorb it (Shin-ichi Morita, Tom Lane)"
+msgstr ""
+
+#: xml/release-8.4.xml:184(para)
+msgid "<application>libpq</application>could be coerced into enlarging its input buffer until it runs out of memory (which would be reported misleadingly as <quote>lost synchronization with server</quote>). Under ordinary circumstances it's quite far-fetched that data could be continuously transmitted more quickly than the <function>recv()</function>loop can absorb it, but this has been observed when the client is artificially slowed by scheduler constraints."
+msgstr ""
+
+#: xml/release-8.4.xml:196(para)
+msgid "Ensure that LDAP lookup attempts in <application>libpq</application>time out as intended (Laurenz Albe)"
+msgstr ""
+
+#: xml/release-8.4.xml:201(para)
+msgid "Fix <application>pg_restore</application>'s processing of old-style large object comments (Tom Lane)"
+msgstr ""
+
+#: xml/release-8.4.xml:204(para)
+msgid "A direct-to-database restore from an archive file generated by a pre-9.0 version of <application>pg_dump</application>would usually fail if the archive contained more than a few comments for large objects."
+msgstr ""
+
+#: xml/release-8.4.xml:211(para)
+msgid "In <filename>contrib/pgcrypto</filename>functions, ensure sensitive information is cleared from stack variables before returning (Marko Kreen)"
+msgstr ""
+
+#: xml/release-8.4.xml:217(para)
+msgid "In <filename>contrib/uuid-ossp</filename>, cache the state of the OSSP UUID library across calls (Tom Lane)"
+msgstr ""
+
+#: xml/release-8.4.xml:220(para)
+msgid "This improves the efficiency of UUID generation and reduces the amount of entropy drawn from <filename>/dev/urandom</filename>, on platforms that have that."
+msgstr ""
+
+#: xml/release-8.4.xml:226(para)
+msgid "Update time zone data files to <application>tzdata</application>release 2014e for DST law changes in Crimea, Egypt, and Morocco."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/release-8.4.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

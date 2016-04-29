@@ -1,0 +1,94 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/intagg.xml:3(title) xml/intagg.xml:5(primary)
+msgid "intagg"
+msgstr ""
+
+#: xml/intagg.xml:7(para)
+msgid "The <filename>intagg</filename>module provides an integer aggregator and an enumerator. <filename>intagg</filename>is now obsolete, because there are built-in functions that provide a superset of its capabilities. However, the module is still provided as a compatibility wrapper around the built-in functions."
+msgstr ""
+
+#: xml/intagg.xml:15(title)
+msgid "Functions"
+msgstr ""
+
+#: xml/intagg.xml:17(primary)
+msgid "int_array_aggregate"
+msgstr ""
+
+#: xml/intagg.xml:20(primary)
+msgid "array_agg"
+msgstr ""
+
+#: xml/intagg.xml:22(para)
+msgid "The aggregator is an aggregate function <function>int_array_aggregate(integer)</function>that produces an integer array containing exactly the integers it is fed. This is a wrapper around <function>array_agg</function>, which does the same thing for any array type."
+msgstr ""
+
+#: xml/intagg.xml:29(primary)
+msgid "int_array_enum"
+msgstr ""
+
+#: xml/intagg.xml:31(para)
+msgid "The enumerator is a function <function>int_array_enum(integer[])</function>that returns <type>setof integer</type>. It is essentially the reverse operation of the aggregator: given an array of integers, expand it into a set of rows. This is a wrapper around <function>unnest</function>, which does the same thing for any array type."
+msgstr ""
+
+#: xml/intagg.xml:40(title)
+msgid "Sample Uses"
+msgstr ""
+
+#: xml/intagg.xml:44(programlisting)
+#, no-wrap
+msgid "CREATE TABLE left (id INT PRIMARY KEY, ...);\n    CREATE TABLE right (id INT PRIMARY KEY, ...); CREATE TABLE\n    one_to_many(left INT REFERENCES left, right INT REFERENCES\n    right);"
+msgstr ""
+
+#: xml/intagg.xml:48(programlisting)
+#, no-wrap
+msgid "SELECT right.* from right JOIN one_to_many ON\n    (right.id = one_to_many.right) WHERE one_to_many.left = \n    <replaceable>item</replaceable>;"
+msgstr ""
+
+#: xml/intagg.xml:41(para)
+msgid "Many database systems have the notion of a one to many table. Such a table usually sits between two indexed tables, for example: <placeholder-1/>It is typically used like this: <placeholder-2/>This will return all the items in the right hand table for an entry in the left hand table. This is a very common construct in SQL."
+msgstr ""
+
+#: xml/intagg.xml:62(programlisting)
+#, no-wrap
+msgid "CREATE TABLE summary AS SELECT left,\n    int_array_aggregate(right) AS right FROM one_to_many GROUP BY\n    left;"
+msgstr ""
+
+#: xml/intagg.xml:68(programlisting)
+#, no-wrap
+msgid "SELECT left, int_array_enum(right) FROM summary\n    WHERE left = \n    <replaceable>item</replaceable>;"
+msgstr ""
+
+#: xml/intagg.xml:74(programlisting)
+#, no-wrap
+msgid "SELECT left, right FROM one_to_many WHERE left\n    = \n    <replaceable>item</replaceable>;"
+msgstr ""
+
+#: xml/intagg.xml:54(para)
+msgid "Now, this methodology can be cumbersome with a very large number of entries in the <structname>one_to_many</structname>table. Often, a join like this would result in an index scan and a fetch for each right hand entry in the table for a particular left hand entry. If you have a very dynamic system, there is not much you can do. However, if you have some data which is fairly static, you can create a summary table with the aggregator. <placeholder-1/>This will create a table with one row per left item, and an array of right items. Now this is pretty useless without some way of using the array; that's why there is an array enumerator. You can do <placeholder-2/>The above query using <function>int_array_enum</function>produces the same results as <placeholder-3/>The difference is that the query against the summary table has to get only one row from the table, whereas the direct query against <structname>one_to_many</structname>must index scan and fetch a row for each entry."
+msgstr ""
+
+#: xml/intagg.xml:87(programlisting)
+#, no-wrap
+msgid "SELECT right, count(right) FROM ( SELECT left,\n    int_array_enum(right) AS right FROM summary JOIN (SELECT left\n    FROM left_table WHERE left = \n    <replaceable>item</replaceable>) AS lefts ON (summary.left =\n    lefts.left) ) AS list GROUP BY right ORDER BY count\n    DESC;"
+msgstr ""
+
+#: xml/intagg.xml:81(para)
+msgid "On one system, an <command>EXPLAIN</command>showed a query with a cost of 8488 was reduced to a cost of 329. The original query was a join involving the <structname>one_to_many</structname>table, which was replaced by: <placeholder-1/>"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/intagg.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

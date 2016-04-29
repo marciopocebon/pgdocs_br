@@ -1,0 +1,112 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/pgtestfsync.xml:4(primary) xml/ref/pgtestfsync.xml:8(application) xml/ref/pgtestfsync.xml:14(refname) xml/ref/pgtestfsync.xml:21(command)
+msgid "pg_test_fsync"
+msgstr ""
+
+#: xml/ref/pgtestfsync.xml:10(manvolnum)
+msgid "1"
+msgstr ""
+
+#: xml/ref/pgtestfsync.xml:11(refmiscinfo)
+msgid "Application"
+msgstr ""
+
+#: xml/ref/pgtestfsync.xml:16(varname)
+msgid "wal_sync_method"
+msgstr ""
+
+#: xml/ref/pgtestfsync.xml:17(productname)
+msgid "PostgreSQL"
+msgstr ""
+
+#: xml/ref/pgtestfsync.xml:15(refpurpose)
+msgid "determine fastest <placeholder-1/>for <placeholder-2/>"
+msgstr ""
+
+#: xml/ref/pgtestfsync.xml:23(replaceable)
+msgid "option"
+msgstr ""
+
+#: xml/ref/pgtestfsync.xml:28(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/pgtestfsync.xml:29(para)
+msgid "<application>pg_test_fsync</application>is intended to give you a reasonable idea of what the fastest <xref linkend=\"guc-wal-sync-method\">is on your specific system, as well as supplying diagnostic information in the event of an identified I/O problem. However, differences shown by <application>pg_test_fsync</application>might not make any significant difference in real database throughput, especially since many database servers are not speed-limited by their transaction logs. <application>pg_test_fsync</application>reports average file sync operation time in microseconds for each <literal>wal_sync_method</literal>, which can also be used to inform efforts to optimize the value of <xref linkend=\"guc-commit-delay\">.</xref></xref>"
+msgstr ""
+
+#: xml/ref/pgtestfsync.xml:46(title)
+msgid "Options"
+msgstr ""
+
+#: xml/ref/pgtestfsync.xml:53(option)
+msgid "-f"
+msgstr ""
+
+#: xml/ref/pgtestfsync.xml:56(option)
+msgid "--filename"
+msgstr ""
+
+#: xml/ref/pgtestfsync.xml:59(para)
+msgid "Specifies the file name to write test data in. This file should be in the same file system that the <filename>pg_xlog</filename>directory is or will be placed in. ( <filename>pg_xlog</filename>contains the <acronym>WAL</acronym>files.) The default is <filename>pg_test_fsync.out</filename>in the current directory."
+msgstr ""
+
+#: xml/ref/pgtestfsync.xml:71(option)
+msgid "-s"
+msgstr ""
+
+#: xml/ref/pgtestfsync.xml:74(option)
+msgid "--secs-per-test"
+msgstr ""
+
+#: xml/ref/pgtestfsync.xml:77(para)
+msgid "Specifies the number of seconds for each test. The more time per test, the greater the test's accuracy, but the longer it takes to run. The default is 5 seconds, which allows the program to complete in under 2 minutes."
+msgstr ""
+
+#: xml/ref/pgtestfsync.xml:86(option)
+msgid "-V"
+msgstr ""
+
+#: xml/ref/pgtestfsync.xml:89(option)
+msgid "--version"
+msgstr ""
+
+#: xml/ref/pgtestfsync.xml:92(para)
+msgid "Print the <application>pg_test_fsync</application>version and exit."
+msgstr ""
+
+#: xml/ref/pgtestfsync.xml:99(option)
+msgid "-?"
+msgstr ""
+
+#: xml/ref/pgtestfsync.xml:102(option)
+msgid "--help"
+msgstr ""
+
+#: xml/ref/pgtestfsync.xml:105(para)
+msgid "Show help about <application>pg_test_fsync</application>command line arguments, and exit."
+msgstr ""
+
+#: xml/ref/pgtestfsync.xml:47(para)
+msgid "<application>pg_test_fsync</application>accepts the following command-line options: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pgtestfsync.xml:113(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/pgtestfsync.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

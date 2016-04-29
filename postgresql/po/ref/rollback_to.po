@@ -1,0 +1,119 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/rollback_to.xml:4(primary) xml/ref/rollback_to.xml:11(refentrytitle) xml/ref/rollback_to.xml:16(refname)
+msgid "ROLLBACK TO SAVEPOINT"
+msgstr ""
+
+#: xml/ref/rollback_to.xml:7(primary)
+msgid "savepoints"
+msgstr ""
+
+#: xml/ref/rollback_to.xml:8(secondary)
+msgid "rolling back"
+msgstr ""
+
+#: xml/ref/rollback_to.xml:12(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/rollback_to.xml:13(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/rollback_to.xml:17(refpurpose)
+msgid "roll back to a savepoint"
+msgstr ""
+
+#: xml/ref/rollback_to.xml:21(replaceable) xml/ref/rollback_to.xml:38(replaceable)
+msgid "savepoint_name"
+msgstr ""
+
+#: xml/ref/rollback_to.xml:20(synopsis)
+#, no-wrap
+msgid "ROLLBACK [ WORK | TRANSACTION ] TO [ SAVEPOINT ] \n    <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/rollback_to.xml:24(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/rollback_to.xml:25(para)
+msgid "Roll back all commands that were executed after the savepoint was established. The savepoint remains valid and can be rolled back to again later, if needed."
+msgstr ""
+
+#: xml/ref/rollback_to.xml:28(para)
+msgid "<command>ROLLBACK TO SAVEPOINT</command>implicitly destroys all savepoints that were established after the named savepoint."
+msgstr ""
+
+#: xml/ref/rollback_to.xml:34(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/rollback_to.xml:42(para)
+msgid "The savepoint to roll back to."
+msgstr ""
+
+#: xml/ref/rollback_to.xml:48(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/rollback_to.xml:49(para)
+msgid "Use <xref linkend=\"SQL-RELEASE-SAVEPOINT\">to destroy a savepoint without discarding the effects of commands executed after it was established.</xref>"
+msgstr ""
+
+#: xml/ref/rollback_to.xml:53(para)
+msgid "Specifying a savepoint name that has not been established is an error."
+msgstr ""
+
+#: xml/ref/rollback_to.xml:55(para)
+msgid "Cursors have somewhat non-transactional behavior with respect to savepoints. Any cursor that is opened inside a savepoint will be closed when the savepoint is rolled back. If a previously opened cursor is affected by a <command>FETCH</command>or <command>MOVE</command>command inside a savepoint that is later rolled back, the cursor remains at the position that <command>FETCH</command>left it pointing to (that is, the cursor motion caused by <command>FETCH</command>is not rolled back). Closing a cursor is not undone by rolling back, either. However, other side-effects caused by the cursor's query (such as side-effects of volatile functions called by the query) <emphasis>are</emphasis>rolled back if they occur during a savepoint that is later rolled back. A cursor whose execution causes a transaction to abort is put in a cannot-execute state, so while the transaction can be restored using <command>ROLLBACK TO SAVEPOINT</command>, the cursor can no longer be used."
+msgstr ""
+
+#: xml/ref/rollback_to.xml:76(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/rollback_to.xml:79(programlisting)
+#, no-wrap
+msgid "ROLLBACK TO SAVEPOINT\n    my_savepoint;"
+msgstr ""
+
+#: xml/ref/rollback_to.xml:77(para)
+msgid "To undo the effects of the commands executed after <literal>my_savepoint</literal>was established: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/rollback_to.xml:82(programlisting)
+#, no-wrap
+msgid "BEGIN; DECLARE foo CURSOR FOR SELECT 1 UNION\n    SELECT 2; SAVEPOINT foo; FETCH 1 FROM foo; ?column? ----------\n    1 ROLLBACK TO SAVEPOINT foo; FETCH 1 FROM foo; ?column?\n    ---------- 2 COMMIT;"
+msgstr ""
+
+#: xml/ref/rollback_to.xml:81(para)
+msgid "Cursor positions are not affected by savepoint rollback: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/rollback_to.xml:88(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/rollback_to.xml:89(para)
+msgid "The <acronym>SQL</acronym>standard specifies that the key word <literal>SAVEPOINT</literal>is mandatory, but <productname>PostgreSQL</productname>and <productname>Oracle</productname>allow it to be omitted. SQL allows only <literal>WORK</literal>, not <literal>TRANSACTION</literal>, as a noise word after <literal>ROLLBACK</literal>. Also, SQL has an optional clause <literal>AND [ NO ] CHAIN</literal>which is not currently supported by <productname>PostgreSQL</productname>. Otherwise, this command conforms to the SQL standard."
+msgstr ""
+
+#: xml/ref/rollback_to.xml:104(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/rollback_to.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

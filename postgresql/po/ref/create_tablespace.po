@@ -1,0 +1,147 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/create_tablespace.xml:4(primary) xml/ref/create_tablespace.xml:7(refentrytitle) xml/ref/create_tablespace.xml:12(refname)
+msgid "CREATE TABLESPACE"
+msgstr ""
+
+#: xml/ref/create_tablespace.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/create_tablespace.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/create_tablespace.xml:13(refpurpose)
+msgid "define a new tablespace"
+msgstr ""
+
+#: xml/ref/create_tablespace.xml:17(replaceable) xml/ref/create_tablespace.xml:57(replaceable)
+msgid "tablespace_name"
+msgstr ""
+
+#: xml/ref/create_tablespace.xml:19(replaceable)
+msgid "new_owner"
+msgstr ""
+
+#: xml/ref/create_tablespace.xml:21(replaceable) xml/ref/create_tablespace.xml:80(replaceable)
+msgid "directory"
+msgstr ""
+
+#: xml/ref/create_tablespace.xml:23(replaceable) xml/ref/create_tablespace.xml:92(replaceable)
+msgid "tablespace_option"
+msgstr ""
+
+#: xml/ref/create_tablespace.xml:25(replaceable)
+msgid "value"
+msgstr ""
+
+#: xml/ref/create_tablespace.xml:16(synopsis)
+#, no-wrap
+msgid "CREATE TABLESPACE \n    <placeholder-1/>[\n    OWNER { \n    <placeholder-2/>| CURRENT_USER |\n    SESSION_USER } ] LOCATION ' \n    <placeholder-3/>' [ WITH\n    ( \n    <placeholder-4/>=\n    \n    <placeholder-5/>[, ... ] )\n    ]"
+msgstr ""
+
+#: xml/ref/create_tablespace.xml:29(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/create_tablespace.xml:30(para)
+msgid "<command>CREATE TABLESPACE</command>registers a new cluster-wide tablespace. The tablespace name must be distinct from the name of any existing tablespace in the database cluster."
+msgstr ""
+
+#: xml/ref/create_tablespace.xml:35(para)
+msgid "A tablespace allows superusers to define an alternative location on the file system where the data files containing database objects (such as tables and indexes) can reside."
+msgstr ""
+
+#: xml/ref/create_tablespace.xml:39(para)
+msgid "A user with appropriate privileges can pass <replaceable class=\"parameter\">tablespace_name</replaceable>to <command>CREATE DATABASE</command>, <command>CREATE TABLE</command>, <command>CREATE INDEX</command>or <command>ADD CONSTRAINT</command>to have the data files for these objects stored within the specified tablespace."
+msgstr ""
+
+#: xml/ref/create_tablespace.xml:47(para)
+msgid "A tablespace cannot be used independently of the cluster in which it is defined; see <xref linkend=\"manage-ag-tablespaces\">.</xref>"
+msgstr ""
+
+#: xml/ref/create_tablespace.xml:53(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/create_tablespace.xml:61(para)
+msgid "The name of a tablespace to be created. The name cannot begin with <literal>pg_</literal>, as such names are reserved for system tablespaces."
+msgstr ""
+
+#: xml/ref/create_tablespace.xml:69(replaceable)
+msgid "user_name"
+msgstr ""
+
+#: xml/ref/create_tablespace.xml:72(para)
+msgid "The name of the user who will own the tablespace. If omitted, defaults to the user executing the command. Only superusers can create tablespaces, but they can assign ownership of tablespaces to non-superusers."
+msgstr ""
+
+#: xml/ref/create_tablespace.xml:83(para)
+msgid "The directory that will be used for the tablespace. The directory should be empty and must be owned by the <productname>PostgreSQL</productname>system user. The directory must be specified by an absolute path name."
+msgstr ""
+
+#: xml/ref/create_tablespace.xml:96(para)
+msgid "A tablespace parameter to be set or reset. Currently, the only available parameters are <varname>seq_page_cost</varname>and <varname>random_page_cost</varname>. Setting either value for a particular tablespace will override the planner's usual estimate of the cost of reading pages from tables in that tablespace, as established by the configuration parameters of the same name (see <xref linkend=\"guc-seq-page-cost\">, <xref linkend=\"guc-random-page-cost\">). This may be useful if one tablespace is located on a disk which is faster or slower than the remainder of the I/O subsystem.</xref></xref>"
+msgstr ""
+
+#: xml/ref/create_tablespace.xml:114(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/create_tablespace.xml:115(para)
+msgid "Tablespaces are only supported on systems that support symbolic links."
+msgstr ""
+
+#: xml/ref/create_tablespace.xml:117(para)
+msgid "<command>CREATE TABLESPACE</command>cannot be executed inside a transaction block."
+msgstr ""
+
+#: xml/ref/create_tablespace.xml:122(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/create_tablespace.xml:126(programlisting)
+#, no-wrap
+msgid "CREATE TABLESPACE dbspace LOCATION\n    '/data/dbs';"
+msgstr ""
+
+#: xml/ref/create_tablespace.xml:123(para)
+msgid "Create a tablespace <literal>dbspace</literal>at <literal>/data/dbs</literal>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_tablespace.xml:132(programlisting)
+#, no-wrap
+msgid "CREATE TABLESPACE indexspace OWNER genevieve\n    LOCATION '/data/indexes';"
+msgstr ""
+
+#: xml/ref/create_tablespace.xml:128(para)
+msgid "Create a tablespace <literal>indexspace</literal>at <literal>/data/indexes</literal>owned by user <literal>genevieve</literal>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_tablespace.xml:136(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/create_tablespace.xml:137(para)
+msgid "<command>CREATE TABLESPACE</command>is a <productname>PostgreSQL</productname>extension."
+msgstr ""
+
+#: xml/ref/create_tablespace.xml:142(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/create_tablespace.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

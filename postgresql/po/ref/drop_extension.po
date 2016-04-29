@@ -1,0 +1,110 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/drop_extension.xml:4(primary) xml/ref/drop_extension.xml:7(refentrytitle) xml/ref/drop_extension.xml:12(refname)
+msgid "DROP EXTENSION"
+msgstr ""
+
+#: xml/ref/drop_extension.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/drop_extension.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/drop_extension.xml:13(refpurpose)
+msgid "remove an extension"
+msgstr ""
+
+#: xml/ref/drop_extension.xml:17(replaceable) xml/ref/drop_extension.xml:43(replaceable)
+msgid "name"
+msgstr ""
+
+#: xml/ref/drop_extension.xml:16(synopsis)
+#, no-wrap
+msgid "DROP EXTENSION [ IF EXISTS ] \n    <placeholder-1/>[, ...] [\n    CASCADE | RESTRICT ]"
+msgstr ""
+
+#: xml/ref/drop_extension.xml:21(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/drop_extension.xml:22(para)
+msgid "<command>DROP EXTENSION</command>removes extensions from the database. Dropping an extension causes its component objects to be dropped as well."
+msgstr ""
+
+#: xml/ref/drop_extension.xml:26(para)
+msgid "You must own the extension to use <command>DROP EXTENSION</command>."
+msgstr ""
+
+#: xml/ref/drop_extension.xml:30(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/drop_extension.xml:34(literal)
+msgid "IF EXISTS"
+msgstr ""
+
+#: xml/ref/drop_extension.xml:37(para)
+msgid "Do not throw an error if the extension does not exist. A notice is issued in this case."
+msgstr ""
+
+#: xml/ref/drop_extension.xml:46(para)
+msgid "The name of an installed extension."
+msgstr ""
+
+#: xml/ref/drop_extension.xml:51(literal)
+msgid "CASCADE"
+msgstr ""
+
+#: xml/ref/drop_extension.xml:54(para)
+msgid "Automatically drop objects that depend on the extension."
+msgstr ""
+
+#: xml/ref/drop_extension.xml:60(literal)
+msgid "RESTRICT"
+msgstr ""
+
+#: xml/ref/drop_extension.xml:63(para)
+msgid "Refuse to drop the extension if any objects depend on it (other than its own member objects and other extensions listed in the same <command>DROP</command>command). This is the default."
+msgstr ""
+
+#: xml/ref/drop_extension.xml:73(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/drop_extension.xml:76(programlisting)
+#, no-wrap
+msgid "DROP EXTENSION hstore;"
+msgstr ""
+
+#: xml/ref/drop_extension.xml:74(para)
+msgid "To remove the extension <literal>hstore</literal>from the current database: <placeholder-1/>This command will fail if any of <literal>hstore</literal>'s objects are in use in the database, for example if any tables have columns of the <type>hstore</type>type. Add the <literal>CASCADE</literal>option to forcibly remove those dependent objects as well."
+msgstr ""
+
+#: xml/ref/drop_extension.xml:85(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/drop_extension.xml:86(para)
+msgid "<command>DROP EXTENSION</command>is a <productname>PostgreSQL</productname>extension."
+msgstr ""
+
+#: xml/ref/drop_extension.xml:91(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/drop_extension.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

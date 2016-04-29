@@ -1,0 +1,620 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:03+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/acronyms.xml:3(title)
+msgid "Acronyms"
+msgstr ""
+
+#: xml/acronyms.xml:11(acronym)
+msgid "ANSI"
+msgstr ""
+
+#: xml/acronyms.xml:15(ulink)
+msgid "American National Standards Institute"
+msgstr ""
+
+#: xml/acronyms.xml:22(acronym)
+msgid "API"
+msgstr ""
+
+#: xml/acronyms.xml:26(ulink)
+msgid "Application Programming Interface"
+msgstr ""
+
+#: xml/acronyms.xml:33(acronym)
+msgid "ASCII"
+msgstr ""
+
+#: xml/acronyms.xml:37(ulink)
+msgid "American Standard Code for Information Interchange"
+msgstr ""
+
+#: xml/acronyms.xml:44(acronym)
+msgid "BKI"
+msgstr ""
+
+#: xml/acronyms.xml:48(link)
+msgid "Backend Interface"
+msgstr ""
+
+#: xml/acronyms.xml:54(acronym)
+msgid "CA"
+msgstr ""
+
+#: xml/acronyms.xml:58(ulink)
+msgid "Certificate Authority"
+msgstr ""
+
+#: xml/acronyms.xml:65(acronym)
+msgid "CIDR"
+msgstr ""
+
+#: xml/acronyms.xml:69(ulink)
+msgid "Classless Inter-Domain Routing"
+msgstr ""
+
+#: xml/acronyms.xml:76(acronym)
+msgid "CPAN"
+msgstr ""
+
+#: xml/acronyms.xml:80(ulink)
+msgid "Comprehensive Perl Archive Network"
+msgstr ""
+
+#: xml/acronyms.xml:87(acronym)
+msgid "CRL"
+msgstr ""
+
+#: xml/acronyms.xml:91(ulink)
+msgid "Certificate Revocation List"
+msgstr ""
+
+#: xml/acronyms.xml:98(acronym)
+msgid "CSV"
+msgstr ""
+
+#: xml/acronyms.xml:102(ulink)
+msgid "Comma Separated Values"
+msgstr ""
+
+#: xml/acronyms.xml:109(acronym)
+msgid "CTE"
+msgstr ""
+
+#: xml/acronyms.xml:113(link)
+msgid "Common Table Expression"
+msgstr ""
+
+#: xml/acronyms.xml:120(acronym)
+msgid "CVE"
+msgstr ""
+
+#: xml/acronyms.xml:124(ulink)
+msgid "Common Vulnerabilities and Exposures"
+msgstr ""
+
+#: xml/acronyms.xml:131(acronym)
+msgid "DBA"
+msgstr ""
+
+#: xml/acronyms.xml:135(ulink)
+msgid "Database Administrator"
+msgstr ""
+
+#: xml/acronyms.xml:142(acronym)
+msgid "DBI"
+msgstr ""
+
+#: xml/acronyms.xml:146(ulink)
+msgid "Database Interface (Perl)"
+msgstr ""
+
+#: xml/acronyms.xml:153(acronym)
+msgid "DBMS"
+msgstr ""
+
+#: xml/acronyms.xml:157(ulink)
+msgid "Database Management System"
+msgstr ""
+
+#: xml/acronyms.xml:164(acronym)
+msgid "DDL"
+msgstr ""
+
+#: xml/acronyms.xml:167(para)
+msgid "<ulink url=\"http://en.wikipedia.org/wiki/Data_Definition_Language\"> Data Definition Language</ulink>, SQL commands such as <command>CREATE TABLE</command>, <command>ALTER USER</command>"
+msgstr ""
+
+#: xml/acronyms.xml:176(acronym)
+msgid "DML"
+msgstr ""
+
+#: xml/acronyms.xml:179(para)
+msgid "<ulink url=\"http://en.wikipedia.org/wiki/Data_Manipulation_Language\"> Data Manipulation Language</ulink>, SQL commands such as <command>INSERT</command>, <command>UPDATE</command>, <command>DELETE</command>"
+msgstr ""
+
+#: xml/acronyms.xml:189(acronym)
+msgid "DST"
+msgstr ""
+
+#: xml/acronyms.xml:193(ulink)
+msgid "Daylight Saving Time"
+msgstr ""
+
+#: xml/acronyms.xml:200(acronym)
+msgid "ECPG"
+msgstr ""
+
+#: xml/acronyms.xml:204(link)
+msgid "Embedded C for PostgreSQL"
+msgstr ""
+
+#: xml/acronyms.xml:210(acronym)
+msgid "ESQL"
+msgstr ""
+
+#: xml/acronyms.xml:214(ulink)
+msgid "Embedded SQL"
+msgstr ""
+
+#: xml/acronyms.xml:221(acronym)
+msgid "FAQ"
+msgstr ""
+
+#: xml/acronyms.xml:225(ulink)
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: xml/acronyms.xml:232(acronym)
+msgid "FSM"
+msgstr ""
+
+#: xml/acronyms.xml:236(link)
+msgid "Free Space Map"
+msgstr ""
+
+#: xml/acronyms.xml:242(acronym)
+msgid "GEQO"
+msgstr ""
+
+#: xml/acronyms.xml:246(link)
+msgid "Genetic Query Optimizer"
+msgstr ""
+
+#: xml/acronyms.xml:252(acronym)
+msgid "GIN"
+msgstr ""
+
+#: xml/acronyms.xml:256(link)
+msgid "Generalized Inverted Index"
+msgstr ""
+
+#: xml/acronyms.xml:262(acronym)
+msgid "GiST"
+msgstr ""
+
+#: xml/acronyms.xml:266(link)
+msgid "Generalized Search Tree"
+msgstr ""
+
+#: xml/acronyms.xml:272(acronym) xml/acronyms.xml:276(ulink)
+msgid "Git"
+msgstr ""
+
+#: xml/acronyms.xml:283(acronym)
+msgid "GMT"
+msgstr ""
+
+#: xml/acronyms.xml:287(ulink)
+msgid "Greenwich Mean Time"
+msgstr ""
+
+#: xml/acronyms.xml:294(acronym)
+msgid "GSSAPI"
+msgstr ""
+
+#: xml/acronyms.xml:298(ulink)
+msgid "Generic Security Services Application Programming Interface"
+msgstr ""
+
+#: xml/acronyms.xml:306(acronym)
+msgid "GUC"
+msgstr ""
+
+#: xml/acronyms.xml:309(para)
+msgid "<link linkend=\"config-setting\">Grand Unified Configuration</link>, the <productname>PostgreSQL</productname>subsystem that handles server configuration"
+msgstr ""
+
+#: xml/acronyms.xml:318(acronym)
+msgid "HBA"
+msgstr ""
+
+#: xml/acronyms.xml:322(link)
+msgid "Host-Based Authentication"
+msgstr ""
+
+#: xml/acronyms.xml:329(acronym)
+msgid "HOT"
+msgstr ""
+
+#: xml/acronyms.xml:333(ulink)
+msgid "Heap-Only Tuples"
+msgstr ""
+
+#: xml/acronyms.xml:340(acronym)
+msgid "IEC"
+msgstr ""
+
+#: xml/acronyms.xml:344(ulink)
+msgid "International Electrotechnical Commission"
+msgstr ""
+
+#: xml/acronyms.xml:351(acronym)
+msgid "IEEE"
+msgstr ""
+
+#: xml/acronyms.xml:355(ulink)
+msgid "Institute of Electrical and Electronics Engineers"
+msgstr ""
+
+#: xml/acronyms.xml:362(acronym)
+msgid "IPC"
+msgstr ""
+
+#: xml/acronyms.xml:366(ulink)
+msgid "Inter-Process Communication"
+msgstr ""
+
+#: xml/acronyms.xml:373(acronym)
+msgid "ISO"
+msgstr ""
+
+#: xml/acronyms.xml:377(ulink)
+msgid "International Organization for Standardization"
+msgstr ""
+
+#: xml/acronyms.xml:384(acronym)
+msgid "ISSN"
+msgstr ""
+
+#: xml/acronyms.xml:388(ulink)
+msgid "International Standard Serial Number"
+msgstr ""
+
+#: xml/acronyms.xml:395(acronym)
+msgid "JDBC"
+msgstr ""
+
+#: xml/acronyms.xml:399(ulink)
+msgid "Java Database Connectivity"
+msgstr ""
+
+#: xml/acronyms.xml:406(acronym)
+msgid "LDAP"
+msgstr ""
+
+#: xml/acronyms.xml:410(ulink)
+msgid "Lightweight Directory Access Protocol"
+msgstr ""
+
+#: xml/acronyms.xml:417(acronym)
+msgid "MSVC"
+msgstr ""
+
+#: xml/acronyms.xml:422(productname)
+msgid "Microsoft Visual C"
+msgstr ""
+
+#: xml/acronyms.xml:429(acronym)
+msgid "MVCC"
+msgstr ""
+
+#: xml/acronyms.xml:433(link)
+msgid "Multi-Version Concurrency Control"
+msgstr ""
+
+#: xml/acronyms.xml:440(acronym)
+msgid "NLS"
+msgstr ""
+
+#: xml/acronyms.xml:444(ulink)
+msgid "National Language Support"
+msgstr ""
+
+#: xml/acronyms.xml:451(acronym)
+msgid "ODBC"
+msgstr ""
+
+#: xml/acronyms.xml:455(ulink)
+msgid "Open Database Connectivity"
+msgstr ""
+
+#: xml/acronyms.xml:462(acronym)
+msgid "OID"
+msgstr ""
+
+#: xml/acronyms.xml:466(link)
+msgid "Object Identifier"
+msgstr ""
+
+#: xml/acronyms.xml:472(acronym)
+msgid "OLAP"
+msgstr ""
+
+#: xml/acronyms.xml:476(ulink)
+msgid "Online Analytical Processing"
+msgstr ""
+
+#: xml/acronyms.xml:483(acronym)
+msgid "OLTP"
+msgstr ""
+
+#: xml/acronyms.xml:487(ulink)
+msgid "Online Transaction Processing"
+msgstr ""
+
+#: xml/acronyms.xml:494(acronym)
+msgid "ORDBMS"
+msgstr ""
+
+#: xml/acronyms.xml:498(ulink)
+msgid "Object-Relational Database Management System"
+msgstr ""
+
+#: xml/acronyms.xml:505(acronym)
+msgid "PAM"
+msgstr ""
+
+#: xml/acronyms.xml:509(ulink)
+msgid "Pluggable Authentication Modules"
+msgstr ""
+
+#: xml/acronyms.xml:516(acronym)
+msgid "PGSQL"
+msgstr ""
+
+#: xml/acronyms.xml:521(productname) xml/acronyms.xml:533(productname)
+msgid "PostgreSQL"
+msgstr ""
+
+#: xml/acronyms.xml:528(acronym)
+msgid "PGXS"
+msgstr ""
+
+#: xml/acronyms.xml:532(link)
+msgid "<placeholder-1/>Extension System"
+msgstr ""
+
+#: xml/acronyms.xml:540(acronym)
+msgid "PID"
+msgstr ""
+
+#: xml/acronyms.xml:544(ulink)
+msgid "Process Identifier"
+msgstr ""
+
+#: xml/acronyms.xml:551(acronym)
+msgid "PITR"
+msgstr ""
+
+#: xml/acronyms.xml:554(para)
+msgid "<link linkend=\"continuous-archiving\">Point-In-Time Recovery</link>(Continuous Archiving)"
+msgstr ""
+
+#: xml/acronyms.xml:561(acronym)
+msgid "PL"
+msgstr ""
+
+#: xml/acronyms.xml:565(link)
+msgid "Procedural Languages (server-side)"
+msgstr ""
+
+#: xml/acronyms.xml:572(acronym)
+msgid "POSIX"
+msgstr ""
+
+#: xml/acronyms.xml:576(ulink)
+msgid "Portable Operating System Interface"
+msgstr ""
+
+#: xml/acronyms.xml:583(acronym)
+msgid "RDBMS"
+msgstr ""
+
+#: xml/acronyms.xml:587(ulink)
+msgid "Relational Database Management System"
+msgstr ""
+
+#: xml/acronyms.xml:594(acronym)
+msgid "RFC"
+msgstr ""
+
+#: xml/acronyms.xml:598(ulink)
+msgid "Request For Comments"
+msgstr ""
+
+#: xml/acronyms.xml:605(acronym)
+msgid "SGML"
+msgstr ""
+
+#: xml/acronyms.xml:609(ulink)
+msgid "Standard Generalized Markup Language"
+msgstr ""
+
+#: xml/acronyms.xml:616(acronym)
+msgid "SPI"
+msgstr ""
+
+#: xml/acronyms.xml:620(link)
+msgid "Server Programming Interface"
+msgstr ""
+
+#: xml/acronyms.xml:626(acronym)
+msgid "SP-GiST"
+msgstr ""
+
+#: xml/acronyms.xml:630(link)
+msgid "Space-Partitioned Generalized Search Tree"
+msgstr ""
+
+#: xml/acronyms.xml:637(acronym)
+msgid "SQL"
+msgstr ""
+
+#: xml/acronyms.xml:641(ulink)
+msgid "Structured Query Language"
+msgstr ""
+
+#: xml/acronyms.xml:648(acronym)
+msgid "SRF"
+msgstr ""
+
+#: xml/acronyms.xml:652(link)
+msgid "Set-Returning Function"
+msgstr ""
+
+#: xml/acronyms.xml:659(acronym)
+msgid "SSH"
+msgstr ""
+
+#: xml/acronyms.xml:663(ulink)
+msgid "Secure Shell"
+msgstr ""
+
+#: xml/acronyms.xml:670(acronym)
+msgid "SSL"
+msgstr ""
+
+#: xml/acronyms.xml:674(ulink)
+msgid "Secure Sockets Layer"
+msgstr ""
+
+#: xml/acronyms.xml:681(acronym)
+msgid "SSPI"
+msgstr ""
+
+#: xml/acronyms.xml:685(ulink)
+msgid "Security Support Provider Interface"
+msgstr ""
+
+#: xml/acronyms.xml:692(acronym)
+msgid "SYSV"
+msgstr ""
+
+#: xml/acronyms.xml:696(ulink)
+msgid "Unix System V"
+msgstr ""
+
+#: xml/acronyms.xml:703(acronym)
+msgid "TCP/IP"
+msgstr ""
+
+#: xml/acronyms.xml:707(ulink)
+msgid "Transmission Control Protocol (TCP) / Internet Protocol (IP)"
+msgstr ""
+
+#: xml/acronyms.xml:715(acronym)
+msgid "TID"
+msgstr ""
+
+#: xml/acronyms.xml:719(link)
+msgid "Tuple Identifier"
+msgstr ""
+
+#: xml/acronyms.xml:725(acronym)
+msgid "TOAST"
+msgstr ""
+
+#: xml/acronyms.xml:729(link)
+msgid "The Oversized-Attribute Storage Technique"
+msgstr ""
+
+#: xml/acronyms.xml:736(acronym)
+msgid "TPC"
+msgstr ""
+
+#: xml/acronyms.xml:740(ulink)
+msgid "Transaction Processing Performance Council"
+msgstr ""
+
+#: xml/acronyms.xml:747(acronym)
+msgid "URL"
+msgstr ""
+
+#: xml/acronyms.xml:751(ulink)
+msgid "Uniform Resource Locator"
+msgstr ""
+
+#: xml/acronyms.xml:758(acronym)
+msgid "UTC"
+msgstr ""
+
+#: xml/acronyms.xml:762(ulink)
+msgid "Coordinated Universal Time"
+msgstr ""
+
+#: xml/acronyms.xml:769(acronym)
+msgid "UTF"
+msgstr ""
+
+#: xml/acronyms.xml:773(ulink)
+msgid "Unicode Transformation Format"
+msgstr ""
+
+#: xml/acronyms.xml:780(acronym)
+msgid "UTF8"
+msgstr ""
+
+#: xml/acronyms.xml:784(ulink)
+msgid "Eight-Bit Unicode Transformation Format"
+msgstr ""
+
+#: xml/acronyms.xml:791(acronym)
+msgid "UUID"
+msgstr ""
+
+#: xml/acronyms.xml:795(link)
+msgid "Universally Unique Identifier"
+msgstr ""
+
+#: xml/acronyms.xml:802(acronym)
+msgid "WAL"
+msgstr ""
+
+#: xml/acronyms.xml:806(link)
+msgid "Write-Ahead Log"
+msgstr ""
+
+#: xml/acronyms.xml:812(acronym)
+msgid "XID"
+msgstr ""
+
+#: xml/acronyms.xml:816(link)
+msgid "Transaction Identifier"
+msgstr ""
+
+#: xml/acronyms.xml:823(acronym)
+msgid "XML"
+msgstr ""
+
+#: xml/acronyms.xml:827(ulink)
+msgid "Extensible Markup Language"
+msgstr ""
+
+#: xml/acronyms.xml:4(para)
+msgid "This is a list of acronyms commonly used in the <productname>PostgreSQL</productname>documentation and in discussions about <productname>PostgreSQL</productname>. <placeholder-1/>"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/acronyms.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

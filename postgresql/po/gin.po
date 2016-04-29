@@ -1,0 +1,596 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/gin.xml:3(title)
+msgid "GIN Indexes"
+msgstr ""
+
+#: xml/gin.xml:5(primary)
+msgid "index"
+msgstr ""
+
+#: xml/gin.xml:6(secondary)
+msgid "GIN"
+msgstr ""
+
+#: xml/gin.xml:9(title)
+msgid "Introduction"
+msgstr ""
+
+#: xml/gin.xml:10(para)
+msgid "<acronym>GIN</acronym>stands for Generalized Inverted Index. <acronym>GIN</acronym>is designed for handling cases where the items to be indexed are composite values, and the queries to be handled by the index need to search for element values that appear within the composite items. For example, the items could be documents, and the queries could be searches for documents containing specific words."
+msgstr ""
+
+#: xml/gin.xml:18(para)
+msgid "We use the word <firstterm>item</firstterm>to refer to a composite value that is to be indexed, and the word <firstterm>key</firstterm>to refer to an element value. <acronym>GIN</acronym>always stores and searches for keys, not item values per se."
+msgstr ""
+
+#: xml/gin.xml:24(para)
+msgid "A <acronym>GIN</acronym>index stores a set of (key, posting list) pairs, where a <firstterm>posting list</firstterm>is a set of row IDs in which the key occurs. The same row ID can appear in multiple posting lists, since an item can contain more than one key. Each key value is stored only once, so a <acronym>GIN</acronym>index is very compact for cases where the same key appears many times."
+msgstr ""
+
+#: xml/gin.xml:33(para)
+msgid "<acronym>GIN</acronym>is generalized in the sense that the <acronym>GIN</acronym>access method code does not need to know the specific operations that it accelerates. Instead, it uses custom strategies defined for particular data types. The strategy defines how keys are extracted from indexed items and query conditions, and how to determine whether a row that contains some of the key values in a query actually satisfies the query."
+msgstr ""
+
+#: xml/gin.xml:42(para)
+msgid "One advantage of <acronym>GIN</acronym>is that it allows the development of custom data types with the appropriate access methods, by an expert in the domain of the data type, rather than a database expert. This is much the same advantage as using <acronym>GiST</acronym>."
+msgstr ""
+
+#: xml/gin.xml:48(para)
+msgid "The <acronym>GIN</acronym>implementation in <productname>PostgreSQL</productname>is primarily maintained by Teodor Sigaev and Oleg Bartunov. There is more information about <acronym>GIN</acronym>on their <ulink url=\"http://www.sai.msu.su/~megera/wiki/Gin\"> website</ulink>."
+msgstr ""
+
+#: xml/gin.xml:58(title)
+msgid "Built-in Operator Classes"
+msgstr ""
+
+#: xml/gin.xml:59(para)
+msgid "The core <productname>PostgreSQL</productname>distribution includes the <acronym>GIN</acronym>operator classes shown in <xref linkend=\"gin-builtin-opclasses-table\">. (Some of the optional modules described in <xref linkend=\"contrib\">provide additional <acronym>GIN</acronym>operator classes.)</xref></xref>"
+msgstr ""
+
+#: xml/gin.xml:67(title)
+msgid "Built-in <acronym>GIN</acronym>Operator Classes"
+msgstr ""
+
+#: xml/gin.xml:72(entry)
+msgid "Name"
+msgstr ""
+
+#: xml/gin.xml:73(entry)
+msgid "Indexed Data Type"
+msgstr ""
+
+#: xml/gin.xml:74(entry)
+msgid "Indexable Operators"
+msgstr ""
+
+#: xml/gin.xml:80(literal)
+msgid "_abstime_ops"
+msgstr ""
+
+#: xml/gin.xml:83(type)
+msgid "abstime[]"
+msgstr ""
+
+#: xml/gin.xml:87(literal) xml/gin.xml:89(literal) xml/gin.xml:101(literal) xml/gin.xml:103(literal) xml/gin.xml:115(literal) xml/gin.xml:117(literal) xml/gin.xml:129(literal) xml/gin.xml:131(literal) xml/gin.xml:143(literal) xml/gin.xml:145(literal) xml/gin.xml:157(literal) xml/gin.xml:159(literal) xml/gin.xml:171(literal) xml/gin.xml:173(literal) xml/gin.xml:185(literal) xml/gin.xml:187(literal) xml/gin.xml:199(literal) xml/gin.xml:201(literal) xml/gin.xml:213(literal) xml/gin.xml:215(literal) xml/gin.xml:227(literal) xml/gin.xml:229(literal) xml/gin.xml:241(literal) xml/gin.xml:243(literal) xml/gin.xml:255(literal) xml/gin.xml:257(literal) xml/gin.xml:269(literal) xml/gin.xml:271(literal) xml/gin.xml:283(literal) xml/gin.xml:285(literal) xml/gin.xml:297(literal) xml/gin.xml:299(literal) xml/gin.xml:311(literal) xml/gin.xml:313(literal) xml/gin.xml:325(literal) xml/gin.xml:327(literal) xml/gin.xml:339(literal) xml/gin.xml:341(literal) xml/gin.xml:353(literal) xml/gin.xml:355(literal) xml/gin.xml:367(literal) xml/gin.xml:369(literal) xml/gin.xml:381(literal) xml/gin.xml:383(literal) xml/gin.xml:395(literal) xml/gin.xml:397(literal) xml/gin.xml:409(literal) xml/gin.xml:411(literal) xml/gin.xml:423(literal) xml/gin.xml:425(literal) xml/gin.xml:437(literal) xml/gin.xml:439(literal) xml/gin.xml:451(literal) xml/gin.xml:453(literal) xml/gin.xml:465(literal) xml/gin.xml:467(literal) xml/gin.xml:479(literal) xml/gin.xml:481(literal) xml/gin.xml:493(literal) xml/gin.xml:495(literal) xml/gin.xml:509(literal) xml/gin.xml:520(literal)
+msgid "@"
+msgstr ""
+
+#: xml/gin.xml:88(literal) xml/gin.xml:102(literal) xml/gin.xml:116(literal) xml/gin.xml:130(literal) xml/gin.xml:144(literal) xml/gin.xml:158(literal) xml/gin.xml:172(literal) xml/gin.xml:186(literal) xml/gin.xml:200(literal) xml/gin.xml:214(literal) xml/gin.xml:228(literal) xml/gin.xml:242(literal) xml/gin.xml:256(literal) xml/gin.xml:270(literal) xml/gin.xml:284(literal) xml/gin.xml:298(literal) xml/gin.xml:312(literal) xml/gin.xml:326(literal) xml/gin.xml:340(literal) xml/gin.xml:354(literal) xml/gin.xml:368(literal) xml/gin.xml:382(literal) xml/gin.xml:396(literal) xml/gin.xml:410(literal) xml/gin.xml:424(literal) xml/gin.xml:438(literal) xml/gin.xml:452(literal) xml/gin.xml:466(literal) xml/gin.xml:480(literal) xml/gin.xml:494(literal)
+msgid "="
+msgstr ""
+
+#: xml/gin.xml:94(literal)
+msgid "_bit_ops"
+msgstr ""
+
+#: xml/gin.xml:97(type)
+msgid "bit[]"
+msgstr ""
+
+#: xml/gin.xml:108(literal)
+msgid "_bool_ops"
+msgstr ""
+
+#: xml/gin.xml:111(type)
+msgid "boolean[]"
+msgstr ""
+
+#: xml/gin.xml:122(literal)
+msgid "_bpchar_ops"
+msgstr ""
+
+#: xml/gin.xml:125(type)
+msgid "character[]"
+msgstr ""
+
+#: xml/gin.xml:136(literal)
+msgid "_bytea_ops"
+msgstr ""
+
+#: xml/gin.xml:139(type)
+msgid "bytea[]"
+msgstr ""
+
+#: xml/gin.xml:150(literal)
+msgid "_char_ops"
+msgstr ""
+
+#: xml/gin.xml:153(type)
+msgid "\"char\"[]"
+msgstr ""
+
+#: xml/gin.xml:164(literal)
+msgid "_cidr_ops"
+msgstr ""
+
+#: xml/gin.xml:167(type)
+msgid "cidr[]"
+msgstr ""
+
+#: xml/gin.xml:178(literal)
+msgid "_date_ops"
+msgstr ""
+
+#: xml/gin.xml:181(type)
+msgid "date[]"
+msgstr ""
+
+#: xml/gin.xml:192(literal)
+msgid "_float4_ops"
+msgstr ""
+
+#: xml/gin.xml:195(type)
+msgid "float4[]"
+msgstr ""
+
+#: xml/gin.xml:206(literal)
+msgid "_float8_ops"
+msgstr ""
+
+#: xml/gin.xml:209(type)
+msgid "float8[]"
+msgstr ""
+
+#: xml/gin.xml:220(literal)
+msgid "_inet_ops"
+msgstr ""
+
+#: xml/gin.xml:223(type)
+msgid "inet[]"
+msgstr ""
+
+#: xml/gin.xml:234(literal)
+msgid "_int2_ops"
+msgstr ""
+
+#: xml/gin.xml:237(type)
+msgid "smallint[]"
+msgstr ""
+
+#: xml/gin.xml:248(literal)
+msgid "_int4_ops"
+msgstr ""
+
+#: xml/gin.xml:251(type)
+msgid "integer[]"
+msgstr ""
+
+#: xml/gin.xml:262(literal)
+msgid "_int8_ops"
+msgstr ""
+
+#: xml/gin.xml:265(type)
+msgid "bigint[]"
+msgstr ""
+
+#: xml/gin.xml:276(literal)
+msgid "_interval_ops"
+msgstr ""
+
+#: xml/gin.xml:279(type)
+msgid "interval[]"
+msgstr ""
+
+#: xml/gin.xml:290(literal)
+msgid "_macaddr_ops"
+msgstr ""
+
+#: xml/gin.xml:293(type)
+msgid "macaddr[]"
+msgstr ""
+
+#: xml/gin.xml:304(literal)
+msgid "_money_ops"
+msgstr ""
+
+#: xml/gin.xml:307(type)
+msgid "money[]"
+msgstr ""
+
+#: xml/gin.xml:318(literal)
+msgid "_name_ops"
+msgstr ""
+
+#: xml/gin.xml:321(type)
+msgid "name[]"
+msgstr ""
+
+#: xml/gin.xml:332(literal)
+msgid "_numeric_ops"
+msgstr ""
+
+#: xml/gin.xml:335(type)
+msgid "numeric[]"
+msgstr ""
+
+#: xml/gin.xml:346(literal)
+msgid "_oid_ops"
+msgstr ""
+
+#: xml/gin.xml:349(type)
+msgid "oid[]"
+msgstr ""
+
+#: xml/gin.xml:360(literal)
+msgid "_oidvector_ops"
+msgstr ""
+
+#: xml/gin.xml:363(type)
+msgid "oidvector[]"
+msgstr ""
+
+#: xml/gin.xml:374(literal)
+msgid "_reltime_ops"
+msgstr ""
+
+#: xml/gin.xml:377(type)
+msgid "reltime[]"
+msgstr ""
+
+#: xml/gin.xml:388(literal)
+msgid "_text_ops"
+msgstr ""
+
+#: xml/gin.xml:391(type)
+msgid "text[]"
+msgstr ""
+
+#: xml/gin.xml:402(literal)
+msgid "_time_ops"
+msgstr ""
+
+#: xml/gin.xml:405(type)
+msgid "time[]"
+msgstr ""
+
+#: xml/gin.xml:416(literal)
+msgid "_timestamp_ops"
+msgstr ""
+
+#: xml/gin.xml:419(type)
+msgid "timestamp[]"
+msgstr ""
+
+#: xml/gin.xml:430(literal)
+msgid "_timestamptz_ops"
+msgstr ""
+
+#: xml/gin.xml:433(type)
+msgid "timestamp with time zone[]"
+msgstr ""
+
+#: xml/gin.xml:444(literal)
+msgid "_timetz_ops"
+msgstr ""
+
+#: xml/gin.xml:447(type)
+msgid "time with time zone[]"
+msgstr ""
+
+#: xml/gin.xml:458(literal)
+msgid "_tinterval_ops"
+msgstr ""
+
+#: xml/gin.xml:461(type)
+msgid "tinterval[]"
+msgstr ""
+
+#: xml/gin.xml:472(literal)
+msgid "_varbit_ops"
+msgstr ""
+
+#: xml/gin.xml:475(type)
+msgid "bit varying[]"
+msgstr ""
+
+#: xml/gin.xml:486(literal)
+msgid "_varchar_ops"
+msgstr ""
+
+#: xml/gin.xml:489(type)
+msgid "character varying[]"
+msgstr ""
+
+#: xml/gin.xml:500(literal)
+msgid "jsonb_ops"
+msgstr ""
+
+#: xml/gin.xml:503(type) xml/gin.xml:517(type)
+msgid "jsonb"
+msgstr ""
+
+#: xml/gin.xml:506(literal) xml/gin.xml:507(literal)
+msgid "?"
+msgstr ""
+
+#: xml/gin.xml:508(literal)
+msgid "?|"
+msgstr ""
+
+#: xml/gin.xml:514(literal)
+msgid "jsonb_path_ops"
+msgstr ""
+
+#: xml/gin.xml:525(literal)
+msgid "tsvector_ops"
+msgstr ""
+
+#: xml/gin.xml:528(type)
+msgid "tsvector"
+msgstr ""
+
+#: xml/gin.xml:531(literal)
+msgid "@@"
+msgstr ""
+
+#: xml/gin.xml:532(literal)
+msgid "@@@"
+msgstr ""
+
+#: xml/gin.xml:538(para)
+msgid "Of the two operator classes for type <type>jsonb</type>, <literal>jsonb_ops</literal>is the default. <literal>jsonb_path_ops</literal>supports fewer operators but offers better performance for those operators. See <xref linkend=\"json-indexing\">for details.</xref>"
+msgstr ""
+
+#: xml/gin.xml:546(title)
+msgid "Extensibility"
+msgstr ""
+
+#: xml/gin.xml:547(para)
+msgid "The <acronym>GIN</acronym>interface has a high level of abstraction, requiring the access method implementer only to implement the semantics of the data type being accessed. The <acronym>GIN</acronym>layer itself takes care of concurrency, logging and searching the tree structure."
+msgstr ""
+
+#: xml/gin.xml:553(para)
+msgid "All it takes to get a <acronym>GIN</acronym>access method working is to implement a few user-defined methods, which define the behavior of keys in the tree and the relationships between keys, indexed items, and indexable queries. In short, <acronym>GIN</acronym>combines extensibility with generality, code reuse, and a clean interface."
+msgstr ""
+
+#: xml/gin.xml:565(function)
+msgid "int compare(Datum a, Datum b)"
+msgstr ""
+
+#: xml/gin.xml:568(para)
+msgid "Compares two keys (not indexed items!) and returns an integer less than zero, zero, or greater than zero, indicating whether the first key is less than, equal to, or greater than the second. Null keys are never passed to this function."
+msgstr ""
+
+#: xml/gin.xml:577(function)
+msgid "Datum *extractValue(Datum itemValue, int32 *nkeys, bool **nullFlags)"
+msgstr ""
+
+#: xml/gin.xml:581(para)
+msgid "Returns a palloc'd array of keys given an item to be indexed. The number of returned keys must be stored into <literal>*nkeys</literal>. If any of the keys can be null, also palloc an array of <literal>*nkeys</literal><type>bool</type>fields, store its address at <literal>*nullFlags</literal>, and set these null flags as needed. <literal>*nullFlags</literal>can be left <symbol>NULL</symbol>(its initial value) if all keys are non-null. The return value can be <symbol>NULL</symbol>if the item contains no keys."
+msgstr ""
+
+#: xml/gin.xml:598(function)
+msgid "Datum *extractQuery(Datum query, int32 *nkeys, StrategyNumber n, bool **pmatch, Pointer **extra_data, bool **nullFlags, int32 *searchMode)"
+msgstr ""
+
+#: xml/gin.xml:603(para)
+msgid "Returns a palloc'd array of keys given a value to be queried; that is, <literal>query</literal>is the value on the right-hand side of an indexable operator whose left-hand side is the indexed column. <literal>n</literal>is the strategy number of the operator within the operator class (see <xref linkend=\"xindex-strategies\">). Often, <function>extractQuery</function>will need to consult <literal>n</literal>to determine the data type of <literal>query</literal>and the method it should use to extract key values. The number of returned keys must be stored into <literal>*nkeys</literal>. If any of the keys can be null, also palloc an array of <literal>*nkeys</literal><type>bool</type>fields, store its address at <literal>*nullFlags</literal>, and set these null flags as needed. <literal>*nullFlags</literal>can be left <symbol>NULL</symbol>(its initial value) if all keys are non-null. The return value can be <symbol>NULL</symbol>if the <literal>query</literal>contains no keys.</xref>"
+msgstr ""
+
+#: xml/gin.xml:627(para)
+msgid "<literal>searchMode</literal>is an output argument that allows <function>extractQuery</function>to specify details about how the search will be done. If <literal>*searchMode</literal>is set to <literal>GIN_SEARCH_MODE_DEFAULT</literal>(which is the value it is initialized to before call), only items that match at least one of the returned keys are considered candidate matches. If <literal>*searchMode</literal>is set to <literal>GIN_SEARCH_MODE_INCLUDE_EMPTY</literal>, then in addition to items containing at least one matching key, items that contain no keys at all are considered candidate matches. (This mode is useful for implementing is-subset-of operators, for example.) If <literal>*searchMode</literal>is set to <literal>GIN_SEARCH_MODE_ALL</literal>, then all non-null items in the index are considered candidate matches, whether they match any of the returned keys or not. (This mode is much slower than the other two choices, since it requires scanning essentially the entire index, but it may be necessary to implement corner cases correctly. An operator that needs this mode in most cases is probably not a good candidate for a GIN operator class.) The symbols to use for setting this mode are defined in <filename>access/gin.h</filename>."
+msgstr ""
+
+#: xml/gin.xml:654(para)
+msgid "<literal>pmatch</literal>is an output argument for use when partial match is supported. To use it, <function>extractQuery</function>must allocate an array of <literal>*nkeys</literal>booleans and store its address at <literal>*pmatch</literal>. Each element of the array should be set to TRUE if the corresponding key requires partial match, FALSE if not. If <literal>*pmatch</literal>is set to <symbol>NULL</symbol>then GIN assumes partial match is not required. The variable is initialized to <symbol>NULL</symbol>before call, so this argument can simply be ignored by operator classes that do not support partial match."
+msgstr ""
+
+#: xml/gin.xml:670(para)
+msgid "<literal>extra_data</literal>is an output argument that allows <function>extractQuery</function>to pass additional data to the <function>consistent</function>and <function>comparePartial</function>methods. To use it, <function>extractQuery</function>must allocate an array of <literal>*nkeys</literal>Pointers and store its address at <literal>*extra_data</literal>, then store whatever it wants to into the individual pointers. The variable is initialized to <symbol>NULL</symbol>before call, so this argument can simply be ignored by operator classes that do not require extra data. If <literal>*extra_data</literal>is set, the whole array is passed to the <function>consistent</function>method, and the appropriate element to the <function>comparePartial</function>method."
+msgstr ""
+
+#: xml/gin.xml:708(function)
+msgid "bool consistent(bool check[], StrategyNumber n, Datum query, int32 nkeys, Pointer extra_data[], bool *recheck, Datum queryKeys[], bool nullFlags[])"
+msgstr ""
+
+#: xml/gin.xml:713(para)
+msgid "Returns TRUE if an indexed item satisfies the query operator with strategy number <literal>n</literal>(or might satisfy it, if the recheck indication is returned). This function does not have direct access to the indexed item's value, since <acronym>GIN</acronym>does not store items explicitly. Rather, what is available is knowledge about which key values extracted from the query appear in a given indexed item. The <literal>check</literal>array has length <literal>nkeys</literal>, which is the same as the number of keys previously returned by <function>extractQuery</function>for this <literal>query</literal>datum. Each element of the <literal>check</literal>array is TRUE if the indexed item contains the corresponding query key, i.e., if (check[i] == TRUE) the i-th key of the <function>extractQuery</function>result array is present in the indexed item. The original <literal>query</literal>datum is passed in case the <function>consistent</function>method needs to consult it, and so are the <literal>queryKeys[]</literal>and <literal>nullFlags[]</literal>arrays previously returned by <function>extractQuery</function>. <literal>extra_data</literal>is the extra-data array returned by <function>extractQuery</function>, or <symbol>NULL</symbol>if none."
+msgstr ""
+
+#: xml/gin.xml:743(para)
+msgid "When <function>extractQuery</function>returns a null key in <literal>queryKeys[]</literal>, the corresponding <literal>check[]</literal>element is TRUE if the indexed item contains a null key; that is, the semantics of <literal>check[]</literal>are like <literal>IS NOT DISTINCT FROM</literal>. The <function>consistent</function>function can examine the corresponding <literal>nullFlags[]</literal>element if it needs to tell the difference between a regular value match and a null match."
+msgstr ""
+
+#: xml/gin.xml:755(para)
+msgid "On success, <literal>*recheck</literal>should be set to TRUE if the heap tuple needs to be rechecked against the query operator, or FALSE if the index test is exact. That is, a FALSE return value guarantees that the heap tuple does not match the query; a TRUE return value with <literal>*recheck</literal>set to FALSE guarantees that the heap tuple does match the query; and a TRUE return value with <literal>*recheck</literal>set to TRUE means that the heap tuple might match the query, so it needs to be fetched and rechecked by evaluating the query operator directly against the originally indexed item."
+msgstr ""
+
+#: xml/gin.xml:772(function)
+msgid "GinTernaryValue triConsistent(GinTernaryValue check[], StrategyNumber n, Datum query, int32 nkeys, Pointer extra_data[], Datum queryKeys[], bool nullFlags[])"
+msgstr ""
+
+#: xml/gin.xml:778(para)
+msgid "<function>triConsistent</function>is similar to <function>consistent</function>, but instead of a boolean <literal>check[]</literal>, there are three possible values for each key: <literal>GIN_TRUE</literal>, <literal>GIN_FALSE</literal>and <literal>GIN_MAYBE</literal>. <literal>GIN_FALSE</literal>and <literal>GIN_TRUE</literal>have the same meaning as regular boolean values. <literal>GIN_MAYBE</literal>means that the presence of that key is not known. When <literal>GIN_MAYBE</literal>values are present, the function should only return GIN_TRUE if the item matches whether or not the index item contains the corresponding query keys. Likewise, the function must return GIN_FALSE only if the item does not match, whether or not it contains the GIN_MAYBE keys. If the result depends on the GIN_MAYBE entries, i.e. the match cannot be confirmed or refuted based on the known query keys, the function must return GIN_MAYBE."
+msgstr ""
+
+#: xml/gin.xml:801(para)
+msgid "When there are no GIN_MAYBE values in the <literal>check</literal>vector, <literal>GIN_MAYBE</literal>return value is equivalent of setting <literal>recheck</literal>flag in the boolean <function>consistent</function>function."
+msgstr ""
+
+#: xml/gin.xml:814(function)
+msgid "int comparePartial(Datum partial_key, Datum key, StrategyNumber n, Pointer extra_data)"
+msgstr ""
+
+#: xml/gin.xml:818(para)
+msgid "Compare a partial-match query key to an index key. Returns an integer whose sign indicates the result: less than zero means the index key does not match the query, but the index scan should continue; zero means that the index key does match the query; greater than zero indicates that the index scan should stop because no more matches are possible. The strategy number <literal>n</literal>of the operator that generated the partial match query is provided, in case its semantics are needed to determine when to end the scan. Also, <literal>extra_data</literal>is the corresponding element of the extra-data array made by <function>extractQuery</function>, or <symbol>NULL</symbol>if none. Null keys are never passed to this function."
+msgstr ""
+
+#: xml/gin.xml:560(para)
+msgid "There are three methods that an operator class for <acronym>GIN</acronym>must provide: <placeholder-1/>An operator class must also provide a function to check if an indexed item matches the query. It comes in two flavors, a boolean <function>consistent</function>function, and a ternary <function>triConsistent</function>function. <function>triConsistent</function>covers the functionality of both, so providing triConsistent alone is sufficient. However, if the boolean variant is significantly cheaper to calculate, it can be advantageous to provide both. If only the boolean variant is provided, some optimizations that depend on refuting index items before fetching all the keys are disabled. <placeholder-2/>Optionally, an operator class for <acronym>GIN</acronym>can supply the following method: <placeholder-3/>"
+msgstr ""
+
+#: xml/gin.xml:836(para)
+msgid "To support <quote>partial match</quote>queries, an operator class must provide the <function>comparePartial</function>method, and its <function>extractQuery</function>method must set the <literal>pmatch</literal>parameter when a partial-match query is encountered. See <xref linkend=\"gin-partial-match\">for details.</xref>"
+msgstr ""
+
+#: xml/gin.xml:844(para)
+msgid "The actual data types of the various <literal>Datum</literal>values mentioned above vary depending on the operator class. The item values passed to <function>extractValue</function>are always of the operator class's input type, and all key values must be of the class's <literal>STORAGE</literal>type. The type of the <literal>query</literal>argument passed to <function>extractQuery</function>, <function>consistent</function>and <function>triConsistent</function>is whatever is specified as the right-hand input type of the class member operator identified by the strategy number. This need not be the same as the item type, so long as key values of the correct type can be extracted from it."
+msgstr ""
+
+#: xml/gin.xml:860(title)
+msgid "Implementation"
+msgstr ""
+
+#: xml/gin.xml:861(para)
+msgid "Internally, a <acronym>GIN</acronym>index contains a B-tree index constructed over keys, where each key is an element of one or more indexed items (a member of an array, for example) and where each tuple in a leaf page contains either a pointer to a B-tree of heap pointers (a <quote>posting tree</quote>), or a simple list of heap pointers (a <quote>posting list</quote>) when the list is small enough to fit into a single index tuple along with the key value."
+msgstr ""
+
+#: xml/gin.xml:871(para)
+msgid "As of <productname>PostgreSQL</productname>9.1, null key values can be included in the index. Also, placeholder nulls are included in the index for indexed items that are null or contain no keys according to <function>extractValue</function>. This allows searches that should find empty items to do so."
+msgstr ""
+
+#: xml/gin.xml:878(para)
+msgid "Multicolumn <acronym>GIN</acronym>indexes are implemented by building a single B-tree over composite values (column number, key value). The key values for different columns can be of different types."
+msgstr ""
+
+#: xml/gin.xml:884(title)
+msgid "GIN Fast Update Technique"
+msgstr ""
+
+#: xml/gin.xml:885(para)
+msgid "Updating a <acronym>GIN</acronym>index tends to be slow because of the intrinsic nature of inverted indexes: inserting or updating one heap row can cause many inserts into the index (one for each key extracted from the indexed item). As of <productname>PostgreSQL</productname>8.4, <acronym>GIN</acronym>is capable of postponing much of this work by inserting new tuples into a temporary, unsorted list of pending entries. When the table is vacuumed, or if the pending list becomes larger than <xref linkend=\"guc-gin-pending-list-limit\">, the entries are moved to the main <acronym>GIN</acronym>data structure using the same bulk insert techniques used during initial index creation. This greatly improves <acronym>GIN</acronym>index update speed, even counting the additional vacuum overhead. Moreover the overhead work can be done by a background process instead of in foreground query processing.</xref>"
+msgstr ""
+
+#: xml/gin.xml:904(para)
+msgid "The main disadvantage of this approach is that searches must scan the list of pending entries in addition to searching the regular index, and so a large list of pending entries will slow searches significantly. Another disadvantage is that, while most updates are fast, an update that causes the pending list to become <quote>too large</quote>will incur an immediate cleanup cycle and thus be much slower than other updates. Proper use of autovacuum can minimize both of these problems."
+msgstr ""
+
+#: xml/gin.xml:913(para)
+msgid "If consistent response time is more important than update speed, use of pending entries can be disabled by turning off the <literal>fastupdate</literal>storage parameter for a <acronym>GIN</acronym>index. See <xref linkend=\"sql-createindex\">for details.</xref>"
+msgstr ""
+
+#: xml/gin.xml:921(title)
+msgid "Partial Match Algorithm"
+msgstr ""
+
+#: xml/gin.xml:922(para)
+msgid "GIN can support <quote>partial match</quote>queries, in which the query does not determine an exact match for one or more keys, but the possible matches fall within a reasonably narrow range of key values (within the key sorting order determined by the <function>compare</function>support method). The <function>extractQuery</function>method, instead of returning a key value to be matched exactly, returns a key value that is the lower bound of the range to be searched, and sets the <literal>pmatch</literal>flag true. The key range is then scanned using the <function>comparePartial</function>method. <function>comparePartial</function>must return zero for a matching index key, less than zero for a non-match that is still within the range to be searched, or greater than zero if the index key is past the range that could match."
+msgstr ""
+
+#: xml/gin.xml:941(title)
+msgid "GIN Tips and Tricks"
+msgstr ""
+
+#: xml/gin.xml:944(term)
+msgid "Create vs. insert"
+msgstr ""
+
+#: xml/gin.xml:946(para)
+msgid "Insertion into a <acronym>GIN</acronym>index can be slow due to the likelihood of many keys being inserted for each item. So, for bulk insertions into a table it is advisable to drop the GIN index and recreate it after finishing bulk insertion."
+msgstr ""
+
+#: xml/gin.xml:952(para)
+msgid "As of <productname>PostgreSQL</productname>8.4, this advice is less necessary since delayed indexing is used (see <xref linkend=\"gin-fast-update\">for details). But for very large updates it may still be best to drop and recreate the index.</xref>"
+msgstr ""
+
+#: xml/gin.xml:965(para)
+msgid "Build time for a <acronym>GIN</acronym>index is very sensitive to the <varname>maintenance_work_mem</varname>setting; it doesn't pay to skimp on work memory during index creation."
+msgstr ""
+
+#: xml/gin.xml:977(para)
+msgid "During a series of insertions into an existing <acronym>GIN</acronym>index that has <literal>fastupdate</literal>enabled, the system will clean up the pending-entry list whenever the list grows larger than <varname>gin_pending_list_limit</varname>. To avoid fluctuations in observed response time, it's desirable to have pending-list cleanup occur in the background (i.e., via autovacuum). Foreground cleanup operations can be avoided by increasing <varname>gin_pending_list_limit</varname>or making autovacuum more aggressive. However, enlarging the threshold of the cleanup operation means that if a foreground cleanup does occur, it will take even longer."
+msgstr ""
+
+#: xml/gin.xml:992(para)
+msgid "<varname>gin_pending_list_limit</varname>can be overridden for individual GIN indexes by changing storage parameters, and which allows each GIN index to have its own cleanup threshold. For example, it's possible to increase the threshold only for the GIN index which can be updated heavily, and decrease it otherwise."
+msgstr ""
+
+#: xml/gin.xml:1006(para)
+msgid "The primary goal of developing <acronym>GIN</acronym>indexes was to create support for highly scalable full-text search in <productname>PostgreSQL</productname>, and there are often situations when a full-text search returns a very large set of results. Moreover, this often happens when the query contains very frequent words, so that the large result set is not even useful. Since reading many tuples from the disk and sorting them could take a lot of time, this is unacceptable for production. (Note that the index search itself is very fast.)"
+msgstr ""
+
+#: xml/gin.xml:1017(para)
+msgid "To facilitate controlled execution of such queries, <acronym>GIN</acronym>has a configurable soft upper limit on the number of rows returned: the <varname>gin_fuzzy_search_limit</varname>configuration parameter. It is set to 0 (meaning no limit) by default. If a non-zero limit is set, then the returned set is a subset of the whole result set, chosen at random."
+msgstr ""
+
+#: xml/gin.xml:1025(para)
+msgid "<quote>Soft</quote>means that the actual number of returned results could differ somewhat from the specified limit, depending on the query and the quality of the system's random number generator."
+msgstr ""
+
+#: xml/gin.xml:1030(para)
+msgid "From experience, values in the thousands (e.g., 5000 20000) work well."
+msgstr ""
+
+#: xml/gin.xml:1037(title)
+msgid "Limitations"
+msgstr ""
+
+#: xml/gin.xml:1038(para)
+msgid "<acronym>GIN</acronym>assumes that indexable operators are strict. This means that <function>extractValue</function>will not be called at all on a null item value (instead, a placeholder index entry is created automatically), and <function>extractQuery</function>will not be called on a null query value either (instead, the query is presumed to be unsatisfiable). Note however that null key values contained within a non-null composite item or query value are supported."
+msgstr ""
+
+#: xml/gin.xml:1051(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/gin.xml:1065(filename)
+msgid "btree_gin"
+msgstr ""
+
+#: xml/gin.xml:1068(para)
+msgid "B-tree equivalent functionality for several data types"
+msgstr ""
+
+#: xml/gin.xml:1074(filename)
+msgid "hstore"
+msgstr ""
+
+#: xml/gin.xml:1077(para)
+msgid "Module for storing (key, value) pairs"
+msgstr ""
+
+#: xml/gin.xml:1082(filename)
+msgid "intarray"
+msgstr ""
+
+#: xml/gin.xml:1085(para)
+msgid "Enhanced support for <type>int[]</type>"
+msgstr ""
+
+#: xml/gin.xml:1091(filename)
+msgid "pg_trgm"
+msgstr ""
+
+#: xml/gin.xml:1094(para)
+msgid "Text similarity using trigram matching"
+msgstr ""
+
+#: xml/gin.xml:1052(para)
+msgid "The <productname>PostgreSQL</productname>source distribution includes <acronym>GIN</acronym>operator classes for <type>tsvector</type>and for one-dimensional arrays of all internal types. Prefix searching in <type>tsvector</type>is implemented using the <acronym>GIN</acronym>partial match feature. The following <filename>contrib</filename>modules also contain <acronym>GIN</acronym>operator classes: <placeholder-1/>"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/gin.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

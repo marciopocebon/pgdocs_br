@@ -1,0 +1,382 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/create_trigger.xml:4(primary) xml/ref/create_trigger.xml:7(refentrytitle) xml/ref/create_trigger.xml:12(refname)
+msgid "CREATE TRIGGER"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:13(refpurpose)
+msgid "define a new trigger"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:17(replaceable) xml/ref/create_trigger.xml:205(replaceable)
+msgid "name"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:19(replaceable) xml/ref/create_trigger.xml:31(replaceable) xml/ref/create_trigger.xml:236(replaceable)
+msgid "event"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:21(replaceable) xml/ref/create_trigger.xml:263(replaceable)
+msgid "table_name"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:22(replaceable) xml/ref/create_trigger.xml:272(replaceable)
+msgid "referenced_table_name"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:26(replaceable) xml/ref/create_trigger.xml:322(replaceable)
+msgid "condition"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:28(replaceable) xml/ref/create_trigger.xml:363(replaceable)
+msgid "function_name"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:29(replaceable) xml/ref/create_trigger.xml:375(replaceable)
+msgid "arguments"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:30(phrase)
+msgid "where <placeholder-1/>can be one of:"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:33(replaceable)
+msgid "column_name"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:16(synopsis)
+#, no-wrap
+msgid "CREATE [ CONSTRAINT ] TRIGGER \n    <placeholder-1/>{ BEFORE |\n    AFTER | INSTEAD OF } { \n    <placeholder-2/>[ OR ... ] }\n    ON \n    <placeholder-3/>[ FROM \n    <placeholder-4/>] [ NOT DEFERRABLE | [\n    DEFERRABLE ] [ INITIALLY IMMEDIATE | INITIALLY DEFERRED ] ] [\n    FOR [ EACH ] { ROW | STATEMENT } ] [ WHEN ( \n    <placeholder-5/>) ]\n    EXECUTE PROCEDURE \n    <placeholder-6/>( \n    <placeholder-7/>) \n    <placeholder-8/>INSERT UPDATE [ OF \n    <placeholder-9/>[, ...\n    ] ] DELETE TRUNCATE"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:37(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:38(para)
+msgid "<command>CREATE TRIGGER</command>creates a new trigger. The trigger will be associated with the specified table, view, or foreign table and will execute the specified function <replaceable class=\"parameter\">function_name</replaceable>when certain events occur."
+msgstr ""
+
+#: xml/ref/create_trigger.xml:44(para)
+msgid "The trigger can be specified to fire before the operation is attempted on a row (before constraints are checked and the <command>INSERT</command>, <command>UPDATE</command>, or <command>DELETE</command>is attempted); or after the operation has completed (after constraints are checked and the <command>INSERT</command>, <command>UPDATE</command>, or <command>DELETE</command>has completed); or instead of the operation (in the case of inserts, updates or deletes on a view). If the trigger fires before or instead of the event, the trigger can skip the operation for the current row, or change the row being inserted (for <command>INSERT</command>and <command>UPDATE</command>operations only). If the trigger fires after the event, all changes, including the effects of other triggers, are <quote>visible</quote>to the trigger."
+msgstr ""
+
+#: xml/ref/create_trigger.xml:62(para)
+msgid "A trigger that is marked <literal>FOR EACH ROW</literal>is called once for every row that the operation modifies. For example, a <command>DELETE</command>that affects 10 rows will cause any <literal>ON DELETE</literal>triggers on the target relation to be called 10 separate times, once for each deleted row. In contrast, a trigger that is marked <literal>FOR EACH STATEMENT</literal>only executes once for any given operation, regardless of how many rows it modifies (in particular, an operation that modifies zero rows will still result in the execution of any applicable <literal>FOR EACH STATEMENT</literal>triggers). Note that with an <command>INSERT</command>with an <literal>ON CONFLICT DO UPDATE</literal>clause, both <command>INSERT</command>and <command>UPDATE</command>statement level trigger will be fired."
+msgstr ""
+
+#: xml/ref/create_trigger.xml:80(para)
+msgid "Triggers that are specified to fire <literal>INSTEAD OF</literal>the trigger event must be marked <literal>FOR EACH ROW</literal>, and can only be defined on views. <literal>BEFORE</literal>and <literal>AFTER</literal>triggers on a view must be marked as <literal>FOR EACH STATEMENT</literal>."
+msgstr ""
+
+#: xml/ref/create_trigger.xml:87(para)
+msgid "In addition, triggers may be defined to fire for <command>TRUNCATE</command>, though only <literal>FOR EACH STATEMENT</literal>."
+msgstr ""
+
+#: xml/ref/create_trigger.xml:90(para)
+msgid "The following table summarizes which types of triggers may be used on tables, views, and foreign tables:"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:96(entry)
+msgid "When"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:97(entry)
+msgid "Event"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:98(entry)
+msgid "Row-level"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:99(entry)
+msgid "Statement-level"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:105(literal) xml/ref/create_trigger.xml:219(literal)
+msgid "BEFORE"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:108(command) xml/ref/create_trigger.xml:127(command) xml/ref/create_trigger.xml:146(command)
+msgid "INSERT"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:109(command) xml/ref/create_trigger.xml:128(command) xml/ref/create_trigger.xml:147(command)
+msgid "UPDATE"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:110(command) xml/ref/create_trigger.xml:129(command) xml/ref/create_trigger.xml:148(command)
+msgid "DELETE"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:107(entry) xml/ref/create_trigger.xml:126(entry) xml/ref/create_trigger.xml:145(entry)
+msgid "<placeholder-1/>/ <placeholder-2/>/ <placeholder-3/>"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:111(entry) xml/ref/create_trigger.xml:130(entry)
+msgid "Tables and foreign tables"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:112(entry) xml/ref/create_trigger.xml:131(entry)
+msgid "Tables, views, and foreign tables"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:117(command) xml/ref/create_trigger.xml:136(command) xml/ref/create_trigger.xml:154(command)
+msgid "TRUNCATE"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:120(entry) xml/ref/create_trigger.xml:139(entry)
+msgid "Tables"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:124(literal) xml/ref/create_trigger.xml:222(literal)
+msgid "AFTER"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:143(literal) xml/ref/create_trigger.xml:225(literal)
+msgid "INSTEAD OF"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:149(entry)
+msgid "Views"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:162(para)
+msgid "Also, a trigger definition can specify a Boolean <literal>WHEN</literal>condition, which will be tested to see whether the trigger should be fired. In row-level triggers the <literal>WHEN</literal>condition can examine the old and/or new values of columns of the row. Statement-level triggers can also have <literal>WHEN</literal>conditions, although the feature is not so useful for them since the condition cannot refer to any values in the table."
+msgstr ""
+
+#: xml/ref/create_trigger.xml:171(para)
+msgid "If multiple triggers of the same kind are defined for the same event, they will be fired in alphabetical order by name."
+msgstr ""
+
+#: xml/ref/create_trigger.xml:174(para)
+msgid "When the <literal>CONSTRAINT</literal>option is specified, this command creates a <firstterm>constraint trigger</firstterm>. This is the same as a regular trigger except that the timing of the trigger firing can be adjusted using <xref linkend=\"SQL-SET-CONSTRAINTS\">. Constraint triggers must be <literal>AFTER ROW</literal>triggers on tables. They can be fired either at the end of the statement causing the triggering event, or at the end of the containing transaction; in the latter case they are said to be <firstterm>deferred</firstterm>. A pending deferred-trigger firing can also be forced to happen immediately by using <command>SET CONSTRAINTS</command>. Constraint triggers are expected to raise an exception when the constraints they implement are violated.</xref>"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:191(para)
+msgid "<command>SELECT</command>does not modify any rows so you cannot create <command>SELECT</command>triggers. Rules and views are more appropriate in such cases."
+msgstr ""
+
+#: xml/ref/create_trigger.xml:196(para)
+msgid "Refer to <xref linkend=\"triggers\">for more information about triggers.</xref>"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:201(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:208(para)
+msgid "The name to give the new trigger. This must be distinct from the name of any other trigger for the same table. The name cannot be schema-qualified the trigger inherits the schema of its table. For a constraint trigger, this is also the name to use when modifying the trigger's behavior using <command>SET CONSTRAINTS</command>."
+msgstr ""
+
+#: xml/ref/create_trigger.xml:228(para)
+msgid "Determines whether the function is called before, after, or instead of the event. A constraint trigger can only be specified as <literal>AFTER</literal>."
+msgstr ""
+
+#: xml/ref/create_trigger.xml:239(para)
+msgid "One of <literal>INSERT</literal>, <literal>UPDATE</literal>, <literal>DELETE</literal>, or <literal>TRUNCATE</literal>; this specifies the event that will fire the trigger. Multiple events can be specified using <literal>OR</literal>."
+msgstr ""
+
+#: xml/ref/create_trigger.xml:247(para)
+msgid "For <literal>UPDATE</literal>events, it is possible to specify a list of columns using this syntax: <synopsis>UPDATE OF \n          <replaceable>column_name1</replaceable>[, \n          <replaceable>column_name2</replaceable>...\n          ]</synopsis>The trigger will only fire if at least one of the listed columns is mentioned as a target of the <command>UPDATE</command>command."
+msgstr ""
+
+#: xml/ref/create_trigger.xml:256(para)
+msgid "<literal>INSTEAD OF UPDATE</literal>events do not support lists of columns."
+msgstr ""
+
+#: xml/ref/create_trigger.xml:266(para)
+msgid "The name (optionally schema-qualified) of the table, view, or foreign table the trigger is for."
+msgstr ""
+
+#: xml/ref/create_trigger.xml:276(para)
+msgid "The (possibly schema-qualified) name of another table referenced by the constraint. This option is used for foreign-key constraints and is not recommended for general use. This can only be specified for constraint triggers."
+msgstr ""
+
+#: xml/ref/create_trigger.xml:285(literal)
+msgid "DEFERRABLE"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:288(literal)
+msgid "NOT DEFERRABLE"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:291(literal)
+msgid "INITIALLY IMMEDIATE"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:294(literal)
+msgid "INITIALLY DEFERRED"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:297(para)
+msgid "The default timing of the trigger. See the <xref linkend=\"SQL-CREATETABLE\">documentation for details of these constraint options. This can only be specified for constraint triggers.</xref>"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:305(literal)
+msgid "FOR EACH ROW"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:308(literal)
+msgid "FOR EACH STATEMENT"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:311(para)
+msgid "This specifies whether the trigger procedure should be fired once for every row affected by the trigger event, or just once per SQL statement. If neither is specified, <literal>FOR EACH STATEMENT</literal>is the default. Constraint triggers can only be specified <literal>FOR EACH ROW</literal>."
+msgstr ""
+
+#: xml/ref/create_trigger.xml:325(para)
+msgid "A Boolean expression that determines whether the trigger function will actually be executed. If <literal>WHEN</literal>is specified, the function will only be called if the <replaceable class=\"parameter\"> condition</replaceable>returns <literal>true</literal>. In <literal>FOR EACH ROW</literal>triggers, the <literal>WHEN</literal>condition can refer to columns of the old and/or new row values by writing <literal>OLD. <replaceable class=\"parameter\"> column_name</replaceable></literal>or <literal>NEW. <replaceable class=\"parameter\"> column_name</replaceable></literal>respectively. Of course, <literal>INSERT</literal>triggers cannot refer to <literal>OLD</literal>and <literal>DELETE</literal>triggers cannot refer to <literal>NEW</literal>."
+msgstr ""
+
+#: xml/ref/create_trigger.xml:346(para)
+msgid "<literal>INSTEAD OF</literal>triggers do not support <literal>WHEN</literal>conditions."
+msgstr ""
+
+#: xml/ref/create_trigger.xml:349(para)
+msgid "Currently, <literal>WHEN</literal>expressions cannot contain subqueries."
+msgstr ""
+
+#: xml/ref/create_trigger.xml:352(para)
+msgid "Note that for constraint triggers, evaluation of the <literal>WHEN</literal>condition is not deferred, but occurs immediately after the row update operation is performed. If the condition does not evaluate to true then the trigger is not queued for deferred execution."
+msgstr ""
+
+#: xml/ref/create_trigger.xml:367(para)
+msgid "A user-supplied function that is declared as taking no arguments and returning type <literal>trigger</literal>, which is executed when the trigger fires."
+msgstr ""
+
+#: xml/ref/create_trigger.xml:378(para)
+msgid "An optional comma-separated list of arguments to be provided to the function when the trigger is executed. The arguments are literal string constants. Simple names and numeric constants can be written here, too, but they will all be converted to strings. Please check the description of the implementation language of the trigger function to find out how these arguments can be accessed within the function; it might be different from normal function arguments."
+msgstr ""
+
+#: xml/ref/create_trigger.xml:392(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:393(para)
+msgid "To create a trigger on a table, the user must have the <literal>TRIGGER</literal>privilege on the table. The user must also have <literal>EXECUTE</literal>privilege on the trigger function."
+msgstr ""
+
+#: xml/ref/create_trigger.xml:398(para)
+msgid "Use <xref linkend=\"sql-droptrigger\">to remove a trigger.</xref>"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:401(para)
+msgid "A column-specific trigger (one defined using the <literal>UPDATE OF <replaceable>column_name</replaceable></literal>syntax) will fire when any of its columns are listed as targets in the <command>UPDATE</command>command's <literal>SET</literal>list. It is possible for a column's value to change even when the trigger is not fired, because changes made to the row's contents by <literal>BEFORE UPDATE</literal>triggers are not considered. Conversely, a command such as <literal>UPDATE ... SET x = x ...</literal>will fire a trigger on column <literal>x</literal>, even though the column's value did not change."
+msgstr ""
+
+#: xml/ref/create_trigger.xml:415(para)
+msgid "In a <literal>BEFORE</literal>trigger, the <literal>WHEN</literal>condition is evaluated just before the function is or would be executed, so using <literal>WHEN</literal>is not materially different from testing the same condition at the beginning of the trigger function. Note in particular that the <literal>NEW</literal>row seen by the condition is the current value, as possibly modified by earlier triggers. Also, a <literal>BEFORE</literal>trigger's <literal>WHEN</literal>condition is not allowed to examine the system columns of the <literal>NEW</literal>row (such as <literal>oid</literal>), because those won't have been set yet."
+msgstr ""
+
+#: xml/ref/create_trigger.xml:430(para)
+msgid "In an <literal>AFTER</literal>trigger, the <literal>WHEN</literal>condition is evaluated just after the row update occurs, and it determines whether an event is queued to fire the trigger at the end of statement. So when an <literal>AFTER</literal>trigger's <literal>WHEN</literal>condition does not return true, it is not necessary to queue an event nor to re-fetch the row at end of statement. This can result in significant speedups in statements that modify many rows, if the trigger only needs to be fired for a few of the rows."
+msgstr ""
+
+#: xml/ref/create_trigger.xml:441(para)
+msgid "In <productname>PostgreSQL</productname>versions before 7.3, it was necessary to declare trigger functions as returning the placeholder type <type>opaque</type>, rather than <type>trigger</type>. To support loading of old dump files, <command>CREATE TRIGGER</command>will accept a function declared as returning <type>opaque</type>, but it will issue a notice and change the function's declared return type to <type>trigger</type>."
+msgstr ""
+
+#: xml/ref/create_trigger.xml:454(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:459(programlisting)
+#, no-wrap
+msgid "CREATE TRIGGER check_update BEFORE UPDATE ON\n    accounts FOR EACH ROW EXECUTE PROCEDURE\n    check_account_update();"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:465(programlisting)
+#, no-wrap
+msgid "CREATE TRIGGER check_update BEFORE UPDATE OF\n    balance ON accounts FOR EACH ROW EXECUTE PROCEDURE\n    check_account_update();"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:470(programlisting)
+#, no-wrap
+msgid "CREATE TRIGGER check_update BEFORE UPDATE ON\n    accounts FOR EACH ROW WHEN (OLD.balance IS DISTINCT FROM\n    NEW.balance) EXECUTE PROCEDURE\n    check_account_update();"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:476(programlisting)
+#, no-wrap
+msgid "CREATE TRIGGER log_update AFTER UPDATE ON\n    accounts FOR EACH ROW WHEN (OLD.* IS DISTINCT FROM NEW.*)\n    EXECUTE PROCEDURE log_account_update();"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:482(programlisting)
+#, no-wrap
+msgid "CREATE TRIGGER view_insert INSTEAD OF INSERT ON\n    my_view FOR EACH ROW EXECUTE PROCEDURE\n    view_insert_row();"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:455(para)
+msgid "Execute the function <function>check_account_update</function>whenever a row of the table <literal>accounts</literal>is about to be updated: <placeholder-1/>The same, but only execute the function if column <literal>balance</literal>is specified as a target in the <command>UPDATE</command>command: <placeholder-2/>This form only executes the function if column <literal>balance</literal>has in fact changed value: <placeholder-3/>Call a function to log updates of <literal>accounts</literal>, but only if something changed: <placeholder-4/>Execute the function <function>view_insert_row</function>for each row to insert rows into the tables underlying a view: <placeholder-5/>"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:486(xref)
+msgid "contains a complete example of a trigger function written in C."
+msgstr ""
+
+#: xml/ref/create_trigger.xml:491(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:500(para)
+msgid "SQL allows you to define aliases for the <quote>old</quote>and <quote>new</quote>rows or tables for use in the definition of the triggered action (e.g., <literal>CREATE TRIGGER ... ON tablename REFERENCING OLD ROW AS somename NEW ROW AS othername ...</literal>). Since <productname>PostgreSQL</productname>allows trigger procedures to be written in any number of user-defined languages, access to the data is handled in a language-specific way."
+msgstr ""
+
+#: xml/ref/create_trigger.xml:512(para)
+msgid "<productname>PostgreSQL</productname>does not allow the old and new tables to be referenced in statement-level triggers, i.e., the tables that contain all the old and/or new rows, which are referred to by the <literal>OLD TABLE</literal>and <literal>NEW TABLE</literal>clauses in the <acronym>SQL</acronym>standard."
+msgstr ""
+
+#: xml/ref/create_trigger.xml:522(para)
+msgid "<productname>PostgreSQL</productname>only allows the execution of a user-defined function for the triggered action. The standard allows the execution of a number of other SQL commands, such as <command>CREATE TABLE</command>, as the triggered action. This limitation is not hard to work around by creating a user-defined function that executes the desired commands."
+msgstr ""
+
+#: xml/ref/create_trigger.xml:492(para)
+msgid "The <command>CREATE TRIGGER</command>statement in <productname>PostgreSQL</productname>implements a subset of the <acronym>SQL</acronym>standard. The following functionalities are currently missing: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_trigger.xml:533(para)
+msgid "SQL specifies that multiple triggers should be fired in time-of-creation order. <productname>PostgreSQL</productname>uses name order, which was judged to be more convenient."
+msgstr ""
+
+#: xml/ref/create_trigger.xml:537(para)
+msgid "SQL specifies that <literal>BEFORE DELETE</literal>triggers on cascaded deletes fire <emphasis>after</emphasis>the cascaded <literal>DELETE</literal>completes. The <productname>PostgreSQL</productname>behavior is for <literal>BEFORE DELETE</literal>to always fire before the delete action, even a cascading one. This is considered more consistent. There is also nonstandard behavior if <literal>BEFORE</literal>triggers modify rows or prevent updates during an update that is caused by a referential action. This can lead to constraint violations or stored data that does not honor the referential constraint."
+msgstr ""
+
+#: xml/ref/create_trigger.xml:550(para)
+msgid "The ability to specify multiple actions for a single trigger using <literal>OR</literal>is a <productname>PostgreSQL</productname>extension of the SQL standard."
+msgstr ""
+
+#: xml/ref/create_trigger.xml:555(para)
+msgid "The ability to fire triggers for <command>TRUNCATE</command>is a <productname>PostgreSQL</productname>extension of the SQL standard, as is the ability to define statement-level triggers on views."
+msgstr ""
+
+#: xml/ref/create_trigger.xml:560(para)
+msgid "<command>CREATE CONSTRAINT TRIGGER</command>is a <productname>PostgreSQL</productname>extension of the <acronym>SQL</acronym>standard."
+msgstr ""
+
+#: xml/ref/create_trigger.xml:566(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/create_trigger.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

@@ -1,0 +1,144 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/alter_default_privileges.xml:4(primary) xml/ref/alter_default_privileges.xml:7(refentrytitle) xml/ref/alter_default_privileges.xml:12(refname)
+msgid "ALTER DEFAULT PRIVILEGES"
+msgstr ""
+
+#: xml/ref/alter_default_privileges.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/alter_default_privileges.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/alter_default_privileges.xml:13(refpurpose)
+msgid "define default access privileges"
+msgstr ""
+
+#: xml/ref/alter_default_privileges.xml:17(replaceable) xml/ref/alter_default_privileges.xml:83(replaceable)
+msgid "target_role"
+msgstr ""
+
+#: xml/ref/alter_default_privileges.xml:18(replaceable) xml/ref/alter_default_privileges.xml:94(replaceable)
+msgid "schema_name"
+msgstr ""
+
+#: xml/ref/alter_default_privileges.xml:19(replaceable) xml/ref/alter_default_privileges.xml:22(replaceable)
+msgid "abbreviated_grant_or_revoke"
+msgstr ""
+
+#: xml/ref/alter_default_privileges.xml:21(phrase)
+msgid "where <placeholder-1/>is one of:"
+msgstr ""
+
+#: xml/ref/alter_default_privileges.xml:27(replaceable) xml/ref/alter_default_privileges.xml:31(replaceable) xml/ref/alter_default_privileges.xml:34(replaceable) xml/ref/alter_default_privileges.xml:37(replaceable) xml/ref/alter_default_privileges.xml:42(replaceable) xml/ref/alter_default_privileges.xml:46(replaceable) xml/ref/alter_default_privileges.xml:49(replaceable) xml/ref/alter_default_privileges.xml:52(replaceable) xml/ref/alter_default_privileges.xml:106(replaceable)
+msgid "role_name"
+msgstr ""
+
+#: xml/ref/alter_default_privileges.xml:16(synopsis)
+#, no-wrap
+msgid "ALTER DEFAULT PRIVILEGES [ FOR { ROLE | USER } \n    <placeholder-1/>[, ...] ] [ IN SCHEMA \n    <placeholder-2/>[, ...] ] \n    <placeholder-3/>\n    <placeholder-4/>GRANT { { SELECT | INSERT | UPDATE | DELETE |\n    TRUNCATE | REFERENCES | TRIGGER } [, ...] | ALL [ PRIVILEGES ]\n    } ON TABLES TO { [ GROUP ] \n    <placeholder-5/>| PUBLIC\n    } [, ...] [ WITH GRANT OPTION ] GRANT { { USAGE | SELECT |\n    UPDATE } [, ...] | ALL [ PRIVILEGES ] } ON SEQUENCES TO { [\n    GROUP ] \n    <placeholder-6/>| PUBLIC\n    } [, ...] [ WITH GRANT OPTION ] GRANT { EXECUTE | ALL [\n    PRIVILEGES ] } ON FUNCTIONS TO { [ GROUP ] \n    <placeholder-7/>| PUBLIC\n    } [, ...] [ WITH GRANT OPTION ] GRANT { USAGE | ALL [\n    PRIVILEGES ] } ON TYPES TO { [ GROUP ] \n    <placeholder-8/>| PUBLIC\n    } [, ...] [ WITH GRANT OPTION ] REVOKE [ GRANT OPTION FOR ] { {\n    SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES |\n    TRIGGER } [, ...] | ALL [ PRIVILEGES ] } ON TABLES FROM { [\n    GROUP ] \n    <placeholder-9/>| PUBLIC\n    } [, ...] [ CASCADE | RESTRICT ] REVOKE [ GRANT OPTION FOR ] {\n    { USAGE | SELECT | UPDATE } [, ...] | ALL [ PRIVILEGES ] } ON\n    SEQUENCES FROM { [ GROUP ] \n    <placeholder-10/>| PUBLIC\n    } [, ...] [ CASCADE | RESTRICT ] REVOKE [ GRANT OPTION FOR ] {\n    EXECUTE | ALL [ PRIVILEGES ] } ON FUNCTIONS FROM { [ GROUP ] \n    <placeholder-11/>| PUBLIC\n    } [, ...] [ CASCADE | RESTRICT ] REVOKE [ GRANT OPTION FOR ] {\n    USAGE | ALL [ PRIVILEGES ] } ON TYPES FROM { [ GROUP ] \n    <placeholder-12/>| PUBLIC\n    } [, ...] [ CASCADE | RESTRICT ]"
+msgstr ""
+
+#: xml/ref/alter_default_privileges.xml:56(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/alter_default_privileges.xml:57(para)
+msgid "<command>ALTER DEFAULT PRIVILEGES</command>allows you to set the privileges that will be applied to objects created in the future. (It does not affect privileges assigned to already-existing objects.) Currently, only the privileges for tables (including views and foreign tables), sequences, functions, and types (including domains) can be altered."
+msgstr ""
+
+#: xml/ref/alter_default_privileges.xml:64(para)
+msgid "You can change default privileges only for objects that will be created by yourself or by roles that you are a member of. The privileges can be set globally (i.e., for all objects created in the current database), or just for objects created in specified schemas. Default privileges that are specified per-schema are added to whatever the global default privileges are for the particular object type."
+msgstr ""
+
+#: xml/ref/alter_default_privileges.xml:71(para)
+msgid "As explained under <xref linkend=\"sql-grant\">, the default privileges for any object type normally grant all grantable permissions to the object owner, and may grant some privileges to <literal>PUBLIC</literal>as well. However, this behavior can be changed by altering the global default privileges with <command>ALTER DEFAULT PRIVILEGES</command>.</xref>"
+msgstr ""
+
+#: xml/ref/alter_default_privileges.xml:79(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/alter_default_privileges.xml:86(para)
+msgid "The name of an existing role of which the current role is a member. If <literal>FOR ROLE</literal>is omitted, the current role is assumed."
+msgstr ""
+
+#: xml/ref/alter_default_privileges.xml:97(para)
+msgid "The name of an existing schema. If specified, the default privileges are altered for objects later created in that schema. If <literal>IN SCHEMA</literal>is omitted, the global default privileges are altered."
+msgstr ""
+
+#: xml/ref/alter_default_privileges.xml:109(para)
+msgid "The name of an existing role to grant or revoke privileges for. This parameter, and all the other parameters in <replaceable class=\"parameter\"> abbreviated_grant_or_revoke</replaceable>, act as described under <xref linkend=\"sql-grant\">or <xref linkend=\"sql-revoke\">, except that one is setting permissions for a whole class of objects rather than specific named objects.</xref></xref>"
+msgstr ""
+
+#: xml/ref/alter_default_privileges.xml:125(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/alter_default_privileges.xml:126(para)
+msgid "Use <xref linkend=\"app-psql\">'s <command>\\ddp</command>command to obtain information about existing assignments of default privileges. The meaning of the privilege values is the same as explained for <command>\\dp</command>under <xref linkend=\"sql-grant\">.</xref></xref>"
+msgstr ""
+
+#: xml/ref/alter_default_privileges.xml:133(para)
+msgid "If you wish to drop a role for which the default privileges have been altered, it is necessary to reverse the changes in its default privileges or use <command>DROP OWNED BY</command>to get rid of the default privileges entry for the role."
+msgstr ""
+
+#: xml/ref/alter_default_privileges.xml:140(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/alter_default_privileges.xml:145(programlisting)
+#, no-wrap
+msgid "ALTER DEFAULT PRIVILEGES IN SCHEMA myschema\n    GRANT SELECT ON TABLES TO PUBLIC; ALTER DEFAULT PRIVILEGES IN\n    SCHEMA myschema GRANT INSERT ON TABLES TO\n    webuser;"
+msgstr ""
+
+#: xml/ref/alter_default_privileges.xml:141(para)
+msgid "Grant SELECT privilege to everyone for all tables (and views) you subsequently create in schema <literal>myschema</literal>, and allow role <literal>webuser</literal>to INSERT into them too: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_default_privileges.xml:151(programlisting)
+#, no-wrap
+msgid "ALTER DEFAULT PRIVILEGES IN SCHEMA myschema\n    REVOKE SELECT ON TABLES FROM PUBLIC; ALTER DEFAULT PRIVILEGES\n    IN SCHEMA myschema REVOKE INSERT ON TABLES FROM\n    webuser;"
+msgstr ""
+
+#: xml/ref/alter_default_privileges.xml:149(para)
+msgid "Undo the above, so that subsequently-created tables won't have any more permissions than normal: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_default_privileges.xml:159(programlisting)
+#, no-wrap
+msgid "ALTER DEFAULT PRIVILEGES FOR ROLE admin REVOKE\n    EXECUTE ON FUNCTIONS FROM PUBLIC;"
+msgstr ""
+
+#: xml/ref/alter_default_privileges.xml:155(para)
+msgid "Remove the public EXECUTE permission that is normally granted on functions, for all functions subsequently created by role <literal>admin</literal>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_default_privileges.xml:163(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/alter_default_privileges.xml:164(para)
+msgid "There is no <command>ALTER DEFAULT PRIVILEGES</command>statement in the SQL standard."
+msgstr ""
+
+#: xml/ref/alter_default_privileges.xml:169(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/alter_default_privileges.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

@@ -1,0 +1,1016 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/create_table.xml:4(primary) xml/ref/create_table.xml:7(refentrytitle) xml/ref/create_table.xml:12(refname)
+msgid "CREATE TABLE"
+msgstr ""
+
+#: xml/ref/create_table.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/create_table.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/create_table.xml:13(refpurpose)
+msgid "define a new table"
+msgstr ""
+
+#: xml/ref/create_table.xml:18(replaceable) xml/ref/create_table.xml:38(replaceable) xml/ref/create_table.xml:239(replaceable)
+msgid "table_name"
+msgstr ""
+
+#: xml/ref/create_table.xml:19(replaceable) xml/ref/create_table.xml:40(replaceable) xml/ref/create_table.xml:79(replaceable) xml/ref/create_table.xml:83(replaceable) xml/ref/create_table.xml:96(replaceable) xml/ref/create_table.xml:126(replaceable) xml/ref/create_table.xml:271(replaceable)
+msgid "column_name"
+msgstr ""
+
+#: xml/ref/create_table.xml:20(replaceable) xml/ref/create_table.xml:280(replaceable)
+msgid "data_type"
+msgstr ""
+
+#: xml/ref/create_table.xml:22(replaceable) xml/ref/create_table.xml:293(replaceable)
+msgid "collation"
+msgstr ""
+
+#: xml/ref/create_table.xml:23(replaceable) xml/ref/create_table.xml:42(replaceable) xml/ref/create_table.xml:53(replaceable)
+msgid "column_constraint"
+msgstr ""
+
+#: xml/ref/create_table.xml:25(replaceable) xml/ref/create_table.xml:44(replaceable) xml/ref/create_table.xml:73(replaceable)
+msgid "table_constraint"
+msgstr ""
+
+#: xml/ref/create_table.xml:26(replaceable) xml/ref/create_table.xml:359(replaceable)
+msgid "source_table"
+msgstr ""
+
+#: xml/ref/create_table.xml:27(replaceable) xml/ref/create_table.xml:107(replaceable) xml/ref/create_table.xml:360(replaceable)
+msgid "like_option"
+msgstr ""
+
+#: xml/ref/create_table.xml:29(replaceable) xml/ref/create_table.xml:306(replaceable)
+msgid "parent_table"
+msgstr ""
+
+#: xml/ref/create_table.xml:30(replaceable) xml/ref/create_table.xml:46(replaceable) xml/ref/create_table.xml:117(replaceable) xml/ref/create_table.xml:834(replaceable)
+msgid "storage_parameter"
+msgstr ""
+
+#: xml/ref/create_table.xml:32(replaceable) xml/ref/create_table.xml:48(replaceable) xml/ref/create_table.xml:119(replaceable) xml/ref/create_table.xml:836(replaceable)
+msgid "value"
+msgstr ""
+
+#: xml/ref/create_table.xml:35(replaceable) xml/ref/create_table.xml:51(replaceable) xml/ref/create_table.xml:121(replaceable) xml/ref/create_table.xml:940(replaceable) xml/ref/create_table.xml:957(replaceable)
+msgid "tablespace_name"
+msgstr ""
+
+#: xml/ref/create_table.xml:39(replaceable) xml/ref/create_table.xml:249(replaceable)
+msgid "type_name"
+msgstr ""
+
+#: xml/ref/create_table.xml:52(phrase)
+msgid "where <placeholder-1/>is:"
+msgstr ""
+
+#: xml/ref/create_table.xml:55(replaceable) xml/ref/create_table.xml:75(replaceable) xml/ref/create_table.xml:436(replaceable)
+msgid "constraint_name"
+msgstr ""
+
+#: xml/ref/create_table.xml:57(replaceable) xml/ref/create_table.xml:77(replaceable) xml/ref/create_table.xml:127(replaceable) xml/ref/create_table.xml:475(replaceable)
+msgid "expression"
+msgstr ""
+
+#: xml/ref/create_table.xml:59(replaceable) xml/ref/create_table.xml:512(replaceable)
+msgid "default_expr"
+msgstr ""
+
+#: xml/ref/create_table.xml:60(replaceable) xml/ref/create_table.xml:62(replaceable) xml/ref/create_table.xml:81(replaceable) xml/ref/create_table.xml:85(replaceable) xml/ref/create_table.xml:92(replaceable) xml/ref/create_table.xml:112(replaceable) xml/ref/create_table.xml:589(replaceable)
+msgid "index_parameters"
+msgstr ""
+
+#: xml/ref/create_table.xml:64(replaceable) xml/ref/create_table.xml:98(replaceable)
+msgid "reftable"
+msgstr ""
+
+#: xml/ref/create_table.xml:65(replaceable) xml/ref/create_table.xml:99(replaceable)
+msgid "refcolumn"
+msgstr ""
+
+#: xml/ref/create_table.xml:67(replaceable) xml/ref/create_table.xml:69(replaceable) xml/ref/create_table.xml:101(replaceable) xml/ref/create_table.xml:103(replaceable)
+msgid "action"
+msgstr ""
+
+#: xml/ref/create_table.xml:72(phrase) xml/ref/create_table.xml:106(phrase)
+msgid "and <placeholder-1/>is:"
+msgstr ""
+
+#: xml/ref/create_table.xml:87(replaceable) xml/ref/create_table.xml:583(replaceable)
+msgid "index_method"
+msgstr ""
+
+#: xml/ref/create_table.xml:88(replaceable) xml/ref/create_table.xml:123(replaceable) xml/ref/create_table.xml:585(replaceable)
+msgid "exclude_element"
+msgstr ""
+
+#: xml/ref/create_table.xml:90(replaceable) xml/ref/create_table.xml:587(replaceable)
+msgid "operator"
+msgstr ""
+
+#: xml/ref/create_table.xml:94(replaceable) xml/ref/create_table.xml:591(replaceable)
+msgid "predicate"
+msgstr ""
+
+#: xml/ref/create_table.xml:114(literal)
+msgid "UNIQUE"
+msgstr ""
+
+#: xml/ref/create_table.xml:115(literal)
+msgid "PRIMARY KEY"
+msgstr ""
+
+#: xml/ref/create_table.xml:116(literal) xml/ref/create_table.xml:125(literal)
+msgid "EXCLUDE"
+msgstr ""
+
+#: xml/ref/create_table.xml:111(phrase)
+msgid "<placeholder-1/>in <placeholder-2/>, <placeholder-3/>, and <placeholder-4/>constraints are:"
+msgstr ""
+
+#: xml/ref/create_table.xml:122(phrase)
+msgid "<placeholder-1/>in an <placeholder-2/>constraint is:"
+msgstr ""
+
+#: xml/ref/create_table.xml:128(replaceable)
+msgid "opclass"
+msgstr ""
+
+#: xml/ref/create_table.xml:16(synopsis)
+#, no-wrap
+msgid "CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } |\n    UNLOGGED ] TABLE [ IF NOT EXISTS ] \n    <placeholder-1/>( [ { \n    <placeholder-2/>\n    <placeholder-3/>[ COLLATE\n    \n    <placeholder-4/>] [ \n    <placeholder-5/>[\n    ... ] ] | \n    <placeholder-6/>| LIKE \n    <placeholder-7/>[ \n    <placeholder-8/>... ] } [, ... ] ] ) [\n    INHERITS ( \n    <placeholder-9/>[, ... ] ) ] [ WITH ( \n    <placeholder-10/>[= \n    <placeholder-11/>] [, ... ] )\n    | WITH OIDS | WITHOUT OIDS ] [ ON COMMIT { PRESERVE ROWS |\n    DELETE ROWS | DROP } ] [ TABLESPACE \n    <placeholder-12/>]\n    CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ]\n    TABLE [ IF NOT EXISTS ] \n    <placeholder-13/>OF \n    <placeholder-14/>[ ( { \n    <placeholder-15/>WITH\n    OPTIONS [ \n    <placeholder-16/>[\n    ... ] ] | \n    <placeholder-17/>} [, ... ] ) ] [\n    WITH ( \n    <placeholder-18/>[= \n    <placeholder-19/>] [, ... ] )\n    | WITH OIDS | WITHOUT OIDS ] [ ON COMMIT { PRESERVE ROWS |\n    DELETE ROWS | DROP } ] [ TABLESPACE \n    <placeholder-20/>] \n    <placeholder-21/>[ CONSTRAINT \n    <placeholder-22/>] {\n    NOT NULL | NULL | CHECK ( \n    <placeholder-23/>) [ NO\n    INHERIT ] | DEFAULT \n    <placeholder-24/>| UNIQUE \n    <placeholder-25/>|\n    PRIMARY KEY \n    <placeholder-26/>|\n    REFERENCES \n    <placeholder-27/>[ ( \n    <placeholder-28/>) ] [\n    MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE \n    <placeholder-29/>] [ ON\n    UPDATE \n    <placeholder-30/>] } [\n    DEFERRABLE | NOT DEFERRABLE ] [ INITIALLY DEFERRED | INITIALLY\n    IMMEDIATE ] \n    <placeholder-31/>[ CONSTRAINT \n    <placeholder-32/>] {\n    CHECK ( \n    <placeholder-33/>) [ NO\n    INHERIT ] | UNIQUE ( \n    <placeholder-34/>[, ...\n    ] ) \n    <placeholder-35/>|\n    PRIMARY KEY ( \n    <placeholder-36/>[, ...\n    ] ) \n    <placeholder-37/>|\n    EXCLUDE [ USING \n    <placeholder-38/>] ( \n    <placeholder-39/>WITH \n    <placeholder-40/>[, ... ] )\n    \n    <placeholder-41/>[\n    WHERE ( \n    <placeholder-42/>) ] |\n    FOREIGN KEY ( \n    <placeholder-43/>[, ...\n    ] ) REFERENCES \n    <placeholder-44/>[ ( \n    <placeholder-45/>[, ... ]\n    ) ] [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ] [ ON DELETE \n    <placeholder-46/>] [ ON\n    UPDATE \n    <placeholder-47/>] } [\n    DEFERRABLE | NOT DEFERRABLE ] [ INITIALLY DEFERRED | INITIALLY\n    IMMEDIATE ] \n    <placeholder-48/>{ INCLUDING | EXCLUDING }\n    { DEFAULTS | CONSTRAINTS | INDEXES | STORAGE | COMMENTS | ALL }\n    \n    <placeholder-49/>[ WITH ( \n    <placeholder-50/>[= \n    <placeholder-51/>] [, ... ] )\n    ] [ USING INDEX TABLESPACE \n    <placeholder-52/>] \n    <placeholder-53/>{ \n    <placeholder-54/>| ( \n    <placeholder-55/>) } [ \n    <placeholder-56/>] [ ASC |\n    DESC ] [ NULLS { FIRST | LAST } ]"
+msgstr ""
+
+#: xml/ref/create_table.xml:132(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/create_table.xml:133(para)
+msgid "<command>CREATE TABLE</command>will create a new, initially empty table in the current database. The table will be owned by the user issuing the command."
+msgstr ""
+
+#: xml/ref/create_table.xml:137(para)
+msgid "If a schema name is given (for example, <literal>CREATE TABLE myschema.mytable ...</literal>) then the table is created in the specified schema. Otherwise it is created in the current schema. Temporary tables exist in a special schema, so a schema name cannot be given when creating a temporary table. The name of the table must be distinct from the name of any other table, sequence, index, view, or foreign table in the same schema."
+msgstr ""
+
+#: xml/ref/create_table.xml:145(para)
+msgid "<command>CREATE TABLE</command>also automatically creates a data type that represents the composite type corresponding to one row of the table. Therefore, tables cannot have the same name as any existing data type in the same schema."
+msgstr ""
+
+#: xml/ref/create_table.xml:150(para)
+msgid "The optional constraint clauses specify constraints (tests) that new or updated rows must satisfy for an insert or update operation to succeed. A constraint is an SQL object that helps define the set of valid values in the table in various ways."
+msgstr ""
+
+#: xml/ref/create_table.xml:155(para)
+msgid "There are two ways to define constraints: table constraints and column constraints. A column constraint is defined as part of a column definition. A table constraint definition is not tied to a particular column, and it can encompass more than one column. Every column constraint can also be written as a table constraint; a column constraint is only a notational convenience for use when the constraint only affects one column."
+msgstr ""
+
+#: xml/ref/create_table.xml:163(para)
+msgid "To be able to create a table, you must have <literal>USAGE</literal>privilege on all column types or the type in the <literal>OF</literal>clause, respectively."
+msgstr ""
+
+#: xml/ref/create_table.xml:169(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/create_table.xml:172(term)
+msgid "<literal>TEMPORARY</literal>or <literal>TEMP</literal>"
+msgstr ""
+
+#: xml/ref/create_table.xml:176(para)
+msgid "If specified, the table is created as a temporary table. Temporary tables are automatically dropped at the end of a session, or optionally at the end of the current transaction (see <literal>ON COMMIT</literal>below). Existing permanent tables with the same name are not visible to the current session while the temporary table exists, unless they are referenced with schema-qualified names. Any indexes created on a temporary table are automatically temporary as well."
+msgstr ""
+
+#: xml/ref/create_table.xml:186(para)
+msgid "The <link linkend=\"autovacuum\">autovacuum daemon</link>cannot access and therefore cannot vacuum or analyze temporary tables. For this reason, appropriate vacuum and analyze operations should be performed via session SQL commands. For example, if a temporary table is going to be used in complex queries, it is wise to run <command>ANALYZE</command>on the temporary table after it is populated."
+msgstr ""
+
+#: xml/ref/create_table.xml:195(para)
+msgid "Optionally, <literal>GLOBAL</literal>or <literal>LOCAL</literal>can be written before <literal>TEMPORARY</literal>or <literal>TEMP</literal>. This presently makes no difference in <productname>PostgreSQL</productname>and is deprecated; see <xref linkend=\"sql-createtable-compatibility\" endterm=\"sql-createtable-compatibility-title\"> .</xref>"
+msgstr ""
+
+#: xml/ref/create_table.xml:210(literal)
+msgid "UNLOGGED"
+msgstr ""
+
+#: xml/ref/create_table.xml:213(para)
+msgid "If specified, the table is created as an unlogged table. Data written to unlogged tables is not written to the write-ahead log (see <xref linkend=\"wal\">), which makes them considerably faster than ordinary tables. However, they are not crash-safe: an unlogged table is automatically truncated after a crash or unclean shutdown. The contents of an unlogged table are also not replicated to standby servers. Any indexes created on an unlogged table are automatically unlogged as well.</xref>"
+msgstr ""
+
+#: xml/ref/create_table.xml:227(literal)
+msgid "IF NOT EXISTS"
+msgstr ""
+
+#: xml/ref/create_table.xml:230(para)
+msgid "Do not throw an error if a relation with the same name already exists. A notice is issued in this case. Note that there is no guarantee that the existing relation is anything like the one that would have been created."
+msgstr ""
+
+#: xml/ref/create_table.xml:242(para)
+msgid "The name (optionally schema-qualified) of the table to be created."
+msgstr ""
+
+#: xml/ref/create_table.xml:248(literal)
+msgid "OF <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_table.xml:253(para)
+msgid "Creates a <firstterm>typed table</firstterm>, which takes its structure from the specified composite type (name optionally schema-qualified). A typed table is tied to its type; for example the table will be dropped if the type is dropped (with <literal>DROP TYPE ... CASCADE</literal>)."
+msgstr ""
+
+#: xml/ref/create_table.xml:260(para)
+msgid "When a typed table is created, then the data types of the columns are determined by the underlying composite type and are not specified by the <literal>CREATE TABLE</literal>command. But the <literal>CREATE TABLE</literal>command can add defaults and constraints to the table and can specify storage parameters."
+msgstr ""
+
+#: xml/ref/create_table.xml:274(para)
+msgid "The name of a column to be created in the new table."
+msgstr ""
+
+#: xml/ref/create_table.xml:283(para)
+msgid "The data type of the column. This can include array specifiers. For more information on the data types supported by <productname>PostgreSQL</productname>, refer to <xref linkend=\"datatype\">.</xref>"
+msgstr ""
+
+#: xml/ref/create_table.xml:292(literal)
+msgid "COLLATE <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_table.xml:296(para)
+msgid "The <literal>COLLATE</literal>clause assigns a collation to the column (which must be of a collatable data type). If not specified, the column data type's default collation is used."
+msgstr ""
+
+#: xml/ref/create_table.xml:305(literal)
+msgid "INHERITS ( <placeholder-1/>[, ... ] )"
+msgstr ""
+
+#: xml/ref/create_table.xml:310(para)
+msgid "The optional <literal>INHERITS</literal>clause specifies a list of tables from which the new table automatically inherits all columns. Parent tables can be plain tables or foreign tables."
+msgstr ""
+
+#: xml/ref/create_table.xml:315(para)
+msgid "Use of <literal>INHERITS</literal>creates a persistent relationship between the new child table and its parent table(s). Schema modifications to the parent(s) normally propagate to children as well, and by default the data of the child table is included in scans of the parent(s)."
+msgstr ""
+
+#: xml/ref/create_table.xml:322(para)
+msgid "If the same column name exists in more than one parent table, an error is reported unless the data types of the columns match in each of the parent tables. If there is no conflict, then the duplicate columns are merged to form a single column in the new table. If the column name list of the new table contains a column name that is also inherited, the data type must likewise match the inherited column(s), and the column definitions are merged into one. If the new table explicitly specifies a default value for the column, this default overrides any defaults from inherited declarations of the column. Otherwise, any parents that specify default values for the column must all specify the same default, or an error will be reported."
+msgstr ""
+
+#: xml/ref/create_table.xml:336(para)
+msgid "<literal>CHECK</literal>constraints are merged in essentially the same way as columns: if multiple parent tables and/or the new table definition contain identically-named <literal>CHECK</literal>constraints, these constraints must all have the same check expression, or an error will be reported. Constraints having the same name and expression will be merged into one copy. A constraint marked <literal>NO INHERIT</literal>in a parent will not be considered. Notice that an unnamed <literal>CHECK</literal>constraint in the new table will never be merged, since a unique name will always be chosen for it."
+msgstr ""
+
+#: xml/ref/create_table.xml:351(para)
+msgid "Column <literal>STORAGE</literal>settings are also copied from parent tables."
+msgstr ""
+
+#: xml/ref/create_table.xml:358(literal)
+msgid "LIKE <placeholder-1/>[ <placeholder-2/>... ]"
+msgstr ""
+
+#: xml/ref/create_table.xml:363(para)
+msgid "The <literal>LIKE</literal>clause specifies a table from which the new table automatically copies all column names, their data types, and their not-null constraints."
+msgstr ""
+
+#: xml/ref/create_table.xml:368(para)
+msgid "Unlike <literal>INHERITS</literal>, the new table and original table are completely decoupled after creation is complete. Changes to the original table will not be applied to the new table, and it is not possible to include data of the new table in scans of the original table."
+msgstr ""
+
+#: xml/ref/create_table.xml:375(para)
+msgid "Default expressions for the copied column definitions will only be copied if <literal>INCLUDING DEFAULTS</literal>is specified. Defaults that call database-modification functions, like <function>nextval</function>, create a linkage between the original and new tables. The default behavior is to exclude default expressions, resulting in the copied columns in the new table having null defaults."
+msgstr ""
+
+#: xml/ref/create_table.xml:383(para)
+msgid "Not-null constraints are always copied to the new table. <literal>CHECK</literal>constraints will be copied only if <literal>INCLUDING CONSTRAINTS</literal>is specified. Indexes, <literal>PRIMARY KEY</literal>, and <literal>UNIQUE</literal>constraints on the original table will be created on the new table only if the <literal>INCLUDING INDEXES</literal>clause is specified. No distinction is made between column constraints and table constraints."
+msgstr ""
+
+#: xml/ref/create_table.xml:395(para)
+msgid "<literal>STORAGE</literal>settings for the copied column definitions will only be copied if <literal>INCLUDING STORAGE</literal>is specified. The default behavior is to exclude <literal>STORAGE</literal>settings, resulting in the copied columns in the new table having type-specific default settings. For more on <literal>STORAGE</literal>settings, see <xref linkend=\"storage-toast\">.</xref>"
+msgstr ""
+
+#: xml/ref/create_table.xml:405(para)
+msgid "Comments for the copied columns, constraints, and indexes will only be copied if <literal>INCLUDING COMMENTS</literal>is specified. The default behavior is to exclude comments, resulting in the copied columns and constraints in the new table having no comments."
+msgstr ""
+
+#: xml/ref/create_table.xml:411(para)
+msgid "<literal>INCLUDING ALL</literal>is an abbreviated form of <literal>INCLUDING DEFAULTS INCLUDING CONSTRAINTS INCLUDING INDEXES INCLUDING STORAGE INCLUDING COMMENTS</literal>."
+msgstr ""
+
+#: xml/ref/create_table.xml:417(para)
+msgid "Note also that unlike <literal>INHERITS</literal>, columns and constraints copied by <literal>LIKE</literal>are not merged with similarly named columns and constraints. If the same name is specified explicitly or in another <literal>LIKE</literal>clause, an error is signaled."
+msgstr ""
+
+#: xml/ref/create_table.xml:425(para)
+msgid "The <literal>LIKE</literal>clause can also be used to copy columns from views, foreign tables, or composite types. Inapplicable options (e.g., <literal>INCLUDING INDEXES</literal>from a view) are ignored."
+msgstr ""
+
+#: xml/ref/create_table.xml:435(literal)
+msgid "CONSTRAINT <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_table.xml:440(para)
+msgid "An optional name for a column or table constraint. If the constraint is violated, the constraint name is present in error messages, so constraint names like <literal>col must be positive</literal>can be used to communicate helpful constraint information to client applications. (Double-quotes are needed to specify constraint names that contain spaces.) If a constraint name is not specified, the system generates a name."
+msgstr ""
+
+#: xml/ref/create_table.xml:453(literal)
+msgid "NOT NULL"
+msgstr ""
+
+#: xml/ref/create_table.xml:456(para)
+msgid "The column is not allowed to contain null values."
+msgstr ""
+
+#: xml/ref/create_table.xml:462(literal) xml/ref/create_table.xml:1439(literal)
+msgid "NULL"
+msgstr ""
+
+#: xml/ref/create_table.xml:465(para)
+msgid "The column is allowed to contain null values. This is the default."
+msgstr ""
+
+#: xml/ref/create_table.xml:467(para)
+msgid "This clause is only provided for compatibility with non-standard SQL databases. Its use is discouraged in new applications."
+msgstr ""
+
+#: xml/ref/create_table.xml:474(literal)
+msgid "CHECK ( <placeholder-1/>) [ NO INHERIT ]"
+msgstr ""
+
+#: xml/ref/create_table.xml:479(para)
+msgid "The <literal>CHECK</literal>clause specifies an expression producing a Boolean result which new or updated rows must satisfy for an insert or update operation to succeed. Expressions evaluating to TRUE or UNKNOWN succeed. Should any row of an insert or update operation produce a FALSE result, an error exception is raised and the insert or update does not alter the database. A check constraint specified as a column constraint should reference that column's value only, while an expression appearing in a table constraint can reference multiple columns."
+msgstr ""
+
+#: xml/ref/create_table.xml:490(para)
+msgid "Currently, <literal>CHECK</literal>expressions cannot contain subqueries nor refer to variables other than columns of the current row. The system column <literal>tableoid</literal>may be referenced, but not any other system column."
+msgstr ""
+
+#: xml/ref/create_table.xml:496(para)
+msgid "A constraint marked with <literal>NO INHERIT</literal>will not propagate to child tables."
+msgstr ""
+
+#: xml/ref/create_table.xml:499(para)
+msgid "When a table has multiple <literal>CHECK</literal>constraints, they will be tested for each row in alphabetical order by name, after checking <literal>NOT NULL</literal>constraints. ( <productname>PostgreSQL</productname>versions before 9.5 did not honor any particular firing order for <literal>CHECK</literal>constraints.)"
+msgstr ""
+
+#: xml/ref/create_table.xml:511(literal)
+msgid "DEFAULT <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_table.xml:515(para)
+msgid "The <literal>DEFAULT</literal>clause assigns a default data value for the column whose column definition it appears within. The value is any variable-free expression (subqueries and cross-references to other columns in the current table are not allowed). The data type of the default expression must match the data type of the column."
+msgstr ""
+
+#: xml/ref/create_table.xml:523(para)
+msgid "The default expression will be used in any insert operation that does not specify a value for the column. If there is no default for a column, then the default is null."
+msgstr ""
+
+#: xml/ref/create_table.xml:530(term)
+msgid "<literal>UNIQUE</literal>(column constraint)"
+msgstr ""
+
+#: xml/ref/create_table.xml:532(term)
+msgid "<literal>UNIQUE ( <replaceable class=\"PARAMETER\">column_name</replaceable>[, ... ] )</literal>(table constraint)"
+msgstr ""
+
+#: xml/ref/create_table.xml:537(para)
+msgid "The <literal>UNIQUE</literal>constraint specifies that a group of one or more columns of a table can contain only unique values. The behavior of the unique table constraint is the same as that for column constraints, with the additional capability to span multiple columns."
+msgstr ""
+
+#: xml/ref/create_table.xml:544(para)
+msgid "For the purpose of a unique constraint, null values are not considered equal."
+msgstr ""
+
+#: xml/ref/create_table.xml:546(para)
+msgid "Each unique table constraint must name a set of columns that is different from the set of columns named by any other unique or primary key constraint defined for the table. (Otherwise it would just be the same constraint listed twice.)"
+msgstr ""
+
+#: xml/ref/create_table.xml:554(term)
+msgid "<literal>PRIMARY KEY</literal>(column constraint)"
+msgstr ""
+
+#: xml/ref/create_table.xml:556(term)
+msgid "<literal>PRIMARY KEY ( <replaceable class=\"PARAMETER\">column_name</replaceable>[, ... ] )</literal>(table constraint)"
+msgstr ""
+
+#: xml/ref/create_table.xml:561(para)
+msgid "The primary key constraint specifies that a column or columns of a table can contain only unique (non-duplicate), nonnull values. Technically, <literal>PRIMARY KEY</literal>is merely a combination of <literal>UNIQUE</literal>and <literal>NOT NULL</literal>, but identifying a set of columns as primary key also provides metadata about the design of the schema, as a primary key implies that other tables can rely on this set of columns as a unique identifier for rows."
+msgstr ""
+
+#: xml/ref/create_table.xml:571(para)
+msgid "Only one primary key can be specified for a table, whether as a column constraint or a table constraint."
+msgstr ""
+
+#: xml/ref/create_table.xml:574(para)
+msgid "The primary key constraint should name a set of columns that is different from other sets of columns named by any unique constraint defined for the same table."
+msgstr ""
+
+#: xml/ref/create_table.xml:582(literal)
+msgid "EXCLUDE [ USING <placeholder-1/>] ( <placeholder-2/>WITH <placeholder-3/>[, ... ] ) <placeholder-4/>[ WHERE ( <placeholder-5/>) ]"
+msgstr ""
+
+#: xml/ref/create_table.xml:595(para)
+msgid "The <literal>EXCLUDE</literal>clause defines an exclusion constraint, which guarantees that if any two rows are compared on the specified column(s) or expression(s) using the specified operator(s), not all of these comparisons will return <literal>TRUE</literal>. If all of the specified operators test for equality, this is equivalent to a <literal>UNIQUE</literal>constraint, although an ordinary unique constraint will be faster. However, exclusion constraints can specify constraints that are more general than simple equality. For example, you can specify a constraint that no two rows in the table contain overlapping circles (see <xref linkend=\"datatype-geometric\">) by using the <literal/>operator.</xref>"
+msgstr ""
+
+#: xml/ref/create_table.xml:611(para)
+msgid "Exclusion constraints are implemented using an index, so each specified operator must be associated with an appropriate operator class (see <xref linkend=\"indexes-opclass\">) for the index access method <replaceable>index_method</replaceable>. The operators are required to be commutative. Each <replaceable class=\"parameter\"> exclude_element</replaceable>can optionally specify an operator class and/or ordering options; these are described fully under <xref linkend=\"sql-createindex\">.</xref></xref>"
+msgstr ""
+
+#: xml/ref/create_table.xml:623(para)
+msgid "The access method must support <literal>amgettuple</literal>(see <xref linkend=\"indexam\">); at present this means <acronym>GIN</acronym>cannot be used. Although it's allowed, there is little point in using B-tree or hash indexes with an exclusion constraint, because this does nothing that an ordinary unique constraint doesn't do better. So in practice the access method will always be <acronym>GiST</acronym>or <acronym>SP-GiST</acronym>.</xref>"
+msgstr ""
+
+#: xml/ref/create_table.xml:633(para)
+msgid "The <replaceable class=\"parameter\"> predicate</replaceable>allows you to specify an exclusion constraint on a subset of the table; internally this creates a partial index. Note that parentheses are required around the predicate."
+msgstr ""
+
+#: xml/ref/create_table.xml:642(term)
+msgid "<literal>REFERENCES <replaceable class=\"parameter\">reftable</replaceable>[ ( <replaceable class=\"parameter\">refcolumn</replaceable>) ] [ MATCH <replaceable class=\"parameter\">matchtype</replaceable>] [ ON DELETE <replaceable class=\"parameter\">action</replaceable>] [ ON UPDATE <replaceable class=\"parameter\"> action</replaceable>]</literal>(column constraint)"
+msgstr ""
+
+#: xml/ref/create_table.xml:653(term)
+msgid "<literal>FOREIGN KEY ( <replaceable class=\"parameter\">column_name</replaceable>[, ... ] ) REFERENCES <replaceable class=\"parameter\">reftable</replaceable>[ ( <replaceable class=\"parameter\">refcolumn</replaceable>[, ... ] ) ] [ MATCH <replaceable class=\"parameter\">matchtype</replaceable>] [ ON DELETE <replaceable class=\"parameter\">action</replaceable>] [ ON UPDATE <replaceable class=\"parameter\"> action</replaceable>]</literal>(table constraint)"
+msgstr ""
+
+#: xml/ref/create_table.xml:667(para)
+msgid "These clauses specify a foreign key constraint, which requires that a group of one or more columns of the new table must only contain values that match values in the referenced column(s) of some row of the referenced table. If the <replaceable class=\"parameter\"> refcolumn</replaceable>list is omitted, the primary key of the <replaceable class=\"parameter\">reftable</replaceable>is used. The referenced columns must be the columns of a non-deferrable unique or primary key constraint in the referenced table. Note that foreign key constraints cannot be defined between temporary tables and permanent tables."
+msgstr ""
+
+#: xml/ref/create_table.xml:681(para)
+msgid "A value inserted into the referencing column(s) is matched against the values of the referenced table and referenced columns using the given match type. There are three match types: <literal>MATCH FULL</literal>, <literal>MATCH PARTIAL</literal>, and <literal>MATCH SIMPLE</literal>(which is the default). <literal>MATCH FULL</literal>will not allow one column of a multicolumn foreign key to be null unless all foreign key columns are null; if they are all null, the row is not required to have a match in the referenced table. <literal>MATCH SIMPLE</literal>allows any of the foreign key columns to be null; if any of them are null, the row is not required to have a match in the referenced table. <literal>MATCH PARTIAL</literal>is not yet implemented. (Of course, <literal>NOT NULL</literal>constraints can be applied to the referencing column(s) to prevent these cases from arising.)"
+msgstr ""
+
+#: xml/ref/create_table.xml:718(literal)
+msgid "NO ACTION"
+msgstr ""
+
+#: xml/ref/create_table.xml:721(para)
+msgid "Produce an error indicating that the deletion or update would create a foreign key constraint violation. If the constraint is deferred, this error will be produced at constraint check time if there still exist any referencing rows. This is the default action."
+msgstr ""
+
+#: xml/ref/create_table.xml:731(literal)
+msgid "RESTRICT"
+msgstr ""
+
+#: xml/ref/create_table.xml:734(para)
+msgid "Produce an error indicating that the deletion or update would create a foreign key constraint violation. This is the same as <literal>NO ACTION</literal>except that the check is not deferrable."
+msgstr ""
+
+#: xml/ref/create_table.xml:743(literal)
+msgid "CASCADE"
+msgstr ""
+
+#: xml/ref/create_table.xml:746(para)
+msgid "Delete any rows referencing the deleted row, or update the values of the referencing column(s) to the new values of the referenced columns, respectively."
+msgstr ""
+
+#: xml/ref/create_table.xml:754(literal)
+msgid "SET NULL"
+msgstr ""
+
+#: xml/ref/create_table.xml:757(para)
+msgid "Set the referencing column(s) to null."
+msgstr ""
+
+#: xml/ref/create_table.xml:762(literal)
+msgid "SET DEFAULT"
+msgstr ""
+
+#: xml/ref/create_table.xml:765(para)
+msgid "Set the referencing column(s) to their default values. (There must be a row in the referenced table matching the default values, if they are not null, or the operation will fail.)"
+msgstr ""
+
+#: xml/ref/create_table.xml:700(para)
+msgid "In addition, when the data in the referenced columns is changed, certain actions are performed on the data in this table's columns. The <literal>ON DELETE</literal>clause specifies the action to perform when a referenced row in the referenced table is being deleted. Likewise, the <literal>ON UPDATE</literal>clause specifies the action to perform when a referenced column in the referenced table is being updated to a new value. If the row is updated, but the referenced column is not actually changed, no action is done. Referential actions other than the <literal>NO ACTION</literal>check cannot be deferred, even if the constraint is declared deferrable. There are the following possible actions for each clause: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_table.xml:773(para)
+msgid "If the referenced column(s) are changed frequently, it might be wise to add an index to the referencing column(s) so that referential actions associated with the foreign key constraint can be performed more efficiently."
+msgstr ""
+
+#: xml/ref/create_table.xml:782(literal)
+msgid "DEFERRABLE"
+msgstr ""
+
+#: xml/ref/create_table.xml:785(literal)
+msgid "NOT DEFERRABLE"
+msgstr ""
+
+#: xml/ref/create_table.xml:788(para)
+msgid "This controls whether the constraint can be deferred. A constraint that is not deferrable will be checked immediately after every command. Checking of constraints that are deferrable can be postponed until the end of the transaction (using the <xref linkend=\"sql-set-constraints\">command). <literal>NOT DEFERRABLE</literal>is the default. Currently, only <literal>UNIQUE</literal>, <literal>PRIMARY KEY</literal>, <literal>EXCLUDE</literal>, and <literal>REFERENCES</literal>(foreign key) constraints accept this clause. <literal>NOT NULL</literal>and <literal>CHECK</literal>constraints are not deferrable. Note that deferrable constraints cannot be used as conflict arbitrators in an <command>INSERT</command>statement that includes an <literal>ON CONFLICT DO UPDATE</literal>clause.</xref>"
+msgstr ""
+
+#: xml/ref/create_table.xml:812(literal)
+msgid "INITIALLY IMMEDIATE"
+msgstr ""
+
+#: xml/ref/create_table.xml:815(literal)
+msgid "INITIALLY DEFERRED"
+msgstr ""
+
+#: xml/ref/create_table.xml:818(para)
+msgid "If a constraint is deferrable, this clause specifies the default time to check the constraint. If the constraint is <literal>INITIALLY IMMEDIATE</literal>, it is checked after each statement. This is the default. If the constraint is <literal>INITIALLY DEFERRED</literal>, it is checked only at the end of the transaction. The constraint check time can be altered with the <xref linkend=\"sql-set-constraints\"> command.</xref>"
+msgstr ""
+
+#: xml/ref/create_table.xml:833(literal)
+msgid "WITH ( <placeholder-1/>[= <placeholder-2/>] [, ... ] )"
+msgstr ""
+
+#: xml/ref/create_table.xml:840(para)
+msgid "This clause specifies optional storage parameters for a table or index; see <xref linkend=\"sql-createtable-storage-parameters\" endterm=\"sql-createtable-storage-parameters-title\">for more information. The <literal>WITH</literal>clause for a table can also include <literal>OIDS=TRUE</literal>(or just <literal>OIDS</literal>) to specify that rows of the new table should have OIDs (object identifiers) assigned to them, or <literal>OIDS=FALSE</literal>to specify that the rows should not have OIDs. If <literal>OIDS</literal>is not specified, the default setting depends upon the <xref linkend=\"guc-default-with-oids\">configuration parameter. (If the new table inherits from any tables that have OIDs, then <literal>OIDS=TRUE</literal>is forced even if the command says <literal>OIDS=FALSE</literal>.)</xref></xref>"
+msgstr ""
+
+#: xml/ref/create_table.xml:861(para)
+msgid "If <literal>OIDS=FALSE</literal>is specified or implied, the new table does not store OIDs and no OID will be assigned for a row inserted into it. This is generally considered worthwhile, since it will reduce OID consumption and thereby postpone the wraparound of the 32-bit OID counter. Once the counter wraps around, OIDs can no longer be assumed to be unique, which makes them considerably less useful. In addition, excluding OIDs from a table reduces the space required to store the table on disk by 4 bytes per row (on most machines), slightly improving performance."
+msgstr ""
+
+#: xml/ref/create_table.xml:873(para)
+msgid "To remove OIDs from a table after it has been created, use <xref linkend=\"sql-altertable\">.</xref>"
+msgstr ""
+
+#: xml/ref/create_table.xml:880(literal)
+msgid "WITH OIDS"
+msgstr ""
+
+#: xml/ref/create_table.xml:883(literal)
+msgid "WITHOUT OIDS"
+msgstr ""
+
+#: xml/ref/create_table.xml:886(para)
+msgid "These are obsolescent syntaxes equivalent to <literal>WITH (OIDS)</literal>and <literal>WITH (OIDS=FALSE)</literal>, respectively. If you wish to give both an <literal>OIDS</literal>setting and storage parameters, you must use the <literal>WITH ( ... )</literal>syntax; see above."
+msgstr ""
+
+#: xml/ref/create_table.xml:897(literal)
+msgid "ON COMMIT"
+msgstr ""
+
+#: xml/ref/create_table.xml:906(literal)
+msgid "PRESERVE ROWS"
+msgstr ""
+
+#: xml/ref/create_table.xml:909(para)
+msgid "No special action is taken at the ends of transactions. This is the default behavior."
+msgstr ""
+
+#: xml/ref/create_table.xml:915(literal)
+msgid "DELETE ROWS"
+msgstr ""
+
+#: xml/ref/create_table.xml:918(para)
+msgid "All rows in the temporary table will be deleted at the end of each transaction block. Essentially, an automatic <xref linkend=\"sql-truncate\">is done at each commit.</xref>"
+msgstr ""
+
+#: xml/ref/create_table.xml:927(literal)
+msgid "DROP"
+msgstr ""
+
+#: xml/ref/create_table.xml:930(para)
+msgid "The temporary table will be dropped at the end of the current transaction block."
+msgstr ""
+
+#: xml/ref/create_table.xml:900(para)
+msgid "The behavior of temporary tables at the end of a transaction block can be controlled using <literal>ON COMMIT</literal>. The three options are: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_table.xml:939(literal)
+msgid "TABLESPACE <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_table.xml:944(para)
+msgid "The <replaceable class=\"PARAMETER\"> tablespace_name</replaceable>is the name of the tablespace in which the new table is to be created. If not specified, <xref linkend=\"guc-default-tablespace\">is consulted, or <xref linkend=\"guc-temp-tablespaces\">if the table is temporary.</xref></xref>"
+msgstr ""
+
+#: xml/ref/create_table.xml:956(literal)
+msgid "USING INDEX TABLESPACE <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_table.xml:961(para)
+msgid "This clause allows selection of the tablespace in which the index associated with a <literal>UNIQUE</literal>, <literal>PRIMARY KEY</literal>, or <literal>EXCLUDE</literal>constraint will be created. If not specified, <xref linkend=\"guc-default-tablespace\">is consulted, or <xref linkend=\"guc-temp-tablespaces\">if the table is temporary.</xref></xref>"
+msgstr ""
+
+#: xml/ref/create_table.xml:974(title)
+msgid "Storage Parameters"
+msgstr ""
+
+#: xml/ref/create_table.xml:977(primary)
+msgid "storage parameters"
+msgstr ""
+
+#: xml/ref/create_table.xml:979(para)
+msgid "The <literal>WITH</literal>clause can specify <firstterm>storage parameters</firstterm>for tables, and for indexes associated with a <literal>UNIQUE</literal>, <literal>PRIMARY KEY</literal>, or <literal>EXCLUDE</literal>constraint. Storage parameters for indexes are documented in <xref linkend=\"SQL-CREATEINDEX\">. The storage parameters currently available for tables are listed below. For many of these parameters, as shown, there is an additional parameter with the same name prefixed with <literal>toast.</literal>, which controls the behavior of the table's secondary <acronym>TOAST</acronym>table, if any (see <xref linkend=\"storage-toast\">for more information about TOAST). If a table parameter value is set and the equivalent <literal>toast.</literal>parameter is not, the TOAST table will use the table's parameter value.</xref></xref>"
+msgstr ""
+
+#: xml/ref/create_table.xml:1000(term)
+msgid "<literal>fillfactor</literal>( <type>integer</type>)"
+msgstr ""
+
+#: xml/ref/create_table.xml:1004(para)
+msgid "The fillfactor for a table is a percentage between 10 and 100. 100 (complete packing) is the default. When a smaller fillfactor is specified, <command>INSERT</command>operations pack table pages only to the indicated percentage; the remaining space on each page is reserved for updating rows on that page. This gives <command>UPDATE</command>a chance to place the updated copy of a row on the same page as the original, which is more efficient than placing it on a different page. For a table whose entries are never updated, complete packing is the best choice, but in heavily updated tables smaller fillfactors are appropriate. This parameter cannot be set for TOAST tables."
+msgstr ""
+
+#: xml/ref/create_table.xml:1021(term)
+msgid "<literal>autovacuum_enabled</literal>, <literal>toast.autovacuum_enabled</literal>( <type>boolean</type>)"
+msgstr ""
+
+#: xml/ref/create_table.xml:1026(para)
+msgid "Enables or disables the autovacuum daemon for a particular table. If true, the autovacuum daemon will perform automatic <command>VACUUM</command>and/or <command>ANALYZE</command>operations on this table following the rules discussed in <xref linkend=\"autovacuum\">. If false, this table will not be autovacuumed, except to prevent transaction ID wraparound. See <xref linkend=\"vacuum-for-wraparound\">for more about wraparound prevention. Note that the autovacuum daemon does not run at all (except to prevent transaction ID wraparound) if the <xref linkend=\"guc-autovacuum\">parameter is false; setting individual tables' storage parameters does not override that. Therefore there is seldom much point in explicitly setting this storage parameter to <literal>true</literal>, only to <literal>false</literal>.</xref></xref></xref>"
+msgstr ""
+
+#: xml/ref/create_table.xml:1048(term)
+msgid "<literal>autovacuum_vacuum_threshold</literal>, <literal>toast.autovacuum_vacuum_threshold</literal>( <type>integer</type>)"
+msgstr ""
+
+#: xml/ref/create_table.xml:1053(para)
+msgid "Per-table value for <xref linkend=\"guc-autovacuum-vacuum-threshold\"> parameter.</xref>"
+msgstr ""
+
+#: xml/ref/create_table.xml:1059(term)
+msgid "<literal>autovacuum_vacuum_scale_factor</literal>, <literal>toast.autovacuum_vacuum_scale_factor</literal>( <type>float4</type>)"
+msgstr ""
+
+#: xml/ref/create_table.xml:1064(para)
+msgid "Per-table value for <xref linkend=\"guc-autovacuum-vacuum-scale-factor\"> parameter.</xref>"
+msgstr ""
+
+#: xml/ref/create_table.xml:1070(term)
+msgid "<literal>autovacuum_analyze_threshold</literal>( <type>integer</type>)"
+msgstr ""
+
+#: xml/ref/create_table.xml:1074(para)
+msgid "Per-table value for <xref linkend=\"guc-autovacuum-analyze-threshold\"> parameter.</xref>"
+msgstr ""
+
+#: xml/ref/create_table.xml:1080(term)
+msgid "<literal>autovacuum_analyze_scale_factor</literal>( <type>float4</type>)"
+msgstr ""
+
+#: xml/ref/create_table.xml:1084(para)
+msgid "Per-table value for <xref linkend=\"guc-autovacuum-analyze-scale-factor\"> parameter.</xref>"
+msgstr ""
+
+#: xml/ref/create_table.xml:1090(term)
+msgid "<literal>autovacuum_vacuum_cost_delay</literal>, <literal>toast.autovacuum_vacuum_cost_delay</literal>( <type>integer</type>)"
+msgstr ""
+
+#: xml/ref/create_table.xml:1095(para)
+msgid "Per-table value for <xref linkend=\"guc-autovacuum-vacuum-cost-delay\"> parameter.</xref>"
+msgstr ""
+
+#: xml/ref/create_table.xml:1101(term)
+msgid "<literal>autovacuum_vacuum_cost_limit</literal>, <literal>toast.autovacuum_vacuum_cost_limit</literal>( <type>integer</type>)"
+msgstr ""
+
+#: xml/ref/create_table.xml:1106(para)
+msgid "Per-table value for <xref linkend=\"guc-autovacuum-vacuum-cost-limit\"> parameter.</xref>"
+msgstr ""
+
+#: xml/ref/create_table.xml:1112(term)
+msgid "<literal>autovacuum_freeze_min_age</literal>, <literal>toast.autovacuum_freeze_min_age</literal>( <type>integer</type>)"
+msgstr ""
+
+#: xml/ref/create_table.xml:1117(para)
+msgid "Per-table value for <xref linkend=\"guc-vacuum-freeze-min-age\">parameter. Note that autovacuum will ignore per-table <literal>autovacuum_freeze_min_age</literal>parameters that are larger than half the system-wide <xref linkend=\"guc-autovacuum-freeze-max-age\"> setting.</xref></xref>"
+msgstr ""
+
+#: xml/ref/create_table.xml:1127(term)
+msgid "<literal>autovacuum_freeze_max_age</literal>, <literal>toast.autovacuum_freeze_max_age</literal>( <type>integer</type>)"
+msgstr ""
+
+#: xml/ref/create_table.xml:1132(para)
+msgid "Per-table value for <xref linkend=\"guc-autovacuum-freeze-max-age\"> parameter. Note that autovacuum will ignore per-table <literal>autovacuum_freeze_max_age</literal>parameters that are larger than the system-wide setting (it can only be set smaller).</xref>"
+msgstr ""
+
+#: xml/ref/create_table.xml:1141(term)
+msgid "<literal>autovacuum_freeze_table_age</literal>, <literal>toast.autovacuum_freeze_table_age</literal>( <type>integer</type>)"
+msgstr ""
+
+#: xml/ref/create_table.xml:1146(para)
+msgid "Per-table value for <xref linkend=\"guc-vacuum-freeze-table-age\"> parameter.</xref>"
+msgstr ""
+
+#: xml/ref/create_table.xml:1152(term)
+msgid "<literal>autovacuum_multixact_freeze_min_age</literal>, <literal> toast.autovacuum_multixact_freeze_min_age</literal>( <type>integer</type>)"
+msgstr ""
+
+#: xml/ref/create_table.xml:1158(para)
+msgid "Per-table value for <xref linkend=\"guc-vacuum-multixact-freeze-min-age\"> parameter. Note that autovacuum will ignore per-table <literal> autovacuum_multixact_freeze_min_age</literal>parameters that are larger than half the system-wide <xref linkend=\"guc-autovacuum-multixact-freeze-max-age\"> setting.</xref></xref>"
+msgstr ""
+
+#: xml/ref/create_table.xml:1169(term)
+msgid "<literal>autovacuum_multixact_freeze_max_age</literal>, <literal> toast.autovacuum_multixact_freeze_max_age</literal>( <type>integer</type>)"
+msgstr ""
+
+#: xml/ref/create_table.xml:1175(para)
+msgid "Per-table value for <xref linkend=\"guc-autovacuum-multixact-freeze-max-age\"> parameter. Note that autovacuum will ignore per-table <literal> autovacuum_multixact_freeze_max_age</literal>parameters that are larger than the system-wide setting (it can only be set smaller).</xref>"
+msgstr ""
+
+#: xml/ref/create_table.xml:1185(term)
+msgid "<literal>autovacuum_multixact_freeze_table_age</literal>, <literal> toast.autovacuum_multixact_freeze_table_age</literal>( <type>integer</type>)"
+msgstr ""
+
+#: xml/ref/create_table.xml:1192(para)
+msgid "Per-table value for <xref linkend=\"guc-vacuum-multixact-freeze-table-age\"> parameter.</xref>"
+msgstr ""
+
+#: xml/ref/create_table.xml:1198(term)
+msgid "<literal>log_autovacuum_min_duration</literal>, <literal>toast.log_autovacuum_min_duration</literal>( <type>integer</type>)"
+msgstr ""
+
+#: xml/ref/create_table.xml:1203(para)
+msgid "Per-table value for <xref linkend=\"guc-log-autovacuum-min-duration\"> parameter.</xref>"
+msgstr ""
+
+#: xml/ref/create_table.xml:1209(term)
+msgid "<literal>user_catalog_table</literal>( <type>boolean</type>)"
+msgstr ""
+
+#: xml/ref/create_table.xml:1213(para)
+msgid "Declare the table as an additional catalog table for purposes of logical replication. See <xref linkend=\"logicaldecoding-capabilities\">for details. This parameter cannot be set for TOAST tables.</xref>"
+msgstr ""
+
+#: xml/ref/create_table.xml:1224(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/create_table.xml:1225(para)
+msgid "Using OIDs in new applications is not recommended: where possible, using a <literal>SERIAL</literal>or other sequence generator as the table's primary key is preferred. However, if your application does make use of OIDs to identify specific rows of a table, it is recommended to create a unique constraint on the <structfield>oid</structfield>column of that table, to ensure that OIDs in the table will indeed uniquely identify rows even after counter wraparound. Avoid assuming that OIDs are unique across tables; if you need a database-wide unique identifier, use the combination of <structfield>tableoid</structfield>and row OID for the purpose."
+msgstr ""
+
+#: xml/ref/create_table.xml:1239(para)
+msgid "The use of <literal>OIDS=FALSE</literal>is not recommended for tables with no primary key, since without either an OID or a unique data key, it is difficult to identify specific rows."
+msgstr ""
+
+#: xml/ref/create_table.xml:1244(para)
+msgid "<productname>PostgreSQL</productname>automatically creates an index for each unique constraint and primary key constraint to enforce uniqueness. Thus, it is not necessary to create an index explicitly for primary key columns. (See <xref linkend=\"sql-createindex\">for more information.)</xref>"
+msgstr ""
+
+#: xml/ref/create_table.xml:1251(para)
+msgid "Unique constraints and primary keys are not inherited in the current implementation. This makes the combination of inheritance and unique constraints rather dysfunctional."
+msgstr ""
+
+#: xml/ref/create_table.xml:1254(para)
+msgid "A table cannot have more than 1600 columns. (In practice, the effective limit is usually lower because of tuple-length constraints.)"
+msgstr ""
+
+#: xml/ref/create_table.xml:1259(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/create_table.xml:1263(programlisting)
+#, no-wrap
+msgid "CREATE TABLE films ( code char(5) CONSTRAINT\n    firstkey PRIMARY KEY, title varchar(40) NOT NULL, did integer\n    NOT NULL, date_prod date, kind varchar(10), len interval hour\n    to minute ); CREATE TABLE distributors ( did integer PRIMARY\n    KEY DEFAULT nextval('serial'), name varchar(40) NOT NULL CHECK\n    (name '') );"
+msgstr ""
+
+#: xml/ref/create_table.xml:1260(para)
+msgid "Create table <structname>films</structname>and table <structname>distributors</structname>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_table.xml:1270(programlisting)
+#, no-wrap
+msgid "CREATE TABLE array_int ( vector int[][]\n    );"
+msgstr ""
+
+#: xml/ref/create_table.xml:1269(para)
+msgid "Create a table with a 2-dimensional array: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_table.xml:1275(programlisting)
+#, no-wrap
+msgid "CREATE TABLE films ( code char(5), title\n    varchar(40), did integer, date_prod date, kind varchar(10), len\n    interval hour to minute, CONSTRAINT production\n    UNIQUE(date_prod) );"
+msgstr ""
+
+#: xml/ref/create_table.xml:1272(para)
+msgid "Define a unique table constraint for the table <literal>films</literal>. Unique table constraints can be defined on one or more columns of the table: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_table.xml:1280(programlisting)
+#, no-wrap
+msgid "CREATE TABLE distributors ( did integer CHECK\n    (did 100), name varchar(40) );"
+msgstr ""
+
+#: xml/ref/create_table.xml:1279(para)
+msgid "Define a check column constraint: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_table.xml:1283(programlisting)
+#, no-wrap
+msgid "CREATE TABLE distributors ( did integer, name\n    varchar(40) CONSTRAINT con1 CHECK (did 100 AND name '')\n    );"
+msgstr ""
+
+#: xml/ref/create_table.xml:1282(para)
+msgid "Define a check table constraint: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_table.xml:1288(programlisting)
+#, no-wrap
+msgid "CREATE TABLE films ( code char(5), title\n    varchar(40), did integer, date_prod date, kind varchar(10), len\n    interval hour to minute, CONSTRAINT code_title PRIMARY\n    KEY(code,title) );"
+msgstr ""
+
+#: xml/ref/create_table.xml:1286(para)
+msgid "Define a primary key table constraint for the table <structname>films</structname>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_table.xml:1296(programlisting)
+#, no-wrap
+msgid "CREATE TABLE distributors ( did integer, name\n    varchar(40), PRIMARY KEY(did) ); CREATE TABLE distributors (\n    did integer PRIMARY KEY, name varchar(40)\n    );"
+msgstr ""
+
+#: xml/ref/create_table.xml:1292(para)
+msgid "Define a primary key constraint for table <structname>distributors</structname>. The following two examples are equivalent, the first using the table constraint syntax, the second the column constraint syntax: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_table.xml:1307(programlisting)
+#, no-wrap
+msgid "CREATE TABLE distributors ( name varchar(40)\n    DEFAULT 'Luso Films', did integer DEFAULT\n    nextval('distributors_serial'), modtime timestamp DEFAULT\n    current_timestamp );"
+msgstr ""
+
+#: xml/ref/create_table.xml:1300(para)
+msgid "Assign a literal constant default value for the column <literal>name</literal>, arrange for the default value of column <literal>did</literal>to be generated by selecting the next value of a sequence object, and make the default value of <literal>modtime</literal>be the time at which the row is inserted: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_table.xml:1315(programlisting)
+#, no-wrap
+msgid "CREATE TABLE distributors ( did integer\n    CONSTRAINT no_null NOT NULL, name varchar(40) NOT NULL\n    );"
+msgstr ""
+
+#: xml/ref/create_table.xml:1311(para)
+msgid "Define two <literal>NOT NULL</literal>column constraints on the table <classname>distributors</classname>, one of which is explicitly given a name: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_table.xml:1320(programlisting)
+#, no-wrap
+msgid "CREATE TABLE distributors ( did integer, name\n    varchar(40) UNIQUE );"
+msgstr ""
+
+#: xml/ref/create_table.xml:1323(programlisting)
+#, no-wrap
+msgid "CREATE TABLE distributors ( did integer, name\n    varchar(40), UNIQUE(name) );"
+msgstr ""
+
+#: xml/ref/create_table.xml:1318(para)
+msgid "Define a unique constraint for the <literal>name</literal>column: <placeholder-1/>The same, specified as a table constraint: <placeholder-2/>"
+msgstr ""
+
+#: xml/ref/create_table.xml:1327(programlisting)
+#, no-wrap
+msgid "CREATE TABLE distributors ( did integer, name\n    varchar(40), UNIQUE(name) WITH (fillfactor=70) ) WITH\n    (fillfactor=70);"
+msgstr ""
+
+#: xml/ref/create_table.xml:1325(para)
+msgid "Create the same table, specifying 70% fill factor for both the table and its unique index: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_table.xml:1333(programlisting)
+#, no-wrap
+msgid "CREATE TABLE circles ( c circle, EXCLUDE USING\n    gist (c WITH ) );"
+msgstr ""
+
+#: xml/ref/create_table.xml:1330(para)
+msgid "Create table <structname>circles</structname>with an exclusion constraint that prevents any two circles from overlapping: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_table.xml:1338(programlisting)
+#, no-wrap
+msgid "CREATE TABLE cinemas ( id serial, name text,\n    location text ) TABLESPACE diskvol1;"
+msgstr ""
+
+#: xml/ref/create_table.xml:1335(para)
+msgid "Create table <structname>cinemas</structname>in tablespace <structname>diskvol1</structname>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_table.xml:1341(programlisting)
+#, no-wrap
+msgid "CREATE TYPE employee_type AS (name text, salary\n    numeric); CREATE TABLE employees OF employee_type ( PRIMARY KEY\n    (name), salary WITH OPTIONS DEFAULT 1000\n    );"
+msgstr ""
+
+#: xml/ref/create_table.xml:1340(para)
+msgid "Create a composite type and a typed table: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_table.xml:1347(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/create_table.xml:1349(para)
+msgid "The <command>CREATE TABLE</command>command conforms to the <acronym>SQL</acronym>standard, with exceptions listed below."
+msgstr ""
+
+#: xml/ref/create_table.xml:1354(title)
+msgid "Temporary Tables"
+msgstr ""
+
+#: xml/ref/create_table.xml:1355(para)
+msgid "Although the syntax of <literal>CREATE TEMPORARY TABLE</literal>resembles that of the SQL standard, the effect is not the same. In the standard, temporary tables are defined just once and automatically exist (starting with empty contents) in every session that needs them. <productname>PostgreSQL</productname>instead requires each session to issue its own <literal>CREATE TEMPORARY TABLE</literal>command for each temporary table to be used. This allows different sessions to use the same temporary table name for different purposes, whereas the standard's approach constrains all instances of a given temporary table name to have the same table structure."
+msgstr ""
+
+#: xml/ref/create_table.xml:1369(para)
+msgid "The standard's definition of the behavior of temporary tables is widely ignored. <productname>PostgreSQL</productname>'s behavior on this point is similar to that of several other SQL databases."
+msgstr ""
+
+#: xml/ref/create_table.xml:1374(para)
+msgid "The SQL standard also distinguishes between global and local temporary tables, where a local temporary table has a separate set of contents for each SQL module within each session, though its definition is still shared across sessions. Since <productname>PostgreSQL</productname>does not support SQL modules, this distinction is not relevant in <productname>PostgreSQL</productname>."
+msgstr ""
+
+#: xml/ref/create_table.xml:1382(para)
+msgid "For compatibility's sake, <productname>PostgreSQL</productname>will accept the <literal>GLOBAL</literal>and <literal>LOCAL</literal>keywords in a temporary table declaration, but they currently have no effect. Use of these keywords is discouraged, since future versions of <productname>PostgreSQL</productname>might adopt a more standard-compliant interpretation of their meaning."
+msgstr ""
+
+#: xml/ref/create_table.xml:1390(para)
+msgid "The <literal>ON COMMIT</literal>clause for temporary tables also resembles the SQL standard, but has some differences. If the <literal>ON COMMIT</literal>clause is omitted, SQL specifies that the default behavior is <literal>ON COMMIT DELETE ROWS</literal>. However, the default behavior in <productname>PostgreSQL</productname>is <literal>ON COMMIT PRESERVE ROWS</literal>. The <literal>ON COMMIT DROP</literal>option does not exist in SQL."
+msgstr ""
+
+#: xml/ref/create_table.xml:1403(title)
+msgid "Non-deferred Uniqueness Constraints"
+msgstr ""
+
+#: xml/ref/create_table.xml:1404(para)
+msgid "When a <literal>UNIQUE</literal>or <literal>PRIMARY KEY</literal>constraint is not deferrable, <productname>PostgreSQL</productname>checks for uniqueness immediately whenever a row is inserted or modified. The SQL standard says that uniqueness should be enforced only at the end of the statement; this makes a difference when, for example, a single command updates multiple key values. To obtain standard-compliant behavior, declare the constraint as <literal>DEFERRABLE</literal>but not deferred (i.e., <literal>INITIALLY IMMEDIATE</literal>). Be aware that this can be significantly slower than immediate uniqueness checking."
+msgstr ""
+
+#: xml/ref/create_table.xml:1420(title)
+msgid "Column Check Constraints"
+msgstr ""
+
+#: xml/ref/create_table.xml:1421(para)
+msgid "The SQL standard says that <literal>CHECK</literal>column constraints can only refer to the column they apply to; only <literal>CHECK</literal>table constraints can refer to multiple columns. <productname>PostgreSQL</productname>does not enforce this restriction; it treats column and table check constraints alike."
+msgstr ""
+
+#: xml/ref/create_table.xml:1431(title)
+msgid "<literal>EXCLUDE</literal>Constraint"
+msgstr ""
+
+#: xml/ref/create_table.xml:1433(para)
+msgid "The <literal>EXCLUDE</literal>constraint type is a <productname>PostgreSQL</productname>extension."
+msgstr ""
+
+#: xml/ref/create_table.xml:1440(quote)
+msgid "Constraint"
+msgstr ""
+
+#: xml/ref/create_table.xml:1442(para)
+msgid "The <literal>NULL</literal><quote>constraint</quote>(actually a non-constraint) is a <productname>PostgreSQL</productname>extension to the SQL standard that is included for compatibility with some other database systems (and for symmetry with the <literal>NOT NULL</literal>constraint). Since it is the default for any column, its presence is simply noise."
+msgstr ""
+
+#: xml/ref/create_table.xml:1452(title)
+msgid "Inheritance"
+msgstr ""
+
+#: xml/ref/create_table.xml:1453(para)
+msgid "Multiple inheritance via the <literal>INHERITS</literal>clause is a <productname>PostgreSQL</productname>language extension. SQL:1999 and later define single inheritance using a different syntax and different semantics. SQL:1999-style inheritance is not yet supported by <productname>PostgreSQL</productname>."
+msgstr ""
+
+#: xml/ref/create_table.xml:1462(title)
+msgid "Zero-column Tables"
+msgstr ""
+
+#: xml/ref/create_table.xml:1463(para)
+msgid "<productname>PostgreSQL</productname>allows a table of no columns to be created (for example, <literal>CREATE TABLE foo();</literal>). This is an extension from the SQL standard, which does not allow zero-column tables. Zero-column tables are not in themselves very useful, but disallowing them creates odd special cases for <command>ALTER TABLE DROP COLUMN</command>, so it seems cleaner to ignore this spec restriction."
+msgstr ""
+
+#: xml/ref/create_table.xml:1474(title)
+msgid "<literal>WITH</literal>Clause"
+msgstr ""
+
+#: xml/ref/create_table.xml:1476(para)
+msgid "The <literal>WITH</literal>clause is a <productname>PostgreSQL</productname>extension; neither storage parameters nor OIDs are in the standard."
+msgstr ""
+
+#: xml/ref/create_table.xml:1482(title)
+msgid "Tablespaces"
+msgstr ""
+
+#: xml/ref/create_table.xml:1483(para)
+msgid "The <productname>PostgreSQL</productname>concept of tablespaces is not part of the standard. Hence, the clauses <literal>TABLESPACE</literal>and <literal>USING INDEX TABLESPACE</literal>are extensions."
+msgstr ""
+
+#: xml/ref/create_table.xml:1491(title)
+msgid "Typed Tables"
+msgstr ""
+
+#: xml/ref/create_table.xml:1492(para)
+msgid "Typed tables implement a subset of the SQL standard. According to the standard, a typed table has columns corresponding to the underlying composite type as well as one other column that is the <quote>self-referencing column</quote>. PostgreSQL does not support these self-referencing columns explicitly, but the same effect can be had using the OID feature."
+msgstr ""
+
+#: xml/ref/create_table.xml:1502(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/create_table.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

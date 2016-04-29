@@ -1,0 +1,828 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/plpython.xml:3(title)
+msgid "PL/Python - Python Procedural Language"
+msgstr ""
+
+#: xml/plpython.xml:5(primary)
+msgid "PL/Python"
+msgstr ""
+
+#: xml/plpython.xml:8(primary)
+msgid "Python"
+msgstr ""
+
+#: xml/plpython.xml:10(para)
+msgid "The <application>PL/Python</application>procedural language allows <productname>PostgreSQL</productname>functions to be written in the <ulink url=\"http://www.python.org\">Python language</ulink>."
+msgstr ""
+
+#: xml/plpython.xml:16(para)
+msgid "To install PL/Python in a particular database, use <literal>CREATE EXTENSION plpythonu</literal>, or from the shell command line use <literal>createlang plpythonu <replaceable>dbname</replaceable></literal>(but see also <xref linkend=\"plpython-python23\">).</xref>"
+msgstr ""
+
+#: xml/plpython.xml:23(para)
+msgid "If a language is installed into <literal>template1</literal>, all subsequently created databases will have the language installed automatically."
+msgstr ""
+
+#: xml/plpython.xml:28(para)
+msgid "PL/Python is only available as an <quote>untrusted</quote>language, meaning it does not offer any way of restricting what users can do in it and is therefore named <literal>plpythonu</literal>. A trusted variant <literal>plpython</literal>might become available in the future if a secure execution mechanism is developed in Python. The writer of a function in untrusted PL/Python must take care that the function cannot be used to do anything unwanted, since it will be able to do anything that could be done by a user logged in as the database administrator. Only superusers can create functions in untrusted languages such as <literal>plpythonu</literal>."
+msgstr ""
+
+#: xml/plpython.xml:42(para)
+msgid "Users of source packages must specially enable the build of PL/Python during the installation process. (Refer to the installation instructions for more information.) Users of binary packages might find PL/Python in a separate subpackage."
+msgstr ""
+
+#: xml/plpython.xml:49(title)
+msgid "Python 2 vs. Python 3"
+msgstr ""
+
+#: xml/plpython.xml:59(para)
+msgid "The PostgreSQL language named <literal>plpython2u</literal>implements PL/Python based on the Python 2 language variant."
+msgstr ""
+
+#: xml/plpython.xml:64(para)
+msgid "The PostgreSQL language named <literal>plpython3u</literal>implements PL/Python based on the Python 3 language variant."
+msgstr ""
+
+#: xml/plpython.xml:69(para)
+msgid "The language named <literal>plpythonu</literal>implements PL/Python based on the default Python language variant, which is currently Python 2. (This default is independent of what any local Python installations might consider to be their <quote>default</quote>, for example, what <filename>/usr/bin/python</filename>might be.) The default will probably be changed to Python 3 in a distant future release of PostgreSQL, depending on the progress of the migration to Python 3 in the Python community."
+msgstr ""
+
+#: xml/plpython.xml:50(para)
+msgid "PL/Python supports both the Python 2 and Python 3 language variants. (The PostgreSQL installation instructions might contain more precise information about the exact supported minor versions of Python.) Because the Python 2 and Python 3 language variants are incompatible in some important aspects, the following naming and transitioning scheme is used by PL/Python to avoid mixing them: <placeholder-1/>This scheme is analogous to the recommendations in <ulink url=\"http://www.python.org/dev/peps/pep-0394/\">PEP 394</ulink>regarding the naming and transitioning of the <command>python</command>command."
+msgstr ""
+
+#: xml/plpython.xml:85(para)
+msgid "It depends on the build configuration or the installed packages whether PL/Python for Python 2 or Python 3 or both are available."
+msgstr ""
+
+#: xml/plpython.xml:89(para)
+msgid "The built variant depends on which Python version was found during the installation or which version was explicitly set using the <envar>PYTHON</envar>environment variable; see <xref linkend=\"install-procedure\">. To make both variants of PL/Python available in one installation, the source tree has to be configured and built twice.</xref>"
+msgstr ""
+
+#: xml/plpython.xml:101(para)
+msgid "Existing users and users who are currently not interested in Python 3 use the language name <literal>plpythonu</literal>and don't have to change anything for the foreseeable future. It is recommended to gradually <quote>future-proof</quote>the code via migration to Python 2.6/2.7 to simplify the eventual migration to Python 3."
+msgstr ""
+
+#: xml/plpython.xml:109(para)
+msgid "In practice, many PL/Python functions will migrate to Python 3 with few or no changes."
+msgstr ""
+
+#: xml/plpython.xml:113(para)
+msgid "Users who know that they have heavily Python 2 dependent code and don't plan to ever change it can make use of the <literal>plpython2u</literal>language name. This will continue to work into the very distant future, until Python 2 support might be completely dropped by PostgreSQL."
+msgstr ""
+
+#: xml/plpython.xml:121(para)
+msgid "Users who want to dive into Python 3 can use the <literal>plpython3u</literal>language name, which will keep working forever by today's standards. In the distant future, when Python 3 might become the default, they might like to remove the <quote>3</quote>for aesthetic reasons."
+msgstr ""
+
+#: xml/plpython.xml:129(para)
+msgid "Daredevils, who want to build a Python-3-only operating system environment, can change the contents of <link linkend=\"catalog-pg-pltemplate\"><structname>pg_pltemplate</structname></link>to make <literal>plpythonu</literal>be equivalent to <literal>plpython3u</literal>, keeping in mind that this would make their installation incompatible with most of the rest of the world."
+msgstr ""
+
+#: xml/plpython.xml:97(para)
+msgid "This results in the following usage and migration strategy: <placeholder-1/>"
+msgstr ""
+
+#: xml/plpython.xml:140(para)
+msgid "See also the document <ulink url=\"http://docs.python.org/py3k/whatsnew/3.0.html\"> What's New In Python 3.0</ulink>for more information about porting to Python 3."
+msgstr ""
+
+#: xml/plpython.xml:144(para)
+msgid "It is not allowed to use PL/Python based on Python 2 and PL/Python based on Python 3 in the same session, because the symbols in the dynamic modules would clash, which could result in crashes of the PostgreSQL server process. There is a check that prevents mixing Python major versions in a session, which will abort the session if a mismatch is detected. It is possible, however, to use both PL/Python variants in the same database, from separate sessions."
+msgstr ""
+
+#: xml/plpython.xml:154(title)
+msgid "PL/Python Functions"
+msgstr ""
+
+#: xml/plpython.xml:157(programlisting)
+#, no-wrap
+msgid "CREATE FUNCTION \n    <replaceable>funcname</replaceable>( \n    <replaceable>argument-list</replaceable>) RETURNS \n    <replaceable>return-type</replaceable>AS $$ # PL/Python\n    function body $$ LANGUAGE\n    plpythonu;"
+msgstr ""
+
+#: xml/plpython.xml:155(para)
+msgid "Functions in PL/Python are declared via the standard <xref linkend=\"sql-createfunction\">syntax: <placeholder-1/></xref>"
+msgstr ""
+
+#: xml/plpython.xml:163(para)
+msgid "The body of a function is simply a Python script. When the function is called, its arguments are passed as elements of the list <varname>args</varname>; named arguments are also passed as ordinary variables to the Python script. Use of named arguments is usually more readable. The result is returned from the Python code in the usual way, with <literal>return</literal>or <literal>yield</literal>(in case of a result-set statement). If you do not provide a return value, Python returns the default <symbol>None</symbol>. <application>PL/Python</application>translates Python's <symbol>None</symbol>into the SQL null value."
+msgstr ""
+
+#: xml/plpython.xml:178(programlisting)
+#, no-wrap
+msgid "CREATE FUNCTION pymax (a integer, b integer)\n    RETURNS integer AS $$ if a b: return a return b $$ LANGUAGE\n    plpythonu;"
+msgstr ""
+
+#: xml/plpython.xml:183(programlisting)
+#, no-wrap
+msgid "def __plpython_procedure_pymax_23456(): if a b:\n    return a return b"
+msgstr ""
+
+#: xml/plpython.xml:176(para)
+msgid "For example, a function to return the greater of two integers can be defined as: <placeholder-1/>The Python code that is given as the body of the function definition is transformed into a Python function. For example, the above results in: <placeholder-2/>assuming that 23456 is the OID assigned to the function by <productname>PostgreSQL</productname>."
+msgstr ""
+
+#: xml/plpython.xml:193(programlisting)
+#, no-wrap
+msgid "CREATE FUNCTION pystrip(x text) RETURNS text AS\n    $$ x = x.strip() # error return x $$ LANGUAGE\n    plpythonu;"
+msgstr ""
+
+#: xml/plpython.xml:204(programlisting)
+#, no-wrap
+msgid "CREATE FUNCTION pystrip(x text) RETURNS text AS\n    $$ global x x = x.strip() # ok now return x $$ LANGUAGE\n    plpythonu;"
+msgstr ""
+
+#: xml/plpython.xml:187(para)
+msgid "The arguments are set as global variables. Because of the scoping rules of Python, this has the subtle consequence that an argument variable cannot be reassigned inside the function to the value of an expression that involves the variable name itself, unless the variable is redeclared as global in the block. For example, the following won't work: <placeholder-1/>because assigning to <varname>x</varname>makes <varname>x</varname>a local variable for the entire block, and so the <varname>x</varname>on the right-hand side of the assignment refers to a not-yet-assigned local variable <varname>x</varname>, not the PL/Python function parameter. Using the <literal>global</literal>statement, this can be made to work: <placeholder-2/>But it is advisable not to rely on this implementation detail of PL/Python. It is better to treat the function parameters as read-only."
+msgstr ""
+
+#: xml/plpython.xml:211(title)
+msgid "Data Values"
+msgstr ""
+
+#: xml/plpython.xml:212(para)
+msgid "Generally speaking, the aim of PL/Python is to provide a <quote>natural</quote>mapping between the PostgreSQL and the Python worlds. This informs the data mapping rules described below."
+msgstr ""
+
+#: xml/plpython.xml:217(title)
+msgid "Data Type Mapping"
+msgstr ""
+
+#: xml/plpython.xml:223(para)
+msgid "PostgreSQL <type>boolean</type>is converted to Python <type>bool</type>."
+msgstr ""
+
+#: xml/plpython.xml:228(para)
+msgid "PostgreSQL <type>smallint</type>and <type>int</type>are converted to Python <type>int</type>. PostgreSQL <type>bigint</type>and <type>oid</type>are converted to <type>long</type>in Python 2 and to <type>int</type>in Python 3."
+msgstr ""
+
+#: xml/plpython.xml:238(para)
+msgid "PostgreSQL <type>real</type>and <type>double</type>are converted to Python <type>float</type>."
+msgstr ""
+
+#: xml/plpython.xml:244(para)
+msgid "PostgreSQL <type>numeric</type>is converted to Python <type>Decimal</type>. This type is imported from the <literal>cdecimal</literal>package if that is available. Otherwise, <literal>decimal.Decimal</literal>from the standard library will be used. <literal>cdecimal</literal>is significantly faster than <literal>decimal</literal>. In Python 3.3 and up, however, <literal>cdecimal</literal>has been integrated into the standard library under the name <literal>decimal</literal>, so there is no longer any difference."
+msgstr ""
+
+#: xml/plpython.xml:260(para)
+msgid "PostgreSQL <type>bytea</type>is converted to Python <type>str</type>in Python 2 and to <type>bytes</type>in Python 3. In Python 2, the string should be treated as a byte sequence without any character encoding."
+msgstr ""
+
+#: xml/plpython.xml:268(para)
+msgid "All other data types, including the PostgreSQL character string types, are converted to a Python <type>str</type>. In Python 2, this string will be in the PostgreSQL server encoding; in Python 3, it will be a Unicode string like all strings."
+msgstr ""
+
+#: xml/plpython.xml:275(para) xml/plpython.xml:319(para)
+msgid "For nonscalar data types, see below."
+msgstr ""
+
+#: xml/plpython.xml:218(para)
+msgid "When a PL/Python function is called, its arguments are converted from their PostgreSQL data type to a corresponding Python type: <placeholder-1/>"
+msgstr ""
+
+#: xml/plpython.xml:283(para)
+msgid "When the PostgreSQL return type is <type>boolean</type>, the return value will be evaluated for truth according to the <emphasis>Python</emphasis>rules. That is, 0 and empty string are false, but notably <literal>'f'</literal>is true."
+msgstr ""
+
+#: xml/plpython.xml:291(para)
+msgid "When the PostgreSQL return type is <type>bytea</type>, the return value will be converted to a string (Python 2) or bytes (Python 3) using the respective Python built-ins, with the result being converted to <type>bytea</type>."
+msgstr ""
+
+#: xml/plpython.xml:299(para)
+msgid "For all other PostgreSQL return types, the return value is converted to a string using the Python built-in <literal>str</literal>, and the result is passed to the input function of the PostgreSQL data type. (If the Python value is a <type>float</type>, it is converted using the <literal>repr</literal>built-in instead of <literal>str</literal>, to avoid loss of precision.)"
+msgstr ""
+
+#: xml/plpython.xml:308(para)
+msgid "Strings in Python 2 are required to be in the PostgreSQL server encoding when they are passed to PostgreSQL. Strings that are not valid in the current server encoding will raise an error, but not all encoding mismatches can be detected, so garbage data can still result when this is not done correctly. Unicode strings are converted to the correct encoding automatically, so it can be safer and more convenient to use those. In Python 3, all strings are Unicode strings."
+msgstr ""
+
+#: xml/plpython.xml:278(para)
+msgid "When a PL/Python function returns, its return value is converted to the function's declared PostgreSQL return data type as follows: <placeholder-1/>Note that logical mismatches between the declared PostgreSQL return type and the Python data type of the actual return object are not flagged; the value will be converted in any case."
+msgstr ""
+
+#: xml/plpython.xml:327(title)
+msgid "Null, None"
+msgstr ""
+
+#: xml/plpython.xml:345(programlisting)
+#, no-wrap
+msgid "CREATE FUNCTION pymax (a integer, b integer)\n      RETURNS integer AS $$ if (a is None) or (b is None): return\n      None if a b: return a return b $$ LANGUAGE\n      plpythonu;"
+msgstr ""
+
+#: xml/plpython.xml:328(para)
+msgid "If an SQL null value <indexterm><primary>null value</primary><secondary sortas=\"PL/Python\">in PL/Python</secondary></indexterm>is passed to a function, the argument value will appear as <symbol>None</symbol>in Python. For example, the function definition of <function>pymax</function>shown in <xref linkend=\"plpython-funcs\">will return the wrong answer for null inputs. We could add <literal>STRICT</literal>to the function definition to make <productname>PostgreSQL</productname>do something more reasonable: if a null value is passed, the function will not be called at all, but will just return a null result automatically. Alternatively, we could check for null inputs in the function body: <placeholder-1/>As shown above, to return an SQL null value from a PL/Python function, return the value <symbol>None</symbol>. This can be done whether the function is strict or not.</xref>"
+msgstr ""
+
+#: xml/plpython.xml:354(title)
+msgid "Arrays, Lists"
+msgstr ""
+
+#: xml/plpython.xml:359(programlisting)
+#, no-wrap
+msgid "CREATE FUNCTION return_arr() RETURNS int[] AS\n      $$ return (1, 2, 3, 4, 5) $$ LANGUAGE plpythonu; SELECT\n      return_arr(); return_arr ------------- {1,2,3,4,5} (1\n      row)"
+msgstr ""
+
+#: xml/plpython.xml:365(programlisting)
+#, no-wrap
+msgid "CREATE FUNCTION return_str_arr() RETURNS\n      varchar[] AS $$ return \"hello\" $$ LANGUAGE plpythonu; SELECT\n      return_str_arr(); return_str_arr ---------------- {h,e,l,l,o}\n      (1 row)"
+msgstr ""
+
+#: xml/plpython.xml:355(para)
+msgid "SQL array values are passed into PL/Python as a Python list. To return an SQL array value out of a PL/Python function, return a Python sequence, for example a list or tuple: <placeholder-1/>Note that in Python, strings are sequences, which can have undesirable effects that might be familiar to Python programmers: <placeholder-2/>"
+msgstr ""
+
+#: xml/plpython.xml:371(title)
+msgid "Composite Types"
+msgstr ""
+
+#: xml/plpython.xml:377(programlisting)
+#, no-wrap
+msgid "CREATE TABLE employee ( name text, salary\n      integer, age integer ); CREATE FUNCTION overpaid (e employee)\n      RETURNS boolean AS $$ if e[\"salary\"] 200000: return True if\n      (e[\"age\"] 30) and (e[\"salary\"] 100000): return True return\n      False $$ LANGUAGE plpythonu;"
+msgstr ""
+
+#: xml/plpython.xml:372(para)
+msgid "Composite-type arguments are passed to the function as Python mappings. The element names of the mapping are the attribute names of the composite type. If an attribute in the passed row has the null value, it has the value <symbol>None</symbol>in the mapping. Here is an example: <placeholder-1/>"
+msgstr ""
+
+#: xml/plpython.xml:385(programlisting)
+#, no-wrap
+msgid "CREATE TYPE named_value AS ( name text, value\n      integer );"
+msgstr ""
+
+#: xml/plpython.xml:390(term)
+msgid "Sequence type (a tuple or list, but not a set because it is not indexable)"
+msgstr ""
+
+#: xml/plpython.xml:398(programlisting)
+#, no-wrap
+msgid "CREATE FUNCTION make_pair (name text,\n            value integer) RETURNS named_value AS $$ return [ name,\n            value ] # or alternatively, as tuple: return ( name,\n            value ) $$ LANGUAGE plpythonu;"
+msgstr ""
+
+#: xml/plpython.xml:393(para)
+msgid "Returned sequence objects must have the same number of items as the composite result type has fields. The item with index 0 is assigned to the first field of the composite type, 1 to the second and so on. For example: <placeholder-1/>To return a SQL null for any column, insert <symbol>None</symbol>at the corresponding position."
+msgstr ""
+
+#: xml/plpython.xml:408(term)
+msgid "Mapping (dictionary)"
+msgstr ""
+
+#: xml/plpython.xml:413(programlisting)
+#, no-wrap
+msgid "CREATE FUNCTION make_pair (name text,\n            value integer) RETURNS named_value AS $$ return {\n            \"name\": name, \"value\": value } $$ LANGUAGE\n            plpythonu;"
+msgstr ""
+
+#: xml/plpython.xml:410(para)
+msgid "The value for each result type column is retrieved from the mapping with the column name as key. Example: <placeholder-1/>Any extra dictionary key/value pairs are ignored. Missing keys are treated as errors. To return a SQL null value for any column, insert <symbol>None</symbol>with the corresponding column name as the key."
+msgstr ""
+
+#: xml/plpython.xml:425(term)
+msgid "Object (any object providing method <literal>__getattr__</literal>)"
+msgstr ""
+
+#: xml/plpython.xml:429(programlisting)
+#, no-wrap
+msgid "CREATE FUNCTION make_pair (name text,\n            value integer) RETURNS named_value AS $$ class\n            named_value: def __init__ (self, n, v): self.name = n\n            self.value = v return named_value(name, value) # or\n            simply class nv: pass nv.name = name nv.value = value\n            return nv $$ LANGUAGE\n            plpythonu;"
+msgstr ""
+
+#: xml/plpython.xml:428(para)
+msgid "This works the same as a mapping. Example: <placeholder-1/>"
+msgstr ""
+
+#: xml/plpython.xml:382(para)
+msgid "There are multiple ways to return row or composite types from a Python function. The following examples assume we have: <placeholder-1/>A composite result can be returned as a: <placeholder-2/>"
+msgstr ""
+
+#: xml/plpython.xml:442(programlisting)
+#, no-wrap
+msgid "CREATE FUNCTION multiout_simple(OUT i\n      integer, OUT j integer) AS $$ return (1, 2) $$ LANGUAGE\n      plpythonu; SELECT * FROM\n      multiout_simple();"
+msgstr ""
+
+#: xml/plpython.xml:439(para)
+msgid "Functions with <literal>OUT</literal>parameters are also supported. For example: <placeholder-1/>"
+msgstr ""
+
+#: xml/plpython.xml:448(title)
+msgid "Set-returning Functions"
+msgstr ""
+
+#: xml/plpython.xml:455(programlisting)
+#, no-wrap
+msgid "CREATE TYPE greeting AS ( how text, who text\n      );"
+msgstr ""
+
+#: xml/plpython.xml:459(term)
+msgid "Sequence type (tuple, list, set)"
+msgstr ""
+
+#: xml/plpython.xml:462(programlisting)
+#, no-wrap
+msgid "CREATE FUNCTION greet (how text)\n              RETURNS SETOF greeting AS $$ # return tuple\n              containing lists as composite types # all other\n              combinations work also return ( [ how, \"World\" ], [\n              how, \"PostgreSQL\" ], [ how, \"PL/Python\" ] ) $$\n              LANGUAGE plpythonu;"
+msgstr ""
+
+#: xml/plpython.xml:472(term)
+msgid "Iterator (any object providing <symbol>__iter__</symbol>and <symbol>next</symbol>methods)"
+msgstr ""
+
+#: xml/plpython.xml:477(programlisting)
+#, no-wrap
+msgid "CREATE FUNCTION greet (how text)\n              RETURNS SETOF greeting AS $$ class producer: def\n              __init__ (self, how, who): self.how = how self.who =\n              who self.ndx = -1 def __iter__ (self): return self\n              def next (self): self.ndx += 1 if self.ndx ==\n              len(self.who): raise StopIteration return ( self.how,\n              self.who[self.ndx] ) return producer(how, [ \"World\",\n              \"PostgreSQL\", \"PL/Python\" ]) $$ LANGUAGE\n              plpythonu;"
+msgstr ""
+
+#: xml/plpython.xml:490(term)
+msgid "Generator ( <literal>yield</literal>)"
+msgstr ""
+
+#: xml/plpython.xml:494(programlisting)
+#, no-wrap
+msgid "CREATE FUNCTION greet (how text)\n              RETURNS SETOF greeting AS $$ for who in [ \"World\",\n              \"PostgreSQL\", \"PL/Python\" ]: yield ( how, who ) $$\n              LANGUAGE plpythonu;"
+msgstr ""
+
+#: xml/plpython.xml:499(para)
+msgid "Due to Python <ulink url=\"http://bugs.python.org/issue1483133\"> bug #1483133</ulink>, some debug versions of Python 2.4 (configured and compiled with option <literal>--with-pydebug</literal>) are known to crash the <productname>PostgreSQL</productname>server when using an iterator to return a set result. Unpatched versions of Fedora 4 contain this bug. It does not happen in production versions of Python or on patched versions of Fedora 4."
+msgstr ""
+
+#: xml/plpython.xml:449(para)
+msgid "A <application>PL/Python</application>function can also return sets of scalar or composite types. There are several ways to achieve this because the returned object is internally turned into an iterator. The following examples assume we have composite type: <placeholder-1/>A set result can be returned from a: <placeholder-2/>"
+msgstr ""
+
+#: xml/plpython.xml:519(programlisting)
+#, no-wrap
+msgid "CREATE FUNCTION multiout_simple_setof(n\n      integer, OUT integer, OUT integer) RETURNS SETOF record AS $$\n      return [(1, 2)] * n $$ LANGUAGE plpythonu; SELECT * FROM\n      multiout_simple_setof(3);"
+msgstr ""
+
+#: xml/plpython.xml:515(para)
+msgid "Set-returning functions with <literal>OUT</literal>parameters (using <literal>RETURNS SETOF record</literal>) are also supported. For example: <placeholder-1/>"
+msgstr ""
+
+#: xml/plpython.xml:526(title)
+msgid "Sharing Data"
+msgstr ""
+
+#: xml/plpython.xml:527(para)
+msgid "The global dictionary <varname>SD</varname>is available to store data between function calls. This variable is private static data. The global dictionary <varname>GD</varname>is public data, available to all Python functions within a session. Use with care. <indexterm><primary>global data</primary><secondary>in PL/Python</secondary></indexterm>"
+msgstr ""
+
+#: xml/plpython.xml:537(para)
+msgid "Each function gets its own execution environment in the Python interpreter, so that global data and function arguments from <function>myfunc</function>are not available to <function>myfunc2</function>. The exception is the data in the <varname>GD</varname>dictionary, as mentioned above."
+msgstr ""
+
+#: xml/plpython.xml:545(title)
+msgid "Anonymous Code Blocks"
+msgstr ""
+
+#: xml/plpython.xml:549(programlisting)
+#, no-wrap
+msgid "DO $$ # PL/Python code $$ LANGUAGE\n    plpythonu;"
+msgstr ""
+
+#: xml/plpython.xml:546(para)
+msgid "PL/Python also supports anonymous code blocks called with the <xref linkend=\"sql-do\">statement: <placeholder-1/>An anonymous code block receives no arguments, and whatever value it might return is discarded. Otherwise it behaves just like a function.</xref>"
+msgstr ""
+
+#: xml/plpython.xml:555(title)
+msgid "Trigger Functions"
+msgstr ""
+
+#: xml/plpython.xml:557(primary)
+msgid "trigger"
+msgstr ""
+
+#: xml/plpython.xml:558(secondary)
+msgid "in PL/Python"
+msgstr ""
+
+#: xml/plpython.xml:565(literal)
+msgid "TD[\"event\"]"
+msgstr ""
+
+#: xml/plpython.xml:568(para)
+msgid "contains the event as a string: <literal>INSERT</literal>, <literal>UPDATE</literal>, <literal>DELETE</literal>, or <literal>TRUNCATE</literal>."
+msgstr ""
+
+#: xml/plpython.xml:577(literal)
+msgid "TD[\"when\"]"
+msgstr ""
+
+#: xml/plpython.xml:580(para)
+msgid "contains one of <literal>BEFORE</literal>, <literal>AFTER</literal>, or <literal>INSTEAD OF</literal>."
+msgstr ""
+
+#: xml/plpython.xml:588(literal)
+msgid "TD[\"level\"]"
+msgstr ""
+
+#: xml/plpython.xml:591(para)
+msgid "contains <literal>ROW</literal>or <literal>STATEMENT</literal>."
+msgstr ""
+
+#: xml/plpython.xml:598(literal)
+msgid "TD[\"new\"]"
+msgstr ""
+
+#: xml/plpython.xml:601(literal)
+msgid "TD[\"old\"]"
+msgstr ""
+
+#: xml/plpython.xml:604(para)
+msgid "For a row-level trigger, one or both of these fields contain the respective trigger rows, depending on the trigger event."
+msgstr ""
+
+#: xml/plpython.xml:611(literal)
+msgid "TD[\"name\"]"
+msgstr ""
+
+#: xml/plpython.xml:614(para)
+msgid "contains the trigger name."
+msgstr ""
+
+#: xml/plpython.xml:619(literal)
+msgid "TD[\"table_name\"]"
+msgstr ""
+
+#: xml/plpython.xml:622(para)
+msgid "contains the name of the table on which the trigger occurred."
+msgstr ""
+
+#: xml/plpython.xml:628(literal)
+msgid "TD[\"table_schema\"]"
+msgstr ""
+
+#: xml/plpython.xml:631(para)
+msgid "contains the schema of the table on which the trigger occurred."
+msgstr ""
+
+#: xml/plpython.xml:637(literal)
+msgid "TD[\"relid\"]"
+msgstr ""
+
+#: xml/plpython.xml:640(para)
+msgid "contains the OID of the table on which the trigger occurred."
+msgstr ""
+
+#: xml/plpython.xml:646(literal)
+msgid "TD[\"args\"]"
+msgstr ""
+
+#: xml/plpython.xml:649(para)
+msgid "If the <command>CREATE TRIGGER</command>command included arguments, they are available in <literal>TD[\"args\"][0]</literal>to <literal>TD[\"args\"][ <replaceable>n</replaceable>-1]</literal>."
+msgstr ""
+
+#: xml/plpython.xml:560(para)
+msgid "When a function is used as a trigger, the dictionary <literal>TD</literal>contains trigger-related values: <placeholder-1/>"
+msgstr ""
+
+#: xml/plpython.xml:658(para)
+msgid "If <literal>TD[\"when\"]</literal>is <literal>BEFORE</literal>or <literal>INSTEAD OF</literal>and <literal>TD[\"level\"]</literal>is <literal>ROW</literal>, you can return <literal>None</literal>or <literal>\"OK\"</literal>from the Python function to indicate the row is unmodified, <literal>\"SKIP\"</literal>to abort the event, or if <literal>TD[\"event\"]</literal>is <command>INSERT</command>or <command>UPDATE</command>you can return <literal>\"MODIFY\"</literal>to indicate you've modified the new row. Otherwise the return value is ignored."
+msgstr ""
+
+#: xml/plpython.xml:675(title)
+msgid "Database Access"
+msgstr ""
+
+#: xml/plpython.xml:676(para)
+msgid "The PL/Python language module automatically imports a Python module called <literal>plpy</literal>. The functions and constants in this module are available to you in the Python code as <literal>plpy. <replaceable>foo</replaceable></literal>."
+msgstr ""
+
+#: xml/plpython.xml:683(title)
+msgid "Database Access Functions"
+msgstr ""
+
+#: xml/plpython.xml:684(para)
+msgid "The <literal>plpy</literal>module provides several functions to execute database commands:"
+msgstr ""
+
+#: xml/plpython.xml:691(function) xml/plpython.xml:803(function)
+msgid "execute"
+msgstr ""
+
+#: xml/plpython.xml:692(replaceable) xml/plpython.xml:798(replaceable) xml/plpython.xml:861(replaceable)
+msgid "query"
+msgstr ""
+
+#: xml/plpython.xml:693(replaceable) xml/plpython.xml:806(replaceable)
+msgid "max-rows"
+msgstr ""
+
+#: xml/plpython.xml:690(literal) xml/plpython.xml:796(literal) xml/plpython.xml:864(literal)
+msgid "plpy. <placeholder-1/>( <placeholder-2/>[, <placeholder-3/>])"
+msgstr ""
+
+#: xml/plpython.xml:696(para)
+msgid "Calling <function>plpy.execute</function>with a query string and an optional row limit argument causes that query to be run and the result to be returned in a result object."
+msgstr ""
+
+#: xml/plpython.xml:704(programlisting)
+#, no-wrap
+msgid "rv = plpy.execute(\"SELECT * FROM\n            my_table\", 5)"
+msgstr ""
+
+#: xml/plpython.xml:710(programlisting)
+#, no-wrap
+msgid "foo =\n            rv[i][\"my_column\"]"
+msgstr ""
+
+#: xml/plpython.xml:701(para)
+msgid "The result object emulates a list or dictionary object. The result object can be accessed by row number and column name. For example: <placeholder-1/>returns up to 5 rows from <literal>my_table</literal>. If <literal>my_table</literal>has a column <literal>my_column</literal>, it would be accessed as: <placeholder-2/>The number of rows returned can be obtained using the built-in <function>len</function>function."
+msgstr ""
+
+#: xml/plpython.xml:719(function)
+msgid "nrows"
+msgstr ""
+
+#: xml/plpython.xml:718(literal) xml/plpython.xml:733(literal) xml/plpython.xml:744(literal) xml/plpython.xml:748(literal) xml/plpython.xml:752(literal) xml/plpython.xml:771(literal)
+msgid "<placeholder-1/>()"
+msgstr ""
+
+#: xml/plpython.xml:722(para)
+msgid "Returns the number of rows processed by the command. Note that this is not necessarily the same as the number of rows returned. For example, an <command>UPDATE</command>command will set this value but won't return any rows (unless <literal>RETURNING</literal>is used)."
+msgstr ""
+
+#: xml/plpython.xml:734(function)
+msgid "status"
+msgstr ""
+
+#: xml/plpython.xml:737(para)
+msgid "The <function>SPI_execute()</function>return value."
+msgstr ""
+
+#: xml/plpython.xml:745(function)
+msgid "colnames"
+msgstr ""
+
+#: xml/plpython.xml:749(function)
+msgid "coltypes"
+msgstr ""
+
+#: xml/plpython.xml:753(function)
+msgid "coltypmods"
+msgstr ""
+
+#: xml/plpython.xml:756(para)
+msgid "Return a list of column names, list of column type OIDs, and list of type-specific type modifiers for the columns, respectively."
+msgstr ""
+
+#: xml/plpython.xml:759(para)
+msgid "These methods raise an exception when called on a result object from a command that did not produce a result set, e.g., <command>UPDATE</command>without <literal>RETURNING</literal>, or <command>DROP TABLE</command>. But it is OK to use these methods on a result set containing zero rows."
+msgstr ""
+
+#: xml/plpython.xml:772(function)
+msgid "__str__"
+msgstr ""
+
+#: xml/plpython.xml:775(para)
+msgid "The standard <literal>__str__</literal>method is defined so that it is possible for example to debug query execution results using <literal>plpy.debug(rv)</literal>."
+msgstr ""
+
+#: xml/plpython.xml:714(para)
+msgid "The result object has these additional methods: <placeholder-1/>"
+msgstr ""
+
+#: xml/plpython.xml:783(para)
+msgid "The result object can be modified."
+msgstr ""
+
+#: xml/plpython.xml:784(para)
+msgid "Note that calling <literal>plpy.execute</literal>will cause the entire result set to be read into memory. Only use that function when you are sure that the result set will be relatively small. If you don't want to risk excessive memory usage when fetching large results, use <literal>plpy.cursor</literal>rather than <literal>plpy.execute</literal>."
+msgstr ""
+
+#: xml/plpython.xml:797(function)
+msgid "prepare"
+msgstr ""
+
+#: xml/plpython.xml:799(replaceable)
+msgid "argtypes"
+msgstr ""
+
+#: xml/plpython.xml:804(replaceable) xml/plpython.xml:866(replaceable)
+msgid "plan"
+msgstr ""
+
+#: xml/plpython.xml:805(replaceable) xml/plpython.xml:867(replaceable)
+msgid "arguments"
+msgstr ""
+
+#: xml/plpython.xml:802(literal)
+msgid "plpy. <placeholder-1/>( <placeholder-2/>[, <placeholder-3/>[, <placeholder-4/>]])"
+msgstr ""
+
+#: xml/plpython.xml:818(programlisting)
+#, no-wrap
+msgid "plan = plpy.prepare(\"SELECT last_name\n            FROM my_users WHERE first_name = $1\",\n            [\"text\"])"
+msgstr ""
+
+#: xml/plpython.xml:809(para)
+msgid "<indexterm><primary>preparing a query</primary><secondary>in PL/Python</secondary></indexterm><function>plpy.prepare</function>prepares the execution plan for a query. It is called with a query string and a list of parameter types, if you have parameter references in the query. For example: <placeholder-1/><literal>text</literal>is the type of the variable you will be passing for <literal>$1</literal>. The second argument is optional if you don't want to pass any parameters to the query."
+msgstr ""
+
+#: xml/plpython.xml:829(programlisting)
+#, no-wrap
+msgid "rv = plpy.execute(plan, [\"name\"],\n            5)"
+msgstr ""
+
+#: xml/plpython.xml:826(para)
+msgid "After preparing a statement, you use a variant of the function <function>plpy.execute</function>to run it: <placeholder-1/>Pass the plan as the first argument (instead of the query string), and a list of values to substitute into the query as the second argument. The second argument is optional if the query does not expect any parameters. The third argument is the optional row limit as before."
+msgstr ""
+
+#: xml/plpython.xml:836(para)
+msgid "Query parameters and result row fields are converted between PostgreSQL and Python data types as described in <xref linkend=\"plpython-data\">.</xref>"
+msgstr ""
+
+#: xml/plpython.xml:850(programlisting)
+#, no-wrap
+msgid "CREATE FUNCTION usesavedplan() RETURNS\n            trigger AS $$ if \"plan\" in SD: plan = SD[\"plan\"] else:\n            plan = plpy.prepare(\"SELECT 1\") SD[\"plan\"] = plan #\n            rest of function $$ LANGUAGE\n            plpythonu;"
+msgstr ""
+
+#: xml/plpython.xml:840(para)
+msgid "When you prepare a plan using the PL/Python module it is automatically saved. Read the SPI documentation ( <xref linkend=\"spi\">) for a description of what this means. In order to make effective use of this across function calls one needs to use one of the persistent storage dictionaries <literal>SD</literal>or <literal>GD</literal>(see <xref linkend=\"plpython-sharing\">). For example: <placeholder-1/></xref></xref>"
+msgstr ""
+
+#: xml/plpython.xml:860(function) xml/plpython.xml:865(function)
+msgid "cursor"
+msgstr ""
+
+#: xml/plpython.xml:859(literal)
+msgid "plpy. <placeholder-1/>( <placeholder-2/>)"
+msgstr ""
+
+#: xml/plpython.xml:870(para)
+msgid "The <literal>plpy.cursor</literal>function accepts the same arguments as <literal>plpy.execute</literal>(except for the row limit) and returns a cursor object, which allows you to process large result sets in smaller chunks. As with <literal>plpy.execute</literal>, either a query string or a plan object along with a list of arguments can be used."
+msgstr ""
+
+#: xml/plpython.xml:879(para)
+msgid "The cursor object provides a <literal>fetch</literal>method that accepts an integer parameter and returns a result object. Each time you call <literal>fetch</literal>, the returned object will contain the next batch of rows, never larger than the parameter value. Once all rows are exhausted, <literal>fetch</literal>starts returning an empty result object. Cursor objects also provide an <ulink url=\"http://docs.python.org/library/stdtypes.html#iterator-types\"> iterator interface</ulink>, yielding one row at a time until all rows are exhausted. Data fetched that way is not returned as result objects, but rather as dictionaries, each dictionary corresponding to a single result row."
+msgstr ""
+
+#: xml/plpython.xml:896(programlisting)
+#, no-wrap
+msgid "CREATE FUNCTION count_odd_iterator()\n            RETURNS integer AS $$ odd = 0 for row in\n            plpy.cursor(\"select num from largetable\"): if\n            row['num'] % 2: odd += 1 return odd $$ LANGUAGE\n            plpythonu; CREATE FUNCTION count_odd_fetch(batch_size\n            integer) RETURNS integer AS $$ odd = 0 cursor =\n            plpy.cursor(\"select num from largetable\") while True:\n            rows = cursor.fetch(batch_size) if not rows: break for\n            row in rows: if row['num'] % 2: odd += 1 return odd $$\n            LANGUAGE plpythonu; CREATE FUNCTION\n            count_odd_prepared() RETURNS integer AS $$ odd = 0 plan\n            = plpy.prepare(\"select num from largetable where num %\n            $1 0\", [\"integer\"]) rows = list(plpy.cursor(plan, [2]))\n            return len(rows) $$ LANGUAGE\n            plpythonu;"
+msgstr ""
+
+#: xml/plpython.xml:894(para)
+msgid "An example of two ways of processing data from a large table is: <placeholder-1/>"
+msgstr ""
+
+#: xml/plpython.xml:911(para)
+msgid "Cursors are automatically disposed of. But if you want to explicitly release all resources held by a cursor, use the <literal>close</literal>method. Once closed, a cursor cannot be fetched from anymore."
+msgstr ""
+
+#: xml/plpython.xml:917(para)
+msgid "Do not confuse objects created by <literal>plpy.cursor</literal>with DB-API cursors as defined by the <ulink url=\"http://www.python.org/dev/peps/pep-0249/\"> Python Database API specification</ulink>. They don't have anything in common except for the name."
+msgstr ""
+
+#: xml/plpython.xml:929(title)
+msgid "Trapping Errors"
+msgstr ""
+
+#: xml/plpython.xml:940(programlisting)
+#, no-wrap
+msgid "CREATE FUNCTION try_adding_joe() RETURNS text\n      AS $$ try: plpy.execute(\"INSERT INTO users(username) VALUES\n      ('joe')\") except plpy.SPIError: return \"something went wrong\"\n      else: return \"Joe added\" $$ LANGUAGE\n      plpythonu;"
+msgstr ""
+
+#: xml/plpython.xml:930(para)
+msgid "Functions accessing the database might encounter errors, which will cause them to abort and raise an exception. Both <function>plpy.execute</function>and <function>plpy.prepare</function>can raise an instance of a subclass of <literal>plpy.SPIError</literal>, which by default will terminate the function. This error can be handled just like any other Python exception, by using the <literal>try/except</literal>construct. For example: <placeholder-1/>"
+msgstr ""
+
+#: xml/plpython.xml:963(programlisting)
+#, no-wrap
+msgid "CREATE FUNCTION insert_fraction(numerator\n      int, denominator int) RETURNS text AS $$ from plpy import\n      spiexceptions try: plan = plpy.prepare(\"INSERT INTO fractions\n      (frac) VALUES ($1 / $2)\", [\"int\", \"int\"]) plpy.execute(plan,\n      [numerator, denominator]) except\n      spiexceptions.DivisionByZero: return \"denominator cannot\n      equal zero\" except spiexceptions.UniqueViolation: return\n      \"already have that fraction\" except plpy.SPIError, e: return\n      \"other error, SQLSTATE %s\" % e.sqlstate else: return\n      \"fraction inserted\" $$ LANGUAGE\n      plpythonu;"
+msgstr ""
+
+#: xml/plpython.xml:945(para)
+msgid "The actual class of the exception being raised corresponds to the specific condition that caused the error. Refer to <xref linkend=\"errcodes-table\">for a list of possible conditions. The module <literal>plpy.spiexceptions</literal>defines an exception class for each <productname>PostgreSQL</productname>condition, deriving their names from the condition name. For instance, <literal>division_by_zero</literal>becomes <literal>DivisionByZero</literal>, <literal>unique_violation</literal>becomes <literal>UniqueViolation</literal>, <literal>fdw_error</literal>becomes <literal>FdwError</literal>, and so on. Each of these exception classes inherits from <literal>SPIError</literal>. This separation makes it easier to handle specific errors, for instance: <placeholder-1/>Note that because all exceptions from the <literal>plpy.spiexceptions</literal>module inherit from <literal>SPIError</literal>, an <literal>except</literal>clause handling it will catch any database access error.</xref>"
+msgstr ""
+
+#: xml/plpython.xml:979(para)
+msgid "As an alternative way of handling different error conditions, you can catch the <literal>SPIError</literal>exception and determine the specific error condition inside the <literal>except</literal>block by looking at the <literal>sqlstate</literal>attribute of the exception object. This attribute is a string value containing the <quote>SQLSTATE</quote>error code. This approach provides approximately the same functionality"
+msgstr ""
+
+#: xml/plpython.xml:991(title)
+msgid "Explicit Subtransactions"
+msgstr ""
+
+#: xml/plpython.xml:992(para)
+msgid "Recovering from errors caused by database access as described in <xref linkend=\"plpython-trapping\">can lead to an undesirable situation where some operations succeed before one of them fails, and after recovering from that error the data is left in an inconsistent state. PL/Python offers a solution to this problem in the form of explicit subtransactions.</xref>"
+msgstr ""
+
+#: xml/plpython.xml:1000(title)
+msgid "Subtransaction Context Managers"
+msgstr ""
+
+#: xml/plpython.xml:1003(programlisting)
+#, no-wrap
+msgid "CREATE FUNCTION transfer_funds() RETURNS void\n      AS $$ try: plpy.execute(\"UPDATE accounts SET balance =\n      balance - 100 WHERE account_name = 'joe'\")\n      plpy.execute(\"UPDATE accounts SET balance = balance + 100\n      WHERE account_name = 'mary'\") except plpy.SPIError, e: result\n      = \"error transferring funds: %s\" % e.args else: result =\n      \"funds transferred correctly\" plan = plpy.prepare(\"INSERT\n      INTO operations (result) VALUES ($1)\", [\"text\"])\n      plpy.execute(plan, [result]) $$ LANGUAGE\n      plpythonu;"
+msgstr ""
+
+#: xml/plpython.xml:1001(para)
+msgid "Consider a function that implements a transfer between two accounts: <placeholder-1/>If the second <literal>UPDATE</literal>statement results in an exception being raised, this function will report the error, but the result of the first <literal>UPDATE</literal>will nevertheless be committed. In other words, the funds will be withdrawn from Joe's account, but will not be transferred to Mary's account."
+msgstr ""
+
+#: xml/plpython.xml:1029(programlisting)
+#, no-wrap
+msgid "CREATE FUNCTION transfer_funds2() RETURNS\n      void AS $$ try: with plpy.subtransaction():\n      plpy.execute(\"UPDATE accounts SET balance = balance - 100\n      WHERE account_name = 'joe'\") plpy.execute(\"UPDATE accounts\n      SET balance = balance + 100 WHERE account_name = 'mary'\")\n      except plpy.SPIError, e: result = \"error transferring funds:\n      %s\" % e.args else: result = \"funds transferred correctly\"\n      plan = plpy.prepare(\"INSERT INTO operations (result) VALUES\n      ($1)\", [\"text\"]) plpy.execute(plan, [result]) $$ LANGUAGE\n      plpythonu;"
+msgstr ""
+
+#: xml/plpython.xml:1019(para)
+msgid "To avoid such issues, you can wrap your <literal>plpy.execute</literal>calls in an explicit subtransaction. The <literal>plpy</literal>module provides a helper object to manage explicit subtransactions that gets created with the <literal>plpy.subtransaction()</literal>function. Objects created by this function implement the <ulink url=\"http://docs.python.org/library/stdtypes.html#context-manager-types\"> context manager interface</ulink>. Using explicit subtransactions we can rewrite our function as: <placeholder-1/>Note that the use of <literal>try/catch</literal>is still required. Otherwise the exception would propagate to the top of the Python stack and would cause the whole function to abort with a <productname>PostgreSQL</productname>error, so that the <literal>operations</literal>table would not have any row inserted into it. The subtransaction context manager does not trap errors, it only assures that all database operations executed inside its scope will be atomically committed or rolled back. A rollback of the subtransaction block occurs on any kind of exception exit, not only ones caused by errors originating from database access. A regular Python exception raised inside an explicit subtransaction block would also cause the subtransaction to be rolled back."
+msgstr ""
+
+#: xml/plpython.xml:1054(title)
+msgid "Older Python Versions"
+msgstr ""
+
+#: xml/plpython.xml:1066(programlisting)
+#, no-wrap
+msgid "CREATE FUNCTION transfer_funds_old() RETURNS\n      void AS $$ try: subxact = plpy.subtransaction()\n      subxact.enter() try: plpy.execute(\"UPDATE accounts SET\n      balance = balance - 100 WHERE account_name = 'joe'\")\n      plpy.execute(\"UPDATE accounts SET balance = balance + 100\n      WHERE account_name = 'mary'\") except: import sys\n      subxact.exit(*sys.exc_info()) raise else: subxact.exit(None,\n      None, None) except plpy.SPIError, e: result = \"error\n      transferring funds: %s\" % e.args else: result = \"funds\n      transferred correctly\" plan = plpy.prepare(\"INSERT INTO\n      operations (result) VALUES ($1)\", [\"text\"])\n      plpy.execute(plan, [result]) $$ LANGUAGE\n      plpythonu;"
+msgstr ""
+
+#: xml/plpython.xml:1055(para)
+msgid "Context managers syntax using the <literal>with</literal>keyword is available by default in Python 2.6. If using PL/Python with an older Python version, it is still possible to use explicit subtransactions, although not as transparently. You can call the subtransaction manager's <literal>__enter__</literal>and <literal>__exit__</literal>functions using the <literal>enter</literal>and <literal>exit</literal>convenience aliases. The example function that transfers funds could be written as: <placeholder-1/>"
+msgstr ""
+
+#: xml/plpython.xml:1080(para)
+msgid "Although context managers were implemented in Python 2.5, to use the <literal>with</literal>syntax in that version you need to use a <ulink url=\"http://docs.python.org/release/2.5/ref/future.html\"> future statement</ulink>. Because of implementation details, however, you cannot use future statements in PL/Python functions."
+msgstr ""
+
+#: xml/plpython.xml:1092(title)
+msgid "Utility Functions"
+msgstr ""
+
+#: xml/plpython.xml:1093(para)
+msgid "The <literal>plpy</literal>module also provides the functions <literal>plpy.debug( <replaceable>msg</replaceable>)</literal>, <literal>plpy.log( <replaceable>msg</replaceable>)</literal>, <literal>plpy.info( <replaceable>msg</replaceable>)</literal>, <literal>plpy.notice( <replaceable>msg</replaceable>)</literal>, <literal>plpy.warning( <replaceable>msg</replaceable>)</literal>, <literal>plpy.error( <replaceable>msg</replaceable>)</literal>, and <literal>plpy.fatal( <replaceable>msg</replaceable>)</literal>. <indexterm><primary>elog</primary><secondary>in PL/Python</secondary></indexterm><function>plpy.error</function>and <function>plpy.fatal</function>actually raise a Python exception which, if uncaught, propagates out to the calling query, causing the current transaction or subtransaction to be aborted. <literal>raise plpy.Error( <replaceable>msg</replaceable>)</literal>and <literal>raise plpy.Fatal( <replaceable>msg</replaceable>)</literal>are equivalent to calling <function>plpy.error</function>and <function>plpy.fatal</function>, respectively. The other functions only generate messages of different priority levels. Whether messages of a particular priority are reported to the client, written to the server log, or both is controlled by the <xref linkend=\"guc-log-min-messages\">and <xref linkend=\"guc-client-min-messages\">configuration variables. See <xref linkend=\"runtime-config\">for more information.</xref></xref></xref>"
+msgstr ""
+
+#: xml/plpython.xml:1146(programlisting)
+#, no-wrap
+msgid "plpy.execute(\"UPDATE tbl SET %s = %s WHERE key\n    = %s\" % ( plpy.quote_ident(colname),\n    plpy.quote_nullable(newvalue),\n    plpy.quote_literal(keyvalue)))"
+msgstr ""
+
+#: xml/plpython.xml:1134(para)
+msgid "Another set of utility functions are <literal>plpy.quote_literal( <replaceable>string</replaceable>)</literal>, <literal>plpy.quote_nullable( <replaceable>string</replaceable>)</literal>, and <literal>plpy.quote_ident( <replaceable>string</replaceable>)</literal>. They are equivalent to the built-in quoting functions described in <xref linkend=\"functions-string\">. They are useful when constructing ad-hoc queries. A PL/Python equivalent of dynamic SQL from <xref linkend=\"plpgsql-quote-literal-example\">would be: <placeholder-1/></xref></xref>"
+msgstr ""
+
+#: xml/plpython.xml:1152(title)
+msgid "Environment Variables"
+msgstr ""
+
+#: xml/plpython.xml:1164(envar)
+msgid "PYTHONHOME"
+msgstr ""
+
+#: xml/plpython.xml:1169(envar)
+msgid "PYTHONPATH"
+msgstr ""
+
+#: xml/plpython.xml:1174(envar)
+msgid "PYTHONY2K"
+msgstr ""
+
+#: xml/plpython.xml:1179(envar)
+msgid "PYTHONOPTIMIZE"
+msgstr ""
+
+#: xml/plpython.xml:1184(envar)
+msgid "PYTHONDEBUG"
+msgstr ""
+
+#: xml/plpython.xml:1189(envar)
+msgid "PYTHONVERBOSE"
+msgstr ""
+
+#: xml/plpython.xml:1194(envar)
+msgid "PYTHONCASEOK"
+msgstr ""
+
+#: xml/plpython.xml:1199(envar)
+msgid "PYTHONDONTWRITEBYTECODE"
+msgstr ""
+
+#: xml/plpython.xml:1204(envar)
+msgid "PYTHONIOENCODING"
+msgstr ""
+
+#: xml/plpython.xml:1209(envar)
+msgid "PYTHONUSERBASE"
+msgstr ""
+
+#: xml/plpython.xml:1214(envar)
+msgid "PYTHONHASHSEED"
+msgstr ""
+
+#: xml/plpython.xml:1153(para)
+msgid "Some of the environment variables that are accepted by the Python interpreter can also be used to affect PL/Python behavior. They would need to be set in the environment of the main PostgreSQL server process, for example in a start script. The available environment variables depend on the version of Python; see the Python documentation for details. At the time of this writing, the following environment variables have an affect on PL/Python, assuming an adequate Python version: <placeholder-1/>(It appears to be a Python implementation detail beyond the control of PL/Python that some of the environment variables listed on the <command>python</command>man page are only effective in a command-line interpreter and not an embedded Python interpreter.)"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/plpython.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

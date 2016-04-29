@@ -1,0 +1,200 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/vacuumlo.xml:4(primary) xml/vacuumlo.xml:8(application) xml/vacuumlo.xml:14(refname) xml/vacuumlo.xml:20(command)
+msgid "vacuumlo"
+msgstr ""
+
+#: xml/vacuumlo.xml:10(manvolnum)
+msgid "1"
+msgstr ""
+
+#: xml/vacuumlo.xml:11(refmiscinfo)
+msgid "Application"
+msgstr ""
+
+#: xml/vacuumlo.xml:16(productname)
+msgid "PostgreSQL"
+msgstr ""
+
+#: xml/vacuumlo.xml:15(refpurpose)
+msgid "remove orphaned large objects from a <placeholder-1/>database"
+msgstr ""
+
+#: xml/vacuumlo.xml:22(replaceable)
+msgid "option"
+msgstr ""
+
+#: xml/vacuumlo.xml:25(replaceable)
+msgid "dbname"
+msgstr ""
+
+#: xml/vacuumlo.xml:30(title)
+msgid "Description"
+msgstr ""
+
+#: xml/vacuumlo.xml:31(para)
+msgid "<application>vacuumlo</application>is a simple utility program that will remove any <quote>orphaned</quote>large objects from a <productname>PostgreSQL</productname>database. An orphaned large object (LO) is considered to be any LO whose OID does not appear in any <type>oid</type>or <type>lo</type>data column of the database."
+msgstr ""
+
+#: xml/vacuumlo.xml:40(para)
+msgid "If you use this, you may also be interested in the <function>lo_manage</function>trigger in the <xref linkend=\"lo\">module. <function>lo_manage</function>is useful to try to avoid creating orphaned LOs in the first place.</xref>"
+msgstr ""
+
+#: xml/vacuumlo.xml:45(para)
+msgid "All databases named on the command line are processed."
+msgstr ""
+
+#: xml/vacuumlo.xml:49(title)
+msgid "Options"
+msgstr ""
+
+#: xml/vacuumlo.xml:56(option)
+msgid "-l"
+msgstr ""
+
+#: xml/vacuumlo.xml:57(replaceable)
+msgid "limit"
+msgstr ""
+
+#: xml/vacuumlo.xml:60(para)
+msgid "Remove no more than <replaceable>limit</replaceable>large objects per transaction (default 1000). Since the server acquires a lock per LO removed, removing too many LOs in one transaction risks exceeding <xref linkend=\"guc-max-locks-per-transaction\">. Set the limit to zero if you want all removals done in a single transaction.</xref>"
+msgstr ""
+
+#: xml/vacuumlo.xml:72(option)
+msgid "-n"
+msgstr ""
+
+#: xml/vacuumlo.xml:75(para)
+msgid "Don't remove anything, just show what would be done."
+msgstr ""
+
+#: xml/vacuumlo.xml:81(option)
+msgid "-v"
+msgstr ""
+
+#: xml/vacuumlo.xml:84(para)
+msgid "Write a lot of progress messages."
+msgstr ""
+
+#: xml/vacuumlo.xml:89(option)
+msgid "-V"
+msgstr ""
+
+#: xml/vacuumlo.xml:92(option)
+msgid "--version"
+msgstr ""
+
+#: xml/vacuumlo.xml:95(para)
+msgid "Print the <application>vacuumlo</application>version and exit."
+msgstr ""
+
+#: xml/vacuumlo.xml:102(option)
+msgid "-?"
+msgstr ""
+
+#: xml/vacuumlo.xml:105(option)
+msgid "--help"
+msgstr ""
+
+#: xml/vacuumlo.xml:108(para)
+msgid "Show help about <application>vacuumlo</application>command line arguments, and exit."
+msgstr ""
+
+#: xml/vacuumlo.xml:50(para)
+msgid "<application>vacuumlo</application>accepts the following command-line arguments: <placeholder-1/>"
+msgstr ""
+
+#: xml/vacuumlo.xml:120(option)
+msgid "-h"
+msgstr ""
+
+#: xml/vacuumlo.xml:121(replaceable)
+msgid "hostname"
+msgstr ""
+
+#: xml/vacuumlo.xml:124(para)
+msgid "Database server's host."
+msgstr ""
+
+#: xml/vacuumlo.xml:129(option)
+msgid "-p"
+msgstr ""
+
+#: xml/vacuumlo.xml:130(replaceable)
+msgid "port"
+msgstr ""
+
+#: xml/vacuumlo.xml:133(para)
+msgid "Database server's port."
+msgstr ""
+
+#: xml/vacuumlo.xml:138(option)
+msgid "-U"
+msgstr ""
+
+#: xml/vacuumlo.xml:139(replaceable)
+msgid "username"
+msgstr ""
+
+#: xml/vacuumlo.xml:142(para)
+msgid "User name to connect as."
+msgstr ""
+
+#: xml/vacuumlo.xml:147(option)
+msgid "-w"
+msgstr ""
+
+#: xml/vacuumlo.xml:150(option)
+msgid "--no-password"
+msgstr ""
+
+#: xml/vacuumlo.xml:153(para)
+msgid "Never issue a password prompt. If the server requires password authentication and a password is not available by other means such as a <filename>.pgpass</filename>file, the connection attempt will fail. This option can be useful in batch jobs and scripts where no user is present to enter a password."
+msgstr ""
+
+#: xml/vacuumlo.xml:164(option)
+msgid "-W"
+msgstr ""
+
+#: xml/vacuumlo.xml:167(para)
+msgid "Force <application>vacuumlo</application>to prompt for a password before connecting to a database."
+msgstr ""
+
+#: xml/vacuumlo.xml:170(para)
+msgid "This option is never essential, since <application>vacuumlo</application>will automatically prompt for a password if the server demands password authentication. However, <application>vacuumlo</application>will waste a connection attempt finding out that the server wants a password. In some cases it is worth typing <option>-W</option>to avoid the extra connection attempt."
+msgstr ""
+
+#: xml/vacuumlo.xml:114(para)
+msgid "<application>vacuumlo</application>also accepts the following command-line arguments for connection parameters: <placeholder-1/>"
+msgstr ""
+
+#: xml/vacuumlo.xml:184(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/vacuumlo.xml:185(para)
+msgid "<application>vacuumlo</application>works by the following method: First, <application>vacuumlo</application>builds a temporary table which contains all of the OIDs of the large objects in the selected database. It then scans through all columns in the database that are of type <type>oid</type>or <type>lo</type>, and removes matching entries from the temporary table. (Note: Only types with these names are considered; in particular, domains over them are not considered.) The remaining entries in the temporary table identify orphaned LOs. These are removed."
+msgstr ""
+
+#: xml/vacuumlo.xml:200(title)
+msgid "Author"
+msgstr ""
+
+#: xml/vacuumlo.xml:201(para)
+msgid "Peter Mount <email>peter@retep.org.uk</email>"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/vacuumlo.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

@@ -1,0 +1,57 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/auth-delay.xml:3(title) xml/auth-delay.xml:5(primary)
+msgid "auth_delay"
+msgstr ""
+
+#: xml/auth-delay.xml:7(para)
+msgid "<filename>auth_delay</filename>causes the server to pause briefly before reporting authentication failure, to make brute-force attacks on database passwords more difficult. Note that it does nothing to prevent denial-of-service attacks, and may even exacerbate them, since processes that are waiting before reporting authentication failure will still consume connection slots."
+msgstr ""
+
+#: xml/auth-delay.xml:15(para)
+msgid "In order to function, this module must be loaded via <xref linkend=\"guc-shared-preload-libraries\">in <filename>postgresql.conf</filename>.</xref>"
+msgstr ""
+
+#: xml/auth-delay.xml:19(title)
+msgid "Configuration Parameters"
+msgstr ""
+
+#: xml/auth-delay.xml:22(term)
+msgid "<varname>auth_delay.milliseconds</varname>( <type>int</type>) <indexterm><primary><varname>auth_delay.milliseconds</varname>configuration parameter</primary></indexterm>"
+msgstr ""
+
+#: xml/auth-delay.xml:31(para)
+msgid "The number of milliseconds to wait before reporting an authentication failure. The default is 0."
+msgstr ""
+
+#: xml/auth-delay.xml:36(para)
+msgid "These parameters must be set in <filename>postgresql.conf</filename>. Typical usage might be:"
+msgstr ""
+
+#: xml/auth-delay.xml:39(programlisting)
+#, no-wrap
+msgid "# postgresql.conf shared_preload_libraries =\n    'auth_delay' auth_delay.milliseconds = '500'"
+msgstr ""
+
+#: xml/auth-delay.xml:43(title)
+msgid "Author"
+msgstr ""
+
+#: xml/auth-delay.xml:44(para)
+msgid "KaiGai Kohei <email>kaigai@ak.jp.nec.com</email>"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/auth-delay.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

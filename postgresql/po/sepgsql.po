@@ -1,0 +1,482 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/sepgsql.xml:3(title) xml/sepgsql.xml:5(primary)
+msgid "sepgsql"
+msgstr ""
+
+#: xml/sepgsql.xml:7(para)
+msgid "<filename>sepgsql</filename>is a loadable module that supports label-based mandatory access control (MAC) based on <productname>SELinux</productname>security policy."
+msgstr ""
+
+#: xml/sepgsql.xml:12(para)
+msgid "The current implementation has significant limitations, and does not enforce mandatory access control for all actions. See <xref linkend=\"sepgsql-limitations\">.</xref>"
+msgstr ""
+
+#: xml/sepgsql.xml:18(title)
+msgid "Overview"
+msgstr ""
+
+#: xml/sepgsql.xml:19(para)
+msgid "This module integrates with <productname>SELinux</productname>to provide an additional layer of security checking above and beyond what is normally provided by <productname>PostgreSQL</productname>. From the perspective of <productname>SELinux</productname>, this module allows <productname>PostgreSQL</productname>to function as a user-space object manager. Each table or function access initiated by a DML query will be checked against the system security policy. This check is in addition to the usual SQL permissions checking performed by <productname>PostgreSQL</productname>."
+msgstr ""
+
+#: xml/sepgsql.xml:31(para)
+msgid "<productname>SELinux</productname>access control decisions are made using security labels, which are represented by strings such as <literal>system_u:object_r:sepgsql_table_t:s0</literal>. Each access control decision involves two labels: the label of the subject attempting to perform the action, and the label of the object on which the operation is to be performed. Since these labels can be applied to any sort of object, access control decisions for objects stored within the database can be (and, with this module, are) subjected to the same general criteria used for objects of any other type, such as files. This design is intended to allow a centralized security policy to protect information assets independent of the particulars of how those assets are stored."
+msgstr ""
+
+#: xml/sepgsql.xml:46(para)
+msgid "The <xref linkend=\"sql-security-label\">statement allows assignment of a security label to a database object.</xref>"
+msgstr ""
+
+#: xml/sepgsql.xml:51(title)
+msgid "Installation"
+msgstr ""
+
+#: xml/sepgsql.xml:52(para)
+msgid "<filename>sepgsql</filename>can only be used on <productname>Linux</productname>2.6.28 or higher with <productname>SELinux</productname>enabled. It is not available on any other platform. You will also need <productname>libselinux</productname>2.1.10 or higher and <productname>selinux-policy</productname>3.9.13 or higher (although some distributions may backport the necessary rules into older policy versions)."
+msgstr ""
+
+#: xml/sepgsql.xml:61(para)
+msgid "The <command>sestatus</command>command allows you to check the status of <productname>SELinux</productname>. A typical display is: <screen>$ sestatus SELinux status: enabled SELinuxfs mount:\n    /selinux Current mode: enforcing Mode from config file:\n    enforcing Policy version: 24 Policy from config file:\n    targeted</screen>If <productname>SELinux</productname>is disabled or not installed, you must set that product up first before installing this module."
+msgstr ""
+
+#: xml/sepgsql.xml:72(para)
+msgid "To build this module, include the option <literal>--with-selinux</literal>in your PostgreSQL <literal>configure</literal>command. Be sure that the <filename>libselinux-devel</filename>RPM is installed at build time."
+msgstr ""
+
+#: xml/sepgsql.xml:77(para)
+msgid "To use this module, you must include <literal>sepgsql</literal>in the <xref linkend=\"guc-shared-preload-libraries\">parameter in <filename>postgresql.conf</filename>. The module will not function correctly if loaded in any other manner. Once the module is loaded, you should execute <filename>sepgsql.sql</filename>in each database. This will install functions needed for security label management, and assign initial security labels.</xref>"
+msgstr ""
+
+#: xml/sepgsql.xml:86(para)
+msgid "Here is an example showing how to initialize a fresh database cluster with <filename>sepgsql</filename>functions and security labels installed. Adjust the paths shown as appropriate for your installation:"
+msgstr ""
+
+#: xml/sepgsql.xml:91(screen)
+#, no-wrap
+msgid "$ export PGDATA=/path/to/data/directory $ initdb $ vi\n    $PGDATA/postgresql.conf change #shared_preload_libraries = '' #\n    (change requires restart) to shared_preload_libraries =\n    'sepgsql' # (change requires restart) $ for DBNAME in template0\n    template1 postgres; do postgres --single -F -c\n    exit_on_error=true $DBNAME \\\n    /usr/local/pgsql/share/contrib/sepgsql.sql /dev/null\n    done"
+msgstr ""
+
+#: xml/sepgsql.xml:99(para)
+msgid "Please note that you may see some or all of the following notifications depending on the particular versions you have of <productname>libselinux</productname>and <productname>selinux-policy</productname>: <screen>/etc/selinux/targeted/contexts/sepgsql_contexts: line\n    33 has invalid object type db_blobs\n    /etc/selinux/targeted/contexts/sepgsql_contexts: line 36 has\n    invalid object type db_language\n    /etc/selinux/targeted/contexts/sepgsql_contexts: line 37 has\n    invalid object type db_language\n    /etc/selinux/targeted/contexts/sepgsql_contexts: line 38 has\n    invalid object type db_language\n    /etc/selinux/targeted/contexts/sepgsql_contexts: line 39 has\n    invalid object type db_language\n    /etc/selinux/targeted/contexts/sepgsql_contexts: line 40 has\n    invalid object type db_language</screen>These messages are harmless and should be ignored."
+msgstr ""
+
+#: xml/sepgsql.xml:116(para)
+msgid "If the installation process completes without error, you can now start the server normally."
+msgstr ""
+
+#: xml/sepgsql.xml:120(title)
+msgid "Regression Tests"
+msgstr ""
+
+#: xml/sepgsql.xml:121(para)
+msgid "Due to the nature of <productname>SELinux</productname>, running the regression tests for <filename>sepgsql</filename>requires several extra configuration steps, some of which must be done as root. The regression tests will not be run by an ordinary <literal>make check</literal>or <literal>make installcheck</literal>command; you must set up the configuration and then invoke the test script manually. The tests must be run in the <filename>contrib/sepgsql</filename>directory of a configured PostgreSQL build tree. Although they require a build tree, the tests are designed to be executed against an installed server, that is they are comparable to <literal>make installcheck</literal>not <literal>make check</literal>."
+msgstr ""
+
+#: xml/sepgsql.xml:137(para)
+msgid "First, set up <filename>sepgsql</filename>in a working database according to the instructions in <xref linkend=\"sepgsql-installation\">. Note that the current operating system user must be able to connect to the database as superuser without password authentication.</xref>"
+msgstr ""
+
+#: xml/sepgsql.xml:143(para)
+msgid "Second, build and install the policy package for the regression test. The <filename>sepgsql-regtest</filename>policy is a special purpose policy package which provides a set of rules to be allowed during the regression tests. It should be built from the policy source file <filename>sepgsql-regtest.te</filename>, which is done using <command>make</command>with a Makefile supplied by SELinux. You will need to locate the appropriate Makefile on your system; the path shown below is only an example. Once built, install this policy package using the <command>semodule</command>command, which loads supplied policy packages into the kernel. If the package is correctly installed, <literal><command>semodule</command>-l</literal>should list <literal>sepgsql-regtest</literal>as an available policy package:"
+msgstr ""
+
+#: xml/sepgsql.xml:161(screen)
+#, no-wrap
+msgid "$ cd .../contrib/sepgsql $ make -f\n    /usr/share/selinux/devel/Makefile $ sudo semodule -u\n    sepgsql-regtest.pp $ sudo semodule -l | grep sepgsql\n    sepgsql-regtest 1.07"
+msgstr ""
+
+#: xml/sepgsql.xml:165(para)
+msgid "Third, turn on <literal>sepgsql_regression_test_mode</literal>. For security reasons, the rules in <filename>sepgsql-regtest</filename>are not enabled by default; the <literal>sepgsql_regression_test_mode</literal>parameter enables the rules needed to launch the regression tests. It can be turned on using the <command>setsebool</command>command:"
+msgstr ""
+
+#: xml/sepgsql.xml:174(screen)
+#, no-wrap
+msgid "$ sudo setsebool sepgsql_regression_test_mode on $\n    getsebool sepgsql_regression_test_mode\n    sepgsql_regression_test_mode --&gt; on"
+msgstr ""
+
+#: xml/sepgsql.xml:177(para)
+msgid "Fourth, verify your shell is operating in the <literal>unconfined_t</literal>domain:"
+msgstr ""
+
+#: xml/sepgsql.xml:179(screen)
+#, no-wrap
+msgid "$ id -Z\n    unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023"
+msgstr ""
+
+#: xml/sepgsql.xml:181(para)
+msgid "See <xref linkend=\"sepgsql-resources\">for details on adjusting your working domain, if necessary.</xref>"
+msgstr ""
+
+#: xml/sepgsql.xml:184(para)
+msgid "Finally, run the regression test script:"
+msgstr ""
+
+#: xml/sepgsql.xml:185(screen)
+#, no-wrap
+msgid "$ ./test_sepgsql"
+msgstr ""
+
+#: xml/sepgsql.xml:186(para)
+msgid "This script will attempt to verify that you have done all the configuration steps correctly, and then it will run the regression tests for the <filename>sepgsql</filename>module."
+msgstr ""
+
+#: xml/sepgsql.xml:190(para)
+msgid "After completing the tests, it's recommended you disable the <literal> sepgsql_regression_test_mode</literal>parameter:"
+msgstr ""
+
+#: xml/sepgsql.xml:194(screen)
+#, no-wrap
+msgid "$ sudo setsebool sepgsql_regression_test_mode\n    off"
+msgstr ""
+
+#: xml/sepgsql.xml:196(para)
+msgid "You might prefer to remove the <filename>sepgsql-regtest</filename>policy entirely:"
+msgstr ""
+
+#: xml/sepgsql.xml:198(screen)
+#, no-wrap
+msgid "$ sudo semodule -r sepgsql-regtest"
+msgstr ""
+
+#: xml/sepgsql.xml:201(title)
+msgid "GUC Parameters"
+msgstr ""
+
+#: xml/sepgsql.xml:205(term)
+msgid "<varname>sepgsql.permissive</varname>( <type>boolean</type>) <indexterm><primary><varname>sepgsql.permissive</varname>configuration parameter</primary></indexterm>"
+msgstr ""
+
+#: xml/sepgsql.xml:214(para)
+msgid "This parameter enables <filename>sepgsql</filename>to function in permissive mode, regardless of the system setting. The default is off. This parameter can only be set in the <filename>postgresql.conf</filename>file or on the server command line."
+msgstr ""
+
+#: xml/sepgsql.xml:220(para)
+msgid "When this parameter is on, <filename>sepgsql</filename>functions in permissive mode, even if SELinux in general is working in enforcing mode. This parameter is primarily useful for testing purposes."
+msgstr ""
+
+#: xml/sepgsql.xml:229(term)
+msgid "<varname>sepgsql.debug_audit</varname>( <type>boolean</type>) <indexterm><primary><varname>sepgsql.debug_audit</varname>configuration parameter</primary></indexterm>"
+msgstr ""
+
+#: xml/sepgsql.xml:238(para)
+msgid "This parameter enables the printing of audit messages regardless of the system policy settings. The default is off, which means that messages will be printed according to the system settings."
+msgstr ""
+
+#: xml/sepgsql.xml:242(para)
+msgid "The security policy of <productname>SELinux</productname>also has rules to control whether or not particular accesses are logged. By default, access violations are logged, but allowed accesses are not."
+msgstr ""
+
+#: xml/sepgsql.xml:247(para)
+msgid "This parameter forces all possible logging to be turned on, regardless of the system policy."
+msgstr ""
+
+#: xml/sepgsql.xml:254(title)
+msgid "Features"
+msgstr ""
+
+#: xml/sepgsql.xml:256(title)
+msgid "Controlled Object Classes"
+msgstr ""
+
+#: xml/sepgsql.xml:257(para)
+msgid "The security model of <productname>SELinux</productname>describes all the access control rules as relationships between a subject entity (typically, a client of the database) and an object entity (such as a database object), each of which is identified by a security label. If access to an unlabeled object is attempted, the object is treated as if it were assigned the label <literal>unlabeled_t</literal>."
+msgstr ""
+
+#: xml/sepgsql.xml:266(para)
+msgid "Currently, <filename>sepgsql</filename>allows security labels to be assigned to schemas, tables, columns, sequences, views, and functions. When <filename>sepgsql</filename>is in use, security labels are automatically assigned to supported database objects at creation time. This label is called a default security label, and is decided according to the system security policy, which takes as input the creator's label, the label assigned to the new object's parent object and optionally name of the constructed object."
+msgstr ""
+
+#: xml/sepgsql.xml:277(para)
+msgid "A new database object basically inherits the security label of the parent object, except when the security policy has special rules known as type-transition rules, in which case a different label may be applied. For schemas, the parent object is the current database; for tables, sequences, views, and functions, it is the containing schema; for columns, it is the containing table."
+msgstr ""
+
+#: xml/sepgsql.xml:286(title)
+msgid "DML Permissions"
+msgstr ""
+
+#: xml/sepgsql.xml:287(para)
+msgid "For tables, <literal>db_table:select</literal>, <literal>db_table:insert</literal>, <literal>db_table:update</literal>or <literal>db_table:delete</literal>are checked for all the referenced target tables depending on the kind of statement; in addition, <literal>db_table:select</literal>is also checked for all the tables that contain columns referenced in the <literal>WHERE</literal>or <literal>RETURNING</literal>clause, as a data source for <literal>UPDATE</literal>, and so on."
+msgstr ""
+
+#: xml/sepgsql.xml:299(para)
+msgid "Column-level permissions will also be checked for each referenced column. <literal>db_column:select</literal>is checked on not only the columns being read using <literal>SELECT</literal>, but those being referenced in other DML statements; <literal>db_column:update</literal>or <literal>db_column:insert</literal>will also be checked for columns being modified by <literal>UPDATE</literal>or <literal>INSERT</literal>."
+msgstr ""
+
+#: xml/sepgsql.xml:310(para)
+msgid "For example, consider: <synopsis>UPDATE t1 SET x = 2, y = md5sum(y) WHERE z =\n      100;</synopsis>Here, <literal>db_column:update</literal>will be checked for <literal>t1.x</literal>, since it is being updated, <literal>db_column:{select update}</literal>will be checked for <literal>t1.y</literal>, since it is both updated and referenced, and <literal>db_column:select</literal>will be checked for <literal>t1.z</literal>, since it is only referenced. <literal>db_table:{select update}</literal>will also be checked at the table level."
+msgstr ""
+
+#: xml/sepgsql.xml:323(para)
+msgid "For sequences, <literal>db_sequence:get_value</literal>is checked when we reference a sequence object using <literal>SELECT</literal>; however, note that we do not currently check permissions on execution of corresponding functions such as <literal>lastval()</literal>."
+msgstr ""
+
+#: xml/sepgsql.xml:330(para)
+msgid "For views, <literal>db_view:expand</literal>will be checked, then any other required permissions will be checked on the objects being expanded from the view, individually."
+msgstr ""
+
+#: xml/sepgsql.xml:334(para)
+msgid "For functions, <literal>db_procedure:{execute}</literal>will be checked when user tries to execute a function as a part of query, or using fast-path invocation. If this function is a trusted procedure, it also checks <literal>db_procedure:{entrypoint}</literal>permission to check whether it can perform as entry point of trusted procedure."
+msgstr ""
+
+#: xml/sepgsql.xml:342(para)
+msgid "In order to access any schema object, <literal>db_schema:search</literal>permission is required on the containing schema. When an object is referenced without schema qualification, schemas on which this permission is not present will not be searched (just as if the user did not have <literal>USAGE</literal>privilege on the schema). If an explicit schema qualification is present, an error will occur if the user does not have the requisite permission on the named schema."
+msgstr ""
+
+#: xml/sepgsql.xml:352(para)
+msgid "The client must be allowed to access all referenced tables and columns, even if they originated from views which were then expanded, so that we apply consistent access control rules independent of the manner in which the table contents are referenced."
+msgstr ""
+
+#: xml/sepgsql.xml:357(para)
+msgid "The default database privilege system allows database superusers to modify system catalogs using DML commands, and reference or modify toast tables. These operations are prohibited when <filename>sepgsql</filename>is enabled."
+msgstr ""
+
+#: xml/sepgsql.xml:364(title)
+msgid "DDL Permissions"
+msgstr ""
+
+#: xml/sepgsql.xml:365(para)
+msgid "<productname>SELinux</productname>defines several permissions to control common operations for each object type; such as creation, alter, drop and relabel of security label. In addition, several object types have special permissions to control their characteristic operations; such as addition or deletion of name entries within a particular schema."
+msgstr ""
+
+#: xml/sepgsql.xml:372(para)
+msgid "Creating a new database object requires <literal>create</literal>permission. <productname>SELinux</productname>will grant or deny this permission based on the client's security label and the proposed security label for the new object. In some cases, additional privileges are required:"
+msgstr ""
+
+#: xml/sepgsql.xml:383(literal)
+msgid "getattr"
+msgstr ""
+
+#: xml/sepgsql.xml:381(xref)
+msgid "additionally requires <placeholder-1/>permission for the source or template database."
+msgstr ""
+
+#: xml/sepgsql.xml:388(para)
+msgid "Creating a schema object additionally requires <literal>add_name</literal>permission on the parent schema."
+msgstr ""
+
+#: xml/sepgsql.xml:393(para)
+msgid "Creating a table additionally requires permission to create each individual table column, just as if each table column were a separate top-level object."
+msgstr ""
+
+#: xml/sepgsql.xml:398(para)
+msgid "Creating a function marked as <literal>LEAKPROOF</literal>additionally requires <literal>install</literal>permission. (This permission is also checked when <literal>LEAKPROOF</literal>is set for an existing function.)"
+msgstr ""
+
+#: xml/sepgsql.xml:406(para)
+msgid "When <literal>DROP</literal>command is executed, <literal>drop</literal>will be checked on the object being removed. Permissions will be also checked for objects dropped indirectly via <literal>CASCADE</literal>. Deletion of objects contained within a particular schema (tables, views, sequences and procedures) additionally requires <literal>remove_name</literal>on the schema."
+msgstr ""
+
+#: xml/sepgsql.xml:415(para)
+msgid "When <literal>ALTER</literal>command is executed, <literal>setattr</literal>will be checked on the object being modified for each object types, except for subsidiary objects such as the indexes or triggers of a table, where permissions are instead checked on the parent object. In some cases, additional permissions are required:"
+msgstr ""
+
+#: xml/sepgsql.xml:424(para)
+msgid "Moving an object to a new schema additionally requires <literal>remove_name</literal>permission on the old schema and <literal>add_name</literal>permission on the new one."
+msgstr ""
+
+#: xml/sepgsql.xml:432(para)
+msgid "Setting the <literal>LEAKPROOF</literal>attribute on a function requires <literal>install</literal>permission."
+msgstr ""
+
+#: xml/sepgsql.xml:438(para)
+msgid "Using <xref linkend=\"sql-security-label\">on an object additionally requires <literal>relabelfrom</literal>permission for the object in conjunction with its old security label and <literal>relabelto</literal>permission for the object in conjunction with its new security label. (In cases where multiple label providers are installed and the user tries to set a security label, but it is not managed by <productname>SELinux</productname>, only <literal>setattr</literal>should be checked here. This is currently not done due to implementation restrictions.)</xref>"
+msgstr ""
+
+#: xml/sepgsql.xml:455(title)
+msgid "Trusted Procedures"
+msgstr ""
+
+#: xml/sepgsql.xml:456(para)
+msgid "Trusted procedures are similar to security definer functions or setuid commands. <productname>SELinux</productname>provides a feature to allow trusted code to run using a security label different from that of the client, generally for the purpose of providing highly controlled access to sensitive data (e.g. rows might be omitted, or the precision of stored values might be reduced). Whether or not a function acts as a trusted procedure is controlled by its security label and the operating system security policy. For example:"
+msgstr ""
+
+#: xml/sepgsql.xml:466(screen)
+#, no-wrap
+msgid "postgres=# CREATE TABLE customer ( cid int primary\n      key, cname text, credit text ); CREATE TABLE postgres=#\n      SECURITY LABEL ON COLUMN customer.credit IS\n      'system_u:object_r:sepgsql_secret_table_t:s0'; SECURITY LABEL\n      postgres=# CREATE FUNCTION show_credit(int) RETURNS text AS\n      'SELECT regexp_replace(credit, ''-[0-9]+$'', ''-xxxx'',\n      ''g'') FROM customer WHERE cid = $1' LANGUAGE sql; CREATE\n      FUNCTION postgres=# SECURITY LABEL ON FUNCTION\n      show_credit(int) IS\n      'system_u:object_r:sepgsql_trusted_proc_exec_t:s0'; SECURITY\n      LABEL"
+msgstr ""
+
+#: xml/sepgsql.xml:477(para)
+msgid "The above operations should be performed by an administrative user."
+msgstr ""
+
+#: xml/sepgsql.xml:479(screen)
+#, no-wrap
+msgid "postgres=# SELECT * FROM customer; ERROR: SELinux:\n      security policy violation postgres=# SELECT cid, cname,\n      show_credit(cid) FROM customer; cid | cname | show_credit\n      -----+--------+--------------------- 1 | taro |\n      1111-2222-3333-xxxx 2 | hanako | 5555-6666-7777-xxxx (2\n      rows)"
+msgstr ""
+
+#: xml/sepgsql.xml:485(para)
+msgid "In this case, a regular user cannot reference <literal>customer.credit</literal>directly, but a trusted procedure <literal>show_credit</literal>allows him to print the credit card numbers of customers with some of the digits masked out."
+msgstr ""
+
+#: xml/sepgsql.xml:493(title)
+msgid "Dynamic Domain Transitions"
+msgstr ""
+
+#: xml/sepgsql.xml:494(para)
+msgid "It is possible to use SELinux's dynamic domain transition feature to switch the security label of the client process, the client domain, to a new context, if that is allowed by the security policy. The client domain needs the <literal>setcurrent</literal>permission and also <literal>dyntransition</literal>from the old to the new domain."
+msgstr ""
+
+#: xml/sepgsql.xml:501(para)
+msgid "Dynamic domain transitions should be considered carefully, because they allow users to switch their label, and therefore their privileges, at their option, rather than (as in the case of a trusted procedure) as mandated by the system. Thus, the <literal>dyntransition</literal>permission is only considered safe when used to switch to a domain with a smaller set of privileges than the original one. For example:"
+msgstr ""
+
+#: xml/sepgsql.xml:509(screen)
+#, no-wrap
+msgid "regression=# select sepgsql_getcon(); sepgsql_getcon\n      -------------------------------------------------------\n      unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 (1 row)\n      regression=# SELECT\n      sepgsql_setcon('unconfined_u:unconfined_r:unconfined_t:s0-s0:c1.c4');\n      sepgsql_setcon ---------------- t (1 row) regression=# SELECT\n      sepgsql_setcon('unconfined_u:unconfined_r:unconfined_t:s0-s0:c1.c1023');\n      ERROR: SELinux: security policy violation"
+msgstr ""
+
+#: xml/sepgsql.xml:517(para)
+msgid "In this example above we were allowed to switch from the larger MCS range <literal>c1.c1023</literal>to the smaller range <literal>c1.c4</literal>, but switching back was denied."
+msgstr ""
+
+#: xml/sepgsql.xml:522(para)
+msgid "A combination of dynamic domain transition and trusted procedure enables an interesting use case that fits the typical process life-cycle of connection pooling software. Even if your connection pooling software is not allowed to run most of SQL commands, you can allow it to switch the security label of the client using the <literal>sepgsql_setcon()</literal>function from within a trusted procedure; that should take some credential to authorize the request to switch the client label. After that, this session will have the privileges of the target user, rather than the connection pooler. The connection pooler can later revert the security label change by again using <literal>sepgsql_setcon()</literal>with <literal>NULL</literal>argument, again invoked from within a trusted procedure with appropriate permissions checks. The point here is that only the trusted procedure actually has permission to change the effective security label, and only does so when given proper credentials. Of course, for secure operation, the credential store (table, procedure definition, or whatever) must be protected from unauthorized access."
+msgstr ""
+
+#: xml/sepgsql.xml:545(title)
+msgid "Miscellaneous"
+msgstr ""
+
+#: xml/sepgsql.xml:546(para)
+msgid "We reject the <xref linkend=\"sql-load\">command across the board, because any module loaded could easily circumvent security policy enforcement.</xref>"
+msgstr ""
+
+#: xml/sepgsql.xml:553(title) xml/sepgsql.xml:559(title)
+msgid "Sepgsql Functions"
+msgstr ""
+
+#: xml/sepgsql.xml:555(xref)
+msgid "shows the available functions."
+msgstr ""
+
+#: xml/sepgsql.xml:564(literal)
+msgid "sepgsql_getcon() returns text"
+msgstr ""
+
+#: xml/sepgsql.xml:566(entry)
+msgid "Returns the client domain, the current security label of the client."
+msgstr ""
+
+#: xml/sepgsql.xml:571(literal)
+msgid "sepgsql_setcon(text) returns bool"
+msgstr ""
+
+#: xml/sepgsql.xml:576(literal)
+msgid "NULL"
+msgstr ""
+
+#: xml/sepgsql.xml:573(entry)
+msgid "Switches the client domain of the current session to the new domain, if allowed by the security policy. It also accepts <placeholder-1/>input as a request to transition to the client's original domain."
+msgstr ""
+
+#: xml/sepgsql.xml:581(literal)
+msgid "sepgsql_mcstrans_in(text) returns text"
+msgstr ""
+
+#: xml/sepgsql.xml:584(entry)
+msgid "Translates the given qualifies MLS/MCS range into raw format if the mcstrans daemon is running."
+msgstr ""
+
+#: xml/sepgsql.xml:590(literal)
+msgid "sepgsql_mcstrans_out(text) returns text"
+msgstr ""
+
+#: xml/sepgsql.xml:593(entry)
+msgid "Translates the given raw MCS/MCS range into qualified format if the mcstrans daemon is running."
+msgstr ""
+
+#: xml/sepgsql.xml:599(literal)
+msgid "sepgsql_restorecon(text) returns bool"
+msgstr ""
+
+#: xml/sepgsql.xml:602(entry)
+msgid "Sets up initial security labels for all objects within the current database. The argument may be NULL, or the name of a specfile to be used as alternative of the system default."
+msgstr ""
+
+#: xml/sepgsql.xml:612(title)
+msgid "Limitations"
+msgstr ""
+
+#: xml/sepgsql.xml:615(term)
+msgid "Data Definition Language (DDL) Permissions"
+msgstr ""
+
+#: xml/sepgsql.xml:617(para)
+msgid "Due to implementation restrictions, some DDL operations do not check permissions."
+msgstr ""
+
+#: xml/sepgsql.xml:622(term)
+msgid "Data Control Language (DCL) Permissions"
+msgstr ""
+
+#: xml/sepgsql.xml:624(para)
+msgid "Due to implementation restrictions, DCL operations do not check permissions."
+msgstr ""
+
+#: xml/sepgsql.xml:629(term)
+msgid "Row-level access control"
+msgstr ""
+
+#: xml/sepgsql.xml:631(para)
+msgid "<productname>PostgreSQL</productname>supports row-level access, but <filename>sepgsql</filename>does not."
+msgstr ""
+
+#: xml/sepgsql.xml:638(term)
+msgid "Covert channels"
+msgstr ""
+
+#: xml/sepgsql.xml:640(para)
+msgid "<filename>sepgsql</filename>does not try to hide the existence of a certain object, even if the user is not allowed to reference it. For example, we can infer the existence of an invisible object as a result of primary key conflicts, foreign key violations, and so on, even if we cannot obtain the contents of the object. The existence of a top secret table cannot be hidden; we only hope to conceal its contents."
+msgstr ""
+
+#: xml/sepgsql.xml:654(title)
+msgid "External Resources"
+msgstr ""
+
+#: xml/sepgsql.xml:658(ulink)
+msgid "SE-PostgreSQL Introduction"
+msgstr ""
+
+#: xml/sepgsql.xml:662(para)
+msgid "This wiki page provides a brief overview, security design, architecture, administration and upcoming features."
+msgstr ""
+
+#: xml/sepgsql.xml:669(ulink)
+msgid "Fedora SELinux User Guide"
+msgstr ""
+
+#: xml/sepgsql.xml:673(para)
+msgid "This document provides a wide spectrum of knowledge to administer <productname>SELinux</productname>on your systems. It focuses primarily on Fedora, but is not limited to Fedora."
+msgstr ""
+
+#: xml/sepgsql.xml:682(ulink)
+msgid "Fedora SELinux FAQ"
+msgstr ""
+
+#: xml/sepgsql.xml:686(para)
+msgid "This document answers frequently asked questions about <productname>SELinux</productname>. It focuses primarily on Fedora, but is not limited to Fedora."
+msgstr ""
+
+#: xml/sepgsql.xml:695(title)
+msgid "Author"
+msgstr ""
+
+#: xml/sepgsql.xml:696(para)
+msgid "KaiGai Kohei <email>kaigai@ak.jp.nec.com</email>"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/sepgsql.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

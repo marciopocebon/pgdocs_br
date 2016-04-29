@@ -1,0 +1,456 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/createuser.xml:4(primary) xml/ref/createuser.xml:8(application) xml/ref/createuser.xml:14(refname) xml/ref/createuser.xml:20(command)
+msgid "createuser"
+msgstr ""
+
+#: xml/ref/createuser.xml:10(manvolnum)
+msgid "1"
+msgstr ""
+
+#: xml/ref/createuser.xml:11(refmiscinfo)
+msgid "Application"
+msgstr ""
+
+#: xml/ref/createuser.xml:16(productname)
+msgid "PostgreSQL"
+msgstr ""
+
+#: xml/ref/createuser.xml:15(refpurpose)
+msgid "define a new <placeholder-1/>user account"
+msgstr ""
+
+#: xml/ref/createuser.xml:22(replaceable)
+msgid "connection-option"
+msgstr ""
+
+#: xml/ref/createuser.xml:25(replaceable)
+msgid "option"
+msgstr ""
+
+#: xml/ref/createuser.xml:28(replaceable) xml/ref/createuser.xml:64(replaceable) xml/ref/createuser.xml:394(replaceable) xml/ref/createuser.xml:399(replaceable)
+msgid "username"
+msgstr ""
+
+#: xml/ref/createuser.xml:33(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/createuser.xml:34(para)
+msgid "<application>createuser</application>creates a new <productname>PostgreSQL</productname>user (or more precisely, a role). Only superusers and users with <literal>CREATEROLE</literal>privilege can create new users, so <application>createuser</application>must be invoked by someone who can connect as a superuser or a user with <literal>CREATEROLE</literal>privilege."
+msgstr ""
+
+#: xml/ref/createuser.xml:43(para)
+msgid "If you wish to create a new superuser, you must connect as a superuser, not merely with <literal>CREATEROLE</literal>privilege. Being a superuser implies the ability to bypass all access permission checks within the database, so superuserdom should not be granted lightly."
+msgstr ""
+
+#: xml/ref/createuser.xml:49(para)
+msgid "<application>createuser</application>is a wrapper around the <acronym>SQL</acronym>command <xref linkend=\"SQL-CREATEROLE\">. There is no effective difference between creating users via this utility and via other methods for accessing the server.</xref>"
+msgstr ""
+
+#: xml/ref/createuser.xml:57(title)
+msgid "Options"
+msgstr ""
+
+#: xml/ref/createuser.xml:67(para)
+msgid "Specifies the name of the <productname>PostgreSQL</productname>user to be created. This name must be different from all existing roles in this <productname>PostgreSQL</productname>installation."
+msgstr ""
+
+#: xml/ref/createuser.xml:77(replaceable) xml/ref/createuser.xml:82(replaceable)
+msgid "number"
+msgstr ""
+
+#: xml/ref/createuser.xml:76(option)
+msgid "-c <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/createuser.xml:81(option)
+msgid "--connection-limit= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/createuser.xml:86(para)
+msgid "Set a maximum number of connections for the new user. The default is to set no limit."
+msgstr ""
+
+#: xml/ref/createuser.xml:92(option)
+msgid "-d"
+msgstr ""
+
+#: xml/ref/createuser.xml:95(option)
+msgid "--createdb"
+msgstr ""
+
+#: xml/ref/createuser.xml:98(para)
+msgid "The new user will be allowed to create databases."
+msgstr ""
+
+#: xml/ref/createuser.xml:104(option)
+msgid "-D"
+msgstr ""
+
+#: xml/ref/createuser.xml:107(option)
+msgid "--no-createdb"
+msgstr ""
+
+#: xml/ref/createuser.xml:110(para)
+msgid "The new user will not be allowed to create databases. This is the default."
+msgstr ""
+
+#: xml/ref/createuser.xml:116(option)
+msgid "-e"
+msgstr ""
+
+#: xml/ref/createuser.xml:119(option)
+msgid "--echo"
+msgstr ""
+
+#: xml/ref/createuser.xml:122(para)
+msgid "Echo the commands that <application>createuser</application>generates and sends to the server."
+msgstr ""
+
+#: xml/ref/createuser.xml:129(option)
+msgid "-E"
+msgstr ""
+
+#: xml/ref/createuser.xml:132(option)
+msgid "--encrypted"
+msgstr ""
+
+#: xml/ref/createuser.xml:135(para)
+msgid "Encrypts the user's password stored in the database. If not specified, the default password behavior is used."
+msgstr ""
+
+#: xml/ref/createuser.xml:143(replaceable) xml/ref/createuser.xml:148(replaceable)
+msgid "role"
+msgstr ""
+
+#: xml/ref/createuser.xml:142(option)
+msgid "-g <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/createuser.xml:147(option)
+msgid "--role= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/createuser.xml:152(para)
+msgid "Indicates role to which this role will be added immediately as a new member. Multiple roles to which this role will be added as a member can be specified by writing multiple <option>-g</option>switches."
+msgstr ""
+
+#: xml/ref/createuser.xml:161(option)
+msgid "-i"
+msgstr ""
+
+#: xml/ref/createuser.xml:164(option)
+msgid "--inherit"
+msgstr ""
+
+#: xml/ref/createuser.xml:167(para)
+msgid "The new role will automatically inherit privileges of roles it is a member of. This is the default."
+msgstr ""
+
+#: xml/ref/createuser.xml:173(option)
+msgid "-I"
+msgstr ""
+
+#: xml/ref/createuser.xml:176(option)
+msgid "--no-inherit"
+msgstr ""
+
+#: xml/ref/createuser.xml:179(para)
+msgid "The new role will not automatically inherit privileges of roles it is a member of."
+msgstr ""
+
+#: xml/ref/createuser.xml:185(option)
+msgid "--interactive"
+msgstr ""
+
+#: xml/ref/createuser.xml:188(para)
+msgid "Prompt for the user name if none is specified on the command line, and also prompt for whichever of the options <option>-d</option>/ <option>-D</option>, <option>-r</option>/ <option>-R</option>, <option>-s</option>/ <option>-S</option>is not specified on the command line. (This was the default behavior up to PostgreSQL 9.1.)"
+msgstr ""
+
+#: xml/ref/createuser.xml:203(option)
+msgid "-l"
+msgstr ""
+
+#: xml/ref/createuser.xml:206(option)
+msgid "--login"
+msgstr ""
+
+#: xml/ref/createuser.xml:209(para)
+msgid "The new user will be allowed to log in (that is, the user name can be used as the initial session user identifier). This is the default."
+msgstr ""
+
+#: xml/ref/createuser.xml:216(option)
+msgid "-L"
+msgstr ""
+
+#: xml/ref/createuser.xml:219(option)
+msgid "--no-login"
+msgstr ""
+
+#: xml/ref/createuser.xml:222(para)
+msgid "The new user will not be allowed to log in. (A role without login privilege is still useful as a means of managing database permissions.)"
+msgstr ""
+
+#: xml/ref/createuser.xml:229(option)
+msgid "-N"
+msgstr ""
+
+#: xml/ref/createuser.xml:232(option)
+msgid "--unencrypted"
+msgstr ""
+
+#: xml/ref/createuser.xml:235(para)
+msgid "Does not encrypt the user's password stored in the database. If not specified, the default password behavior is used."
+msgstr ""
+
+#: xml/ref/createuser.xml:242(option)
+msgid "-P"
+msgstr ""
+
+#: xml/ref/createuser.xml:245(option)
+msgid "--pwprompt"
+msgstr ""
+
+#: xml/ref/createuser.xml:248(para)
+msgid "If given, <application>createuser</application>will issue a prompt for the password of the new user. This is not necessary if you do not plan on using password authentication."
+msgstr ""
+
+#: xml/ref/createuser.xml:257(option)
+msgid "-r"
+msgstr ""
+
+#: xml/ref/createuser.xml:260(option)
+msgid "--createrole"
+msgstr ""
+
+#: xml/ref/createuser.xml:263(para)
+msgid "The new user will be allowed to create new roles (that is, this user will have <literal>CREATEROLE</literal>privilege)."
+msgstr ""
+
+#: xml/ref/createuser.xml:270(option)
+msgid "-R"
+msgstr ""
+
+#: xml/ref/createuser.xml:273(option)
+msgid "--no-createrole"
+msgstr ""
+
+#: xml/ref/createuser.xml:276(para)
+msgid "The new user will not be allowed to create new roles. This is the default."
+msgstr ""
+
+#: xml/ref/createuser.xml:282(option)
+msgid "-s"
+msgstr ""
+
+#: xml/ref/createuser.xml:285(option)
+msgid "--superuser"
+msgstr ""
+
+#: xml/ref/createuser.xml:288(para)
+msgid "The new user will be a superuser."
+msgstr ""
+
+#: xml/ref/createuser.xml:293(option)
+msgid "-S"
+msgstr ""
+
+#: xml/ref/createuser.xml:296(option)
+msgid "--no-superuser"
+msgstr ""
+
+#: xml/ref/createuser.xml:299(para)
+msgid "The new user will not be a superuser. This is the default."
+msgstr ""
+
+#: xml/ref/createuser.xml:305(option)
+msgid "-V"
+msgstr ""
+
+#: xml/ref/createuser.xml:308(option)
+msgid "--version"
+msgstr ""
+
+#: xml/ref/createuser.xml:311(para)
+msgid "Print the <application>createuser</application>version and exit."
+msgstr ""
+
+#: xml/ref/createuser.xml:318(option)
+msgid "--replication"
+msgstr ""
+
+#: xml/ref/createuser.xml:321(para)
+msgid "The new user will have the <literal>REPLICATION</literal>privilege, which is described more fully in the documentation for <xref linkend=\"sql-createrole\">.</xref>"
+msgstr ""
+
+#: xml/ref/createuser.xml:329(option)
+msgid "--no-replication"
+msgstr ""
+
+#: xml/ref/createuser.xml:332(para)
+msgid "The new user will not have the <literal>REPLICATION</literal>privilege, which is described more fully in the documentation for <xref linkend=\"sql-createrole\">.</xref>"
+msgstr ""
+
+#: xml/ref/createuser.xml:340(option)
+msgid "-?"
+msgstr ""
+
+#: xml/ref/createuser.xml:343(option)
+msgid "--help"
+msgstr ""
+
+#: xml/ref/createuser.xml:346(para)
+msgid "Show help about <application>createuser</application>command line arguments, and exit."
+msgstr ""
+
+#: xml/ref/createuser.xml:58(para)
+msgid "<application>createuser</application>accepts the following command-line arguments: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/createuser.xml:359(replaceable) xml/ref/createuser.xml:364(replaceable)
+msgid "host"
+msgstr ""
+
+#: xml/ref/createuser.xml:358(option)
+msgid "-h <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/createuser.xml:363(option)
+msgid "--host= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/createuser.xml:368(para)
+msgid "Specifies the host name of the machine on which the server is running. If the value begins with a slash, it is used as the directory for the Unix domain socket."
+msgstr ""
+
+#: xml/ref/createuser.xml:377(replaceable) xml/ref/createuser.xml:382(replaceable)
+msgid "port"
+msgstr ""
+
+#: xml/ref/createuser.xml:376(option)
+msgid "-p <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/createuser.xml:381(option)
+msgid "--port= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/createuser.xml:386(para)
+msgid "Specifies the TCP port or local Unix domain socket file extension on which the server is listening for connections."
+msgstr ""
+
+#: xml/ref/createuser.xml:393(option)
+msgid "-U <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/createuser.xml:398(option)
+msgid "--username= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/createuser.xml:403(para)
+msgid "User name to connect as (not the user name to create)."
+msgstr ""
+
+#: xml/ref/createuser.xml:409(option)
+msgid "-w"
+msgstr ""
+
+#: xml/ref/createuser.xml:412(option)
+msgid "--no-password"
+msgstr ""
+
+#: xml/ref/createuser.xml:415(para)
+msgid "Never issue a password prompt. If the server requires password authentication and a password is not available by other means such as a <filename>.pgpass</filename>file, the connection attempt will fail. This option can be useful in batch jobs and scripts where no user is present to enter a password."
+msgstr ""
+
+#: xml/ref/createuser.xml:426(option)
+msgid "-W"
+msgstr ""
+
+#: xml/ref/createuser.xml:429(option)
+msgid "--password"
+msgstr ""
+
+#: xml/ref/createuser.xml:432(para)
+msgid "Force <application>createuser</application>to prompt for a password (for connecting to the server, not for the password of the new user)."
+msgstr ""
+
+#: xml/ref/createuser.xml:436(para)
+msgid "This option is never essential, since <application>createuser</application>will automatically prompt for a password if the server demands password authentication. However, <application>createuser</application>will waste a connection attempt finding out that the server wants a password. In some cases it is worth typing <option>-W</option>to avoid the extra connection attempt."
+msgstr ""
+
+#: xml/ref/createuser.xml:352(para)
+msgid "<application>createuser</application>also accepts the following command-line arguments for connection parameters: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/createuser.xml:450(title)
+msgid "Environment"
+msgstr ""
+
+#: xml/ref/createuser.xml:454(envar)
+msgid "PGHOST"
+msgstr ""
+
+#: xml/ref/createuser.xml:457(envar)
+msgid "PGPORT"
+msgstr ""
+
+#: xml/ref/createuser.xml:460(envar)
+msgid "PGUSER"
+msgstr ""
+
+#: xml/ref/createuser.xml:463(para)
+msgid "Default connection parameters"
+msgstr ""
+
+#: xml/ref/createuser.xml:467(para)
+msgid "This utility, like most other <productname>PostgreSQL</productname>utilities, also uses the environment variables supported by <application>libpq</application>(see <xref linkend=\"libpq-envars\">).</xref>"
+msgstr ""
+
+#: xml/ref/createuser.xml:474(title)
+msgid "Diagnostics"
+msgstr ""
+
+#: xml/ref/createuser.xml:475(para)
+msgid "In case of difficulty, see <xref linkend=\"SQL-CREATEROLE\">and <xref linkend=\"APP-PSQL\">for discussions of potential problems and error messages. The database server must be running at the targeted host. Also, any default connection settings and environment variables used by the <application>libpq</application>front-end library will apply.</xref></xref>"
+msgstr ""
+
+#: xml/ref/createuser.xml:485(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/createuser.xml:486(para)
+msgid "To create a user <literal>joe</literal>on the default database server: <screen>\n      <prompt>$</prompt>\n      <userinput>createuser joe</userinput>\n    </screen>"
+msgstr ""
+
+#: xml/ref/createuser.xml:492(para)
+msgid "To create a user <literal>joe</literal>on the default database server with prompting for some additional attributes: <screen>\n      <prompt>$</prompt>\n      <userinput>createuser --interactive joe</userinput>\n      <computeroutput>Shall the new role be a superuser?\n      (y/n)</computeroutput>\n      <userinput>n</userinput>\n      <computeroutput>Shall the new role be allowed to create\n      databases? (y/n)</computeroutput>\n      <userinput>n</userinput>\n      <computeroutput>Shall the new role be allowed to create more\n      new roles? (y/n)</computeroutput>\n      <userinput>n</userinput>\n    </screen>"
+msgstr ""
+
+#: xml/ref/createuser.xml:508(para)
+msgid "To create the same user <literal>joe</literal>using the server on host <literal>eden</literal>, port 5000, with attributes explicitly specified, taking a look at the underlying command: <screen>\n      <prompt>$</prompt>\n      <userinput>createuser -h eden -p 5000 -S -D -R -e\n      joe</userinput>\n      <computeroutput>CREATE ROLE joe NOSUPERUSER NOCREATEDB\n      NOCREATEROLE INHERIT LOGIN;</computeroutput>\n    </screen>"
+msgstr ""
+
+#: xml/ref/createuser.xml:519(para)
+msgid "To create the user <literal>joe</literal>as a superuser, and assign a password immediately: <screen>\n      <prompt>$</prompt>\n      <userinput>createuser -P -s -e joe</userinput>\n      <computeroutput>Enter password for new role:</computeroutput>\n      <userinput>xyzzy</userinput>\n      <computeroutput>Enter it again:</computeroutput>\n      <userinput>xyzzy</userinput>\n      <computeroutput>CREATE ROLE joe PASSWORD\n      'md5b5f5ba1a423792b526f799ae4eb3d59e' SUPERUSER CREATEDB\n      CREATEROLE INHERIT LOGIN;</computeroutput>\n    </screen>In the above example, the new password isn't actually echoed when typed, but we show what was typed for clarity. As you see, the password is encrypted before it is sent to the client. If the option <option>--unencrypted</option>is used, the password <emphasis>will</emphasis>appear in the echoed command (and possibly also in the server log and elsewhere), so you don't want to use <option>-e</option>in that case, if anyone else can see your screen."
+msgstr ""
+
+#: xml/ref/createuser.xml:544(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/createuser.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

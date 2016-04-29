@@ -1,0 +1,516 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/pg_ctl-ref.xml:4(primary) xml/ref/pg_ctl-ref.xml:8(application) xml/ref/pg_ctl-ref.xml:14(refname) xml/ref/pg_ctl-ref.xml:20(command) xml/ref/pg_ctl-ref.xml:37(command) xml/ref/pg_ctl-ref.xml:72(command) xml/ref/pg_ctl-ref.xml:106(command) xml/ref/pg_ctl-ref.xml:147(command) xml/ref/pg_ctl-ref.xml:160(command) xml/ref/pg_ctl-ref.xml:170(command) xml/ref/pg_ctl-ref.xml:183(command) xml/ref/pg_ctl-ref.xml:195(command) xml/ref/pg_ctl-ref.xml:242(command)
+msgid "pg_ctl"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:10(manvolnum)
+msgid "1"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:11(refmiscinfo)
+msgid "Application"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:16(productname)
+msgid "PostgreSQL"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:15(refpurpose)
+msgid "initialize, start, stop, or control a <placeholder-1/>server"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:22(option)
+msgid "init[db]"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:25(option) xml/ref/pg_ctl-ref.xml:49(option) xml/ref/pg_ctl-ref.xml:84(option) xml/ref/pg_ctl-ref.xml:118(option) xml/ref/pg_ctl-ref.xml:152(option) xml/ref/pg_ctl-ref.xml:175(option) xml/ref/pg_ctl-ref.xml:234(option) xml/ref/pg_ctl-ref.xml:495(option)
+msgid "-s"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:28(option) xml/ref/pg_ctl-ref.xml:52(option) xml/ref/pg_ctl-ref.xml:87(option) xml/ref/pg_ctl-ref.xml:121(option) xml/ref/pg_ctl-ref.xml:155(option) xml/ref/pg_ctl-ref.xml:165(option) xml/ref/pg_ctl-ref.xml:178(option) xml/ref/pg_ctl-ref.xml:212(option)
+msgid "-D"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:29(replaceable) xml/ref/pg_ctl-ref.xml:53(replaceable) xml/ref/pg_ctl-ref.xml:88(replaceable) xml/ref/pg_ctl-ref.xml:122(replaceable) xml/ref/pg_ctl-ref.xml:156(replaceable) xml/ref/pg_ctl-ref.xml:166(replaceable) xml/ref/pg_ctl-ref.xml:179(replaceable) xml/ref/pg_ctl-ref.xml:213(replaceable) xml/ref/pg_ctl-ref.xml:385(replaceable) xml/ref/pg_ctl-ref.xml:390(replaceable)
+msgid "datadir"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:32(option) xml/ref/pg_ctl-ref.xml:60(option) xml/ref/pg_ctl-ref.xml:142(option) xml/ref/pg_ctl-ref.xml:237(option)
+msgid "-o"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:33(replaceable) xml/ref/pg_ctl-ref.xml:459(replaceable)
+msgid "initdb-options"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:39(option)
+msgid "start"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:42(option) xml/ref/pg_ctl-ref.xml:111(option) xml/ref/pg_ctl-ref.xml:227(option) xml/ref/pg_ctl-ref.xml:532(option)
+msgid "-w"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:45(option) xml/ref/pg_ctl-ref.xml:80(option) xml/ref/pg_ctl-ref.xml:114(option) xml/ref/pg_ctl-ref.xml:230(option) xml/ref/pg_ctl-ref.xml:507(option)
+msgid "-t"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:46(replaceable) xml/ref/pg_ctl-ref.xml:81(replaceable) xml/ref/pg_ctl-ref.xml:115(replaceable) xml/ref/pg_ctl-ref.xml:231(replaceable)
+msgid "seconds"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:56(option)
+msgid "-l"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:57(replaceable) xml/ref/pg_ctl-ref.xml:403(replaceable) xml/ref/pg_ctl-ref.xml:408(replaceable)
+msgid "filename"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:61(replaceable) xml/ref/pg_ctl-ref.xml:143(replaceable) xml/ref/pg_ctl-ref.xml:238(replaceable) xml/ref/pg_ctl-ref.xml:444(replaceable)
+msgid "options"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:64(option)
+msgid "-p"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:65(replaceable) xml/ref/pg_ctl-ref.xml:473(replaceable)
+msgid "path"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:68(option) xml/ref/pg_ctl-ref.xml:125(option) xml/ref/pg_ctl-ref.xml:368(option)
+msgid "-c"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:74(option)
+msgid "stop"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:77(option) xml/ref/pg_ctl-ref.xml:551(option)
+msgid "-W"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:91(option) xml/ref/pg_ctl-ref.xml:128(option)
+msgid "-m"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:94(option) xml/ref/pg_ctl-ref.xml:131(option)
+msgid "s[mart]"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:97(option) xml/ref/pg_ctl-ref.xml:134(option)
+msgid "f[ast]"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:100(option) xml/ref/pg_ctl-ref.xml:137(option)
+msgid "i[mmediate]"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:108(option)
+msgid "restart"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:149(option)
+msgid "reload"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:162(option)
+msgid "status"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:172(option)
+msgid "promote"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:185(option)
+msgid "kill"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:188(replaceable)
+msgid "signal_name"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:191(replaceable)
+msgid "process_id"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:197(option)
+msgid "register"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:200(option) xml/ref/pg_ctl-ref.xml:247(option)
+msgid "-N"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:201(replaceable) xml/ref/pg_ctl-ref.xml:248(replaceable) xml/ref/pg_ctl-ref.xml:599(replaceable)
+msgid "servicename"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:204(option)
+msgid "-U"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:205(replaceable) xml/ref/pg_ctl-ref.xml:637(replaceable)
+msgid "username"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:208(option)
+msgid "-P"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:209(replaceable) xml/ref/pg_ctl-ref.xml:611(replaceable)
+msgid "password"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:216(option)
+msgid "-S"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:219(option)
+msgid "a[uto]"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:222(option)
+msgid "d[emand]"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:244(option)
+msgid "unregister"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:253(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:254(para)
+msgid "<application>pg_ctl</application>is a utility for initializing a <productname>PostgreSQL</productname>database cluster, starting, stopping, or restarting the <productname>PostgreSQL</productname>database server ( <xref linkend=\"app-postgres\">), or displaying the status of a running server. Although the server can be started manually, <application>pg_ctl</application>encapsulates tasks such as redirecting log output and properly detaching from the terminal and process group. It also provides convenient options for controlled shutdown.</xref>"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:266(para)
+msgid "The <option>init</option>or <option>initdb</option>mode creates a new <productname>PostgreSQL</productname>database cluster. A database cluster is a collection of databases that are managed by a single server instance. This mode invokes the <command>initdb</command>command. See <xref linkend=\"app-initdb\">for details.</xref>"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:274(para)
+msgid "In <option>start</option>mode, a new server is launched. The server is started in the background, and its standard input is attached to <filename>/dev/null</filename>(or <literal>nul</literal>on Windows). On Unix-like systems, by default, the server's standard output and standard error are sent to <application>pg_ctl</application>'s standard output (not standard error). The standard output of <application>pg_ctl</application>should then be redirected to a file or piped to another process such as a log rotating program like <application>rotatelogs</application>; otherwise <command>postgres</command>will write its output to the controlling terminal (from the background) and will not leave the shell's process group. On Windows, by default the server's standard output and standard error are sent to the terminal. These default behaviors can be changed by using <option>-l</option>to append the server's output to a log file. Use of either <option>-l</option>or output redirection is recommended."
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:296(para)
+msgid "In <option>stop</option>mode, the server that is running in the specified data directory is shut down. Three different shutdown methods can be selected with the <option>-m</option>option. <quote>Smart</quote>mode waits for all active clients to disconnect and any online backup to finish. If the server is in hot standby, recovery and streaming replication will be terminated once all clients have disconnected. <quote>Fast</quote>mode (the default) does not wait for clients to disconnect and will terminate an online backup in progress. All active transactions are rolled back and clients are forcibly disconnected, then the server is shut down. <quote>Immediate</quote>mode will abort all server processes immediately, without a clean shutdown. This will lead to a crash-recovery run on the next restart."
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:312(para)
+msgid "<option>restart</option>mode effectively executes a stop followed by a start. This allows changing the <command>postgres</command>command-line options. <option>restart</option>might fail if relative paths specified were specified on the command-line during server start."
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:318(para)
+msgid "<option>reload</option>mode simply sends the <command>postgres</command>process a <systemitem>SIGHUP</systemitem>signal, causing it to reread its configuration files ( <filename>postgresql.conf</filename>, <filename>pg_hba.conf</filename>, etc.). This allows changing of configuration-file options that do not require a complete restart to take effect."
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:327(para)
+msgid "<option>status</option>mode checks whether a server is running in the specified data directory. If it is, the <acronym>PID</acronym>and the command line options that were used to invoke it are displayed. If the server is not running, the process returns an exit status of 3. If an accessible data directory is not specified, the process returns an exit status of 4."
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:335(para)
+msgid "In <option>promote</option>mode, the standby server that is running in the specified data directory is commanded to exit recovery and begin read-write operations."
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:339(para)
+msgid "<option>kill</option>mode allows you to send a signal to a specified process. This is particularly valuable for <productname>Microsoft Windows</productname>which does not have a <application>kill</application>command. Use <literal>--help</literal>to see a list of supported signal names."
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:347(para)
+msgid "<option>register</option>mode allows you to register a system service on <productname>Microsoft Windows</productname>. The <option>-S</option>option allows selection of service start type, either <quote>auto</quote>(start service automatically on system startup) or <quote>demand</quote>(start service on demand)."
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:356(para)
+msgid "<option>unregister</option>mode allows you to unregister a system service on <productname>Microsoft Windows</productname>. This undoes the effects of the <option>register</option>command."
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:364(title)
+msgid "Options"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:371(option)
+msgid "--core-file"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:374(para)
+msgid "Attempt to allow server crashes to produce core files, on platforms where this is possible, by lifting any soft resource limit placed on core files. This is useful in debugging or diagnosing problems by allowing a stack trace to be obtained from a failed server process."
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:384(option)
+msgid "-D <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:389(option)
+msgid "--pgdata <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:394(para)
+msgid "Specifies the file system location of the database configuration files. If this is omitted, the environment variable <envar>PGDATA</envar>is used."
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:402(option)
+msgid "-l <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:407(option)
+msgid "--log <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:412(para)
+msgid "Append the server log output to <replaceable>filename</replaceable>. If the file does not exist, it is created. The <systemitem>umask</systemitem>is set to 077, so access to the log file is disallowed to other users by default."
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:423(replaceable) xml/ref/pg_ctl-ref.xml:428(replaceable)
+msgid "mode"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:422(option)
+msgid "-m <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:427(option)
+msgid "--mode <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:432(para)
+msgid "Specifies the shutdown mode. <replaceable>mode</replaceable>can be <literal>smart</literal>, <literal>fast</literal>, or <literal>immediate</literal>, or the first letter of one of these three. If this is omitted, <literal>fast</literal>is used."
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:443(option) xml/ref/pg_ctl-ref.xml:458(option)
+msgid "-o <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:448(para)
+msgid "Specifies options to be passed directly to the <command>postgres</command>command; multiple option invocations are appended."
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:451(para) xml/ref/pg_ctl-ref.xml:465(para)
+msgid "The options should usually be surrounded by single or double quotes to ensure that they are passed through as a group."
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:463(para)
+msgid "Specifies options to be passed directly to the <command>initdb</command>command."
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:472(option)
+msgid "-p <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:477(para)
+msgid "Specifies the location of the <filename>postgres</filename>executable. By default the <filename>postgres</filename>executable is taken from the same directory as <command>pg_ctl</command>, or failing that, the hard-wired installation directory. It is not necessary to use this option unless you are doing something unusual and get errors that the <filename>postgres</filename>executable was not found."
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:487(para)
+msgid "In <literal>init</literal>mode, this option analogously specifies the location of the <filename>initdb</filename>executable."
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:498(option)
+msgid "--silent"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:501(para)
+msgid "Print only errors, no informational messages."
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:510(option)
+msgid "--timeout"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:513(para)
+msgid "The maximum number of seconds to wait when waiting for startup or shutdown to complete. The default is 60 seconds."
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:520(option)
+msgid "-V"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:523(option)
+msgid "--version"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:526(para)
+msgid "Print the <application>pg_ctl</application>version and exit."
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:535(para)
+msgid "Wait for the startup or shutdown to complete. Waiting is the default option for shutdowns, but not startups. When waiting for startup, <command>pg_ctl</command>repeatedly attempts to connect to the server. When waiting for shutdown, <command>pg_ctl</command>waits for the server to remove its <acronym>PID</acronym>file. This option allows the entry of an <acronym>SSL</acronym>passphrase on startup. <command>pg_ctl</command>returns an exit code based on the success of the startup or shutdown."
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:554(para)
+msgid "Do not wait for startup or shutdown to complete. This is the default for start and restart modes."
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:560(option)
+msgid "-?"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:563(option)
+msgid "--help"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:566(para)
+msgid "Show help about <application>pg_ctl</application>command line arguments, and exit."
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:573(title)
+msgid "Options for Windows"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:578(replaceable)
+msgid "source"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:577(option)
+msgid "-e <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:582(para)
+msgid "Name of the event source for <application>pg_ctl</application>to use for logging to the event log when running as a Windows service. The default is <literal>PostgreSQL</literal>. Note that this only controls the logging from <application>pg_ctl</application>itself; once started, the server will use the event source specified by <xref linkend=\"guc-event-source\">. Should the server fail during early startup, it might also log using the default event source <literal>PostgreSQL</literal>.</xref>"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:598(option)
+msgid "-N <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:603(para)
+msgid "Name of the system service to register. The name will be used as both the service name and the display name."
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:610(option)
+msgid "-P <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:615(para)
+msgid "Password for the user to start the service."
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:622(replaceable)
+msgid "start-type"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:621(option)
+msgid "-S <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:626(para)
+msgid "Start type of the system service to register. start-type can be <literal>auto</literal>, or <literal>demand</literal>, or the first letter of one of these two. If this is omitted, <literal>auto</literal>is used."
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:636(option)
+msgid "-U <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:641(para)
+msgid "User name for the user to start the service. For domain users, use the format <literal>DOMAIN\\username</literal>."
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:650(title)
+msgid "Environment"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:654(envar)
+msgid "PGDATA"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:657(para)
+msgid "Default data directory location."
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:661(para)
+msgid "<command>pg_ctl</command>, like most other <productname>PostgreSQL</productname>utilities, also uses the environment variables supported by <application>libpq</application>(see <xref linkend=\"libpq-envars\">). For additional server variables, see <xref linkend=\"app-postgres\">.</xref></xref>"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:671(title)
+msgid "Files"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:675(filename)
+msgid "postmaster.pid"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:678(para)
+msgid "The existence of this file in the data directory is used to help <application>pg_ctl</application>determine if the server is currently running."
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:686(filename)
+msgid "postmaster.opts"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:689(para)
+msgid "If this file exists in the data directory, <application>pg_ctl</application>(in <option>restart</option>mode) will pass the contents of the file as options to <application>postgres</application>, unless overridden by the <option>-o</option>option. The contents of this file are also displayed in <option>status</option>mode."
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:703(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:705(title)
+msgid "Starting the Server"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:706(para)
+msgid "To start the server: <screen>\n        <prompt>$</prompt>\n        <userinput>pg_ctl start</userinput>\n      </screen>"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:711(para)
+msgid "To start the server, waiting until the server is accepting connections: <screen>\n        <prompt>$</prompt>\n        <userinput>pg_ctl -w start</userinput>\n      </screen>"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:717(para)
+msgid "To start the server using port 5433, and running without <function>fsync</function>, use: <screen>\n        <prompt>$</prompt>\n        <userinput>pg_ctl -o \"-F -p 5433\" start</userinput>\n      </screen>"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:726(title)
+msgid "Stopping the Server"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:727(para)
+msgid "To stop the server, use: <screen>\n        <prompt>$</prompt>\n        <userinput>pg_ctl stop</userinput>\n      </screen>The <option>-m</option>option allows control over <emphasis>how</emphasis>the server shuts down: <screen>\n        <prompt>$</prompt>\n        <userinput>pg_ctl stop -m fast</userinput>\n      </screen>"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:740(title)
+msgid "Restarting the Server"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:741(para)
+msgid "Restarting the server is almost equivalent to stopping the server and starting it again, except that <command>pg_ctl</command>saves and reuses the command line options that were passed to the previously running instance. To restart the server in the simplest form, use: <screen>\n        <prompt>$</prompt>\n        <userinput>pg_ctl restart</userinput>\n      </screen>"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:750(para)
+msgid "To restart the server, waiting for it to shut down and restart: <screen>\n        <prompt>$</prompt>\n        <userinput>pg_ctl -w restart</userinput>\n      </screen>"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:756(para)
+msgid "To restart using port 5433, disabling <function>fsync</function>upon restart: <screen>\n        <prompt>$</prompt>\n        <userinput>pg_ctl -o \"-F -p 5433\" restart</userinput>\n      </screen>"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:764(title)
+msgid "Showing the Server Status"
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:765(para)
+msgid "Here is sample status output from <application>pg_ctl</application>: <screen>\n        <prompt>$</prompt>\n        <userinput>pg_ctl status</userinput>\n        <computeroutput>pg_ctl: server is running (PID: 13718)\n        /usr/local/pgsql/bin/postgres \"-D\" \"/usr/local/pgsql/data\"\n        \"-p\" \"5433\" \"-B\" \"128\"</computeroutput>\n      </screen>This is the command line that would be invoked in restart mode."
+msgstr ""
+
+#: xml/ref/pg_ctl-ref.xml:778(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/pg_ctl-ref.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

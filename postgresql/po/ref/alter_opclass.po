@@ -1,0 +1,105 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/alter_opclass.xml:4(primary) xml/ref/alter_opclass.xml:7(refentrytitle) xml/ref/alter_opclass.xml:12(refname)
+msgid "ALTER OPERATOR CLASS"
+msgstr ""
+
+#: xml/ref/alter_opclass.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/alter_opclass.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/alter_opclass.xml:13(refpurpose)
+msgid "change the definition of an operator class"
+msgstr ""
+
+#: xml/ref/alter_opclass.xml:18(replaceable) xml/ref/alter_opclass.xml:22(replaceable) xml/ref/alter_opclass.xml:27(replaceable) xml/ref/alter_opclass.xml:52(replaceable)
+msgid "name"
+msgstr ""
+
+#: xml/ref/alter_opclass.xml:19(replaceable) xml/ref/alter_opclass.xml:23(replaceable) xml/ref/alter_opclass.xml:28(replaceable) xml/ref/alter_opclass.xml:61(replaceable)
+msgid "index_method"
+msgstr ""
+
+#: xml/ref/alter_opclass.xml:21(replaceable) xml/ref/alter_opclass.xml:70(replaceable)
+msgid "new_name"
+msgstr ""
+
+#: xml/ref/alter_opclass.xml:25(replaceable) xml/ref/alter_opclass.xml:78(replaceable)
+msgid "new_owner"
+msgstr ""
+
+#: xml/ref/alter_opclass.xml:30(replaceable) xml/ref/alter_opclass.xml:86(replaceable)
+msgid "new_schema"
+msgstr ""
+
+#: xml/ref/alter_opclass.xml:17(synopsis)
+#, no-wrap
+msgid "ALTER OPERATOR CLASS \n    <placeholder-1/>USING \n    <placeholder-2/>RENAME\n    TO \n    <placeholder-3/>ALTER OPERATOR CLASS \n    <placeholder-4/>USING \n    <placeholder-5/>OWNER\n    TO { \n    <placeholder-6/>| CURRENT_USER |\n    SESSION_USER } ALTER OPERATOR CLASS \n    <placeholder-7/>USING \n    <placeholder-8/>SET\n    SCHEMA \n    <placeholder-9/>"
+msgstr ""
+
+#: xml/ref/alter_opclass.xml:33(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/alter_opclass.xml:34(para)
+msgid "<command>ALTER OPERATOR CLASS</command>changes the definition of an operator class."
+msgstr ""
+
+#: xml/ref/alter_opclass.xml:37(para)
+msgid "You must own the operator class to use <command>ALTER OPERATOR CLASS</command>. To alter the owner, you must also be a direct or indirect member of the new owning role, and that role must have <literal>CREATE</literal>privilege on the operator class's schema. (These restrictions enforce that altering the owner doesn't do anything you couldn't do by dropping and recreating the operator class. However, a superuser can alter ownership of any operator class anyway.)"
+msgstr ""
+
+#: xml/ref/alter_opclass.xml:48(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/alter_opclass.xml:55(para)
+msgid "The name (optionally schema-qualified) of an existing operator class."
+msgstr ""
+
+#: xml/ref/alter_opclass.xml:64(para)
+msgid "The name of the index method this operator class is for."
+msgstr ""
+
+#: xml/ref/alter_opclass.xml:73(para)
+msgid "The new name of the operator class."
+msgstr ""
+
+#: xml/ref/alter_opclass.xml:81(para)
+msgid "The new owner of the operator class."
+msgstr ""
+
+#: xml/ref/alter_opclass.xml:89(para)
+msgid "The new schema for the operator class."
+msgstr ""
+
+#: xml/ref/alter_opclass.xml:95(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/alter_opclass.xml:96(para)
+msgid "There is no <command>ALTER OPERATOR CLASS</command>statement in the SQL standard."
+msgstr ""
+
+#: xml/ref/alter_opclass.xml:101(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/alter_opclass.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

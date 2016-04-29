@@ -1,0 +1,554 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:03+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ltree.xml:3(title) xml/ltree.xml:5(primary) xml/ltree.xml:203(type) xml/ltree.xml:205(type) xml/ltree.xml:215(type) xml/ltree.xml:217(type) xml/ltree.xml:227(type) xml/ltree.xml:235(type) xml/ltree.xml:242(type) xml/ltree.xml:248(type) xml/ltree.xml:253(type) xml/ltree.xml:261(type) xml/ltree.xml:268(type) xml/ltree.xml:274(type) xml/ltree.xml:279(type) xml/ltree.xml:287(type) xml/ltree.xml:294(type) xml/ltree.xml:300(type) xml/ltree.xml:305(type) xml/ltree.xml:307(type) xml/ltree.xml:310(type) xml/ltree.xml:313(type) xml/ltree.xml:317(type) xml/ltree.xml:322(type) xml/ltree.xml:325(type) xml/ltree.xml:331(type) xml/ltree.xml:334(type) xml/ltree.xml:337(type) xml/ltree.xml:343(type) xml/ltree.xml:349(type) xml/ltree.xml:353(type) xml/ltree.xml:361(type) xml/ltree.xml:367(type) xml/ltree.xml:373(type) xml/ltree.xml:377(type) xml/ltree.xml:385(type) xml/ltree.xml:421(type) xml/ltree.xml:434(type) xml/ltree.xml:465(type) xml/ltree.xml:468(type) xml/ltree.xml:471(type) xml/ltree.xml:477(type) xml/ltree.xml:480(type) xml/ltree.xml:483(type) xml/ltree.xml:492(type) xml/ltree.xml:504(type) xml/ltree.xml:547(type) xml/ltree.xml:550(type) xml/ltree.xml:569(type) xml/ltree.xml:572(type) xml/ltree.xml:591(type) xml/ltree.xml:594(type) xml/ltree.xml:676(type) xml/ltree.xml:680(type) xml/ltree.xml:699(type) xml/ltree.xml:716(type) xml/ltree.xml:732(type)
+msgid "ltree"
+msgstr ""
+
+#: xml/ltree.xml:7(para)
+msgid "This module implements a data type <type>ltree</type>for representing labels of data stored in a hierarchical tree-like structure. Extensive facilities for searching through label trees are provided."
+msgstr ""
+
+#: xml/ltree.xml:12(title)
+msgid "Definitions"
+msgstr ""
+
+#: xml/ltree.xml:13(para)
+msgid "A <firstterm>label</firstterm>is a sequence of alphanumeric characters and underscores (for example, in C locale the characters <literal>A-Za-z0-9_</literal>are allowed). Labels must be less than 256 bytes long."
+msgstr ""
+
+#: xml/ltree.xml:19(para)
+msgid "Examples: <literal>42</literal>, <literal>Personal_Services</literal>"
+msgstr ""
+
+#: xml/ltree.xml:22(para)
+msgid "A <firstterm>label path</firstterm>is a sequence of zero or more labels separated by dots, for example <literal>L1.L2.L3</literal>, representing a path from the root of a hierarchical tree to a particular node. The length of a label path must be less than 65Kb, but keeping it under 2Kb is preferable. In practice this is not a major limitation; for example, the longest label path in the DMOZ catalog ( <ulink url=\"http://www.dmoz.org\"/>) is about 240 bytes."
+msgstr ""
+
+#: xml/ltree.xml:32(para)
+msgid "Example: <literal>Top.Countries.Europe.Russia</literal>"
+msgstr ""
+
+#: xml/ltree.xml:34(para)
+msgid "The <filename>ltree</filename>module provides several data types:"
+msgstr ""
+
+#: xml/ltree.xml:39(para)
+msgid "<type>ltree</type>stores a label path."
+msgstr ""
+
+#: xml/ltree.xml:43(para)
+msgid "<type>lquery</type>represents a regular-expression-like pattern for matching <type>ltree</type>values. A simple word matches that label within a path. A star symbol ( <literal>*</literal>) matches zero or more labels. For example: <synopsis>foo \n        <lineannotation>Match the exact label path \n        <literal>foo</literal></lineannotation>*.foo.* \n        <lineannotation>Match any label path containing the label \n        <literal>foo</literal></lineannotation>*.foo \n        <lineannotation>Match any label path whose last label is \n        <literal>foo</literal></lineannotation></synopsis>"
+msgstr ""
+
+#: xml/ltree.xml:57(para)
+msgid "Star symbols can also be quantified to restrict how many labels they can match: <synopsis>*{ \n        <replaceable>n</replaceable>} \n        <lineannotation>Match exactly \n        <replaceable>n</replaceable>labels</lineannotation>*{ \n        <replaceable>n</replaceable>,} \n        <lineannotation>Match at least \n        <replaceable>n</replaceable>labels</lineannotation>*{ \n        <replaceable>n</replaceable>, \n        <replaceable>m</replaceable>} \n        <lineannotation>Match at least \n        <replaceable>n</replaceable>but not more than \n        <replaceable>m</replaceable>labels</lineannotation>*{, \n        <replaceable>m</replaceable>} \n        <lineannotation>Match at most \n        <replaceable>m</replaceable>labels same\n        as</lineannotation>*{0, \n        <replaceable>m</replaceable>}</synopsis>"
+msgstr ""
+
+#: xml/ltree.xml:76(para)
+msgid "There are several modifiers that can be put at the end of a non-star label in <type>lquery</type>to make it match more than just the exact match: <synopsis>@ \n        <lineannotation>Match case-insensitively, for example \n        <literal>a@</literal>matches \n        <literal>A</literal></lineannotation>* \n        <lineannotation>Match any label with this prefix, for\n        example \n        <literal>foo*</literal>matches \n        <literal>foobar</literal></lineannotation>% \n        <lineannotation>Match initial underscore-separated\n        words</lineannotation></synopsis>The behavior of <literal>%</literal>is a bit complicated. It tries to match words rather than the entire label. For example <literal>foo_bar%</literal>matches <literal>foo_bar_baz</literal>but not <literal>foo_barbaz</literal>. If combined with <literal>*</literal>, prefix matching applies to each word separately, for example <literal>foo_bar%*</literal>matches <literal>foo1_bar2_baz</literal>but not <literal>foo1_br2_baz</literal>."
+msgstr ""
+
+#: xml/ltree.xml:100(para)
+msgid "Also, you can write several possibly-modified labels separated with <literal>|</literal>(OR) to match any of those labels, and you can put <literal>!</literal>(NOT) at the start to match any label that doesn't match any of the alternatives."
+msgstr ""
+
+#: xml/ltree.xml:108(programlisting)
+#, no-wrap
+msgid "\n        Top.*{0,2}.sport*@.!football|tennis.Russ*|Spain a. b. c. d.\n        e."
+msgstr ""
+
+#: xml/ltree.xml:106(para)
+msgid "Here's an annotated example of <type>lquery</type>: <placeholder-1/>This query will match any label path that:"
+msgstr ""
+
+#: xml/ltree.xml:114(para)
+msgid "begins with the label <literal>Top</literal>"
+msgstr ""
+
+#: xml/ltree.xml:118(para)
+msgid "and next has zero to two labels before"
+msgstr ""
+
+#: xml/ltree.xml:121(para)
+msgid "a label beginning with the case-insensitive prefix <literal>sport</literal>"
+msgstr ""
+
+#: xml/ltree.xml:126(para)
+msgid "then a label not matching <literal>football</literal>nor <literal>tennis</literal>"
+msgstr ""
+
+#: xml/ltree.xml:131(para)
+msgid "and then ends with a label beginning with <literal>Russ</literal>or exactly matching <literal>Spain</literal>."
+msgstr ""
+
+#: xml/ltree.xml:138(para)
+msgid "<type>ltxtquery</type>represents a full-text-search-like pattern for matching <type>ltree</type>values. An <type>ltxtquery</type>value contains words, possibly with the modifiers <literal>@</literal>, <literal>*</literal>, <literal>%</literal>at the end; the modifiers have the same meanings as in <type>lquery</type>. Words can be combined with <literal/>(AND), <literal>|</literal>(OR), <literal>!</literal>(NOT), and parentheses. The key difference from <type>lquery</type>is that <type>ltxtquery</type>matches words without regard to their position in the label path."
+msgstr ""
+
+#: xml/ltree.xml:158(programlisting)
+#, no-wrap
+msgid "Europe Russia*@\n        !Transportation"
+msgstr ""
+
+#: xml/ltree.xml:156(para)
+msgid "Here's an example <type>ltxtquery</type>: <placeholder-1/>This will match paths that contain the label <literal>Europe</literal>and any label beginning with <literal>Russia</literal>(case-insensitive), but not paths containing the label <literal>Transportation</literal>. The location of these words within the path is not important. Also, when <literal>%</literal>is used, the word can be matched to any underscore-separated word within a label, regardless of position."
+msgstr ""
+
+#: xml/ltree.xml:171(para)
+msgid "Note: <type>ltxtquery</type>allows whitespace between symbols, but <type>ltree</type>and <type>lquery</type>do not."
+msgstr ""
+
+#: xml/ltree.xml:177(title)
+msgid "Operators and Functions"
+msgstr ""
+
+#: xml/ltree.xml:178(para)
+msgid "Type <type>ltree</type>has the usual comparison operators <literal>=</literal>, <literal/>, <literal/>, <literal/>, <literal>=</literal>, <literal>=</literal>. Comparison sorts in the order of a tree traversal, with the children of a node sorted by label text. In addition, the specialized operators shown in <xref linkend=\"ltree-op-table\">are available.</xref>"
+msgstr ""
+
+#: xml/ltree.xml:190(title)
+msgid "<type>ltree</type>Operators"
+msgstr ""
+
+#: xml/ltree.xml:195(entry)
+msgid "Operator"
+msgstr ""
+
+#: xml/ltree.xml:196(entry)
+msgid "Returns"
+msgstr ""
+
+#: xml/ltree.xml:197(entry) xml/ltree.xml:532(entry)
+msgid "Description"
+msgstr ""
+
+#: xml/ltree.xml:204(literal) xml/ltree.xml:216(literal) xml/ltree.xml:280(literal) xml/ltree.xml:293(literal) xml/ltree.xml:342(literal) xml/ltree.xml:354(literal) xml/ltree.xml:366(literal) xml/ltree.xml:378(literal) xml/ltree.xml:440(literal) xml/ltree.xml:452(literal)
+msgid "@"
+msgstr ""
+
+#: xml/ltree.xml:208(type) xml/ltree.xml:220(type) xml/ltree.xml:232(type) xml/ltree.xml:245(type) xml/ltree.xml:258(type) xml/ltree.xml:271(type) xml/ltree.xml:284(type) xml/ltree.xml:297(type) xml/ltree.xml:346(type) xml/ltree.xml:358(type) xml/ltree.xml:370(type) xml/ltree.xml:382(type) xml/ltree.xml:394(type) xml/ltree.xml:406(type) xml/ltree.xml:418(type) xml/ltree.xml:431(type) xml/ltree.xml:444(type) xml/ltree.xml:456(type)
+msgid "boolean"
+msgstr ""
+
+#: xml/ltree.xml:210(entry)
+msgid "is left argument an ancestor of right (or equal)?"
+msgstr ""
+
+#: xml/ltree.xml:222(entry)
+msgid "is left argument a descendant of right (or equal)?"
+msgstr ""
+
+#: xml/ltree.xml:228(literal) xml/ltree.xml:241(literal) xml/ltree.xml:390(literal) xml/ltree.xml:402(literal)
+msgid "~"
+msgstr ""
+
+#: xml/ltree.xml:229(type) xml/ltree.xml:236(type) xml/ltree.xml:240(type) xml/ltree.xml:249(type) xml/ltree.xml:262(type) xml/ltree.xml:275(type) xml/ltree.xml:391(type) xml/ltree.xml:397(type) xml/ltree.xml:401(type) xml/ltree.xml:409(type) xml/ltree.xml:422(type) xml/ltree.xml:435(type) xml/ltree.xml:489(type) xml/ltree.xml:495(type)
+msgid "lquery"
+msgstr ""
+
+#: xml/ltree.xml:234(entry) xml/ltree.xml:247(entry) xml/ltree.xml:286(entry) xml/ltree.xml:299(entry)
+msgid "does <placeholder-1/>match <placeholder-2/>?"
+msgstr ""
+
+#: xml/ltree.xml:254(literal) xml/ltree.xml:267(literal) xml/ltree.xml:414(literal) xml/ltree.xml:427(literal)
+msgid "?"
+msgstr ""
+
+#: xml/ltree.xml:255(type) xml/ltree.xml:266(type) xml/ltree.xml:415(type) xml/ltree.xml:426(type)
+msgid "lquery[]"
+msgstr ""
+
+#: xml/ltree.xml:260(entry) xml/ltree.xml:273(entry)
+msgid "does <placeholder-1/>match any <placeholder-2/>in array?"
+msgstr ""
+
+#: xml/ltree.xml:281(type) xml/ltree.xml:288(type) xml/ltree.xml:292(type) xml/ltree.xml:301(type) xml/ltree.xml:441(type) xml/ltree.xml:447(type) xml/ltree.xml:451(type) xml/ltree.xml:459(type) xml/ltree.xml:501(type) xml/ltree.xml:507(type)
+msgid "ltxtquery"
+msgstr ""
+
+#: xml/ltree.xml:306(literal) xml/ltree.xml:318(literal) xml/ltree.xml:330(literal)
+msgid "||"
+msgstr ""
+
+#: xml/ltree.xml:312(entry)
+msgid "concatenate <placeholder-1/>paths"
+msgstr ""
+
+#: xml/ltree.xml:319(type) xml/ltree.xml:329(type) xml/ltree.xml:679(type) xml/ltree.xml:696(type) xml/ltree.xml:700(type)
+msgid "text"
+msgstr ""
+
+#: xml/ltree.xml:324(entry) xml/ltree.xml:336(entry)
+msgid "convert text to <placeholder-1/>and concatenate"
+msgstr ""
+
+#: xml/ltree.xml:341(type) xml/ltree.xml:355(type) xml/ltree.xml:365(type) xml/ltree.xml:379(type) xml/ltree.xml:389(type) xml/ltree.xml:403(type) xml/ltree.xml:413(type) xml/ltree.xml:428(type) xml/ltree.xml:439(type) xml/ltree.xml:453(type) xml/ltree.xml:463(type) xml/ltree.xml:475(type) xml/ltree.xml:487(type) xml/ltree.xml:499(type)
+msgid "ltree[]"
+msgstr ""
+
+#: xml/ltree.xml:348(entry) xml/ltree.xml:360(entry)
+msgid "does array contain an ancestor of <placeholder-1/>?"
+msgstr ""
+
+#: xml/ltree.xml:372(entry) xml/ltree.xml:384(entry)
+msgid "does array contain a descendant of <placeholder-1/>?"
+msgstr ""
+
+#: xml/ltree.xml:396(entry) xml/ltree.xml:408(entry) xml/ltree.xml:446(entry) xml/ltree.xml:458(entry)
+msgid "does array contain any path matching <placeholder-1/>?"
+msgstr ""
+
+#: xml/ltree.xml:420(entry) xml/ltree.xml:433(entry)
+msgid "does <placeholder-1/>array contain any path matching any <placeholder-2/>?"
+msgstr ""
+
+#: xml/ltree.xml:464(literal) xml/ltree.xml:476(literal) xml/ltree.xml:500(literal)
+msgid "?@"
+msgstr ""
+
+#: xml/ltree.xml:470(entry)
+msgid "first array entry that is an ancestor of <placeholder-1/>; NULL if none"
+msgstr ""
+
+#: xml/ltree.xml:482(entry)
+msgid "first array entry that is a descendant of <placeholder-1/>; NULL if none"
+msgstr ""
+
+#: xml/ltree.xml:488(literal)
+msgid "?~"
+msgstr ""
+
+#: xml/ltree.xml:494(entry) xml/ltree.xml:506(entry)
+msgid "first array entry that matches <placeholder-1/>; NULL if none"
+msgstr ""
+
+#: xml/ltree.xml:512(para)
+msgid "The operators <literal>@</literal>, <literal>@</literal>, <literal>@</literal>and <literal>~</literal>have analogues <literal>^@</literal>, <literal>^@</literal>, <literal>^@</literal>, <literal>^~</literal>, which are the same except they do not use indexes. These are useful only for testing purposes."
+msgstr ""
+
+#: xml/ltree.xml:522(para)
+msgid "The available functions are shown in <xref linkend=\"ltree-func-table\">.</xref>"
+msgstr ""
+
+#: xml/ltree.xml:525(title)
+msgid "<type>ltree</type>Functions"
+msgstr ""
+
+#: xml/ltree.xml:530(entry)
+msgid "Function"
+msgstr ""
+
+#: xml/ltree.xml:531(entry)
+msgid "Return Type"
+msgstr ""
+
+#: xml/ltree.xml:533(entry) xml/ltree.xml:796(title)
+msgid "Example"
+msgstr ""
+
+#: xml/ltree.xml:534(entry)
+msgid "Result"
+msgstr ""
+
+#: xml/ltree.xml:540(function)
+msgid "subltree(ltree, int start, int end)"
+msgstr ""
+
+#: xml/ltree.xml:543(primary)
+msgid "subltree"
+msgstr ""
+
+#: xml/ltree.xml:551(parameter)
+msgid "start"
+msgstr ""
+
+#: xml/ltree.xml:552(parameter)
+msgid "end"
+msgstr ""
+
+#: xml/ltree.xml:549(entry)
+msgid "subpath of <placeholder-1/>from position <placeholder-2/>to position <placeholder-3/>-1 (counting from 0)"
+msgstr ""
+
+#: xml/ltree.xml:554(literal)
+msgid "subltree('Top.Child1.Child2',1,2)"
+msgstr ""
+
+#: xml/ltree.xml:557(literal)
+msgid "Child1"
+msgstr ""
+
+#: xml/ltree.xml:562(function)
+msgid "subpath(ltree, int offset, int len)"
+msgstr ""
+
+#: xml/ltree.xml:565(primary)
+msgid "subpath"
+msgstr ""
+
+#: xml/ltree.xml:573(parameter) xml/ltree.xml:575(parameter) xml/ltree.xml:595(parameter) xml/ltree.xml:597(parameter) xml/ltree.xml:656(parameter) xml/ltree.xml:657(parameter)
+msgid "offset"
+msgstr ""
+
+#: xml/ltree.xml:574(parameter) xml/ltree.xml:577(parameter)
+msgid "len"
+msgstr ""
+
+#: xml/ltree.xml:571(entry)
+msgid "subpath of <placeholder-1/>starting at position <placeholder-2/>, length <placeholder-3/>. If <placeholder-4/>is negative, subpath starts that far from the end of the path. If <placeholder-5/>is negative, leaves that many labels off the end of the path."
+msgstr ""
+
+#: xml/ltree.xml:580(literal)
+msgid "subpath('Top.Child1.Child2',0,2)"
+msgstr ""
+
+#: xml/ltree.xml:583(literal)
+msgid "Top.Child1"
+msgstr ""
+
+#: xml/ltree.xml:588(function)
+msgid "subpath(ltree, int offset)"
+msgstr ""
+
+#: xml/ltree.xml:593(entry)
+msgid "subpath of <placeholder-1/>starting at position <placeholder-2/>, extending to end of path. If <placeholder-3/>is negative, subpath starts that far from the end of the path."
+msgstr ""
+
+#: xml/ltree.xml:600(literal)
+msgid "subpath('Top.Child1.Child2',1)"
+msgstr ""
+
+#: xml/ltree.xml:603(literal)
+msgid "Child1.Child2"
+msgstr ""
+
+#: xml/ltree.xml:608(function)
+msgid "nlevel(ltree)"
+msgstr ""
+
+#: xml/ltree.xml:610(primary)
+msgid "nlevel"
+msgstr ""
+
+#: xml/ltree.xml:614(type) xml/ltree.xml:632(type) xml/ltree.xml:651(type)
+msgid "integer"
+msgstr ""
+
+#: xml/ltree.xml:616(entry)
+msgid "number of labels in path"
+msgstr ""
+
+#: xml/ltree.xml:618(literal)
+msgid "nlevel('Top.Child1.Child2')"
+msgstr ""
+
+#: xml/ltree.xml:621(literal)
+msgid "3"
+msgstr ""
+
+#: xml/ltree.xml:626(function)
+msgid "index(ltree a, ltree b)"
+msgstr ""
+
+#: xml/ltree.xml:628(primary)
+msgid "index"
+msgstr ""
+
+#: xml/ltree.xml:635(parameter) xml/ltree.xml:654(parameter)
+msgid "b"
+msgstr ""
+
+#: xml/ltree.xml:636(parameter) xml/ltree.xml:655(parameter)
+msgid "a"
+msgstr ""
+
+#: xml/ltree.xml:634(entry)
+msgid "position of first occurrence of <placeholder-1/>in <placeholder-2/>; -1 if not found"
+msgstr ""
+
+#: xml/ltree.xml:638(literal)
+msgid "index('0.1.2.3.5.4.5.6.8.5.6.8','5.6')"
+msgstr ""
+
+#: xml/ltree.xml:642(literal)
+msgid "6"
+msgstr ""
+
+#: xml/ltree.xml:647(function)
+msgid "index(ltree a, ltree b, int offset)"
+msgstr ""
+
+#: xml/ltree.xml:658(parameter)
+msgid "-offset"
+msgstr ""
+
+#: xml/ltree.xml:653(entry)
+msgid "position of first occurrence of <placeholder-1/>in <placeholder-2/>, searching starting at <placeholder-3/>; negative <placeholder-4/>means start <placeholder-5/>labels from the end of the path"
+msgstr ""
+
+#: xml/ltree.xml:661(literal)
+msgid "index('0.1.2.3.5.4.5.6.8.5.6.8','5.6',-4)"
+msgstr ""
+
+#: xml/ltree.xml:665(literal)
+msgid "9"
+msgstr ""
+
+#: xml/ltree.xml:670(function)
+msgid "text2ltree(text)"
+msgstr ""
+
+#: xml/ltree.xml:672(primary)
+msgid "text2ltree"
+msgstr ""
+
+#: xml/ltree.xml:678(entry) xml/ltree.xml:698(entry)
+msgid "cast <placeholder-1/>to <placeholder-2/>"
+msgstr ""
+
+#: xml/ltree.xml:690(function)
+msgid "ltree2text(ltree)"
+msgstr ""
+
+#: xml/ltree.xml:692(primary)
+msgid "ltree2text"
+msgstr ""
+
+#: xml/ltree.xml:710(function)
+msgid "lca(ltree, ltree, ...)"
+msgstr ""
+
+#: xml/ltree.xml:712(primary)
+msgid "lca"
+msgstr ""
+
+#: xml/ltree.xml:718(entry)
+msgid "lowest common ancestor, i.e., longest common prefix of paths (up to 8 arguments supported)"
+msgstr ""
+
+#: xml/ltree.xml:721(literal)
+msgid "lca('1.2.2.3','1.2.3.4.5.6')"
+msgstr ""
+
+#: xml/ltree.xml:724(literal) xml/ltree.xml:741(literal)
+msgid "1.2"
+msgstr ""
+
+#: xml/ltree.xml:729(function)
+msgid "lca(ltree[])"
+msgstr ""
+
+#: xml/ltree.xml:734(entry)
+msgid "lowest common ancestor, i.e., longest common prefix of paths"
+msgstr ""
+
+#: xml/ltree.xml:737(literal)
+msgid "lca(array['1.2.2.3'::ltree,'1.2.3'])"
+msgstr ""
+
+#: xml/ltree.xml:749(title)
+msgid "Indexes"
+msgstr ""
+
+#: xml/ltree.xml:750(para)
+msgid "<filename>ltree</filename>supports several types of indexes that can speed up the indicated operators:"
+msgstr ""
+
+#: xml/ltree.xml:755(para)
+msgid "B-tree index over <type>ltree</type>: <literal/>, <literal>=</literal>, <literal>=</literal>, <literal>=</literal>, <literal/>"
+msgstr ""
+
+#: xml/ltree.xml:764(para)
+msgid "GiST index over <type>ltree</type>: <literal/>, <literal>=</literal>, <literal>=</literal>, <literal>=</literal>, <literal/>, <literal>@</literal>, <literal>@</literal>, <literal>@</literal>, <literal>~</literal>, <literal>?</literal>"
+msgstr ""
+
+#: xml/ltree.xml:776(para) xml/ltree.xml:788(para)
+msgid "Example of creating such an index:"
+msgstr ""
+
+#: xml/ltree.xml:777(programlisting)
+#, no-wrap
+msgid "CREATE INDEX path_gist_idx ON test USING\n        GIST (path);"
+msgstr ""
+
+#: xml/ltree.xml:781(para)
+msgid "GiST index over <type>ltree[]</type>: <literal>ltree[] @ ltree</literal>, <literal>ltree @ ltree[]</literal>, <literal>@</literal>, <literal>~</literal>, <literal>?</literal>"
+msgstr ""
+
+#: xml/ltree.xml:789(programlisting)
+#, no-wrap
+msgid "CREATE INDEX path_gist_idx ON test USING\n        GIST (array_path);"
+msgstr ""
+
+#: xml/ltree.xml:791(para)
+msgid "Note: This index type is lossy."
+msgstr ""
+
+#: xml/ltree.xml:797(para)
+msgid "This example uses the following data (also available in file <filename>contrib/ltree/ltreetest.sql</filename>in the source distribution):"
+msgstr ""
+
+#: xml/ltree.xml:801(programlisting)
+#, no-wrap
+msgid "CREATE TABLE test (path ltree); INSERT INTO\n    test VALUES ('Top'); INSERT INTO test VALUES ('Top.Science');\n    INSERT INTO test VALUES ('Top.Science.Astronomy'); INSERT INTO\n    test VALUES ('Top.Science.Astronomy.Astrophysics'); INSERT INTO\n    test VALUES ('Top.Science.Astronomy.Cosmology'); INSERT INTO\n    test VALUES ('Top.Hobbies'); INSERT INTO test VALUES\n    ('Top.Hobbies.Amateurs_Astronomy'); INSERT INTO test VALUES\n    ('Top.Collections'); INSERT INTO test VALUES\n    ('Top.Collections.Pictures'); INSERT INTO test VALUES\n    ('Top.Collections.Pictures.Astronomy'); INSERT INTO test VALUES\n    ('Top.Collections.Pictures.Astronomy.Stars'); INSERT INTO test\n    VALUES ('Top.Collections.Pictures.Astronomy.Galaxies'); INSERT\n    INTO test VALUES\n    ('Top.Collections.Pictures.Astronomy.Astronauts'); CREATE INDEX\n    path_gist_idx ON test USING GIST (path); CREATE INDEX path_idx\n    ON test USING BTREE (path);"
+msgstr ""
+
+#: xml/ltree.xml:817(para)
+msgid "Now, we have a table <structname>test</structname>populated with data describing the hierarchy shown below:"
+msgstr ""
+
+#: xml/ltree.xml:820(literallayout)
+#, no-wrap
+msgid "Top / | \\ Science Hobbies\n    Collections / | \\ Astronomy Amateurs_Astronomy Pictures / \\ |\n    Astrophysics Cosmology Astronomy / | \\ Galaxies Stars\n    Astronauts"
+msgstr ""
+
+#: xml/ltree.xml:824(para)
+msgid "We can do inheritance: <screen>ltreetest= SELECT path FROM test WHERE path @\n    'Top.Science'; path ------------------------------------\n    Top.Science Top.Science.Astronomy\n    Top.Science.Astronomy.Astrophysics\n    Top.Science.Astronomy.Cosmology (4 rows)</screen>"
+msgstr ""
+
+#: xml/ltree.xml:830(para)
+msgid "Here are some examples of path matching: <screen>ltreetest= SELECT path FROM test WHERE path ~\n    '*.Astronomy.*'; path\n    -----------------------------------------------\n    Top.Science.Astronomy Top.Science.Astronomy.Astrophysics\n    Top.Science.Astronomy.Cosmology\n    Top.Collections.Pictures.Astronomy\n    Top.Collections.Pictures.Astronomy.Stars\n    Top.Collections.Pictures.Astronomy.Galaxies\n    Top.Collections.Pictures.Astronomy.Astronauts (7 rows)\n    ltreetest= SELECT path FROM test WHERE path ~\n    '*.!pictures@.*.Astronomy.*'; path\n    ------------------------------------ Top.Science.Astronomy\n    Top.Science.Astronomy.Astrophysics\n    Top.Science.Astronomy.Cosmology (3 rows)</screen>"
+msgstr ""
+
+#: xml/ltree.xml:845(para)
+msgid "Here are some examples of full text search: <screen>ltreetest= SELECT path FROM test WHERE path @ 'Astro*%\n    !pictures@'; path ------------------------------------\n    Top.Science.Astronomy Top.Science.Astronomy.Astrophysics\n    Top.Science.Astronomy.Cosmology Top.Hobbies.Amateurs_Astronomy\n    (4 rows) ltreetest= SELECT path FROM test WHERE path @ 'Astro*\n    !pictures@'; path ------------------------------------\n    Top.Science.Astronomy Top.Science.Astronomy.Astrophysics\n    Top.Science.Astronomy.Cosmology (3 rows)</screen>"
+msgstr ""
+
+#: xml/ltree.xml:854(para)
+msgid "Path construction using functions: <screen>ltreetest= SELECT\n    subpath(path,0,2)||'Space'||subpath(path,2) FROM test WHERE\n    path @ 'Top.Science.Astronomy'; ?column?\n    ------------------------------------------\n    Top.Science.Space.Astronomy\n    Top.Science.Space.Astronomy.Astrophysics\n    Top.Science.Space.Astronomy.Cosmology (3 rows)</screen>"
+msgstr ""
+
+#: xml/ltree.xml:862(para)
+msgid "We could simplify this by creating a SQL function that inserts a label at a specified position in a path: <screen>CREATE FUNCTION ins_label(ltree, int, text) RETURNS\n    ltree AS 'select subpath($1,0,$2) || $3 || subpath($1,$2);'\n    LANGUAGE SQL IMMUTABLE; ltreetest= SELECT\n    ins_label(path,2,'Space') FROM test WHERE path @\n    'Top.Science.Astronomy'; ins_label\n    ------------------------------------------\n    Top.Science.Space.Astronomy\n    Top.Science.Space.Astronomy.Astrophysics\n    Top.Science.Space.Astronomy.Cosmology (3 rows)</screen>"
+msgstr ""
+
+#: xml/ltree.xml:875(title)
+msgid "Transforms"
+msgstr ""
+
+#: xml/ltree.xml:876(para)
+msgid "Additional extensions are available that implement transforms for the <type>ltree</type>type for PL/Python. The extensions are called <literal>ltree_plpythonu</literal>, <literal>ltree_plpython2u</literal>, and <literal>ltree_plpython3u</literal>(see <xref linkend=\"plpython-python23\">for the PL/Python naming convention). If you install these transforms and specify them when creating a function, <type>ltree</type>values are mapped to Python lists. (The reverse is currently not supported, however.)</xref>"
+msgstr ""
+
+#: xml/ltree.xml:890(title)
+msgid "Authors"
+msgstr ""
+
+#: xml/ltree.xml:891(para)
+msgid "All work was done by Teodor Sigaev ( <email>teodor@stack.net</email>) and Oleg Bartunov ( <email>oleg@sai.msu.su</email>). See <placeholder-1/>for additional information. Authors would like to thank Eugeny Rodichev for helpful discussions. Comments and bug reports are welcome."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ltree.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

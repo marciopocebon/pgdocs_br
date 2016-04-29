@@ -1,0 +1,110 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/alter_trigger.xml:4(primary) xml/ref/alter_trigger.xml:7(refentrytitle) xml/ref/alter_trigger.xml:12(refname)
+msgid "ALTER TRIGGER"
+msgstr ""
+
+#: xml/ref/alter_trigger.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/alter_trigger.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/alter_trigger.xml:13(refpurpose)
+msgid "change the definition of a trigger"
+msgstr ""
+
+#: xml/ref/alter_trigger.xml:17(replaceable) xml/ref/alter_trigger.xml:39(replaceable)
+msgid "name"
+msgstr ""
+
+#: xml/ref/alter_trigger.xml:18(replaceable) xml/ref/alter_trigger.xml:47(replaceable)
+msgid "table_name"
+msgstr ""
+
+#: xml/ref/alter_trigger.xml:20(replaceable) xml/ref/alter_trigger.xml:56(replaceable)
+msgid "new_name"
+msgstr ""
+
+#: xml/ref/alter_trigger.xml:16(synopsis)
+#, no-wrap
+msgid "ALTER TRIGGER \n    <placeholder-1/>ON \n    <placeholder-2/>RENAME\n    TO \n    <placeholder-3/>"
+msgstr ""
+
+#: xml/ref/alter_trigger.xml:24(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/alter_trigger.xml:25(para)
+msgid "<command>ALTER TRIGGER</command>changes properties of an existing trigger. The <literal>RENAME</literal>clause changes the name of the given trigger without otherwise changing the trigger definition."
+msgstr ""
+
+#: xml/ref/alter_trigger.xml:31(para)
+msgid "You must own the table on which the trigger acts to be allowed to change its properties."
+msgstr ""
+
+#: xml/ref/alter_trigger.xml:35(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/alter_trigger.xml:42(para)
+msgid "The name of an existing trigger to alter."
+msgstr ""
+
+#: xml/ref/alter_trigger.xml:50(para)
+msgid "The name of the table on which this trigger acts."
+msgstr ""
+
+#: xml/ref/alter_trigger.xml:59(para)
+msgid "The new name for the trigger."
+msgstr ""
+
+#: xml/ref/alter_trigger.xml:65(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/alter_trigger.xml:66(para)
+msgid "The ability to temporarily enable or disable a trigger is provided by <xref linkend=\"SQL-ALTERTABLE\">, not by <command>ALTER TRIGGER</command>, because <command>ALTER TRIGGER</command>has no convenient way to express the option of enabling or disabling all of a table's triggers at once.</xref>"
+msgstr ""
+
+#: xml/ref/alter_trigger.xml:75(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/alter_trigger.xml:77(programlisting)
+#, no-wrap
+msgid "ALTER TRIGGER emp_stamp ON emp RENAME TO\n    emp_track_chgs;"
+msgstr ""
+
+#: xml/ref/alter_trigger.xml:76(para)
+msgid "To rename an existing trigger: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_trigger.xml:81(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/alter_trigger.xml:82(para)
+msgid "<command>ALTER TRIGGER</command>is a <productname>PostgreSQL</productname>extension of the SQL standard."
+msgstr ""
+
+#: xml/ref/alter_trigger.xml:88(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/alter_trigger.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

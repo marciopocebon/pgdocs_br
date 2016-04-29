@@ -1,0 +1,187 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/alter_view.xml:4(primary) xml/ref/alter_view.xml:7(refentrytitle) xml/ref/alter_view.xml:12(refname)
+msgid "ALTER VIEW"
+msgstr ""
+
+#: xml/ref/alter_view.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/alter_view.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/alter_view.xml:13(refpurpose)
+msgid "change the definition of a view"
+msgstr ""
+
+#: xml/ref/alter_view.xml:17(replaceable) xml/ref/alter_view.xml:23(replaceable) xml/ref/alter_view.xml:27(replaceable) xml/ref/alter_view.xml:30(replaceable) xml/ref/alter_view.xml:33(replaceable) xml/ref/alter_view.xml:36(replaceable) xml/ref/alter_view.xml:41(replaceable) xml/ref/alter_view.xml:69(replaceable)
+msgid "name"
+msgstr ""
+
+#: xml/ref/alter_view.xml:19(replaceable) xml/ref/alter_view.xml:25(replaceable)
+msgid "column_name"
+msgstr ""
+
+#: xml/ref/alter_view.xml:21(replaceable)
+msgid "expression"
+msgstr ""
+
+#: xml/ref/alter_view.xml:28(replaceable) xml/ref/alter_view.xml:102(replaceable)
+msgid "new_owner"
+msgstr ""
+
+#: xml/ref/alter_view.xml:31(replaceable) xml/ref/alter_view.xml:110(replaceable)
+msgid "new_name"
+msgstr ""
+
+#: xml/ref/alter_view.xml:34(replaceable) xml/ref/alter_view.xml:118(replaceable)
+msgid "new_schema"
+msgstr ""
+
+#: xml/ref/alter_view.xml:37(replaceable) xml/ref/alter_view.xml:42(replaceable) xml/ref/alter_view.xml:127(replaceable) xml/ref/alter_view.xml:134(replaceable)
+msgid "view_option_name"
+msgstr ""
+
+#: xml/ref/alter_view.xml:39(replaceable) xml/ref/alter_view.xml:129(replaceable)
+msgid "view_option_value"
+msgstr ""
+
+#: xml/ref/alter_view.xml:16(synopsis)
+#, no-wrap
+msgid "ALTER VIEW [ IF EXISTS ] \n    <placeholder-1/>ALTER [ COLUMN\n    ] \n    <placeholder-2/>SET\n    DEFAULT \n    <placeholder-3/>ALTER\n    VIEW [ IF EXISTS ] \n    <placeholder-4/>ALTER [ COLUMN\n    ] \n    <placeholder-5/>DROP\n    DEFAULT ALTER VIEW [ IF EXISTS ] \n    <placeholder-6/>OWNER TO { \n    <placeholder-7/>|\n    CURRENT_USER | SESSION_USER } ALTER VIEW [ IF EXISTS ] \n    <placeholder-8/>RENAME TO \n    <placeholder-9/>ALTER VIEW\n    [ IF EXISTS ] \n    <placeholder-10/>SET SCHEMA \n    <placeholder-11/>ALTER\n    VIEW [ IF EXISTS ] \n    <placeholder-12/>SET ( \n    <placeholder-13/>[=\n    \n    <placeholder-14/>]\n    [, ... ] ) ALTER VIEW [ IF EXISTS ] \n    <placeholder-15/>RESET ( \n    <placeholder-16/>[,\n    ... ] )"
+msgstr ""
+
+#: xml/ref/alter_view.xml:46(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/alter_view.xml:47(para)
+msgid "<command>ALTER VIEW</command>changes various auxiliary properties of a view. (If you want to modify the view's defining query, use <command>CREATE OR REPLACE VIEW</command>.)"
+msgstr ""
+
+#: xml/ref/alter_view.xml:52(para)
+msgid "You must own the view to use <command>ALTER VIEW</command>. To change a view's schema, you must also have <literal>CREATE</literal>privilege on the new schema. To alter the owner, you must also be a direct or indirect member of the new owning role, and that role must have <literal>CREATE</literal>privilege on the view's schema. (These restrictions enforce that altering the owner doesn't do anything you couldn't do by dropping and recreating the view. However, a superuser can alter ownership of any view anyway.)"
+msgstr ""
+
+#: xml/ref/alter_view.xml:65(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/alter_view.xml:72(para)
+msgid "The name (optionally schema-qualified) of an existing view."
+msgstr ""
+
+#: xml/ref/alter_view.xml:78(literal)
+msgid "IF EXISTS"
+msgstr ""
+
+#: xml/ref/alter_view.xml:81(para)
+msgid "Do not throw an error if the view does not exist. A notice is issued in this case."
+msgstr ""
+
+#: xml/ref/alter_view.xml:86(term)
+msgid "<literal>SET</literal>/ <literal>DROP DEFAULT</literal>"
+msgstr ""
+
+#: xml/ref/alter_view.xml:90(para)
+msgid "These forms set or remove the default value for a column. A view column's default value is substituted into any <command>INSERT</command>or <command>UPDATE</command>command whose target is the view, before applying any rules or triggers for the view. The view's default will therefore take precedence over any default values from underlying relations."
+msgstr ""
+
+#: xml/ref/alter_view.xml:105(para)
+msgid "The user name of the new owner of the view."
+msgstr ""
+
+#: xml/ref/alter_view.xml:113(para)
+msgid "The new name for the view."
+msgstr ""
+
+#: xml/ref/alter_view.xml:121(para)
+msgid "The new schema for the view."
+msgstr ""
+
+#: xml/ref/alter_view.xml:126(literal)
+msgid "SET ( <placeholder-1/>[= <placeholder-2/>] [, ... ] )"
+msgstr ""
+
+#: xml/ref/alter_view.xml:133(literal)
+msgid "RESET ( <placeholder-1/>[, ... ] )"
+msgstr ""
+
+#: xml/ref/alter_view.xml:142(term)
+msgid "<literal>check_option</literal>( <type>string</type>)"
+msgstr ""
+
+#: xml/ref/alter_view.xml:146(para)
+msgid "Changes the check option of the view. The value must be <literal>local</literal>or <literal>cascaded</literal>."
+msgstr ""
+
+#: xml/ref/alter_view.xml:153(term)
+msgid "<literal>security_barrier</literal>( <type>boolean</type>)"
+msgstr ""
+
+#: xml/ref/alter_view.xml:157(para)
+msgid "Changes the security-barrier property of the view. The value must be Boolean value, such as <literal>true</literal>or <literal>false</literal>."
+msgstr ""
+
+#: xml/ref/alter_view.xml:138(para)
+msgid "Sets or resets a view option. Currently supported options are: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_view.xml:169(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/alter_view.xml:170(para)
+msgid "For historical reasons, <command>ALTER TABLE</command>can be used with views too; but the only variants of <command>ALTER TABLE</command>that are allowed with views are equivalent to the ones shown above."
+msgstr ""
+
+#: xml/ref/alter_view.xml:177(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/alter_view.xml:181(programlisting)
+#, no-wrap
+msgid "ALTER VIEW foo RENAME TO\n    bar;"
+msgstr ""
+
+#: xml/ref/alter_view.xml:178(para)
+msgid "To rename the view <literal>foo</literal>to <literal>bar</literal>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_view.xml:184(programlisting)
+#, no-wrap
+msgid "CREATE TABLE base_table (id int, ts\n    timestamptz); CREATE VIEW a_view AS SELECT * FROM base_table;\n    ALTER VIEW a_view ALTER COLUMN ts SET DEFAULT now(); INSERT\n    INTO base_table(id) VALUES(1); -- ts will receive a NULL INSERT\n    INTO a_view(id) VALUES(2); -- ts will receive the current\n    time"
+msgstr ""
+
+#: xml/ref/alter_view.xml:183(para)
+msgid "To attach a default column value to an updatable view: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_view.xml:192(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/alter_view.xml:193(para)
+msgid "<command>ALTER VIEW</command>is a <productname>PostgreSQL</productname>extension of the SQL standard."
+msgstr ""
+
+#: xml/ref/alter_view.xml:199(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/alter_view.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

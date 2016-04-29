@@ -1,0 +1,135 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/alter_server.xml:4(primary) xml/ref/alter_server.xml:7(refentrytitle) xml/ref/alter_server.xml:12(refname)
+msgid "ALTER SERVER"
+msgstr ""
+
+#: xml/ref/alter_server.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/alter_server.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/alter_server.xml:13(refpurpose)
+msgid "change the definition of a foreign server"
+msgstr ""
+
+#: xml/ref/alter_server.xml:18(replaceable) xml/ref/alter_server.xml:24(replaceable) xml/ref/alter_server.xml:27(replaceable) xml/ref/alter_server.xml:51(replaceable)
+msgid "name"
+msgstr ""
+
+#: xml/ref/alter_server.xml:19(replaceable) xml/ref/alter_server.xml:59(replaceable)
+msgid "new_version"
+msgstr ""
+
+#: xml/ref/alter_server.xml:21(replaceable) xml/ref/alter_server.xml:68(replaceable)
+msgid "option"
+msgstr ""
+
+#: xml/ref/alter_server.xml:22(replaceable) xml/ref/alter_server.xml:69(replaceable)
+msgid "value"
+msgstr ""
+
+#: xml/ref/alter_server.xml:25(replaceable) xml/ref/alter_server.xml:86(replaceable)
+msgid "new_owner"
+msgstr ""
+
+#: xml/ref/alter_server.xml:28(replaceable) xml/ref/alter_server.xml:95(replaceable)
+msgid "new_name"
+msgstr ""
+
+#: xml/ref/alter_server.xml:17(synopsis)
+#, no-wrap
+msgid "ALTER SERVER \n    <placeholder-1/>[ VERSION ' \n    <placeholder-2/>' ] [\n    OPTIONS ( [ ADD | SET | DROP ] \n    <placeholder-3/>[' \n    <placeholder-4/>'] [, ... ] )\n    ] ALTER SERVER \n    <placeholder-5/>OWNER TO { \n    <placeholder-6/>| CURRENT_USER |\n    SESSION_USER } ALTER SERVER \n    <placeholder-7/>RENAME TO \n    <placeholder-8/>"
+msgstr ""
+
+#: xml/ref/alter_server.xml:31(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/alter_server.xml:32(para)
+msgid "<command>ALTER SERVER</command>changes the definition of a foreign server. The first form changes the server version string or the generic options of the server (at least one clause is required). The second form changes the owner of the server."
+msgstr ""
+
+#: xml/ref/alter_server.xml:38(para)
+msgid "To alter the server you must be the owner of the server. Additionally to alter the owner, you must own the server and also be a direct or indirect member of the new owning role, and you must have <literal>USAGE</literal>privilege on the server's foreign-data wrapper. (Note that superusers satisfy all these criteria automatically.)"
+msgstr ""
+
+#: xml/ref/alter_server.xml:47(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/alter_server.xml:54(para)
+msgid "The name of an existing server."
+msgstr ""
+
+#: xml/ref/alter_server.xml:62(para)
+msgid "New server version."
+msgstr ""
+
+#: xml/ref/alter_server.xml:67(literal)
+msgid "OPTIONS ( [ ADD | SET | DROP ] <placeholder-1/>[' <placeholder-2/>'] [, ... ] )"
+msgstr ""
+
+#: xml/ref/alter_server.xml:73(para)
+msgid "Change options for the server. <literal>ADD</literal>, <literal>SET</literal>, and <literal>DROP</literal>specify the action to be performed. <literal>ADD</literal>is assumed if no operation is explicitly specified. Option names must be unique; names and values are also validated using the server's foreign-data wrapper library."
+msgstr ""
+
+#: xml/ref/alter_server.xml:89(para)
+msgid "The user name of the new owner of the foreign server."
+msgstr ""
+
+#: xml/ref/alter_server.xml:98(para)
+msgid "The new name for the foreign server."
+msgstr ""
+
+#: xml/ref/alter_server.xml:104(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/alter_server.xml:107(programlisting)
+#, no-wrap
+msgid "ALTER SERVER foo OPTIONS (host 'foo', dbname\n    'foodb');"
+msgstr ""
+
+#: xml/ref/alter_server.xml:105(para)
+msgid "Alter server <literal>foo</literal>, add connection options: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_server.xml:112(programlisting)
+#, no-wrap
+msgid "ALTER SERVER foo VERSION '8.4' OPTIONS (SET\n    host 'baz');"
+msgstr ""
+
+#: xml/ref/alter_server.xml:109(para)
+msgid "Alter server <literal>foo</literal>, change version, change <literal>host</literal>option: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_server.xml:116(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/alter_server.xml:117(para)
+msgid "<command>ALTER SERVER</command>conforms to ISO/IEC 9075-9 (SQL/MED). The <literal>OWNER TO</literal>and <literal>RENAME</literal>forms are PostgreSQL extensions."
+msgstr ""
+
+#: xml/ref/alter_server.xml:125(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/alter_server.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

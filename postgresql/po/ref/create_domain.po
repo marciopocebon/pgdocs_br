@@ -1,0 +1,199 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/create_domain.xml:4(primary) xml/ref/create_domain.xml:7(refentrytitle) xml/ref/create_domain.xml:12(refname)
+msgid "CREATE DOMAIN"
+msgstr ""
+
+#: xml/ref/create_domain.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/create_domain.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/create_domain.xml:13(refpurpose)
+msgid "define a new domain"
+msgstr ""
+
+#: xml/ref/create_domain.xml:17(replaceable) xml/ref/create_domain.xml:59(replaceable)
+msgid "name"
+msgstr ""
+
+#: xml/ref/create_domain.xml:18(replaceable) xml/ref/create_domain.xml:68(replaceable)
+msgid "data_type"
+msgstr ""
+
+#: xml/ref/create_domain.xml:20(replaceable) xml/ref/create_domain.xml:77(replaceable)
+msgid "collation"
+msgstr ""
+
+#: xml/ref/create_domain.xml:21(replaceable) xml/ref/create_domain.xml:29(replaceable) xml/ref/create_domain.xml:90(replaceable) xml/ref/create_domain.xml:144(replaceable)
+msgid "expression"
+msgstr ""
+
+#: xml/ref/create_domain.xml:22(replaceable) xml/ref/create_domain.xml:25(replaceable)
+msgid "constraint"
+msgstr ""
+
+#: xml/ref/create_domain.xml:24(phrase)
+msgid "where <placeholder-1/>is:"
+msgstr ""
+
+#: xml/ref/create_domain.xml:27(replaceable) xml/ref/create_domain.xml:112(replaceable)
+msgid "constraint_name"
+msgstr ""
+
+#: xml/ref/create_domain.xml:16(synopsis)
+#, no-wrap
+msgid "CREATE DOMAIN \n    <placeholder-1/>[ AS ] \n    <placeholder-2/>[ COLLATE\n    \n    <placeholder-3/>] [ DEFAULT \n    <placeholder-4/>] [ \n    <placeholder-5/>[ ... ]\n    ] \n    <placeholder-6/>[ CONSTRAINT \n    <placeholder-7/>] {\n    NOT NULL | NULL | CHECK ( \n    <placeholder-8/>)\n    }"
+msgstr ""
+
+#: xml/ref/create_domain.xml:33(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/create_domain.xml:34(para)
+msgid "<command>CREATE DOMAIN</command>creates a new domain. A domain is essentially a data type with optional constraints (restrictions on the allowed set of values). The user who defines a domain becomes its owner."
+msgstr ""
+
+#: xml/ref/create_domain.xml:39(para)
+msgid "If a schema name is given (for example, <literal>CREATE DOMAIN myschema.mydomain ...</literal>) then the domain is created in the specified schema. Otherwise it is created in the current schema. The domain name must be unique among the types and domains existing in its schema."
+msgstr ""
+
+#: xml/ref/create_domain.xml:44(para)
+msgid "Domains are useful for abstracting common constraints on fields into a single location for maintenance. For example, several tables might contain email address columns, all requiring the same CHECK constraint to verify the address syntax. Define a domain rather than setting up each table's constraint individually."
+msgstr ""
+
+#: xml/ref/create_domain.xml:50(para)
+msgid "To be able to create a domain, you must have <literal>USAGE</literal>privilege on the underlying type."
+msgstr ""
+
+#: xml/ref/create_domain.xml:55(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/create_domain.xml:62(para)
+msgid "The name (optionally schema-qualified) of a domain to be created."
+msgstr ""
+
+#: xml/ref/create_domain.xml:71(para)
+msgid "The underlying data type of the domain. This can include array specifiers."
+msgstr ""
+
+#: xml/ref/create_domain.xml:80(para)
+msgid "An optional collation for the domain. If no collation is specified, the underlying data type's default collation is used. The underlying type must be collatable if <literal>COLLATE</literal>is specified."
+msgstr ""
+
+#: xml/ref/create_domain.xml:89(literal)
+msgid "DEFAULT <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_domain.xml:93(para)
+msgid "The <literal>DEFAULT</literal>clause specifies a default value for columns of the domain data type. The value is any variable-free expression (but subqueries are not allowed). The data type of the default expression must match the data type of the domain. If no default value is specified, then the default value is the null value."
+msgstr ""
+
+#: xml/ref/create_domain.xml:101(para)
+msgid "The default expression will be used in any insert operation that does not specify a value for the column. If a default value is defined for a particular column, it overrides any default associated with the domain. In turn, the domain default overrides any default value associated with the underlying data type."
+msgstr ""
+
+#: xml/ref/create_domain.xml:111(literal)
+msgid "CONSTRAINT <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_domain.xml:116(para)
+msgid "An optional name for a constraint. If not specified, the system generates a name."
+msgstr ""
+
+#: xml/ref/create_domain.xml:122(literal)
+msgid "NOT NULL"
+msgstr ""
+
+#: xml/ref/create_domain.xml:125(para)
+msgid "Values of this domain are prevented from being null (but see notes below)."
+msgstr ""
+
+#: xml/ref/create_domain.xml:131(literal)
+msgid "NULL"
+msgstr ""
+
+#: xml/ref/create_domain.xml:134(para)
+msgid "Values of this domain are allowed to be null. This is the default."
+msgstr ""
+
+#: xml/ref/create_domain.xml:136(para)
+msgid "This clause is only intended for compatibility with nonstandard SQL databases. Its use is discouraged in new applications."
+msgstr ""
+
+#: xml/ref/create_domain.xml:143(literal)
+msgid "CHECK ( <placeholder-1/>)"
+msgstr ""
+
+#: xml/ref/create_domain.xml:148(para)
+msgid "<literal>CHECK</literal>clauses specify integrity constraints or tests which values of the domain must satisfy. Each constraint must be an expression producing a Boolean result. It should use the key word <literal>VALUE</literal>to refer to the value being tested. Expressions evaluating to TRUE or UNKNOWN succeed. If the expression produces a FALSE result, an error is reported and the value is not allowed to be converted to the domain type."
+msgstr ""
+
+#: xml/ref/create_domain.xml:158(para)
+msgid "Currently, <literal>CHECK</literal>expressions cannot contain subqueries nor refer to variables other than <literal>VALUE</literal>."
+msgstr ""
+
+#: xml/ref/create_domain.xml:162(para)
+msgid "When a domain has multiple <literal>CHECK</literal>constraints, they will be tested in alphabetical order by name. ( <productname>PostgreSQL</productname>versions before 9.5 did not honor any particular firing order for <literal>CHECK</literal>constraints.)"
+msgstr ""
+
+#: xml/ref/create_domain.xml:173(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/create_domain.xml:181(programlisting)
+#, no-wrap
+msgid "INSERT INTO tab (domcol) VALUES ((SELECT domcol\n    FROM tab WHERE false));"
+msgstr ""
+
+#: xml/ref/create_domain.xml:174(para)
+msgid "Domain constraints, particularly <literal>NOT NULL</literal>, are checked when converting a value to the domain type. It is possible for a column that is nominally of the domain type to read as null despite there being such a constraint. For example, this can happen in an outer-join query, if the domain column is on the nullable side of the outer join. A more subtle example is <placeholder-1/>The empty scalar sub-SELECT will produce a null value that is considered to be of the domain type, so no further constraint checking is applied to it, and the insertion will succeed."
+msgstr ""
+
+#: xml/ref/create_domain.xml:186(para)
+msgid "It is very difficult to avoid such problems, because of SQL's general assumption that a null value is a valid value of every data type. Best practice therefore is to design a domain's constraints so that a null value is allowed, and then to apply column <literal>NOT NULL</literal>constraints to columns of the domain type as needed, rather than directly to the domain type."
+msgstr ""
+
+#: xml/ref/create_domain.xml:195(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/create_domain.xml:200(programlisting)
+#, no-wrap
+msgid "CREATE DOMAIN us_postal_code AS TEXT CHECK(\n    VALUE ~ '^\\d{5}$' OR VALUE ~ '^\\d{5}-\\d{4}$' ); CREATE TABLE\n    us_snail_addy ( address_id SERIAL PRIMARY KEY, street1 TEXT NOT\n    NULL, street2 TEXT, street3 TEXT, city TEXT NOT NULL, postal\n    us_postal_code NOT NULL );"
+msgstr ""
+
+#: xml/ref/create_domain.xml:196(para)
+msgid "This example creates the <type>us_postal_code</type>data type and then uses the type in a table definition. A regular expression test is used to verify that the value looks like a valid US postal code: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_domain.xml:207(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/create_domain.xml:208(para)
+msgid "The command <command>CREATE DOMAIN</command>conforms to the SQL standard."
+msgstr ""
+
+#: xml/ref/create_domain.xml:213(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/create_domain.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

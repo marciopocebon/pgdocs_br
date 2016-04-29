@@ -1,0 +1,123 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/alter_group.xml:4(primary) xml/ref/alter_group.xml:7(refentrytitle) xml/ref/alter_group.xml:12(refname)
+msgid "ALTER GROUP"
+msgstr ""
+
+#: xml/ref/alter_group.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/alter_group.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/alter_group.xml:13(refpurpose)
+msgid "change role name or membership"
+msgstr ""
+
+#: xml/ref/alter_group.xml:17(replaceable) xml/ref/alter_group.xml:21(replaceable) xml/ref/alter_group.xml:25(replaceable)
+msgid "role_specification"
+msgstr ""
+
+#: xml/ref/alter_group.xml:19(replaceable) xml/ref/alter_group.xml:23(replaceable) xml/ref/alter_group.xml:67(replaceable)
+msgid "user_name"
+msgstr ""
+
+#: xml/ref/alter_group.xml:24(phrase)
+msgid "where <placeholder-1/>can be:"
+msgstr ""
+
+#: xml/ref/alter_group.xml:27(replaceable)
+msgid "role_name"
+msgstr ""
+
+#: xml/ref/alter_group.xml:29(replaceable) xml/ref/alter_group.xml:59(replaceable)
+msgid "group_name"
+msgstr ""
+
+#: xml/ref/alter_group.xml:31(replaceable) xml/ref/alter_group.xml:78(replaceable)
+msgid "new_name"
+msgstr ""
+
+#: xml/ref/alter_group.xml:16(synopsis)
+#, no-wrap
+msgid "ALTER GROUP \n    <placeholder-1/>ADD USER \n    <placeholder-2/>[, ... ]\n    ALTER GROUP \n    <placeholder-3/>DROP USER \n    <placeholder-4/>[, ... ] \n    <placeholder-5/>\n    <placeholder-6/>|\n    CURRENT_USER | SESSION_USER ALTER GROUP \n    <placeholder-7/>RENAME\n    TO \n    <placeholder-8/>"
+msgstr ""
+
+#: xml/ref/alter_group.xml:34(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/alter_group.xml:35(para)
+msgid "<command>ALTER GROUP</command>changes the attributes of a user group. This is an obsolete command, though still accepted for backwards compatibility, because groups (and users too) have been superseded by the more general concept of roles."
+msgstr ""
+
+#: xml/ref/alter_group.xml:40(para)
+msgid "The first two variants add users to a group or remove them from a group. (Any role can play the part of either a <quote>user</quote>or a <quote>group</quote>for this purpose.) These variants are effectively equivalent to granting or revoking membership in the role named as the <quote>group</quote>; so the preferred way to do this is to use <xref linkend=\"SQL-GRANT\">or <xref linkend=\"SQL-REVOKE\">.</xref></xref>"
+msgstr ""
+
+#: xml/ref/alter_group.xml:50(para)
+msgid "The third variant changes the name of the group. This is exactly equivalent to renaming the role with <xref linkend=\"sql-alterrole\">.</xref>"
+msgstr ""
+
+#: xml/ref/alter_group.xml:55(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/alter_group.xml:62(para)
+msgid "The name of the group (role) to modify."
+msgstr ""
+
+#: xml/ref/alter_group.xml:70(para)
+msgid "Users (roles) that are to be added to or removed from the group. The users must already exist; <command>ALTER GROUP</command>does not create or drop users."
+msgstr ""
+
+#: xml/ref/alter_group.xml:81(para)
+msgid "The new name of the group."
+msgstr ""
+
+#: xml/ref/alter_group.xml:87(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/alter_group.xml:89(programlisting)
+#, no-wrap
+msgid "ALTER GROUP staff ADD USER karl,\n    john;"
+msgstr ""
+
+#: xml/ref/alter_group.xml:91(programlisting)
+#, no-wrap
+msgid "ALTER GROUP workers DROP USER\n    beth;"
+msgstr ""
+
+#: xml/ref/alter_group.xml:88(para)
+msgid "Add users to a group: <placeholder-1/>Remove a user from a group: <placeholder-2/>"
+msgstr ""
+
+#: xml/ref/alter_group.xml:95(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/alter_group.xml:96(para)
+msgid "There is no <command>ALTER GROUP</command>statement in the SQL standard."
+msgstr ""
+
+#: xml/ref/alter_group.xml:101(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/alter_group.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

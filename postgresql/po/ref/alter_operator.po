@@ -1,0 +1,118 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/alter_operator.xml:4(primary) xml/ref/alter_operator.xml:7(refentrytitle) xml/ref/alter_operator.xml:12(refname)
+msgid "ALTER OPERATOR"
+msgstr ""
+
+#: xml/ref/alter_operator.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/alter_operator.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/alter_operator.xml:13(refpurpose)
+msgid "change the definition of an operator"
+msgstr ""
+
+#: xml/ref/alter_operator.xml:17(replaceable) xml/ref/alter_operator.xml:22(replaceable) xml/ref/alter_operator.xml:48(replaceable)
+msgid "name"
+msgstr ""
+
+#: xml/ref/alter_operator.xml:18(replaceable) xml/ref/alter_operator.xml:23(replaceable) xml/ref/alter_operator.xml:57(replaceable)
+msgid "left_type"
+msgstr ""
+
+#: xml/ref/alter_operator.xml:19(replaceable) xml/ref/alter_operator.xml:24(replaceable) xml/ref/alter_operator.xml:68(replaceable)
+msgid "right_type"
+msgstr ""
+
+#: xml/ref/alter_operator.xml:20(replaceable) xml/ref/alter_operator.xml:79(replaceable)
+msgid "new_owner"
+msgstr ""
+
+#: xml/ref/alter_operator.xml:25(replaceable) xml/ref/alter_operator.xml:87(replaceable)
+msgid "new_schema"
+msgstr ""
+
+#: xml/ref/alter_operator.xml:16(synopsis)
+#, no-wrap
+msgid "ALTER OPERATOR \n    <placeholder-1/>( { \n    <placeholder-2/>| NONE } , { \n    <placeholder-3/>| NONE } ) OWNER TO { \n    <placeholder-4/>| CURRENT_USER |\n    SESSION_USER } ALTER OPERATOR \n    <placeholder-5/>( { \n    <placeholder-6/>| NONE } , { \n    <placeholder-7/>| NONE } ) SET SCHEMA \n    <placeholder-8/>"
+msgstr ""
+
+#: xml/ref/alter_operator.xml:28(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/alter_operator.xml:29(para)
+msgid "<command>ALTER OPERATOR</command>changes the definition of an operator. The only currently available functionality is to change the owner of the operator."
+msgstr ""
+
+#: xml/ref/alter_operator.xml:33(para)
+msgid "You must own the operator to use <command>ALTER OPERATOR</command>. To alter the owner, you must also be a direct or indirect member of the new owning role, and that role must have <literal>CREATE</literal>privilege on the operator's schema. (These restrictions enforce that altering the owner doesn't do anything you couldn't do by dropping and recreating the operator. However, a superuser can alter ownership of any operator anyway.)"
+msgstr ""
+
+#: xml/ref/alter_operator.xml:44(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/alter_operator.xml:51(para)
+msgid "The name (optionally schema-qualified) of an existing operator."
+msgstr ""
+
+#: xml/ref/alter_operator.xml:60(para)
+msgid "The data type of the operator's left operand; write <literal>NONE</literal>if the operator has no left operand."
+msgstr ""
+
+#: xml/ref/alter_operator.xml:71(para)
+msgid "The data type of the operator's right operand; write <literal>NONE</literal>if the operator has no right operand."
+msgstr ""
+
+#: xml/ref/alter_operator.xml:82(para)
+msgid "The new owner of the operator."
+msgstr ""
+
+#: xml/ref/alter_operator.xml:90(para)
+msgid "The new schema for the operator."
+msgstr ""
+
+#: xml/ref/alter_operator.xml:96(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/alter_operator.xml:100(programlisting)
+#, no-wrap
+msgid "ALTER OPERATOR @@ (text, text) OWNER TO\n    joe;"
+msgstr ""
+
+#: xml/ref/alter_operator.xml:97(para)
+msgid "Change the owner of a custom operator <literal>a @@ b</literal>for type <type>text</type>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_operator.xml:104(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/alter_operator.xml:105(para)
+msgid "There is no <command>ALTER OPERATOR</command>statement in the SQL standard."
+msgstr ""
+
+#: xml/ref/alter_operator.xml:110(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/alter_operator.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

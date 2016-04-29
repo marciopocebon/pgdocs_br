@@ -1,0 +1,324 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/postgres-fdw.xml:3(title) xml/postgres-fdw.xml:5(primary)
+msgid "postgres_fdw"
+msgstr ""
+
+#: xml/postgres-fdw.xml:7(para)
+msgid "The <filename>postgres_fdw</filename>module provides the foreign-data wrapper <literal>postgres_fdw</literal>, which can be used to access data stored in external <productname>PostgreSQL</productname>servers."
+msgstr ""
+
+#: xml/postgres-fdw.xml:13(para)
+msgid "The functionality provided by this module overlaps substantially with the functionality of the older <xref linkend=\"dblink\">module. But <filename>postgres_fdw</filename>provides more transparent and standards-compliant syntax for accessing remote tables, and can give better performance in many cases.</xref>"
+msgstr ""
+
+#: xml/postgres-fdw.xml:23(para)
+msgid "Install the <filename>postgres_fdw</filename>extension using <xref linkend=\"sql-createextension\">.</xref>"
+msgstr ""
+
+#: xml/postgres-fdw.xml:28(para)
+msgid "Create a foreign server object, using <xref linkend=\"sql-createserver\">, to represent each remote database you want to connect to. Specify connection information, except <literal>user</literal>and <literal>password</literal>, as options of the server object.</xref>"
+msgstr ""
+
+#: xml/postgres-fdw.xml:37(para)
+msgid "Create a user mapping, using <xref linkend=\"sql-createusermapping\">, for each database user you want to allow to access each foreign server. Specify the remote user name and password to use as <literal>user</literal>and <literal>password</literal>options of the user mapping.</xref>"
+msgstr ""
+
+#: xml/postgres-fdw.xml:46(para)
+msgid "Create a foreign table, using <xref linkend=\"sql-createforeigntable\">or <xref linkend=\"sql-importforeignschema\">, for each remote table you want to access. The columns of the foreign table must match the referenced remote table. You can, however, use table and/or column names different from the remote table's, if you specify the correct remote names as options of the foreign table object.</xref></xref>"
+msgstr ""
+
+#: xml/postgres-fdw.xml:19(para)
+msgid "To prepare for remote access using <filename>postgres_fdw</filename>: <placeholder-1/>"
+msgstr ""
+
+#: xml/postgres-fdw.xml:56(para)
+msgid "Now you need only <command>SELECT</command>from a foreign table to access the data stored in its underlying remote table. You can also modify the remote table using <command>INSERT</command>, <command>UPDATE</command>, or <command>DELETE</command>. (Of course, the remote user you have specified in your user mapping must have privileges to do these things.)"
+msgstr ""
+
+#: xml/postgres-fdw.xml:65(para)
+msgid "Note that <filename>postgres_fdw</filename>currently lacks support for <command>INSERT</command>statements with an <literal>ON CONFLICT DO UPDATE</literal>clause. However, the <literal>ON CONFLICT DO NOTHING</literal>clause is supported, provided a unique index inference specification is omitted."
+msgstr ""
+
+#: xml/postgres-fdw.xml:72(para)
+msgid "It is generally recommended that the columns of a foreign table be declared with exactly the same data types, and collations if applicable, as the referenced columns of the remote table. Although <filename>postgres_fdw</filename>is currently rather forgiving about performing data type conversions at need, surprising semantic anomalies may arise when types or collations do not match, due to the remote server interpreting <literal>WHERE</literal>clauses slightly differently from the local server."
+msgstr ""
+
+#: xml/postgres-fdw.xml:82(para)
+msgid "Note that a foreign table can be declared with fewer columns, or with a different column order, than its underlying remote table has. Matching of columns to the remote table is by name, not position."
+msgstr ""
+
+#: xml/postgres-fdw.xml:87(title)
+msgid "FDW Options of postgres_fdw"
+msgstr ""
+
+#: xml/postgres-fdw.xml:89(title)
+msgid "Connection Options"
+msgstr ""
+
+#: xml/postgres-fdw.xml:99(para)
+msgid "<literal>user</literal>and <literal>password</literal>(specify these in a user mapping, instead)"
+msgstr ""
+
+#: xml/postgres-fdw.xml:105(para)
+msgid "<literal>client_encoding</literal>(this is automatically set from the local server encoding)"
+msgstr ""
+
+#: xml/postgres-fdw.xml:110(para)
+msgid "<literal>fallback_application_name</literal>(always set to <literal>postgres_fdw</literal>)"
+msgstr ""
+
+#: xml/postgres-fdw.xml:90(para)
+msgid "A foreign server using the <filename>postgres_fdw</filename>foreign data wrapper can have the same options that <application>libpq</application>accepts in connection strings, as described in <xref linkend=\"libpq-paramkeywords\">, except that these options are not allowed: <placeholder-1/></xref>"
+msgstr ""
+
+#: xml/postgres-fdw.xml:116(para)
+msgid "Only superusers may connect to foreign servers without password authentication, so always specify the <literal>password</literal>option for user mappings belonging to non-superusers."
+msgstr ""
+
+#: xml/postgres-fdw.xml:122(title)
+msgid "Object Name Options"
+msgstr ""
+
+#: xml/postgres-fdw.xml:123(para)
+msgid "These options can be used to control the names used in SQL statements sent to the remote <productname>PostgreSQL</productname>server. These options are needed when a foreign table is created with names different from the underlying remote table's names."
+msgstr ""
+
+#: xml/postgres-fdw.xml:131(literal)
+msgid "schema_name"
+msgstr ""
+
+#: xml/postgres-fdw.xml:134(para)
+msgid "This option, which can be specified for a foreign table, gives the schema name to use for the foreign table on the remote server. If this option is omitted, the name of the foreign table's schema is used."
+msgstr ""
+
+#: xml/postgres-fdw.xml:142(literal)
+msgid "table_name"
+msgstr ""
+
+#: xml/postgres-fdw.xml:145(para)
+msgid "This option, which can be specified for a foreign table, gives the table name to use for the foreign table on the remote server. If this option is omitted, the foreign table's name is used."
+msgstr ""
+
+#: xml/postgres-fdw.xml:153(literal)
+msgid "column_name"
+msgstr ""
+
+#: xml/postgres-fdw.xml:156(para)
+msgid "This option, which can be specified for a column of a foreign table, gives the column name to use for the column on the remote server. If this option is omitted, the column's name is used."
+msgstr ""
+
+#: xml/postgres-fdw.xml:165(title)
+msgid "Cost Estimation Options"
+msgstr ""
+
+#: xml/postgres-fdw.xml:166(para)
+msgid "<filename>postgres_fdw</filename>retrieves remote data by executing queries against remote servers, so ideally the estimated cost of scanning a foreign table should be whatever it costs to be done on the remote server, plus some overhead for communication. The most reliable way to get such an estimate is to ask the remote server and then add something for overhead but for simple queries, it may not be worth the cost of an additional remote query to get a cost estimate. So <filename>postgres_fdw</filename>provides the following options to control how cost estimation is done:"
+msgstr ""
+
+#: xml/postgres-fdw.xml:181(literal)
+msgid "use_remote_estimate"
+msgstr ""
+
+#: xml/postgres-fdw.xml:184(para)
+msgid "This option, which can be specified for a foreign table or a foreign server, controls whether <filename>postgres_fdw</filename>issues remote <command>EXPLAIN</command>commands to obtain cost estimates. A setting for a foreign table overrides any setting for its server, but only for that table. The default is <literal>false</literal>."
+msgstr ""
+
+#: xml/postgres-fdw.xml:196(literal)
+msgid "fdw_startup_cost"
+msgstr ""
+
+#: xml/postgres-fdw.xml:199(para)
+msgid "This option, which can be specified for a foreign server, is a numeric value that is added to the estimated startup cost of any foreign-table scan on that server. This represents the additional overhead of establishing a connection, parsing and planning the query on the remote side, etc. The default value is <literal>100</literal>."
+msgstr ""
+
+#: xml/postgres-fdw.xml:210(literal)
+msgid "fdw_tuple_cost"
+msgstr ""
+
+#: xml/postgres-fdw.xml:213(para)
+msgid "This option, which can be specified for a foreign server, is a numeric value that is used as extra cost per-tuple for foreign-table scans on that server. This represents the additional overhead of data transfer between servers. You might increase or decrease this number to reflect higher or lower network delay to the remote server. The default value is <literal>0.01</literal>."
+msgstr ""
+
+#: xml/postgres-fdw.xml:224(para)
+msgid "When <literal>use_remote_estimate</literal>is true, <filename>postgres_fdw</filename>obtains row count and cost estimates from the remote server and then adds <literal>fdw_startup_cost</literal>and <literal>fdw_tuple_cost</literal>to the cost estimates. When <literal>use_remote_estimate</literal>is false, <filename>postgres_fdw</filename>performs local row count and cost estimation and then adds <literal>fdw_startup_cost</literal>and <literal>fdw_tuple_cost</literal>to the cost estimates. This local estimation is unlikely to be very accurate unless local copies of the remote table's statistics are available. Running <xref linkend=\"sql-analyze\">on the foreign table is the way to update the local statistics; this will perform a scan of the remote table and then calculate and store statistics just as though the table were local. Keeping local statistics can be a useful way to reduce per-query planning overhead for a remote table but if the remote table is frequently updated, the local statistics will soon be obsolete.</xref>"
+msgstr ""
+
+#: xml/postgres-fdw.xml:247(title)
+msgid "Updatability Options"
+msgstr ""
+
+#: xml/postgres-fdw.xml:248(para)
+msgid "By default all foreign tables using <filename>postgres_fdw</filename>are assumed to be updatable. This may be overridden using the following option:"
+msgstr ""
+
+#: xml/postgres-fdw.xml:254(literal)
+msgid "updatable"
+msgstr ""
+
+#: xml/postgres-fdw.xml:257(para)
+msgid "This option controls whether <filename>postgres_fdw</filename>allows foreign tables to be modified using <command>INSERT</command>, <command>UPDATE</command>and <command>DELETE</command>commands. It can be specified for a foreign table or a foreign server. A table-level option overrides a server-level option. The default is <literal>true</literal>."
+msgstr ""
+
+#: xml/postgres-fdw.xml:266(para)
+msgid "Of course, if the remote table is not in fact updatable, an error would occur anyway. Use of this option primarily allows the error to be thrown locally without querying the remote server. Note however that the <literal>information_schema</literal>views will report a <filename>postgres_fdw</filename>foreign table to be updatable (or not) according to the setting of this option, without any check of the remote server."
+msgstr ""
+
+#: xml/postgres-fdw.xml:281(title)
+msgid "Importing Options"
+msgstr ""
+
+#: xml/postgres-fdw.xml:282(para)
+msgid "<filename>postgres_fdw</filename>is able to import foreign table definitions using <xref linkend=\"sql-importforeignschema\">. This command creates foreign table definitions on the local server that match tables or views present on the remote server. If the remote tables to be imported have columns of user-defined data types, the local server must have compatible types of the same names.</xref>"
+msgstr ""
+
+#: xml/postgres-fdw.xml:291(para)
+msgid "Importing behavior can be customized with the following options (given in the <command>IMPORT FOREIGN SCHEMA</command>command):"
+msgstr ""
+
+#: xml/postgres-fdw.xml:297(literal)
+msgid "import_collate"
+msgstr ""
+
+#: xml/postgres-fdw.xml:300(para)
+msgid "This option controls whether column <literal>COLLATE</literal>options are included in the definitions of foreign tables imported from a foreign server. The default is <literal>true</literal>. You might need to turn this off if the remote server has a different set of collation names than the local server does, which is likely to be the case if it's running on a different operating system."
+msgstr ""
+
+#: xml/postgres-fdw.xml:313(literal)
+msgid "import_default"
+msgstr ""
+
+#: xml/postgres-fdw.xml:316(para)
+msgid "This option controls whether column <literal>DEFAULT</literal>expressions are included in the definitions of foreign tables imported from a foreign server. The default is <literal>false</literal>. If you enable this option, be wary of defaults that might get computed differently on the local server than they would be on the remote server; <function>nextval()</function>is a common source of problems. The <command>IMPORT</command>will fail altogether if an imported default expression uses a function or operator that does not exist locally."
+msgstr ""
+
+#: xml/postgres-fdw.xml:333(literal)
+msgid "import_not_null"
+msgstr ""
+
+#: xml/postgres-fdw.xml:336(para)
+msgid "This option controls whether column <literal>NOT NULL</literal>constraints are included in the definitions of foreign tables imported from a foreign server. The default is <literal>true</literal>."
+msgstr ""
+
+#: xml/postgres-fdw.xml:344(para)
+msgid "Note that constraints other than <literal>NOT NULL</literal>will never be imported from the remote tables. Although <productname>PostgreSQL</productname>does support <literal>CHECK</literal>constraints on foreign tables, there is no provision for importing them automatically, because of the risk that a constraint expression could evaluate differently on the local and remote servers. Any such inconsistency in the behavior of a <literal>CHECK</literal>constraint could lead to hard-to-detect errors in query optimization. So if you wish to import <literal>CHECK</literal>constraints, you must do so manually, and you should verify the semantics of each one carefully. For more detail about the treatment of <literal>CHECK</literal>constraints on foreign tables, see <xref linkend=\"sql-createforeigntable\">.</xref>"
+msgstr ""
+
+#: xml/postgres-fdw.xml:364(title)
+msgid "Connection Management"
+msgstr ""
+
+#: xml/postgres-fdw.xml:365(para)
+msgid "<filename>postgres_fdw</filename>establishes a connection to a foreign server during the first query that uses a foreign table associated with the foreign server. This connection is kept and re-used for subsequent queries in the same session. However, if multiple user identities (user mappings) are used to access the foreign server, a connection is established for each user mapping."
+msgstr ""
+
+#: xml/postgres-fdw.xml:375(title)
+msgid "Transaction Management"
+msgstr ""
+
+#: xml/postgres-fdw.xml:376(para)
+msgid "During a query that references any remote tables on a foreign server, <filename>postgres_fdw</filename>opens a transaction on the remote server if one is not already open corresponding to the current local transaction. The remote transaction is committed or aborted when the local transaction commits or aborts. Savepoints are similarly managed by creating corresponding remote savepoints."
+msgstr ""
+
+#: xml/postgres-fdw.xml:384(para)
+msgid "The remote transaction uses <literal>SERIALIZABLE</literal>isolation level when the local transaction has <literal>SERIALIZABLE</literal>isolation level; otherwise it uses <literal>REPEATABLE READ</literal>isolation level. This choice ensures that if a query performs multiple table scans on the remote server, it will get snapshot-consistent results for all the scans. A consequence is that successive queries within a single transaction will see the same data from the remote server, even if concurrent updates are occurring on the remote server due to other activities. That behavior would be expected anyway if the local transaction uses <literal>SERIALIZABLE</literal>or <literal>REPEATABLE READ</literal>isolation level, but it might be surprising for a <literal>READ COMMITTED</literal>local transaction. A future <productname>PostgreSQL</productname>release might modify these rules."
+msgstr ""
+
+#: xml/postgres-fdw.xml:405(title)
+msgid "Remote Query Optimization"
+msgstr ""
+
+#: xml/postgres-fdw.xml:406(para)
+msgid "<filename>postgres_fdw</filename>attempts to optimize remote queries to reduce the amount of data transferred from foreign servers. This is done by sending query <literal>WHERE</literal>clauses to the remote server for execution, and by not retrieving table columns that are not needed for the current query. To reduce the risk of misexecution of queries, <literal>WHERE</literal>clauses are not sent to the remote server unless they use only built-in data types, operators, and functions. Operators and functions in the clauses must be <literal>IMMUTABLE</literal>as well."
+msgstr ""
+
+#: xml/postgres-fdw.xml:418(para)
+msgid "The query that is actually sent to the remote server for execution can be examined using <command>EXPLAIN VERBOSE</command>."
+msgstr ""
+
+#: xml/postgres-fdw.xml:423(title)
+msgid "Remote Query Execution Environment"
+msgstr ""
+
+#: xml/postgres-fdw.xml:424(para)
+msgid "In the remote sessions opened by <filename>postgres_fdw</filename>, the <xref linkend=\"guc-search-path\">parameter is set to just <literal>pg_catalog</literal>, so that only built-in objects are visible without schema qualification. This is not an issue for queries generated by <filename>postgres_fdw</filename>itself, because it always supplies such qualification. However, this can pose a hazard for functions that are executed on the remote server via triggers or rules on remote tables. For example, if a remote table is actually a view, any functions used in that view will be executed with the restricted search path. It is recommended to schema-qualify all names in such functions, or else attach <literal>SET search_path</literal>options (see <xref linkend=\"sql-createfunction\">) to such functions to establish their expected search path environment.</xref></xref>"
+msgstr ""
+
+#: xml/postgres-fdw.xml:441(para)
+msgid "<filename>postgres_fdw</filename>likewise establishes remote session settings for the parameters <xref linkend=\"guc-timezone\">, <xref linkend=\"guc-datestyle\">, <xref linkend=\"guc-intervalstyle\">, and <xref linkend=\"guc-extra-float-digits\">. These are less likely to be problematic than <varname>search_path</varname>, but can be handled with function <literal>SET</literal>options if the need arises.</xref></xref></xref></xref>"
+msgstr ""
+
+#: xml/postgres-fdw.xml:453(para)
+msgid "It is <emphasis>not</emphasis>recommended that you override this behavior by changing the session-level settings of these parameters; that is likely to cause <filename>postgres_fdw</filename>to malfunction."
+msgstr ""
+
+#: xml/postgres-fdw.xml:460(title)
+msgid "Cross-Version Compatibility"
+msgstr ""
+
+#: xml/postgres-fdw.xml:461(para)
+msgid "<filename>postgres_fdw</filename>can be used with remote servers dating back to <productname>PostgreSQL</productname>8.3. Read-only capability is available back to 8.1. A limitation however is that <filename>postgres_fdw</filename>generally assumes that immutable built-in functions and operators are safe to send to the remote server for execution, if they appear in a <literal>WHERE</literal>clause for a foreign table. Thus, a built-in function that was added since the remote server's release might be sent to it for execution, resulting in <quote>function does not exist</quote>or a similar error. This type of failure can be worked around by rewriting the query, for example by embedding the foreign table reference in a sub- <literal>SELECT</literal>with <literal>OFFSET 0</literal>as an optimization fence, and placing the problematic function or operator outside the sub- <literal>SELECT</literal>."
+msgstr ""
+
+#: xml/postgres-fdw.xml:481(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/postgres-fdw.xml:482(para)
+msgid "Here is an example of creating a foreign table with <literal>postgres_fdw</literal>. First install the extension:"
+msgstr ""
+
+#: xml/postgres-fdw.xml:485(programlisting)
+#, no-wrap
+msgid "CREATE EXTENSION postgres_fdw;"
+msgstr ""
+
+#: xml/postgres-fdw.xml:494(programlisting)
+#, no-wrap
+msgid "CREATE SERVER foreign_server FOREIGN DATA\n    WRAPPER postgres_fdw OPTIONS (host '192.83.123.89', port\n    '5432', dbname 'foreign_db');"
+msgstr ""
+
+#: xml/postgres-fdw.xml:486(para)
+msgid "Then create a foreign server using <xref linkend=\"sql-createserver\">. In this example we wish to connect to a <productname>PostgreSQL</productname>server on host <literal>192.83.123.89</literal>listening on port <literal>5432</literal>. The database to which the connection is made is named <literal>foreign_db</literal>on the remote server: <placeholder-1/></xref>"
+msgstr ""
+
+#: xml/postgres-fdw.xml:500(programlisting)
+#, no-wrap
+msgid "CREATE USER MAPPING FOR local_user SERVER\n    foreign_server OPTIONS (user 'foreign_user', password\n    'password');"
+msgstr ""
+
+#: xml/postgres-fdw.xml:497(para)
+msgid "A user mapping, defined with <xref linkend=\"sql-createusermapping\">, is needed as well to identify the role that will be used on the remote server: <placeholder-1/></xref>"
+msgstr ""
+
+#: xml/postgres-fdw.xml:509(programlisting)
+#, no-wrap
+msgid "CREATE FOREIGN TABLE foreign_table ( id integer\n    NOT NULL, data text ) SERVER foreign_server OPTIONS\n    (schema_name 'some_schema', table_name\n    'some_table');"
+msgstr ""
+
+#: xml/postgres-fdw.xml:503(para)
+msgid "Now it is possible to create a foreign table with <xref linkend=\"sql-createforeigntable\">. In this example we wish to access the table named <structname>some_schema.some_table</structname>on the remote server. The local name for it will be <structname>foreign_table</structname>: <placeholder-1/>It's essential that the data types and other properties of the columns declared in <command>CREATE FOREIGN TABLE</command>match the actual remote table. Column names must match as well, unless you attach <literal>column_name</literal>options to the individual columns to show how they are named in the remote table. In many cases, use of <xref linkend=\"sql-importforeignschema\">is preferable to constructing foreign table definitions manually.</xref></xref>"
+msgstr ""
+
+#: xml/postgres-fdw.xml:524(title)
+msgid "Author"
+msgstr ""
+
+#: xml/postgres-fdw.xml:525(para)
+msgid "Shigeru Hanada <email>shigeru.hanada@gmail.com</email>"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/postgres-fdw.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

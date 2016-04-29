@@ -1,0 +1,106 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/set_role.xml:4(primary) xml/ref/set_role.xml:7(refentrytitle) xml/ref/set_role.xml:12(refname)
+msgid "SET ROLE"
+msgstr ""
+
+#: xml/ref/set_role.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/set_role.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/set_role.xml:13(refpurpose)
+msgid "set the current user identifier of the current session"
+msgstr ""
+
+#: xml/ref/set_role.xml:18(replaceable)
+msgid "role_name"
+msgstr ""
+
+#: xml/ref/set_role.xml:17(synopsis)
+#, no-wrap
+msgid "SET [ SESSION | LOCAL ] ROLE \n    <placeholder-1/>SET [\n    SESSION | LOCAL ] ROLE NONE RESET ROLE"
+msgstr ""
+
+#: xml/ref/set_role.xml:22(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/set_role.xml:23(para)
+msgid "This command sets the current user identifier of the current SQL session to be <replaceable class=\"parameter\">role_name</replaceable>. The role name can be written as either an identifier or a string literal. After <command>SET ROLE</command>, permissions checking for SQL commands is carried out as though the named role were the one that had logged in originally."
+msgstr ""
+
+#: xml/ref/set_role.xml:31(para)
+msgid "The specified <replaceable class=\"parameter\">role_name</replaceable>must be a role that the current session user is a member of. (If the session user is a superuser, any role can be selected.)"
+msgstr ""
+
+#: xml/ref/set_role.xml:35(para)
+msgid "The <literal>SESSION</literal>and <literal>LOCAL</literal>modifiers act the same as for the regular <xref linkend=\"SQL-SET\">command.</xref>"
+msgstr ""
+
+#: xml/ref/set_role.xml:40(para)
+msgid "The <literal>NONE</literal>and <literal>RESET</literal>forms reset the current user identifier to be the current session user identifier. These forms can be executed by any user."
+msgstr ""
+
+#: xml/ref/set_role.xml:47(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/set_role.xml:48(para)
+msgid "Using this command, it is possible to either add privileges or restrict one's privileges. If the session user role has the <literal>INHERITS</literal>attribute, then it automatically has all the privileges of every role that it could <command>SET ROLE</command>to; in this case <command>SET ROLE</command>effectively drops all the privileges assigned directly to the session user and to the other roles it is a member of, leaving only the privileges available to the named role. On the other hand, if the session user role has the <literal>NOINHERITS</literal>attribute, <command>SET ROLE</command>drops the privileges assigned directly to the session user and instead acquires the privileges available to the named role."
+msgstr ""
+
+#: xml/ref/set_role.xml:63(para)
+msgid "In particular, when a superuser chooses to <command>SET ROLE</command>to a non-superuser role, she loses her superuser privileges."
+msgstr ""
+
+#: xml/ref/set_role.xml:66(para)
+msgid "<command>SET ROLE</command>has effects comparable to <xref linkend=\"sql-set-session-authorization\">, but the privilege checks involved are quite different. Also, <command>SET SESSION AUTHORIZATION</command>determines which roles are allowable for later <command>SET ROLE</command>commands, whereas changing roles with <command>SET ROLE</command>does not change the set of roles allowed to a later <command>SET ROLE</command>.</xref>"
+msgstr ""
+
+#: xml/ref/set_role.xml:77(para)
+msgid "<command>SET ROLE</command>does not process session variables as specified by the role's <xref linkend=\"sql-alterrole\">settings; this only happens during login.</xref>"
+msgstr ""
+
+#: xml/ref/set_role.xml:82(para)
+msgid "<command>SET ROLE</command>cannot be used within a <literal>SECURITY DEFINER</literal>function."
+msgstr ""
+
+#: xml/ref/set_role.xml:87(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/set_role.xml:88(programlisting)
+#, no-wrap
+msgid "SELECT SESSION_USER, CURRENT_USER; session_user\n    | current_user --------------+-------------- peter | peter SET\n    ROLE 'paul'; SELECT SESSION_USER, CURRENT_USER; session_user |\n    current_user --------------+-------------- peter |\n    paul"
+msgstr ""
+
+#: xml/ref/set_role.xml:95(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/set_role.xml:96(para)
+msgid "<productname>PostgreSQL</productname>allows identifier syntax ( <literal>\"rolename\"</literal>), while the SQL standard requires the role name to be written as a string literal. SQL does not allow this command during a transaction; <productname>PostgreSQL</productname>does not make this restriction because there is no reason to. The <literal>SESSION</literal>and <literal>LOCAL</literal>modifiers are a <productname>PostgreSQL</productname>extension, as is the <literal>RESET</literal>syntax."
+msgstr ""
+
+#: xml/ref/set_role.xml:110(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/set_role.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

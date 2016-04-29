@@ -1,0 +1,114 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/release_savepoint.xml:4(primary) xml/ref/release_savepoint.xml:11(refentrytitle) xml/ref/release_savepoint.xml:16(refname)
+msgid "RELEASE SAVEPOINT"
+msgstr ""
+
+#: xml/ref/release_savepoint.xml:7(primary)
+msgid "savepoints"
+msgstr ""
+
+#: xml/ref/release_savepoint.xml:8(secondary)
+msgid "releasing"
+msgstr ""
+
+#: xml/ref/release_savepoint.xml:12(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/release_savepoint.xml:13(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/release_savepoint.xml:17(refpurpose)
+msgid "destroy a previously defined savepoint"
+msgstr ""
+
+#: xml/ref/release_savepoint.xml:21(replaceable) xml/ref/release_savepoint.xml:45(replaceable)
+msgid "savepoint_name"
+msgstr ""
+
+#: xml/ref/release_savepoint.xml:20(synopsis)
+#, no-wrap
+msgid "RELEASE [ SAVEPOINT ] \n    <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/release_savepoint.xml:24(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/release_savepoint.xml:25(para)
+msgid "<command>RELEASE SAVEPOINT</command>destroys a savepoint previously defined in the current transaction."
+msgstr ""
+
+#: xml/ref/release_savepoint.xml:28(para)
+msgid "Destroying a savepoint makes it unavailable as a rollback point, but it has no other user visible behavior. It does not undo the effects of commands executed after the savepoint was established. (To do that, see <xref linkend=\"sql-rollback-to\">.) Destroying a savepoint when it is no longer needed allows the system to reclaim some resources earlier than transaction end.</xref>"
+msgstr ""
+
+#: xml/ref/release_savepoint.xml:35(para)
+msgid "<command>RELEASE SAVEPOINT</command>also destroys all savepoints that were established after the named savepoint was established."
+msgstr ""
+
+#: xml/ref/release_savepoint.xml:41(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/release_savepoint.xml:48(para)
+msgid "The name of the savepoint to destroy."
+msgstr ""
+
+#: xml/ref/release_savepoint.xml:54(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/release_savepoint.xml:55(para)
+msgid "Specifying a savepoint name that was not previously defined is an error."
+msgstr ""
+
+#: xml/ref/release_savepoint.xml:57(para)
+msgid "It is not possible to release a savepoint when the transaction is in an aborted state."
+msgstr ""
+
+#: xml/ref/release_savepoint.xml:59(para)
+msgid "If multiple savepoints have the same name, only the one that was most recently defined is released."
+msgstr ""
+
+#: xml/ref/release_savepoint.xml:63(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/release_savepoint.xml:65(programlisting)
+#, no-wrap
+msgid "BEGIN; INSERT INTO table1 VALUES (3); SAVEPOINT\n    my_savepoint; INSERT INTO table1 VALUES (4); RELEASE SAVEPOINT\n    my_savepoint; COMMIT;"
+msgstr ""
+
+#: xml/ref/release_savepoint.xml:64(para)
+msgid "To establish and later destroy a savepoint: <placeholder-1/>The above transaction will insert both 3 and 4."
+msgstr ""
+
+#: xml/ref/release_savepoint.xml:71(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/release_savepoint.xml:72(para)
+msgid "This command conforms to the <acronym>SQL</acronym>standard. The standard specifies that the key word <literal>SAVEPOINT</literal>is mandatory, but <productname>PostgreSQL</productname>allows it to be omitted."
+msgstr ""
+
+#: xml/ref/release_savepoint.xml:80(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/release_savepoint.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

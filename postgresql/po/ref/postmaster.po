@@ -1,0 +1,52 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/postmaster.xml:4(primary) xml/ref/postmaster.xml:8(application) xml/ref/postmaster.xml:14(refname) xml/ref/postmaster.xml:21(command)
+msgid "postmaster"
+msgstr ""
+
+#: xml/ref/postmaster.xml:10(manvolnum)
+msgid "1"
+msgstr ""
+
+#: xml/ref/postmaster.xml:11(refmiscinfo)
+msgid "Application"
+msgstr ""
+
+#: xml/ref/postmaster.xml:16(productname)
+msgid "PostgreSQL"
+msgstr ""
+
+#: xml/ref/postmaster.xml:15(refpurpose)
+msgid "<placeholder-1/>database server"
+msgstr ""
+
+#: xml/ref/postmaster.xml:23(replaceable)
+msgid "option"
+msgstr ""
+
+#: xml/ref/postmaster.xml:28(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/postmaster.xml:29(para)
+msgid "<command>postmaster</command>is a deprecated alias of <command>postgres</command>."
+msgstr ""
+
+#: xml/ref/postmaster.xml:34(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/postmaster.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

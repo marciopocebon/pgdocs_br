@@ -1,0 +1,508 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/tablefunc.xml:3(title) xml/tablefunc.xml:5(primary) xml/tablefunc.xml:17(filename)
+msgid "tablefunc"
+msgstr ""
+
+#: xml/tablefunc.xml:7(para)
+msgid "The <filename>tablefunc</filename>module includes various functions that return tables (that is, multiple rows). These functions are useful both in their own right and as examples of how to write C functions that return multiple rows."
+msgstr ""
+
+#: xml/tablefunc.xml:13(title)
+msgid "Functions Provided"
+msgstr ""
+
+#: xml/tablefunc.xml:15(xref)
+msgid "shows the functions provided by the <placeholder-1/>module."
+msgstr ""
+
+#: xml/tablefunc.xml:20(title)
+msgid "<filename>tablefunc</filename>Functions"
+msgstr ""
+
+#: xml/tablefunc.xml:25(entry)
+msgid "Function"
+msgstr ""
+
+#: xml/tablefunc.xml:26(entry)
+msgid "Returns"
+msgstr ""
+
+#: xml/tablefunc.xml:27(entry) xml/tablefunc.xml:519(entry)
+msgid "Description"
+msgstr ""
+
+#: xml/tablefunc.xml:33(function)
+msgid "normal_rand(int numvals, float8 mean, float8 stddev)"
+msgstr ""
+
+#: xml/tablefunc.xml:37(type)
+msgid "setof float8"
+msgstr ""
+
+#: xml/tablefunc.xml:39(entry)
+msgid "Produces a set of normally distributed random values"
+msgstr ""
+
+#: xml/tablefunc.xml:44(function)
+msgid "crosstab(text sql)"
+msgstr ""
+
+#: xml/tablefunc.xml:47(type) xml/tablefunc.xml:81(type) xml/tablefunc.xml:92(type) xml/tablefunc.xml:113(type)
+msgid "setof record"
+msgstr ""
+
+#: xml/tablefunc.xml:50(quote) xml/tablefunc.xml:65(quote) xml/tablefunc.xml:84(quote)
+msgid "pivot table"
+msgstr ""
+
+#: xml/tablefunc.xml:51(replaceable) xml/tablefunc.xml:52(replaceable) xml/tablefunc.xml:58(replaceable) xml/tablefunc.xml:62(replaceable) xml/tablefunc.xml:66(replaceable) xml/tablefunc.xml:72(replaceable) xml/tablefunc.xml:260(replaceable) xml/tablefunc.xml:266(replaceable)
+msgid "N"
+msgstr ""
+
+#: xml/tablefunc.xml:49(entry)
+msgid "Produces a <placeholder-1/>containing row names plus <placeholder-2/>value columns, where <placeholder-3/>is determined by the row type specified in the calling query"
+msgstr ""
+
+#: xml/tablefunc.xml:57(function)
+msgid "crosstab <placeholder-1/>(text sql)"
+msgstr ""
+
+#: xml/tablefunc.xml:61(type)
+msgid "setof table_crosstab_ <placeholder-1/>"
+msgstr ""
+
+#: xml/tablefunc.xml:67(function)
+msgid "crosstab2"
+msgstr ""
+
+#: xml/tablefunc.xml:68(function)
+msgid "crosstab3"
+msgstr ""
+
+#: xml/tablefunc.xml:69(function)
+msgid "crosstab4"
+msgstr ""
+
+#: xml/tablefunc.xml:71(function)
+msgid "crosstab <placeholder-1/>"
+msgstr ""
+
+#: xml/tablefunc.xml:64(entry)
+msgid "Produces a <placeholder-1/>containing row names plus <placeholder-2/>value columns. <placeholder-3/>, <placeholder-4/>, and <placeholder-5/>are predefined, but you can create additional <placeholder-6/>functions as described below"
+msgstr ""
+
+#: xml/tablefunc.xml:77(function)
+msgid "crosstab(text source_sql, text category_sql)"
+msgstr ""
+
+#: xml/tablefunc.xml:83(entry)
+msgid "Produces a <placeholder-1/>with the value columns specified by a second query"
+msgstr ""
+
+#: xml/tablefunc.xml:89(function)
+msgid "crosstab(text sql, int N)"
+msgstr ""
+
+#: xml/tablefunc.xml:95(para)
+msgid "Obsolete version of <function>crosstab(text)</function>. The parameter <replaceable>N</replaceable>is now ignored, since the number of value columns is always determined by the calling query"
+msgstr ""
+
+#: xml/tablefunc.xml:104(function)
+msgid "connectby(text relname, text keyid_fld, text parent_keyid_fld [, text orderby_fld ], text start_with, int max_depth [, text branch_delim ])"
+msgstr ""
+
+#: xml/tablefunc.xml:109(primary) xml/tablefunc.xml:492(function) xml/tablefunc.xml:495(primary)
+msgid "connectby"
+msgstr ""
+
+#: xml/tablefunc.xml:115(entry)
+msgid "Produces a representation of a hierarchical tree structure"
+msgstr ""
+
+#: xml/tablefunc.xml:123(function) xml/tablefunc.xml:126(primary)
+msgid "normal_rand"
+msgstr ""
+
+#: xml/tablefunc.xml:128(synopsis)
+#, no-wrap
+msgid "normal_rand(int numvals, float8 mean, float8\n      stddev) returns setof float8"
+msgstr ""
+
+#: xml/tablefunc.xml:130(para)
+msgid "<function>normal_rand</function>produces a set of normally distributed random values (Gaussian distribution)."
+msgstr ""
+
+#: xml/tablefunc.xml:133(para)
+msgid "<parameter>numvals</parameter>is the number of values to be returned from the function. <parameter>mean</parameter>is the mean of the normal distribution of values and <parameter>stddev</parameter>is the standard deviation of the normal distribution of values."
+msgstr ""
+
+#: xml/tablefunc.xml:140(para)
+msgid "For example, this call requests 1000 values with a mean of 5 and a standard deviation of 3:"
+msgstr ""
+
+#: xml/tablefunc.xml:142(screen)
+#, no-wrap
+msgid "test=# SELECT * FROM normal_rand(1000, 5, 3);\n      normal_rand ---------------------- 1.56556322244898\n      9.10040991424657 5.36957140345079 -0.369151492880995\n      0.283600703686639 . . . 4.82992125404908 9.71308014517282\n      2.49639286969028 (1000 rows)"
+msgstr ""
+
+#: xml/tablefunc.xml:150(function)
+msgid "crosstab(text)"
+msgstr ""
+
+#: xml/tablefunc.xml:153(primary) xml/tablefunc.xml:263(primary) xml/tablefunc.xml:343(primary)
+msgid "crosstab"
+msgstr ""
+
+#: xml/tablefunc.xml:155(synopsis)
+#, no-wrap
+msgid "crosstab(text sql) crosstab(text sql, int\n      N)"
+msgstr ""
+
+#: xml/tablefunc.xml:162(programlisting)
+#, no-wrap
+msgid "row1 val11 row1 val12 row1 val13 ... row2\n      val21 row2 val22 row2 val23 ..."
+msgstr ""
+
+#: xml/tablefunc.xml:165(programlisting)
+#, no-wrap
+msgid "row1 val11 val12 val13 ... row2 val21 val22\n      val23 ... ..."
+msgstr ""
+
+#: xml/tablefunc.xml:157(para)
+msgid "The <function>crosstab</function>function is used to produce <quote>pivot</quote>displays, wherein data is listed across the page rather than down. For example, we might have data like <placeholder-1/>which we wish to display like <placeholder-2/>The <function>crosstab</function>function takes a text parameter that is a SQL query producing raw data formatted in the first way, and produces a table formatted in the second way."
+msgstr ""
+
+#: xml/tablefunc.xml:170(para)
+msgid "The <parameter>sql</parameter>parameter is a SQL statement that produces the source set of data. This statement must return one <structfield>row_name</structfield>column, one <structfield>category</structfield>column, and one <structfield>value</structfield>column. <parameter>N</parameter>is an obsolete parameter, ignored if supplied (formerly this had to match the number of output value columns, but now that is determined by the calling query)."
+msgstr ""
+
+#: xml/tablefunc.xml:183(programlisting)
+#, no-wrap
+msgid "row_name cat value ----------+-------+-------\n      row1 cat1 val1 row1 cat2 val2 row1 cat3 val3 row1 cat4 val4\n      row2 cat1 val5 row2 cat2 val6 row2 cat3 val7 row2 cat4\n      val8"
+msgstr ""
+
+#: xml/tablefunc.xml:181(para)
+msgid "For example, the provided query might produce a set something like: <placeholder-1/>"
+msgstr ""
+
+#: xml/tablefunc.xml:193(programlisting)
+#, no-wrap
+msgid "SELECT * FROM crosstab('...') AS ct(row_name\n      text, category_1 text, category_2 text);"
+msgstr ""
+
+#: xml/tablefunc.xml:196(programlisting)
+#, no-wrap
+msgid "== value columns == row_name category_1\n      category_2 ----------+------------+------------ row1 val1\n      val2 row2 val5 val6"
+msgstr ""
+
+#: xml/tablefunc.xml:187(para)
+msgid "The <function>crosstab</function>function is declared to return <type>setof record</type>, so the actual names and types of the output columns must be defined in the <literal>FROM</literal>clause of the calling <command>SELECT</command>statement, for example: <placeholder-1/>This example produces a set something like: <placeholder-2/>"
+msgstr ""
+
+#: xml/tablefunc.xml:199(para)
+msgid "The <literal>FROM</literal>clause must define the output as one <structfield>row_name</structfield>column (of the same data type as the first result column of the SQL query) followed by N <structfield>value</structfield>columns (all of the same data type as the third result column of the SQL query). You can set up as many output value columns as you wish. The names of the output columns are up to you."
+msgstr ""
+
+#: xml/tablefunc.xml:208(para)
+msgid "The <function>crosstab</function>function produces one output row for each consecutive group of input rows with the same <structfield>row_name</structfield>value. It fills the output <structfield>value</structfield>columns, left to right, with the <structfield>value</structfield>fields from these rows. If there are fewer rows in a group than there are output <structfield>value</structfield>columns, the extra output columns are filled with nulls; if there are more rows, the extra input rows are skipped."
+msgstr ""
+
+#: xml/tablefunc.xml:220(para)
+msgid "In practice the SQL query should always specify <literal>ORDER BY 1,2</literal>to ensure that the input rows are properly ordered, that is, values with the same <structfield>row_name</structfield>are brought together and correctly ordered within the row. Notice that <function>crosstab</function>itself does not pay any attention to the second column of the query result; it's just there to be ordered by, to control the order in which the third-column values appear across the page."
+msgstr ""
+
+#: xml/tablefunc.xml:230(programlisting)
+#, no-wrap
+msgid "CREATE TABLE ct(id SERIAL, rowid TEXT,\n      attribute TEXT, value TEXT); INSERT INTO ct(rowid, attribute,\n      value) VALUES('test1','att1','val1'); INSERT INTO ct(rowid,\n      attribute, value) VALUES('test1','att2','val2'); INSERT INTO\n      ct(rowid, attribute, value) VALUES('test1','att3','val3');\n      INSERT INTO ct(rowid, attribute, value)\n      VALUES('test1','att4','val4'); INSERT INTO ct(rowid,\n      attribute, value) VALUES('test2','att1','val5'); INSERT INTO\n      ct(rowid, attribute, value) VALUES('test2','att2','val6');\n      INSERT INTO ct(rowid, attribute, value)\n      VALUES('test2','att3','val7'); INSERT INTO ct(rowid,\n      attribute, value) VALUES('test2','att4','val8'); SELECT *\n      FROM crosstab( 'select rowid, attribute, value from ct where\n      attribute = ''att2'' or attribute = ''att3'' order by 1,2')\n      AS ct(row_name text, category_1 text, category_2 text,\n      category_3 text); row_name | category_1 | category_2 |\n      category_3 ----------+------------+------------+------------\n      test1 | val2 | val3 | test2 | val6 | val7 | (2\n      rows)"
+msgstr ""
+
+#: xml/tablefunc.xml:229(para)
+msgid "Here is a complete example: <placeholder-1/>"
+msgstr ""
+
+#: xml/tablefunc.xml:249(para)
+msgid "You can avoid always having to write out a <literal>FROM</literal>clause to define the output columns, by setting up a custom crosstab function that has the desired output row type wired into its definition. This is described in the next section. Another possibility is to embed the required <literal>FROM</literal>clause in a view definition."
+msgstr ""
+
+#: xml/tablefunc.xml:259(function)
+msgid "crosstab <placeholder-1/>(text)"
+msgstr ""
+
+#: xml/tablefunc.xml:265(synopsis)
+#, no-wrap
+msgid "crosstab \n      <placeholder-1/>(text sql)"
+msgstr ""
+
+#: xml/tablefunc.xml:267(para)
+msgid "The <function>crosstab <replaceable>N</replaceable></function>functions are examples of how to set up custom wrappers for the general <function>crosstab</function>function, so that you need not write out column names and types in the calling <command>SELECT</command>query. The <filename>tablefunc</filename>module includes <function>crosstab2</function>, <function>crosstab3</function>, and <function>crosstab4</function>, whose output row types are defined as"
+msgstr ""
+
+#: xml/tablefunc.xml:279(programlisting)
+#, no-wrap
+msgid "CREATE TYPE tablefunc_crosstab_N AS (\n      row_name TEXT, category_1 TEXT, category_2 TEXT, . . .\n      category_N TEXT );"
+msgstr ""
+
+#: xml/tablefunc.xml:282(para)
+msgid "Thus, these functions can be used directly when the input query produces <structfield>row_name</structfield>and <structfield>value</structfield>columns of type <type>text</type>, and you want 2, 3, or 4 output values columns. In all other ways they behave exactly as described above for the general <function>crosstab</function>function."
+msgstr ""
+
+#: xml/tablefunc.xml:292(programlisting)
+#, no-wrap
+msgid "SELECT * FROM crosstab3( 'select rowid,\n      attribute, value from ct where attribute = ''att2'' or\n      attribute = ''att3'' order by 1,2');"
+msgstr ""
+
+#: xml/tablefunc.xml:290(para)
+msgid "For instance, the example given in the previous section would also work as <placeholder-1/>"
+msgstr ""
+
+#: xml/tablefunc.xml:314(programlisting)
+#, no-wrap
+msgid "CREATE TYPE my_crosstab_float8_5_cols AS\n          ( my_row_name text, my_category_1 float8, my_category_2\n          float8, my_category_3 float8, my_category_4 float8,\n          my_category_5 float8 ); CREATE OR REPLACE FUNCTION\n          crosstab_float8_5_cols(text) RETURNS setof\n          my_crosstab_float8_5_cols AS\n          '$libdir/tablefunc','crosstab' LANGUAGE C STABLE\n          STRICT;"
+msgstr ""
+
+#: xml/tablefunc.xml:302(para)
+msgid "Create a composite type describing the desired output columns, similar to the examples in <filename> contrib/tablefunc/tablefunc--1.0.sql</filename>. Then define a unique function name accepting one <type>text</type>parameter and returning <type>setof your_type_name</type>, but linking to the same underlying <function>crosstab</function>C function. For example, if your source data produces row names that are <type>text</type>, and values that are <type>float8</type>, and you want 5 value columns: <placeholder-1/>"
+msgstr ""
+
+#: xml/tablefunc.xml:328(programlisting)
+#, no-wrap
+msgid "CREATE OR REPLACE FUNCTION\n          crosstab_float8_5_cols( IN text, OUT my_row_name text,\n          OUT my_category_1 float8, OUT my_category_2 float8, OUT\n          my_category_3 float8, OUT my_category_4 float8, OUT\n          my_category_5 float8) RETURNS setof record AS\n          '$libdir/tablefunc','crosstab' LANGUAGE C STABLE\n          STRICT;"
+msgstr ""
+
+#: xml/tablefunc.xml:324(para)
+msgid "Use <literal>OUT</literal>parameters to define the return type implicitly. The same example could also be done this way: <placeholder-1/>"
+msgstr ""
+
+#: xml/tablefunc.xml:295(para)
+msgid "These functions are provided mostly for illustration purposes. You can create your own return types and functions based on the underlying <function>crosstab()</function>function. There are two ways to do it: <placeholder-1/>"
+msgstr ""
+
+#: xml/tablefunc.xml:340(function)
+msgid "crosstab(text, text)"
+msgstr ""
+
+#: xml/tablefunc.xml:345(synopsis)
+#, no-wrap
+msgid "crosstab(text source_sql, text\n      category_sql)"
+msgstr ""
+
+#: xml/tablefunc.xml:347(para)
+msgid "The main limitation of the single-parameter form of <function>crosstab</function>is that it treats all values in a group alike, inserting each value into the first available column. If you want the value columns to correspond to specific categories of data, and some groups might not have data for some of the categories, that doesn't work well. The two-parameter form of <function>crosstab</function>handles this case by providing an explicit list of the categories corresponding to the output columns."
+msgstr ""
+
+#: xml/tablefunc.xml:357(para)
+msgid "<parameter>source_sql</parameter>is a SQL statement that produces the source set of data. This statement must return one <structfield>row_name</structfield>column, one <structfield>category</structfield>column, and one <structfield>value</structfield>column. It may also have one or more <quote>extra</quote>columns. The <structfield>row_name</structfield>column must be first. The <structfield>category</structfield>and <structfield>value</structfield>columns must be the last two columns, in that order. Any columns between <structfield>row_name</structfield>and <structfield>category</structfield>are treated as <quote>extra</quote>. The <quote>extra</quote>columns are expected to be the same for all rows with the same <structfield>row_name</structfield>value."
+msgstr ""
+
+#: xml/tablefunc.xml:379(programlisting)
+#, no-wrap
+msgid "SELECT row_name, extra_col, cat, value FROM\n      foo ORDER BY 1; row_name extra_col cat value\n      ----------+------------+-----+--------- row1 extra1 cat1 val1\n      row1 extra1 cat2 val2 row1 extra1 cat4 val4 row2 extra2 cat1\n      val5 row2 extra2 cat2 val6 row2 extra2 cat3 val7 row2 extra2\n      cat4 val8"
+msgstr ""
+
+#: xml/tablefunc.xml:376(para)
+msgid "For example, <parameter>source_sql</parameter>might produce a set something like: <placeholder-1/>"
+msgstr ""
+
+#: xml/tablefunc.xml:392(programlisting)
+#, no-wrap
+msgid "SELECT DISTINCT cat FROM foo ORDER BY 1; cat\n      ------- cat1 cat2 cat3 cat4"
+msgstr ""
+
+#: xml/tablefunc.xml:385(para)
+msgid "<parameter>category_sql</parameter>is a SQL statement that produces the set of categories. This statement must return only one column. It must produce at least one row, or an error will be generated. Also, it must not produce duplicate values, or an error will be generated. <parameter>category_sql</parameter>might be something like: <placeholder-1/>"
+msgstr ""
+
+#: xml/tablefunc.xml:400(programlisting)
+#, no-wrap
+msgid "SELECT * FROM crosstab('...', '...') AS\n      ct(row_name text, extra text, cat1 text, cat2 text, cat3\n      text, cat4 text);"
+msgstr ""
+
+#: xml/tablefunc.xml:394(para)
+msgid "The <function>crosstab</function>function is declared to return <type>setof record</type>, so the actual names and types of the output columns must be defined in the <literal>FROM</literal>clause of the calling <command>SELECT</command>statement, for example: <placeholder-1/>"
+msgstr ""
+
+#: xml/tablefunc.xml:404(programlisting)
+#, no-wrap
+msgid "== value columns == row_name extra cat1 cat2\n      cat3 cat4 ---------+-------+------+------+------+------ row1\n      extra1 val1 val2 val4 row2 extra2 val5 val6 val7\n      val8"
+msgstr ""
+
+#: xml/tablefunc.xml:403(para)
+msgid "This will produce a result something like: <placeholder-1/>"
+msgstr ""
+
+#: xml/tablefunc.xml:408(para)
+msgid "The <literal>FROM</literal>clause must define the proper number of output columns of the proper data types. If there are <replaceable>N</replaceable>columns in the <parameter>source_sql</parameter>query's result, the first <replaceable>N</replaceable>-2 of them must match up with the first <replaceable>N</replaceable>-2 output columns. The remaining output columns must have the type of the last column of the <parameter>source_sql</parameter>query's result, and there must be exactly as many of them as there are rows in the <parameter>category_sql</parameter>query's result."
+msgstr ""
+
+#: xml/tablefunc.xml:420(para)
+msgid "The <function>crosstab</function>function produces one output row for each consecutive group of input rows with the same <structfield>row_name</structfield>value. The output <structfield>row_name</structfield>column, plus any <quote>extra</quote>columns, are copied from the first row of the group. The output <structfield>value</structfield>columns are filled with the <structfield>value</structfield>fields from rows having matching <structfield>category</structfield>values. If a row's <structfield>category</structfield>does not match any output of the <parameter>category_sql</parameter>query, its <structfield>value</structfield>is ignored. Output columns whose matching category is not present in any input row of the group are filled with nulls."
+msgstr ""
+
+#: xml/tablefunc.xml:437(para)
+msgid "In practice the <parameter>source_sql</parameter>query should always specify <literal>ORDER BY 1</literal>to ensure that values with the same <structfield>row_name</structfield>are brought together. However, ordering of the categories within a group is not important. Also, it is essential to be sure that the order of the <parameter>category_sql</parameter>query's output matches the specified output column order."
+msgstr ""
+
+#: xml/tablefunc.xml:448(programlisting)
+#, no-wrap
+msgid "create table sales(year int, month int, qty\n      int); insert into sales values(2007, 1, 1000); insert into\n      sales values(2007, 2, 1500); insert into sales values(2007,\n      7, 500); insert into sales values(2007, 11, 1500); insert\n      into sales values(2007, 12, 2000); insert into sales\n      values(2008, 1, 1000); select * from crosstab( 'select year,\n      month, qty from sales order by 1', 'select m from\n      generate_series(1,12) m' ) as ( year int, \"Jan\" int, \"Feb\"\n      int, \"Mar\" int, \"Apr\" int, \"May\" int, \"Jun\" int, \"Jul\" int,\n      \"Aug\" int, \"Sep\" int, \"Oct\" int, \"Nov\" int, \"Dec\" int ); year\n      | Jan | Feb | Mar | Apr | May | Jun | Jul | Aug | Sep | Oct |\n      Nov | Dec\n      ------+------+------+-----+-----+-----+-----+-----+-----+-----+-----+------+------\n      2007 | 1000 | 1500 | | | | | 500 | | | | 1500 | 2000 2008 |\n      1000 | | | | | | | | | | | (2 rows)"
+msgstr ""
+
+#: xml/tablefunc.xml:463(programlisting)
+#, no-wrap
+msgid "CREATE TABLE cth(rowid text, rowdt timestamp,\n      attribute text, val text); INSERT INTO cth VALUES('test1','01\n      March 2003','temperature','42'); INSERT INTO cth\n      VALUES('test1','01 March 2003','test_result','PASS'); INSERT\n      INTO cth VALUES('test1','01 March 2003','volts','2.6987');\n      INSERT INTO cth VALUES('test2','02 March\n      2003','temperature','53'); INSERT INTO cth VALUES('test2','02\n      March 2003','test_result','FAIL'); INSERT INTO cth\n      VALUES('test2','02 March 2003','test_startdate','01 March\n      2003'); INSERT INTO cth VALUES('test2','02 March\n      2003','volts','3.1234'); SELECT * FROM crosstab ( 'SELECT\n      rowid, rowdt, attribute, val FROM cth ORDER BY 1', 'SELECT\n      DISTINCT attribute FROM cth ORDER BY 1' ) AS ( rowid text,\n      rowdt timestamp, temperature int4, test_result text,\n      test_startdate timestamp, volts float8 ); rowid | rowdt |\n      temperature | test_result | test_startdate | volts\n      -------+--------------------------+-------------+-------------+--------------------------+--------\n      test1 | Sat Mar 01 00:00:00 2003 | 42 | PASS | | 2.6987 test2\n      | Sun Mar 02 00:00:00 2003 | 53 | FAIL | Sat Mar 01 00:00:00\n      2003 | 3.1234 (2 rows)"
+msgstr ""
+
+#: xml/tablefunc.xml:447(para)
+msgid "Here are two complete examples: <placeholder-1/><placeholder-2/>"
+msgstr ""
+
+#: xml/tablefunc.xml:483(para)
+msgid "You can create predefined functions to avoid having to write out the result column names and types in each query. See the examples in the previous section. The underlying C function for this form of <function>crosstab</function>is named <literal>crosstab_hash</literal>."
+msgstr ""
+
+#: xml/tablefunc.xml:497(synopsis)
+#, no-wrap
+msgid "connectby(text relname, text keyid_fld, text\n      parent_keyid_fld [, text orderby_fld ], text start_with, int\n      max_depth [, text branch_delim ])"
+msgstr ""
+
+#: xml/tablefunc.xml:500(para)
+msgid "The <function>connectby</function>function produces a display of hierarchical data that is stored in a table. The table must have a key field that uniquely identifies rows, and a parent-key field that references the parent (if any) of each row. <function>connectby</function>can display the sub-tree descending from any row."
+msgstr ""
+
+#: xml/tablefunc.xml:509(xref)
+msgid "explains the parameters."
+msgstr ""
+
+#: xml/tablefunc.xml:513(title)
+msgid "<function>connectby</function>Parameters"
+msgstr ""
+
+#: xml/tablefunc.xml:518(entry)
+msgid "Parameter"
+msgstr ""
+
+#: xml/tablefunc.xml:525(parameter)
+msgid "relname"
+msgstr ""
+
+#: xml/tablefunc.xml:527(entry)
+msgid "Name of the source relation"
+msgstr ""
+
+#: xml/tablefunc.xml:531(parameter)
+msgid "keyid_fld"
+msgstr ""
+
+#: xml/tablefunc.xml:533(entry)
+msgid "Name of the key field"
+msgstr ""
+
+#: xml/tablefunc.xml:537(parameter)
+msgid "parent_keyid_fld"
+msgstr ""
+
+#: xml/tablefunc.xml:539(entry)
+msgid "Name of the parent-key field"
+msgstr ""
+
+#: xml/tablefunc.xml:543(parameter)
+msgid "orderby_fld"
+msgstr ""
+
+#: xml/tablefunc.xml:545(entry)
+msgid "Name of the field to order siblings by (optional)"
+msgstr ""
+
+#: xml/tablefunc.xml:550(parameter)
+msgid "start_with"
+msgstr ""
+
+#: xml/tablefunc.xml:552(entry)
+msgid "Key value of the row to start at"
+msgstr ""
+
+#: xml/tablefunc.xml:556(parameter)
+msgid "max_depth"
+msgstr ""
+
+#: xml/tablefunc.xml:558(entry)
+msgid "Maximum depth to descend to, or zero for unlimited depth"
+msgstr ""
+
+#: xml/tablefunc.xml:563(parameter)
+msgid "branch_delim"
+msgstr ""
+
+#: xml/tablefunc.xml:565(entry)
+msgid "String to separate keys with in branch output (optional)"
+msgstr ""
+
+#: xml/tablefunc.xml:571(para)
+msgid "The key and parent-key fields can be any data type, but they must be the same type. Note that the <parameter>start_with</parameter>value must be entered as a text string, regardless of the type of the key field."
+msgstr ""
+
+#: xml/tablefunc.xml:575(para)
+msgid "The <function>connectby</function>function is declared to return <type>setof record</type>, so the actual names and types of the output columns must be defined in the <literal>FROM</literal>clause of the calling <command>SELECT</command>statement, for example:"
+msgstr ""
+
+#: xml/tablefunc.xml:581(programlisting)
+#, no-wrap
+msgid "SELECT * FROM connectby('connectby_tree',\n      'keyid', 'parent_keyid', 'pos', 'row2', 0, '~') AS t(keyid\n      text, parent_keyid text, level int, branch text, pos\n      int);"
+msgstr ""
+
+#: xml/tablefunc.xml:585(para)
+msgid "The first two output columns are used for the current row's key and its parent row's key; they must match the type of the table's key field. The third output column is the depth in the tree and must be of type <type>integer</type>. If a <parameter>branch_delim</parameter>parameter was given, the next output column is the branch display and must be of type <type>text</type>. Finally, if an <parameter>orderby_fld</parameter>parameter was given, the last output column is a serial number, and must be of type <type>integer</type>."
+msgstr ""
+
+#: xml/tablefunc.xml:596(para)
+msgid "The <quote>branch</quote>output column shows the path of keys taken to reach the current row. The keys are separated by the specified <parameter>branch_delim</parameter>string. If no branch display is wanted, omit both the <parameter>branch_delim</parameter>parameter and the branch column in the output column list."
+msgstr ""
+
+#: xml/tablefunc.xml:604(para)
+msgid "If the ordering of siblings of the same parent is important, include the <parameter>orderby_fld</parameter>parameter to specify which field to order siblings by. This field can be of any sortable data type. The output column list must include a final integer serial-number column, if and only if <parameter>orderby_fld</parameter>is specified."
+msgstr ""
+
+#: xml/tablefunc.xml:611(para)
+msgid "The parameters representing table and field names are copied as-is into the SQL queries that <function>connectby</function>generates internally. Therefore, include double quotes if the names are mixed-case or contain special characters. You may also need to schema-qualify the table name."
+msgstr ""
+
+#: xml/tablefunc.xml:617(para)
+msgid "In large tables, performance will be poor unless there is an index on the parent-key field."
+msgstr ""
+
+#: xml/tablefunc.xml:619(para)
+msgid "It is important that the <parameter>branch_delim</parameter>string not appear in any key values, else <function>connectby</function>may incorrectly report an infinite-recursion error. Note that if <parameter>branch_delim</parameter>is not provided, a default value of <literal>~</literal>is used for recursion detection purposes."
+msgstr ""
+
+#: xml/tablefunc.xml:629(programlisting)
+#, no-wrap
+msgid "CREATE TABLE connectby_tree(keyid text,\n      parent_keyid text, pos int); INSERT INTO connectby_tree\n      VALUES('row1',NULL, 0); INSERT INTO connectby_tree\n      VALUES('row2','row1', 0); INSERT INTO connectby_tree\n      VALUES('row3','row1', 0); INSERT INTO connectby_tree\n      VALUES('row4','row2', 1); INSERT INTO connectby_tree\n      VALUES('row5','row2', 0); INSERT INTO connectby_tree\n      VALUES('row6','row4', 0); INSERT INTO connectby_tree\n      VALUES('row7','row3', 0); INSERT INTO connectby_tree\n      VALUES('row8','row6', 0); INSERT INTO connectby_tree\n      VALUES('row9','row5', 0); -- with branch, without orderby_fld\n      (order of results is not guaranteed) SELECT * FROM\n      connectby('connectby_tree', 'keyid', 'parent_keyid', 'row2',\n      0, '~') AS t(keyid text, parent_keyid text, level int, branch\n      text); keyid | parent_keyid | level | branch\n      -------+--------------+-------+--------------------- row2 | |\n      0 | row2 row4 | row2 | 1 | row2~row4 row6 | row4 | 2 |\n      row2~row4~row6 row8 | row6 | 3 | row2~row4~row6~row8 row5 |\n      row2 | 1 | row2~row5 row9 | row5 | 2 | row2~row5~row9 (6\n      rows) -- without branch, without orderby_fld (order of\n      results is not guaranteed) SELECT * FROM\n      connectby('connectby_tree', 'keyid', 'parent_keyid', 'row2',\n      0) AS t(keyid text, parent_keyid text, level int); keyid |\n      parent_keyid | level -------+--------------+------- row2 | |\n      0 row4 | row2 | 1 row6 | row4 | 2 row8 | row6 | 3 row5 | row2\n      | 1 row9 | row5 | 2 (6 rows) -- with branch, with orderby_fld\n      (notice that row5 comes before row4) SELECT * FROM\n      connectby('connectby_tree', 'keyid', 'parent_keyid', 'pos',\n      'row2', 0, '~') AS t(keyid text, parent_keyid text, level\n      int, branch text, pos int); keyid | parent_keyid | level |\n      branch | pos\n      -------+--------------+-------+---------------------+-----\n      row2 | | 0 | row2 | 1 row5 | row2 | 1 | row2~row5 | 2 row9 |\n      row5 | 2 | row2~row5~row9 | 3 row4 | row2 | 1 | row2~row4 | 4\n      row6 | row4 | 2 | row2~row4~row6 | 5 row8 | row6 | 3 |\n      row2~row4~row6~row8 | 6 (6 rows) -- without branch, with\n      orderby_fld (notice that row5 comes before row4) SELECT *\n      FROM connectby('connectby_tree', 'keyid', 'parent_keyid',\n      'pos', 'row2', 0) AS t(keyid text, parent_keyid text, level\n      int, pos int); keyid | parent_keyid | level | pos\n      -------+--------------+-------+----- row2 | | 0 | 1 row5 |\n      row2 | 1 | 2 row9 | row5 | 2 | 3 row4 | row2 | 1 | 4 row6 |\n      row4 | 2 | 5 row8 | row6 | 3 | 6 (6\n      rows)"
+msgstr ""
+
+#: xml/tablefunc.xml:628(para)
+msgid "Here is an example: <placeholder-1/>"
+msgstr ""
+
+#: xml/tablefunc.xml:676(title)
+msgid "Author"
+msgstr ""
+
+#: xml/tablefunc.xml:677(para)
+msgid "Joe Conway"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/tablefunc.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

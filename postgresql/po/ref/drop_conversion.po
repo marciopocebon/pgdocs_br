@@ -1,0 +1,102 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/drop_conversion.xml:4(primary) xml/ref/drop_conversion.xml:7(refentrytitle) xml/ref/drop_conversion.xml:12(refname)
+msgid "DROP CONVERSION"
+msgstr ""
+
+#: xml/ref/drop_conversion.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/drop_conversion.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/drop_conversion.xml:13(refpurpose)
+msgid "remove a conversion"
+msgstr ""
+
+#: xml/ref/drop_conversion.xml:17(replaceable) xml/ref/drop_conversion.xml:41(replaceable)
+msgid "name"
+msgstr ""
+
+#: xml/ref/drop_conversion.xml:16(synopsis)
+#, no-wrap
+msgid "DROP CONVERSION [ IF EXISTS ] \n    <placeholder-1/>[ CASCADE | RESTRICT\n    ]"
+msgstr ""
+
+#: xml/ref/drop_conversion.xml:21(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/drop_conversion.xml:22(para)
+msgid "<command>DROP CONVERSION</command>removes a previously defined conversion. To be able to drop a conversion, you must own the conversion."
+msgstr ""
+
+#: xml/ref/drop_conversion.xml:28(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/drop_conversion.xml:32(literal)
+msgid "IF EXISTS"
+msgstr ""
+
+#: xml/ref/drop_conversion.xml:35(para)
+msgid "Do not throw an error if the conversion does not exist. A notice is issued in this case."
+msgstr ""
+
+#: xml/ref/drop_conversion.xml:44(para)
+msgid "The name of the conversion. The conversion name can be schema-qualified."
+msgstr ""
+
+#: xml/ref/drop_conversion.xml:50(literal)
+msgid "CASCADE"
+msgstr ""
+
+#: xml/ref/drop_conversion.xml:53(literal)
+msgid "RESTRICT"
+msgstr ""
+
+#: xml/ref/drop_conversion.xml:56(para)
+msgid "These key words do not have any effect, since there are no dependencies on conversions."
+msgstr ""
+
+#: xml/ref/drop_conversion.xml:63(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/drop_conversion.xml:66(programlisting)
+#, no-wrap
+msgid "DROP CONVERSION myname;"
+msgstr ""
+
+#: xml/ref/drop_conversion.xml:64(para)
+msgid "To drop the conversion named <literal>myname</literal>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/drop_conversion.xml:69(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/drop_conversion.xml:70(para)
+msgid "There is no <command>DROP CONVERSION</command>statement in the SQL standard, but a <command>DROP TRANSLATION</command>statement that goes along with the <command>CREATE TRANSLATION</command>statement that is similar to the <command>CREATE CONVERSION</command>statement in PostgreSQL."
+msgstr ""
+
+#: xml/ref/drop_conversion.xml:81(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/drop_conversion.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

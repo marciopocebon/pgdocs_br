@@ -1,0 +1,303 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/pgstandby.xml:4(primary) xml/pgstandby.xml:8(application) xml/pgstandby.xml:14(refname) xml/pgstandby.xml:21(command)
+msgid "pg_standby"
+msgstr ""
+
+#: xml/pgstandby.xml:10(manvolnum)
+msgid "1"
+msgstr ""
+
+#: xml/pgstandby.xml:11(refmiscinfo)
+msgid "Application"
+msgstr ""
+
+#: xml/pgstandby.xml:16(productname)
+msgid "PostgreSQL"
+msgstr ""
+
+#: xml/pgstandby.xml:15(refpurpose)
+msgid "supports the creation of a <placeholder-1/>warm standby server"
+msgstr ""
+
+#: xml/pgstandby.xml:23(replaceable)
+msgid "option"
+msgstr ""
+
+#: xml/pgstandby.xml:26(replaceable)
+msgid "archivelocation"
+msgstr ""
+
+#: xml/pgstandby.xml:29(replaceable)
+msgid "nextwalfile"
+msgstr ""
+
+#: xml/pgstandby.xml:32(replaceable)
+msgid "xlogfilepath"
+msgstr ""
+
+#: xml/pgstandby.xml:35(replaceable)
+msgid "restartwalfile"
+msgstr ""
+
+#: xml/pgstandby.xml:40(title)
+msgid "Description"
+msgstr ""
+
+#: xml/pgstandby.xml:41(para)
+msgid "<application>pg_standby</application>supports creation of a <quote>warm standby</quote>database server. It is designed to be a production-ready program, as well as a customizable template should you require specific modifications."
+msgstr ""
+
+#: xml/pgstandby.xml:46(para)
+msgid "<application>pg_standby</application>is designed to be a waiting <varname>restore_command</varname>, which is needed to turn a standard archive recovery into a warm standby operation. Other configuration is required as well, all of which is described in the main server manual (see <xref linkend=\"warm-standby\">).</xref>"
+msgstr ""
+
+#: xml/pgstandby.xml:57(programlisting)
+#, no-wrap
+msgid "restore_command = 'pg_standby \n    <replaceable>archiveDir</replaceable>%f %p\n    %r'"
+msgstr ""
+
+#: xml/pgstandby.xml:54(para)
+msgid "To configure a standby server to use <application>pg_standby</application>, put this into its <filename>recovery.conf</filename>configuration file: <placeholder-1/>where <replaceable>archiveDir</replaceable>is the directory from which WAL segment files should be restored."
+msgstr ""
+
+#: xml/pgstandby.xml:62(para)
+msgid "If <replaceable>restartwalfile</replaceable>is specified, normally by using the <literal>%r</literal>macro, then all WAL files logically preceding this file will be removed from <replaceable>archivelocation</replaceable>. This minimizes the number of files that need to be retained, while preserving crash-restart capability. Use of this parameter is appropriate if the <replaceable>archivelocation</replaceable>is a transient staging area for this particular standby server, but <emphasis>not</emphasis>when the <replaceable>archivelocation</replaceable>is intended as a long-term WAL archive area."
+msgstr ""
+
+#: xml/pgstandby.xml:76(para)
+msgid "<application>pg_standby</application>assumes that <replaceable>archivelocation</replaceable>is a directory readable by the server-owning user. If <replaceable>restartwalfile</replaceable>(or <literal>-k</literal>) is specified, the <replaceable>archivelocation</replaceable>directory must be writable too."
+msgstr ""
+
+#: xml/pgstandby.xml:89(term)
+msgid "Smart Failover"
+msgstr ""
+
+#: xml/pgstandby.xml:91(para)
+msgid "In smart failover, the server is brought up after applying all WAL files available in the archive. This results in zero data loss, even if the standby server has fallen behind, but if there is a lot of unapplied WAL it can be a long time before the standby server becomes ready. To trigger a smart failover, create a trigger file containing the word <literal>smart</literal>, or just create it and leave it empty."
+msgstr ""
+
+#: xml/pgstandby.xml:103(term)
+msgid "Fast Failover"
+msgstr ""
+
+#: xml/pgstandby.xml:105(para)
+msgid "In fast failover, the server is brought up immediately. Any WAL files in the archive that have not yet been applied will be ignored, and all transactions in those files are lost. To trigger a fast failover, create a trigger file and write the word <literal>fast</literal>into it. <application>pg_standby</application>can also be configured to execute a fast failover automatically if no new WAL file appears within a defined interval."
+msgstr ""
+
+#: xml/pgstandby.xml:84(para)
+msgid "There are two ways to fail over to a <quote>warm standby</quote>database server when the master server fails: <placeholder-1/>"
+msgstr ""
+
+#: xml/pgstandby.xml:119(title)
+msgid "Options"
+msgstr ""
+
+#: xml/pgstandby.xml:126(option)
+msgid "-c"
+msgstr ""
+
+#: xml/pgstandby.xml:129(para)
+msgid "Use <literal>cp</literal>or <literal>copy</literal>command to restore WAL files from archive. This is the only supported behavior so this option is useless."
+msgstr ""
+
+#: xml/pgstandby.xml:138(option)
+msgid "-d"
+msgstr ""
+
+#: xml/pgstandby.xml:141(para)
+msgid "Print lots of debug logging output on <filename>stderr</filename>."
+msgstr ""
+
+#: xml/pgstandby.xml:147(option)
+msgid "-k"
+msgstr ""
+
+#: xml/pgstandby.xml:150(para)
+msgid "Remove files from <replaceable>archivelocation</replaceable>so that no more than this many WAL files before the current one are kept in the archive. Zero (the default) means not to remove any files from <replaceable>archivelocation</replaceable>. This parameter will be silently ignored if <replaceable>restartwalfile</replaceable>is specified, since that specification method is more accurate in determining the correct archive cut-off point. Use of this parameter is <emphasis>deprecated</emphasis>as of <productname>PostgreSQL</productname>8.3; it is safer and more efficient to specify a <replaceable>restartwalfile</replaceable>parameter. A too small setting could result in removal of files that are still needed for a restart of the standby server, while a too large setting wastes archive space."
+msgstr ""
+
+#: xml/pgstandby.xml:172(option)
+msgid "-r"
+msgstr ""
+
+#: xml/pgstandby.xml:173(replaceable)
+msgid "maxretries"
+msgstr ""
+
+#: xml/pgstandby.xml:176(para)
+msgid "Set the maximum number of times to retry the copy command if it fails (default 3). After each failure, we wait for <replaceable>sleeptime</replaceable>* <replaceable>num_retries</replaceable>so that the wait time increases progressively. So by default, we will wait 5 secs, 10 secs, then 15 secs before reporting the failure back to the standby server. This will be interpreted as end of recovery and the standby will come up fully as a result."
+msgstr ""
+
+#: xml/pgstandby.xml:190(option)
+msgid "-s"
+msgstr ""
+
+#: xml/pgstandby.xml:191(replaceable)
+msgid "sleeptime"
+msgstr ""
+
+#: xml/pgstandby.xml:194(para)
+msgid "Set the number of seconds (up to 60, default 5) to sleep between tests to see if the WAL file to be restored is available in the archive yet. The default setting is not necessarily recommended; consult <xref linkend=\"warm-standby\">for discussion.</xref>"
+msgstr ""
+
+#: xml/pgstandby.xml:204(option)
+msgid "-t"
+msgstr ""
+
+#: xml/pgstandby.xml:205(replaceable)
+msgid "triggerfile"
+msgstr ""
+
+#: xml/pgstandby.xml:208(para)
+msgid "Specify a trigger file whose presence should cause failover. It is recommended that you use a structured file name to avoid confusion as to which server is being triggered when multiple servers exist on the same system; for example <filename>/tmp/pgsql.trigger.5432</filename>."
+msgstr ""
+
+#: xml/pgstandby.xml:218(option)
+msgid "-V"
+msgstr ""
+
+#: xml/pgstandby.xml:221(option)
+msgid "--version"
+msgstr ""
+
+#: xml/pgstandby.xml:224(para)
+msgid "Print the <application>pg_standby</application>version and exit."
+msgstr ""
+
+#: xml/pgstandby.xml:231(option)
+msgid "-w"
+msgstr ""
+
+#: xml/pgstandby.xml:232(replaceable)
+msgid "maxwaittime"
+msgstr ""
+
+#: xml/pgstandby.xml:235(para)
+msgid "Set the maximum number of seconds to wait for the next WAL file, after which a fast failover will be performed. A setting of zero (the default) means wait forever. The default setting is not necessarily recommended; consult <xref linkend=\"warm-standby\">for discussion.</xref>"
+msgstr ""
+
+#: xml/pgstandby.xml:246(option)
+msgid "-?"
+msgstr ""
+
+#: xml/pgstandby.xml:249(option)
+msgid "--help"
+msgstr ""
+
+#: xml/pgstandby.xml:252(para)
+msgid "Show help about <application>pg_standby</application>command line arguments, and exit."
+msgstr ""
+
+#: xml/pgstandby.xml:120(para)
+msgid "<application>pg_standby</application>accepts the following command-line arguments: <placeholder-1/>"
+msgstr ""
+
+#: xml/pgstandby.xml:260(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/pgstandby.xml:261(para)
+msgid "<application>pg_standby</application>is designed to work with <productname>PostgreSQL</productname>8.2 and later."
+msgstr ""
+
+#: xml/pgstandby.xml:264(para)
+msgid "<productname>PostgreSQL</productname>8.3 provides the <literal>%r</literal>macro, which is designed to let <application>pg_standby</application>know the last file it needs to keep. With <productname>PostgreSQL</productname>8.2, the <literal>-k</literal>option must be used if archive cleanup is required. This option remains available in 8.3, but its use is deprecated."
+msgstr ""
+
+#: xml/pgstandby.xml:273(para)
+msgid "<productname>PostgreSQL</productname>8.4 provides the <varname>recovery_end_command</varname>option. Without this option a leftover trigger file can be hazardous."
+msgstr ""
+
+#: xml/pgstandby.xml:277(para)
+msgid "<application>pg_standby</application>is written in C and has an easy-to-modify source code, with specifically designated sections to modify for your own needs"
+msgstr ""
+
+#: xml/pgstandby.xml:283(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/pgstandby.xml:285(programlisting)
+#, no-wrap
+msgid "archive_command = 'cp %p .../archive/%f'\n    restore_command = 'pg_standby -d -s 2 -t\n    /tmp/pgsql.trigger.5442 .../archive %f %p %r\n    2&gt;&gt;standby.log' recovery_end_command = 'rm -f\n    /tmp/pgsql.trigger.5442'"
+msgstr ""
+
+#: xml/pgstandby.xml:297(para) xml/pgstandby.xml:334(para)
+msgid "produce debugging output in <filename>standby.log</filename>"
+msgstr ""
+
+#: xml/pgstandby.xml:301(para)
+msgid "sleep for 2 seconds between checks for next WAL file availability"
+msgstr ""
+
+#: xml/pgstandby.xml:305(para)
+msgid "stop waiting only when a trigger file called <filename>/tmp/pgsql.trigger.5442</filename>appears, and perform failover according to its content"
+msgstr ""
+
+#: xml/pgstandby.xml:310(para) xml/pgstandby.xml:347(para)
+msgid "remove the trigger file when recovery ends"
+msgstr ""
+
+#: xml/pgstandby.xml:313(para) xml/pgstandby.xml:350(para)
+msgid "remove no-longer-needed files from the archive directory"
+msgstr ""
+
+#: xml/pgstandby.xml:284(para)
+msgid "On Linux or Unix systems, you might use: <placeholder-1/>where the archive directory is physically located on the standby server, so that the <varname>archive_command</varname>is accessing it across NFS, but the files are local to the standby (enabling use of <literal>ln</literal>). This will: <placeholder-2/>"
+msgstr ""
+
+#: xml/pgstandby.xml:318(programlisting)
+#, no-wrap
+msgid "archive_command = 'copy %p ...\\\\archive\\\\%f'\n    restore_command = 'pg_standby -d -s 5 -t C:\\pgsql.trigger.5442\n    ...\\archive %f %p %r 2&gt;&gt;standby.log' recovery_end_command\n    = 'del C:\\pgsql.trigger.5442'"
+msgstr ""
+
+#: xml/pgstandby.xml:329(para)
+msgid "use the <literal>copy</literal>command to restore WAL files from archive"
+msgstr ""
+
+#: xml/pgstandby.xml:338(para)
+msgid "sleep for 5 seconds between checks for next WAL file availability"
+msgstr ""
+
+#: xml/pgstandby.xml:342(para)
+msgid "stop waiting only when a trigger file called <filename>C:\\pgsql.trigger.5442</filename>appears, and perform failover according to its content"
+msgstr ""
+
+#: xml/pgstandby.xml:317(para)
+msgid "On Windows, you might use: <placeholder-1/>Note that backslashes need to be doubled in the <varname>archive_command</varname>, but <emphasis>not</emphasis>in the <varname>restore_command</varname>or <varname>recovery_end_command</varname>. This will: <placeholder-2/>"
+msgstr ""
+
+#: xml/pgstandby.xml:354(para)
+msgid "The <literal>copy</literal>command on Windows sets the final file size before the file is completely copied, which would ordinarily confuse <application>pg_standby</application>. Therefore <application>pg_standby</application>waits <literal>sleeptime</literal>seconds once it sees the proper file size. GNUWin32's <literal>cp</literal>sets the file size only after the file copy is complete."
+msgstr ""
+
+#: xml/pgstandby.xml:364(para)
+msgid "Since the Windows example uses <literal>copy</literal>at both ends, either or both servers might be accessing the archive directory across the network."
+msgstr ""
+
+#: xml/pgstandby.xml:370(title)
+msgid "Author"
+msgstr ""
+
+#: xml/pgstandby.xml:371(para)
+msgid "Simon Riggs <email>simon@2ndquadrant.com</email>"
+msgstr ""
+
+#: xml/pgstandby.xml:375(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/pgstandby.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

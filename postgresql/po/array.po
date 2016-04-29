@@ -1,0 +1,411 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/array.xml:3(title)
+msgid "Arrays"
+msgstr ""
+
+#: xml/array.xml:5(primary) xml/array.xml:16(primary) xml/array.xml:69(primary) xml/array.xml:153(primary) xml/array.xml:248(primary) xml/array.xml:366(primary) xml/array.xml:426(primary)
+msgid "array"
+msgstr ""
+
+#: xml/array.xml:7(para)
+msgid "<productname>PostgreSQL</productname>allows columns of a table to be defined as variable-length multidimensional arrays. Arrays of any built-in or user-defined base type, enum type, or composite type can be created. Arrays of domains are not yet supported."
+msgstr ""
+
+#: xml/array.xml:14(title)
+msgid "Declaration of Array Types"
+msgstr ""
+
+#: xml/array.xml:17(secondary)
+msgid "declaration"
+msgstr ""
+
+#: xml/array.xml:21(programlisting)
+#, no-wrap
+msgid "CREATE TABLE sal_emp ( name text,\n    pay_by_quarter integer[], schedule text[][]\n    );"
+msgstr ""
+
+#: xml/array.xml:19(para)
+msgid "To illustrate the use of array types, we create this table: <placeholder-1/>As shown, an array data type is named by appending square brackets ( <literal>[]</literal>) to the data type name of the array elements. The above command will create a table named <structname>sal_emp</structname>with a column of type <type>text</type>( <structfield>name</structfield>), a one-dimensional array of type <type>integer</type>( <structfield>pay_by_quarter</structfield>), which represents the employee's salary by quarter, and a two-dimensional array of <type>text</type>( <structfield>schedule</structfield>), which represents the employee's weekly schedule."
+msgstr ""
+
+#: xml/array.xml:41(programlisting)
+#, no-wrap
+msgid "CREATE TABLE tictactoe ( squares integer[3][3]\n    );"
+msgstr ""
+
+#: xml/array.xml:38(para)
+msgid "The syntax for <command>CREATE TABLE</command>allows the exact size of arrays to be specified, for example: <placeholder-1/>However, the current implementation ignores any supplied array size limits, i.e., the behavior is the same as for arrays of unspecified length."
+msgstr ""
+
+#: xml/array.xml:45(para)
+msgid "The current implementation does not enforce the declared number of dimensions either. Arrays of a particular element type are all considered to be of the same type, regardless of size or number of dimensions. So, declaring the array size or number of dimensions in <command>CREATE TABLE</command>is simply documentation; it does not affect run-time behavior."
+msgstr ""
+
+#: xml/array.xml:58(programlisting)
+#, no-wrap
+msgid "pay_by_quarter integer\n    ARRAY[4],"
+msgstr ""
+
+#: xml/array.xml:61(programlisting)
+#, no-wrap
+msgid "pay_by_quarter integer\n    ARRAY,"
+msgstr ""
+
+#: xml/array.xml:52(para)
+msgid "An alternative syntax, which conforms to the SQL standard by using the keyword <literal>ARRAY</literal>, can be used for one-dimensional arrays. <structfield>pay_by_quarter</structfield>could have been defined as: <placeholder-1/>Or, if no array size is to be specified: <placeholder-2/>As before, however, <productname>PostgreSQL</productname>does not enforce the size restriction in any case."
+msgstr ""
+
+#: xml/array.xml:67(title)
+msgid "Array Value Input"
+msgstr ""
+
+#: xml/array.xml:70(secondary)
+msgid "constant"
+msgstr ""
+
+#: xml/array.xml:96(programlisting)
+#, no-wrap
+msgid "\n    '{{1,2,3},{4,5,6},{7,8,9}}'"
+msgstr ""
+
+#: xml/array.xml:72(para)
+msgid "To write an array value as a literal constant, enclose the element values within curly braces and separate them by commas. (If you know C, this is not unlike the C syntax for initializing structures.) You can put double quotes around any element value, and must do so if it contains commas or curly braces. (More details appear below.) Thus, the general format of an array constant is the following: <synopsis>'{ \n    <replaceable>val1</replaceable>\n    <replaceable>delim</replaceable>\n    <replaceable>val2</replaceable>\n    <replaceable>delim</replaceable>... }'</synopsis>where <replaceable>delim</replaceable>is the delimiter character for the type, as recorded in its <literal>pg_type</literal>entry. Among the standard data types provided in the <productname>PostgreSQL</productname>distribution, all use a comma ( <literal>,</literal>), except for type <type>box</type>which uses a semicolon ( <literal>;</literal>). Each <replaceable>val</replaceable>is either a constant of the array element type, or a subarray. An example of an array constant is: <placeholder-1/>This constant is a two-dimensional, 3-by-3 array consisting of three subarrays of integers."
+msgstr ""
+
+#: xml/array.xml:100(para)
+msgid "To set an element of an array constant to NULL, write <literal>NULL</literal>for the element value. (Any upper- or lower-case variant of <literal>NULL</literal>will do.) If you want an actual string value <quote>NULL</quote>, you must put double quotes around it."
+msgstr ""
+
+#: xml/array.xml:107(para)
+msgid "(These kinds of array constants are actually only a special case of the generic type constants discussed in <xref linkend=\"sql-syntax-constants-generic\">. The constant is initially treated as a string and passed to the array input conversion routine. An explicit type specification might be necessary.)</xref>"
+msgstr ""
+
+#: xml/array.xml:115(programlisting)
+#, no-wrap
+msgid "INSERT INTO sal_emp VALUES ('Bill', '{10000,\n    10000, 10000, 10000}', '{{\"meeting\", \"lunch\"}, {\"training\",\n    \"presentation\"}}'); INSERT INTO sal_emp VALUES ('Carol',\n    '{20000, 25000, 25000, 25000}', '{{\"breakfast\", \"consulting\"},\n    {\"meeting\", \"lunch\"}}');"
+msgstr ""
+
+#: xml/array.xml:113(para)
+msgid "Now we can show some <command>INSERT</command>statements: <placeholder-1/>"
+msgstr ""
+
+#: xml/array.xml:121(programlisting)
+#, no-wrap
+msgid "SELECT * FROM sal_emp; name | pay_by_quarter |\n    schedule\n    -------+---------------------------+-------------------------------------------\n    Bill | {10000,10000,10000,10000} |\n    {{meeting,lunch},{training,presentation}} Carol |\n    {20000,25000,25000,25000} |\n    {{breakfast,consulting},{meeting,lunch}} (2\n    rows)"
+msgstr ""
+
+#: xml/array.xml:120(para)
+msgid "The result of the previous two inserts looks like this: <placeholder-1/>"
+msgstr ""
+
+#: xml/array.xml:131(programlisting)
+#, no-wrap
+msgid "INSERT INTO sal_emp VALUES ('Bill', '{10000,\n    10000, 10000, 10000}', '{{\"meeting\", \"lunch\"}, {\"meeting\"}}');\n    ERROR: multidimensional arrays must have array expressions with\n    matching dimensions"
+msgstr ""
+
+#: xml/array.xml:129(para)
+msgid "Multidimensional arrays must have matching extents for each dimension. A mismatch causes an error, for example: <placeholder-1/>"
+msgstr ""
+
+#: xml/array.xml:137(programlisting)
+#, no-wrap
+msgid "INSERT INTO sal_emp VALUES ('Bill',\n    ARRAY[10000, 10000, 10000, 10000], ARRAY[['meeting', 'lunch'],\n    ['training', 'presentation']]); INSERT INTO sal_emp VALUES\n    ('Carol', ARRAY[20000, 25000, 25000, 25000],\n    ARRAY[['breakfast', 'consulting'], ['meeting',\n    'lunch']]);"
+msgstr ""
+
+#: xml/array.xml:135(para)
+msgid "The <literal>ARRAY</literal>constructor syntax can also be used: <placeholder-1/>Notice that the array elements are ordinary SQL constants or expressions; for instance, string literals are single quoted, instead of double quoted as they would be in an array literal. The <literal>ARRAY</literal>constructor syntax is discussed in more detail in <xref linkend=\"sql-syntax-array-constructors\">.</xref>"
+msgstr ""
+
+#: xml/array.xml:151(title)
+msgid "Accessing Arrays"
+msgstr ""
+
+#: xml/array.xml:154(secondary)
+msgid "accessing"
+msgstr ""
+
+#: xml/array.xml:160(programlisting)
+#, no-wrap
+msgid "SELECT name FROM sal_emp WHERE\n    pay_by_quarter[1] pay_by_quarter[2]; name ------- Carol (1\n    row)"
+msgstr ""
+
+#: xml/array.xml:156(para)
+msgid "Now, we can run some queries on the table. First, we show how to access a single element of an array. This query retrieves the names of the employees whose pay changed in the second quarter: <placeholder-1/>The array subscript numbers are written within square brackets. By default <productname>PostgreSQL</productname>uses a one-based numbering convention for arrays, that is, an array of <replaceable>n</replaceable>elements starts with <literal>array[1]</literal>and ends with <literal>array[ <replaceable>n</replaceable>]</literal>."
+msgstr ""
+
+#: xml/array.xml:172(programlisting)
+#, no-wrap
+msgid "SELECT pay_by_quarter[3] FROM sal_emp;\n    pay_by_quarter ---------------- 10000 25000 (2\n    rows)"
+msgstr ""
+
+#: xml/array.xml:170(para)
+msgid "This query retrieves the third quarter pay of all employees: <placeholder-1/>"
+msgstr ""
+
+#: xml/array.xml:182(programlisting)
+#, no-wrap
+msgid "SELECT schedule[1:2][1:1] FROM sal_emp WHERE\n    name = 'Bill'; schedule ------------------------\n    {{meeting},{training}} (1 row)"
+msgstr ""
+
+#: xml/array.xml:191(programlisting)
+#, no-wrap
+msgid "SELECT schedule[1:2][2] FROM sal_emp WHERE name\n    = 'Bill'; schedule -------------------------------------------\n    {{meeting,lunch},{training,presentation}} (1\n    row)"
+msgstr ""
+
+#: xml/array.xml:175(para)
+msgid "We can also access arbitrary rectangular slices of an array, or subarrays. An array slice is denoted by writing <literal><replaceable>lower-bound</replaceable>: <replaceable>upper-bound</replaceable></literal>for one or more array dimensions. For example, this query retrieves the first item on Bill's schedule for the first two days of the week: <placeholder-1/>If any dimension is written as a slice, i.e., contains a colon, then all dimensions are treated as slices. Any dimension that has only a single number (no colon) is treated as being from 1 to the number specified. For example, <literal>[2]</literal>is treated as <literal>[1:2]</literal>, as in this example: <placeholder-2/>To avoid confusion with the non-slice case, it's best to use slice syntax for all dimensions, e.g., <literal>[1:2][1:1]</literal>, not <literal>[2][1:1]</literal>."
+msgstr ""
+
+#: xml/array.xml:198(para)
+msgid "An array subscript expression will return null if either the array itself or any of the subscript expressions are null. Also, null is returned if a subscript is outside the array bounds (this case does not raise an error). For example, if <literal>schedule</literal>currently has the dimensions <literal>[1:3][1:2]</literal>then referencing <literal>schedule[3][3]</literal>yields NULL. Similarly, an array reference with the wrong number of subscripts yields a null rather than an error."
+msgstr ""
+
+#: xml/array.xml:207(para)
+msgid "An array slice expression likewise yields null if the array itself or any of the subscript expressions are null. However, in other cases such as selecting an array slice that is completely outside the current array bounds, a slice expression yields an empty (zero-dimensional) array instead of null. (This does not match non-slice behavior and is done for historical reasons.) If the requested slice partially overlaps the array bounds, then it is silently reduced to just the overlapping region instead of returning null."
+msgstr ""
+
+#: xml/array.xml:219(programlisting)
+#, no-wrap
+msgid "SELECT array_dims(schedule) FROM sal_emp WHERE\n    name = 'Carol'; array_dims ------------ [1:2][1:2] (1\n    row)"
+msgstr ""
+
+#: xml/array.xml:229(programlisting)
+#, no-wrap
+msgid "SELECT array_upper(schedule, 1) FROM sal_emp\n    WHERE name = 'Carol'; array_upper ------------- 2 (1\n    row)"
+msgstr ""
+
+#: xml/array.xml:234(programlisting)
+#, no-wrap
+msgid "SELECT array_length(schedule, 1) FROM sal_emp\n    WHERE name = 'Carol'; array_length -------------- 2 (1\n    row)"
+msgstr ""
+
+#: xml/array.xml:241(programlisting)
+#, no-wrap
+msgid "SELECT cardinality(schedule) FROM sal_emp WHERE\n    name = 'Carol'; cardinality ------------- 4 (1\n    row)"
+msgstr ""
+
+#: xml/array.xml:216(para)
+msgid "The current dimensions of any array value can be retrieved with the <function>array_dims</function>function: <placeholder-1/><function>array_dims</function>produces a <type>text</type>result, which is convenient for people to read but perhaps inconvenient for programs. Dimensions can also be retrieved with <function>array_upper</function>and <function>array_lower</function>, which return the upper and lower bound of a specified array dimension, respectively: <placeholder-2/><function>array_length</function>will return the length of a specified array dimension: <placeholder-3/><function>cardinality</function>returns the total number of elements in an array across all dimensions. It is effectively the number of rows a call to <function>unnest</function>would yield: <placeholder-4/>"
+msgstr ""
+
+#: xml/array.xml:246(title)
+msgid "Modifying Arrays"
+msgstr ""
+
+#: xml/array.xml:249(secondary)
+msgid "modifying"
+msgstr ""
+
+#: xml/array.xml:252(programlisting)
+#, no-wrap
+msgid "UPDATE sal_emp SET pay_by_quarter =\n    '{25000,25000,27000,27000}' WHERE name =\n    'Carol';"
+msgstr ""
+
+#: xml/array.xml:256(programlisting)
+#, no-wrap
+msgid "UPDATE sal_emp SET pay_by_quarter =\n    ARRAY[25000,25000,27000,27000] WHERE name =\n    'Carol';"
+msgstr ""
+
+#: xml/array.xml:260(programlisting)
+#, no-wrap
+msgid "UPDATE sal_emp SET pay_by_quarter[4] = 15000\n    WHERE name = 'Bill';"
+msgstr ""
+
+#: xml/array.xml:262(programlisting)
+#, no-wrap
+msgid "UPDATE sal_emp SET pay_by_quarter[1:2] =\n    '{27000,27000}' WHERE name = 'Carol';"
+msgstr ""
+
+#: xml/array.xml:251(para)
+msgid "An array value can be replaced completely: <placeholder-1/>or using the <literal>ARRAY</literal>expression syntax: <placeholder-2/>An array can also be updated at a single element: <placeholder-3/>or updated in a slice: <placeholder-4/>"
+msgstr ""
+
+#: xml/array.xml:264(para)
+msgid "A stored array value can be enlarged by assigning to elements not already present. Any positions between those previously present and the newly assigned elements will be filled with nulls. For example, if array <literal>myarray</literal>currently has 4 elements, it will have six elements after an update that assigns to <literal>myarray[6]</literal>; <literal>myarray[5]</literal>will contain null. Currently, enlargement in this fashion is only allowed for one-dimensional arrays, not multidimensional arrays."
+msgstr ""
+
+#: xml/array.xml:274(para)
+msgid "Subscripted assignment allows creation of arrays that do not use one-based subscripts. For example one might assign to <literal>myarray[-2:7]</literal>to create an array with subscript values from -2 to 7."
+msgstr ""
+
+#: xml/array.xml:281(programlisting)
+#, no-wrap
+msgid "SELECT ARRAY[1,2] || ARRAY[3,4]; ?column?\n    ----------- {1,2,3,4} (1 row) SELECT ARRAY[5,6] ||\n    ARRAY[[1,2],[3,4]]; ?column? ---------------------\n    {{5,6},{1,2},{3,4}} (1 row)"
+msgstr ""
+
+#: xml/array.xml:278(para)
+msgid "New array values can also be constructed using the concatenation operator, <literal>||</literal>: <placeholder-1/>"
+msgstr ""
+
+#: xml/array.xml:285(para)
+msgid "The concatenation operator allows a single element to be pushed onto the beginning or end of a one-dimensional array. It also accepts two <replaceable>N</replaceable>-dimensional arrays, or an <replaceable>N</replaceable>-dimensional and an <replaceable>N+1</replaceable>-dimensional array."
+msgstr ""
+
+#: xml/array.xml:295(programlisting)
+#, no-wrap
+msgid "SELECT array_dims(1 || '[0:1]={2,3}'::int[]);\n    array_dims ------------ [0:2] (1 row) SELECT\n    array_dims(ARRAY[1,2] || 3); array_dims ------------ [1:3] (1\n    row)"
+msgstr ""
+
+#: xml/array.xml:291(para)
+msgid "When a single element is pushed onto either the beginning or end of a one-dimensional array, the result is an array with the same lower bound subscript as the array operand. For example: <placeholder-1/>"
+msgstr ""
+
+#: xml/array.xml:304(programlisting)
+#, no-wrap
+msgid "SELECT array_dims(ARRAY[1,2] || ARRAY[3,4,5]);\n    array_dims ------------ [1:5] (1 row) SELECT\n    array_dims(ARRAY[[1,2],[3,4]] || ARRAY[[5,6],[7,8],[9,0]]);\n    array_dims ------------ [1:5][1:2] (1\n    row)"
+msgstr ""
+
+#: xml/array.xml:299(para)
+msgid "When two arrays with an equal number of dimensions are concatenated, the result retains the lower bound subscript of the left-hand operand's outer dimension. The result is an array comprising every element of the left-hand operand followed by every element of the right-hand operand. For example: <placeholder-1/>"
+msgstr ""
+
+#: xml/array.xml:318(programlisting)
+#, no-wrap
+msgid "SELECT array_dims(ARRAY[1,2] ||\n    ARRAY[[3,4],[5,6]]); array_dims ------------ [1:3][1:2] (1\n    row)"
+msgstr ""
+
+#: xml/array.xml:309(para)
+msgid "When an <replaceable>N</replaceable>-dimensional array is pushed onto the beginning or end of an <replaceable>N+1</replaceable>-dimensional array, the result is analogous to the element-array case above. Each <replaceable>N</replaceable>-dimensional sub-array is essentially an element of the <replaceable>N+1</replaceable>-dimensional array's outer dimension. For example: <placeholder-1/>"
+msgstr ""
+
+#: xml/array.xml:328(programlisting)
+#, no-wrap
+msgid "SELECT array_prepend(1, ARRAY[2,3]);\n    array_prepend --------------- {1,2,3} (1 row) SELECT\n    array_append(ARRAY[1,2], 3); array_append --------------\n    {1,2,3} (1 row) SELECT array_cat(ARRAY[1,2], ARRAY[3,4]);\n    array_cat ----------- {1,2,3,4} (1 row) SELECT\n    array_cat(ARRAY[[1,2],[3,4]], ARRAY[5,6]); array_cat\n    --------------------- {{1,2},{3,4},{5,6}} (1 row) SELECT\n    array_cat(ARRAY[5,6], ARRAY[[1,2],[3,4]]); array_cat\n    ---------------------\n    {{5,6},{1,2},{3,4}}"
+msgstr ""
+
+#: xml/array.xml:321(para)
+msgid "An array can also be constructed by using the functions <function>array_prepend</function>, <function>array_append</function>, or <function>array_cat</function>. The first two only support one-dimensional arrays, but <function>array_cat</function>supports multidimensional arrays. Some examples: <placeholder-1/>"
+msgstr ""
+
+#: xml/array.xml:343(programlisting)
+#, no-wrap
+msgid "SELECT ARRAY[1, 2] || '{3, 4}'; -- the untyped\n    literal is taken as an array ?column? ----------- {1,2,3,4}\n    SELECT ARRAY[1, 2] || '7'; -- so is this one ERROR: malformed\n    array literal: \"7\" SELECT ARRAY[1, 2] || NULL; -- so is an\n    undecorated NULL ?column? ---------- {1,2} (1 row) SELECT\n    array_append(ARRAY[1, 2], NULL); -- this might have been meant\n    array_append -------------- {1,2,NULL}"
+msgstr ""
+
+#: xml/array.xml:338(para)
+msgid "In simple cases, the concatenation operator discussed above is preferred over direct use of these functions. However, because the concatenation operator is overloaded to serve all three cases, there are situations where use of one of the functions is helpful to avoid ambiguity. For example consider: <placeholder-1/>In the examples above, the parser sees an integer array on one side of the concatenation operator, and a constant of undetermined type on the other. The heuristic it uses to resolve the constant's type is to assume it's of the same type as the operator's other input in this case, integer array. So the concatenation operator is presumed to represent <function>array_cat</function>, not <function>array_append</function>. When that's the wrong choice, it could be fixed by casting the constant to the array's element type; but explicit use of <function>array_append</function>might be a preferable solution."
+msgstr ""
+
+#: xml/array.xml:364(title)
+msgid "Searching in Arrays"
+msgstr ""
+
+#: xml/array.xml:367(secondary)
+msgid "searching"
+msgstr ""
+
+#: xml/array.xml:372(programlisting)
+#, no-wrap
+msgid "SELECT * FROM sal_emp WHERE pay_by_quarter[1] =\n    10000 OR pay_by_quarter[2] = 10000 OR pay_by_quarter[3] = 10000\n    OR pay_by_quarter[4] = 10000;"
+msgstr ""
+
+#: xml/array.xml:380(programlisting)
+#, no-wrap
+msgid "SELECT * FROM sal_emp WHERE 10000 = ANY\n    (pay_by_quarter);"
+msgstr ""
+
+#: xml/array.xml:383(programlisting)
+#, no-wrap
+msgid "SELECT * FROM sal_emp WHERE 10000 = ALL\n    (pay_by_quarter);"
+msgstr ""
+
+#: xml/array.xml:369(para)
+msgid "To search for a value in an array, each value must be checked. This can be done manually, if you know the size of the array. For example: <placeholder-1/>However, this quickly becomes tedious for large arrays, and is not helpful if the size of the array is unknown. An alternative method is described in <xref linkend=\"functions-comparisons\">. The above query could be replaced by: <placeholder-2/>In addition, you can find rows where the array has all values equal to 10000 with: <placeholder-3/></xref>"
+msgstr ""
+
+#: xml/array.xml:388(programlisting)
+#, no-wrap
+msgid "SELECT * FROM (SELECT pay_by_quarter,\n    generate_subscripts(pay_by_quarter, 1) AS s FROM sal_emp) AS\n    foo WHERE pay_by_quarter[s] = 10000;"
+msgstr ""
+
+#: xml/array.xml:385(para)
+msgid "Alternatively, the <function>generate_subscripts</function>function can be used. For example: <placeholder-1/>This function is described in <xref linkend=\"functions-srf-subscripts\">.</xref>"
+msgstr ""
+
+#: xml/array.xml:396(programlisting)
+#, no-wrap
+msgid "SELECT * FROM sal_emp WHERE pay_by_quarter\n    &amp;&amp; ARRAY[10000];"
+msgstr ""
+
+#: xml/array.xml:393(para)
+msgid "You can also search an array using the <literal/>operator, which checks whether the left operand overlaps with the right operand. For instance: <placeholder-1/>This and other array operators are further described in <xref linkend=\"functions-array\">. It can be accelerated by an appropriate index, as described in <xref linkend=\"indexes-types\">.</xref></xref>"
+msgstr ""
+
+#: xml/array.xml:409(programlisting)
+#, no-wrap
+msgid "SELECT\n    array_position(ARRAY['sun','mon','tue','wed','thu','fri','sat'],\n    'mon'); array_positions ----------------- 2 SELECT\n    array_positions(ARRAY[1, 4, 3, 1, 3, 4, 2, 1], 1);\n    array_positions -----------------\n    {1,4,8}"
+msgstr ""
+
+#: xml/array.xml:402(para)
+msgid "You can also search for specific values in an array using the <function>array_position</function>and <function>array_positions</function>functions. The former returns the subscript of the first occurrence of a value in an array; the latter returns an array with the subscripts of all occurrences of the value in the array. For example: <placeholder-1/>"
+msgstr ""
+
+#: xml/array.xml:416(para)
+msgid "Arrays are not sets; searching for specific array elements can be a sign of database misdesign. Consider using a separate table with a row for each item that would be an array element. This will be easier to search, and is likely to scale better for a large number of elements."
+msgstr ""
+
+#: xml/array.xml:424(title)
+msgid "Array Input and Output Syntax"
+msgstr ""
+
+#: xml/array.xml:427(secondary)
+msgid "I/O"
+msgstr ""
+
+#: xml/array.xml:429(para)
+msgid "The external text representation of an array value consists of items that are interpreted according to the I/O conversion rules for the array's element type, plus decoration that indicates the array structure. The decoration consists of curly braces ( <literal>{</literal>and <literal>}</literal>) around the array value plus delimiter characters between adjacent items. The delimiter character is usually a comma ( <literal>,</literal>) but can be something else: it is determined by the <literal>typdelim</literal>setting for the array's element type. Among the standard data types provided in the <productname>PostgreSQL</productname>distribution, all use a comma, except for type <type>box</type>, which uses a semicolon ( <literal>;</literal>). In a multidimensional array, each dimension (row, plane, cube, etc.) gets its own level of curly braces, and delimiters must be written between adjacent curly-braced entities of the same level."
+msgstr ""
+
+#: xml/array.xml:449(para)
+msgid "The array output routine will put double quotes around element values if they are empty strings, contain curly braces, delimiter characters, double quotes, backslashes, or white space, or match the word <literal>NULL</literal>. Double quotes and backslashes embedded in element values will be backslash-escaped. For numeric data types it is safe to assume that double quotes will never appear, but for textual data types one should be prepared to cope with either the presence or absence of quotes."
+msgstr ""
+
+#: xml/array.xml:468(programlisting)
+#, no-wrap
+msgid "SELECT f1[1][-2][3] AS e1, f1[1][-1][5] AS e2\n    FROM (SELECT '[1:1][-2:-1][3:5]={{{1,2,3},{4,5,6}}}'::int[] AS\n    f1) AS ss; e1 | e2 ----+---- 1 | 6 (1 row)"
+msgstr ""
+
+#: xml/array.xml:458(para)
+msgid "By default, the lower bound index value of an array's dimensions is set to one. To represent arrays with other lower bounds, the array subscript ranges can be specified explicitly before writing the array contents. This decoration consists of square brackets ( <literal>[]</literal>) around each array dimension's lower and upper bounds, with a colon ( <literal>:</literal>) delimiter character in between. The array dimension decoration is followed by an equal sign ( <literal>=</literal>). For example: <placeholder-1/>The array output routine will include explicit dimensions in its result only when there are one or more lower bounds different from one."
+msgstr ""
+
+#: xml/array.xml:474(para)
+msgid "If the value written for an element is <literal>NULL</literal>(in any case variant), the element is taken to be NULL. The presence of any quotes or backslashes disables this and allows the literal string value <quote>NULL</quote>to be entered. Also, for backward compatibility with pre-8.2 versions of <productname>PostgreSQL</productname>, the <xref linkend=\"guc-array-nulls\">configuration parameter can be turned <literal>off</literal>to suppress recognition of <literal>NULL</literal>as a NULL.</xref>"
+msgstr ""
+
+#: xml/array.xml:485(para)
+msgid "As shown previously, when writing an array value you can use double quotes around any individual array element. You <emphasis>must</emphasis>do so if the element value would otherwise confuse the array-value parser. For example, elements containing curly braces, commas (or the data type's delimiter character), double quotes, backslashes, or leading or trailing whitespace must be double-quoted. Empty strings and strings matching the word <literal>NULL</literal>must be quoted, too. To put a double quote or backslash in a quoted array element value, use escape string syntax and precede it with a backslash. Alternatively, you can avoid quotes and use backslash-escaping to protect all data characters that would otherwise be taken as array syntax."
+msgstr ""
+
+#: xml/array.xml:499(para)
+msgid "You can add whitespace before a left brace or after a right brace. You can also add whitespace before or after any individual item string. In all of these cases the whitespace will be ignored. However, whitespace within double-quoted elements, or surrounded on both sides by non-whitespace characters of an element, is not ignored."
+msgstr ""
+
+#: xml/array.xml:512(programlisting)
+#, no-wrap
+msgid "INSERT ... VALUES\n      (E'{\"\\\\\\\\\",\"\\\\\"\"}');"
+msgstr ""
+
+#: xml/array.xml:506(para)
+msgid "Remember that what you write in an SQL command will first be interpreted as a string literal, and then as an array. This doubles the number of backslashes you need. For example, to insert a <type>text</type>array value containing a backslash and a double quote, you'd need to write: <placeholder-1/>The escape string processor removes one level of backslashes, so that what arrives at the array-value parser looks like <literal>{\"\\\\\",\"\\\"\"}</literal>. In turn, the strings fed to the <type>text</type>data type's input routine become <literal>\\</literal>and <literal>\"</literal>respectively. (If we were working with a data type whose input routine also treated backslashes specially, <type>bytea</type>for example, we might need as many as eight backslashes in the command to get one backslash into the stored array element.) Dollar quoting (see <xref linkend=\"sql-syntax-dollar-quoting\">) can be used to avoid the need to double backslashes.</xref>"
+msgstr ""
+
+#: xml/array.xml:530(para)
+msgid "The <literal>ARRAY</literal>constructor syntax (see <xref linkend=\"sql-syntax-array-constructors\">) is often easier to work with than the array-literal syntax when writing array values in SQL commands. In <literal>ARRAY</literal>, individual element values are written the same way they would be written when not members of an array.</xref>"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/array.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

@@ -1,0 +1,175 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/alter_foreign_data_wrapper.xml:4(primary) xml/ref/alter_foreign_data_wrapper.xml:7(refentrytitle) xml/ref/alter_foreign_data_wrapper.xml:12(refname)
+msgid "ALTER FOREIGN DATA WRAPPER"
+msgstr ""
+
+#: xml/ref/alter_foreign_data_wrapper.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/alter_foreign_data_wrapper.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/alter_foreign_data_wrapper.xml:13(refpurpose)
+msgid "change the definition of a foreign-data wrapper"
+msgstr ""
+
+#: xml/ref/alter_foreign_data_wrapper.xml:18(replaceable) xml/ref/alter_foreign_data_wrapper.xml:27(replaceable) xml/ref/alter_foreign_data_wrapper.xml:30(replaceable) xml/ref/alter_foreign_data_wrapper.xml:51(replaceable)
+msgid "name"
+msgstr ""
+
+#: xml/ref/alter_foreign_data_wrapper.xml:19(replaceable) xml/ref/alter_foreign_data_wrapper.xml:61(replaceable)
+msgid "handler_function"
+msgstr ""
+
+#: xml/ref/alter_foreign_data_wrapper.xml:21(replaceable) xml/ref/alter_foreign_data_wrapper.xml:83(replaceable)
+msgid "validator_function"
+msgstr ""
+
+#: xml/ref/alter_foreign_data_wrapper.xml:24(replaceable) xml/ref/alter_foreign_data_wrapper.xml:115(replaceable)
+msgid "option"
+msgstr ""
+
+#: xml/ref/alter_foreign_data_wrapper.xml:25(replaceable) xml/ref/alter_foreign_data_wrapper.xml:116(replaceable)
+msgid "value"
+msgstr ""
+
+#: xml/ref/alter_foreign_data_wrapper.xml:28(replaceable) xml/ref/alter_foreign_data_wrapper.xml:133(replaceable)
+msgid "new_owner"
+msgstr ""
+
+#: xml/ref/alter_foreign_data_wrapper.xml:31(replaceable) xml/ref/alter_foreign_data_wrapper.xml:142(replaceable)
+msgid "new_name"
+msgstr ""
+
+#: xml/ref/alter_foreign_data_wrapper.xml:17(synopsis)
+#, no-wrap
+msgid "ALTER FOREIGN DATA WRAPPER \n    <placeholder-1/>[ HANDLER \n    <placeholder-2/>|\n    NO HANDLER ] [ VALIDATOR \n    <placeholder-3/>| NO VALIDATOR ] [ OPTIONS ( [\n    ADD | SET | DROP ] \n    <placeholder-4/>[' \n    <placeholder-5/>'] [, ... ])\n    ] ALTER FOREIGN DATA WRAPPER \n    <placeholder-6/>OWNER TO { \n    <placeholder-7/>| CURRENT_USER |\n    SESSION_USER } ALTER FOREIGN DATA WRAPPER \n    <placeholder-8/>RENAME TO \n    <placeholder-9/>"
+msgstr ""
+
+#: xml/ref/alter_foreign_data_wrapper.xml:34(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/alter_foreign_data_wrapper.xml:35(para)
+msgid "<command>ALTER FOREIGN DATA WRAPPER</command>changes the definition of a foreign-data wrapper. The first form of the command changes the support functions or the generic options of the foreign-data wrapper (at least one clause is required). The second form changes the owner of the foreign-data wrapper."
+msgstr ""
+
+#: xml/ref/alter_foreign_data_wrapper.xml:42(para)
+msgid "Only superusers can alter foreign-data wrappers. Additionally, only superusers can own foreign-data wrappers."
+msgstr ""
+
+#: xml/ref/alter_foreign_data_wrapper.xml:47(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/alter_foreign_data_wrapper.xml:54(para)
+msgid "The name of an existing foreign-data wrapper."
+msgstr ""
+
+#: xml/ref/alter_foreign_data_wrapper.xml:60(literal)
+msgid "HANDLER <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_foreign_data_wrapper.xml:65(para)
+msgid "Specifies a new handler function for the foreign-data wrapper."
+msgstr ""
+
+#: xml/ref/alter_foreign_data_wrapper.xml:71(literal)
+msgid "NO HANDLER"
+msgstr ""
+
+#: xml/ref/alter_foreign_data_wrapper.xml:74(para)
+msgid "This is used to specify that the foreign-data wrapper should no longer have a handler function."
+msgstr ""
+
+#: xml/ref/alter_foreign_data_wrapper.xml:76(para)
+msgid "Note that foreign tables that use a foreign-data wrapper with no handler cannot be accessed."
+msgstr ""
+
+#: xml/ref/alter_foreign_data_wrapper.xml:82(literal)
+msgid "VALIDATOR <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_foreign_data_wrapper.xml:87(para)
+msgid "Specifies a new validator function for the foreign-data wrapper."
+msgstr ""
+
+#: xml/ref/alter_foreign_data_wrapper.xml:89(para)
+msgid "Note that it is possible that pre-existing options of the foreign-data wrapper, or of dependent servers, user mappings, or foreign tables, are invalid according to the new validator. <productname>PostgreSQL</productname>does not check for this. It is up to the user to make sure that these options are correct before using the modified foreign-data wrapper. However, any options specified in this <command>ALTER FOREIGN DATA WRAPPER</command>command will be checked using the new validator."
+msgstr ""
+
+#: xml/ref/alter_foreign_data_wrapper.xml:104(literal)
+msgid "NO VALIDATOR"
+msgstr ""
+
+#: xml/ref/alter_foreign_data_wrapper.xml:107(para)
+msgid "This is used to specify that the foreign-data wrapper should no longer have a validator function."
+msgstr ""
+
+#: xml/ref/alter_foreign_data_wrapper.xml:114(literal)
+msgid "OPTIONS ( [ ADD | SET | DROP ] <placeholder-1/>[' <placeholder-2/>'] [, ... ] )"
+msgstr ""
+
+#: xml/ref/alter_foreign_data_wrapper.xml:120(para)
+msgid "Change options for the foreign-data wrapper. <literal>ADD</literal>, <literal>SET</literal>, and <literal>DROP</literal>specify the action to be performed. <literal>ADD</literal>is assumed if no operation is explicitly specified. Option names must be unique; names and values are also validated using the foreign data wrapper's validator function, if any."
+msgstr ""
+
+#: xml/ref/alter_foreign_data_wrapper.xml:136(para)
+msgid "The user name of the new owner of the foreign-data wrapper."
+msgstr ""
+
+#: xml/ref/alter_foreign_data_wrapper.xml:145(para)
+msgid "The new name for the foreign-data wrapper."
+msgstr ""
+
+#: xml/ref/alter_foreign_data_wrapper.xml:151(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/alter_foreign_data_wrapper.xml:156(programlisting)
+#, no-wrap
+msgid "ALTER FOREIGN DATA WRAPPER dbi OPTIONS (ADD foo\n    '1', DROP 'bar');"
+msgstr ""
+
+#: xml/ref/alter_foreign_data_wrapper.xml:152(para)
+msgid "Change a foreign-data wrapper <literal>dbi</literal>, add option <literal>foo</literal>, drop <literal>bar</literal>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_foreign_data_wrapper.xml:161(programlisting)
+#, no-wrap
+msgid "ALTER FOREIGN DATA WRAPPER dbi VALIDATOR\n    bob.myvalidator;"
+msgstr ""
+
+#: xml/ref/alter_foreign_data_wrapper.xml:158(para)
+msgid "Change the foreign-data wrapper <literal>dbi</literal>validator to <literal>bob.myvalidator</literal>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_foreign_data_wrapper.xml:165(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/alter_foreign_data_wrapper.xml:166(para)
+msgid "<command>ALTER FOREIGN DATA WRAPPER</command>conforms to ISO/IEC 9075-9 (SQL/MED), except that the <literal>HANDLER</literal>, <literal>VALIDATOR</literal>, <literal>OWNER TO</literal>, and <literal>RENAME</literal>clauses are extensions."
+msgstr ""
+
+#: xml/ref/alter_foreign_data_wrapper.xml:175(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/alter_foreign_data_wrapper.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

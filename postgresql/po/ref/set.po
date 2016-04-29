@@ -1,0 +1,243 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/set.xml:4(primary) xml/ref/set.xml:7(refentrytitle) xml/ref/set.xml:12(refname)
+msgid "SET"
+msgstr ""
+
+#: xml/ref/set.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/set.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/set.xml:13(refpurpose)
+msgid "change a run-time parameter"
+msgstr ""
+
+#: xml/ref/set.xml:17(replaceable) xml/ref/set.xml:116(replaceable)
+msgid "configuration_parameter"
+msgstr ""
+
+#: xml/ref/set.xml:19(replaceable) xml/ref/set.xml:20(replaceable) xml/ref/set.xml:127(replaceable)
+msgid "value"
+msgstr ""
+
+#: xml/ref/set.xml:22(replaceable)
+msgid "timezone"
+msgstr ""
+
+#: xml/ref/set.xml:16(synopsis)
+#, no-wrap
+msgid "SET [ SESSION | LOCAL ] \n    <placeholder-1/>{ TO | = } { \n    <placeholder-2/>| ' \n    <placeholder-3/>' | DEFAULT }\n    SET [ SESSION | LOCAL ] TIME ZONE { \n    <placeholder-4/>| LOCAL |\n    DEFAULT }"
+msgstr ""
+
+#: xml/ref/set.xml:26(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/set.xml:27(para)
+msgid "The <command>SET</command>command changes run-time configuration parameters. Many of the run-time parameters listed in <xref linkend=\"runtime-config\">can be changed on-the-fly with <command>SET</command>. (But some require superuser privileges to change, and others cannot be changed after server or session start.) <command>SET</command>only affects the value used by the current session.</xref>"
+msgstr ""
+
+#: xml/ref/set.xml:36(para)
+msgid "If <command>SET</command>(or equivalently <command>SET SESSION</command>) is issued within a transaction that is later aborted, the effects of the <command>SET</command>command disappear when the transaction is rolled back. Once the surrounding transaction is committed, the effects will persist until the end of the session, unless overridden by another <command>SET</command>."
+msgstr ""
+
+#: xml/ref/set.xml:45(para)
+msgid "The effects of <command>SET LOCAL</command>last only till the end of the current transaction, whether committed or not. A special case is <command>SET</command>followed by <command>SET LOCAL</command>within a single transaction: the <command>SET LOCAL</command>value will be seen until the end of the transaction, but afterwards (if the transaction is committed) the <command>SET</command>value will take effect."
+msgstr ""
+
+#: xml/ref/set.xml:55(para)
+msgid "The effects of <command>SET</command>or <command>SET LOCAL</command>are also canceled by rolling back to a savepoint that is earlier than the command."
+msgstr ""
+
+#: xml/ref/set.xml:59(para)
+msgid "If <command>SET LOCAL</command>is used within a function that has a <literal>SET</literal>option for the same variable (see <xref linkend=\"sql-createfunction\">), the effects of the <command>SET LOCAL</command>command disappear at function exit; that is, the value in effect when the function was called is restored anyway. This allows <command>SET LOCAL</command>to be used for dynamic or repeated changes of a parameter within a function, while still having the convenience of using the <literal>SET</literal>option to save and restore the caller's value. However, a regular <command>SET</command>command overrides any surrounding function's <literal>SET</literal>option; its effects will persist unless rolled back.</xref>"
+msgstr ""
+
+#: xml/ref/set.xml:77(para)
+msgid "In <productname>PostgreSQL</productname>versions 8.0 through 8.2, the effects of a <command>SET LOCAL</command>would be canceled by releasing an earlier savepoint, or by successful exit from a <application>PL/pgSQL</application>exception block. This behavior has been changed because it was deemed unintuitive."
+msgstr ""
+
+#: xml/ref/set.xml:88(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/set.xml:92(literal)
+msgid "SESSION"
+msgstr ""
+
+#: xml/ref/set.xml:95(para)
+msgid "Specifies that the command takes effect for the current session. (This is the default if neither <literal>SESSION</literal>nor <literal>LOCAL</literal>appears.)"
+msgstr ""
+
+#: xml/ref/set.xml:103(literal) xml/ref/set.xml:245(literal)
+msgid "LOCAL"
+msgstr ""
+
+#: xml/ref/set.xml:106(para)
+msgid "Specifies that the command takes effect for only the current transaction. After <command>COMMIT</command>or <command>ROLLBACK</command>, the session-level setting takes effect again. Issuing this outside of a transaction block emits a warning and otherwise has no effect."
+msgstr ""
+
+#: xml/ref/set.xml:120(para)
+msgid "Name of a settable run-time parameter. Available parameters are documented in <xref linkend=\"runtime-config\">and below.</xref>"
+msgstr ""
+
+#: xml/ref/set.xml:130(para)
+msgid "New value of parameter. Values can be specified as string constants, identifiers, numbers, or comma-separated lists of these, as appropriate for the particular parameter. <literal>DEFAULT</literal>can be written to specify resetting the parameter to its default value (that is, whatever value it would have had if no <command>SET</command>had been executed in the current session)."
+msgstr ""
+
+#: xml/ref/set.xml:149(literal)
+msgid "SCHEMA"
+msgstr ""
+
+#: xml/ref/set.xml:152(para)
+msgid "<literal>SET SCHEMA ' <replaceable>value</replaceable>'</literal>is an alias for <literal>SET search_path TO <replaceable>value</replaceable></literal>. Only one schema can be specified using this syntax."
+msgstr ""
+
+#: xml/ref/set.xml:163(literal)
+msgid "NAMES"
+msgstr ""
+
+#: xml/ref/set.xml:166(para)
+msgid "<literal>SET NAMES <replaceable>value</replaceable></literal>is an alias for <literal>SET client_encoding TO <replaceable>value</replaceable></literal>."
+msgstr ""
+
+#: xml/ref/set.xml:176(literal)
+msgid "SEED"
+msgstr ""
+
+#: xml/ref/set.xml:179(para)
+msgid "Sets the internal seed for the random number generator (the function <function>random</function>). Allowed values are floating-point numbers between -1 and 1, which are then multiplied by 2 <superscript>31</superscript>-1."
+msgstr ""
+
+#: xml/ref/set.xml:187(programlisting)
+#, no-wrap
+msgid "SELECT setseed( \n          <replaceable>\n          value</replaceable>);"
+msgstr ""
+
+#: xml/ref/set.xml:185(para)
+msgid "The seed can also be set by invoking the function <function>setseed</function>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/set.xml:194(literal)
+msgid "TIME ZONE"
+msgstr ""
+
+#: xml/ref/set.xml:209(literal)
+msgid "'PST8PDT'"
+msgstr ""
+
+#: xml/ref/set.xml:212(para)
+msgid "The time zone for Berkeley, California."
+msgstr ""
+
+#: xml/ref/set.xml:218(literal)
+msgid "'Europe/Rome'"
+msgstr ""
+
+#: xml/ref/set.xml:221(para)
+msgid "The time zone for Italy."
+msgstr ""
+
+#: xml/ref/set.xml:226(literal)
+msgid "-7"
+msgstr ""
+
+#: xml/ref/set.xml:229(para)
+msgid "The time zone 7 hours west from UTC (equivalent to PDT). Positive values are east from UTC."
+msgstr ""
+
+#: xml/ref/set.xml:236(literal)
+msgid "INTERVAL '-08:00' HOUR TO MINUTE"
+msgstr ""
+
+#: xml/ref/set.xml:239(para)
+msgid "The time zone 8 hours west from UTC (equivalent to PST)."
+msgstr ""
+
+#: xml/ref/set.xml:248(literal)
+msgid "DEFAULT"
+msgstr ""
+
+#: xml/ref/set.xml:251(para)
+msgid "Set the time zone to your local time zone (that is, the server's default value of <varname>timezone</varname>)."
+msgstr ""
+
+#: xml/ref/set.xml:197(para)
+msgid "<literal>SET TIME ZONE <replaceable>value</replaceable></literal>is an alias for <literal>SET timezone TO <replaceable>value</replaceable></literal>. The syntax <literal>SET TIME ZONE</literal>allows special syntax for the time zone specification. Here are examples of valid values: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/set.xml:257(para)
+msgid "Timezone settings given as numbers or intervals are internally translated to POSIX timezone syntax. For example, after <literal>SET TIME ZONE -7</literal>, <command>SHOW TIME ZONE</command>would report <literal>-07+07</literal>."
+msgstr ""
+
+#: xml/ref/set.xml:263(para)
+msgid "See <xref linkend=\"datatype-timezones\">for more information about time zones.</xref>"
+msgstr ""
+
+#: xml/ref/set.xml:142(para)
+msgid "Besides the configuration parameters documented in <xref linkend=\"runtime-config\">, there are a few that can only be adjusted using the <command>SET</command>command or that have a special syntax: <placeholder-1/></xref>"
+msgstr ""
+
+#: xml/ref/set.xml:271(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/set.xml:272(para)
+msgid "The function <function>set_config</function>provides equivalent functionality; see <xref linkend=\"functions-admin\">. Also, it is possible to UPDATE the <link linkend=\"view-pg-settings\"><structname>pg_settings</structname></link>system view to perform the equivalent of <command>SET</command>.</xref>"
+msgstr ""
+
+#: xml/ref/set.xml:283(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/set.xml:285(programlisting)
+#, no-wrap
+msgid "SET search_path TO my_schema,\n    public;"
+msgstr ""
+
+#: xml/ref/set.xml:284(para)
+msgid "Set the schema search path: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/set.xml:287(para)
+msgid "Set the style of date to traditional <productname>POSTGRES</productname>with <quote>day before month</quote>input convention: <screen>SET datestyle TO postgres, dmy;</screen>"
+msgstr ""
+
+#: xml/ref/set.xml:291(para)
+msgid "Set the time zone for Berkeley, California: <screen>SET TIME ZONE 'PST8PDT';</screen>"
+msgstr ""
+
+#: xml/ref/set.xml:293(para)
+msgid "Set the time zone for Italy: <screen>SET TIME ZONE 'Europe/Rome';</screen>"
+msgstr ""
+
+#: xml/ref/set.xml:297(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/set.xml:298(para)
+msgid "<literal>SET TIME ZONE</literal>extends syntax defined in the SQL standard. The standard allows only numeric time zone offsets while <productname>PostgreSQL</productname>allows more flexible time-zone specifications. All other <literal>SET</literal>features are <productname>PostgreSQL</productname>extensions."
+msgstr ""
+
+#: xml/ref/set.xml:308(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/set.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

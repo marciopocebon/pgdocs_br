@@ -1,0 +1,344 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/alter_role.xml:4(primary) xml/ref/alter_role.xml:7(refentrytitle) xml/ref/alter_role.xml:12(refname)
+msgid "ALTER ROLE"
+msgstr ""
+
+#: xml/ref/alter_role.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/alter_role.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/alter_role.xml:13(refpurpose)
+msgid "change a database role"
+msgstr ""
+
+#: xml/ref/alter_role.xml:17(replaceable) xml/ref/alter_role.xml:34(replaceable) xml/ref/alter_role.xml:40(replaceable) xml/ref/alter_role.xml:46(replaceable) xml/ref/alter_role.xml:51(replaceable) xml/ref/alter_role.xml:56(replaceable)
+msgid "role_specification"
+msgstr ""
+
+#: xml/ref/alter_role.xml:19(replaceable) xml/ref/alter_role.xml:21(replaceable)
+msgid "option"
+msgstr ""
+
+#: xml/ref/alter_role.xml:20(phrase) xml/ref/alter_role.xml:55(phrase)
+msgid "where <placeholder-1/>can be:"
+msgstr ""
+
+#: xml/ref/alter_role.xml:26(replaceable) xml/ref/alter_role.xml:200(replaceable)
+msgid "connlimit"
+msgstr ""
+
+#: xml/ref/alter_role.xml:28(replaceable) xml/ref/alter_role.xml:204(replaceable)
+msgid "password"
+msgstr ""
+
+#: xml/ref/alter_role.xml:30(replaceable)
+msgid "timestamp"
+msgstr ""
+
+#: xml/ref/alter_role.xml:32(replaceable) xml/ref/alter_role.xml:128(replaceable)
+msgid "name"
+msgstr ""
+
+#: xml/ref/alter_role.xml:33(replaceable) xml/ref/alter_role.xml:226(replaceable)
+msgid "new_name"
+msgstr ""
+
+#: xml/ref/alter_role.xml:36(replaceable) xml/ref/alter_role.xml:42(replaceable) xml/ref/alter_role.xml:48(replaceable) xml/ref/alter_role.xml:53(replaceable) xml/ref/alter_role.xml:234(replaceable)
+msgid "database_name"
+msgstr ""
+
+#: xml/ref/alter_role.xml:38(replaceable) xml/ref/alter_role.xml:44(replaceable) xml/ref/alter_role.xml:50(replaceable) xml/ref/alter_role.xml:243(replaceable)
+msgid "configuration_parameter"
+msgstr ""
+
+#: xml/ref/alter_role.xml:39(replaceable) xml/ref/alter_role.xml:246(replaceable)
+msgid "value"
+msgstr ""
+
+#: xml/ref/alter_role.xml:58(replaceable)
+msgid "role_name"
+msgstr ""
+
+#: xml/ref/alter_role.xml:16(synopsis)
+#, no-wrap
+msgid "ALTER ROLE \n    <placeholder-1/>[ WITH ] \n    <placeholder-2/>[ ... ] \n    <placeholder-3/>SUPERUSER | NOSUPERUSER | CREATEDB | NOCREATEDB |\n    CREATEROLE | NOCREATEROLE | CREATEUSER | NOCREATEUSER | INHERIT\n    | NOINHERIT | LOGIN | NOLOGIN | REPLICATION | NOREPLICATION |\n    BYPASSRLS | NOBYPASSRLS | CONNECTION LIMIT \n    <placeholder-4/>| [\n    ENCRYPTED | UNENCRYPTED ] PASSWORD ' \n    <placeholder-5/>' | VALID\n    UNTIL ' \n    <placeholder-6/>' ALTER\n    ROLE \n    <placeholder-7/>RENAME TO \n    <placeholder-8/>ALTER ROLE { \n    <placeholder-9/>| ALL } [ IN DATABASE \n    <placeholder-10/>] SET\n    \n    <placeholder-11/>{ TO | = } { \n    <placeholder-12/>| DEFAULT } ALTER ROLE { \n    <placeholder-13/>| ALL } [ IN DATABASE \n    <placeholder-14/>] SET\n    \n    <placeholder-15/>FROM CURRENT\n    ALTER ROLE { \n    <placeholder-16/>| ALL } [ IN DATABASE \n    <placeholder-17/>]\n    RESET \n    <placeholder-18/>ALTER ROLE { \n    <placeholder-19/>| ALL } [ IN DATABASE \n    <placeholder-20/>]\n    RESET ALL \n    <placeholder-21/>[ GROUP ] \n    <placeholder-22/>|\n    CURRENT_USER | SESSION_USER"
+msgstr ""
+
+#: xml/ref/alter_role.xml:62(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/alter_role.xml:63(para)
+msgid "<command>ALTER ROLE</command>changes the attributes of a <productname>PostgreSQL</productname>role."
+msgstr ""
+
+#: xml/ref/alter_role.xml:66(para)
+msgid "The first variant of this command listed in the synopsis can change many of the role attributes that can be specified in <xref linkend=\"sql-createrole\">. (All the possible attributes are covered, except that there are no options for adding or removing memberships; use <xref linkend=\"SQL-GRANT\">and <xref linkend=\"SQL-REVOKE\">for that.) Attributes not mentioned in the command retain their previous settings. Database superusers can change any of these settings for any role. Roles having <literal>CREATEROLE</literal>privilege can change any of these settings, but only for non-superuser and non-replication roles. Ordinary roles can only change their own password.</xref></xref></xref>"
+msgstr ""
+
+#: xml/ref/alter_role.xml:81(para)
+msgid "The second variant changes the name of the role. Database superusers can rename any role. Roles having <literal>CREATEROLE</literal>privilege can rename non-superuser roles. The current session user cannot be renamed. (Connect as a different user if you need to do that.) Because <literal>MD5</literal>-encrypted passwords use the role name as cryptographic salt, renaming a role clears its password if the password is <literal>MD5</literal>-encrypted."
+msgstr ""
+
+#: xml/ref/alter_role.xml:90(para)
+msgid "The remaining variants change a role's session default for a configuration variable, either for all databases or, when the <literal>IN DATABASE</literal>clause is specified, only for sessions in the named database. If <literal>ALL</literal>is specified instead of a role name, this changes the setting for all roles. Using <literal>ALL</literal>with <literal>IN DATABASE</literal>is effectively the same as using the command <literal>ALTER DATABASE ... SET ...</literal>."
+msgstr ""
+
+#: xml/ref/alter_role.xml:101(para)
+msgid "Whenever the role subsequently starts a new session, the specified value becomes the session default, overriding whatever setting is present in <filename>postgresql.conf</filename>or has been received from the <command>postgres</command>command line. This only happens at login time; executing <xref linkend=\"sql-set-role\">or <xref linkend=\"sql-set-session-authorization\">does not cause new configuration values to be set. Settings set for all databases are overridden by database-specific settings attached to a role. Settings for specific databases or specific roles override settings for all roles.</xref></xref>"
+msgstr ""
+
+#: xml/ref/alter_role.xml:114(para)
+msgid "Superusers can change anyone's session defaults. Roles having <literal>CREATEROLE</literal>privilege can change defaults for non-superuser roles. Ordinary roles can only set defaults for themselves. Certain configuration variables cannot be set this way, or can only be set if a superuser issues the command. Only superusers can change a setting for all roles in all databases."
+msgstr ""
+
+#: xml/ref/alter_role.xml:124(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/alter_role.xml:131(para)
+msgid "The name of the role whose attributes are to be altered."
+msgstr ""
+
+#: xml/ref/alter_role.xml:136(term)
+msgid "CURRENT_USER"
+msgstr ""
+
+#: xml/ref/alter_role.xml:138(para)
+msgid "Alter the current user instead of an explicitly identified role."
+msgstr ""
+
+#: xml/ref/alter_role.xml:143(term)
+msgid "SESSION_USER"
+msgstr ""
+
+#: xml/ref/alter_role.xml:145(para)
+msgid "Alter the current session user instead of an explicitly identified role."
+msgstr ""
+
+#: xml/ref/alter_role.xml:151(literal)
+msgid "SUPERUSER"
+msgstr ""
+
+#: xml/ref/alter_role.xml:154(literal)
+msgid "NOSUPERUSER"
+msgstr ""
+
+#: xml/ref/alter_role.xml:157(literal)
+msgid "CREATEDB"
+msgstr ""
+
+#: xml/ref/alter_role.xml:160(literal)
+msgid "NOCREATEDB"
+msgstr ""
+
+#: xml/ref/alter_role.xml:163(literal)
+msgid "CREATEROLE"
+msgstr ""
+
+#: xml/ref/alter_role.xml:166(literal)
+msgid "NOCREATEROLE"
+msgstr ""
+
+#: xml/ref/alter_role.xml:169(literal)
+msgid "CREATEUSER"
+msgstr ""
+
+#: xml/ref/alter_role.xml:172(literal)
+msgid "NOCREATEUSER"
+msgstr ""
+
+#: xml/ref/alter_role.xml:175(literal)
+msgid "INHERIT"
+msgstr ""
+
+#: xml/ref/alter_role.xml:178(literal)
+msgid "NOINHERIT"
+msgstr ""
+
+#: xml/ref/alter_role.xml:181(literal)
+msgid "LOGIN"
+msgstr ""
+
+#: xml/ref/alter_role.xml:184(literal)
+msgid "NOLOGIN"
+msgstr ""
+
+#: xml/ref/alter_role.xml:187(literal)
+msgid "REPLICATION"
+msgstr ""
+
+#: xml/ref/alter_role.xml:190(literal)
+msgid "NOREPLICATION"
+msgstr ""
+
+#: xml/ref/alter_role.xml:193(literal)
+msgid "BYPASSRLS"
+msgstr ""
+
+#: xml/ref/alter_role.xml:196(literal)
+msgid "NOBYPASSRLS"
+msgstr ""
+
+#: xml/ref/alter_role.xml:199(literal)
+msgid "CONNECTION LIMIT"
+msgstr ""
+
+#: xml/ref/alter_role.xml:203(literal)
+msgid "PASSWORD"
+msgstr ""
+
+#: xml/ref/alter_role.xml:207(literal)
+msgid "ENCRYPTED"
+msgstr ""
+
+#: xml/ref/alter_role.xml:210(literal)
+msgid "UNENCRYPTED"
+msgstr ""
+
+#: xml/ref/alter_role.xml:212(term)
+msgid "<literal>VALID UNTIL</literal>' <replaceable class=\"parameter\"> timestamp</replaceable>'"
+msgstr ""
+
+#: xml/ref/alter_role.xml:217(para)
+msgid "These clauses alter attributes originally set by <xref linkend=\"SQL-CREATEROLE\">. For more information, see the <command>CREATE ROLE</command>reference page.</xref>"
+msgstr ""
+
+#: xml/ref/alter_role.xml:229(para)
+msgid "The new name of the role."
+msgstr ""
+
+#: xml/ref/alter_role.xml:237(para)
+msgid "The name of the database the configuration variable should be set in."
+msgstr ""
+
+#: xml/ref/alter_role.xml:249(para)
+msgid "Set this role's session default for the specified configuration parameter to the given value. If <replaceable>value</replaceable>is <literal>DEFAULT</literal>or, equivalently, <literal>RESET</literal>is used, the role-specific variable setting is removed, so the role will inherit the system-wide default setting in new sessions. Use <literal>RESET ALL</literal>to clear all role-specific settings. <literal>SET FROM CURRENT</literal>saves the session's current value of the parameter as the role-specific value. If <literal>IN DATABASE</literal>is specified, the configuration parameter is set or removed for the given role and database only."
+msgstr ""
+
+#: xml/ref/alter_role.xml:264(para)
+msgid "Role-specific variable settings take effect only at login; <xref linkend=\"sql-set-role\">and <xref linkend=\"sql-set-session-authorization\">do not process role-specific variable settings.</xref></xref>"
+msgstr ""
+
+#: xml/ref/alter_role.xml:270(para)
+msgid "See <xref linkend=\"sql-set\">and <xref linkend=\"runtime-config\">for more information about allowed parameter names and values.</xref></xref>"
+msgstr ""
+
+#: xml/ref/alter_role.xml:279(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/alter_role.xml:280(para)
+msgid "Use <xref linkend=\"SQL-CREATEROLE\">to add new roles, and <xref linkend=\"SQL-DROPROLE\">to remove a role.</xref></xref>"
+msgstr ""
+
+#: xml/ref/alter_role.xml:284(para)
+msgid "<command>ALTER ROLE</command>cannot change a role's memberships. Use <xref linkend=\"SQL-GRANT\">and <xref linkend=\"SQL-REVOKE\">to do that.</xref></xref>"
+msgstr ""
+
+#: xml/ref/alter_role.xml:289(para)
+msgid "Caution must be exercised when specifying an unencrypted password with this command. The password will be transmitted to the server in cleartext, and it might also be logged in the client's command history or the server log. <xref linkend=\"app-psql\">contains a command <command>\\password</command>that can be used to change a role's password without exposing the cleartext password.</xref>"
+msgstr ""
+
+#: xml/ref/alter_role.xml:296(para)
+msgid "It is also possible to tie a session default to a specific database rather than to a role; see <xref linkend=\"sql-alterdatabase\">. If there is a conflict, database-role-specific settings override role-specific ones, which in turn override database-specific ones.</xref>"
+msgstr ""
+
+#: xml/ref/alter_role.xml:303(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/alter_role.xml:305(programlisting)
+#, no-wrap
+msgid "ALTER ROLE davide WITH PASSWORD\n    'hu8jmn3';"
+msgstr ""
+
+#: xml/ref/alter_role.xml:304(para)
+msgid "Change a role's password: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_role.xml:308(programlisting)
+#, no-wrap
+msgid "ALTER ROLE davide WITH PASSWORD\n    NULL;"
+msgstr ""
+
+#: xml/ref/alter_role.xml:307(para)
+msgid "Remove a role's password: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_role.xml:314(programlisting)
+#, no-wrap
+msgid "ALTER ROLE chris VALID UNTIL 'May 4 12:00:00\n    2015 +1';"
+msgstr ""
+
+#: xml/ref/alter_role.xml:310(para)
+msgid "Change a password expiration date, specifying that the password should expire at midday on 4th May 2015 using the time zone which is one hour ahead of <acronym>UTC</acronym>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_role.xml:317(programlisting)
+#, no-wrap
+msgid "ALTER ROLE fred VALID UNTIL\n    'infinity';"
+msgstr ""
+
+#: xml/ref/alter_role.xml:316(para)
+msgid "Make a password valid forever: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_role.xml:321(programlisting)
+#, no-wrap
+msgid "ALTER ROLE miriam CREATEROLE\n    CREATEDB;"
+msgstr ""
+
+#: xml/ref/alter_role.xml:319(para)
+msgid "Give a role the ability to create other roles and new databases: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_role.xml:325(programlisting)
+#, no-wrap
+msgid "ALTER ROLE worker_bee SET maintenance_work_mem\n    = 100000;"
+msgstr ""
+
+#: xml/ref/alter_role.xml:323(para)
+msgid "Give a role a non-default setting of the <xref linkend=\"guc-maintenance-work-mem\">parameter: <placeholder-1/></xref>"
+msgstr ""
+
+#: xml/ref/alter_role.xml:330(programlisting)
+#, no-wrap
+msgid "ALTER ROLE fred IN DATABASE devel SET\n    client_min_messages = DEBUG;"
+msgstr ""
+
+#: xml/ref/alter_role.xml:327(para)
+msgid "Give a role a non-default, database-specific setting of the <xref linkend=\"guc-client-min-messages\">parameter: <placeholder-1/></xref>"
+msgstr ""
+
+#: xml/ref/alter_role.xml:334(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/alter_role.xml:335(para)
+msgid "The <command>ALTER ROLE</command>statement is a <productname>PostgreSQL</productname>extension."
+msgstr ""
+
+#: xml/ref/alter_role.xml:340(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/alter_role.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

@@ -1,0 +1,290 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/alter_type.xml:4(primary) xml/ref/alter_type.xml:7(refentrytitle) xml/ref/alter_type.xml:12(refname)
+msgid "ALTER TYPE"
+msgstr ""
+
+#: xml/ref/alter_type.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/alter_type.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/alter_type.xml:13(refpurpose)
+msgid "change the definition of a type"
+msgstr ""
+
+#: xml/ref/alter_type.xml:17(replaceable) xml/ref/alter_type.xml:20(replaceable) xml/ref/alter_type.xml:23(replaceable) xml/ref/alter_type.xml:29(replaceable) xml/ref/alter_type.xml:32(replaceable) xml/ref/alter_type.xml:35(replaceable) xml/ref/alter_type.xml:189(replaceable)
+msgid "name"
+msgstr ""
+
+#: xml/ref/alter_type.xml:18(replaceable) xml/ref/alter_type.xml:42(replaceable)
+msgid "action"
+msgstr ""
+
+#: xml/ref/alter_type.xml:21(replaceable) xml/ref/alter_type.xml:206(replaceable)
+msgid "new_owner"
+msgstr ""
+
+#: xml/ref/alter_type.xml:25(replaceable) xml/ref/alter_type.xml:44(replaceable) xml/ref/alter_type.xml:49(replaceable) xml/ref/alter_type.xml:51(replaceable) xml/ref/alter_type.xml:223(replaceable)
+msgid "attribute_name"
+msgstr ""
+
+#: xml/ref/alter_type.xml:26(replaceable) xml/ref/alter_type.xml:233(replaceable)
+msgid "new_attribute_name"
+msgstr ""
+
+#: xml/ref/alter_type.xml:30(replaceable) xml/ref/alter_type.xml:198(replaceable)
+msgid "new_name"
+msgstr ""
+
+#: xml/ref/alter_type.xml:33(replaceable) xml/ref/alter_type.xml:215(replaceable)
+msgid "new_schema"
+msgstr ""
+
+#: xml/ref/alter_type.xml:37(replaceable) xml/ref/alter_type.xml:252(replaceable)
+msgid "new_enum_value"
+msgstr ""
+
+#: xml/ref/alter_type.xml:39(replaceable) xml/ref/alter_type.xml:263(replaceable)
+msgid "existing_enum_value"
+msgstr ""
+
+#: xml/ref/alter_type.xml:41(phrase)
+msgid "where <placeholder-1/>is one of:"
+msgstr ""
+
+#: xml/ref/alter_type.xml:45(replaceable) xml/ref/alter_type.xml:53(replaceable) xml/ref/alter_type.xml:243(replaceable)
+msgid "data_type"
+msgstr ""
+
+#: xml/ref/alter_type.xml:47(replaceable) xml/ref/alter_type.xml:55(replaceable)
+msgid "collation"
+msgstr ""
+
+#: xml/ref/alter_type.xml:16(synopsis)
+#, no-wrap
+msgid "ALTER TYPE \n    <placeholder-1/>\n    <placeholder-2/>[, ... ]\n    ALTER TYPE \n    <placeholder-3/>OWNER TO { \n    <placeholder-4/>|\n    CURRENT_USER | SESSION_USER } ALTER TYPE \n    <placeholder-5/>RENAME\n    ATTRIBUTE \n    <placeholder-6/>TO \n    <placeholder-7/>[ CASCADE | RESTRICT ] ALTER\n    TYPE \n    <placeholder-8/>RENAME TO \n    <placeholder-9/>ALTER TYPE\n    \n    <placeholder-10/>SET SCHEMA \n    <placeholder-11/>ALTER\n    TYPE \n    <placeholder-12/>ADD VALUE [ IF\n    NOT EXISTS ] \n    <placeholder-13/>[ {\n    BEFORE | AFTER } \n    <placeholder-14/>] \n    <placeholder-15/>ADD ATTRIBUTE \n    <placeholder-16/>\n    <placeholder-17/>[ COLLATE\n    \n    <placeholder-18/>] [\n    CASCADE | RESTRICT ] DROP ATTRIBUTE [ IF EXISTS ] \n    <placeholder-19/>[\n    CASCADE | RESTRICT ] ALTER ATTRIBUTE \n    <placeholder-20/>[\n    SET DATA ] TYPE \n    <placeholder-21/>[ COLLATE\n    \n    <placeholder-22/>] [\n    CASCADE | RESTRICT ]"
+msgstr ""
+
+#: xml/ref/alter_type.xml:59(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/alter_type.xml:66(literal)
+msgid "ADD ATTRIBUTE"
+msgstr ""
+
+#: xml/ref/alter_type.xml:69(para)
+msgid "This form adds a new attribute to a composite type, using the same syntax as <xref linkend=\"SQL-CREATETYPE\">.</xref>"
+msgstr ""
+
+#: xml/ref/alter_type.xml:76(literal)
+msgid "DROP ATTRIBUTE [ IF EXISTS ]"
+msgstr ""
+
+#: xml/ref/alter_type.xml:79(para)
+msgid "This form drops an attribute from a composite type. If <literal>IF EXISTS</literal>is specified and the attribute does not exist, no error is thrown. In this case a notice is issued instead."
+msgstr ""
+
+#: xml/ref/alter_type.xml:88(literal)
+msgid "SET DATA TYPE"
+msgstr ""
+
+#: xml/ref/alter_type.xml:91(para)
+msgid "This form changes the type of an attribute of a composite type."
+msgstr ""
+
+#: xml/ref/alter_type.xml:97(literal)
+msgid "OWNER"
+msgstr ""
+
+#: xml/ref/alter_type.xml:100(para)
+msgid "This form changes the owner of the type."
+msgstr ""
+
+#: xml/ref/alter_type.xml:105(literal)
+msgid "RENAME"
+msgstr ""
+
+#: xml/ref/alter_type.xml:108(para)
+msgid "This form changes the name of the type or the name of an individual attribute of a composite type."
+msgstr ""
+
+#: xml/ref/alter_type.xml:114(literal)
+msgid "SET SCHEMA"
+msgstr ""
+
+#: xml/ref/alter_type.xml:117(para)
+msgid "This form moves the type into another schema."
+msgstr ""
+
+#: xml/ref/alter_type.xml:123(literal)
+msgid "ADD VALUE [ IF NOT EXISTS ] [ BEFORE | AFTER ]"
+msgstr ""
+
+#: xml/ref/alter_type.xml:127(para)
+msgid "This form adds a new value to an enum type. The new value's place in the enum's ordering can be specified as being <literal>BEFORE</literal>or <literal>AFTER</literal>one of the existing values. Otherwise, the new item is added at the end of the list of values."
+msgstr ""
+
+#: xml/ref/alter_type.xml:134(para)
+msgid "If <literal>IF NOT EXISTS</literal>is specified, it is not an error if the type already contains the new value: a notice is issued but no other action is taken. Otherwise, an error will occur if the new value is already present."
+msgstr ""
+
+#: xml/ref/alter_type.xml:144(literal)
+msgid "CASCADE"
+msgstr ""
+
+#: xml/ref/alter_type.xml:147(para)
+msgid "Automatically propagate the operation to typed tables of the type being altered, and their descendants."
+msgstr ""
+
+#: xml/ref/alter_type.xml:154(literal)
+msgid "RESTRICT"
+msgstr ""
+
+#: xml/ref/alter_type.xml:157(para)
+msgid "Refuse the operation if the type being altered is the type of a typed table. This is the default."
+msgstr ""
+
+#: xml/ref/alter_type.xml:60(para)
+msgid "<command>ALTER TYPE</command>changes the definition of an existing type. There are several subforms: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_type.xml:162(para)
+msgid "The <literal>ADD ATTRIBUTE</literal>, <literal>DROP ATTRIBUTE</literal>, and <literal>ALTER ATTRIBUTE</literal>actions can be combined into a list of multiple alterations to apply in parallel. For example, it is possible to add several attributes and/or alter the type of several attributes in a single command."
+msgstr ""
+
+#: xml/ref/alter_type.xml:169(para)
+msgid "You must own the type to use <command>ALTER TYPE</command>. To change the schema of a type, you must also have <literal>CREATE</literal>privilege on the new schema. To alter the owner, you must also be a direct or indirect member of the new owning role, and that role must have <literal>CREATE</literal>privilege on the type's schema. (These restrictions enforce that altering the owner doesn't do anything you couldn't do by dropping and recreating the type. However, a superuser can alter ownership of any type anyway.) To add an attribute or alter an attribute type, you must also have <literal>USAGE</literal>privilege on the data type."
+msgstr ""
+
+#: xml/ref/alter_type.xml:184(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/alter_type.xml:192(para)
+msgid "The name (possibly schema-qualified) of an existing type to alter."
+msgstr ""
+
+#: xml/ref/alter_type.xml:201(para)
+msgid "The new name for the type."
+msgstr ""
+
+#: xml/ref/alter_type.xml:209(para)
+msgid "The user name of the new owner of the type."
+msgstr ""
+
+#: xml/ref/alter_type.xml:218(para)
+msgid "The new schema for the type."
+msgstr ""
+
+#: xml/ref/alter_type.xml:227(para)
+msgid "The name of the attribute to add, alter, or drop."
+msgstr ""
+
+#: xml/ref/alter_type.xml:237(para)
+msgid "The new name of the attribute to be renamed."
+msgstr ""
+
+#: xml/ref/alter_type.xml:246(para)
+msgid "The data type of the attribute to add, or the new type of the attribute to alter."
+msgstr ""
+
+#: xml/ref/alter_type.xml:256(para)
+msgid "The new value to be added to an enum type's list of values. Like all enum literals, it needs to be quoted."
+msgstr ""
+
+#: xml/ref/alter_type.xml:267(para)
+msgid "The existing enum value that the new value should be added immediately before or after in the enum type's sort ordering. Like all enum literals, it needs to be quoted."
+msgstr ""
+
+#: xml/ref/alter_type.xml:277(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/alter_type.xml:278(para)
+msgid "<command>ALTER TYPE ... ADD VALUE</command>(the form that adds a new value to an enum type) cannot be executed inside a transaction block."
+msgstr ""
+
+#: xml/ref/alter_type.xml:282(para)
+msgid "Comparisons involving an added enum value will sometimes be slower than comparisons involving only original members of the enum type. This will usually only occur if <literal>BEFORE</literal>or <literal>AFTER</literal>is used to set the new value's sort position somewhere other than at the end of the list. However, sometimes it will happen even though the new value is added at the end (this occurs if the OID counter <quote>wrapped around</quote>since the original creation of the enum type). The slowdown is usually insignificant; but if it matters, optimal performance can be regained by dropping and recreating the enum type, or by dumping and reloading the database."
+msgstr ""
+
+#: xml/ref/alter_type.xml:297(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/alter_type.xml:299(programlisting)
+#, no-wrap
+msgid "ALTER TYPE electronic_mail RENAME TO\n    email;"
+msgstr ""
+
+#: xml/ref/alter_type.xml:298(para)
+msgid "To rename a data type: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_type.xml:304(programlisting)
+#, no-wrap
+msgid "ALTER TYPE email OWNER TO\n    joe;"
+msgstr ""
+
+#: xml/ref/alter_type.xml:301(para)
+msgid "To change the owner of the type <literal>email</literal>to <literal>joe</literal>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_type.xml:309(programlisting)
+#, no-wrap
+msgid "ALTER TYPE email SET SCHEMA\n    customers;"
+msgstr ""
+
+#: xml/ref/alter_type.xml:306(para)
+msgid "To change the schema of the type <literal>email</literal>to <literal>customers</literal>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_type.xml:312(programlisting)
+#, no-wrap
+msgid "ALTER TYPE compfoo ADD ATTRIBUTE f3\n    int;"
+msgstr ""
+
+#: xml/ref/alter_type.xml:311(para)
+msgid "To add a new attribute to a type: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_type.xml:316(programlisting)
+#, no-wrap
+msgid "ALTER TYPE colors ADD VALUE 'orange' AFTER\n    'red';"
+msgstr ""
+
+#: xml/ref/alter_type.xml:314(para)
+msgid "To add a new value to an enum type in a particular sort position: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_type.xml:320(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/alter_type.xml:321(para)
+msgid "The variants to add and drop attributes are part of the SQL standard; the other variants are PostgreSQL extensions."
+msgstr ""
+
+#: xml/ref/alter_type.xml:326(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/alter_type.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

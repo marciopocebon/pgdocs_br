@@ -1,0 +1,252 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/dropuser.xml:4(primary) xml/ref/dropuser.xml:8(application) xml/ref/dropuser.xml:14(refname) xml/ref/dropuser.xml:20(command)
+msgid "dropuser"
+msgstr ""
+
+#: xml/ref/dropuser.xml:10(manvolnum)
+msgid "1"
+msgstr ""
+
+#: xml/ref/dropuser.xml:11(refmiscinfo)
+msgid "Application"
+msgstr ""
+
+#: xml/ref/dropuser.xml:16(productname)
+msgid "PostgreSQL"
+msgstr ""
+
+#: xml/ref/dropuser.xml:15(refpurpose)
+msgid "remove a <placeholder-1/>user account"
+msgstr ""
+
+#: xml/ref/dropuser.xml:22(replaceable)
+msgid "connection-option"
+msgstr ""
+
+#: xml/ref/dropuser.xml:25(replaceable)
+msgid "option"
+msgstr ""
+
+#: xml/ref/dropuser.xml:28(replaceable) xml/ref/dropuser.xml:56(replaceable) xml/ref/dropuser.xml:171(replaceable) xml/ref/dropuser.xml:176(replaceable)
+msgid "username"
+msgstr ""
+
+#: xml/ref/dropuser.xml:33(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/dropuser.xml:34(para)
+msgid "<application>dropuser</application>removes an existing <productname>PostgreSQL</productname>user. Only superusers and users with the <literal>CREATEROLE</literal>privilege can remove <productname>PostgreSQL</productname>users. (To remove a superuser, you must yourself be a superuser.)"
+msgstr ""
+
+#: xml/ref/dropuser.xml:41(para)
+msgid "<application>dropuser</application>is a wrapper around the <acronym>SQL</acronym>command <xref linkend=\"SQL-DROPROLE\">. There is no effective difference between dropping users via this utility and via other methods for accessing the server.</xref>"
+msgstr ""
+
+#: xml/ref/dropuser.xml:49(title)
+msgid "Options"
+msgstr ""
+
+#: xml/ref/dropuser.xml:59(para)
+msgid "Specifies the name of the <productname>PostgreSQL</productname>user to be removed. You will be prompted for a name if none is specified on the command line and the <option>-i</option>/ <option>--interactive</option>option is used."
+msgstr ""
+
+#: xml/ref/dropuser.xml:69(option)
+msgid "-e"
+msgstr ""
+
+#: xml/ref/dropuser.xml:72(option)
+msgid "--echo"
+msgstr ""
+
+#: xml/ref/dropuser.xml:75(para)
+msgid "Echo the commands that <application>dropuser</application>generates and sends to the server."
+msgstr ""
+
+#: xml/ref/dropuser.xml:82(option)
+msgid "-i"
+msgstr ""
+
+#: xml/ref/dropuser.xml:85(option)
+msgid "--interactive"
+msgstr ""
+
+#: xml/ref/dropuser.xml:88(para)
+msgid "Prompt for confirmation before actually removing the user, and prompt for the user name if none is specified on the command line."
+msgstr ""
+
+#: xml/ref/dropuser.xml:95(option)
+msgid "-V"
+msgstr ""
+
+#: xml/ref/dropuser.xml:98(option)
+msgid "--version"
+msgstr ""
+
+#: xml/ref/dropuser.xml:101(para)
+msgid "Print the <application>dropuser</application>version and exit."
+msgstr ""
+
+#: xml/ref/dropuser.xml:108(option)
+msgid "--if-exists"
+msgstr ""
+
+#: xml/ref/dropuser.xml:111(para)
+msgid "Do not throw an error if the user does not exist. A notice is issued in this case."
+msgstr ""
+
+#: xml/ref/dropuser.xml:117(option)
+msgid "-?"
+msgstr ""
+
+#: xml/ref/dropuser.xml:120(option)
+msgid "--help"
+msgstr ""
+
+#: xml/ref/dropuser.xml:123(para)
+msgid "Show help about <application>dropuser</application>command line arguments, and exit."
+msgstr ""
+
+#: xml/ref/dropuser.xml:50(para)
+msgid "<application>dropuser</application>accepts the following command-line arguments: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/dropuser.xml:136(replaceable) xml/ref/dropuser.xml:141(replaceable)
+msgid "host"
+msgstr ""
+
+#: xml/ref/dropuser.xml:135(option)
+msgid "-h <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/dropuser.xml:140(option)
+msgid "--host= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/dropuser.xml:145(para)
+msgid "Specifies the host name of the machine on which the server is running. If the value begins with a slash, it is used as the directory for the Unix domain socket."
+msgstr ""
+
+#: xml/ref/dropuser.xml:154(replaceable) xml/ref/dropuser.xml:159(replaceable)
+msgid "port"
+msgstr ""
+
+#: xml/ref/dropuser.xml:153(option)
+msgid "-p <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/dropuser.xml:158(option)
+msgid "--port= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/dropuser.xml:163(para)
+msgid "Specifies the TCP port or local Unix domain socket file extension on which the server is listening for connections."
+msgstr ""
+
+#: xml/ref/dropuser.xml:170(option)
+msgid "-U <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/dropuser.xml:175(option)
+msgid "--username= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/dropuser.xml:180(para)
+msgid "User name to connect as (not the user name to drop)."
+msgstr ""
+
+#: xml/ref/dropuser.xml:186(option)
+msgid "-w"
+msgstr ""
+
+#: xml/ref/dropuser.xml:189(option)
+msgid "--no-password"
+msgstr ""
+
+#: xml/ref/dropuser.xml:192(para)
+msgid "Never issue a password prompt. If the server requires password authentication and a password is not available by other means such as a <filename>.pgpass</filename>file, the connection attempt will fail. This option can be useful in batch jobs and scripts where no user is present to enter a password."
+msgstr ""
+
+#: xml/ref/dropuser.xml:203(option)
+msgid "-W"
+msgstr ""
+
+#: xml/ref/dropuser.xml:206(option)
+msgid "--password"
+msgstr ""
+
+#: xml/ref/dropuser.xml:209(para)
+msgid "Force <application>dropuser</application>to prompt for a password before connecting to a database."
+msgstr ""
+
+#: xml/ref/dropuser.xml:212(para)
+msgid "This option is never essential, since <application>dropuser</application>will automatically prompt for a password if the server demands password authentication. However, <application>dropuser</application>will waste a connection attempt finding out that the server wants a password. In some cases it is worth typing <option>-W</option>to avoid the extra connection attempt."
+msgstr ""
+
+#: xml/ref/dropuser.xml:129(para)
+msgid "<application>dropuser</application>also accepts the following command-line arguments for connection parameters: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/dropuser.xml:226(title)
+msgid "Environment"
+msgstr ""
+
+#: xml/ref/dropuser.xml:230(envar)
+msgid "PGHOST"
+msgstr ""
+
+#: xml/ref/dropuser.xml:233(envar)
+msgid "PGPORT"
+msgstr ""
+
+#: xml/ref/dropuser.xml:236(envar)
+msgid "PGUSER"
+msgstr ""
+
+#: xml/ref/dropuser.xml:239(para)
+msgid "Default connection parameters"
+msgstr ""
+
+#: xml/ref/dropuser.xml:243(para)
+msgid "This utility, like most other <productname>PostgreSQL</productname>utilities, also uses the environment variables supported by <application>libpq</application>(see <xref linkend=\"libpq-envars\">).</xref>"
+msgstr ""
+
+#: xml/ref/dropuser.xml:250(title)
+msgid "Diagnostics"
+msgstr ""
+
+#: xml/ref/dropuser.xml:251(para)
+msgid "In case of difficulty, see <xref linkend=\"SQL-DROPROLE\">and <xref linkend=\"APP-PSQL\">for discussions of potential problems and error messages. The database server must be running at the targeted host. Also, any default connection settings and environment variables used by the <application>libpq</application>front-end library will apply.</xref></xref>"
+msgstr ""
+
+#: xml/ref/dropuser.xml:261(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/dropuser.xml:262(para)
+msgid "To remove user <literal>joe</literal>from the default database server: <screen>\n      <prompt>$</prompt>\n      <userinput>dropuser joe</userinput>\n    </screen>"
+msgstr ""
+
+#: xml/ref/dropuser.xml:268(para)
+msgid "To remove user <literal>joe</literal>using the server on host <literal>eden</literal>, port 5000, with verification and a peek at the underlying command: <screen>\n      <prompt>$</prompt>\n      <userinput>dropuser -p 5000 -h eden -i -e joe</userinput>\n      <computeroutput>Role \"joe\" will be permanently removed. Are\n      you sure? (y/n)</computeroutput>\n      <userinput>y</userinput>\n      <computeroutput>DROP ROLE joe;</computeroutput>\n    </screen>"
+msgstr ""
+
+#: xml/ref/dropuser.xml:282(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/dropuser.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

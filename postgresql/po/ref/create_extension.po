@@ -1,0 +1,155 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/create_extension.xml:4(primary) xml/ref/create_extension.xml:7(refentrytitle) xml/ref/create_extension.xml:12(refname)
+msgid "CREATE EXTENSION"
+msgstr ""
+
+#: xml/ref/create_extension.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/create_extension.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/create_extension.xml:13(refpurpose)
+msgid "install an extension"
+msgstr ""
+
+#: xml/ref/create_extension.xml:17(replaceable) xml/ref/create_extension.xml:65(replaceable)
+msgid "extension_name"
+msgstr ""
+
+#: xml/ref/create_extension.xml:19(replaceable) xml/ref/create_extension.xml:80(replaceable)
+msgid "schema_name"
+msgstr ""
+
+#: xml/ref/create_extension.xml:21(replaceable) xml/ref/create_extension.xml:98(replaceable)
+msgid "version"
+msgstr ""
+
+#: xml/ref/create_extension.xml:22(replaceable) xml/ref/create_extension.xml:109(replaceable)
+msgid "old_version"
+msgstr ""
+
+#: xml/ref/create_extension.xml:16(synopsis)
+#, no-wrap
+msgid "CREATE EXTENSION [ IF NOT EXISTS ] \n    <placeholder-1/>[\n    WITH ] [ SCHEMA \n    <placeholder-2/>] [\n    VERSION \n    <placeholder-3/>] [ FROM \n    <placeholder-4/>]"
+msgstr ""
+
+#: xml/ref/create_extension.xml:26(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/create_extension.xml:27(para)
+msgid "<command>CREATE EXTENSION</command>loads a new extension into the current database. There must not be an extension of the same name already loaded."
+msgstr ""
+
+#: xml/ref/create_extension.xml:31(para)
+msgid "Loading an extension essentially amounts to running the extension's script file. The script will typically create new <acronym>SQL</acronym>objects such as functions, data types, operators and index support methods. <command>CREATE EXTENSION</command>additionally records the identities of all the created objects, so that they can be dropped again if <command>DROP EXTENSION</command>is issued."
+msgstr ""
+
+#: xml/ref/create_extension.xml:39(para)
+msgid "Loading an extension requires the same privileges that would be required to create its component objects. For most extensions this means superuser or database owner privileges are needed. The user who runs <command>CREATE EXTENSION</command>becomes the owner of the extension for purposes of later privilege checks, as well as the owner of any objects created by the extension's script."
+msgstr ""
+
+#: xml/ref/create_extension.xml:49(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/create_extension.xml:53(literal)
+msgid "IF NOT EXISTS"
+msgstr ""
+
+#: xml/ref/create_extension.xml:56(para)
+msgid "Do not throw an error if an extension with the same name already exists. A notice is issued in this case. Note that there is no guarantee that the existing extension is anything like the one that would have been created from the currently-available script file."
+msgstr ""
+
+#: xml/ref/create_extension.xml:69(para)
+msgid "The name of the extension to be installed. <productname>PostgreSQL</productname>will create the extension using details from the file <literal>SHAREDIR/extension/</literal><replaceable class=\"parameter\"> extension_name</replaceable><literal>.control</literal>."
+msgstr ""
+
+#: xml/ref/create_extension.xml:83(para)
+msgid "The name of the schema in which to install the extension's objects, given that the extension allows its contents to be relocated. The named schema must already exist. If not specified, and the extension's control file does not specify a schema either, the current default object creation schema is used."
+msgstr ""
+
+#: xml/ref/create_extension.xml:89(para)
+msgid "Remember that the extension itself is not considered to be within any schema: extensions have unqualified names that must be unique database-wide. But objects belonging to the extension can be within schemas."
+msgstr ""
+
+#: xml/ref/create_extension.xml:101(para)
+msgid "The version of the extension to install. This can be written as either an identifier or a string literal. The default version is whatever is specified in the extension's control file."
+msgstr ""
+
+#: xml/ref/create_extension.xml:112(para)
+msgid "<literal>FROM</literal><replaceable class=\"parameter\"> old_version</replaceable>must be specified when, and only when, you are attempting to install an extension that replaces an <quote>old style</quote>module that is just a collection of objects not packaged into an extension. This option causes <command>CREATE EXTENSION</command>to run an alternative installation script that absorbs the existing objects into the extension, instead of creating new objects. Be careful that <literal>SCHEMA</literal>specifies the schema containing these pre-existing objects."
+msgstr ""
+
+#: xml/ref/create_extension.xml:127(para)
+msgid "The value to use for <replaceable class=\"parameter\"> old_version</replaceable>is determined by the extension's author, and might vary if there is more than one version of the old-style module that can be upgraded into an extension. For the standard additional modules supplied with pre-9.1 <productname>PostgreSQL</productname>, use <literal>unpackaged</literal>for <replaceable class=\"parameter\"> old_version</replaceable>when updating a module to extension style."
+msgstr ""
+
+#: xml/ref/create_extension.xml:144(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/create_extension.xml:145(para)
+msgid "Before you can use <command>CREATE EXTENSION</command>to load an extension into a database, the extension's supporting files must be installed. Information about installing the extensions supplied with <productname>PostgreSQL</productname>can be found in <link linkend=\"contrib\">Additional Supplied Modules</link>."
+msgstr ""
+
+#: xml/ref/create_extension.xml:152(para)
+msgid "The extensions currently available for loading can be identified from the <link linkend=\"view-pg-available-extensions\"><structname>pg_available_extensions</structname></link>or <link linkend=\"view-pg-available-extension-versions\"><structname>pg_available_extension_versions</structname></link>system views."
+msgstr ""
+
+#: xml/ref/create_extension.xml:160(para)
+msgid "For information about writing new extensions, see <xref linkend=\"extend-extensions\">.</xref>"
+msgstr ""
+
+#: xml/ref/create_extension.xml:164(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/create_extension.xml:168(programlisting)
+#, no-wrap
+msgid "CREATE EXTENSION\n    hstore;"
+msgstr ""
+
+#: xml/ref/create_extension.xml:165(para)
+msgid "Install the <link linkend=\"hstore\">hstore</link>extension into the current database: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_extension.xml:172(programlisting)
+#, no-wrap
+msgid "CREATE EXTENSION hstore SCHEMA public FROM\n    unpackaged;"
+msgstr ""
+
+#: xml/ref/create_extension.xml:170(para)
+msgid "Update a pre-9.1 installation of <literal>hstore</literal>into extension style: <placeholder-1/>Be careful to specify the schema in which you installed the existing <literal>hstore</literal>objects."
+msgstr ""
+
+#: xml/ref/create_extension.xml:178(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/create_extension.xml:179(para)
+msgid "<command>CREATE EXTENSION</command>is a <productname>PostgreSQL</productname>extension."
+msgstr ""
+
+#: xml/ref/create_extension.xml:184(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/create_extension.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

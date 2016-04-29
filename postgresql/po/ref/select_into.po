@@ -1,0 +1,178 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/select_into.xml:4(primary) xml/ref/select_into.xml:7(refentrytitle) xml/ref/select_into.xml:12(refname) xml/ref/select_into.xml:105(command) xml/ref/select_into.xml:108(command) xml/ref/select_into.xml:115(command)
+msgid "SELECT INTO"
+msgstr ""
+
+#: xml/ref/select_into.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/select_into.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/select_into.xml:13(refpurpose)
+msgid "define a new table from the results of a query"
+msgstr ""
+
+#: xml/ref/select_into.xml:18(replaceable)
+msgid "with_query"
+msgstr ""
+
+#: xml/ref/select_into.xml:20(replaceable) xml/ref/select_into.xml:22(replaceable) xml/ref/select_into.xml:31(replaceable) xml/ref/select_into.xml:40(replaceable)
+msgid "expression"
+msgstr ""
+
+#: xml/ref/select_into.xml:24(replaceable)
+msgid "output_name"
+msgstr ""
+
+#: xml/ref/select_into.xml:26(replaceable) xml/ref/select_into.xml:90(replaceable)
+msgid "new_table"
+msgstr ""
+
+#: xml/ref/select_into.xml:27(replaceable)
+msgid "from_item"
+msgstr ""
+
+#: xml/ref/select_into.xml:29(replaceable) xml/ref/select_into.xml:33(replaceable)
+msgid "condition"
+msgstr ""
+
+#: xml/ref/select_into.xml:35(replaceable)
+msgid "window_name"
+msgstr ""
+
+#: xml/ref/select_into.xml:36(replaceable)
+msgid "window_definition"
+msgstr ""
+
+#: xml/ref/select_into.xml:38(replaceable)
+msgid "select"
+msgstr ""
+
+#: xml/ref/select_into.xml:42(replaceable)
+msgid "operator"
+msgstr ""
+
+#: xml/ref/select_into.xml:44(replaceable) xml/ref/select_into.xml:48(replaceable)
+msgid "count"
+msgstr ""
+
+#: xml/ref/select_into.xml:46(replaceable)
+msgid "start"
+msgstr ""
+
+#: xml/ref/select_into.xml:50(replaceable)
+msgid "table_name"
+msgstr ""
+
+#: xml/ref/select_into.xml:17(synopsis)
+#, no-wrap
+msgid "[ WITH [ RECURSIVE ] \n    <placeholder-1/>[, ...]\n    ] SELECT [ ALL | DISTINCT [ ON ( \n    <placeholder-2/>[, ...]\n    ) ] ] * | \n    <placeholder-3/>[ [ AS ]\n    \n    <placeholder-4/>] [,\n    ...] INTO [ TEMPORARY | TEMP | UNLOGGED ] [ TABLE ] \n    <placeholder-5/>[ FROM \n    <placeholder-6/>[, ...] ]\n    [ WHERE \n    <placeholder-7/>] [ GROUP\n    BY \n    <placeholder-8/>[, ...]\n    ] [ HAVING \n    <placeholder-9/>[, ...] ]\n    [ WINDOW \n    <placeholder-10/>AS ( \n    <placeholder-11/>)\n    [, ...] ] [ { UNION | INTERSECT | EXCEPT } [ ALL | DISTINCT ] \n    <placeholder-12/>] [ ORDER BY\n    \n    <placeholder-13/>[ ASC |\n    DESC | USING \n    <placeholder-14/>] [ NULLS\n    { FIRST | LAST } ] [, ...] ] [ LIMIT { \n    <placeholder-15/>| ALL } ] [\n    OFFSET \n    <placeholder-16/>[ ROW | ROWS\n    ] ] [ FETCH { FIRST | NEXT } [ \n    <placeholder-17/>] { ROW |\n    ROWS } ONLY ] [ FOR { UPDATE | SHARE } [ OF \n    <placeholder-18/>[, ...]\n    ] [ NOWAIT ] [...] ]"
+msgstr ""
+
+#: xml/ref/select_into.xml:54(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/select_into.xml:55(para)
+msgid "<command>SELECT INTO</command>creates a new table and fills it with data computed by a query. The data is not returned to the client, as it is with a normal <command>SELECT</command>. The new table's columns have the names and data types associated with the output columns of the <command>SELECT</command>."
+msgstr ""
+
+#: xml/ref/select_into.xml:64(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/select_into.xml:67(term)
+msgid "<literal>TEMPORARY</literal>or <literal>TEMP</literal>"
+msgstr ""
+
+#: xml/ref/select_into.xml:71(para)
+msgid "If specified, the table is created as a temporary table. Refer to <xref linkend=\"sql-createtable\">for details.</xref>"
+msgstr ""
+
+#: xml/ref/select_into.xml:79(literal)
+msgid "UNLOGGED"
+msgstr ""
+
+#: xml/ref/select_into.xml:82(para)
+msgid "If specified, the table is created as an unlogged table. Refer to <xref linkend=\"sql-createtable\">for details.</xref>"
+msgstr ""
+
+#: xml/ref/select_into.xml:93(para)
+msgid "The name (optionally schema-qualified) of the table to be created."
+msgstr ""
+
+#: xml/ref/select_into.xml:98(para)
+msgid "All other parameters are described in detail under <xref linkend=\"sql-select\">.</xref>"
+msgstr ""
+
+#: xml/ref/select_into.xml:102(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/select_into.xml:106(command) xml/ref/select_into.xml:113(command)
+msgid "CREATE TABLE AS"
+msgstr ""
+
+#: xml/ref/select_into.xml:109(application)
+msgid "ECPG"
+msgstr ""
+
+#: xml/ref/select_into.xml:110(application)
+msgid "PL/pgSQL"
+msgstr ""
+
+#: xml/ref/select_into.xml:112(literal)
+msgid "INTO"
+msgstr ""
+
+#: xml/ref/select_into.xml:104(xref)
+msgid "is functionally similar to <placeholder-1/>. <placeholder-2/>is the recommended syntax, since this form of <placeholder-3/>is not available in <placeholder-4/>or <placeholder-5/>, because they interpret the <placeholder-6/>clause differently. Furthermore, <placeholder-7/>offers a superset of the functionality provided by <placeholder-8/>."
+msgstr ""
+
+#: xml/ref/select_into.xml:117(para)
+msgid "To add OIDs to the table created by <command>SELECT INTO</command>, enable the <xref linkend=\"guc-default-with-oids\">configuration variable. Alternatively, <command>CREATE TABLE AS</command>can be used with the <literal>WITH OIDS</literal>clause.</xref>"
+msgstr ""
+
+#: xml/ref/select_into.xml:125(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/select_into.xml:130(programlisting)
+#, no-wrap
+msgid "SELECT * INTO films_recent FROM films WHERE\n    date_prod = '2002-01-01';"
+msgstr ""
+
+#: xml/ref/select_into.xml:126(para)
+msgid "Create a new table <literal>films_recent</literal>consisting of only recent entries from the table <literal>films</literal>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/select_into.xml:134(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/select_into.xml:135(para)
+msgid "The SQL standard uses <command>SELECT INTO</command>to represent selecting values into scalar variables of a host program, rather than creating a new table. This indeed is the usage found in <application>ECPG</application>(see <xref linkend=\"ecpg\">) and <application>PL/pgSQL</application>(see <xref linkend=\"plpgsql\">). The <productname>PostgreSQL</productname>usage of <command>SELECT INTO</command>to represent table creation is historical. It is best to use <command>CREATE TABLE AS</command>for this purpose in new code.</xref></xref>"
+msgstr ""
+
+#: xml/ref/select_into.xml:150(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/select_into.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

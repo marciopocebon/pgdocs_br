@@ -1,0 +1,106 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/drop_type.xml:4(primary) xml/ref/drop_type.xml:7(refentrytitle) xml/ref/drop_type.xml:12(refname)
+msgid "DROP TYPE"
+msgstr ""
+
+#: xml/ref/drop_type.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/drop_type.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/drop_type.xml:13(refpurpose)
+msgid "remove a data type"
+msgstr ""
+
+#: xml/ref/drop_type.xml:17(replaceable) xml/ref/drop_type.xml:40(replaceable)
+msgid "name"
+msgstr ""
+
+#: xml/ref/drop_type.xml:16(synopsis)
+#, no-wrap
+msgid "DROP TYPE [ IF EXISTS ] \n    <placeholder-1/>[, ...] [\n    CASCADE | RESTRICT ]"
+msgstr ""
+
+#: xml/ref/drop_type.xml:21(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/drop_type.xml:22(para)
+msgid "<command>DROP TYPE</command>removes a user-defined data type. Only the owner of a type can remove it."
+msgstr ""
+
+#: xml/ref/drop_type.xml:27(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/drop_type.xml:31(literal)
+msgid "IF EXISTS"
+msgstr ""
+
+#: xml/ref/drop_type.xml:34(para)
+msgid "Do not throw an error if the type does not exist. A notice is issued in this case."
+msgstr ""
+
+#: xml/ref/drop_type.xml:43(para)
+msgid "The name (optionally schema-qualified) of the data type to remove."
+msgstr ""
+
+#: xml/ref/drop_type.xml:49(literal)
+msgid "CASCADE"
+msgstr ""
+
+#: xml/ref/drop_type.xml:52(para)
+msgid "Automatically drop objects that depend on the type (such as table columns, functions, operators)."
+msgstr ""
+
+#: xml/ref/drop_type.xml:58(literal)
+msgid "RESTRICT"
+msgstr ""
+
+#: xml/ref/drop_type.xml:61(para)
+msgid "Refuse to drop the type if any objects depend on it. This is the default."
+msgstr ""
+
+#: xml/ref/drop_type.xml:68(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/drop_type.xml:71(programlisting)
+#, no-wrap
+msgid "DROP TYPE box;"
+msgstr ""
+
+#: xml/ref/drop_type.xml:69(para)
+msgid "To remove the data type <type>box</type>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/drop_type.xml:74(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/drop_type.xml:75(para)
+msgid "This command is similar to the corresponding command in the SQL standard, apart from the <literal>IF EXISTS</literal>option, which is a <productname>PostgreSQL</productname>extension. But note that much of the <command>CREATE TYPE</command>command and the data type extension mechanisms in <productname>PostgreSQL</productname>differ from the SQL standard."
+msgstr ""
+
+#: xml/ref/drop_type.xml:86(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/drop_type.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

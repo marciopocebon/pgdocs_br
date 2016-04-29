@@ -1,0 +1,110 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/drop_language.xml:4(primary) xml/ref/drop_language.xml:7(refentrytitle) xml/ref/drop_language.xml:12(refname)
+msgid "DROP LANGUAGE"
+msgstr ""
+
+#: xml/ref/drop_language.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/drop_language.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/drop_language.xml:13(refpurpose)
+msgid "remove a procedural language"
+msgstr ""
+
+#: xml/ref/drop_language.xml:17(replaceable) xml/ref/drop_language.xml:51(replaceable)
+msgid "name"
+msgstr ""
+
+#: xml/ref/drop_language.xml:16(synopsis)
+#, no-wrap
+msgid "DROP [ PROCEDURAL ] LANGUAGE [ IF EXISTS ] \n    <placeholder-1/>[ CASCADE |\n    RESTRICT ]"
+msgstr ""
+
+#: xml/ref/drop_language.xml:21(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/drop_language.xml:22(para)
+msgid "<command>DROP LANGUAGE</command>removes the definition of a previously registered procedural language. You must be a superuser or the owner of the language to use <command>DROP LANGUAGE</command>."
+msgstr ""
+
+#: xml/ref/drop_language.xml:28(para)
+msgid "As of <productname>PostgreSQL</productname>9.1, most procedural languages have been made into <quote>extensions</quote>, and should therefore be removed with <xref linkend=\"sql-dropextension\">not <command>DROP LANGUAGE</command>.</xref>"
+msgstr ""
+
+#: xml/ref/drop_language.xml:38(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/drop_language.xml:42(literal)
+msgid "IF EXISTS"
+msgstr ""
+
+#: xml/ref/drop_language.xml:45(para)
+msgid "Do not throw an error if the language does not exist. A notice is issued in this case."
+msgstr ""
+
+#: xml/ref/drop_language.xml:54(para)
+msgid "The name of an existing procedural language. For backward compatibility, the name can be enclosed by single quotes."
+msgstr ""
+
+#: xml/ref/drop_language.xml:61(literal)
+msgid "CASCADE"
+msgstr ""
+
+#: xml/ref/drop_language.xml:64(para)
+msgid "Automatically drop objects that depend on the language (such as functions in the language)."
+msgstr ""
+
+#: xml/ref/drop_language.xml:70(literal)
+msgid "RESTRICT"
+msgstr ""
+
+#: xml/ref/drop_language.xml:73(para)
+msgid "Refuse to drop the language if any objects depend on it. This is the default."
+msgstr ""
+
+#: xml/ref/drop_language.xml:80(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/drop_language.xml:83(programlisting)
+#, no-wrap
+msgid "DROP LANGUAGE plsample;"
+msgstr ""
+
+#: xml/ref/drop_language.xml:81(para)
+msgid "This command removes the procedural language <literal>plsample</literal>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/drop_language.xml:86(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/drop_language.xml:87(para)
+msgid "There is no <command>DROP LANGUAGE</command>statement in the SQL standard."
+msgstr ""
+
+#: xml/ref/drop_language.xml:92(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/drop_language.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

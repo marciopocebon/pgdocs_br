@@ -1,0 +1,283 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/alter_domain.xml:4(primary) xml/ref/alter_domain.xml:7(refentrytitle) xml/ref/alter_domain.xml:12(refname)
+msgid "ALTER DOMAIN"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:13(refpurpose)
+msgid "change the definition of a domain"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:17(replaceable) xml/ref/alter_domain.xml:20(replaceable) xml/ref/alter_domain.xml:22(replaceable) xml/ref/alter_domain.xml:25(replaceable) xml/ref/alter_domain.xml:29(replaceable) xml/ref/alter_domain.xml:34(replaceable) xml/ref/alter_domain.xml:38(replaceable) xml/ref/alter_domain.xml:41(replaceable) xml/ref/alter_domain.xml:44(replaceable) xml/ref/alter_domain.xml:162(replaceable)
+msgid "name"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:18(replaceable)
+msgid "expression"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:23(replaceable) xml/ref/alter_domain.xml:171(replaceable)
+msgid "domain_constraint"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:27(replaceable) xml/ref/alter_domain.xml:31(replaceable) xml/ref/alter_domain.xml:36(replaceable) xml/ref/alter_domain.xml:180(replaceable)
+msgid "constraint_name"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:32(replaceable) xml/ref/alter_domain.xml:225(replaceable)
+msgid "new_constraint_name"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:39(replaceable) xml/ref/alter_domain.xml:234(replaceable)
+msgid "new_owner"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:42(replaceable) xml/ref/alter_domain.xml:217(replaceable)
+msgid "new_name"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:45(replaceable) xml/ref/alter_domain.xml:243(replaceable)
+msgid "new_schema"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:16(synopsis)
+#, no-wrap
+msgid "ALTER DOMAIN \n    <placeholder-1/>{ SET DEFAULT \n    <placeholder-2/>| DROP\n    DEFAULT } ALTER DOMAIN \n    <placeholder-3/>{ SET | DROP }\n    NOT NULL ALTER DOMAIN \n    <placeholder-4/>ADD \n    <placeholder-5/>[\n    NOT VALID ] ALTER DOMAIN \n    <placeholder-6/>DROP\n    CONSTRAINT [ IF EXISTS ] \n    <placeholder-7/>[\n    RESTRICT | CASCADE ] ALTER DOMAIN \n    <placeholder-8/>RENAME\n    CONSTRAINT \n    <placeholder-9/>TO \n    <placeholder-10/>ALTER DOMAIN \n    <placeholder-11/>VALIDATE\n    CONSTRAINT \n    <placeholder-12/>ALTER DOMAIN \n    <placeholder-13/>OWNER TO { \n    <placeholder-14/>|\n    CURRENT_USER | SESSION_USER } ALTER DOMAIN \n    <placeholder-15/>RENAME TO \n    <placeholder-16/>ALTER\n    DOMAIN \n    <placeholder-17/>SET SCHEMA \n    <placeholder-18/>"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:49(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:50(para)
+msgid "<command>ALTER DOMAIN</command>changes the definition of an existing domain. There are several sub-forms:"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:55(term)
+msgid "SET/DROP DEFAULT"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:57(para)
+msgid "These forms set or remove the default value for a domain. Note that defaults only apply to subsequent <command>INSERT</command>commands; they do not affect rows already in a table using the domain."
+msgstr ""
+
+#: xml/ref/alter_domain.xml:64(term)
+msgid "SET/DROP NOT NULL"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:66(para)
+msgid "These forms change whether a domain is marked to allow NULL values or to reject NULL values. You can only <literal>SET NOT NULL</literal>when the columns using the domain contain no null values."
+msgstr ""
+
+#: xml/ref/alter_domain.xml:73(term)
+msgid "ADD <replaceable class=\"PARAMETER\"> domain_constraint</replaceable>[ NOT VALID ]"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:77(para)
+msgid "This form adds a new constraint to a domain using the same syntax as <xref linkend=\"SQL-CREATEDOMAIN\">. When a new constraint is added to a domain, all columns using that domain will be checked against the newly added constraint. These checks can be suppressed by adding the new constraint using the <literal>NOT VALID</literal>option; the constraint can later be made valid using <command>ALTER DOMAIN ... VALIDATE CONSTRAINT</command>. Newly inserted or updated rows are always checked against all constraints, even those marked <literal>NOT VALID</literal>. <literal>NOT VALID</literal>is only accepted for <literal>CHECK</literal>constraints.</xref>"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:95(term)
+msgid "DROP CONSTRAINT [ IF EXISTS ]"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:97(para)
+msgid "This form drops constraints on a domain. If <literal>IF EXISTS</literal>is specified and the constraint does not exist, no error is thrown. In this case a notice is issued instead."
+msgstr ""
+
+#: xml/ref/alter_domain.xml:104(term)
+msgid "RENAME CONSTRAINT"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:106(para)
+msgid "This form changes the name of a constraint on a domain."
+msgstr ""
+
+#: xml/ref/alter_domain.xml:111(term)
+msgid "VALIDATE CONSTRAINT"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:113(para)
+msgid "This form validates a constraint previously added as <literal>NOT VALID</literal>, that is, verify that all data in columns using the domain satisfy the specified constraint."
+msgstr ""
+
+#: xml/ref/alter_domain.xml:121(term)
+msgid "OWNER"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:123(para)
+msgid "This form changes the owner of the domain to the specified user."
+msgstr ""
+
+#: xml/ref/alter_domain.xml:129(literal)
+msgid "RENAME"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:132(para)
+msgid "This form changes the name of the domain."
+msgstr ""
+
+#: xml/ref/alter_domain.xml:136(term)
+msgid "SET SCHEMA"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:138(para)
+msgid "This form changes the schema of the domain. Any constraints associated with the domain are moved into the new schema as well."
+msgstr ""
+
+#: xml/ref/alter_domain.xml:144(para)
+msgid "You must own the domain to use <command>ALTER DOMAIN</command>. To change the schema of a domain, you must also have <literal>CREATE</literal>privilege on the new schema. To alter the owner, you must also be a direct or indirect member of the new owning role, and that role must have <literal>CREATE</literal>privilege on the domain's schema. (These restrictions enforce that altering the owner doesn't do anything you couldn't do by dropping and recreating the domain. However, a superuser can alter ownership of any domain anyway.)"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:157(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:165(para)
+msgid "The name (possibly schema-qualified) of an existing domain to alter."
+msgstr ""
+
+#: xml/ref/alter_domain.xml:175(para)
+msgid "New domain constraint for the domain."
+msgstr ""
+
+#: xml/ref/alter_domain.xml:184(para)
+msgid "Name of an existing constraint to drop or rename."
+msgstr ""
+
+#: xml/ref/alter_domain.xml:190(replaceable)
+msgid "NOT VALID"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:193(para)
+msgid "Do not verify existing column data for constraint validity."
+msgstr ""
+
+#: xml/ref/alter_domain.xml:199(literal)
+msgid "CASCADE"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:202(para)
+msgid "Automatically drop objects that depend on the constraint."
+msgstr ""
+
+#: xml/ref/alter_domain.xml:208(literal)
+msgid "RESTRICT"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:211(para)
+msgid "Refuse to drop the constraint if there are any dependent objects. This is the default behavior."
+msgstr ""
+
+#: xml/ref/alter_domain.xml:220(para)
+msgid "The new name for the domain."
+msgstr ""
+
+#: xml/ref/alter_domain.xml:229(para)
+msgid "The new name for the constraint."
+msgstr ""
+
+#: xml/ref/alter_domain.xml:237(para)
+msgid "The user name of the new owner of the domain."
+msgstr ""
+
+#: xml/ref/alter_domain.xml:246(para)
+msgid "The new schema for the domain."
+msgstr ""
+
+#: xml/ref/alter_domain.xml:253(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:254(para)
+msgid "Currently, <command>ALTER DOMAIN ADD CONSTRAINT</command>, <command>ALTER DOMAIN VALIDATE CONSTRAINT</command>, and <command>ALTER DOMAIN SET NOT NULL</command>will fail if the validated named domain or any derived domain is used within a composite-type column of any table in the database. They should eventually be improved to be able to verify the new constraint for such nested columns."
+msgstr ""
+
+#: xml/ref/alter_domain.xml:264(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:267(programlisting)
+#, no-wrap
+msgid "ALTER DOMAIN zipcode SET NOT\n    NULL;"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:270(programlisting)
+#, no-wrap
+msgid "ALTER DOMAIN zipcode DROP NOT\n    NULL;"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:265(para)
+msgid "To add a <literal>NOT NULL</literal>constraint to a domain: <placeholder-1/>To remove a <literal>NOT NULL</literal>constraint from a domain: <placeholder-2/>"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:273(programlisting)
+#, no-wrap
+msgid "ALTER DOMAIN zipcode ADD CONSTRAINT zipchk\n    CHECK (char_length(VALUE) = 5);"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:272(para)
+msgid "To add a check constraint to a domain: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:276(programlisting)
+#, no-wrap
+msgid "ALTER DOMAIN zipcode DROP CONSTRAINT\n    zipchk;"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:275(para)
+msgid "To remove a check constraint from a domain: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:279(programlisting)
+#, no-wrap
+msgid "ALTER DOMAIN zipcode RENAME CONSTRAINT zipchk\n    TO zip_check;"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:278(para)
+msgid "To rename a check constraint on a domain: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:282(programlisting)
+#, no-wrap
+msgid "ALTER DOMAIN zipcode SET SCHEMA\n    customers;"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:281(para)
+msgid "To move the domain into a different schema: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:286(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/alter_domain.xml:287(para)
+msgid "<command>ALTER DOMAIN</command>conforms to the <acronym>SQL</acronym>standard, except for the <literal>OWNER</literal>, <literal>RENAME</literal>, <literal>SET SCHEMA</literal>, and <literal>VALIDATE CONSTRAINT</literal>variants, which are <productname>PostgreSQL</productname>extensions. The <literal>NOT VALID</literal>clause of the <literal>ADD CONSTRAINT</literal>variant is also a <productname>PostgreSQL</productname>extension."
+msgstr ""
+
+#: xml/ref/alter_domain.xml:300(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/alter_domain.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

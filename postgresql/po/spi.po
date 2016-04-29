@@ -1,0 +1,1824 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/spi.xml:3(title)
+msgid "Server Programming Interface"
+msgstr ""
+
+#: xml/spi.xml:5(primary)
+msgid "SPI"
+msgstr ""
+
+#: xml/spi.xml:7(para)
+msgid "The <firstterm>Server Programming Interface</firstterm>( <acronym>SPI</acronym>) gives writers of user-defined <acronym>C</acronym>functions the ability to run <acronym>SQL</acronym>commands inside their functions. <acronym>SPI</acronym>is a set of interface functions to simplify access to the parser, planner, and executor. <acronym>SPI</acronym>also does some memory management."
+msgstr ""
+
+#: xml/spi.xml:16(para)
+msgid "The available procedural languages provide various means to execute SQL commands from procedures. Most of these facilities are based on SPI, so this documentation might be of use for users of those languages as well."
+msgstr ""
+
+#: xml/spi.xml:21(para)
+msgid "To avoid misunderstanding we'll use the term <quote>function</quote>when we speak of <acronym>SPI</acronym>interface functions and <quote>procedure</quote>for a user-defined C-function that is using <acronym>SPI</acronym>."
+msgstr ""
+
+#: xml/spi.xml:27(para)
+msgid "Note that if a command invoked via SPI fails, then control will not be returned to your procedure. Rather, the transaction or subtransaction in which your procedure executes will be rolled back. (This might seem surprising given that the SPI functions mostly have documented error-return conventions. Those conventions only apply for errors detected within the SPI functions themselves, however.) It is possible to recover control after an error by establishing your own subtransaction surrounding SPI calls that might fail. This is not currently documented because the mechanisms required are still in flux."
+msgstr ""
+
+#: xml/spi.xml:38(para)
+msgid "<acronym>SPI</acronym>functions return a nonnegative result on success (either via a returned integer value or in the global variable <varname>SPI_result</varname>, as described below). On error, a negative result or <symbol>NULL</symbol>will be returned."
+msgstr ""
+
+#: xml/spi.xml:45(para)
+msgid "Source code files that use SPI must include the header file <filename>executor/spi.h</filename>."
+msgstr ""
+
+#: xml/spi.xml:49(title)
+msgid "Interface Functions"
+msgstr ""
+
+#: xml/spi.xml:52(primary) xml/spi.xml:55(refentrytitle) xml/spi.xml:59(refname)
+msgid "SPI_connect"
+msgstr ""
+
+#: xml/spi.xml:56(manvolnum) xml/spi.xml:119(manvolnum) xml/spi.xml:175(manvolnum) xml/spi.xml:218(manvolnum) xml/spi.xml:242(manvolnum) xml/spi.xml:588(manvolnum) xml/spi.xml:643(manvolnum) xml/spi.xml:801(manvolnum) xml/spi.xml:961(manvolnum) xml/spi.xml:1061(manvolnum) xml/spi.xml:1143(manvolnum) xml/spi.xml:1194(manvolnum) xml/spi.xml:1261(manvolnum) xml/spi.xml:1330(manvolnum) xml/spi.xml:1472(manvolnum) xml/spi.xml:1564(manvolnum) xml/spi.xml:1665(manvolnum) xml/spi.xml:1789(manvolnum) xml/spi.xml:1949(manvolnum) xml/spi.xml:2043(manvolnum) xml/spi.xml:2086(manvolnum) xml/spi.xml:2161(manvolnum) xml/spi.xml:2229(manvolnum) xml/spi.xml:2316(manvolnum) xml/spi.xml:2406(manvolnum) xml/spi.xml:2447(manvolnum) xml/spi.xml:2504(manvolnum) xml/spi.xml:2595(manvolnum) xml/spi.xml:2653(manvolnum) xml/spi.xml:2716(manvolnum) xml/spi.xml:2789(manvolnum) xml/spi.xml:2871(manvolnum) xml/spi.xml:2928(manvolnum) xml/spi.xml:2986(manvolnum) xml/spi.xml:3030(manvolnum) xml/spi.xml:3150(manvolnum) xml/spi.xml:3193(manvolnum) xml/spi.xml:3250(manvolnum) xml/spi.xml:3293(manvolnum) xml/spi.xml:3341(manvolnum) xml/spi.xml:3410(manvolnum) xml/spi.xml:3567(manvolnum) xml/spi.xml:3608(manvolnum) xml/spi.xml:3665(manvolnum)
+msgid "3"
+msgstr ""
+
+#: xml/spi.xml:60(refpurpose)
+msgid "connect a procedure to the SPI manager"
+msgstr ""
+
+#: xml/spi.xml:64(synopsis)
+#, no-wrap
+msgid "int SPI_connect(void)"
+msgstr ""
+
+#: xml/spi.xml:67(title) xml/spi.xml:130(title) xml/spi.xml:186(title) xml/spi.xml:229(title) xml/spi.xml:255(title) xml/spi.xml:600(title) xml/spi.xml:661(title) xml/spi.xml:815(title) xml/spi.xml:976(title) xml/spi.xml:1076(title) xml/spi.xml:1156(title) xml/spi.xml:1208(title) xml/spi.xml:1275(title) xml/spi.xml:1346(title) xml/spi.xml:1487(title) xml/spi.xml:1579(title) xml/spi.xml:1681(title) xml/spi.xml:1808(title) xml/spi.xml:1964(title) xml/spi.xml:2054(title) xml/spi.xml:2099(title) xml/spi.xml:2174(title) xml/spi.xml:2242(title) xml/spi.xml:2329(title) xml/spi.xml:2417(title) xml/spi.xml:2458(title) xml/spi.xml:2515(title) xml/spi.xml:2608(title) xml/spi.xml:2666(title) xml/spi.xml:2730(title) xml/spi.xml:2804(title) xml/spi.xml:2884(title) xml/spi.xml:2941(title) xml/spi.xml:2998(title) xml/spi.xml:3042(title) xml/spi.xml:3162(title) xml/spi.xml:3206(title) xml/spi.xml:3262(title) xml/spi.xml:3305(title) xml/spi.xml:3354(title) xml/spi.xml:3427(title) xml/spi.xml:3579(title) xml/spi.xml:3621(title) xml/spi.xml:3677(title)
+msgid "Description"
+msgstr ""
+
+#: xml/spi.xml:68(para)
+msgid "<function>SPI_connect</function>opens a connection from a procedure invocation to the SPI manager. You must call this function if you want to execute commands through SPI. Some utility SPI functions can be called from unconnected procedures."
+msgstr ""
+
+#: xml/spi.xml:74(para)
+msgid "If your procedure is already connected, <function>SPI_connect</function>will return the error code <returnvalue>SPI_ERROR_CONNECT</returnvalue>. This could happen if a procedure that has called <function>SPI_connect</function>directly calls another procedure that calls <function>SPI_connect</function>. While recursive calls to the <acronym>SPI</acronym>manager are permitted when an SQL command called through SPI invokes another function that uses <acronym>SPI</acronym>, directly nested calls to <function>SPI_connect</function>and <function>SPI_finish</function>are forbidden. (But see <function>SPI_push</function>and <function>SPI_pop</function>.)"
+msgstr ""
+
+#: xml/spi.xml:92(title) xml/spi.xml:148(title) xml/spi.xml:406(title) xml/spi.xml:632(title) xml/spi.xml:786(title) xml/spi.xml:888(title) xml/spi.xml:1036(title) xml/spi.xml:1130(title) xml/spi.xml:1178(title) xml/spi.xml:1242(title) xml/spi.xml:1308(title) xml/spi.xml:1430(title) xml/spi.xml:1549(title) xml/spi.xml:1650(title) xml/spi.xml:1776(title) xml/spi.xml:1935(title) xml/spi.xml:2030(title) xml/spi.xml:2075(title) xml/spi.xml:2142(title) xml/spi.xml:2291(title) xml/spi.xml:2379(title) xml/spi.xml:2484(title) xml/spi.xml:2542(title) xml/spi.xml:2639(title) xml/spi.xml:2704(title) xml/spi.xml:2772(title) xml/spi.xml:2855(title) xml/spi.xml:2915(title) xml/spi.xml:2971(title) xml/spi.xml:3020(title) xml/spi.xml:3066(title) xml/spi.xml:3182(title) xml/spi.xml:3239(title) xml/spi.xml:3328(title) xml/spi.xml:3395(title) xml/spi.xml:3519(title) xml/spi.xml:3700(title)
+msgid "Return Value"
+msgstr ""
+
+#: xml/spi.xml:96(symbol)
+msgid "SPI_OK_CONNECT"
+msgstr ""
+
+#: xml/spi.xml:99(para)
+msgid "on success"
+msgstr ""
+
+#: xml/spi.xml:104(symbol)
+msgid "SPI_ERROR_CONNECT"
+msgstr ""
+
+#: xml/spi.xml:107(para)
+msgid "on error"
+msgstr ""
+
+#: xml/spi.xml:115(primary) xml/spi.xml:118(refentrytitle) xml/spi.xml:122(refname)
+msgid "SPI_finish"
+msgstr ""
+
+#: xml/spi.xml:123(refpurpose)
+msgid "disconnect a procedure from the SPI manager"
+msgstr ""
+
+#: xml/spi.xml:127(synopsis)
+#, no-wrap
+msgid "int SPI_finish(void)"
+msgstr ""
+
+#: xml/spi.xml:131(para)
+msgid "<function>SPI_finish</function>closes an existing connection to the SPI manager. You must call this function after completing the SPI operations needed during your procedure's current invocation. You do not need to worry about making this happen, however, if you abort the transaction via <literal>elog(ERROR)</literal>. In that case SPI will clean itself up automatically."
+msgstr ""
+
+#: xml/spi.xml:140(para)
+msgid "If <function>SPI_finish</function>is called without having a valid connection, it will return <symbol>SPI_ERROR_UNCONNECTED</symbol>. There is no fundamental problem with this; it means that the SPI manager has nothing to do."
+msgstr ""
+
+#: xml/spi.xml:152(symbol)
+msgid "SPI_OK_FINISH"
+msgstr ""
+
+#: xml/spi.xml:155(para)
+msgid "if properly disconnected"
+msgstr ""
+
+#: xml/spi.xml:160(symbol) xml/spi.xml:562(symbol) xml/spi.xml:2559(symbol)
+msgid "SPI_ERROR_UNCONNECTED"
+msgstr ""
+
+#: xml/spi.xml:163(para) xml/spi.xml:565(para) xml/spi.xml:2562(para)
+msgid "if called from an unconnected procedure"
+msgstr ""
+
+#: xml/spi.xml:171(primary) xml/spi.xml:174(refentrytitle) xml/spi.xml:178(refname)
+msgid "SPI_push"
+msgstr ""
+
+#: xml/spi.xml:179(refpurpose)
+msgid "push SPI stack to allow recursive SPI usage"
+msgstr ""
+
+#: xml/spi.xml:183(synopsis)
+#, no-wrap
+msgid "void SPI_push(void)"
+msgstr ""
+
+#: xml/spi.xml:187(para)
+msgid "<function>SPI_push</function>should be called before executing another procedure that might itself wish to use SPI. After <function>SPI_push</function>, SPI is no longer in a <quote>connected</quote>state, and SPI function calls will be rejected unless a fresh <function>SPI_connect</function>is done. This ensures a clean separation between your procedure's SPI state and that of another procedure you call. After the other procedure returns, call <function>SPI_pop</function>to restore access to your own SPI state."
+msgstr ""
+
+#: xml/spi.xml:200(para)
+msgid "Note that <function>SPI_execute</function>and related functions automatically do the equivalent of <function>SPI_push</function>before passing control back to the SQL execution engine, so it is not necessary for you to worry about this when using those functions. Only when you are directly calling arbitrary code that might contain <function>SPI_connect</function>calls do you need to issue <function>SPI_push</function>and <function>SPI_pop</function>."
+msgstr ""
+
+#: xml/spi.xml:214(primary) xml/spi.xml:217(refentrytitle) xml/spi.xml:221(refname)
+msgid "SPI_pop"
+msgstr ""
+
+#: xml/spi.xml:222(refpurpose)
+msgid "pop SPI stack to return from recursive SPI usage"
+msgstr ""
+
+#: xml/spi.xml:226(synopsis)
+#, no-wrap
+msgid "void SPI_pop(void)"
+msgstr ""
+
+#: xml/spi.xml:230(para)
+msgid "<function>SPI_pop</function>pops the previous environment from the SPI call stack. See <function>SPI_push</function>."
+msgstr ""
+
+#: xml/spi.xml:238(primary) xml/spi.xml:241(refentrytitle) xml/spi.xml:245(refname) xml/spi.xml:3613(function)
+msgid "SPI_execute"
+msgstr ""
+
+#: xml/spi.xml:246(refpurpose)
+msgid "execute a command"
+msgstr ""
+
+#: xml/spi.xml:250(parameter) xml/spi.xml:377(parameter) xml/spi.xml:596(parameter) xml/spi.xml:613(parameter) xml/spi.xml:652(parameter) xml/spi.xml:695(parameter) xml/spi.xml:810(parameter) xml/spi.xml:857(parameter) xml/spi.xml:970(parameter) xml/spi.xml:995(parameter) xml/spi.xml:1070(parameter) xml/spi.xml:1092(parameter) xml/spi.xml:1799(parameter) xml/spi.xml:1844(parameter)
+msgid "command"
+msgstr ""
+
+#: xml/spi.xml:251(parameter) xml/spi.xml:386(parameter) xml/spi.xml:657(parameter) xml/spi.xml:766(parameter) xml/spi.xml:1342(parameter) xml/spi.xml:1410(parameter) xml/spi.xml:1483(parameter) xml/spi.xml:1529(parameter) xml/spi.xml:1678(parameter) xml/spi.xml:1766(parameter) xml/spi.xml:1804(parameter) xml/spi.xml:1915(parameter) xml/spi.xml:1961(parameter) xml/spi.xml:2020(parameter)
+msgid "read_only"
+msgstr ""
+
+#: xml/spi.xml:252(parameter) xml/spi.xml:396(parameter) xml/spi.xml:597(parameter) xml/spi.xml:622(parameter) xml/spi.xml:658(parameter) xml/spi.xml:776(parameter) xml/spi.xml:1343(parameter) xml/spi.xml:1420(parameter) xml/spi.xml:1484(parameter) xml/spi.xml:1539(parameter) xml/spi.xml:1576(parameter) xml/spi.xml:1640(parameter) xml/spi.xml:2096(parameter) xml/spi.xml:2133(parameter) xml/spi.xml:2171(parameter) xml/spi.xml:2208(parameter) xml/spi.xml:2239(parameter) xml/spi.xml:2276(parameter) xml/spi.xml:2326(parameter) xml/spi.xml:2364(parameter)
+msgid "count"
+msgstr ""
+
+#: xml/spi.xml:249(synopsis)
+#, no-wrap
+msgid "int SPI_execute(const char * \n        <placeholder-1/>, bool \n        <placeholder-2/>, long \n        <placeholder-3/>)"
+msgstr ""
+
+#: xml/spi.xml:256(para)
+msgid "<function>SPI_execute</function>executes the specified SQL command for <parameter>count</parameter>rows. If <parameter>read_only</parameter>is <literal>true</literal>, the command must be read-only, and execution overhead is somewhat reduced."
+msgstr ""
+
+#: xml/spi.xml:263(para)
+msgid "This function can only be called from a connected procedure."
+msgstr ""
+
+#: xml/spi.xml:274(programlisting)
+#, no-wrap
+msgid "SPI_execute(\"SELECT * FROM foo\", true,\n        5);"
+msgstr ""
+
+#: xml/spi.xml:278(programlisting)
+#, no-wrap
+msgid "SPI_execute(\"INSERT INTO foo SELECT * FROM\n        bar\", false, 5);"
+msgstr ""
+
+#: xml/spi.xml:282(programlisting)
+#, no-wrap
+msgid "SPI_execute(\"INSERT INTO foo SELECT * FROM\n        bar RETURNING *\", false, 5);"
+msgstr ""
+
+#: xml/spi.xml:265(para)
+msgid "If <parameter>count</parameter>is zero then the command is executed for all rows that it applies to. If <parameter>count</parameter>is greater than zero, then no more than <parameter>count</parameter>rows will be retrieved; execution stops when the count is reached, much like adding a <literal>LIMIT</literal>clause to the query. For example, <placeholder-1/>will retrieve at most 5 rows from the table. Note that such a limit is only effective when the command actually returns rows. For example, <placeholder-2/>inserts all rows from <structname>bar</structname>, ignoring the <parameter>count</parameter>parameter. However, with <placeholder-3/>at most 5 rows would be inserted, since execution would stop after the fifth <literal>RETURNING</literal>result row is retrieved."
+msgstr ""
+
+#: xml/spi.xml:287(para)
+msgid "You can pass multiple commands in one string; <function>SPI_execute</function>returns the result for the command executed last. The <parameter>count</parameter>limit applies to each command separately (even though only the last result will actually be returned). The limit is not applied to any hidden commands generated by rules."
+msgstr ""
+
+#: xml/spi.xml:294(para)
+msgid "When <parameter>read_only</parameter>is <literal>false</literal>, <function>SPI_execute</function>increments the command counter and computes a new <firstterm>snapshot</firstterm>before executing each command in the string. The snapshot does not actually change if the current transaction isolation level is <literal>SERIALIZABLE</literal>or <literal>REPEATABLE READ</literal>, but in <literal>READ COMMITTED</literal>mode the snapshot update allows each command to see the results of newly committed transactions from other sessions. This is essential for consistent behavior when the commands are modifying the database."
+msgstr ""
+
+#: xml/spi.xml:309(para)
+msgid "When <parameter>read_only</parameter>is <literal>true</literal>, <function>SPI_execute</function>does not update either the snapshot or the command counter, and it allows only plain <command>SELECT</command>commands to appear in the command string. The commands are executed using the snapshot previously established for the surrounding query. This execution mode is somewhat faster than the read/write mode due to eliminating per-command overhead. It also allows genuinely <firstterm>stable</firstterm>functions to be built: since successive executions will all use the same snapshot, there will be no change in the results."
+msgstr ""
+
+#: xml/spi.xml:323(para)
+msgid "It is generally unwise to mix read-only and read-write commands within a single function using SPI; that could result in very confusing behavior, since the read-only queries would not see the results of any database updates done by the read-write queries."
+msgstr ""
+
+#: xml/spi.xml:328(para)
+msgid "The actual number of rows for which the (last) command was executed is returned in the global variable <varname>SPI_processed</varname>. If the return value of the function is <symbol>SPI_OK_SELECT</symbol>, <symbol>SPI_OK_INSERT_RETURNING</symbol>, <symbol>SPI_OK_DELETE_RETURNING</symbol>, or <symbol>SPI_OK_UPDATE_RETURNING</symbol>, then you can use the global pointer <literal>SPITupleTable *SPI_tuptable</literal>to access the result rows. Some utility commands (such as <command>EXPLAIN</command>) also return row sets, and <literal>SPI_tuptable</literal>will contain the result in these cases too. Some utility commands ( <command>COPY</command>, <command>CREATE TABLE AS</command>) don't return a row set, so <literal>SPI_tuptable</literal>is NULL, but they still return the number of rows processed in <varname>SPI_processed</varname>."
+msgstr ""
+
+#: xml/spi.xml:350(programlisting)
+#, no-wrap
+msgid "typedef struct { MemoryContext tuptabcxt;\n        /* memory context of result table */ uint32 alloced; /*\n        number of alloced vals */ uint32 free; /* number of free\n        vals */ TupleDesc tupdesc; /* row descriptor */ HeapTuple\n        *vals; /* rows */ } SPITupleTable;"
+msgstr ""
+
+#: xml/spi.xml:348(para)
+msgid "The structure <structname>SPITupleTable</structname>is defined thus: <placeholder-1/><structfield>vals</structfield>is an array of pointers to rows. (The number of valid entries is given by <varname>SPI_processed</varname>.) <structfield>tupdesc</structfield>is a row descriptor which you can pass to SPI functions dealing with rows. <structfield>tuptabcxt</structfield>, <structfield>alloced</structfield>, and <structfield>free</structfield>are internal fields not intended for use by SPI callers."
+msgstr ""
+
+#: xml/spi.xml:364(para)
+msgid "<function>SPI_finish</function>frees all <structname>SPITupleTable</structname>s allocated during the current procedure. You can free a particular result table earlier, if you are done with it, by calling <function>SPI_freetuptable</function>."
+msgstr ""
+
+#: xml/spi.xml:372(title) xml/spi.xml:608(title) xml/spi.xml:690(title) xml/spi.xml:852(title) xml/spi.xml:990(title) xml/spi.xml:1087(title) xml/spi.xml:1163(title) xml/spi.xml:1218(title) xml/spi.xml:1293(title) xml/spi.xml:1357(title) xml/spi.xml:1504(title) xml/spi.xml:1587(title) xml/spi.xml:1702(title) xml/spi.xml:1828(title) xml/spi.xml:1984(title) xml/spi.xml:2061(title) xml/spi.xml:2109(title) xml/spi.xml:2184(title) xml/spi.xml:2249(title) xml/spi.xml:2337(title) xml/spi.xml:2427(title) xml/spi.xml:2470(title) xml/spi.xml:2528(title) xml/spi.xml:2616(title) xml/spi.xml:2681(title) xml/spi.xml:2740(title) xml/spi.xml:2814(title) xml/spi.xml:2892(title) xml/spi.xml:2948(title) xml/spi.xml:3006(title) xml/spi.xml:3052(title) xml/spi.xml:3168(title) xml/spi.xml:3216(title) xml/spi.xml:3273(title) xml/spi.xml:3314(title) xml/spi.xml:3371(title) xml/spi.xml:3435(title) xml/spi.xml:3588(title) xml/spi.xml:3644(title) xml/spi.xml:3686(title)
+msgid "Arguments"
+msgstr ""
+
+#: xml/spi.xml:376(literal) xml/spi.xml:612(literal) xml/spi.xml:694(literal) xml/spi.xml:737(literal) xml/spi.xml:856(literal) xml/spi.xml:994(literal) xml/spi.xml:1091(literal) xml/spi.xml:1382(literal) xml/spi.xml:1612(literal) xml/spi.xml:1706(literal) xml/spi.xml:1738(literal) xml/spi.xml:1832(literal) xml/spi.xml:1843(literal) xml/spi.xml:1886(literal) xml/spi.xml:1988(literal) xml/spi.xml:2065(literal) xml/spi.xml:2694(literal) xml/spi.xml:3491(literal)
+msgid "const char * <placeholder-1/>"
+msgstr ""
+
+#: xml/spi.xml:380(para) xml/spi.xml:616(para)
+msgid "string containing command to execute"
+msgstr ""
+
+#: xml/spi.xml:385(literal) xml/spi.xml:765(literal) xml/spi.xml:1409(literal) xml/spi.xml:1528(literal) xml/spi.xml:1765(literal) xml/spi.xml:1914(literal) xml/spi.xml:2019(literal) xml/spi.xml:2122(literal) xml/spi.xml:2197(literal)
+msgid "bool <placeholder-1/>"
+msgstr ""
+
+#: xml/spi.xml:389(para) xml/spi.xml:769(para) xml/spi.xml:1413(para) xml/spi.xml:1532(para) xml/spi.xml:1769(para) xml/spi.xml:1918(para) xml/spi.xml:2023(para)
+msgid "<literal>true</literal>for read-only execution"
+msgstr ""
+
+#: xml/spi.xml:395(literal) xml/spi.xml:621(literal) xml/spi.xml:775(literal) xml/spi.xml:1419(literal) xml/spi.xml:1538(literal) xml/spi.xml:1639(literal) xml/spi.xml:2132(literal) xml/spi.xml:2207(literal) xml/spi.xml:2275(literal) xml/spi.xml:2363(literal)
+msgid "long <placeholder-1/>"
+msgstr ""
+
+#: xml/spi.xml:399(para) xml/spi.xml:625(para) xml/spi.xml:779(para) xml/spi.xml:1423(para) xml/spi.xml:1542(para) xml/spi.xml:1643(para)
+msgid "maximum number of rows to return, or <literal>0</literal>for no limit"
+msgstr ""
+
+#: xml/spi.xml:413(symbol)
+msgid "SPI_OK_SELECT"
+msgstr ""
+
+#: xml/spi.xml:416(para)
+msgid "if a <command>SELECT</command>(but not <command>SELECT INTO</command>) was executed"
+msgstr ""
+
+#: xml/spi.xml:423(symbol)
+msgid "SPI_OK_SELINTO"
+msgstr ""
+
+#: xml/spi.xml:426(para)
+msgid "if a <command>SELECT INTO</command>was executed"
+msgstr ""
+
+#: xml/spi.xml:432(symbol)
+msgid "SPI_OK_INSERT"
+msgstr ""
+
+#: xml/spi.xml:435(para)
+msgid "if an <command>INSERT</command>was executed"
+msgstr ""
+
+#: xml/spi.xml:441(symbol)
+msgid "SPI_OK_DELETE"
+msgstr ""
+
+#: xml/spi.xml:444(para)
+msgid "if a <command>DELETE</command>was executed"
+msgstr ""
+
+#: xml/spi.xml:450(symbol)
+msgid "SPI_OK_UPDATE"
+msgstr ""
+
+#: xml/spi.xml:453(para)
+msgid "if an <command>UPDATE</command>was executed"
+msgstr ""
+
+#: xml/spi.xml:459(symbol)
+msgid "SPI_OK_INSERT_RETURNING"
+msgstr ""
+
+#: xml/spi.xml:462(para)
+msgid "if an <command>INSERT RETURNING</command>was executed"
+msgstr ""
+
+#: xml/spi.xml:469(symbol)
+msgid "SPI_OK_DELETE_RETURNING"
+msgstr ""
+
+#: xml/spi.xml:472(para)
+msgid "if a <command>DELETE RETURNING</command>was executed"
+msgstr ""
+
+#: xml/spi.xml:479(symbol)
+msgid "SPI_OK_UPDATE_RETURNING"
+msgstr ""
+
+#: xml/spi.xml:482(para)
+msgid "if an <command>UPDATE RETURNING</command>was executed"
+msgstr ""
+
+#: xml/spi.xml:489(symbol)
+msgid "SPI_OK_UTILITY"
+msgstr ""
+
+#: xml/spi.xml:492(para)
+msgid "if a utility command (e.g., <command>CREATE TABLE</command>) was executed"
+msgstr ""
+
+#: xml/spi.xml:498(symbol)
+msgid "SPI_OK_REWRITTEN"
+msgstr ""
+
+#: xml/spi.xml:501(para)
+msgid "if the command was rewritten into another kind of command (e.g., <command>UPDATE</command>became an <command>INSERT</command>) by a <link linkend=\"rules\">rule</link>."
+msgstr ""
+
+#: xml/spi.xml:407(para)
+msgid "If the execution of the command was successful then one of the following (nonnegative) values will be returned: <placeholder-1/>"
+msgstr ""
+
+#: xml/spi.xml:514(symbol) xml/spi.xml:1437(symbol) xml/spi.xml:2549(symbol) xml/spi.xml:3530(symbol)
+msgid "SPI_ERROR_ARGUMENT"
+msgstr ""
+
+#: xml/spi.xml:517(para)
+msgid "if <parameter>command</parameter>is <symbol>NULL</symbol>or <parameter>count</parameter>is less than 0"
+msgstr ""
+
+#: xml/spi.xml:525(symbol)
+msgid "SPI_ERROR_COPY"
+msgstr ""
+
+#: xml/spi.xml:528(para)
+msgid "if <command>COPY TO stdout</command>or <command>COPY FROM stdin</command>was attempted"
+msgstr ""
+
+#: xml/spi.xml:536(symbol)
+msgid "SPI_ERROR_TRANSACTION"
+msgstr ""
+
+#: xml/spi.xml:539(para)
+msgid "if a transaction manipulation command was attempted ( <command>BEGIN</command>, <command>COMMIT</command>, <command>ROLLBACK</command>, <command>SAVEPOINT</command>, <command>PREPARE TRANSACTION</command>, <command>COMMIT PREPARED</command>, <command>ROLLBACK PREPARED</command>, or any variant thereof)"
+msgstr ""
+
+#: xml/spi.xml:553(symbol)
+msgid "SPI_ERROR_OPUNKNOWN"
+msgstr ""
+
+#: xml/spi.xml:556(para)
+msgid "if the command type is unknown (shouldn't happen)"
+msgstr ""
+
+#: xml/spi.xml:509(para)
+msgid "On error, one of the following negative values is returned: <placeholder-1/>"
+msgstr ""
+
+#: xml/spi.xml:571(title) xml/spi.xml:907(title) xml/spi.xml:1043(title) xml/spi.xml:2149(title) xml/spi.xml:2217(title) xml/spi.xml:2298(title) xml/spi.xml:2388(title) xml/spi.xml:2491(title) xml/spi.xml:2568(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/spi.xml:572(para)
+msgid "All SPI query-execution functions set both <varname>SPI_processed</varname>and <varname>SPI_tuptable</varname>(just the pointer, not the contents of the structure). Save these two global variables into local procedure variables if you need to access the result table of <function>SPI_execute</function>or another query-execution function across later calls."
+msgstr ""
+
+#: xml/spi.xml:584(primary) xml/spi.xml:587(refentrytitle) xml/spi.xml:591(refname)
+msgid "SPI_exec"
+msgstr ""
+
+#: xml/spi.xml:592(refpurpose)
+msgid "execute a read/write command"
+msgstr ""
+
+#: xml/spi.xml:595(synopsis)
+#, no-wrap
+msgid "int SPI_exec(const char * \n        <placeholder-1/>, long \n        <placeholder-2/>)"
+msgstr ""
+
+#: xml/spi.xml:601(para)
+msgid "<function>SPI_exec</function>is the same as <function>SPI_execute</function>, with the latter's <parameter>read_only</parameter>parameter always taken as <literal>false</literal>."
+msgstr ""
+
+#: xml/spi.xml:633(para)
+msgid "See <function>SPI_execute</function>."
+msgstr ""
+
+#: xml/spi.xml:639(primary) xml/spi.xml:642(refentrytitle) xml/spi.xml:646(refname)
+msgid "SPI_execute_with_args"
+msgstr ""
+
+#: xml/spi.xml:647(refpurpose)
+msgid "execute a command with out-of-line parameters"
+msgstr ""
+
+#: xml/spi.xml:653(parameter) xml/spi.xml:704(parameter) xml/spi.xml:811(parameter) xml/spi.xml:866(parameter) xml/spi.xml:971(parameter) xml/spi.xml:1004(parameter) xml/spi.xml:1800(parameter) xml/spi.xml:1853(parameter)
+msgid "nargs"
+msgstr ""
+
+#: xml/spi.xml:654(parameter) xml/spi.xml:715(parameter) xml/spi.xml:812(parameter) xml/spi.xml:877(parameter) xml/spi.xml:972(parameter) xml/spi.xml:1015(parameter) xml/spi.xml:1801(parameter) xml/spi.xml:1864(parameter)
+msgid "argtypes"
+msgstr ""
+
+#: xml/spi.xml:655(parameter) xml/spi.xml:727(parameter) xml/spi.xml:1340(parameter) xml/spi.xml:1372(parameter) xml/spi.xml:1574(parameter) xml/spi.xml:1602(parameter) xml/spi.xml:1676(parameter) xml/spi.xml:1728(parameter) xml/spi.xml:1802(parameter) xml/spi.xml:1876(parameter) xml/spi.xml:3423(parameter) xml/spi.xml:3481(parameter)
+msgid "values"
+msgstr ""
+
+#: xml/spi.xml:656(parameter) xml/spi.xml:738(parameter) xml/spi.xml:1341(parameter) xml/spi.xml:1383(parameter) xml/spi.xml:1575(parameter) xml/spi.xml:1613(parameter) xml/spi.xml:1677(parameter) xml/spi.xml:1739(parameter) xml/spi.xml:1803(parameter) xml/spi.xml:1887(parameter) xml/spi.xml:3424(parameter) xml/spi.xml:3492(parameter)
+msgid "nulls"
+msgstr ""
+
+#: xml/spi.xml:651(synopsis)
+#, no-wrap
+msgid "int SPI_execute_with_args(const char * \n        <placeholder-1/>, int \n        <placeholder-2/>, Oid * \n        <placeholder-3/>, Datum * \n        <placeholder-4/>, const char * \n        <placeholder-5/>, bool \n        <placeholder-6/>, long \n        <placeholder-7/>)"
+msgstr ""
+
+#: xml/spi.xml:662(para)
+msgid "<function>SPI_execute_with_args</function>executes a command that might include references to externally supplied parameters. The command text refers to a parameter as <literal>$ <replaceable>n</replaceable></literal>, and the call specifies data types and values for each such symbol. <parameter>read_only</parameter>and <parameter>count</parameter>have the same interpretation as in <function>SPI_execute</function>."
+msgstr ""
+
+#: xml/spi.xml:674(para)
+msgid "The main advantage of this routine compared to <function>SPI_execute</function>is that data values can be inserted into the command without tedious quoting/escaping, and thus with much less risk of SQL-injection attacks."
+msgstr ""
+
+#: xml/spi.xml:679(para)
+msgid "Similar results can be achieved with <function>SPI_prepare</function>followed by <function>SPI_execute_plan</function>; however, when using this function the query plan is always customized to the specific parameter values provided. For one-time query execution, this function should be preferred. If the same command is to be executed with many different parameters, either method might be faster, depending on the cost of re-planning versus the benefit of custom plans."
+msgstr ""
+
+#: xml/spi.xml:698(para) xml/spi.xml:860(para) xml/spi.xml:998(para) xml/spi.xml:1095(para) xml/spi.xml:1847(para)
+msgid "command string"
+msgstr ""
+
+#: xml/spi.xml:703(literal) xml/spi.xml:865(literal) xml/spi.xml:1003(literal) xml/spi.xml:1025(literal) xml/spi.xml:1119(literal) xml/spi.xml:1232(literal) xml/spi.xml:1852(literal) xml/spi.xml:1924(literal) xml/spi.xml:2629(literal) xml/spi.xml:2762(literal) xml/spi.xml:2836(literal) xml/spi.xml:2905(literal) xml/spi.xml:2961(literal) xml/spi.xml:3459(literal)
+msgid "int <placeholder-1/>"
+msgstr ""
+
+#: xml/spi.xml:707(para) xml/spi.xml:869(para) xml/spi.xml:1007(para) xml/spi.xml:1856(para)
+msgid "number of input parameters ( <literal>$1</literal>, <literal>$2</literal>, etc.)"
+msgstr ""
+
+#: xml/spi.xml:714(literal) xml/spi.xml:876(literal) xml/spi.xml:1014(literal) xml/spi.xml:1863(literal)
+msgid "Oid * <placeholder-1/>"
+msgstr ""
+
+#: xml/spi.xml:718(para) xml/spi.xml:1867(para)
+msgid "an array of length <parameter>nargs</parameter>, containing the <acronym>OID</acronym>s of the data types of the parameters"
+msgstr ""
+
+#: xml/spi.xml:726(literal) xml/spi.xml:1371(literal) xml/spi.xml:1601(literal) xml/spi.xml:1727(literal) xml/spi.xml:1875(literal) xml/spi.xml:3480(literal)
+msgid "Datum * <placeholder-1/>"
+msgstr ""
+
+#: xml/spi.xml:730(para) xml/spi.xml:1879(para)
+msgid "an array of length <parameter>nargs</parameter>, containing the actual parameter values"
+msgstr ""
+
+#: xml/spi.xml:741(para) xml/spi.xml:1890(para)
+msgid "an array of length <parameter>nargs</parameter>, describing which parameters are null"
+msgstr ""
+
+#: xml/spi.xml:744(para)
+msgid "If <parameter>nulls</parameter>is <symbol>NULL</symbol>then <function>SPI_execute_with_args</function>assumes that no parameters are null. Otherwise, each entry of the <parameter>nulls</parameter>array should be <literal>''</literal>if the corresponding parameter value is non-null, or <literal>'n'</literal>if the corresponding parameter value is null. (In the latter case, the actual value in the corresponding <parameter>values</parameter>entry doesn't matter.) Note that <parameter>nulls</parameter>is not a text string, just an array: it does not need a <literal>'\\0'</literal>terminator."
+msgstr ""
+
+#: xml/spi.xml:787(para)
+msgid "The return value is the same as for <function>SPI_execute</function>."
+msgstr ""
+
+#: xml/spi.xml:789(para) xml/spi.xml:1459(para) xml/spi.xml:1653(para) xml/spi.xml:2143(para) xml/spi.xml:2292(para)
+msgid "<varname>SPI_processed</varname>and <varname>SPI_tuptable</varname>are set as in <function>SPI_execute</function>if successful."
+msgstr ""
+
+#: xml/spi.xml:797(primary) xml/spi.xml:800(refentrytitle) xml/spi.xml:804(refname) xml/spi.xml:1149(function) xml/spi.xml:1200(function) xml/spi.xml:1267(function) xml/spi.xml:1335(function) xml/spi.xml:1477(function) xml/spi.xml:1670(function)
+msgid "SPI_prepare"
+msgstr ""
+
+#: xml/spi.xml:805(refpurpose) xml/spi.xml:965(refpurpose) xml/spi.xml:1065(refpurpose)
+msgid "prepare a statement, without executing it yet"
+msgstr ""
+
+#: xml/spi.xml:809(synopsis)
+#, no-wrap
+msgid "SPIPlanPtr SPI_prepare(const char * \n        <placeholder-1/>, int \n        <placeholder-2/>, Oid * \n        <placeholder-3/>)"
+msgstr ""
+
+#: xml/spi.xml:816(para)
+msgid "<function>SPI_prepare</function>creates and returns a prepared statement for the specified command, but doesn't execute the command. The prepared statement can later be executed repeatedly using <function>SPI_execute_plan</function>."
+msgstr ""
+
+#: xml/spi.xml:822(para)
+msgid "When the same or a similar command is to be executed repeatedly, it is generally advantageous to perform parse analysis only once, and might furthermore be advantageous to re-use an execution plan for the command. <function>SPI_prepare</function>converts a command string into a prepared statement that encapsulates the results of parse analysis. The prepared statement also provides a place for caching an execution plan if it is found that generating a custom plan for each execution is not helpful."
+msgstr ""
+
+#: xml/spi.xml:832(para)
+msgid "A prepared command can be generalized by writing parameters ( <literal>$1</literal>, <literal>$2</literal>, etc.) in place of what would be constants in a normal command. The actual values of the parameters are then specified when <function>SPI_execute_plan</function>is called. This allows the prepared command to be used over a wider range of situations than would be possible without parameters."
+msgstr ""
+
+#: xml/spi.xml:842(para)
+msgid "The statement returned by <function>SPI_prepare</function>can be used only in the current invocation of the procedure, since <function>SPI_finish</function>frees memory allocated for such a statement. But the statement can be saved for longer using the functions <function>SPI_keepplan</function>or <function>SPI_saveplan</function>."
+msgstr ""
+
+#: xml/spi.xml:880(para) xml/spi.xml:1018(para)
+msgid "pointer to an array containing the <acronym>OID</acronym>s of the data types of the parameters"
+msgstr ""
+
+#: xml/spi.xml:889(para)
+msgid "<function>SPI_prepare</function>returns a non-null pointer to an <type>SPIPlan</type>, which is an opaque struct representing a prepared statement. On error, <symbol>NULL</symbol>will be returned, and <varname>SPI_result</varname>will be set to one of the same error codes used by <function>SPI_execute</function>, except that it is set to <symbol>SPI_ERROR_ARGUMENT</symbol>if <parameter>command</parameter>is <symbol>NULL</symbol>, or if <parameter>nargs</parameter>is less than 0, or if <parameter>nargs</parameter>is greater than 0 and <parameter>argtypes</parameter>is <symbol>NULL</symbol>."
+msgstr ""
+
+#: xml/spi.xml:908(para)
+msgid "If no parameters are defined, a generic plan will be created at the first use of <function>SPI_execute_plan</function>, and used for all subsequent executions as well. If there are parameters, the first few uses of <function>SPI_execute_plan</function>will generate custom plans that are specific to the supplied parameter values. After enough uses of the same prepared statement, <function>SPI_execute_plan</function>will build a generic plan, and if that is not too much more expensive than the custom plans, it will start using the generic plan instead of re-planning each time. If this default behavior is unsuitable, you can alter it by passing the <literal>CURSOR_OPT_GENERIC_PLAN</literal>or <literal>CURSOR_OPT_CUSTOM_PLAN</literal>flag to <function>SPI_prepare_cursor</function>, to force use of generic or custom plans respectively."
+msgstr ""
+
+#: xml/spi.xml:925(para)
+msgid "Although the main point of a prepared statement is to avoid repeated parse analysis and planning of the statement, <productname>PostgreSQL</productname>will force re-analysis and re-planning of the statement before using it whenever database objects used in the statement have undergone definitional (DDL) changes since the previous use of the prepared statement. Also, if the value of <xref linkend=\"guc-search-path\">changes from one use to the next, the statement will be re-parsed using the new <varname>search_path</varname>. (This latter behavior is new as of <productname>PostgreSQL</productname>9.3.) See <xref linkend=\"sql-prepare\">for more information about the behavior of prepared statements.</xref></xref>"
+msgstr ""
+
+#: xml/spi.xml:940(para)
+msgid "This function should only be called from a connected procedure."
+msgstr ""
+
+#: xml/spi.xml:942(para)
+msgid "<type>SPIPlanPtr</type>is declared as a pointer to an opaque struct type in <filename>spi.h</filename>. It is unwise to try to access its contents directly, as that makes your code much more likely to break in future revisions of <productname>PostgreSQL</productname>."
+msgstr ""
+
+#: xml/spi.xml:949(para)
+msgid "The name <type>SPIPlanPtr</type>is somewhat historical, since the data structure no longer necessarily contains an execution plan."
+msgstr ""
+
+#: xml/spi.xml:957(primary) xml/spi.xml:960(refentrytitle) xml/spi.xml:964(refname)
+msgid "SPI_prepare_cursor"
+msgstr ""
+
+#: xml/spi.xml:973(parameter) xml/spi.xml:1026(parameter) xml/spi.xml:1073(parameter) xml/spi.xml:1120(parameter) xml/spi.xml:1805(parameter) xml/spi.xml:1925(parameter)
+msgid "cursorOptions"
+msgstr ""
+
+#: xml/spi.xml:969(synopsis)
+#, no-wrap
+msgid "SPIPlanPtr SPI_prepare_cursor(const char * \n        <placeholder-1/>, int \n        <placeholder-2/>, Oid * \n        <placeholder-3/>, int \n        <placeholder-4/>)"
+msgstr ""
+
+#: xml/spi.xml:977(para)
+msgid "<function>SPI_prepare_cursor</function>is identical to <function>SPI_prepare</function>, except that it also allows specification of the planner's <quote>cursor options</quote>parameter. This is a bit mask having the values shown in <filename>nodes/parsenodes.h</filename>for the <structfield>options</structfield>field of <structname>DeclareCursorStmt</structname>. <function>SPI_prepare</function>always takes the cursor options as zero."
+msgstr ""
+
+#: xml/spi.xml:1029(para) xml/spi.xml:1123(para) xml/spi.xml:1928(para)
+msgid "integer bit mask of cursor options; zero produces default behavior"
+msgstr ""
+
+#: xml/spi.xml:1037(para)
+msgid "<function>SPI_prepare_cursor</function>has the same return conventions as <function>SPI_prepare</function>."
+msgstr ""
+
+#: xml/spi.xml:1044(para)
+msgid "Useful bits to set in <parameter>cursorOptions</parameter>include <symbol>CURSOR_OPT_SCROLL</symbol>, <symbol>CURSOR_OPT_NO_SCROLL</symbol>, <symbol>CURSOR_OPT_FAST_PLAN</symbol>, <symbol>CURSOR_OPT_GENERIC_PLAN</symbol>, and <symbol>CURSOR_OPT_CUSTOM_PLAN</symbol>. Note in particular that <symbol>CURSOR_OPT_HOLD</symbol>is ignored."
+msgstr ""
+
+#: xml/spi.xml:1057(primary) xml/spi.xml:1060(refentrytitle) xml/spi.xml:1064(refname)
+msgid "SPI_prepare_params"
+msgstr ""
+
+#: xml/spi.xml:1071(parameter) xml/spi.xml:1101(parameter)
+msgid "parserSetup"
+msgstr ""
+
+#: xml/spi.xml:1072(parameter) xml/spi.xml:1110(parameter)
+msgid "parserSetupArg"
+msgstr ""
+
+#: xml/spi.xml:1069(synopsis)
+#, no-wrap
+msgid "SPIPlanPtr SPI_prepare_params(const char * \n        <placeholder-1/>, ParserSetupHook \n        <placeholder-2/>, void * \n        <placeholder-3/>, int \n        <placeholder-4/>)"
+msgstr ""
+
+#: xml/spi.xml:1077(para)
+msgid "<function>SPI_prepare_params</function>creates and returns a prepared statement for the specified command, but doesn't execute the command. This function is equivalent to <function>SPI_prepare_cursor</function>, with the addition that the caller can specify parser hook functions to control the parsing of external parameter references."
+msgstr ""
+
+#: xml/spi.xml:1100(literal)
+msgid "ParserSetupHook <placeholder-1/>"
+msgstr ""
+
+#: xml/spi.xml:1104(para)
+msgid "Parser hook setup function"
+msgstr ""
+
+#: xml/spi.xml:1109(literal) xml/spi.xml:3220(literal) xml/spi.xml:3277(literal)
+msgid "void * <placeholder-1/>"
+msgstr ""
+
+#: xml/spi.xml:1113(para)
+msgid "pass-through argument for <parameter>parserSetup</parameter>"
+msgstr ""
+
+#: xml/spi.xml:1131(para)
+msgid "<function>SPI_prepare_params</function>has the same return conventions as <function>SPI_prepare</function>."
+msgstr ""
+
+#: xml/spi.xml:1139(primary) xml/spi.xml:1142(refentrytitle) xml/spi.xml:1146(refname)
+msgid "SPI_getargcount"
+msgstr ""
+
+#: xml/spi.xml:1147(refpurpose)
+msgid "return the number of arguments needed by a statement prepared by <placeholder-1/>"
+msgstr ""
+
+#: xml/spi.xml:1153(parameter) xml/spi.xml:1168(parameter) xml/spi.xml:1204(parameter) xml/spi.xml:1223(parameter) xml/spi.xml:1272(parameter) xml/spi.xml:1298(parameter) xml/spi.xml:1339(parameter) xml/spi.xml:1362(parameter) xml/spi.xml:1481(parameter) xml/spi.xml:1509(parameter) xml/spi.xml:1573(parameter) xml/spi.xml:1592(parameter) xml/spi.xml:1675(parameter) xml/spi.xml:1718(parameter) xml/spi.xml:1959(parameter) xml/spi.xml:2000(parameter) xml/spi.xml:2455(parameter) xml/spi.xml:2475(parameter) xml/spi.xml:2512(parameter) xml/spi.xml:2533(parameter) xml/spi.xml:3674(parameter) xml/spi.xml:3691(parameter)
+msgid "plan"
+msgstr ""
+
+#: xml/spi.xml:1152(synopsis)
+#, no-wrap
+msgid "int SPI_getargcount(SPIPlanPtr \n        <placeholder-1/>)"
+msgstr ""
+
+#: xml/spi.xml:1157(para)
+msgid "<function>SPI_getargcount</function>returns the number of arguments needed to execute a statement prepared by <function>SPI_prepare</function>."
+msgstr ""
+
+#: xml/spi.xml:1167(literal) xml/spi.xml:1222(literal) xml/spi.xml:1297(literal) xml/spi.xml:1361(literal) xml/spi.xml:1508(literal) xml/spi.xml:1591(literal) xml/spi.xml:1717(literal) xml/spi.xml:1999(literal) xml/spi.xml:2474(literal) xml/spi.xml:2532(literal) xml/spi.xml:3690(literal)
+msgid "SPIPlanPtr <placeholder-1/>"
+msgstr ""
+
+#: xml/spi.xml:1171(para) xml/spi.xml:1226(para) xml/spi.xml:1301(para) xml/spi.xml:1365(para) xml/spi.xml:1512(para) xml/spi.xml:1595(para) xml/spi.xml:1721(para) xml/spi.xml:2003(para)
+msgid "prepared statement (returned by <function>SPI_prepare</function>)"
+msgstr ""
+
+#: xml/spi.xml:1179(para)
+msgid "The count of expected arguments for the <parameter>plan</parameter>. If the <parameter>plan</parameter>is <symbol>NULL</symbol>or invalid, <varname>SPI_result</varname>is set to <symbol>SPI_ERROR_ARGUMENT</symbol>and -1 is returned."
+msgstr ""
+
+#: xml/spi.xml:1190(primary) xml/spi.xml:1193(refentrytitle) xml/spi.xml:1197(refname)
+msgid "SPI_getargtypeid"
+msgstr ""
+
+#: xml/spi.xml:1198(refpurpose)
+msgid "return the data type OID for an argument of a statement prepared by <placeholder-1/>"
+msgstr ""
+
+#: xml/spi.xml:1205(parameter) xml/spi.xml:1233(parameter)
+msgid "argIndex"
+msgstr ""
+
+#: xml/spi.xml:1203(synopsis)
+#, no-wrap
+msgid "Oid SPI_getargtypeid(SPIPlanPtr \n        <placeholder-1/>, int \n        <placeholder-2/>)"
+msgstr ""
+
+#: xml/spi.xml:1209(para)
+msgid "<function>SPI_getargtypeid</function>returns the OID representing the type for the <parameter>argIndex</parameter>'th argument of a statement prepared by <function>SPI_prepare</function>. First argument is at index zero."
+msgstr ""
+
+#: xml/spi.xml:1236(para)
+msgid "zero based index of the argument"
+msgstr ""
+
+#: xml/spi.xml:1243(para)
+msgid "The type OID of the argument at the given index. If the <parameter>plan</parameter>is <symbol>NULL</symbol>or invalid, or <parameter>argIndex</parameter>is less than 0 or not less than the number of arguments declared for the <parameter>plan</parameter>, <varname>SPI_result</varname>is set to <symbol>SPI_ERROR_ARGUMENT</symbol>and <symbol>InvalidOid</symbol>is returned."
+msgstr ""
+
+#: xml/spi.xml:1257(primary) xml/spi.xml:1260(refentrytitle) xml/spi.xml:1264(refname)
+msgid "SPI_is_cursor_plan"
+msgstr ""
+
+#: xml/spi.xml:1266(symbol)
+msgid "true"
+msgstr ""
+
+#: xml/spi.xml:1268(function) xml/spi.xml:1661(primary) xml/spi.xml:1664(refentrytitle) xml/spi.xml:1668(refname)
+msgid "SPI_cursor_open"
+msgstr ""
+
+#: xml/spi.xml:1265(refpurpose)
+msgid "return <placeholder-1/>if a statement prepared by <placeholder-2/>can be used with <placeholder-3/>"
+msgstr ""
+
+#: xml/spi.xml:1271(synopsis)
+#, no-wrap
+msgid "bool SPI_is_cursor_plan(SPIPlanPtr \n        <placeholder-1/>)"
+msgstr ""
+
+#: xml/spi.xml:1276(para)
+msgid "<function>SPI_is_cursor_plan</function>returns <symbol>true</symbol>if a statement prepared by <function>SPI_prepare</function>can be passed as an argument to <function>SPI_cursor_open</function>, or <symbol>false</symbol>if that is not the case. The criteria are that the <parameter>plan</parameter>represents one single command and that this command returns tuples to the caller; for example, <command>SELECT</command>is allowed unless it contains an <literal>INTO</literal>clause, and <command>UPDATE</command>is allowed only if it contains a <literal>RETURNING</literal>clause."
+msgstr ""
+
+#: xml/spi.xml:1309(para)
+msgid "<symbol>true</symbol>or <symbol>false</symbol>to indicate if the <parameter>plan</parameter>can produce a cursor or not, with <varname>SPI_result</varname>set to zero. If it is not possible to determine the answer (for example, if the <parameter>plan</parameter>is <symbol>NULL</symbol>or invalid, or if called when not connected to SPI), then <varname>SPI_result</varname>is set to a suitable error code and <symbol>false</symbol>is returned."
+msgstr ""
+
+#: xml/spi.xml:1326(primary) xml/spi.xml:1329(refentrytitle) xml/spi.xml:1333(refname)
+msgid "SPI_execute_plan"
+msgstr ""
+
+#: xml/spi.xml:1334(refpurpose) xml/spi.xml:1476(refpurpose)
+msgid "execute a statement prepared by <placeholder-1/>"
+msgstr ""
+
+#: xml/spi.xml:1338(synopsis)
+#, no-wrap
+msgid "int SPI_execute_plan(SPIPlanPtr \n        <placeholder-1/>, Datum * \n        <placeholder-2/>, const char * \n        <placeholder-3/>, bool \n        <placeholder-4/>, long \n        <placeholder-5/>)"
+msgstr ""
+
+#: xml/spi.xml:1347(para)
+msgid "<function>SPI_execute_plan</function>executes a statement prepared by <function>SPI_prepare</function>or one of its siblings. <parameter>read_only</parameter>and <parameter>count</parameter>have the same interpretation as in <function>SPI_execute</function>."
+msgstr ""
+
+#: xml/spi.xml:1375(para) xml/spi.xml:1605(para) xml/spi.xml:1731(para)
+msgid "An array of actual parameter values. Must have same length as the statement's number of arguments."
+msgstr ""
+
+#: xml/spi.xml:1386(para) xml/spi.xml:1616(para) xml/spi.xml:1742(para)
+msgid "An array describing which parameters are null. Must have same length as the statement's number of arguments."
+msgstr ""
+
+#: xml/spi.xml:1389(para)
+msgid "If <parameter>nulls</parameter>is <symbol>NULL</symbol>then <function>SPI_execute_plan</function>assumes that no parameters are null. Otherwise, each entry of the <parameter>nulls</parameter>array should be <literal>''</literal>if the corresponding parameter value is non-null, or <literal>'n'</literal>if the corresponding parameter value is null. (In the latter case, the actual value in the corresponding <parameter>values</parameter>entry doesn't matter.) Note that <parameter>nulls</parameter>is not a text string, just an array: it does not need a <literal>'\\0'</literal>terminator."
+msgstr ""
+
+#: xml/spi.xml:1440(para)
+msgid "if <parameter>plan</parameter>is <symbol>NULL</symbol>or invalid, or <parameter>count</parameter>is less than 0"
+msgstr ""
+
+#: xml/spi.xml:1448(symbol)
+msgid "SPI_ERROR_PARAM"
+msgstr ""
+
+#: xml/spi.xml:1451(para)
+msgid "if <parameter>values</parameter>is <symbol>NULL</symbol>and <parameter>plan</parameter>was prepared with some parameters"
+msgstr ""
+
+#: xml/spi.xml:1431(para)
+msgid "The return value is the same as for <function>SPI_execute</function>, with the following additional possible error (negative) results: <placeholder-1/>"
+msgstr ""
+
+#: xml/spi.xml:1467(primary) xml/spi.xml:1470(refentrytitle) xml/spi.xml:1475(refname)
+msgid "SPI_execute_plan_with_paramlist"
+msgstr ""
+
+#: xml/spi.xml:1482(parameter) xml/spi.xml:1519(parameter) xml/spi.xml:1960(parameter) xml/spi.xml:2010(parameter)
+msgid "params"
+msgstr ""
+
+#: xml/spi.xml:1480(synopsis)
+#, no-wrap
+msgid "int SPI_execute_plan_with_paramlist(SPIPlanPtr \n        <placeholder-1/>, ParamListInfo \n        <placeholder-2/>, bool \n        <placeholder-3/>, long \n        <placeholder-4/>)"
+msgstr ""
+
+#: xml/spi.xml:1488(para)
+msgid "<function> SPI_execute_plan_with_paramlist</function>executes a statement prepared by <function>SPI_prepare</function>. This function is equivalent to <function>SPI_execute_plan</function>except that information about the parameter values to be passed to the query is presented differently. The <literal>ParamListInfo</literal>representation can be convenient for passing down values that are already available in that format. It also supports use of dynamic parameter sets via hook functions specified in <literal>ParamListInfo</literal>."
+msgstr ""
+
+#: xml/spi.xml:1518(literal) xml/spi.xml:2009(literal)
+msgid "ParamListInfo <placeholder-1/>"
+msgstr ""
+
+#: xml/spi.xml:1522(para) xml/spi.xml:2013(para)
+msgid "data structure containing parameter types and values; NULL if none"
+msgstr ""
+
+#: xml/spi.xml:1550(para)
+msgid "The return value is the same as for <function>SPI_execute_plan</function>."
+msgstr ""
+
+#: xml/spi.xml:1552(para)
+msgid "<varname>SPI_processed</varname>and <varname>SPI_tuptable</varname>are set as in <function>SPI_execute_plan</function>if successful."
+msgstr ""
+
+#: xml/spi.xml:1560(primary) xml/spi.xml:1563(refentrytitle) xml/spi.xml:1567(refname)
+msgid "SPI_execp"
+msgstr ""
+
+#: xml/spi.xml:1568(refpurpose)
+msgid "execute a statement in read/write mode"
+msgstr ""
+
+#: xml/spi.xml:1572(synopsis)
+#, no-wrap
+msgid "int SPI_execp(SPIPlanPtr \n        <placeholder-1/>, Datum * \n        <placeholder-2/>, const char * \n        <placeholder-3/>, long \n        <placeholder-4/>)"
+msgstr ""
+
+#: xml/spi.xml:1580(para)
+msgid "<function>SPI_execp</function>is the same as <function>SPI_execute_plan</function>, with the latter's <parameter>read_only</parameter>parameter always taken as <literal>false</literal>."
+msgstr ""
+
+#: xml/spi.xml:1619(para)
+msgid "If <parameter>nulls</parameter>is <symbol>NULL</symbol>then <function>SPI_execp</function>assumes that no parameters are null. Otherwise, each entry of the <parameter>nulls</parameter>array should be <literal>''</literal>if the corresponding parameter value is non-null, or <literal>'n'</literal>if the corresponding parameter value is null. (In the latter case, the actual value in the corresponding <parameter>values</parameter>entry doesn't matter.) Note that <parameter>nulls</parameter>is not a text string, just an array: it does not need a <literal>'\\0'</literal>terminator."
+msgstr ""
+
+#: xml/spi.xml:1651(para)
+msgid "See <function>SPI_execute_plan</function>."
+msgstr ""
+
+#: xml/spi.xml:1669(refpurpose)
+msgid "set up a cursor using a statement created with <placeholder-1/>"
+msgstr ""
+
+#: xml/spi.xml:1674(parameter) xml/spi.xml:1707(parameter) xml/spi.xml:1798(parameter) xml/spi.xml:1833(parameter) xml/spi.xml:1958(parameter) xml/spi.xml:1989(parameter) xml/spi.xml:2051(parameter) xml/spi.xml:2066(parameter)
+msgid "name"
+msgstr ""
+
+#: xml/spi.xml:1673(synopsis)
+#, no-wrap
+msgid "Portal SPI_cursor_open(const char * \n        <placeholder-1/>, SPIPlanPtr \n        <placeholder-2/>, Datum * \n        <placeholder-3/>, const char * \n        <placeholder-4/>, bool \n        <placeholder-5/>)"
+msgstr ""
+
+#: xml/spi.xml:1682(para)
+msgid "<function>SPI_cursor_open</function>sets up a cursor (internally, a portal) that will execute a statement prepared by <function>SPI_prepare</function>. The parameters have the same meanings as the corresponding parameters to <function>SPI_execute_plan</function>."
+msgstr ""
+
+#: xml/spi.xml:1689(para)
+msgid "Using a cursor instead of executing the statement directly has two benefits. First, the result rows can be retrieved a few at a time, avoiding memory overrun for queries that return many rows. Second, a portal can outlive the current procedure (it can, in fact, live to the end of the current transaction). Returning the portal name to the procedure's caller provides a way of returning a row set as result."
+msgstr ""
+
+#: xml/spi.xml:1697(para) xml/spi.xml:1823(para) xml/spi.xml:1979(para)
+msgid "The passed-in parameter data will be copied into the cursor's portal, so it can be freed while the cursor still exists."
+msgstr ""
+
+#: xml/spi.xml:1710(para) xml/spi.xml:1836(para) xml/spi.xml:1992(para)
+msgid "name for portal, or <symbol>NULL</symbol>to let the system select a name"
+msgstr ""
+
+#: xml/spi.xml:1745(para)
+msgid "If <parameter>nulls</parameter>is <symbol>NULL</symbol>then <function>SPI_cursor_open</function>assumes that no parameters are null. Otherwise, each entry of the <parameter>nulls</parameter>array should be <literal>''</literal>if the corresponding parameter value is non-null, or <literal>'n'</literal>if the corresponding parameter value is null. (In the latter case, the actual value in the corresponding <parameter>values</parameter>entry doesn't matter.) Note that <parameter>nulls</parameter>is not a text string, just an array: it does not need a <literal>'\\0'</literal>terminator."
+msgstr ""
+
+#: xml/spi.xml:1777(para) xml/spi.xml:1936(para) xml/spi.xml:2031(para)
+msgid "Pointer to portal containing the cursor. Note there is no error return convention; any error will be reported via <function>elog</function>."
+msgstr ""
+
+#: xml/spi.xml:1785(primary) xml/spi.xml:1788(refentrytitle) xml/spi.xml:1792(refname)
+msgid "SPI_cursor_open_with_args"
+msgstr ""
+
+#: xml/spi.xml:1793(refpurpose)
+msgid "set up a cursor using a query and parameters"
+msgstr ""
+
+#: xml/spi.xml:1797(synopsis)
+#, no-wrap
+msgid "Portal SPI_cursor_open_with_args(const char * \n        <placeholder-1/>, const char * \n        <placeholder-2/>, int \n        <placeholder-3/>, Oid * \n        <placeholder-4/>, Datum * \n        <placeholder-5/>, const char * \n        <placeholder-6/>, bool \n        <placeholder-7/>, int \n        <placeholder-8/>)"
+msgstr ""
+
+#: xml/spi.xml:1809(para)
+msgid "<function>SPI_cursor_open_with_args</function>sets up a cursor (internally, a portal) that will execute the specified query. Most of the parameters have the same meanings as the corresponding parameters to <function>SPI_prepare_cursor</function>and <function>SPI_cursor_open</function>."
+msgstr ""
+
+#: xml/spi.xml:1816(para)
+msgid "For one-time query execution, this function should be preferred over <function>SPI_prepare_cursor</function>followed by <function>SPI_cursor_open</function>. If the same command is to be executed with many different parameters, either method might be faster, depending on the cost of re-planning versus the benefit of custom plans."
+msgstr ""
+
+#: xml/spi.xml:1893(para)
+msgid "If <parameter>nulls</parameter>is <symbol>NULL</symbol>then <function>SPI_cursor_open_with_args</function>assumes that no parameters are null. Otherwise, each entry of the <parameter>nulls</parameter>array should be <literal>''</literal>if the corresponding parameter value is non-null, or <literal>'n'</literal>if the corresponding parameter value is null. (In the latter case, the actual value in the corresponding <parameter>values</parameter>entry doesn't matter.) Note that <parameter>nulls</parameter>is not a text string, just an array: it does not need a <literal>'\\0'</literal>terminator."
+msgstr ""
+
+#: xml/spi.xml:1944(primary) xml/spi.xml:1947(refentrytitle) xml/spi.xml:1952(refname)
+msgid "SPI_cursor_open_with_paramlist"
+msgstr ""
+
+#: xml/spi.xml:1953(refpurpose)
+msgid "set up a cursor using parameters"
+msgstr ""
+
+#: xml/spi.xml:1956(synopsis)
+#, no-wrap
+msgid "Portal SPI_cursor_open_with_paramlist(const char\n        * \n        <placeholder-1/>, SPIPlanPtr \n        <placeholder-2/>, ParamListInfo \n        <placeholder-3/>, bool \n        <placeholder-4/>)"
+msgstr ""
+
+#: xml/spi.xml:1965(para)
+msgid "<function>SPI_cursor_open_with_paramlist</function>sets up a cursor (internally, a portal) that will execute a statement prepared by <function>SPI_prepare</function>. This function is equivalent to <function>SPI_cursor_open</function>except that information about the parameter values to be passed to the query is presented differently. The <literal>ParamListInfo</literal>representation can be convenient for passing down values that are already available in that format. It also supports use of dynamic parameter sets via hook functions specified in <literal>ParamListInfo</literal>."
+msgstr ""
+
+#: xml/spi.xml:2039(primary) xml/spi.xml:2042(refentrytitle) xml/spi.xml:2046(refname)
+msgid "SPI_cursor_find"
+msgstr ""
+
+#: xml/spi.xml:2047(refpurpose)
+msgid "find an existing cursor by name"
+msgstr ""
+
+#: xml/spi.xml:2050(synopsis)
+#, no-wrap
+msgid "Portal SPI_cursor_find(const char * \n        <placeholder-1/>)"
+msgstr ""
+
+#: xml/spi.xml:2055(para)
+msgid "<function>SPI_cursor_find</function>finds an existing portal by name. This is primarily useful to resolve a cursor name returned as text by some other function."
+msgstr ""
+
+#: xml/spi.xml:2069(para)
+msgid "name of the portal"
+msgstr ""
+
+#: xml/spi.xml:2076(para)
+msgid "pointer to the portal with the specified name, or <symbol>NULL</symbol>if none was found"
+msgstr ""
+
+#: xml/spi.xml:2082(primary) xml/spi.xml:2085(refentrytitle) xml/spi.xml:2089(refname)
+msgid "SPI_cursor_fetch"
+msgstr ""
+
+#: xml/spi.xml:2090(refpurpose) xml/spi.xml:2233(refpurpose)
+msgid "fetch some rows from a cursor"
+msgstr ""
+
+#: xml/spi.xml:2094(parameter) xml/spi.xml:2114(parameter) xml/spi.xml:2169(parameter) xml/spi.xml:2189(parameter) xml/spi.xml:2237(parameter) xml/spi.xml:2254(parameter) xml/spi.xml:2324(parameter) xml/spi.xml:2342(parameter) xml/spi.xml:2414(parameter) xml/spi.xml:2432(parameter)
+msgid "portal"
+msgstr ""
+
+#: xml/spi.xml:2095(parameter) xml/spi.xml:2123(parameter) xml/spi.xml:2170(parameter) xml/spi.xml:2198(parameter)
+msgid "forward"
+msgstr ""
+
+#: xml/spi.xml:2093(synopsis)
+#, no-wrap
+msgid "void SPI_cursor_fetch(Portal \n        <placeholder-1/>, bool \n        <placeholder-2/>, long \n        <placeholder-3/>)"
+msgstr ""
+
+#: xml/spi.xml:2100(para)
+msgid "<function>SPI_cursor_fetch</function>fetches some rows from a cursor. This is equivalent to a subset of the SQL command <command>FETCH</command>(see <function>SPI_scroll_cursor_fetch</function>for more functionality)."
+msgstr ""
+
+#: xml/spi.xml:2113(literal) xml/spi.xml:2188(literal) xml/spi.xml:2253(literal) xml/spi.xml:2341(literal) xml/spi.xml:2431(literal)
+msgid "Portal <placeholder-1/>"
+msgstr ""
+
+#: xml/spi.xml:2117(para) xml/spi.xml:2192(para) xml/spi.xml:2257(para) xml/spi.xml:2345(para) xml/spi.xml:2435(para)
+msgid "portal containing the cursor"
+msgstr ""
+
+#: xml/spi.xml:2126(para)
+msgid "true for fetch forward, false for fetch backward"
+msgstr ""
+
+#: xml/spi.xml:2136(para)
+msgid "maximum number of rows to fetch"
+msgstr ""
+
+#: xml/spi.xml:2150(para)
+msgid "Fetching backward may fail if the cursor's plan was not created with the <symbol>CURSOR_OPT_SCROLL</symbol>option."
+msgstr ""
+
+#: xml/spi.xml:2157(primary) xml/spi.xml:2160(refentrytitle) xml/spi.xml:2164(refname)
+msgid "SPI_cursor_move"
+msgstr ""
+
+#: xml/spi.xml:2165(refpurpose) xml/spi.xml:2320(refpurpose)
+msgid "move a cursor"
+msgstr ""
+
+#: xml/spi.xml:2168(synopsis)
+#, no-wrap
+msgid "void SPI_cursor_move(Portal \n        <placeholder-1/>, bool \n        <placeholder-2/>, long \n        <placeholder-3/>)"
+msgstr ""
+
+#: xml/spi.xml:2175(para)
+msgid "<function>SPI_cursor_move</function>skips over some number of rows in a cursor. This is equivalent to a subset of the SQL command <command>MOVE</command>(see <function>SPI_scroll_cursor_move</function>for more functionality)."
+msgstr ""
+
+#: xml/spi.xml:2201(para)
+msgid "true for move forward, false for move backward"
+msgstr ""
+
+#: xml/spi.xml:2211(para)
+msgid "maximum number of rows to move"
+msgstr ""
+
+#: xml/spi.xml:2218(para)
+msgid "Moving backward may fail if the cursor's plan was not created with the <symbol>CURSOR_OPT_SCROLL</symbol>option."
+msgstr ""
+
+#: xml/spi.xml:2225(primary) xml/spi.xml:2228(refentrytitle) xml/spi.xml:2232(refname)
+msgid "SPI_scroll_cursor_fetch"
+msgstr ""
+
+#: xml/spi.xml:2238(parameter) xml/spi.xml:2263(parameter) xml/spi.xml:2325(parameter) xml/spi.xml:2351(parameter)
+msgid "direction"
+msgstr ""
+
+#: xml/spi.xml:2236(synopsis)
+#, no-wrap
+msgid "void SPI_scroll_cursor_fetch(Portal \n        <placeholder-1/>, FetchDirection \n        <placeholder-2/>, long \n        <placeholder-3/>)"
+msgstr ""
+
+#: xml/spi.xml:2243(para)
+msgid "<function>SPI_scroll_cursor_fetch</function>fetches some rows from a cursor. This is equivalent to the SQL command <command>FETCH</command>."
+msgstr ""
+
+#: xml/spi.xml:2262(literal) xml/spi.xml:2350(literal)
+msgid "FetchDirection <placeholder-1/>"
+msgstr ""
+
+#: xml/spi.xml:2266(para) xml/spi.xml:2354(para)
+msgid "one of <symbol>FETCH_FORWARD</symbol>, <symbol>FETCH_BACKWARD</symbol>, <symbol>FETCH_ABSOLUTE</symbol>or <symbol>FETCH_RELATIVE</symbol>"
+msgstr ""
+
+#: xml/spi.xml:2279(para)
+msgid "number of rows to fetch for <symbol>FETCH_FORWARD</symbol>or <symbol>FETCH_BACKWARD</symbol>; absolute row number to fetch for <symbol>FETCH_ABSOLUTE</symbol>; or relative row number to fetch for <symbol>FETCH_RELATIVE</symbol>"
+msgstr ""
+
+#: xml/spi.xml:2299(para) xml/spi.xml:2389(para)
+msgid "See the SQL <xref linkend=\"sql-fetch\">command for details of the interpretation of the <parameter>direction</parameter>and <parameter>count</parameter>parameters.</xref>"
+msgstr ""
+
+#: xml/spi.xml:2304(para) xml/spi.xml:2394(para)
+msgid "Direction values other than <symbol>FETCH_FORWARD</symbol>may fail if the cursor's plan was not created with the <symbol>CURSOR_OPT_SCROLL</symbol>option."
+msgstr ""
+
+#: xml/spi.xml:2312(primary) xml/spi.xml:2315(refentrytitle) xml/spi.xml:2319(refname)
+msgid "SPI_scroll_cursor_move"
+msgstr ""
+
+#: xml/spi.xml:2323(synopsis)
+#, no-wrap
+msgid "void SPI_scroll_cursor_move(Portal \n        <placeholder-1/>, FetchDirection \n        <placeholder-2/>, long \n        <placeholder-3/>)"
+msgstr ""
+
+#: xml/spi.xml:2330(para)
+msgid "<function>SPI_scroll_cursor_move</function>skips over some number of rows in a cursor. This is equivalent to the SQL command <command>MOVE</command>."
+msgstr ""
+
+#: xml/spi.xml:2367(para)
+msgid "number of rows to move for <symbol>FETCH_FORWARD</symbol>or <symbol>FETCH_BACKWARD</symbol>; absolute row number to move to for <symbol>FETCH_ABSOLUTE</symbol>; or relative row number to move to for <symbol>FETCH_RELATIVE</symbol>"
+msgstr ""
+
+#: xml/spi.xml:2380(para)
+msgid "<varname>SPI_processed</varname>is set as in <function>SPI_execute</function>if successful. <varname>SPI_tuptable</varname>is set to <symbol>NULL</symbol>, since no rows are returned by this function."
+msgstr ""
+
+#: xml/spi.xml:2402(primary) xml/spi.xml:2405(refentrytitle) xml/spi.xml:2409(refname)
+msgid "SPI_cursor_close"
+msgstr ""
+
+#: xml/spi.xml:2410(refpurpose)
+msgid "close a cursor"
+msgstr ""
+
+#: xml/spi.xml:2413(synopsis)
+#, no-wrap
+msgid "void SPI_cursor_close(Portal \n        <placeholder-1/>)"
+msgstr ""
+
+#: xml/spi.xml:2418(para)
+msgid "<function>SPI_cursor_close</function>closes a previously created cursor and releases its portal storage."
+msgstr ""
+
+#: xml/spi.xml:2421(para)
+msgid "All open cursors are closed automatically at the end of a transaction. <function>SPI_cursor_close</function>need only be invoked if it is desirable to release resources sooner."
+msgstr ""
+
+#: xml/spi.xml:2443(primary) xml/spi.xml:2446(refentrytitle) xml/spi.xml:2450(refname)
+msgid "SPI_keepplan"
+msgstr ""
+
+#: xml/spi.xml:2451(refpurpose) xml/spi.xml:2508(refpurpose)
+msgid "save a prepared statement"
+msgstr ""
+
+#: xml/spi.xml:2454(synopsis)
+#, no-wrap
+msgid "int SPI_keepplan(SPIPlanPtr \n        <placeholder-1/>)"
+msgstr ""
+
+#: xml/spi.xml:2459(para)
+msgid "<function>SPI_keepplan</function>saves a passed statement (prepared by <function>SPI_prepare</function>) so that it will not be freed by <function>SPI_finish</function>nor by the transaction manager. This gives you the ability to reuse prepared statements in the subsequent invocations of your procedure in the current session."
+msgstr ""
+
+#: xml/spi.xml:2478(para) xml/spi.xml:2536(para)
+msgid "the prepared statement to be saved"
+msgstr ""
+
+#: xml/spi.xml:2485(para) xml/spi.xml:3701(para)
+msgid "0 on success; <symbol>SPI_ERROR_ARGUMENT</symbol>if <parameter>plan</parameter>is <symbol>NULL</symbol>or invalid"
+msgstr ""
+
+#: xml/spi.xml:2492(para)
+msgid "The passed-in statement is relocated to permanent storage by means of pointer adjustment (no data copying is required). If you later wish to delete it, use <function>SPI_freeplan</function>on it."
+msgstr ""
+
+#: xml/spi.xml:2500(primary) xml/spi.xml:2503(refentrytitle) xml/spi.xml:2507(refname)
+msgid "SPI_saveplan"
+msgstr ""
+
+#: xml/spi.xml:2511(synopsis)
+#, no-wrap
+msgid "SPIPlanPtr SPI_saveplan(SPIPlanPtr \n        <placeholder-1/>)"
+msgstr ""
+
+#: xml/spi.xml:2516(para)
+msgid "<function>SPI_saveplan</function>copies a passed statement (prepared by <function>SPI_prepare</function>) into memory that will not be freed by <function>SPI_finish</function>nor by the transaction manager, and returns a pointer to the copied statement. This gives you the ability to reuse prepared statements in the subsequent invocations of your procedure in the current session."
+msgstr ""
+
+#: xml/spi.xml:2552(para)
+msgid "if <parameter>plan</parameter>is <symbol>NULL</symbol>or invalid"
+msgstr ""
+
+#: xml/spi.xml:2543(para)
+msgid "Pointer to the copied statement; or <symbol>NULL</symbol>if unsuccessful. On error, <varname>SPI_result</varname>is set thus: <placeholder-1/>"
+msgstr ""
+
+#: xml/spi.xml:2569(para)
+msgid "The originally passed-in statement is not freed, so you might wish to do <function>SPI_freeplan</function>on it to avoid leaking memory until <function>SPI_finish</function>."
+msgstr ""
+
+#: xml/spi.xml:2574(para)
+msgid "In most cases, <function>SPI_keepplan</function>is preferred to this function, since it accomplishes largely the same result without needing to physically copy the prepared statement's data structures."
+msgstr ""
+
+#: xml/spi.xml:2583(title)
+msgid "Interface Support Functions"
+msgstr ""
+
+#: xml/spi.xml:2584(para)
+msgid "The functions described here provide an interface for extracting information from result sets returned by <function>SPI_execute</function>and other SPI functions."
+msgstr ""
+
+#: xml/spi.xml:2587(para)
+msgid "All functions described in this section can be used by both connected and unconnected procedures."
+msgstr ""
+
+#: xml/spi.xml:2591(primary) xml/spi.xml:2594(refentrytitle) xml/spi.xml:2598(refname)
+msgid "SPI_fname"
+msgstr ""
+
+#: xml/spi.xml:2599(refpurpose)
+msgid "determine the column name for the specified column number"
+msgstr ""
+
+#: xml/spi.xml:2604(parameter) xml/spi.xml:2621(parameter) xml/spi.xml:2662(parameter) xml/spi.xml:2686(parameter) xml/spi.xml:2726(parameter) xml/spi.xml:2754(parameter) xml/spi.xml:2799(parameter) xml/spi.xml:2828(parameter) xml/spi.xml:2880(parameter) xml/spi.xml:2897(parameter) xml/spi.xml:2937(parameter) xml/spi.xml:2953(parameter) xml/spi.xml:3351(parameter) xml/spi.xml:3385(parameter)
+msgid "rowdesc"
+msgstr ""
+
+#: xml/spi.xml:2605(parameter) xml/spi.xml:2630(parameter) xml/spi.xml:2727(parameter) xml/spi.xml:2763(parameter) xml/spi.xml:2800(parameter) xml/spi.xml:2837(parameter) xml/spi.xml:2881(parameter) xml/spi.xml:2906(parameter) xml/spi.xml:2938(parameter) xml/spi.xml:2962(parameter)
+msgid "colnumber"
+msgstr ""
+
+#: xml/spi.xml:2603(synopsis)
+#, no-wrap
+msgid "char * SPI_fname(TupleDesc \n        <placeholder-1/>, int \n        <placeholder-2/>)"
+msgstr ""
+
+#: xml/spi.xml:2609(para)
+msgid "<function>SPI_fname</function>returns a copy of the column name of the specified column. (You can use <function>pfree</function>to release the copy of the name when you don't need it anymore.)"
+msgstr ""
+
+#: xml/spi.xml:2620(literal) xml/spi.xml:2685(literal) xml/spi.xml:2753(literal) xml/spi.xml:2827(literal) xml/spi.xml:2896(literal) xml/spi.xml:2952(literal) xml/spi.xml:3384(literal)
+msgid "TupleDesc <placeholder-1/>"
+msgstr ""
+
+#: xml/spi.xml:2624(para) xml/spi.xml:2689(para) xml/spi.xml:2757(para) xml/spi.xml:2831(para) xml/spi.xml:2900(para) xml/spi.xml:2956(para)
+msgid "input row description"
+msgstr ""
+
+#: xml/spi.xml:2633(para) xml/spi.xml:2766(para) xml/spi.xml:2840(para) xml/spi.xml:2909(para) xml/spi.xml:2965(para)
+msgid "column number (count starts at 1)"
+msgstr ""
+
+#: xml/spi.xml:2640(para)
+msgid "The column name; <symbol>NULL</symbol>if <parameter>colnumber</parameter>is out of range. <varname>SPI_result</varname>set to <symbol>SPI_ERROR_NOATTRIBUTE</symbol>on error."
+msgstr ""
+
+#: xml/spi.xml:2649(primary) xml/spi.xml:2652(refentrytitle) xml/spi.xml:2656(refname)
+msgid "SPI_fnumber"
+msgstr ""
+
+#: xml/spi.xml:2657(refpurpose)
+msgid "determine the column number for the specified column name"
+msgstr ""
+
+#: xml/spi.xml:2663(parameter) xml/spi.xml:2695(parameter)
+msgid "colname"
+msgstr ""
+
+#: xml/spi.xml:2661(synopsis)
+#, no-wrap
+msgid "int SPI_fnumber(TupleDesc \n        <placeholder-1/>, const char * \n        <placeholder-2/>)"
+msgstr ""
+
+#: xml/spi.xml:2667(para)
+msgid "<function>SPI_fnumber</function>returns the column number for the column with the specified name."
+msgstr ""
+
+#: xml/spi.xml:2670(para)
+msgid "If <parameter>colname</parameter>refers to a system column (e.g., <literal>oid</literal>) then the appropriate negative column number will be returned. The caller should be careful to test the return value for exact equality to <symbol>SPI_ERROR_NOATTRIBUTE</symbol>to detect an error; testing the result for less than or equal to 0 is not correct unless system columns should be rejected."
+msgstr ""
+
+#: xml/spi.xml:2698(para)
+msgid "column name"
+msgstr ""
+
+#: xml/spi.xml:2705(para)
+msgid "Column number (count starts at 1), or <symbol>SPI_ERROR_NOATTRIBUTE</symbol>if the named column was not found."
+msgstr ""
+
+#: xml/spi.xml:2712(primary) xml/spi.xml:2715(refentrytitle) xml/spi.xml:2719(refname)
+msgid "SPI_getvalue"
+msgstr ""
+
+#: xml/spi.xml:2720(refpurpose)
+msgid "return the string value of the specified column"
+msgstr ""
+
+#: xml/spi.xml:2725(parameter) xml/spi.xml:2745(parameter) xml/spi.xml:2798(parameter) xml/spi.xml:2819(parameter) xml/spi.xml:3302(parameter) xml/spi.xml:3319(parameter) xml/spi.xml:3350(parameter) xml/spi.xml:3376(parameter) xml/spi.xml:3420(parameter) xml/spi.xml:3451(parameter) xml/spi.xml:3576(parameter) xml/spi.xml:3593(parameter)
+msgid "row"
+msgstr ""
+
+#: xml/spi.xml:2724(synopsis)
+#, no-wrap
+msgid "char * SPI_getvalue(HeapTuple \n        <placeholder-1/>, TupleDesc \n        <placeholder-2/>, int \n        <placeholder-3/>)"
+msgstr ""
+
+#: xml/spi.xml:2731(para)
+msgid "<function>SPI_getvalue</function>returns the string representation of the value of the specified column."
+msgstr ""
+
+#: xml/spi.xml:2734(para)
+msgid "The result is returned in memory allocated using <function>palloc</function>. (You can use <function>pfree</function>to release the memory when you don't need it anymore.)"
+msgstr ""
+
+#: xml/spi.xml:2744(literal) xml/spi.xml:2818(literal) xml/spi.xml:3318(literal) xml/spi.xml:3375(literal) xml/spi.xml:3450(literal) xml/spi.xml:3592(literal)
+msgid "HeapTuple <placeholder-1/>"
+msgstr ""
+
+#: xml/spi.xml:2748(para) xml/spi.xml:2822(para)
+msgid "input row to be examined"
+msgstr ""
+
+#: xml/spi.xml:2773(para)
+msgid "Column value, or <symbol>NULL</symbol>if the column is null, <parameter>colnumber</parameter>is out of range ( <varname>SPI_result</varname>is set to <symbol>SPI_ERROR_NOATTRIBUTE</symbol>), or no output function is available ( <varname>SPI_result</varname>is set to <symbol>SPI_ERROR_NOOUTFUNC</symbol>)."
+msgstr ""
+
+#: xml/spi.xml:2785(primary) xml/spi.xml:2788(refentrytitle) xml/spi.xml:2792(refname)
+msgid "SPI_getbinval"
+msgstr ""
+
+#: xml/spi.xml:2793(refpurpose)
+msgid "return the binary value of the specified column"
+msgstr ""
+
+#: xml/spi.xml:2801(parameter) xml/spi.xml:2846(parameter)
+msgid "isnull"
+msgstr ""
+
+#: xml/spi.xml:2797(synopsis)
+#, no-wrap
+msgid "Datum SPI_getbinval(HeapTuple \n        <placeholder-1/>, TupleDesc \n        <placeholder-2/>, int \n        <placeholder-3/>, bool * \n        <placeholder-4/>)"
+msgstr ""
+
+#: xml/spi.xml:2805(para)
+msgid "<function>SPI_getbinval</function>returns the value of the specified column in the internal form (as type <type>Datum</type>)."
+msgstr ""
+
+#: xml/spi.xml:2809(para)
+msgid "This function does not allocate new space for the datum. In the case of a pass-by-reference data type, the return value will be a pointer into the passed row."
+msgstr ""
+
+#: xml/spi.xml:2845(literal)
+msgid "bool * <placeholder-1/>"
+msgstr ""
+
+#: xml/spi.xml:2849(para)
+msgid "flag for a null value in the column"
+msgstr ""
+
+#: xml/spi.xml:2856(para)
+msgid "The binary value of the column is returned. The variable pointed to by <parameter>isnull</parameter>is set to true if the column is null, else to false."
+msgstr ""
+
+#: xml/spi.xml:2860(para)
+msgid "<varname>SPI_result</varname>is set to <symbol>SPI_ERROR_NOATTRIBUTE</symbol>on error."
+msgstr ""
+
+#: xml/spi.xml:2867(primary) xml/spi.xml:2870(refentrytitle) xml/spi.xml:2874(refname)
+msgid "SPI_gettype"
+msgstr ""
+
+#: xml/spi.xml:2875(refpurpose)
+msgid "return the data type name of the specified column"
+msgstr ""
+
+#: xml/spi.xml:2879(synopsis)
+#, no-wrap
+msgid "char * SPI_gettype(TupleDesc \n        <placeholder-1/>, int \n        <placeholder-2/>)"
+msgstr ""
+
+#: xml/spi.xml:2885(para)
+msgid "<function>SPI_gettype</function>returns a copy of the data type name of the specified column. (You can use <function>pfree</function>to release the copy of the name when you don't need it anymore.)"
+msgstr ""
+
+#: xml/spi.xml:2916(para)
+msgid "The data type name of the specified column, or <symbol>NULL</symbol>on error. <varname>SPI_result</varname>is set to <symbol>SPI_ERROR_NOATTRIBUTE</symbol>on error."
+msgstr ""
+
+#: xml/spi.xml:2924(primary) xml/spi.xml:2927(refentrytitle) xml/spi.xml:2931(refname)
+msgid "SPI_gettypeid"
+msgstr ""
+
+#: xml/spi.xml:2933(acronym)
+msgid "OID"
+msgstr ""
+
+#: xml/spi.xml:2932(refpurpose)
+msgid "return the data type <placeholder-1/>of the specified column"
+msgstr ""
+
+#: xml/spi.xml:2936(synopsis)
+#, no-wrap
+msgid "Oid SPI_gettypeid(TupleDesc \n        <placeholder-1/>, int \n        <placeholder-2/>)"
+msgstr ""
+
+#: xml/spi.xml:2942(para)
+msgid "<function>SPI_gettypeid</function>returns the <acronym>OID</acronym>of the data type of the specified column."
+msgstr ""
+
+#: xml/spi.xml:2972(para)
+msgid "The <acronym>OID</acronym>of the data type of the specified column or <symbol>InvalidOid</symbol>on error. On error, <varname>SPI_result</varname>is set to <symbol>SPI_ERROR_NOATTRIBUTE</symbol>."
+msgstr ""
+
+#: xml/spi.xml:2982(primary) xml/spi.xml:2985(refentrytitle) xml/spi.xml:2989(refname)
+msgid "SPI_getrelname"
+msgstr ""
+
+#: xml/spi.xml:2990(refpurpose)
+msgid "return the name of the specified relation"
+msgstr ""
+
+#: xml/spi.xml:2995(parameter) xml/spi.xml:3011(parameter) xml/spi.xml:3039(parameter) xml/spi.xml:3057(parameter) xml/spi.xml:3419(parameter) xml/spi.xml:3440(parameter)
+msgid "rel"
+msgstr ""
+
+#: xml/spi.xml:2994(synopsis)
+#, no-wrap
+msgid "char * SPI_getrelname(Relation \n        <placeholder-1/>)"
+msgstr ""
+
+#: xml/spi.xml:2999(para)
+msgid "<function>SPI_getrelname</function>returns a copy of the name of the specified relation. (You can use <function>pfree</function>to release the copy of the name when you don't need it anymore.)"
+msgstr ""
+
+#: xml/spi.xml:3010(literal) xml/spi.xml:3056(literal) xml/spi.xml:3439(literal)
+msgid "Relation <placeholder-1/>"
+msgstr ""
+
+#: xml/spi.xml:3014(para) xml/spi.xml:3060(para)
+msgid "input relation"
+msgstr ""
+
+#: xml/spi.xml:3021(para)
+msgid "The name of the specified relation."
+msgstr ""
+
+#: xml/spi.xml:3026(primary) xml/spi.xml:3029(refentrytitle) xml/spi.xml:3033(refname)
+msgid "SPI_getnspname"
+msgstr ""
+
+#: xml/spi.xml:3034(refpurpose)
+msgid "return the namespace of the specified relation"
+msgstr ""
+
+#: xml/spi.xml:3038(synopsis)
+#, no-wrap
+msgid "char * SPI_getnspname(Relation \n        <placeholder-1/>)"
+msgstr ""
+
+#: xml/spi.xml:3043(para)
+msgid "<function>SPI_getnspname</function>returns a copy of the name of the namespace that the specified <structname>Relation</structname>belongs to. This is equivalent to the relation's schema. You should <function>pfree</function>the return value of this function when you are finished with it."
+msgstr ""
+
+#: xml/spi.xml:3067(para)
+msgid "The name of the specified relation's namespace."
+msgstr ""
+
+#: xml/spi.xml:3073(title)
+msgid "Memory Management"
+msgstr ""
+
+#: xml/spi.xml:3074(para)
+msgid "<indexterm><primary>memory context</primary><secondary>in SPI</secondary></indexterm><productname>PostgreSQL</productname>allocates memory within <firstterm>memory contexts</firstterm>, which provide a convenient method of managing allocations made in many different places that need to live for differing amounts of time. Destroying a context releases all the memory that was allocated in it. Thus, it is not necessary to keep track of individual objects to avoid memory leaks; instead only a relatively small number of contexts have to be managed. <function>palloc</function>and related functions allocate memory from the <quote>current</quote>context."
+msgstr ""
+
+#: xml/spi.xml:3090(para)
+msgid "<function>SPI_connect</function>creates a new memory context and makes it current. <function>SPI_finish</function>restores the previous current memory context and destroys the context created by <function>SPI_connect</function>. These actions ensure that transient memory allocations made inside your procedure are reclaimed at procedure exit, avoiding memory leakage."
+msgstr ""
+
+#: xml/spi.xml:3098(para)
+msgid "However, if your procedure needs to return an object in allocated memory (such as a value of a pass-by-reference data type), you cannot allocate that memory using <function>palloc</function>, at least not while you are connected to SPI. If you try, the object will be deallocated by <function>SPI_finish</function>, and your procedure will not work reliably. To solve this problem, use <function>SPI_palloc</function>to allocate memory for your return object. <function>SPI_palloc</function>allocates memory in the <quote>upper executor context</quote>, that is, the memory context that was current when <function>SPI_connect</function>was called, which is precisely the right context for a value returned from your procedure."
+msgstr ""
+
+#: xml/spi.xml:3114(para)
+msgid "If <function>SPI_palloc</function>is called while the procedure is not connected to SPI, then it acts the same as a normal <function>palloc</function>. Before a procedure connects to the SPI manager, the current memory context is the upper executor context, so all allocations made by the procedure via <function>palloc</function>or by SPI utility functions are made in this context."
+msgstr ""
+
+#: xml/spi.xml:3122(para)
+msgid "When <function>SPI_connect</function>is called, the private context of the procedure, which is created by <function>SPI_connect</function>, is made the current context. All allocations made by <function>palloc</function>, <function>repalloc</function>, or SPI utility functions (except for <function>SPI_copytuple</function>, <function>SPI_returntuple</function>, <function>SPI_modifytuple</function>, and <function>SPI_palloc</function>) are made in this context. When a procedure disconnects from the SPI manager (via <function>SPI_finish</function>) the current context is restored to the upper executor context, and all allocations made in the procedure memory context are freed and cannot be used any more."
+msgstr ""
+
+#: xml/spi.xml:3139(para)
+msgid "All functions described in this section can be used by both connected and unconnected procedures. In an unconnected procedure, they act the same as the underlying ordinary server functions ( <function>palloc</function>, etc.)."
+msgstr ""
+
+#: xml/spi.xml:3146(primary) xml/spi.xml:3149(refentrytitle) xml/spi.xml:3153(refname)
+msgid "SPI_palloc"
+msgstr ""
+
+#: xml/spi.xml:3154(refpurpose)
+msgid "allocate memory in the upper executor context"
+msgstr ""
+
+#: xml/spi.xml:3159(parameter) xml/spi.xml:3173(parameter) xml/spi.xml:3203(parameter) xml/spi.xml:3230(parameter)
+msgid "size"
+msgstr ""
+
+#: xml/spi.xml:3158(synopsis)
+#, no-wrap
+msgid "void * SPI_palloc(Size \n        <placeholder-1/>)"
+msgstr ""
+
+#: xml/spi.xml:3163(para)
+msgid "<function>SPI_palloc</function>allocates memory in the upper executor context."
+msgstr ""
+
+#: xml/spi.xml:3172(literal) xml/spi.xml:3229(literal)
+msgid "Size <placeholder-1/>"
+msgstr ""
+
+#: xml/spi.xml:3176(para) xml/spi.xml:3233(para)
+msgid "size in bytes of storage to allocate"
+msgstr ""
+
+#: xml/spi.xml:3183(para)
+msgid "pointer to new storage space of the specified size"
+msgstr ""
+
+#: xml/spi.xml:3189(primary) xml/spi.xml:3192(refentrytitle) xml/spi.xml:3196(refname)
+msgid "SPI_repalloc"
+msgstr ""
+
+#: xml/spi.xml:3197(refpurpose)
+msgid "reallocate memory in the upper executor context"
+msgstr ""
+
+#: xml/spi.xml:3202(parameter) xml/spi.xml:3221(parameter) xml/spi.xml:3259(parameter) xml/spi.xml:3278(parameter)
+msgid "pointer"
+msgstr ""
+
+#: xml/spi.xml:3201(synopsis)
+#, no-wrap
+msgid "void * SPI_repalloc(void * \n        <placeholder-1/>, Size \n        <placeholder-2/>)"
+msgstr ""
+
+#: xml/spi.xml:3207(para)
+msgid "<function>SPI_repalloc</function>changes the size of a memory segment previously allocated using <function>SPI_palloc</function>."
+msgstr ""
+
+#: xml/spi.xml:3211(para)
+msgid "This function is no longer different from plain <function>repalloc</function>. It's kept just for backward compatibility of existing code."
+msgstr ""
+
+#: xml/spi.xml:3224(para)
+msgid "pointer to existing storage to change"
+msgstr ""
+
+#: xml/spi.xml:3240(para)
+msgid "pointer to new storage space of specified size with the contents copied from the existing area"
+msgstr ""
+
+#: xml/spi.xml:3246(primary) xml/spi.xml:3249(refentrytitle) xml/spi.xml:3253(refname)
+msgid "SPI_pfree"
+msgstr ""
+
+#: xml/spi.xml:3254(refpurpose)
+msgid "free memory in the upper executor context"
+msgstr ""
+
+#: xml/spi.xml:3258(synopsis)
+#, no-wrap
+msgid "void SPI_pfree(void * \n        <placeholder-1/>)"
+msgstr ""
+
+#: xml/spi.xml:3263(para)
+msgid "<function>SPI_pfree</function>frees memory previously allocated using <function>SPI_palloc</function>or <function>SPI_repalloc</function>."
+msgstr ""
+
+#: xml/spi.xml:3268(para)
+msgid "This function is no longer different from plain <function>pfree</function>. It's kept just for backward compatibility of existing code."
+msgstr ""
+
+#: xml/spi.xml:3281(para)
+msgid "pointer to existing storage to free"
+msgstr ""
+
+#: xml/spi.xml:3289(primary) xml/spi.xml:3292(refentrytitle) xml/spi.xml:3296(refname)
+msgid "SPI_copytuple"
+msgstr ""
+
+#: xml/spi.xml:3297(refpurpose)
+msgid "make a copy of a row in the upper executor context"
+msgstr ""
+
+#: xml/spi.xml:3301(synopsis)
+#, no-wrap
+msgid "HeapTuple SPI_copytuple(HeapTuple \n        <placeholder-1/>)"
+msgstr ""
+
+#: xml/spi.xml:3306(para)
+msgid "<function>SPI_copytuple</function>makes a copy of a row in the upper executor context. This is normally used to return a modified row from a trigger. In a function declared to return a composite type, use <function>SPI_returntuple</function>instead."
+msgstr ""
+
+#: xml/spi.xml:3322(para) xml/spi.xml:3379(para)
+msgid "row to be copied"
+msgstr ""
+
+#: xml/spi.xml:3329(para)
+msgid "the copied row; <symbol>NULL</symbol>only if <parameter>tuple</parameter>is <symbol>NULL</symbol>"
+msgstr ""
+
+#: xml/spi.xml:3337(primary) xml/spi.xml:3340(refentrytitle) xml/spi.xml:3344(refname)
+msgid "SPI_returntuple"
+msgstr ""
+
+#: xml/spi.xml:3345(refpurpose)
+msgid "prepare to return a tuple as a Datum"
+msgstr ""
+
+#: xml/spi.xml:3349(synopsis)
+#, no-wrap
+msgid "HeapTupleHeader SPI_returntuple(HeapTuple \n        <placeholder-1/>, TupleDesc \n        <placeholder-2/>)"
+msgstr ""
+
+#: xml/spi.xml:3355(para)
+msgid "<function>SPI_returntuple</function>makes a copy of a row in the upper executor context, returning it in the form of a row type <type>Datum</type>. The returned pointer need only be converted to <type>Datum</type>via <function>PointerGetDatum</function>before returning."
+msgstr ""
+
+#: xml/spi.xml:3364(para)
+msgid "Note that this should be used for functions that are declared to return composite types. It is not used for triggers; use <function>SPI_copytuple</function>for returning a modified row in a trigger."
+msgstr ""
+
+#: xml/spi.xml:3388(para)
+msgid "descriptor for row (pass the same descriptor each time for most effective caching)"
+msgstr ""
+
+#: xml/spi.xml:3396(para)
+msgid "<type>HeapTupleHeader</type>pointing to copied row; <symbol>NULL</symbol>only if <parameter>row</parameter>or <parameter>rowdesc</parameter>is <symbol>NULL</symbol>"
+msgstr ""
+
+#: xml/spi.xml:3406(primary) xml/spi.xml:3409(refentrytitle) xml/spi.xml:3413(refname)
+msgid "SPI_modifytuple"
+msgstr ""
+
+#: xml/spi.xml:3414(refpurpose)
+msgid "create a row by replacing selected fields of a given row"
+msgstr ""
+
+#: xml/spi.xml:3421(parameter) xml/spi.xml:3460(parameter)
+msgid "ncols"
+msgstr ""
+
+#: xml/spi.xml:3422(parameter) xml/spi.xml:3469(parameter)
+msgid "colnum"
+msgstr ""
+
+#: xml/spi.xml:3418(synopsis)
+#, no-wrap
+msgid "HeapTuple SPI_modifytuple(Relation \n        <placeholder-1/>, HeapTuple \n        <placeholder-2/>, int \n        <placeholder-3/>, int * \n        <placeholder-4/>, Datum * \n        <placeholder-5/>, const char * \n        <placeholder-6/>)"
+msgstr ""
+
+#: xml/spi.xml:3428(para)
+msgid "<function>SPI_modifytuple</function>creates a new row by substituting new values for selected columns, copying the original row's columns at other positions. The input row is not modified."
+msgstr ""
+
+#: xml/spi.xml:3443(para)
+msgid "Used only as the source of the row descriptor for the row. (Passing a relation rather than a row descriptor is a misfeature.)"
+msgstr ""
+
+#: xml/spi.xml:3454(para)
+msgid "row to be modified"
+msgstr ""
+
+#: xml/spi.xml:3463(para)
+msgid "number of columns to be changed"
+msgstr ""
+
+#: xml/spi.xml:3468(literal)
+msgid "int * <placeholder-1/>"
+msgstr ""
+
+#: xml/spi.xml:3472(para)
+msgid "an array of length <parameter>ncols</parameter>, containing the numbers of the columns that are to be changed (column numbers start at 1)"
+msgstr ""
+
+#: xml/spi.xml:3484(para)
+msgid "an array of length <parameter>ncols</parameter>, containing the new values for the specified columns"
+msgstr ""
+
+#: xml/spi.xml:3495(para)
+msgid "an array of length <parameter>ncols</parameter>, describing which new values are null"
+msgstr ""
+
+#: xml/spi.xml:3498(para)
+msgid "If <parameter>nulls</parameter>is <symbol>NULL</symbol>then <function>SPI_modifytuple</function>assumes that no new values are null. Otherwise, each entry of the <parameter>nulls</parameter>array should be <literal>''</literal>if the corresponding new value is non-null, or <literal>'n'</literal>if the corresponding new value is null. (In the latter case, the actual value in the corresponding <parameter>values</parameter>entry doesn't matter.) Note that <parameter>nulls</parameter>is not a text string, just an array: it does not need a <literal>'\\0'</literal>terminator."
+msgstr ""
+
+#: xml/spi.xml:3520(para)
+msgid "new row with modifications, allocated in the upper executor context; <symbol>NULL</symbol>only if <parameter>row</parameter>is <symbol>NULL</symbol>"
+msgstr ""
+
+#: xml/spi.xml:3533(para)
+msgid "if <parameter>rel</parameter>is <symbol>NULL</symbol>, or if <parameter>row</parameter>is <symbol>NULL</symbol>, or if <parameter>ncols</parameter>is less than or equal to 0, or if <parameter>colnum</parameter>is <symbol>NULL</symbol>, or if <parameter>values</parameter>is <symbol>NULL</symbol>."
+msgstr ""
+
+#: xml/spi.xml:3548(symbol)
+msgid "SPI_ERROR_NOATTRIBUTE"
+msgstr ""
+
+#: xml/spi.xml:3551(para)
+msgid "if <parameter>colnum</parameter>contains an invalid column number (less than or equal to 0 or greater than the number of column in <parameter>row</parameter>)"
+msgstr ""
+
+#: xml/spi.xml:3525(para)
+msgid "On error, <varname>SPI_result</varname>is set as follows: <placeholder-1/>"
+msgstr ""
+
+#: xml/spi.xml:3563(primary) xml/spi.xml:3566(refentrytitle) xml/spi.xml:3570(refname)
+msgid "SPI_freetuple"
+msgstr ""
+
+#: xml/spi.xml:3571(refpurpose)
+msgid "free a row allocated in the upper executor context"
+msgstr ""
+
+#: xml/spi.xml:3575(synopsis)
+#, no-wrap
+msgid "void SPI_freetuple(HeapTuple \n        <placeholder-1/>)"
+msgstr ""
+
+#: xml/spi.xml:3580(para)
+msgid "<function>SPI_freetuple</function>frees a row previously allocated in the upper executor context."
+msgstr ""
+
+#: xml/spi.xml:3583(para)
+msgid "This function is no longer different from plain <function>heap_freetuple</function>. It's kept just for backward compatibility of existing code."
+msgstr ""
+
+#: xml/spi.xml:3596(para)
+msgid "row to free"
+msgstr ""
+
+#: xml/spi.xml:3604(primary) xml/spi.xml:3607(refentrytitle) xml/spi.xml:3611(refname)
+msgid "SPI_freetuptable"
+msgstr ""
+
+#: xml/spi.xml:3612(refpurpose)
+msgid "free a row set created by <placeholder-1/>or a similar function"
+msgstr ""
+
+#: xml/spi.xml:3618(parameter) xml/spi.xml:3649(parameter)
+msgid "tuptable"
+msgstr ""
+
+#: xml/spi.xml:3617(synopsis)
+#, no-wrap
+msgid "void SPI_freetuptable(SPITupleTable * \n        <placeholder-1/>)"
+msgstr ""
+
+#: xml/spi.xml:3622(para)
+msgid "<function>SPI_freetuptable</function>frees a row set created by a prior SPI command execution function, such as <function>SPI_execute</function>. Therefore, this function is often called with the global variable <varname>SPI_tuptable</varname>as argument."
+msgstr ""
+
+#: xml/spi.xml:3628(para)
+msgid "This function is useful if a SPI procedure needs to execute multiple commands and does not want to keep the results of earlier commands around until it ends. Note that any unfreed row sets will be freed anyway at <function>SPI_finish</function>. Also, if a subtransaction is started and then aborted within execution of a SPI procedure, SPI automatically frees any row sets created while the subtransaction was running."
+msgstr ""
+
+#: xml/spi.xml:3636(para)
+msgid "Beginning in <productname>PostgreSQL</productname>9.3, <function>SPI_freetuptable</function>contains guard logic to protect against duplicate deletion requests for the same row set. In previous releases, duplicate deletions would lead to crashes."
+msgstr ""
+
+#: xml/spi.xml:3648(literal)
+msgid "SPITupleTable * <placeholder-1/>"
+msgstr ""
+
+#: xml/spi.xml:3652(para)
+msgid "pointer to row set to free, or NULL to do nothing"
+msgstr ""
+
+#: xml/spi.xml:3661(primary) xml/spi.xml:3664(refentrytitle) xml/spi.xml:3668(refname)
+msgid "SPI_freeplan"
+msgstr ""
+
+#: xml/spi.xml:3669(refpurpose)
+msgid "free a previously saved prepared statement"
+msgstr ""
+
+#: xml/spi.xml:3673(synopsis)
+#, no-wrap
+msgid "int SPI_freeplan(SPIPlanPtr \n        <placeholder-1/>)"
+msgstr ""
+
+#: xml/spi.xml:3678(para)
+msgid "<function>SPI_freeplan</function>releases a prepared statement previously returned by <function>SPI_prepare</function>or saved by <function>SPI_keepplan</function>or <function>SPI_saveplan</function>."
+msgstr ""
+
+#: xml/spi.xml:3694(para)
+msgid "pointer to statement to free"
+msgstr ""
+
+#: xml/spi.xml:3709(title)
+msgid "Visibility of Data Changes"
+msgstr ""
+
+#: xml/spi.xml:3717(programlisting)
+#, no-wrap
+msgid "INSERT INTO a SELECT * FROM\n        a;"
+msgstr ""
+
+#: xml/spi.xml:3714(para)
+msgid "During the execution of an SQL command, any data changes made by the command are invisible to the command itself. For example, in: <placeholder-1/>the inserted rows are invisible to the <command>SELECT</command>part."
+msgstr ""
+
+#: xml/spi.xml:3722(para)
+msgid "Changes made by a command C are visible to all commands that are started after C, no matter whether they are started inside C (during the execution of C) or after C is done."
+msgstr ""
+
+#: xml/spi.xml:3728(para)
+msgid "Commands executed via SPI inside a function called by an SQL command (either an ordinary function or a trigger) follow one or the other of the above rules depending on the read/write flag passed to SPI. Commands executed in read-only mode follow the first rule: they cannot see changes of the calling command. Commands executed in read-write mode follow the second rule: they can see all changes made so far."
+msgstr ""
+
+#: xml/spi.xml:3738(para)
+msgid "All standard procedural languages set the SPI read-write mode depending on the volatility attribute of the function. Commands of <literal>STABLE</literal>and <literal>IMMUTABLE</literal>functions are done in read-only mode, while commands of <literal>VOLATILE</literal>functions are done in read-write mode. While authors of C functions are able to violate this convention, it's unlikely to be a good idea to do so."
+msgstr ""
+
+#: xml/spi.xml:3710(para)
+msgid "The following rules govern the visibility of data changes in functions that use SPI (or any other C function): <placeholder-1/>"
+msgstr ""
+
+#: xml/spi.xml:3750(para)
+msgid "The next section contains an example that illustrates the application of these rules."
+msgstr ""
+
+#: xml/spi.xml:3754(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/spi.xml:3755(para)
+msgid "This section contains a very simple example of SPI usage. The procedure <function>execq</function>takes an SQL command as its first argument and a row count as its second, executes the command using <function>SPI_exec</function>and returns the number of rows that were processed by the command. You can find more complex examples for SPI in the source tree in <filename>src/test/regress/regress.c</filename>and in the <xref linkend=\"contrib-spi\">module.</xref>"
+msgstr ""
+
+#: xml/spi.xml:3765(programlisting)
+#, no-wrap
+msgid "#include \"postgres.h\" #include \"executor/spi.h\"\n    #include \"utils/builtins.h\" #ifdef PG_MODULE_MAGIC\n    PG_MODULE_MAGIC; #endif int execq(text *sql, int cnt); int\n    execq(text *sql, int cnt) { char *command; int ret; int proc;\n    /* Convert given text object to a C string */ command =\n    text_to_cstring(sql); SPI_connect(); ret = SPI_exec(command,\n    cnt); proc = SPI_processed; /* * If some rows were fetched,\n    print them via elog(INFO). */ if (ret 0 SPI_tuptable != NULL) {\n    TupleDesc tupdesc = SPI_tuptable-tupdesc; SPITupleTable\n    *tuptable = SPI_tuptable; char buf[8192]; int i, j; for (j = 0;\n    j proc; j++) { HeapTuple tuple = tuptable-vals[j]; for (i = 1,\n    buf[0] = 0; i = tupdesc-natts; i++) snprintf(buf + strlen\n    (buf), sizeof(buf) - strlen(buf), \" %s%s\", SPI_getvalue(tuple,\n    tupdesc, i), (i == tupdesc-natts) ? \" \" : \" |\"); elog(INFO,\n    \"EXECQ: %s\", buf); } } SPI_finish(); pfree(command); return\n    (proc); }"
+msgstr ""
+
+#: xml/spi.xml:3781(para)
+msgid "(This function uses call convention version 0, to make the example easier to understand. In real applications you should use the new version 1 interface.)"
+msgstr ""
+
+#: xml/spi.xml:3787(programlisting)
+#, no-wrap
+msgid "CREATE FUNCTION execq(text, integer) RETURNS\n    integer AS ' \n    <replaceable>filename</replaceable>' LANGUAGE\n    C;"
+msgstr ""
+
+#: xml/spi.xml:3784(para)
+msgid "This is how you declare the function after having compiled it into a shared library (details are in <xref linkend=\"dfunc\">.): <placeholder-1/></xref>"
+msgstr ""
+
+#: xml/spi.xml:3792(programlisting)
+#, no-wrap
+msgid "= SELECT execq('CREATE TABLE a (x integer)',\n    0); execq ------- 0 (1 row) = INSERT INTO a VALUES\n    (execq('INSERT INTO a VALUES (0)', 0)); INSERT 0 1 = SELECT\n    execq('SELECT * FROM a', 0); INFO: EXECQ: 0 -- inserted by\n    execq INFO: EXECQ: 1 -- returned by execq and inserted by upper\n    INSERT execq ------- 2 (1 row) = SELECT execq('INSERT INTO a\n    SELECT x + 2 FROM a', 1); execq ------- 1 (1 row) = SELECT\n    execq('SELECT * FROM a', 10); INFO: EXECQ: 0 INFO: EXECQ: 1\n    INFO: EXECQ: 2 -- 0 + 2, only one row inserted - as specified\n    execq ------- 3 -- 10 is the max value only, 3 is the real\n    number of rows (1 row) = DELETE FROM a; DELETE 3 = INSERT INTO\n    a VALUES (execq('SELECT * FROM a', 0) + 1); INSERT 0 1 = SELECT\n    * FROM a; x --- 1 -- no rows in a (0) + 1 (1 row) = INSERT INTO\n    a VALUES (execq('SELECT * FROM a', 0) + 1); INFO: EXECQ: 1\n    INSERT 0 1 = SELECT * FROM a; x --- 1 2 -- there was one row in\n    a + 1 (2 rows) -- This demonstrates the data changes visibility\n    rule: = INSERT INTO a SELECT execq('SELECT * FROM a', 0) * x\n    FROM a; INFO: EXECQ: 1 INFO: EXECQ: 2 INFO: EXECQ: 1 INFO:\n    EXECQ: 2 INFO: EXECQ: 2 INSERT 0 2 = SELECT * FROM a; x --- 1 2\n    2 -- 2 rows * 1 (x in first row) 6 -- 3 rows (2 + 1 just\n    inserted) * 2 (x in second row) (4 rows) ^^^^^^ rows visible to\n    execq() in different invocations"
+msgstr ""
+
+#: xml/spi.xml:3791(para)
+msgid "Here is a sample session: <placeholder-1/>"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/spi.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

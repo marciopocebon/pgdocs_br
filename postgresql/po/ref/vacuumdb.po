@@ -1,0 +1,424 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/vacuumdb.xml:4(primary) xml/ref/vacuumdb.xml:8(application) xml/ref/vacuumdb.xml:14(refname) xml/ref/vacuumdb.xml:20(command) xml/ref/vacuumdb.xml:48(command)
+msgid "vacuumdb"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:10(manvolnum)
+msgid "1"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:11(refmiscinfo)
+msgid "Application"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:16(productname)
+msgid "PostgreSQL"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:15(refpurpose)
+msgid "garbage-collect and analyze a <placeholder-1/>database"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:22(replaceable) xml/ref/vacuumdb.xml:50(replaceable)
+msgid "connection-option"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:25(replaceable) xml/ref/vacuumdb.xml:53(replaceable)
+msgid "option"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:31(option)
+msgid "--table"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:34(option)
+msgid "-t"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:37(replaceable) xml/ref/vacuumdb.xml:203(replaceable) xml/ref/vacuumdb.xml:209(replaceable)
+msgid "table"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:39(replaceable) xml/ref/vacuumdb.xml:204(replaceable) xml/ref/vacuumdb.xml:210(replaceable)
+msgid "column"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:38(arg)
+msgid "( <placeholder-1/>[,...] )"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:44(replaceable) xml/ref/vacuumdb.xml:101(replaceable) xml/ref/vacuumdb.xml:107(replaceable) xml/ref/vacuumdb.xml:406(replaceable)
+msgid "dbname"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:57(option) xml/ref/vacuumdb.xml:91(option)
+msgid "--all"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:60(option) xml/ref/vacuumdb.xml:88(option)
+msgid "-a"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:66(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:67(para)
+msgid "<application>vacuumdb</application>is a utility for cleaning a <productname>PostgreSQL</productname>database. <application>vacuumdb</application>will also generate internal statistics used by the <productname>PostgreSQL</productname>query optimizer."
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:73(para)
+msgid "<application>vacuumdb</application>is a wrapper around the SQL command <xref linkend=\"SQL-VACUUM\">. There is no effective difference between vacuuming and analyzing databases via this utility and via other methods for accessing the server.</xref>"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:81(title)
+msgid "Options"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:94(para)
+msgid "Vacuum all databases."
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:100(optional)
+msgid "-d"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:106(optional)
+msgid "--dbname="
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:111(para)
+msgid "Specifies the name of the database to be cleaned or analyzed. If this is not specified and <option>-a</option>(or <option>--all</option>) is not used, the database name is read from the environment variable <envar>PGDATABASE</envar>. If that is not set, the user name specified for the connection is used."
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:122(option)
+msgid "-e"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:125(option)
+msgid "--echo"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:128(para)
+msgid "Echo the commands that <application>vacuumdb</application>generates and sends to the server."
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:135(option)
+msgid "-f"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:138(option)
+msgid "--full"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:141(para)
+msgid "Perform <quote>full</quote>vacuuming."
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:147(option)
+msgid "-F"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:150(option)
+msgid "--freeze"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:153(para)
+msgid "Aggressively <quote>freeze</quote>tuples."
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:160(replaceable) xml/ref/vacuumdb.xml:165(replaceable)
+msgid "njobs"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:159(option)
+msgid "-j <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:164(option)
+msgid "--jobs= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:169(para)
+msgid "Execute the vacuum or analyze commands in parallel by running <replaceable class=\"parameter\"> njobs</replaceable>commands simultaneously. This option reduces the time of the processing but it also increases the load on the database server."
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:175(para)
+msgid "<application>vacuumdb</application>will open <replaceable class=\"parameter\"> njobs</replaceable>connections to the database, so make sure your <xref linkend=\"guc-max-connections\">setting is high enough to accommodate all connections.</xref>"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:182(para)
+msgid "Note that using this mode together with the <option>-f</option>( <literal>FULL</literal>) option might cause deadlock failures if certain system catalogs are processed in parallel."
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:191(option)
+msgid "-q"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:194(option)
+msgid "--quiet"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:197(para)
+msgid "Do not display progress messages."
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:202(option)
+msgid "-t <placeholder-1/>[ ( <placeholder-2/>[,...]) ]"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:208(option)
+msgid "--table= <placeholder-1/>[ ( <placeholder-2/>[,...]) ]"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:214(para)
+msgid "Clean or analyze <replaceable class=\"parameter\">table</replaceable>only. Column names can be specified only in conjunction with the <option>--analyze</option>or <option>--analyze-only</option>options. Multiple tables can be vacuumed by writing multiple <option>-t</option>switches."
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:223(para)
+msgid "If you specify columns, you probably have to escape the parentheses from the shell. (See examples below.)"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:231(option)
+msgid "-v"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:234(option)
+msgid "--verbose"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:237(para)
+msgid "Print detailed information during processing."
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:243(option)
+msgid "-V"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:246(option)
+msgid "--version"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:249(para)
+msgid "Print the <application>vacuumdb</application>version and exit."
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:256(option)
+msgid "-z"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:259(option)
+msgid "--analyze"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:262(para)
+msgid "Also calculate statistics for use by the optimizer."
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:268(option)
+msgid "-Z"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:271(option)
+msgid "--analyze-only"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:274(para)
+msgid "Only calculate statistics for use by the optimizer (no vacuum)."
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:280(option)
+msgid "--analyze-in-stages"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:283(para)
+msgid "Only calculate statistics for use by the optimizer (no vacuum), like <option>--analyze-only</option>. Run several (currently three) stages of analyze with different configuration settings, to produce usable statistics faster."
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:288(para)
+msgid "This option is useful to analyze a database that was newly populated from a restored dump or by <command>pg_upgrade</command>. This option will try to create some statistics as fast as possible, to make the database usable, and then produce full statistics in the subsequent stages."
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:298(option)
+msgid "-?"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:301(option)
+msgid "--help"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:304(para)
+msgid "Show help about <application>vacuumdb</application>command line arguments, and exit."
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:82(para)
+msgid "<application>vacuumdb</application>accepts the following command-line arguments: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:317(replaceable) xml/ref/vacuumdb.xml:322(replaceable)
+msgid "host"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:316(option)
+msgid "-h <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:321(option)
+msgid "--host= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:326(para)
+msgid "Specifies the host name of the machine on which the server is running. If the value begins with a slash, it is used as the directory for the Unix domain socket."
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:335(replaceable) xml/ref/vacuumdb.xml:340(replaceable)
+msgid "port"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:334(option)
+msgid "-p <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:339(option)
+msgid "--port= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:344(para)
+msgid "Specifies the TCP port or local Unix domain socket file extension on which the server is listening for connections."
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:352(replaceable) xml/ref/vacuumdb.xml:357(replaceable)
+msgid "username"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:351(option)
+msgid "-U <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:356(option)
+msgid "--username= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:361(para)
+msgid "User name to connect as."
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:366(option)
+msgid "-w"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:369(option)
+msgid "--no-password"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:372(para)
+msgid "Never issue a password prompt. If the server requires password authentication and a password is not available by other means such as a <filename>.pgpass</filename>file, the connection attempt will fail. This option can be useful in batch jobs and scripts where no user is present to enter a password."
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:383(option)
+msgid "-W"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:386(option)
+msgid "--password"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:389(para)
+msgid "Force <application>vacuumdb</application>to prompt for a password before connecting to a database."
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:392(para)
+msgid "This option is never essential, since <application>vacuumdb</application>will automatically prompt for a password if the server demands password authentication. However, <application>vacuumdb</application>will waste a connection attempt finding out that the server wants a password. In some cases it is worth typing <option>-W</option>to avoid the extra connection attempt."
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:405(option)
+msgid "--maintenance-db= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:410(para)
+msgid "Specifies the name of the database to connect to discover what other databases should be vacuumed. If not specified, the <literal>postgres</literal>database will be used, and if that does not exist, <literal>template1</literal>will be used."
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:310(para)
+msgid "<application>vacuumdb</application>also accepts the following command-line arguments for connection parameters: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:421(title)
+msgid "Environment"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:425(envar)
+msgid "PGDATABASE"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:428(envar)
+msgid "PGHOST"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:431(envar)
+msgid "PGPORT"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:434(envar)
+msgid "PGUSER"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:437(para)
+msgid "Default connection parameters"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:441(para)
+msgid "This utility, like most other <productname>PostgreSQL</productname>utilities, also uses the environment variables supported by <application>libpq</application>(see <xref linkend=\"libpq-envars\">).</xref>"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:448(title)
+msgid "Diagnostics"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:449(para)
+msgid "In case of difficulty, see <xref linkend=\"SQL-VACUUM\">and <xref linkend=\"APP-PSQL\">for discussions of potential problems and error messages. The database server must be running at the targeted host. Also, any default connection settings and environment variables used by the <application>libpq</application>front-end library will apply.</xref></xref>"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:459(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:460(para)
+msgid "<application>vacuumdb</application>might need to connect several times to the <productname>PostgreSQL</productname>server, asking for a password each time. It is convenient to have a <filename>~/.pgpass</filename>file in such cases. See <xref linkend=\"libpq-pgpass\">for more information.</xref>"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:470(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:471(para)
+msgid "To clean the database <literal>test</literal>: <screen>\n      <prompt>$</prompt>\n      <userinput>vacuumdb test</userinput>\n    </screen>"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:477(para)
+msgid "To clean and analyze for the optimizer a database named <literal>bigdb</literal>: <screen>\n      <prompt>$</prompt>\n      <userinput>vacuumdb --analyze bigdb</userinput>\n    </screen>"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:483(para)
+msgid "To clean a single table <literal>foo</literal>in a database named <literal>xyzzy</literal>, and analyze a single column <literal>bar</literal>of the table for the optimizer: <screen>\n      <prompt>$</prompt>\n      <userinput>vacuumdb --analyze --verbose --table 'foo(bar)'\n      xyzzy</userinput>\n    </screen>"
+msgstr ""
+
+#: xml/ref/vacuumdb.xml:494(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/vacuumdb.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

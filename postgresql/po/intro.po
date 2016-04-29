@@ -1,0 +1,128 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/intro.xml:3(title)
+msgid "Preface"
+msgstr ""
+
+#: xml/intro.xml:4(para)
+msgid "This book is the official documentation of <productname>PostgreSQL</productname>. It has been written by the <productname>PostgreSQL</productname>developers and other volunteers in parallel to the development of the <productname>PostgreSQL</productname>software. It describes all the functionality that the current version of <productname>PostgreSQL</productname>officially supports."
+msgstr ""
+
+#: xml/intro.xml:21(xref)
+msgid "is an informal introduction for new users."
+msgstr ""
+
+#: xml/intro.xml:28(acronym)
+msgid "SQL"
+msgstr ""
+
+#: xml/intro.xml:31(productname) xml/intro.xml:39(productname) xml/intro.xml:47(productname) xml/intro.xml:71(productname)
+msgid "PostgreSQL"
+msgstr ""
+
+#: xml/intro.xml:27(xref)
+msgid "documents the <placeholder-1/>query language environment, including data types and functions, as well as user-level performance tuning. Every <placeholder-2/>user should read this."
+msgstr ""
+
+#: xml/intro.xml:37(xref)
+msgid "describes the installation and administration of the server. Everyone who runs a <placeholder-1/>server, be it for private use or for others, should read this part."
+msgstr ""
+
+#: xml/intro.xml:45(xref)
+msgid "describes the programming interfaces for <placeholder-1/>client programs."
+msgstr ""
+
+#: xml/intro.xml:53(xref)
+msgid "contains information for advanced users about the extensibility capabilities of the server. Topics include user-defined data types and functions."
+msgstr ""
+
+#: xml/intro.xml:61(xref)
+msgid "contains reference information about SQL commands, client and server programs. This part supports the other parts with structured information sorted by command or program."
+msgstr ""
+
+#: xml/intro.xml:69(xref)
+msgid "contains assorted information that might be of use to <placeholder-1/>developers."
+msgstr ""
+
+#: xml/intro.xml:12(para)
+msgid "To make the large amount of information about <productname>PostgreSQL</productname>manageable, this book has been organized in several parts. Each part is targeted at a different class of users, or at users in different stages of their <productname>PostgreSQL</productname>experience: <placeholder-1/>"
+msgstr ""
+
+#: xml/intro.xml:76(title)
+msgid "What is <productname>PostgreSQL</productname>?"
+msgstr ""
+
+#: xml/intro.xml:78(para)
+msgid "<productname>PostgreSQL</productname>is an object-relational database management system ( <acronym>ORDBMS</acronym>) based on <ulink url=\"http://db.cs.berkeley.edu/postgres.html\"><productname>POSTGRES, Version 4.2</productname></ulink>, developed at the University of California at Berkeley Computer Science Department. POSTGRES pioneered many concepts that only became available in some commercial database systems much later."
+msgstr ""
+
+#: xml/intro.xml:94(simpara)
+msgid "complex queries"
+msgstr ""
+
+#: xml/intro.xml:97(simpara)
+msgid "foreign keys"
+msgstr ""
+
+#: xml/intro.xml:100(simpara)
+msgid "triggers"
+msgstr ""
+
+#: xml/intro.xml:103(simpara)
+msgid "updatable views"
+msgstr ""
+
+#: xml/intro.xml:106(simpara)
+msgid "transactional integrity"
+msgstr ""
+
+#: xml/intro.xml:109(simpara)
+msgid "multiversion concurrency control"
+msgstr ""
+
+#: xml/intro.xml:116(simpara)
+msgid "data types"
+msgstr ""
+
+#: xml/intro.xml:119(simpara)
+msgid "functions"
+msgstr ""
+
+#: xml/intro.xml:122(simpara)
+msgid "operators"
+msgstr ""
+
+#: xml/intro.xml:125(simpara)
+msgid "aggregate functions"
+msgstr ""
+
+#: xml/intro.xml:128(simpara)
+msgid "index methods"
+msgstr ""
+
+#: xml/intro.xml:131(simpara)
+msgid "procedural languages"
+msgstr ""
+
+#: xml/intro.xml:88(para)
+msgid "<productname>PostgreSQL</productname>is an open-source descendant of this original Berkeley code. It supports a large part of the SQL standard and offers many modern features: <placeholder-1/>Also, <productname>PostgreSQL</productname>can be extended by the user in many ways, for example by adding new <placeholder-2/>"
+msgstr ""
+
+#: xml/intro.xml:134(para)
+msgid "And because of the liberal license, <productname>PostgreSQL</productname>can be used, modified, and distributed by anyone free of charge for any purpose, be it private, commercial, or academic."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/intro.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

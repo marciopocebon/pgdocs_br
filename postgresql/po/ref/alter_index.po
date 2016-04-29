@@ -1,0 +1,196 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/alter_index.xml:4(primary) xml/ref/alter_index.xml:7(refentrytitle) xml/ref/alter_index.xml:12(refname)
+msgid "ALTER INDEX"
+msgstr ""
+
+#: xml/ref/alter_index.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/alter_index.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/alter_index.xml:13(refpurpose)
+msgid "change the definition of an index"
+msgstr ""
+
+#: xml/ref/alter_index.xml:17(replaceable) xml/ref/alter_index.xml:20(replaceable) xml/ref/alter_index.xml:24(replaceable) xml/ref/alter_index.xml:29(replaceable) xml/ref/alter_index.xml:33(replaceable) xml/ref/alter_index.xml:132(replaceable)
+msgid "name"
+msgstr ""
+
+#: xml/ref/alter_index.xml:18(replaceable) xml/ref/alter_index.xml:141(replaceable)
+msgid "new_name"
+msgstr ""
+
+#: xml/ref/alter_index.xml:22(replaceable) xml/ref/alter_index.xml:149(replaceable)
+msgid "tablespace_name"
+msgstr ""
+
+#: xml/ref/alter_index.xml:25(replaceable) xml/ref/alter_index.xml:30(replaceable) xml/ref/alter_index.xml:95(replaceable) xml/ref/alter_index.xml:114(replaceable) xml/ref/alter_index.xml:159(replaceable)
+msgid "storage_parameter"
+msgstr ""
+
+#: xml/ref/alter_index.xml:27(replaceable) xml/ref/alter_index.xml:97(replaceable) xml/ref/alter_index.xml:169(replaceable)
+msgid "value"
+msgstr ""
+
+#: xml/ref/alter_index.xml:34(replaceable)
+msgid "role_name"
+msgstr ""
+
+#: xml/ref/alter_index.xml:36(replaceable)
+msgid "new_tablespace"
+msgstr ""
+
+#: xml/ref/alter_index.xml:16(synopsis)
+#, no-wrap
+msgid "ALTER INDEX [ IF EXISTS ] \n    <placeholder-1/>RENAME TO \n    <placeholder-2/>ALTER\n    INDEX [ IF EXISTS ] \n    <placeholder-3/>SET TABLESPACE\n    \n    <placeholder-4/>ALTER INDEX [ IF EXISTS ] \n    <placeholder-5/>SET ( \n    <placeholder-6/>=\n    \n    <placeholder-7/>[, ... ] )\n    ALTER INDEX [ IF EXISTS ] \n    <placeholder-8/>RESET ( \n    <placeholder-9/>[, ... ] ) ALTER INDEX ALL IN\n    TABLESPACE \n    <placeholder-10/>[ OWNED BY \n    <placeholder-11/>[, ... ]\n    ] SET TABLESPACE \n    <placeholder-12/>[\n    NOWAIT ]"
+msgstr ""
+
+#: xml/ref/alter_index.xml:40(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/alter_index.xml:47(literal)
+msgid "IF EXISTS"
+msgstr ""
+
+#: xml/ref/alter_index.xml:50(para)
+msgid "Do not throw an error if the index does not exist. A notice is issued in this case."
+msgstr ""
+
+#: xml/ref/alter_index.xml:56(literal)
+msgid "RENAME"
+msgstr ""
+
+#: xml/ref/alter_index.xml:59(para)
+msgid "The <literal>RENAME</literal>form changes the name of the index. There is no effect on the stored data."
+msgstr ""
+
+#: xml/ref/alter_index.xml:66(literal)
+msgid "SET TABLESPACE"
+msgstr ""
+
+#: xml/ref/alter_index.xml:69(para)
+msgid "This form changes the index's tablespace to the specified tablespace and moves the data file(s) associated with the index to the new tablespace. To change the tablespace of an index, you must own the index and have <literal>CREATE</literal>privilege on the new tablespace. All indexes in the current database in a tablespace can be moved by using the <literal>ALL IN TABLESPACE</literal>form, which will lock all indexes to be moved and then move each one. This form also supports <literal>OWNED BY</literal>, which will only move indexes owned by the roles specified. If the <literal>NOWAIT</literal>option is specified then the command will fail if it is unable to acquire all of the locks required immediately. Note that system catalogs will not be moved by this command, use <command>ALTER DATABASE</command>or explicit <command>ALTER INDEX</command>invocations instead if desired. See also <xref linkend=\"SQL-CREATETABLESPACE\">.</xref>"
+msgstr ""
+
+#: xml/ref/alter_index.xml:94(literal)
+msgid "SET ( <placeholder-1/>= <placeholder-2/>[, ... ] )"
+msgstr ""
+
+#: xml/ref/alter_index.xml:101(para)
+msgid "This form changes one or more index-method-specific storage parameters for the index. See <xref linkend=\"SQL-CREATEINDEX\">for details on the available parameters. Note that the index contents will not be modified immediately by this command; depending on the parameter you might need to rebuild the index with <xref linkend=\"SQL-REINDEX\">to get the desired effects.</xref></xref>"
+msgstr ""
+
+#: xml/ref/alter_index.xml:113(literal)
+msgid "RESET ( <placeholder-1/>[, ... ] )"
+msgstr ""
+
+#: xml/ref/alter_index.xml:118(para)
+msgid "This form resets one or more index-method-specific storage parameters to their defaults. As with <literal>SET</literal>, a <literal>REINDEX</literal>might be needed to update the index entirely."
+msgstr ""
+
+#: xml/ref/alter_index.xml:41(para)
+msgid "<command>ALTER INDEX</command>changes the definition of an existing index. There are several subforms: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_index.xml:128(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/alter_index.xml:135(para)
+msgid "The name (possibly schema-qualified) of an existing index to alter."
+msgstr ""
+
+#: xml/ref/alter_index.xml:144(para)
+msgid "The new name for the index."
+msgstr ""
+
+#: xml/ref/alter_index.xml:153(para)
+msgid "The tablespace to which the index will be moved."
+msgstr ""
+
+#: xml/ref/alter_index.xml:163(para)
+msgid "The name of an index-method-specific storage parameter."
+msgstr ""
+
+#: xml/ref/alter_index.xml:172(para)
+msgid "The new value for an index-method-specific storage parameter. This might be a number or a word depending on the parameter."
+msgstr ""
+
+#: xml/ref/alter_index.xml:180(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/alter_index.xml:181(para)
+msgid "These operations are also possible using <xref linkend=\"SQL-ALTERTABLE\">. <command>ALTER INDEX</command>is in fact just an alias for the forms of <command>ALTER TABLE</command>that apply to indexes.</xref>"
+msgstr ""
+
+#: xml/ref/alter_index.xml:187(para)
+msgid "There was formerly an <command>ALTER INDEX OWNER</command>variant, but this is now ignored (with a warning). An index cannot have an owner different from its table's owner. Changing the table's owner automatically changes the index as well."
+msgstr ""
+
+#: xml/ref/alter_index.xml:192(para)
+msgid "Changing any part of a system catalog index is not permitted."
+msgstr ""
+
+#: xml/ref/alter_index.xml:196(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/alter_index.xml:198(programlisting)
+#, no-wrap
+msgid "ALTER INDEX distributors RENAME TO\n    suppliers;"
+msgstr ""
+
+#: xml/ref/alter_index.xml:197(para)
+msgid "To rename an existing index: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_index.xml:201(programlisting)
+#, no-wrap
+msgid "ALTER INDEX distributors SET TABLESPACE\n    fasttablespace;"
+msgstr ""
+
+#: xml/ref/alter_index.xml:200(para)
+msgid "To move an index to a different tablespace: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_index.xml:205(programlisting)
+#, no-wrap
+msgid "ALTER INDEX distributors SET (fillfactor = 75);\n    REINDEX INDEX distributors;"
+msgstr ""
+
+#: xml/ref/alter_index.xml:203(para)
+msgid "To change an index's fill factor (assuming that the index method supports it): <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_index.xml:209(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/alter_index.xml:210(para)
+msgid "<command>ALTER INDEX</command>is a <productname>PostgreSQL</productname>extension."
+msgstr ""
+
+#: xml/ref/alter_index.xml:215(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/alter_index.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

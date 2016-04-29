@@ -1,0 +1,829 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/hstore.xml:3(title) xml/hstore.xml:5(primary) xml/hstore.xml:88(type) xml/hstore.xml:103(type) xml/hstore.xml:119(type) xml/hstore.xml:121(type) xml/hstore.xml:124(type) xml/hstore.xml:135(type) xml/hstore.xml:140(type) xml/hstore.xml:150(type) xml/hstore.xml:155(type) xml/hstore.xml:165(type) xml/hstore.xml:170(type) xml/hstore.xml:182(type) xml/hstore.xml:184(type) xml/hstore.xml:196(type) xml/hstore.xml:198(type) xml/hstore.xml:210(type) xml/hstore.xml:225(type) xml/hstore.xml:240(type) xml/hstore.xml:242(type) xml/hstore.xml:257(type) xml/hstore.xml:261(type) xml/hstore.xml:268(type) xml/hstore.xml:271(type) xml/hstore.xml:283(type) xml/hstore.xml:286(type) xml/hstore.xml:326(primary) xml/hstore.xml:330(type) xml/hstore.xml:333(type) xml/hstore.xml:346(type) xml/hstore.xml:349(type) xml/hstore.xml:364(type) xml/hstore.xml:367(type) xml/hstore.xml:382(type) xml/hstore.xml:385(type) xml/hstore.xml:404(type) xml/hstore.xml:423(type) xml/hstore.xml:442(type) xml/hstore.xml:461(type) xml/hstore.xml:480(type) xml/hstore.xml:500(type) xml/hstore.xml:520(type) xml/hstore.xml:543(type) xml/hstore.xml:566(type) xml/hstore.xml:569(type) xml/hstore.xml:589(type) xml/hstore.xml:609(type) xml/hstore.xml:628(type) xml/hstore.xml:645(type) xml/hstore.xml:660(type) xml/hstore.xml:676(type) xml/hstore.xml:700(type)
+msgid "hstore"
+msgstr ""
+
+#: xml/hstore.xml:7(para)
+msgid "This module implements the <type>hstore</type>data type for storing sets of key/value pairs within a single <productname>PostgreSQL</productname>value. This can be useful in various scenarios, such as rows with many attributes that are rarely examined, or semi-structured data. Keys and values are simply text strings."
+msgstr ""
+
+#: xml/hstore.xml:15(title)
+msgid "<type>hstore</type>External Representation"
+msgstr ""
+
+#: xml/hstore.xml:17(para)
+msgid "The text representation of an <type>hstore</type>, used for input and output, includes zero or more <replaceable>key</replaceable><literal>=</literal><replaceable>value</replaceable>pairs separated by commas. Some examples: <synopsis>k = v foo = bar, baz = whatever \"1-a\" = \"anything at\n    all\"</synopsis>The order of the pairs is not significant (and may not be reproduced on output). Whitespace between pairs or around the <literal>=</literal>sign is ignored. Double-quote keys and values that include whitespace, commas, <literal>=</literal>s or <literal/>s. To include a double quote or a backslash in a key or value, escape it with a backslash."
+msgstr ""
+
+#: xml/hstore.xml:39(programlisting)
+#, no-wrap
+msgid "SELECT 'a=1,a=2'::hstore; hstore ----------\n    \"a\"=\"1\""
+msgstr ""
+
+#: xml/hstore.xml:33(para)
+msgid "Each key in an <type>hstore</type>is unique. If you declare an <type>hstore</type>with duplicate keys, only one will be stored in the <type>hstore</type>and there is no guarantee as to which will be kept: <placeholder-1/>"
+msgstr ""
+
+#: xml/hstore.xml:43(programlisting)
+#, no-wrap
+msgid "key = NULL"
+msgstr ""
+
+#: xml/hstore.xml:41(para)
+msgid "A value (but not a key) can be an SQL <literal>NULL</literal>. For example: <placeholder-1/>The <literal>NULL</literal>keyword is case-insensitive. Double-quote the <literal>NULL</literal>to treat it as the ordinary string <quote>NULL</quote>."
+msgstr ""
+
+#: xml/hstore.xml:49(para)
+msgid "Keep in mind that the <type>hstore</type>text format, when used for input, applies <emphasis>before</emphasis>any required quoting or escaping. If you are passing an <type>hstore</type>literal via a parameter, then no additional processing is needed. But if you're passing it as a quoted literal constant, then any single-quote characters and (depending on the setting of the <varname>standard_conforming_strings</varname>configuration parameter) backslash characters need to be escaped correctly. See <xref linkend=\"sql-syntax-strings\">for more on the handling of string constants.</xref>"
+msgstr ""
+
+#: xml/hstore.xml:63(para)
+msgid "On output, double quotes always surround keys and values, even when it's not strictly necessary."
+msgstr ""
+
+#: xml/hstore.xml:67(title)
+msgid "<type>hstore</type>Operators and Functions"
+msgstr ""
+
+#: xml/hstore.xml:69(para)
+msgid "The operators provided by the <literal>hstore</literal>module are shown in <xref linkend=\"hstore-op-table\">, the functions in <xref linkend=\"hstore-func-table\">.</xref></xref>"
+msgstr ""
+
+#: xml/hstore.xml:74(title)
+msgid "<type>hstore</type>Operators"
+msgstr ""
+
+#: xml/hstore.xml:79(entry)
+msgid "Operator"
+msgstr ""
+
+#: xml/hstore.xml:80(entry) xml/hstore.xml:316(entry)
+msgid "Description"
+msgstr ""
+
+#: xml/hstore.xml:81(entry) xml/hstore.xml:317(entry)
+msgid "Example"
+msgstr ""
+
+#: xml/hstore.xml:82(entry) xml/hstore.xml:318(entry)
+msgid "Result"
+msgstr ""
+
+#: xml/hstore.xml:89(literal) xml/hstore.xml:104(literal) xml/hstore.xml:211(literal) xml/hstore.xml:226(literal) xml/hstore.xml:241(literal)
+msgid "-"
+msgstr ""
+
+#: xml/hstore.xml:90(type) xml/hstore.xml:137(type) xml/hstore.xml:212(type)
+msgid "text"
+msgstr ""
+
+#: xml/hstore.xml:93(literal) xml/hstore.xml:108(literal) xml/hstore.xml:629(literal)
+msgid "NULL"
+msgstr ""
+
+#: xml/hstore.xml:92(entry)
+msgid "get value for key ( <placeholder-1/>if not present)"
+msgstr ""
+
+#: xml/hstore.xml:95(literal)
+msgid "'a=x, b=y'::hstore - 'a'"
+msgstr ""
+
+#: xml/hstore.xml:98(literal)
+msgid "x"
+msgstr ""
+
+#: xml/hstore.xml:105(type) xml/hstore.xml:152(type) xml/hstore.xml:167(type) xml/hstore.xml:227(type) xml/hstore.xml:401(type) xml/hstore.xml:439(type) xml/hstore.xml:477(type) xml/hstore.xml:497(type)
+msgid "text[]"
+msgstr ""
+
+#: xml/hstore.xml:107(entry)
+msgid "get values for keys ( <placeholder-1/>if not present)"
+msgstr ""
+
+#: xml/hstore.xml:110(literal)
+msgid "'a=x, b=y, c=z'::hstore - ARRAY['c','a']"
+msgstr ""
+
+#: xml/hstore.xml:114(literal)
+msgid "{\"z\",\"x\"}"
+msgstr ""
+
+#: xml/hstore.xml:120(literal)
+msgid "||"
+msgstr ""
+
+#: xml/hstore.xml:123(entry)
+msgid "concatenate <placeholder-1/>s"
+msgstr ""
+
+#: xml/hstore.xml:126(literal)
+msgid "'a=b, c=d'::hstore || 'c=x, d=q'::hstore"
+msgstr ""
+
+#: xml/hstore.xml:130(literal)
+msgid "\"a\"=\"b\", \"c\"=\"x\", \"d\"=\"q\""
+msgstr ""
+
+#: xml/hstore.xml:136(literal) xml/hstore.xml:151(literal)
+msgid "?"
+msgstr ""
+
+#: xml/hstore.xml:139(entry) xml/hstore.xml:608(entry)
+msgid "does <placeholder-1/>contain key?"
+msgstr ""
+
+#: xml/hstore.xml:142(literal)
+msgid "'a=1'::hstore ? 'a'"
+msgstr ""
+
+#: xml/hstore.xml:145(literal) xml/hstore.xml:160(literal) xml/hstore.xml:177(literal) xml/hstore.xml:191(literal) xml/hstore.xml:614(literal)
+msgid "t"
+msgstr ""
+
+#: xml/hstore.xml:154(entry)
+msgid "does <placeholder-1/>contain all specified keys?"
+msgstr ""
+
+#: xml/hstore.xml:157(literal)
+msgid "'a=1,b=2'::hstore ? ARRAY['a','b']"
+msgstr ""
+
+#: xml/hstore.xml:166(literal)
+msgid "?|"
+msgstr ""
+
+#: xml/hstore.xml:169(entry)
+msgid "does <placeholder-1/>contain any of the specified keys?"
+msgstr ""
+
+#: xml/hstore.xml:173(literal)
+msgid "'a=1,b=2'::hstore ?| ARRAY['b','c']"
+msgstr ""
+
+#: xml/hstore.xml:183(literal) xml/hstore.xml:197(literal)
+msgid "@"
+msgstr ""
+
+#: xml/hstore.xml:186(entry)
+msgid "does left operand contain right?"
+msgstr ""
+
+#: xml/hstore.xml:188(literal)
+msgid "'a=b, b=1, c=NULL'::hstore @ 'b=1'"
+msgstr ""
+
+#: xml/hstore.xml:200(entry)
+msgid "is left operand contained in right?"
+msgstr ""
+
+#: xml/hstore.xml:202(literal)
+msgid "'a=c'::hstore @ 'a=b, b=1, c=NULL'"
+msgstr ""
+
+#: xml/hstore.xml:205(literal) xml/hstore.xml:634(literal)
+msgid "f"
+msgstr ""
+
+#: xml/hstore.xml:214(entry)
+msgid "delete key from left operand"
+msgstr ""
+
+#: xml/hstore.xml:216(literal)
+msgid "'a=1, b=2, c=3'::hstore - 'b'::text"
+msgstr ""
+
+#: xml/hstore.xml:220(literal) xml/hstore.xml:250(literal)
+msgid "\"a\"=\"1\", \"c\"=\"3\""
+msgstr ""
+
+#: xml/hstore.xml:229(entry)
+msgid "delete keys from left operand"
+msgstr ""
+
+#: xml/hstore.xml:231(literal)
+msgid "'a=1, b=2, c=3'::hstore - ARRAY['a','b']"
+msgstr ""
+
+#: xml/hstore.xml:235(literal)
+msgid "\"c\"=\"3\""
+msgstr ""
+
+#: xml/hstore.xml:244(entry)
+msgid "delete matching pairs from left operand"
+msgstr ""
+
+#: xml/hstore.xml:246(literal)
+msgid "'a=1, b=2, c=3'::hstore - 'a=4, b=2'::hstore"
+msgstr ""
+
+#: xml/hstore.xml:255(type) xml/hstore.xml:260(type) xml/hstore.xml:696(type) xml/hstore.xml:699(type)
+msgid "record"
+msgstr ""
+
+#: xml/hstore.xml:256(literal)
+msgid "#="
+msgstr ""
+
+#: xml/hstore.xml:259(entry) xml/hstore.xml:698(entry)
+msgid "replace fields in <placeholder-1/>with matching values from <placeholder-2/>"
+msgstr ""
+
+#: xml/hstore.xml:262(entry) xml/hstore.xml:701(entry)
+msgid "see Examples section"
+msgstr ""
+
+#: xml/hstore.xml:267(literal)
+msgid "%%"
+msgstr ""
+
+#: xml/hstore.xml:270(entry)
+msgid "convert <placeholder-1/>to array of alternating keys and values"
+msgstr ""
+
+#: xml/hstore.xml:274(literal)
+msgid "%% 'a=foo, b=bar'::hstore"
+msgstr ""
+
+#: xml/hstore.xml:277(literal)
+msgid "{a,foo,b,bar}"
+msgstr ""
+
+#: xml/hstore.xml:282(literal)
+msgid "%#"
+msgstr ""
+
+#: xml/hstore.xml:285(entry)
+msgid "convert <placeholder-1/>to two-dimensional key/value array"
+msgstr ""
+
+#: xml/hstore.xml:289(literal)
+msgid "%# 'a=foo, b=bar'::hstore"
+msgstr ""
+
+#: xml/hstore.xml:292(literal)
+msgid "{{a,foo},{b,bar}}"
+msgstr ""
+
+#: xml/hstore.xml:299(para)
+msgid "Prior to PostgreSQL 8.2, the containment operators <literal>@</literal>and <literal>@</literal>were called <literal>@</literal>and <literal>~</literal>, respectively. These names are still available, but are deprecated and will eventually be removed. Notice that the old names are reversed from the convention formerly followed by the core geometric data types!"
+msgstr ""
+
+#: xml/hstore.xml:309(title)
+msgid "<type>hstore</type>Functions"
+msgstr ""
+
+#: xml/hstore.xml:314(entry)
+msgid "Function"
+msgstr ""
+
+#: xml/hstore.xml:315(entry)
+msgid "Return Type"
+msgstr ""
+
+#: xml/hstore.xml:324(function)
+msgid "hstore(record)"
+msgstr ""
+
+#: xml/hstore.xml:332(entry)
+msgid "construct an <placeholder-1/>from a record or row"
+msgstr ""
+
+#: xml/hstore.xml:335(literal)
+msgid "hstore(ROW(1,2))"
+msgstr ""
+
+#: xml/hstore.xml:338(literal)
+msgid "f1=1,f2=2"
+msgstr ""
+
+#: xml/hstore.xml:343(function)
+msgid "hstore(text[])"
+msgstr ""
+
+#: xml/hstore.xml:348(entry)
+msgid "construct an <placeholder-1/>from an array, which may be either a key/value array, or a two-dimensional array"
+msgstr ""
+
+#: xml/hstore.xml:352(literal)
+msgid "hstore(ARRAY['a','1','b','2']) || hstore(ARRAY[['c','3'],['d','4']])"
+msgstr ""
+
+#: xml/hstore.xml:356(literal)
+msgid "a=1, b=2, c=3, d=4"
+msgstr ""
+
+#: xml/hstore.xml:361(function)
+msgid "hstore(text[], text[])"
+msgstr ""
+
+#: xml/hstore.xml:366(entry)
+msgid "construct an <placeholder-1/>from separate key and value arrays"
+msgstr ""
+
+#: xml/hstore.xml:370(literal)
+msgid "hstore(ARRAY['a','b'], ARRAY['1','2'])"
+msgstr ""
+
+#: xml/hstore.xml:374(literal)
+msgid "\"a\"=\"1\",\"b\"=\"2\""
+msgstr ""
+
+#: xml/hstore.xml:379(function)
+msgid "hstore(text, text)"
+msgstr ""
+
+#: xml/hstore.xml:384(entry)
+msgid "make single-item <placeholder-1/>"
+msgstr ""
+
+#: xml/hstore.xml:387(literal)
+msgid "hstore('a', 'b')"
+msgstr ""
+
+#: xml/hstore.xml:390(literal)
+msgid "\"a\"=\"b\""
+msgstr ""
+
+#: xml/hstore.xml:395(function)
+msgid "akeys(hstore)"
+msgstr ""
+
+#: xml/hstore.xml:397(primary)
+msgid "akeys"
+msgstr ""
+
+#: xml/hstore.xml:403(entry)
+msgid "get <placeholder-1/>'s keys as an array"
+msgstr ""
+
+#: xml/hstore.xml:406(literal)
+msgid "akeys('a=1,b=2')"
+msgstr ""
+
+#: xml/hstore.xml:409(literal)
+msgid "{a,b}"
+msgstr ""
+
+#: xml/hstore.xml:414(function)
+msgid "skeys(hstore)"
+msgstr ""
+
+#: xml/hstore.xml:416(primary)
+msgid "skeys"
+msgstr ""
+
+#: xml/hstore.xml:420(type) xml/hstore.xml:458(type)
+msgid "setof text"
+msgstr ""
+
+#: xml/hstore.xml:422(entry)
+msgid "get <placeholder-1/>'s keys as a set"
+msgstr ""
+
+#: xml/hstore.xml:425(literal)
+msgid "skeys('a=1,b=2')"
+msgstr ""
+
+#: xml/hstore.xml:428(programlisting)
+#, no-wrap
+msgid "a b"
+msgstr ""
+
+#: xml/hstore.xml:433(function)
+msgid "avals(hstore)"
+msgstr ""
+
+#: xml/hstore.xml:435(primary)
+msgid "avals"
+msgstr ""
+
+#: xml/hstore.xml:441(entry)
+msgid "get <placeholder-1/>'s values as an array"
+msgstr ""
+
+#: xml/hstore.xml:444(literal)
+msgid "avals('a=1,b=2')"
+msgstr ""
+
+#: xml/hstore.xml:447(literal)
+msgid "{1,2}"
+msgstr ""
+
+#: xml/hstore.xml:452(function)
+msgid "svals(hstore)"
+msgstr ""
+
+#: xml/hstore.xml:454(primary)
+msgid "svals"
+msgstr ""
+
+#: xml/hstore.xml:460(entry)
+msgid "get <placeholder-1/>'s values as a set"
+msgstr ""
+
+#: xml/hstore.xml:463(literal)
+msgid "svals('a=1,b=2')"
+msgstr ""
+
+#: xml/hstore.xml:466(programlisting)
+#, no-wrap
+msgid "1 2"
+msgstr ""
+
+#: xml/hstore.xml:471(function)
+msgid "hstore_to_array(hstore)"
+msgstr ""
+
+#: xml/hstore.xml:473(primary)
+msgid "hstore_to_array"
+msgstr ""
+
+#: xml/hstore.xml:479(entry)
+msgid "get <placeholder-1/>'s keys and values as an array of alternating keys and values"
+msgstr ""
+
+#: xml/hstore.xml:483(literal)
+msgid "hstore_to_array('a=1,b=2')"
+msgstr ""
+
+#: xml/hstore.xml:486(literal)
+msgid "{a,1,b,2}"
+msgstr ""
+
+#: xml/hstore.xml:491(function)
+msgid "hstore_to_matrix(hstore)"
+msgstr ""
+
+#: xml/hstore.xml:493(primary)
+msgid "hstore_to_matrix"
+msgstr ""
+
+#: xml/hstore.xml:499(entry)
+msgid "get <placeholder-1/>'s keys and values as a two-dimensional array"
+msgstr ""
+
+#: xml/hstore.xml:503(literal)
+msgid "hstore_to_matrix('a=1,b=2')"
+msgstr ""
+
+#: xml/hstore.xml:506(literal)
+msgid "{{a,1},{b,2}}"
+msgstr ""
+
+#: xml/hstore.xml:511(function)
+msgid "hstore_to_json(hstore)"
+msgstr ""
+
+#: xml/hstore.xml:513(primary)
+msgid "hstore_to_json"
+msgstr ""
+
+#: xml/hstore.xml:517(type) xml/hstore.xml:521(type) xml/hstore.xml:540(type) xml/hstore.xml:544(type)
+msgid "json"
+msgstr ""
+
+#: xml/hstore.xml:519(entry)
+msgid "get <placeholder-1/>as a <placeholder-2/>value"
+msgstr ""
+
+#: xml/hstore.xml:523(literal)
+msgid "hstore_to_json('\"a key\"=1, b=t, c=null, d=12345, e=012345, f=1.234, g=2.345e+4')"
+msgstr ""
+
+#: xml/hstore.xml:527(literal)
+msgid "{\"a key\": \"1\", \"b\": \"t\", \"c\": null, \"d\": \"12345\", \"e\": \"012345\", \"f\": \"1.234\", \"g\": \"2.345e+4\"}"
+msgstr ""
+
+#: xml/hstore.xml:534(function)
+msgid "hstore_to_json_loose(hstore)"
+msgstr ""
+
+#: xml/hstore.xml:536(primary)
+msgid "hstore_to_json_loose"
+msgstr ""
+
+#: xml/hstore.xml:542(entry)
+msgid "get <placeholder-1/>as a <placeholder-2/>value, but attempt to distinguish numerical and Boolean values so they are unquoted in the JSON"
+msgstr ""
+
+#: xml/hstore.xml:548(literal)
+msgid "hstore_to_json_loose('\"a key\"=1, b=t, c=null, d=12345, e=012345, f=1.234, g=2.345e+4')"
+msgstr ""
+
+#: xml/hstore.xml:553(literal)
+msgid "{\"a key\": 1, \"b\": true, \"c\": null, \"d\": 12345, \"e\": \"012345\", \"f\": 1.234, \"g\": 2.345e+4}"
+msgstr ""
+
+#: xml/hstore.xml:560(function)
+msgid "slice(hstore, text[])"
+msgstr ""
+
+#: xml/hstore.xml:562(primary)
+msgid "slice"
+msgstr ""
+
+#: xml/hstore.xml:568(entry)
+msgid "extract a subset of an <placeholder-1/>"
+msgstr ""
+
+#: xml/hstore.xml:571(literal)
+msgid "slice('a=1,b=2,c=3'::hstore, ARRAY['b','c','x'])"
+msgstr ""
+
+#: xml/hstore.xml:575(literal)
+msgid "\"b\"=\"2\", \"c\"=\"3\""
+msgstr ""
+
+#: xml/hstore.xml:580(function)
+msgid "each(hstore)"
+msgstr ""
+
+#: xml/hstore.xml:582(primary)
+msgid "each"
+msgstr ""
+
+#: xml/hstore.xml:586(type)
+msgid "setof(key text, value text)"
+msgstr ""
+
+#: xml/hstore.xml:588(entry)
+msgid "get <placeholder-1/>'s keys and values as a set"
+msgstr ""
+
+#: xml/hstore.xml:591(literal)
+msgid "select * from each('a=1,b=2')"
+msgstr ""
+
+#: xml/hstore.xml:594(programlisting)
+#, no-wrap
+msgid "key | value -----+------- a | 1 b |\n              2"
+msgstr ""
+
+#: xml/hstore.xml:600(function)
+msgid "exist(hstore,text)"
+msgstr ""
+
+#: xml/hstore.xml:602(primary)
+msgid "exist"
+msgstr ""
+
+#: xml/hstore.xml:606(type) xml/hstore.xml:625(type)
+msgid "boolean"
+msgstr ""
+
+#: xml/hstore.xml:611(literal)
+msgid "exist('a=1','a')"
+msgstr ""
+
+#: xml/hstore.xml:619(function)
+msgid "defined(hstore,text)"
+msgstr ""
+
+#: xml/hstore.xml:621(primary)
+msgid "defined"
+msgstr ""
+
+#: xml/hstore.xml:627(entry)
+msgid "does <placeholder-1/>contain non- <placeholder-2/>value for key?"
+msgstr ""
+
+#: xml/hstore.xml:631(literal)
+msgid "defined('a=NULL','a')"
+msgstr ""
+
+#: xml/hstore.xml:639(function)
+msgid "delete(hstore,text)"
+msgstr ""
+
+#: xml/hstore.xml:641(primary)
+msgid "delete"
+msgstr ""
+
+#: xml/hstore.xml:647(entry)
+msgid "delete pair with matching key"
+msgstr ""
+
+#: xml/hstore.xml:649(literal)
+msgid "delete('a=1,b=2','b')"
+msgstr ""
+
+#: xml/hstore.xml:652(literal) xml/hstore.xml:685(literal)
+msgid "\"a\"=&gt;\"1\""
+msgstr ""
+
+#: xml/hstore.xml:657(function)
+msgid "delete(hstore,text[])"
+msgstr ""
+
+#: xml/hstore.xml:662(entry)
+msgid "delete pairs with matching keys"
+msgstr ""
+
+#: xml/hstore.xml:664(literal)
+msgid "delete('a=1,b=2,c=3',ARRAY['a','b'])"
+msgstr ""
+
+#: xml/hstore.xml:668(literal)
+msgid "\"c\"=&gt;\"3\""
+msgstr ""
+
+#: xml/hstore.xml:673(function)
+msgid "delete(hstore,hstore)"
+msgstr ""
+
+#: xml/hstore.xml:678(entry)
+msgid "delete pairs matching those in the second argument"
+msgstr ""
+
+#: xml/hstore.xml:681(literal)
+msgid "delete('a=1,b=2','a=4,b=2'::hstore)"
+msgstr ""
+
+#: xml/hstore.xml:690(function)
+msgid "populate_record(record,hstore)"
+msgstr ""
+
+#: xml/hstore.xml:692(primary)
+msgid "populate_record"
+msgstr ""
+
+#: xml/hstore.xml:708(para)
+msgid "The function <function>hstore_to_json</function>is used when an <type>hstore</type>value is cast to <type>json</type>."
+msgstr ""
+
+#: xml/hstore.xml:714(para)
+msgid "The function <function>populate_record</function>is actually declared with <type>anyelement</type>, not <type>record</type>, as its first argument, but it will reject non-record types with a run-time error."
+msgstr ""
+
+#: xml/hstore.xml:723(title)
+msgid "Indexes"
+msgstr ""
+
+#: xml/hstore.xml:724(para)
+msgid "<type>hstore</type>has GiST and GIN index support for the <literal>@</literal>, <literal>?</literal>, <literal>?</literal>and <literal>?|</literal>operators. For example:"
+msgstr ""
+
+#: xml/hstore.xml:730(programlisting)
+#, no-wrap
+msgid "CREATE INDEX hidx ON testhstore USING GIST (h);\n    CREATE INDEX hidx ON testhstore USING GIN (h);"
+msgstr ""
+
+#: xml/hstore.xml:732(para)
+msgid "<type>hstore</type>also supports <type>btree</type>or <type>hash</type>indexes for the <literal>=</literal>operator. This allows <type>hstore</type>columns to be declared <literal>UNIQUE</literal>, or to be used in <literal>GROUP BY</literal>, <literal>ORDER BY</literal>or <literal>DISTINCT</literal>expressions. The sort ordering for <type>hstore</type>values is not particularly useful, but these indexes may be useful for equivalence lookups. Create indexes for <literal>=</literal>comparisons as follows:"
+msgstr ""
+
+#: xml/hstore.xml:746(programlisting)
+#, no-wrap
+msgid "CREATE INDEX hidx ON testhstore USING BTREE\n    (h); CREATE INDEX hidx ON testhstore USING HASH\n    (h);"
+msgstr ""
+
+#: xml/hstore.xml:751(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/hstore.xml:753(programlisting)
+#, no-wrap
+msgid "UPDATE tab SET h = h || hstore('c',\n    '3');"
+msgstr ""
+
+#: xml/hstore.xml:752(para)
+msgid "Add a key, or update an existing key with a new value: <placeholder-1/>"
+msgstr ""
+
+#: xml/hstore.xml:756(programlisting)
+#, no-wrap
+msgid "UPDATE tab SET h = delete(h,\n    'k1');"
+msgstr ""
+
+#: xml/hstore.xml:755(para)
+msgid "Delete a key: <placeholder-1/>"
+msgstr ""
+
+#: xml/hstore.xml:761(programlisting)
+#, no-wrap
+msgid "CREATE TABLE test (col1 integer, col2 text,\n    col3 text); INSERT INTO test VALUES (123, 'foo', 'bar'); SELECT\n    hstore(t) FROM test AS t; hstore\n    --------------------------------------------- \"col1\"=\"123\",\n    \"col2\"=\"foo\", \"col3\"=\"bar\" (1 row)"
+msgstr ""
+
+#: xml/hstore.xml:758(para)
+msgid "Convert a <type>record</type>to an <type>hstore</type>: <placeholder-1/>"
+msgstr ""
+
+#: xml/hstore.xml:769(programlisting)
+#, no-wrap
+msgid "CREATE TABLE test (col1 integer, col2 text,\n    col3 text); SELECT * FROM populate_record(null::test,\n    '\"col1\"=\"456\", \"col2\"=\"zzz\"'); col1 | col2 | col3\n    ------+------+------ 456 | zzz | (1\n    row)"
+msgstr ""
+
+#: xml/hstore.xml:766(para)
+msgid "Convert an <type>hstore</type>to a predefined <type>record</type>type: <placeholder-1/>"
+msgstr ""
+
+#: xml/hstore.xml:776(programlisting)
+#, no-wrap
+msgid "CREATE TABLE test (col1 integer, col2 text,\n    col3 text); INSERT INTO test VALUES (123, 'foo', 'bar'); SELECT\n    (r).* FROM (SELECT t #= '\"col3\"=\"baz\"' AS r FROM test t) s;\n    col1 | col2 | col3 ------+------+------ 123 | foo | baz (1\n    row)"
+msgstr ""
+
+#: xml/hstore.xml:774(para)
+msgid "Modify an existing record using the values from an <type>hstore</type>: <placeholder-1/>"
+msgstr ""
+
+#: xml/hstore.xml:783(title)
+msgid "Statistics"
+msgstr ""
+
+#: xml/hstore.xml:784(para)
+msgid "The <type>hstore</type>type, because of its intrinsic liberality, could contain a lot of different keys. Checking for valid keys is the task of the application. The following examples demonstrate several techniques for checking keys and obtaining statistics."
+msgstr ""
+
+#: xml/hstore.xml:791(programlisting)
+#, no-wrap
+msgid "SELECT * FROM each('aaa=bq, b=NULL,\n    \"\"=1');"
+msgstr ""
+
+#: xml/hstore.xml:790(para)
+msgid "Simple example: <placeholder-1/>"
+msgstr ""
+
+#: xml/hstore.xml:794(programlisting)
+#, no-wrap
+msgid "SELECT (each(h)).key, (each(h)).value INTO stat\n    FROM testhstore;"
+msgstr ""
+
+#: xml/hstore.xml:793(para)
+msgid "Using a table: <placeholder-1/>"
+msgstr ""
+
+#: xml/hstore.xml:797(programlisting)
+#, no-wrap
+msgid "SELECT key, count(*) FROM (SELECT (each(h)).key\n    FROM testhstore) AS stat GROUP BY key ORDER BY count DESC, key;\n    key | count -----------+------- line | 883 query | 207 pos |\n    203 node | 202 space | 197 status | 195 public | 194 title |\n    190 org | 189 ..................."
+msgstr ""
+
+#: xml/hstore.xml:796(para)
+msgid "Online statistics: <placeholder-1/>"
+msgstr ""
+
+#: xml/hstore.xml:804(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/hstore.xml:805(para)
+msgid "As of PostgreSQL 9.0, <type>hstore</type>uses a different internal representation than previous versions. This presents no obstacle for dump/restore upgrades since the text representation (used in the dump) is unchanged."
+msgstr ""
+
+#: xml/hstore.xml:817(programlisting)
+#, no-wrap
+msgid "UPDATE tablename SET hstorecol = hstorecol ||\n    '';"
+msgstr ""
+
+#: xml/hstore.xml:810(para)
+msgid "In the event of a binary upgrade, upward compatibility is maintained by having the new code recognize old-format data. This will entail a slight performance penalty when processing data that has not yet been modified by the new code. It is possible to force an upgrade of all values in a table column by doing an <literal>UPDATE</literal>statement as follows: <placeholder-1/>"
+msgstr ""
+
+#: xml/hstore.xml:820(programlisting)
+#, no-wrap
+msgid "ALTER TABLE tablename ALTER hstorecol TYPE\n    hstore USING hstorecol || '';"
+msgstr ""
+
+#: xml/hstore.xml:819(para)
+msgid "Another way to do it is: <placeholder-1/>The <command>ALTER TABLE</command>method requires an exclusive lock on the table, but does not result in bloating the table with old row versions."
+msgstr ""
+
+#: xml/hstore.xml:827(title)
+msgid "Transforms"
+msgstr ""
+
+#: xml/hstore.xml:828(para)
+msgid "Additional extensions are available that implement transforms for the <type>hstore</type>type for the languages PL/Perl and PL/Python. The extensions for PL/Perl are called <literal>hstore_plperl</literal>and <literal>hstore_plperlu</literal>, for trusted and untrusted PL/Perl. If you install these transforms and specify them when creating a function, <type>hstore</type>values are mapped to Perl hashes. The extensions for PL/Python are called <literal>hstore_plpythonu</literal>, <literal>hstore_plpython2u</literal>, and <literal>hstore_plpython3u</literal>(see <xref linkend=\"plpython-python23\">for the PL/Python naming convention). If you use them, <type>hstore</type>values are mapped to Python dictionaries.</xref>"
+msgstr ""
+
+#: xml/hstore.xml:847(title)
+msgid "Authors"
+msgstr ""
+
+#: xml/hstore.xml:848(para)
+msgid "Oleg Bartunov <email>oleg@sai.msu.su</email>, Moscow, Moscow University, Russia"
+msgstr ""
+
+#: xml/hstore.xml:851(para)
+msgid "Teodor Sigaev <email>teodor@sigaev.ru</email>, Moscow, Delta-Soft Ltd., Russia"
+msgstr ""
+
+#: xml/hstore.xml:854(para)
+msgid "Additional enhancements by Andrew Gierth <email>andrew@tao11.riddles.org.uk</email>, United Kingdom"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/hstore.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

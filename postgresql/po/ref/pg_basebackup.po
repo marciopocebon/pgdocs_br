@@ -1,0 +1,580 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/pg_basebackup.xml:4(primary) xml/ref/pg_basebackup.xml:7(refentrytitle) xml/ref/pg_basebackup.xml:12(refname) xml/ref/pg_basebackup.xml:18(command)
+msgid "pg_basebackup"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:9(refmiscinfo)
+msgid "Application"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:14(productname)
+msgid "PostgreSQL"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:13(refpurpose)
+msgid "take a base backup of a <placeholder-1/>cluster"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:20(replaceable)
+msgid "option"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:25(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:26(para)
+msgid "<application>pg_basebackup</application>is used to take base backups of a running <productname>PostgreSQL</productname>database cluster. These are taken without affecting other clients to the database, and can be used both for point-in-time recovery (see <xref linkend=\"continuous-archiving\">) and as the starting point for a log shipping or streaming replication standby servers (see <xref linkend=\"warm-standby\">).</xref></xref>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:36(para)
+msgid "<application>pg_basebackup</application>makes a binary copy of the database cluster files, while making sure the system is put in and out of backup mode automatically. Backups are always taken of the entire database cluster; it is not possible to back up individual databases or database objects. For individual database backups, a tool such as <xref linkend=\"APP-PGDUMP\">must be used.</xref>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:44(para)
+msgid "The backup is made over a regular <productname>PostgreSQL</productname>connection, and uses the replication protocol. The connection must be made with a superuser or a user having <literal>REPLICATION</literal>permissions (see <xref linkend=\"role-attributes\">), and <filename>pg_hba.conf</filename>must explicitly permit the replication connection. The server must also be configured with <xref linkend=\"guc-max-wal-senders\">set high enough to leave at least one session available for the backup.</xref></xref>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:56(para)
+msgid "There can be multiple <command>pg_basebackup</command>s running at the same time, but it is better from a performance point of view to take only one backup, and copy the result."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:60(para)
+msgid "<application>pg_basebackup</application>can make a base backup from not only the master but also the standby. To take a backup from the standby, set up the standby so that it can accept replication connections (that is, set <varname>max_wal_senders</varname>and <xref linkend=\"guc-hot-standby\">, and configure <link linkend=\"auth-pg-hba-conf\">host-based authentication</link>). You will also need to enable <xref linkend=\"guc-full-page-writes\">on the master.</xref></xref>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:75(para)
+msgid "The backup history file is not created in the database cluster backed up."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:79(para)
+msgid "There is no guarantee that all WAL files required for the backup are archived at the end of backup. If you are planning to use the backup for an archive recovery and want to ensure that all required files are available at that moment, you need to include them into the backup by using <literal>-x</literal>option."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:87(para)
+msgid "If the standby is promoted to the master during online backup, the backup fails."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:91(para)
+msgid "All WAL records required for the backup must contain sufficient full-page writes, which requires you to enable <varname>full_page_writes</varname>on the master and not to use a tool like <application>pg_compresslog</application>as <varname>archive_command</varname>to remove full-page writes from WAL files."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:71(para)
+msgid "Note that there are some limitations in an online backup from the standby: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:102(title)
+msgid "Options"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:109(replaceable) xml/ref/pg_basebackup.xml:114(replaceable)
+msgid "directory"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:108(option)
+msgid "-D <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:113(option)
+msgid "--pgdata= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:118(para)
+msgid "Directory to write the output to. <application>pg_basebackup</application>will create the directory and any parent directories if necessary. The directory may already exist, but it is an error if the directory already exists and is not empty."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:123(para)
+msgid "When the backup is in tar mode, and the directory is specified as <literal>-</literal>(dash), the tar file will be written to <literal>stdout</literal>."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:128(para)
+msgid "This option is required."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:134(replaceable) xml/ref/pg_basebackup.xml:139(replaceable)
+msgid "format"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:133(option)
+msgid "-F <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:138(option)
+msgid "--format= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:149(literal)
+msgid "p"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:152(literal)
+msgid "plain"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:155(para)
+msgid "Write the output as plain files, with the same layout as the current data directory and tablespaces. When the cluster has no additional tablespaces, the whole database will be placed in the target directory. If the cluster contains additional tablespaces, the main data directory will be placed in the target directory, but all other tablespaces will be placed in the same absolute path as they have on the server."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:164(para)
+msgid "This is the default format."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:169(literal)
+msgid "t"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:172(literal)
+msgid "tar"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:175(para)
+msgid "Write the output as tar files in the target directory. The main data directory will be written to a file named <filename>base.tar</filename>, and all other tablespaces will be named after the tablespace OID."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:181(para)
+msgid "If the value <literal>-</literal>(dash) is specified as target directory, the tar contents will be written to standard output, suitable for piping to for example <productname>gzip</productname>. This is only possible if the cluster has no additional tablespaces."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:143(para)
+msgid "Selects the format for the output. <replaceable>format</replaceable>can be one of the following: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:197(replaceable) xml/ref/pg_basebackup.xml:202(replaceable)
+msgid "rate"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:196(option)
+msgid "-r <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:201(option)
+msgid "--max-rate= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:206(para)
+msgid "The maximum transfer rate of data transferred from the server. Values are in kilobytes per second. Use a suffix of <literal>M</literal>to indicate megabytes per second. A suffix of <literal>k</literal>is also accepted, and has no effect. Valid values are between 32 kilobytes per second and 1024 megabytes per second."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:214(para)
+msgid "The purpose is to limit the impact of <application>pg_basebackup</application>on the running server."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:217(para)
+msgid "This option always affects transfer of the data directory. Transfer of WAL files is only affected if the collection method is <literal>fetch</literal>."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:225(option)
+msgid "-R"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:228(option)
+msgid "--write-recovery-conf"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:231(para)
+msgid "Write a minimal <filename>recovery.conf</filename>in the output directory (or into the base archive file when using tar format) to ease setting up a standby server."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:240(replaceable) xml/ref/pg_basebackup.xml:246(replaceable)
+msgid "olddir"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:241(replaceable) xml/ref/pg_basebackup.xml:247(replaceable)
+msgid "newdir"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:239(option)
+msgid "-T <placeholder-1/>= <placeholder-2/>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:245(option)
+msgid "--tablespace-mapping= <placeholder-1/>= <placeholder-2/>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:251(para)
+msgid "Relocate the tablespace in directory <replaceable>olddir</replaceable>to <replaceable>newdir</replaceable>during the backup. To be effective, <replaceable>olddir</replaceable>must exactly match the path specification of the tablespace as it is currently defined. (But it is not an error if there is no tablespace in <replaceable>olddir</replaceable>contained in the backup.) Both <replaceable>olddir</replaceable>and <replaceable>newdir</replaceable>must be absolute paths. If a path happens to contain a <literal>=</literal>sign, escape it with a backslash. This option can be specified multiple times for multiple tablespaces. See examples below."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:267(para)
+msgid "If a tablespace is relocated in this way, the symbolic links inside the main data directory are updated to point to the new location. So the new data directory is ready to be used for a new server instance with all tablespaces in the updated locations."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:277(replaceable)
+msgid "xlogdir"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:276(option)
+msgid "--xlogdir= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:281(para)
+msgid "Specifies the location for the transaction log directory. <replaceable>xlogdir</replaceable>must be an absolute path. The transaction log directory can only be specified when the backup is in plain mode."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:290(option)
+msgid "-x"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:293(option)
+msgid "--xlog"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:296(para)
+msgid "Using this option is equivalent of using <literal>-X</literal>with method <literal>fetch</literal>."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:304(replaceable) xml/ref/pg_basebackup.xml:309(replaceable)
+msgid "method"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:303(option)
+msgid "-X <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:308(option)
+msgid "--xlog-method= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:313(para)
+msgid "Includes the required transaction log files (WAL files) in the backup. This will include all transaction logs generated during the backup. If this option is specified, it is possible to start a postmaster directly in the extracted directory without the need to consult the log archive, thus making this a completely standalone backup."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:325(literal)
+msgid "f"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:328(literal)
+msgid "fetch"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:331(para)
+msgid "The transaction log files are collected at the end of the backup. Therefore, it is necessary for the <xref linkend=\"guc-wal-keep-segments\">parameter to be set high enough that the log is not removed before the end of the backup. If the log has been rotated when it's time to transfer it, the backup will fail and be unusable.</xref>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:343(literal)
+msgid "s"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:346(literal)
+msgid "stream"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:349(para)
+msgid "Stream the transaction log while the backup is created. This will open a second connection to the server and start streaming the transaction log in parallel while running the backup. Therefore, it will use up two connections configured by the <xref linkend=\"guc-max-wal-senders\">parameter. As long as the client can keep up with transaction log received, using this mode requires no extra transaction logs to be saved on the master.</xref>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:320(para)
+msgid "The following methods for collecting the transaction logs are supported: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:366(option)
+msgid "-z"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:369(option)
+msgid "--gzip"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:372(para)
+msgid "Enables gzip compression of tar file output, with the default compression level. Compression is only available when using the tar format."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:380(replaceable) xml/ref/pg_basebackup.xml:385(replaceable)
+msgid "level"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:379(option)
+msgid "-Z <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:384(option)
+msgid "--compress= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:389(para)
+msgid "Enables gzip compression of tar file output, and specifies the compression level (1 through 9, 9 being best compression). Compression is only available when using the tar format."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:103(para)
+msgid "The following command-line options control the location and format of the output. <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:402(replaceable) xml/ref/pg_basebackup.xml:407(replaceable)
+msgid "fast|spread"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:401(option)
+msgid "-c <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:406(option)
+msgid "--checkpoint= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:411(para)
+msgid "Sets checkpoint mode to fast or spread (default) (see <xref linkend=\"backup-lowlevel-base-backup\"> ).</xref>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:420(replaceable) xml/ref/pg_basebackup.xml:425(replaceable)
+msgid "label"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:419(option)
+msgid "-l <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:424(option)
+msgid "--label= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:429(para)
+msgid "Sets the label for the backup. If none is specified, a default value of <quote><literal>pg_basebackup base backup</literal></quote>will be used."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:438(option)
+msgid "-P"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:441(option)
+msgid "--progress"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:444(para)
+msgid "Enables progress reporting. Turning this on will deliver an approximate progress report during the backup. Since the database may change during the backup, this is only an approximation and may not end at exactly <literal>100%</literal>. In particular, when WAL log is included in the backup, the total amount of data cannot be estimated in advance, and in this case the estimated target size will increase once it passes the total estimate without WAL."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:453(para)
+msgid "When this is enabled, the backup will start by enumerating the size of the entire database, and then go back and send the actual contents. This may make the backup take slightly longer, and in particular it will take longer before the first data is sent."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:462(option)
+msgid "-v"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:465(option)
+msgid "--verbose"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:468(para)
+msgid "Enables verbose mode. Will output some extra steps during startup and shutdown, as well as show the exact file name that is currently being processed if progress reporting is also enabled."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:396(para)
+msgid "The following command-line options control the generation of the backup and the running of the program. <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:481(replaceable) xml/ref/pg_basebackup.xml:486(replaceable)
+msgid "connstr"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:480(option)
+msgid "-d <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:485(option)
+msgid "--dbname= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:490(para)
+msgid "Specifies parameters used to connect to the server, as a connection string. See <xref linkend=\"libpq-connstring\">for more information.</xref>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:494(para)
+msgid "The option is called <literal>--dbname</literal>for consistency with other client applications, but because <application>pg_basebackup</application>doesn't connect to any particular database in the cluster, database name in the connection string will be ignored."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:505(replaceable) xml/ref/pg_basebackup.xml:510(replaceable)
+msgid "host"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:504(option)
+msgid "-h <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:509(option)
+msgid "--host= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:514(para)
+msgid "Specifies the host name of the machine on which the server is running. If the value begins with a slash, it is used as the directory for the Unix domain socket. The default is taken from the <envar>PGHOST</envar>environment variable, if set, else a Unix domain socket connection is attempted."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:525(replaceable) xml/ref/pg_basebackup.xml:530(replaceable)
+msgid "port"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:524(option)
+msgid "-p <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:529(option)
+msgid "--port= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:534(para)
+msgid "Specifies the TCP port or local Unix domain socket file extension on which the server is listening for connections. Defaults to the <envar>PGPORT</envar>environment variable, if set, or a compiled-in default."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:544(replaceable) xml/ref/pg_basebackup.xml:549(replaceable)
+msgid "interval"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:543(option)
+msgid "-s <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:548(option)
+msgid "--status-interval= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:553(para)
+msgid "Specifies the number of seconds between status packets sent back to the server. This allows for easier monitoring of the progress from server. A value of zero disables the periodic status updates completely, although an update will still be sent when requested by the server, to avoid timeout disconnect. The default value is 10 seconds."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:565(replaceable) xml/ref/pg_basebackup.xml:569(replaceable)
+msgid "username"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:564(option)
+msgid "-U <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:568(option)
+msgid "--username= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:573(para)
+msgid "User name to connect as."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:578(option)
+msgid "-w"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:581(option)
+msgid "--no-password"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:584(para)
+msgid "Never issue a password prompt. If the server requires password authentication and a password is not available by other means such as a <filename>.pgpass</filename>file, the connection attempt will fail. This option can be useful in batch jobs and scripts where no user is present to enter a password."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:595(option)
+msgid "-W"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:598(option)
+msgid "--password"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:601(para)
+msgid "Force <application>pg_basebackup</application>to prompt for a password before connecting to a database."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:604(para)
+msgid "This option is never essential, since <application>pg_basebackup</application>will automatically prompt for a password if the server demands password authentication. However, <application>pg_basebackup</application>will waste a connection attempt finding out that the server wants a password. In some cases it is worth typing <option>-W</option>to avoid the extra connection attempt."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:475(para)
+msgid "The following command-line options control the database connection parameters. <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:620(option)
+msgid "-V"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:623(option)
+msgid "--version"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:626(para)
+msgid "Print the <application>pg_basebackup</application>version and exit."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:633(option)
+msgid "-?"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:636(option)
+msgid "--help"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:639(para)
+msgid "Show help about <application>pg_basebackup</application>command line arguments, and exit."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:616(para)
+msgid "Other options are also available: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:647(title)
+msgid "Environment"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:648(para)
+msgid "This utility, like most other <productname>PostgreSQL</productname>utilities, uses the environment variables supported by <application>libpq</application>(see <xref linkend=\"libpq-envars\">).</xref>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:655(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:656(para)
+msgid "The backup will include all files in the data directory and tablespaces, including the configuration files and any additional files placed in the directory by third parties. But only regular files and directories are copied. Symbolic links (other than those used for tablespaces) and special device files are skipped. (See <xref linkend=\"protocol-replication\">for the precise details.)</xref>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:664(para)
+msgid "Tablespaces will in plain format by default be backed up to the same path they have on the server, unless the option <literal>--tablespace-mapping</literal>is used. Without this option, running a plain format base backup on the same host as the server will not work if tablespaces are in use, because the backup would have to be written to the same directory locations as the original tablespaces."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:671(para)
+msgid "When tar format mode is used, it is the user's responsibility to unpack each tar file before starting the PostgreSQL server. If there are additional tablespaces, the tar files for them need to be unpacked in the correct locations. In this case the symbolic links for those tablespaces will be created by the server according to the contents of the <filename>tablespace_map</filename>file that is included in the <filename>base.tar</filename>file."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:680(para)
+msgid "<application>pg_basebackup</application>works with servers of the same or an older major version, down to 9.1. However, WAL streaming mode ( <literal>-X stream</literal>) only works with server version 9.3 and later, and tar format mode ( <literal>--format=tar</literal>) of the current version only works with server version 9.5 or later."
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:690(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:691(para)
+msgid "To create a base backup of the server at <literal>mydbserver</literal>and store it in the local directory <filename>/usr/local/pgsql/data</filename>: <screen>\n      <prompt>$</prompt>\n      <userinput>pg_basebackup -h mydbserver -D\n      /usr/local/pgsql/data</userinput>\n    </screen>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:700(para)
+msgid "To create a backup of the local server with one compressed tar file for each tablespace, and store it in the directory <filename>backup</filename>, showing a progress report while running: <screen>\n      <prompt>$</prompt>\n      <userinput>pg_basebackup -D backup -Ft -z -P</userinput>\n    </screen>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:709(para)
+msgid "To create a backup of a single-tablespace local database and compress this with <productname>bzip2</productname>: <screen>\n      <prompt>$</prompt>\n      <userinput>pg_basebackup -D - -Ft | bzip2\n      backup.tar.bz2</userinput>\n    </screen>(This command will fail if there are multiple tablespaces in the database.)"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:718(para)
+msgid "To create a backup of a local database where the tablespace in <filename>/opt/ts</filename>is relocated to <filename>./backup/ts</filename>: <screen>\n      <prompt>$</prompt>\n      <userinput>pg_basebackup -D backup/data -T\n      /opt/ts=$(pwd)/backup/ts</userinput>\n    </screen>"
+msgstr ""
+
+#: xml/ref/pg_basebackup.xml:729(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/pg_basebackup.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

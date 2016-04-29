@@ -1,0 +1,156 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:03+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/release-8.1.xml:3(title)
+msgid "Release 8.1.23"
+msgstr ""
+
+#: xml/release-8.1.xml:5(title)
+msgid "Release Date"
+msgstr ""
+
+#: xml/release-8.1.xml:6(simpara)
+msgid "2010-12-16"
+msgstr ""
+
+#: xml/release-8.1.xml:8(para)
+msgid "This release contains a variety of fixes from 8.1.22. For information about new features in the 8.1 major release, see <xref linkend=\"release-8-1\">.</xref>"
+msgstr ""
+
+#: xml/release-8.1.xml:11(para)
+msgid "This is expected to be the last <productname>PostgreSQL</productname>release in the 8.1.X series. Users are encouraged to update to a newer release branch soon."
+msgstr ""
+
+#: xml/release-8.1.xml:16(title)
+msgid "Migration to Version 8.1.23"
+msgstr ""
+
+#: xml/release-8.1.xml:17(para)
+msgid "A dump/restore is not required for those running 8.1.X. However, if you are upgrading from a version earlier than 8.1.18, see <xref linkend=\"release-8-1-18\">.</xref>"
+msgstr ""
+
+#: xml/release-8.1.xml:23(title)
+msgid "Changes"
+msgstr ""
+
+#: xml/release-8.1.xml:26(para)
+msgid "Force the default <link linkend=\"guc-wal-sync-method\"><varname>wal_sync_method</varname></link>to be <literal>fdatasync</literal>on Linux (Tom Lane, Marti Raudsepp)"
+msgstr ""
+
+#: xml/release-8.1.xml:32(para)
+msgid "The default on Linux has actually been <literal>fdatasync</literal>for many years, but recent kernel changes caused <productname>PostgreSQL</productname>to choose <literal>open_datasync</literal>instead. This choice did not result in any performance improvement, and caused outright failures on certain filesystems, notably <literal>ext4</literal>with the <literal>data=journal</literal>mount option."
+msgstr ""
+
+#: xml/release-8.1.xml:43(para)
+msgid "Fix recovery from base backup when the starting checkpoint WAL record is not in the same WAL segment as its redo point (Jeff Davis)"
+msgstr ""
+
+#: xml/release-8.1.xml:48(para)
+msgid "Add support for detecting register-stack overrun on <literal>IA64</literal>(Tom Lane)"
+msgstr ""
+
+#: xml/release-8.1.xml:50(para)
+msgid "The <literal>IA64</literal>architecture has two hardware stacks. Full prevention of stack-overrun failures requires checking both."
+msgstr ""
+
+#: xml/release-8.1.xml:56(para)
+msgid "Add a check for stack overflow in <function>copyObject()</function>(Tom Lane)"
+msgstr ""
+
+#: xml/release-8.1.xml:58(para)
+msgid "Certain code paths could crash due to stack overflow given a sufficiently complex query."
+msgstr ""
+
+#: xml/release-8.1.xml:62(para)
+msgid "Fix detection of page splits in temporary GiST indexes (Heikki Linnakangas)"
+msgstr ""
+
+#: xml/release-8.1.xml:64(para)
+msgid "It is possible to have a <quote>concurrent</quote>page split in a temporary index, if for example there is an open cursor scanning the index when an insertion is done. GiST failed to detect this case and hence could deliver wrong results when execution of the cursor continued."
+msgstr ""
+
+#: xml/release-8.1.xml:72(para)
+msgid "Avoid memory leakage while <command>ANALYZE</command>'ing complex index expressions (Tom Lane)"
+msgstr ""
+
+#: xml/release-8.1.xml:77(para)
+msgid "Ensure an index that uses a whole-row Var still depends on its table (Tom Lane)"
+msgstr ""
+
+#: xml/release-8.1.xml:79(para)
+msgid "An index declared like <literal>create index i on t (foo(t.*))</literal>would not automatically get dropped when its table was dropped."
+msgstr ""
+
+#: xml/release-8.1.xml:85(para)
+msgid "Do not <quote>inline</quote>a SQL function with multiple <literal>OUT</literal>parameters (Tom Lane)"
+msgstr ""
+
+#: xml/release-8.1.xml:88(para)
+msgid "This avoids a possible crash due to loss of information about the expected result rowtype."
+msgstr ""
+
+#: xml/release-8.1.xml:92(para)
+msgid "Fix constant-folding of <literal>COALESCE()</literal>expressions (Tom Lane)"
+msgstr ""
+
+#: xml/release-8.1.xml:94(para)
+msgid "The planner would sometimes attempt to evaluate sub-expressions that in fact could never be reached, possibly leading to unexpected errors."
+msgstr ""
+
+#: xml/release-8.1.xml:99(para)
+msgid "Add print functionality for <structname>InhRelation</structname>nodes (Tom Lane)"
+msgstr ""
+
+#: xml/release-8.1.xml:101(para)
+msgid "This avoids a failure when <varname>debug_print_parse</varname>is enabled and certain types of query are executed."
+msgstr ""
+
+#: xml/release-8.1.xml:106(para)
+msgid "Fix incorrect calculation of distance from a point to a horizontal line segment (Tom Lane)"
+msgstr ""
+
+#: xml/release-8.1.xml:108(para)
+msgid "This bug affected several different geometric distance-measurement operators."
+msgstr ""
+
+#: xml/release-8.1.xml:112(para)
+msgid "Fix <application>PL/pgSQL</application>'s handling of <quote>simple</quote>expressions to not fail in recursion or error-recovery cases (Tom Lane)"
+msgstr ""
+
+#: xml/release-8.1.xml:118(para)
+msgid "Fix bug in <filename>contrib/cube</filename>'s GiST picksplit algorithm (Alexander Korotkov)"
+msgstr ""
+
+#: xml/release-8.1.xml:121(para)
+msgid "This could result in considerable inefficiency, though not actually incorrect answers, in a GiST index on a <type>cube</type>column. If you have such an index, consider <command>REINDEX</command>ing it after installing this update."
+msgstr ""
+
+#: xml/release-8.1.xml:130(para)
+msgid "Don't emit <quote>identifier will be truncated</quote>notices in <filename>contrib/dblink</filename>except when creating new connections (Itagaki Takahiro)"
+msgstr ""
+
+#: xml/release-8.1.xml:136(para)
+msgid "Fix potential coredump on missing public key in <filename>contrib/pgcrypto</filename>(Marti Raudsepp)"
+msgstr ""
+
+#: xml/release-8.1.xml:141(para)
+msgid "Fix memory leak in <filename>contrib/xml2</filename>'s XPath query functions (Tom Lane)"
+msgstr ""
+
+#: xml/release-8.1.xml:146(para)
+msgid "Update time zone data files to <application>tzdata</application>release 2010o for DST law changes in Fiji and Samoa; also historical corrections for Hong Kong."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/release-8.1.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

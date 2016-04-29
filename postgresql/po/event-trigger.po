@@ -1,0 +1,615 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/event-trigger.xml:3(title)
+msgid "Event Triggers"
+msgstr ""
+
+#: xml/event-trigger.xml:5(primary) xml/event-trigger.xml:1750(primary)
+msgid "event trigger"
+msgstr ""
+
+#: xml/event-trigger.xml:7(para)
+msgid "To supplement the trigger mechanism discussed in <xref linkend=\"triggers\">, <productname>PostgreSQL</productname>also provides event triggers. Unlike regular triggers, which are attached to a single table and capture only DML events, event triggers are global to a particular database and are capable of capturing DDL events.</xref>"
+msgstr ""
+
+#: xml/event-trigger.xml:14(para)
+msgid "Like regular triggers, event triggers can be written in any procedural language that includes event trigger support, or in C, but not in plain SQL."
+msgstr ""
+
+#: xml/event-trigger.xml:18(title)
+msgid "Overview of Event Trigger Behavior"
+msgstr ""
+
+#: xml/event-trigger.xml:19(para)
+msgid "An event trigger fires whenever the event with which it is associated occurs in the database in which it is defined. Currently, the only supported events are <literal>ddl_command_start</literal>, <literal>ddl_command_end</literal>, <literal>table_rewrite</literal>and <literal>sql_drop</literal>. Support for additional events may be added in future releases."
+msgstr ""
+
+#: xml/event-trigger.xml:27(para)
+msgid "The <literal>ddl_command_start</literal>event occurs just before the execution of a <literal>CREATE</literal>, <literal>ALTER</literal>, <literal>DROP</literal>, <literal>SECURITY LABEL</literal>, <literal>COMMENT</literal>, <literal>GRANT</literal>or <literal>REVOKE</literal>command. No check whether the affected object exists or doesn't exist is performed before the event trigger fires. As an exception, however, this event does not occur for DDL commands targeting shared objects databases, roles, and tablespaces or for commands targeting event triggers themselves. The event trigger mechanism does not support these object types. <literal>ddl_command_start</literal>also occurs just before the execution of a <literal>SELECT INTO</literal>command, since this is equivalent to <literal>CREATE TABLE AS</literal>."
+msgstr ""
+
+#: xml/event-trigger.xml:48(para)
+msgid "The <literal>ddl_command_end</literal>event occurs just after the execution of this same set of commands. To obtain more details on the <acronym>DDL</acronym>operations that took place, use the set-returning function <literal>pg_event_trigger_ddl_commands()</literal>from the <literal>ddl_command_end</literal>event trigger code (see <xref linkend=\"functions-event-triggers\">). Note that the trigger fires after the actions have taken place (but before the transaction commits), and thus the system catalogs can be read as already changed.</xref>"
+msgstr ""
+
+#: xml/event-trigger.xml:60(para)
+msgid "The <literal>sql_drop</literal>event occurs just before the <literal>ddl_command_end</literal>event trigger for any operation that drops database objects. To list the objects that have been dropped, use the set-returning function <literal>pg_event_trigger_dropped_objects()</literal>from the <literal>sql_drop</literal>event trigger code (see <xref linkend=\"functions-event-triggers\">). Note that the trigger is executed after the objects have been deleted from the system catalogs, so it's not possible to look them up anymore.</xref>"
+msgstr ""
+
+#: xml/event-trigger.xml:71(para)
+msgid "The <literal>table_rewrite</literal>event occurs just before a table is rewritten by some actions of the commands <literal>ALTER TABLE</literal>and <literal>ALTER TYPE</literal>. While other control statements are available to rewrite a table, like <literal>CLUSTER</literal>and <literal>VACUUM</literal>, the <literal>table_rewrite</literal>event is not triggered by them."
+msgstr ""
+
+#: xml/event-trigger.xml:81(para)
+msgid "Event triggers (like other functions) cannot be executed in an aborted transaction. Thus, if a DDL command fails with an error, any associated <literal>ddl_command_end</literal>triggers will not be executed. Conversely, if a <literal>ddl_command_start</literal>trigger fails with an error, no further event triggers will fire, and no attempt will be made to execute the command itself. Similarly, if a <literal>ddl_command_end</literal>trigger fails with an error, the effects of the DDL statement will be rolled back, just as they would be in any other case where the containing transaction aborts."
+msgstr ""
+
+#: xml/event-trigger.xml:93(para)
+msgid "For a complete list of commands supported by the event trigger mechanism, see <xref linkend=\"event-trigger-matrix\">.</xref>"
+msgstr ""
+
+#: xml/event-trigger.xml:96(para)
+msgid "Event triggers are created using the command <xref linkend=\"sql-createeventtrigger\">. In order to create an event trigger, you must first create a function with the special return type <literal>event_trigger</literal>. This function need not (and may not) return a value; the return type serves merely as a signal that the function is to be invoked as an event trigger.</xref>"
+msgstr ""
+
+#: xml/event-trigger.xml:104(para)
+msgid "If more than one event trigger is defined for a particular event, they will fire in alphabetical order by trigger name."
+msgstr ""
+
+#: xml/event-trigger.xml:107(para)
+msgid "A trigger definition can also specify a <literal>WHEN</literal>condition so that, for example, a <literal>ddl_command_start</literal>trigger can be fired only for particular commands which the user wishes to intercept. A common use of such triggers is to restrict the range of DDL operations which users may perform."
+msgstr ""
+
+#: xml/event-trigger.xml:115(title)
+msgid "Event Trigger Firing Matrix"
+msgstr ""
+
+#: xml/event-trigger.xml:117(xref)
+msgid "lists all commands for which event triggers are supported."
+msgstr ""
+
+#: xml/event-trigger.xml:121(title)
+msgid "Event Trigger Support by Command Tag"
+msgstr ""
+
+#: xml/event-trigger.xml:125(entry)
+msgid "Command Tag"
+msgstr ""
+
+#: xml/event-trigger.xml:127(literal)
+msgid "ddl_command_start"
+msgstr ""
+
+#: xml/event-trigger.xml:130(literal)
+msgid "ddl_command_end"
+msgstr ""
+
+#: xml/event-trigger.xml:133(literal)
+msgid "sql_drop"
+msgstr ""
+
+#: xml/event-trigger.xml:136(literal)
+msgid "table_rewrite"
+msgstr ""
+
+#: xml/event-trigger.xml:138(entry)
+msgid "Notes"
+msgstr ""
+
+#: xml/event-trigger.xml:144(literal)
+msgid "ALTER AGGREGATE"
+msgstr ""
+
+#: xml/event-trigger.xml:147(literal) xml/event-trigger.xml:150(literal) xml/event-trigger.xml:165(literal) xml/event-trigger.xml:168(literal) xml/event-trigger.xml:183(literal) xml/event-trigger.xml:186(literal) xml/event-trigger.xml:201(literal) xml/event-trigger.xml:204(literal) xml/event-trigger.xml:219(literal) xml/event-trigger.xml:222(literal) xml/event-trigger.xml:237(literal) xml/event-trigger.xml:240(literal) xml/event-trigger.xml:255(literal) xml/event-trigger.xml:258(literal) xml/event-trigger.xml:261(literal) xml/event-trigger.xml:273(literal) xml/event-trigger.xml:276(literal) xml/event-trigger.xml:291(literal) xml/event-trigger.xml:294(literal) xml/event-trigger.xml:309(literal) xml/event-trigger.xml:312(literal) xml/event-trigger.xml:327(literal) xml/event-trigger.xml:330(literal) xml/event-trigger.xml:345(literal) xml/event-trigger.xml:348(literal) xml/event-trigger.xml:363(literal) xml/event-trigger.xml:366(literal) xml/event-trigger.xml:381(literal) xml/event-trigger.xml:384(literal) xml/event-trigger.xml:399(literal) xml/event-trigger.xml:402(literal) xml/event-trigger.xml:417(literal) xml/event-trigger.xml:420(literal) xml/event-trigger.xml:435(literal) xml/event-trigger.xml:438(literal) xml/event-trigger.xml:441(literal) xml/event-trigger.xml:444(literal) xml/event-trigger.xml:453(literal) xml/event-trigger.xml:456(literal) xml/event-trigger.xml:471(literal) xml/event-trigger.xml:474(literal) xml/event-trigger.xml:489(literal) xml/event-trigger.xml:492(literal) xml/event-trigger.xml:507(literal) xml/event-trigger.xml:510(literal) xml/event-trigger.xml:525(literal) xml/event-trigger.xml:528(literal) xml/event-trigger.xml:543(literal) xml/event-trigger.xml:546(literal) xml/event-trigger.xml:552(literal) xml/event-trigger.xml:561(literal) xml/event-trigger.xml:564(literal) xml/event-trigger.xml:579(literal) xml/event-trigger.xml:582(literal) xml/event-trigger.xml:597(literal) xml/event-trigger.xml:600(literal) xml/event-trigger.xml:615(literal) xml/event-trigger.xml:618(literal) xml/event-trigger.xml:633(literal) xml/event-trigger.xml:636(literal) xml/event-trigger.xml:651(literal) xml/event-trigger.xml:654(literal) xml/event-trigger.xml:669(literal) xml/event-trigger.xml:672(literal) xml/event-trigger.xml:687(literal) xml/event-trigger.xml:690(literal) xml/event-trigger.xml:705(literal) xml/event-trigger.xml:708(literal) xml/event-trigger.xml:723(literal) xml/event-trigger.xml:726(literal) xml/event-trigger.xml:741(literal) xml/event-trigger.xml:744(literal) xml/event-trigger.xml:759(literal) xml/event-trigger.xml:762(literal) xml/event-trigger.xml:777(literal) xml/event-trigger.xml:780(literal) xml/event-trigger.xml:795(literal) xml/event-trigger.xml:798(literal) xml/event-trigger.xml:813(literal) xml/event-trigger.xml:816(literal) xml/event-trigger.xml:831(literal) xml/event-trigger.xml:834(literal) xml/event-trigger.xml:849(literal) xml/event-trigger.xml:852(literal) xml/event-trigger.xml:867(literal) xml/event-trigger.xml:870(literal) xml/event-trigger.xml:885(literal) xml/event-trigger.xml:888(literal) xml/event-trigger.xml:903(literal) xml/event-trigger.xml:906(literal) xml/event-trigger.xml:921(literal) xml/event-trigger.xml:924(literal) xml/event-trigger.xml:939(literal) xml/event-trigger.xml:942(literal) xml/event-trigger.xml:957(literal) xml/event-trigger.xml:960(literal) xml/event-trigger.xml:975(literal) xml/event-trigger.xml:978(literal) xml/event-trigger.xml:993(literal) xml/event-trigger.xml:996(literal) xml/event-trigger.xml:1011(literal) xml/event-trigger.xml:1014(literal) xml/event-trigger.xml:1029(literal) xml/event-trigger.xml:1032(literal) xml/event-trigger.xml:1047(literal) xml/event-trigger.xml:1050(literal) xml/event-trigger.xml:1065(literal) xml/event-trigger.xml:1068(literal) xml/event-trigger.xml:1083(literal) xml/event-trigger.xml:1086(literal) xml/event-trigger.xml:1100(literal) xml/event-trigger.xml:1103(literal) xml/event-trigger.xml:1118(literal) xml/event-trigger.xml:1121(literal) xml/event-trigger.xml:1136(literal) xml/event-trigger.xml:1139(literal) xml/event-trigger.xml:1142(literal) xml/event-trigger.xml:1154(literal) xml/event-trigger.xml:1157(literal) xml/event-trigger.xml:1160(literal) xml/event-trigger.xml:1172(literal) xml/event-trigger.xml:1175(literal) xml/event-trigger.xml:1178(literal) xml/event-trigger.xml:1190(literal) xml/event-trigger.xml:1193(literal) xml/event-trigger.xml:1196(literal) xml/event-trigger.xml:1208(literal) xml/event-trigger.xml:1211(literal) xml/event-trigger.xml:1214(literal) xml/event-trigger.xml:1226(literal) xml/event-trigger.xml:1229(literal) xml/event-trigger.xml:1232(literal) xml/event-trigger.xml:1244(literal) xml/event-trigger.xml:1247(literal) xml/event-trigger.xml:1250(literal) xml/event-trigger.xml:1262(literal) xml/event-trigger.xml:1265(literal) xml/event-trigger.xml:1268(literal) xml/event-trigger.xml:1280(literal) xml/event-trigger.xml:1283(literal) xml/event-trigger.xml:1286(literal) xml/event-trigger.xml:1298(literal) xml/event-trigger.xml:1301(literal) xml/event-trigger.xml:1304(literal) xml/event-trigger.xml:1316(literal) xml/event-trigger.xml:1319(literal) xml/event-trigger.xml:1322(literal) xml/event-trigger.xml:1334(literal) xml/event-trigger.xml:1337(literal) xml/event-trigger.xml:1340(literal) xml/event-trigger.xml:1352(literal) xml/event-trigger.xml:1355(literal) xml/event-trigger.xml:1358(literal) xml/event-trigger.xml:1370(literal) xml/event-trigger.xml:1373(literal) xml/event-trigger.xml:1376(literal) xml/event-trigger.xml:1388(literal) xml/event-trigger.xml:1391(literal) xml/event-trigger.xml:1394(literal) xml/event-trigger.xml:1406(literal) xml/event-trigger.xml:1409(literal) xml/event-trigger.xml:1412(literal) xml/event-trigger.xml:1424(literal) xml/event-trigger.xml:1427(literal) xml/event-trigger.xml:1430(literal) xml/event-trigger.xml:1442(literal) xml/event-trigger.xml:1445(literal) xml/event-trigger.xml:1448(literal) xml/event-trigger.xml:1460(literal) xml/event-trigger.xml:1463(literal) xml/event-trigger.xml:1466(literal) xml/event-trigger.xml:1478(literal) xml/event-trigger.xml:1481(literal) xml/event-trigger.xml:1484(literal) xml/event-trigger.xml:1496(literal) xml/event-trigger.xml:1499(literal) xml/event-trigger.xml:1502(literal) xml/event-trigger.xml:1514(literal) xml/event-trigger.xml:1517(literal) xml/event-trigger.xml:1520(literal) xml/event-trigger.xml:1532(literal) xml/event-trigger.xml:1535(literal) xml/event-trigger.xml:1538(literal) xml/event-trigger.xml:1550(literal) xml/event-trigger.xml:1553(literal) xml/event-trigger.xml:1556(literal) xml/event-trigger.xml:1568(literal) xml/event-trigger.xml:1571(literal) xml/event-trigger.xml:1574(literal) xml/event-trigger.xml:1586(literal) xml/event-trigger.xml:1589(literal) xml/event-trigger.xml:1592(literal) xml/event-trigger.xml:1604(literal) xml/event-trigger.xml:1607(literal) xml/event-trigger.xml:1610(literal) xml/event-trigger.xml:1622(literal) xml/event-trigger.xml:1625(literal) xml/event-trigger.xml:1628(literal) xml/event-trigger.xml:1640(literal) xml/event-trigger.xml:1643(literal) xml/event-trigger.xml:1646(literal) xml/event-trigger.xml:1658(literal) xml/event-trigger.xml:1661(literal) xml/event-trigger.xml:1676(literal) xml/event-trigger.xml:1679(literal) xml/event-trigger.xml:1694(literal) xml/event-trigger.xml:1697(literal) xml/event-trigger.xml:1712(literal) xml/event-trigger.xml:1715(literal) xml/event-trigger.xml:1730(literal) xml/event-trigger.xml:1733(literal)
+msgid "X"
+msgstr ""
+
+#: xml/event-trigger.xml:153(literal) xml/event-trigger.xml:156(literal) xml/event-trigger.xml:171(literal) xml/event-trigger.xml:174(literal) xml/event-trigger.xml:189(literal) xml/event-trigger.xml:192(literal) xml/event-trigger.xml:207(literal) xml/event-trigger.xml:210(literal) xml/event-trigger.xml:225(literal) xml/event-trigger.xml:228(literal) xml/event-trigger.xml:243(literal) xml/event-trigger.xml:246(literal) xml/event-trigger.xml:264(literal) xml/event-trigger.xml:279(literal) xml/event-trigger.xml:282(literal) xml/event-trigger.xml:297(literal) xml/event-trigger.xml:300(literal) xml/event-trigger.xml:315(literal) xml/event-trigger.xml:318(literal) xml/event-trigger.xml:333(literal) xml/event-trigger.xml:336(literal) xml/event-trigger.xml:351(literal) xml/event-trigger.xml:354(literal) xml/event-trigger.xml:369(literal) xml/event-trigger.xml:372(literal) xml/event-trigger.xml:387(literal) xml/event-trigger.xml:390(literal) xml/event-trigger.xml:405(literal) xml/event-trigger.xml:408(literal) xml/event-trigger.xml:423(literal) xml/event-trigger.xml:426(literal) xml/event-trigger.xml:459(literal) xml/event-trigger.xml:462(literal) xml/event-trigger.xml:477(literal) xml/event-trigger.xml:480(literal) xml/event-trigger.xml:495(literal) xml/event-trigger.xml:498(literal) xml/event-trigger.xml:513(literal) xml/event-trigger.xml:516(literal) xml/event-trigger.xml:531(literal) xml/event-trigger.xml:534(literal) xml/event-trigger.xml:549(literal) xml/event-trigger.xml:567(literal) xml/event-trigger.xml:570(literal) xml/event-trigger.xml:585(literal) xml/event-trigger.xml:588(literal) xml/event-trigger.xml:603(literal) xml/event-trigger.xml:606(literal) xml/event-trigger.xml:621(literal) xml/event-trigger.xml:624(literal) xml/event-trigger.xml:639(literal) xml/event-trigger.xml:642(literal) xml/event-trigger.xml:657(literal) xml/event-trigger.xml:660(literal) xml/event-trigger.xml:675(literal) xml/event-trigger.xml:678(literal) xml/event-trigger.xml:693(literal) xml/event-trigger.xml:696(literal) xml/event-trigger.xml:711(literal) xml/event-trigger.xml:714(literal) xml/event-trigger.xml:729(literal) xml/event-trigger.xml:732(literal) xml/event-trigger.xml:747(literal) xml/event-trigger.xml:750(literal) xml/event-trigger.xml:765(literal) xml/event-trigger.xml:768(literal) xml/event-trigger.xml:783(literal) xml/event-trigger.xml:786(literal) xml/event-trigger.xml:801(literal) xml/event-trigger.xml:804(literal) xml/event-trigger.xml:819(literal) xml/event-trigger.xml:822(literal) xml/event-trigger.xml:837(literal) xml/event-trigger.xml:840(literal) xml/event-trigger.xml:855(literal) xml/event-trigger.xml:858(literal) xml/event-trigger.xml:873(literal) xml/event-trigger.xml:876(literal) xml/event-trigger.xml:891(literal) xml/event-trigger.xml:894(literal) xml/event-trigger.xml:909(literal) xml/event-trigger.xml:912(literal) xml/event-trigger.xml:927(literal) xml/event-trigger.xml:930(literal) xml/event-trigger.xml:945(literal) xml/event-trigger.xml:948(literal) xml/event-trigger.xml:963(literal) xml/event-trigger.xml:966(literal) xml/event-trigger.xml:981(literal) xml/event-trigger.xml:984(literal) xml/event-trigger.xml:999(literal) xml/event-trigger.xml:1002(literal) xml/event-trigger.xml:1017(literal) xml/event-trigger.xml:1020(literal) xml/event-trigger.xml:1035(literal) xml/event-trigger.xml:1038(literal) xml/event-trigger.xml:1053(literal) xml/event-trigger.xml:1056(literal) xml/event-trigger.xml:1071(literal) xml/event-trigger.xml:1074(literal) xml/event-trigger.xml:1089(literal) xml/event-trigger.xml:1092(literal) xml/event-trigger.xml:1106(literal) xml/event-trigger.xml:1109(literal) xml/event-trigger.xml:1124(literal) xml/event-trigger.xml:1127(literal) xml/event-trigger.xml:1145(literal) xml/event-trigger.xml:1163(literal) xml/event-trigger.xml:1181(literal) xml/event-trigger.xml:1199(literal) xml/event-trigger.xml:1217(literal) xml/event-trigger.xml:1235(literal) xml/event-trigger.xml:1253(literal) xml/event-trigger.xml:1271(literal) xml/event-trigger.xml:1289(literal) xml/event-trigger.xml:1307(literal) xml/event-trigger.xml:1325(literal) xml/event-trigger.xml:1343(literal) xml/event-trigger.xml:1361(literal) xml/event-trigger.xml:1379(literal) xml/event-trigger.xml:1397(literal) xml/event-trigger.xml:1415(literal) xml/event-trigger.xml:1433(literal) xml/event-trigger.xml:1451(literal) xml/event-trigger.xml:1469(literal) xml/event-trigger.xml:1487(literal) xml/event-trigger.xml:1505(literal) xml/event-trigger.xml:1523(literal) xml/event-trigger.xml:1541(literal) xml/event-trigger.xml:1559(literal) xml/event-trigger.xml:1577(literal) xml/event-trigger.xml:1595(literal) xml/event-trigger.xml:1613(literal) xml/event-trigger.xml:1631(literal) xml/event-trigger.xml:1649(literal) xml/event-trigger.xml:1664(literal) xml/event-trigger.xml:1667(literal) xml/event-trigger.xml:1682(literal) xml/event-trigger.xml:1685(literal) xml/event-trigger.xml:1700(literal) xml/event-trigger.xml:1703(literal) xml/event-trigger.xml:1718(literal) xml/event-trigger.xml:1721(literal) xml/event-trigger.xml:1736(literal) xml/event-trigger.xml:1739(literal)
+msgid "-"
+msgstr ""
+
+#: xml/event-trigger.xml:162(literal)
+msgid "ALTER COLLATION"
+msgstr ""
+
+#: xml/event-trigger.xml:180(literal)
+msgid "ALTER CONVERSION"
+msgstr ""
+
+#: xml/event-trigger.xml:198(literal)
+msgid "ALTER DOMAIN"
+msgstr ""
+
+#: xml/event-trigger.xml:216(literal)
+msgid "ALTER EXTENSION"
+msgstr ""
+
+#: xml/event-trigger.xml:234(literal)
+msgid "ALTER FOREIGN DATA WRAPPER"
+msgstr ""
+
+#: xml/event-trigger.xml:252(literal)
+msgid "ALTER FOREIGN TABLE"
+msgstr ""
+
+#: xml/event-trigger.xml:270(literal)
+msgid "ALTER FUNCTION"
+msgstr ""
+
+#: xml/event-trigger.xml:288(literal)
+msgid "ALTER LANGUAGE"
+msgstr ""
+
+#: xml/event-trigger.xml:306(literal)
+msgid "ALTER OPERATOR"
+msgstr ""
+
+#: xml/event-trigger.xml:324(literal)
+msgid "ALTER OPERATOR CLASS"
+msgstr ""
+
+#: xml/event-trigger.xml:342(literal)
+msgid "ALTER OPERATOR FAMILY"
+msgstr ""
+
+#: xml/event-trigger.xml:360(literal)
+msgid "ALTER POLICY"
+msgstr ""
+
+#: xml/event-trigger.xml:378(literal)
+msgid "ALTER SCHEMA"
+msgstr ""
+
+#: xml/event-trigger.xml:396(literal)
+msgid "ALTER SEQUENCE"
+msgstr ""
+
+#: xml/event-trigger.xml:414(literal)
+msgid "ALTER SERVER"
+msgstr ""
+
+#: xml/event-trigger.xml:432(literal)
+msgid "ALTER TABLE"
+msgstr ""
+
+#: xml/event-trigger.xml:450(literal)
+msgid "ALTER TEXT SEARCH CONFIGURATION"
+msgstr ""
+
+#: xml/event-trigger.xml:468(literal)
+msgid "ALTER TEXT SEARCH DICTIONARY"
+msgstr ""
+
+#: xml/event-trigger.xml:486(literal)
+msgid "ALTER TEXT SEARCH PARSER"
+msgstr ""
+
+#: xml/event-trigger.xml:504(literal)
+msgid "ALTER TEXT SEARCH TEMPLATE"
+msgstr ""
+
+#: xml/event-trigger.xml:522(literal)
+msgid "ALTER TRIGGER"
+msgstr ""
+
+#: xml/event-trigger.xml:540(literal)
+msgid "ALTER TYPE"
+msgstr ""
+
+#: xml/event-trigger.xml:558(literal)
+msgid "ALTER USER MAPPING"
+msgstr ""
+
+#: xml/event-trigger.xml:576(literal)
+msgid "ALTER VIEW"
+msgstr ""
+
+#: xml/event-trigger.xml:594(literal)
+msgid "CREATE AGGREGATE"
+msgstr ""
+
+#: xml/event-trigger.xml:612(literal)
+msgid "COMMENT"
+msgstr ""
+
+#: xml/event-trigger.xml:626(entry) xml/event-trigger.xml:1669(entry) xml/event-trigger.xml:1705(entry) xml/event-trigger.xml:1723(entry)
+msgid "Only for local objects"
+msgstr ""
+
+#: xml/event-trigger.xml:630(literal)
+msgid "CREATE CAST"
+msgstr ""
+
+#: xml/event-trigger.xml:648(literal)
+msgid "CREATE COLLATION"
+msgstr ""
+
+#: xml/event-trigger.xml:666(literal)
+msgid "CREATE CONVERSION"
+msgstr ""
+
+#: xml/event-trigger.xml:684(literal)
+msgid "CREATE DOMAIN"
+msgstr ""
+
+#: xml/event-trigger.xml:702(literal)
+msgid "CREATE EXTENSION"
+msgstr ""
+
+#: xml/event-trigger.xml:720(literal)
+msgid "CREATE FOREIGN DATA WRAPPER"
+msgstr ""
+
+#: xml/event-trigger.xml:738(literal)
+msgid "CREATE FOREIGN TABLE"
+msgstr ""
+
+#: xml/event-trigger.xml:756(literal)
+msgid "CREATE FUNCTION"
+msgstr ""
+
+#: xml/event-trigger.xml:774(literal)
+msgid "CREATE INDEX"
+msgstr ""
+
+#: xml/event-trigger.xml:792(literal)
+msgid "CREATE LANGUAGE"
+msgstr ""
+
+#: xml/event-trigger.xml:810(literal)
+msgid "CREATE OPERATOR"
+msgstr ""
+
+#: xml/event-trigger.xml:828(literal)
+msgid "CREATE OPERATOR CLASS"
+msgstr ""
+
+#: xml/event-trigger.xml:846(literal)
+msgid "CREATE OPERATOR FAMILY"
+msgstr ""
+
+#: xml/event-trigger.xml:864(literal)
+msgid "CREATE POLICY"
+msgstr ""
+
+#: xml/event-trigger.xml:882(literal)
+msgid "CREATE RULE"
+msgstr ""
+
+#: xml/event-trigger.xml:900(literal)
+msgid "CREATE SCHEMA"
+msgstr ""
+
+#: xml/event-trigger.xml:918(literal)
+msgid "CREATE SEQUENCE"
+msgstr ""
+
+#: xml/event-trigger.xml:936(literal)
+msgid "CREATE SERVER"
+msgstr ""
+
+#: xml/event-trigger.xml:954(literal)
+msgid "CREATE TABLE"
+msgstr ""
+
+#: xml/event-trigger.xml:972(literal)
+msgid "CREATE TABLE AS"
+msgstr ""
+
+#: xml/event-trigger.xml:990(literal)
+msgid "CREATE TEXT SEARCH CONFIGURATION"
+msgstr ""
+
+#: xml/event-trigger.xml:1008(literal)
+msgid "CREATE TEXT SEARCH DICTIONARY"
+msgstr ""
+
+#: xml/event-trigger.xml:1026(literal)
+msgid "CREATE TEXT SEARCH PARSER"
+msgstr ""
+
+#: xml/event-trigger.xml:1044(literal)
+msgid "CREATE TEXT SEARCH TEMPLATE"
+msgstr ""
+
+#: xml/event-trigger.xml:1062(literal)
+msgid "CREATE TRIGGER"
+msgstr ""
+
+#: xml/event-trigger.xml:1080(literal)
+msgid "CREATE TYPE"
+msgstr ""
+
+#: xml/event-trigger.xml:1097(literal)
+msgid "CREATE USER MAPPING"
+msgstr ""
+
+#: xml/event-trigger.xml:1115(literal)
+msgid "CREATE VIEW"
+msgstr ""
+
+#: xml/event-trigger.xml:1133(literal)
+msgid "DROP AGGREGATE"
+msgstr ""
+
+#: xml/event-trigger.xml:1151(literal)
+msgid "DROP CAST"
+msgstr ""
+
+#: xml/event-trigger.xml:1169(literal)
+msgid "DROP COLLATION"
+msgstr ""
+
+#: xml/event-trigger.xml:1187(literal)
+msgid "DROP CONVERSION"
+msgstr ""
+
+#: xml/event-trigger.xml:1205(literal)
+msgid "DROP DOMAIN"
+msgstr ""
+
+#: xml/event-trigger.xml:1223(literal)
+msgid "DROP EXTENSION"
+msgstr ""
+
+#: xml/event-trigger.xml:1241(literal)
+msgid "DROP FOREIGN DATA WRAPPER"
+msgstr ""
+
+#: xml/event-trigger.xml:1259(literal)
+msgid "DROP FOREIGN TABLE"
+msgstr ""
+
+#: xml/event-trigger.xml:1277(literal)
+msgid "DROP FUNCTION"
+msgstr ""
+
+#: xml/event-trigger.xml:1295(literal)
+msgid "DROP INDEX"
+msgstr ""
+
+#: xml/event-trigger.xml:1313(literal)
+msgid "DROP LANGUAGE"
+msgstr ""
+
+#: xml/event-trigger.xml:1331(literal)
+msgid "DROP OPERATOR"
+msgstr ""
+
+#: xml/event-trigger.xml:1349(literal)
+msgid "DROP OPERATOR CLASS"
+msgstr ""
+
+#: xml/event-trigger.xml:1367(literal)
+msgid "DROP OPERATOR FAMILY"
+msgstr ""
+
+#: xml/event-trigger.xml:1385(literal)
+msgid "DROP OWNED"
+msgstr ""
+
+#: xml/event-trigger.xml:1403(literal)
+msgid "DROP POLICY"
+msgstr ""
+
+#: xml/event-trigger.xml:1421(literal)
+msgid "DROP RULE"
+msgstr ""
+
+#: xml/event-trigger.xml:1439(literal)
+msgid "DROP SCHEMA"
+msgstr ""
+
+#: xml/event-trigger.xml:1457(literal)
+msgid "DROP SEQUENCE"
+msgstr ""
+
+#: xml/event-trigger.xml:1475(literal)
+msgid "DROP SERVER"
+msgstr ""
+
+#: xml/event-trigger.xml:1493(literal)
+msgid "DROP TABLE"
+msgstr ""
+
+#: xml/event-trigger.xml:1511(literal)
+msgid "DROP TEXT SEARCH CONFIGURATION"
+msgstr ""
+
+#: xml/event-trigger.xml:1529(literal)
+msgid "DROP TEXT SEARCH DICTIONARY"
+msgstr ""
+
+#: xml/event-trigger.xml:1547(literal)
+msgid "DROP TEXT SEARCH PARSER"
+msgstr ""
+
+#: xml/event-trigger.xml:1565(literal)
+msgid "DROP TEXT SEARCH TEMPLATE"
+msgstr ""
+
+#: xml/event-trigger.xml:1583(literal)
+msgid "DROP TRIGGER"
+msgstr ""
+
+#: xml/event-trigger.xml:1601(literal)
+msgid "DROP TYPE"
+msgstr ""
+
+#: xml/event-trigger.xml:1619(literal)
+msgid "DROP USER MAPPING"
+msgstr ""
+
+#: xml/event-trigger.xml:1637(literal)
+msgid "DROP VIEW"
+msgstr ""
+
+#: xml/event-trigger.xml:1655(literal)
+msgid "GRANT"
+msgstr ""
+
+#: xml/event-trigger.xml:1673(literal)
+msgid "IMPORT FOREIGN SCHEMA"
+msgstr ""
+
+#: xml/event-trigger.xml:1691(literal)
+msgid "REVOKE"
+msgstr ""
+
+#: xml/event-trigger.xml:1709(literal)
+msgid "SECURITY LABEL"
+msgstr ""
+
+#: xml/event-trigger.xml:1727(literal)
+msgid "SELECT INTO"
+msgstr ""
+
+#: xml/event-trigger.xml:1748(title)
+msgid "Writing Event Trigger Functions in C"
+msgstr ""
+
+#: xml/event-trigger.xml:1751(secondary)
+msgid "in C"
+msgstr ""
+
+#: xml/event-trigger.xml:1753(para)
+msgid "This section describes the low-level details of the interface to an event trigger function. This information is only needed when writing event trigger functions in C. If you are using a higher-level language then these details are handled for you. In most cases you should consider using a procedural language before writing your event triggers in C. The documentation of each procedural language explains how to write an event trigger in that language."
+msgstr ""
+
+#: xml/event-trigger.xml:1761(para)
+msgid "Event trigger functions must use the <quote>version 1</quote>function manager interface."
+msgstr ""
+
+#: xml/event-trigger.xml:1769(programlisting)
+#, no-wrap
+msgid "\n    CALLED_AS_EVENT_TRIGGER(fcinfo)"
+msgstr ""
+
+#: xml/event-trigger.xml:1772(programlisting)
+#, no-wrap
+msgid "((fcinfo)-context != NULL IsA((fcinfo)-context,\n    EventTriggerData))"
+msgstr ""
+
+#: xml/event-trigger.xml:1763(para)
+msgid "When a function is called by the event trigger manager, it is not passed any normal arguments, but it is passed a <quote>context</quote>pointer pointing to a <structname>EventTriggerData</structname>structure. C functions can check whether they were called from the event trigger manager or not by executing the macro: <placeholder-1/>which expands to: <placeholder-2/>If this returns true, then it is safe to cast <literal>fcinfo-context</literal>to type <literal>EventTriggerData *</literal>and make use of the pointed-to <structname>EventTriggerData</structname>structure. The function must <emphasis>not</emphasis>alter the <structname>EventTriggerData</structname>structure or any of the data it points to."
+msgstr ""
+
+#: xml/event-trigger.xml:1786(programlisting)
+#, no-wrap
+msgid "typedef struct EventTriggerData { NodeTag type;\n    const char *event; /* event name */ Node *parsetree; /* parse\n    tree */ const char *tag; /* command tag */ }\n    EventTriggerData;"
+msgstr ""
+
+#: xml/event-trigger.xml:1794(structfield)
+msgid "type"
+msgstr ""
+
+#: xml/event-trigger.xml:1797(para)
+msgid "Always <literal>T_EventTriggerData</literal>."
+msgstr ""
+
+#: xml/event-trigger.xml:1803(structfield)
+msgid "event"
+msgstr ""
+
+#: xml/event-trigger.xml:1806(para)
+msgid "Describes the event for which the function is called, one of <literal>\"ddl_command_start\"</literal>, <literal>\"ddl_command_end\"</literal>, <literal>\"sql_drop\"</literal>, <literal>\"table_rewrite\"</literal>. See <xref linkend=\"event-trigger-definition\">for the meaning of these events.</xref>"
+msgstr ""
+
+#: xml/event-trigger.xml:1818(structfield)
+msgid "parsetree"
+msgstr ""
+
+#: xml/event-trigger.xml:1821(para)
+msgid "A pointer to the parse tree of the command. Check the PostgreSQL source code for details. The parse tree structure is subject to change without notice."
+msgstr ""
+
+#: xml/event-trigger.xml:1828(structfield)
+msgid "tag"
+msgstr ""
+
+#: xml/event-trigger.xml:1831(para)
+msgid "The command tag associated with the event for which the event trigger is run, for example <literal>\"CREATE FUNCTION\"</literal>."
+msgstr ""
+
+#: xml/event-trigger.xml:1783(para)
+msgid "<structname>struct EventTriggerData</structname>is defined in <filename>commands/event_trigger.h</filename>: <placeholder-1/>where the members are defined as follows: <placeholder-2/>"
+msgstr ""
+
+#: xml/event-trigger.xml:1837(para)
+msgid "An event trigger function must return a <symbol>NULL</symbol>pointer ( <emphasis>not</emphasis>an SQL null value, that is, do not set <parameter>isNull</parameter>true)."
+msgstr ""
+
+#: xml/event-trigger.xml:1843(title)
+msgid "A Complete Event Trigger Example"
+msgstr ""
+
+#: xml/event-trigger.xml:1844(para)
+msgid "Here is a very simple example of an event trigger function written in C. (Examples of triggers written in procedural languages can be found in the documentation of the procedural languages.)"
+msgstr ""
+
+#: xml/event-trigger.xml:1848(para)
+msgid "The function <function>noddl</function>raises an exception each time it is called. The event trigger definition associated the function with the <literal>ddl_command_start</literal>event. The effect is that all DDL commands (with the exceptions mentioned in <xref linkend=\"event-trigger-definition\">) are prevented from running.</xref>"
+msgstr ""
+
+#: xml/event-trigger.xml:1857(programlisting)
+#, no-wrap
+msgid "#include \"postgres.h\" #include\n    \"commands/event_trigger.h\" PG_MODULE_MAGIC;\n    PG_FUNCTION_INFO_V1(noddl); Datum noddl(PG_FUNCTION_ARGS) {\n    EventTriggerData *trigdata; if\n    (!CALLED_AS_EVENT_TRIGGER(fcinfo)) /* internal error */\n    elog(ERROR, \"not fired by event trigger manager\"); trigdata =\n    (EventTriggerData *) fcinfo-&gt;context; ereport(ERROR,\n    (errcode(ERRCODE_INSUFFICIENT_PRIVILEGE), errmsg(\"command\n    \\\"%s\\\" denied\", trigdata-&gt;tag))); PG_RETURN_NULL();\n    }"
+msgstr ""
+
+#: xml/event-trigger.xml:1856(para)
+msgid "This is the source code of the trigger function: <placeholder-1/>"
+msgstr ""
+
+#: xml/event-trigger.xml:1870(programlisting)
+#, no-wrap
+msgid "CREATE FUNCTION noddl() RETURNS event_trigger\n    AS 'noddl' LANGUAGE C; CREATE EVENT TRIGGER noddl ON\n    ddl_command_start EXECUTE PROCEDURE\n    noddl();"
+msgstr ""
+
+#: xml/event-trigger.xml:1867(para)
+msgid "After you have compiled the source code (see <xref linkend=\"dfunc\">), declare the function and the triggers: <placeholder-1/></xref>"
+msgstr ""
+
+#: xml/event-trigger.xml:1874(para)
+msgid "Now you can test the operation of the trigger: <screen>=# \\dy List of event triggers Name | Event | Owner |\n    Enabled | Procedure | Tags\n    -------+-------------------+-------+---------+-----------+------\n    noddl | ddl_command_start | dim | enabled | noddl | (1 row) =#\n    CREATE TABLE foo(id serial); ERROR: command \"CREATE TABLE\"\n    denied</screen>"
+msgstr ""
+
+#: xml/event-trigger.xml:1885(programlisting)
+#, no-wrap
+msgid "BEGIN; ALTER EVENT TRIGGER noddl DISABLE;\n    CREATE TABLE foo (id serial); ALTER EVENT TRIGGER noddl ENABLE;\n    COMMIT;"
+msgstr ""
+
+#: xml/event-trigger.xml:1881(para)
+msgid "In this situation, in order to be able to run some DDL commands when you need to do so, you have to either drop the event trigger or disable it. It can be convenient to disable the trigger for only the duration of a transaction: <placeholder-1/>(Recall that DDL commands on event triggers themselves are not affected by event triggers.)"
+msgstr ""
+
+#: xml/event-trigger.xml:1891(title)
+msgid "A Table Rewrite Event Trigger Example"
+msgstr ""
+
+#: xml/event-trigger.xml:1892(para)
+msgid "Thanks to the <literal>table_rewrite</literal>event, it is possible to implement a table rewriting policy only allowing the rewrite in maintenance windows."
+msgstr ""
+
+#: xml/event-trigger.xml:1897(programlisting)
+#, no-wrap
+msgid "CREATE OR REPLACE FUNCTION no_rewrite() RETURNS\n    event_trigger LANGUAGE plpgsql AS $$ --- --- Implement local\n    Table Rewriting policy: --- public.foo is not allowed\n    rewriting, ever --- other tables are only allowed rewriting\n    between 1am and 6am --- unless they have more than 100 blocks\n    --- DECLARE table_oid oid :=\n    pg_event_trigger_table_rewrite_oid(); current_hour integer :=\n    extract('hour' from current_time); pages integer; max_pages\n    integer := 100; BEGIN IF pg_event_trigger_table_rewrite_oid() =\n    'public.foo'::regclass THEN RAISE EXCEPTION 'you''re not\n    allowed to rewrite the table %', table_oid::regclass; END IF;\n    SELECT INTO pages relpages FROM pg_class WHERE oid = table_oid;\n    IF pages &gt; max_pages THEN RAISE EXCEPTION 'rewrites only\n    allowed for table with less than % pages', max_pages; END IF;\n    IF current_hour NOT BETWEEN 1 AND 6 THEN RAISE EXCEPTION\n    'rewrites only allowed between 1am and 6am'; END IF; END; $$;\n    CREATE EVENT TRIGGER no_rewrite_allowed ON table_rewrite\n    EXECUTE PROCEDURE no_rewrite();"
+msgstr ""
+
+#: xml/event-trigger.xml:1896(para)
+msgid "Here's an example implementing such a policy. <placeholder-1/>"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/event-trigger.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

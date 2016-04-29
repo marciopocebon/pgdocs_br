@@ -1,0 +1,1053 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/select.xml:4(primary) xml/ref/select.xml:14(refentrytitle) xml/ref/select.xml:19(refname)
+msgid "SELECT"
+msgstr ""
+
+#: xml/ref/select.xml:7(primary)
+msgid "TABLE command"
+msgstr ""
+
+#: xml/ref/select.xml:10(primary) xml/ref/select.xml:21(refname)
+msgid "WITH"
+msgstr ""
+
+#: xml/ref/select.xml:11(secondary)
+msgid "in SELECT"
+msgstr ""
+
+#: xml/ref/select.xml:15(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/select.xml:16(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/select.xml:20(refname)
+msgid "TABLE"
+msgstr ""
+
+#: xml/ref/select.xml:22(refpurpose)
+msgid "retrieve rows from a table or view"
+msgstr ""
+
+#: xml/ref/select.xml:26(replaceable) xml/ref/select.xml:132(replaceable)
+msgid "with_query"
+msgstr ""
+
+#: xml/ref/select.xml:28(replaceable) xml/ref/select.xml:30(replaceable) xml/ref/select.xml:47(replaceable) xml/ref/select.xml:120(replaceable) xml/ref/select.xml:121(replaceable) xml/ref/select.xml:123(replaceable) xml/ref/select.xml:124(replaceable) xml/ref/select.xml:126(replaceable) xml/ref/select.xml:127(replaceable)
+msgid "expression"
+msgstr ""
+
+#: xml/ref/select.xml:32(replaceable)
+msgid "output_name"
+msgstr ""
+
+#: xml/ref/select.xml:34(replaceable) xml/ref/select.xml:61(replaceable) xml/ref/select.xml:109(replaceable) xml/ref/select.xml:112(replaceable)
+msgid "from_item"
+msgstr ""
+
+#: xml/ref/select.xml:36(replaceable) xml/ref/select.xml:40(replaceable)
+msgid "condition"
+msgstr ""
+
+#: xml/ref/select.xml:38(replaceable) xml/ref/select.xml:118(replaceable) xml/ref/select.xml:129(replaceable)
+msgid "grouping_element"
+msgstr ""
+
+#: xml/ref/select.xml:42(replaceable)
+msgid "window_name"
+msgstr ""
+
+#: xml/ref/select.xml:43(replaceable)
+msgid "window_definition"
+msgstr ""
+
+#: xml/ref/select.xml:45(replaceable) xml/ref/select.xml:73(replaceable) xml/ref/select.xml:138(replaceable) xml/ref/select.xml:492(replaceable)
+msgid "select"
+msgstr ""
+
+#: xml/ref/select.xml:49(replaceable)
+msgid "operator"
+msgstr ""
+
+#: xml/ref/select.xml:51(replaceable) xml/ref/select.xml:55(replaceable)
+msgid "count"
+msgstr ""
+
+#: xml/ref/select.xml:53(replaceable)
+msgid "start"
+msgstr ""
+
+#: xml/ref/select.xml:58(replaceable) xml/ref/select.xml:63(replaceable) xml/ref/select.xml:144(replaceable) xml/ref/select.xml:383(replaceable)
+msgid "table_name"
+msgstr ""
+
+#: xml/ref/select.xml:60(phrase)
+msgid "where <placeholder-1/>can be one of:"
+msgstr ""
+
+#: xml/ref/select.xml:65(replaceable) xml/ref/select.xml:74(replaceable) xml/ref/select.xml:79(replaceable) xml/ref/select.xml:85(replaceable) xml/ref/select.xml:91(replaceable) xml/ref/select.xml:106(replaceable) xml/ref/select.xml:400(replaceable)
+msgid "alias"
+msgstr ""
+
+#: xml/ref/select.xml:66(replaceable) xml/ref/select.xml:75(replaceable) xml/ref/select.xml:80(replaceable) xml/ref/select.xml:86(replaceable) xml/ref/select.xml:107(replaceable)
+msgid "column_alias"
+msgstr ""
+
+#: xml/ref/select.xml:68(replaceable) xml/ref/select.xml:423(replaceable)
+msgid "sampling_method"
+msgstr ""
+
+#: xml/ref/select.xml:69(replaceable) xml/ref/select.xml:83(replaceable) xml/ref/select.xml:89(replaceable) xml/ref/select.xml:95(replaceable) xml/ref/select.xml:101(replaceable) xml/ref/select.xml:425(replaceable)
+msgid "argument"
+msgstr ""
+
+#: xml/ref/select.xml:71(replaceable) xml/ref/select.xml:427(replaceable)
+msgid "seed"
+msgstr ""
+
+#: xml/ref/select.xml:77(replaceable) xml/ref/select.xml:134(replaceable) xml/ref/select.xml:510(replaceable)
+msgid "with_query_name"
+msgstr ""
+
+#: xml/ref/select.xml:82(replaceable) xml/ref/select.xml:88(replaceable) xml/ref/select.xml:94(replaceable) xml/ref/select.xml:100(replaceable) xml/ref/select.xml:527(replaceable)
+msgid "function_name"
+msgstr ""
+
+#: xml/ref/select.xml:92(replaceable) xml/ref/select.xml:97(replaceable) xml/ref/select.xml:103(replaceable)
+msgid "column_definition"
+msgstr ""
+
+#: xml/ref/select.xml:111(replaceable) xml/ref/select.xml:593(replaceable)
+msgid "join_type"
+msgstr ""
+
+#: xml/ref/select.xml:113(replaceable) xml/ref/select.xml:696(replaceable)
+msgid "join_condition"
+msgstr ""
+
+#: xml/ref/select.xml:115(replaceable) xml/ref/select.xml:712(replaceable)
+msgid "join_column"
+msgstr ""
+
+#: xml/ref/select.xml:117(phrase)
+msgid "and <placeholder-1/>can be one of:"
+msgstr ""
+
+#: xml/ref/select.xml:131(phrase)
+msgid "and <placeholder-1/>is:"
+msgstr ""
+
+#: xml/ref/select.xml:136(replaceable)
+msgid "column_name"
+msgstr ""
+
+#: xml/ref/select.xml:139(replaceable)
+msgid "values"
+msgstr ""
+
+#: xml/ref/select.xml:140(replaceable)
+msgid "insert"
+msgstr ""
+
+#: xml/ref/select.xml:141(replaceable)
+msgid "update"
+msgstr ""
+
+#: xml/ref/select.xml:142(replaceable)
+msgid "delete"
+msgstr ""
+
+#: xml/ref/select.xml:25(synopsis)
+#, no-wrap
+msgid "[ WITH [ RECURSIVE ] \n    <placeholder-1/>[, ...]\n    ] SELECT [ ALL | DISTINCT [ ON ( \n    <placeholder-2/>[, ...]\n    ) ] ] [ * | \n    <placeholder-3/>[ [ AS ]\n    \n    <placeholder-4/>] [,\n    ...] ] [ FROM \n    <placeholder-5/>[, ...] ]\n    [ WHERE \n    <placeholder-6/>] [ GROUP\n    BY \n    <placeholder-7/>[,\n    ...] ] [ HAVING \n    <placeholder-8/>[, ...] ]\n    [ WINDOW \n    <placeholder-9/>AS ( \n    <placeholder-10/>)\n    [, ...] ] [ { UNION | INTERSECT | EXCEPT } [ ALL | DISTINCT ] \n    <placeholder-11/>] [ ORDER BY\n    \n    <placeholder-12/>[ ASC |\n    DESC | USING \n    <placeholder-13/>] [ NULLS\n    { FIRST | LAST } ] [, ...] ] [ LIMIT { \n    <placeholder-14/>| ALL } ] [\n    OFFSET \n    <placeholder-15/>[ ROW | ROWS\n    ] ] [ FETCH { FIRST | NEXT } [ \n    <placeholder-16/>] { ROW |\n    ROWS } ONLY ] [ FOR { UPDATE | NO KEY UPDATE | SHARE | KEY\n    SHARE } [ OF \n    <placeholder-17/>[, ...]\n    ] [ NOWAIT | SKIP LOCKED ] [...] ] \n    <placeholder-18/>[ ONLY ] \n    <placeholder-19/>[ * ] [\n    [ AS ] \n    <placeholder-20/>[ ( \n    <placeholder-21/>[,\n    ...] ) ] ] [ TABLESAMPLE \n    <placeholder-22/>( \n    <placeholder-23/>[, ...] )\n    [ REPEATABLE ( \n    <placeholder-24/>) ] ] [\n    LATERAL ] ( \n    <placeholder-25/>) [ AS ] \n    <placeholder-26/>[ ( \n    <placeholder-27/>[,\n    ...] ) ] \n    <placeholder-28/>[ [\n    AS ] \n    <placeholder-29/>[ ( \n    <placeholder-30/>[,\n    ...] ) ] ] [ LATERAL ] \n    <placeholder-31/>( [ \n    <placeholder-32/>[, ...] ]\n    ) [ WITH ORDINALITY ] [ [ AS ] \n    <placeholder-33/>[ ( \n    <placeholder-34/>[,\n    ...] ) ] ] [ LATERAL ] \n    <placeholder-35/>( [ \n    <placeholder-36/>[, ...] ]\n    ) [ AS ] \n    <placeholder-37/>( \n    <placeholder-38/>[, ...] ) [ LATERAL ] \n    <placeholder-39/>( [ \n    <placeholder-40/>[, ...] ]\n    ) AS ( \n    <placeholder-41/>[, ...] ) [ LATERAL ] ROWS FROM(\n    \n    <placeholder-42/>( [ \n    <placeholder-43/>[, ...] ]\n    ) [ AS ( \n    <placeholder-44/>[, ...] ) ] [, ...] ) [ WITH\n    ORDINALITY ] [ [ AS ] \n    <placeholder-45/>[ ( \n    <placeholder-46/>[,\n    ...] ) ] ] \n    <placeholder-47/>[ NATURAL\n    ] \n    <placeholder-48/>\n    <placeholder-49/>[ ON \n    <placeholder-50/>|\n    USING ( \n    <placeholder-51/>[, ...]\n    ) ] \n    <placeholder-52/>( ) \n    <placeholder-53/>( \n    <placeholder-54/>[, ...]\n    ) ROLLUP ( { \n    <placeholder-55/>| ( \n    <placeholder-56/>[, ...]\n    ) } [, ...] ) CUBE ( { \n    <placeholder-57/>| ( \n    <placeholder-58/>[, ...]\n    ) } [, ...] ) GROUPING SETS ( \n    <placeholder-59/>[,\n    ...] ) \n    <placeholder-60/>\n    <placeholder-61/>[ (\n    \n    <placeholder-62/>[, ...]\n    ) ] AS ( \n    <placeholder-63/>| \n    <placeholder-64/>| \n    <placeholder-65/>| \n    <placeholder-66/>| \n    <placeholder-67/>) TABLE [\n    ONLY ] \n    <placeholder-68/>[ *\n    ]"
+msgstr ""
+
+#: xml/ref/select.xml:148(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/select.xml:155(para)
+msgid "All queries in the <literal>WITH</literal>list are computed. These effectively serve as temporary tables that can be referenced in the <literal>FROM</literal>list. A <literal>WITH</literal>query that is referenced more than once in <literal>FROM</literal>is computed only once. (See <xref linkend=\"sql-with\" endterm=\"sql-with-title\"> below.)</xref>"
+msgstr ""
+
+#: xml/ref/select.xml:166(para)
+msgid "All elements in the <literal>FROM</literal>list are computed. (Each element in the <literal>FROM</literal>list is a real or virtual table.) If more than one element is specified in the <literal>FROM</literal>list, they are cross-joined together. (See <xref linkend=\"sql-from\" endterm=\"sql-from-title\"> below.)</xref>"
+msgstr ""
+
+#: xml/ref/select.xml:177(para)
+msgid "If the <literal>WHERE</literal>clause is specified, all rows that do not satisfy the condition are eliminated from the output. (See <xref linkend=\"sql-where\" endterm=\"sql-where-title\"> below.)</xref>"
+msgstr ""
+
+#: xml/ref/select.xml:185(para)
+msgid "If the <literal>GROUP BY</literal>clause is specified, or if there are aggregate function calls, the output is combined into groups of rows that match on one or more values, and the results of aggregate functions are computed. If the <literal>HAVING</literal>clause is present, it eliminates groups that do not satisfy the given condition. (See <xref linkend=\"sql-groupby\" endterm=\"sql-groupby-title\">and <xref linkend=\"sql-having\" endterm=\"sql-having-title\"> below.)</xref></xref>"
+msgstr ""
+
+#: xml/ref/select.xml:198(para)
+msgid "The actual output rows are computed using the <command>SELECT</command>output expressions for each selected row or row group. (See <xref linkend=\"sql-select-list\" endterm=\"sql-select-list-title\">below.)</xref>"
+msgstr ""
+
+#: xml/ref/select.xml:205(para)
+msgid "<literal>SELECT DISTINCT</literal>eliminates duplicate rows from the result. <literal>SELECT DISTINCT ON</literal>eliminates rows that match on all the specified expressions. <literal>SELECT ALL</literal>(the default) will return all candidate rows, including duplicates. (See <xref linkend=\"sql-distinct\" endterm=\"sql-distinct-title\"> below.)</xref>"
+msgstr ""
+
+#: xml/ref/select.xml:216(para)
+msgid "Using the operators <literal>UNION</literal>, <literal>INTERSECT</literal>, and <literal>EXCEPT</literal>, the output of more than one <command>SELECT</command>statement can be combined to form a single result set. The <literal>UNION</literal>operator returns all rows that are in one or both of the result sets. The <literal>INTERSECT</literal>operator returns all rows that are strictly in both result sets. The <literal>EXCEPT</literal>operator returns the rows that are in the first result set but not in the second. In all three cases, duplicate rows are eliminated unless <literal>ALL</literal>is specified. The noise word <literal>DISTINCT</literal>can be added to explicitly specify eliminating duplicate rows. Notice that <literal>DISTINCT</literal>is the default behavior here, even though <literal>ALL</literal>is the default for <command>SELECT</command>itself. (See <xref linkend=\"sql-union\" endterm=\"sql-union-title\">, <xref linkend=\"sql-intersect\" endterm=\"sql-intersect-title\">, and <xref linkend=\"sql-except\" endterm=\"sql-except-title\"> below.)</xref></xref></xref>"
+msgstr ""
+
+#: xml/ref/select.xml:243(para)
+msgid "If the <literal>ORDER BY</literal>clause is specified, the returned rows are sorted in the specified order. If <literal>ORDER BY</literal>is not given, the rows are returned in whatever order the system finds fastest to produce. (See <xref linkend=\"sql-orderby\" endterm=\"sql-orderby-title\"> below.)</xref>"
+msgstr ""
+
+#: xml/ref/select.xml:253(para)
+msgid "If the <literal>LIMIT</literal>(or <literal>FETCH FIRST</literal>) or <literal>OFFSET</literal>clause is specified, the <command>SELECT</command>statement only returns a subset of the result rows. (See <xref linkend=\"sql-limit\" endterm=\"sql-limit-title\"> below.)</xref>"
+msgstr ""
+
+#: xml/ref/select.xml:263(para)
+msgid "If <literal>FOR UPDATE</literal>, <literal>FOR NO KEY UPDATE</literal>, <literal>FOR SHARE</literal>or <literal>FOR KEY SHARE</literal>is specified, the <command>SELECT</command>statement locks the selected rows against concurrent updates. (See <xref linkend=\"sql-for-update-share\" endterm=\"sql-for-update-share-title\">below.)</xref>"
+msgstr ""
+
+#: xml/ref/select.xml:149(para)
+msgid "<command>SELECT</command>retrieves rows from zero or more tables. The general processing of <command>SELECT</command>is as follows: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/select.xml:274(para)
+msgid "You must have <literal>SELECT</literal>privilege on each column used in a <command>SELECT</command>command. The use of <literal>FOR NO KEY UPDATE</literal>, <literal>FOR UPDATE</literal>, <literal>FOR SHARE</literal>or <literal>FOR KEY SHARE</literal>requires <literal>UPDATE</literal>privilege as well (for at least one column of each table so selected)."
+msgstr ""
+
+#: xml/ref/select.xml:285(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/select.xml:287(title)
+msgid "<literal>WITH</literal>Clause"
+msgstr ""
+
+#: xml/ref/select.xml:289(para)
+msgid "The <literal>WITH</literal>clause allows you to specify one or more subqueries that can be referenced by name in the primary query. The subqueries effectively act as temporary tables or views for the duration of the primary query. Each subquery can be a <command>SELECT</command>, <command>TABLE</command>, <command>VALUES</command>, <command>INSERT</command>, <command>UPDATE</command>or <command>DELETE</command>statement. When writing a data-modifying statement ( <command>INSERT</command>, <command>UPDATE</command>or <command>DELETE</command>) in <literal>WITH</literal>, it is usual to include a <literal>RETURNING</literal>clause. It is the output of <literal>RETURNING</literal>, <emphasis>not</emphasis>the underlying table that the statement modifies, that forms the temporary table that is read by the primary query. If <literal>RETURNING</literal>is omitted, the statement is still executed, but it produces no output so it cannot be referenced as a table by the primary query."
+msgstr ""
+
+#: xml/ref/select.xml:314(para)
+msgid "A name (without schema qualification) must be specified for each <literal>WITH</literal>query. Optionally, a list of column names can be specified; if this is omitted, the column names are inferred from the subquery."
+msgstr ""
+
+#: xml/ref/select.xml:319(para)
+msgid "If <literal>RECURSIVE</literal>is specified, it allows a <command>SELECT</command>subquery to reference itself by name. Such a subquery must have the form <synopsis>\n      <replaceable class=\"parameter\">\n      non_recursive_term</replaceable>UNION [ ALL | DISTINCT ] \n      <replaceable class=\"parameter\">\n      recursive_term</replaceable></synopsis>where the recursive self-reference must appear on the right-hand side of the <literal>UNION</literal>. Only one recursive self-reference is permitted per query. Recursive data-modifying statements are not supported, but you can use the results of a recursive <command>SELECT</command>query in a data-modifying statement. See <xref linkend=\"queries-with\">for an example.</xref>"
+msgstr ""
+
+#: xml/ref/select.xml:336(para)
+msgid "Another effect of <literal>RECURSIVE</literal>is that <literal>WITH</literal>queries need not be ordered: a query can reference another one that is later in the list. (However, circular references, or mutual recursion, are not implemented.) Without <literal>RECURSIVE</literal>, <literal>WITH</literal>queries can only reference sibling <literal>WITH</literal>queries that are earlier in the <literal>WITH</literal>list."
+msgstr ""
+
+#: xml/ref/select.xml:346(para)
+msgid "A key property of <literal>WITH</literal>queries is that they are evaluated only once per execution of the primary query, even if the primary query refers to them more than once. In particular, data-modifying statements are guaranteed to be executed once and only once, regardless of whether the primary query reads all or any of their output."
+msgstr ""
+
+#: xml/ref/select.xml:353(para)
+msgid "The primary query and the <literal>WITH</literal>queries are all (notionally) executed at the same time. This implies that the effects of a data-modifying statement in <literal>WITH</literal>cannot be seen from other parts of the query, other than by reading its <literal>RETURNING</literal>output. If two such data-modifying statements attempt to modify the same row, the results are unspecified."
+msgstr ""
+
+#: xml/ref/select.xml:362(para)
+msgid "See <xref linkend=\"queries-with\">for additional information.</xref>"
+msgstr ""
+
+#: xml/ref/select.xml:367(title)
+msgid "<literal>FROM</literal>Clause"
+msgstr ""
+
+#: xml/ref/select.xml:369(para)
+msgid "The <literal>FROM</literal>clause specifies one or more source tables for the <command>SELECT</command>. If multiple sources are specified, the result is the Cartesian product (cross join) of all the sources. But usually qualification conditions are added (via <literal>WHERE</literal>) to restrict the returned rows to a small subset of the Cartesian product."
+msgstr ""
+
+#: xml/ref/select.xml:386(para)
+msgid "The name (optionally schema-qualified) of an existing table or view. If <literal>ONLY</literal>is specified before the table name, only that table is scanned. If <literal>ONLY</literal>is not specified, the table and all its descendant tables (if any) are scanned. Optionally, <literal>*</literal>can be specified after the table name to explicitly indicate that descendant tables are included."
+msgstr ""
+
+#: xml/ref/select.xml:403(para)
+msgid "A substitute name for the <literal>FROM</literal>item containing the alias. An alias is used for brevity or to eliminate ambiguity for self-joins (where the same table is scanned multiple times). When an alias is provided, it completely hides the actual name of the table or function; for example given <literal>FROM foo AS f</literal>, the remainder of the <command>SELECT</command>must refer to this <literal>FROM</literal>item as <literal>f</literal>not <literal>foo</literal>. If an alias is written, a column alias list can also be written to provide substitute names for one or more columns of the table."
+msgstr ""
+
+#: xml/ref/select.xml:422(literal)
+msgid "TABLESAMPLE <placeholder-1/>( <placeholder-2/>[, ...] ) [ REPEATABLE ( <placeholder-3/>) ]"
+msgstr ""
+
+#: xml/ref/select.xml:431(para)
+msgid "A <literal>TABLESAMPLE</literal>clause after a <replaceable class=\"parameter\"> table_name</replaceable>indicates that the specified <replaceable class=\"parameter\"> sampling_method</replaceable>should be used to retrieve a subset of the rows in that table. This sampling precedes the application of any other filters such as <literal>WHERE</literal>clauses. The standard <productname>PostgreSQL</productname>distribution includes two sampling methods, <literal>BERNOULLI</literal>and <literal>SYSTEM</literal>, and other sampling methods can be installed in the database via extensions."
+msgstr ""
+
+#: xml/ref/select.xml:445(para)
+msgid "The <literal>BERNOULLI</literal>and <literal>SYSTEM</literal>sampling methods each accept a single <replaceable class=\"parameter\"> argument</replaceable>which is the fraction of the table to sample, expressed as a percentage between 0 and 100. This argument can be any <type>real</type>-valued expression. (Other sampling methods might accept more or different arguments.) These two methods each return a randomly-chosen sample of the table that will contain approximately the specified percentage of the table's rows. The <literal>BERNOULLI</literal>method scans the whole table and selects or ignores individual rows independently with the specified probability. The <literal>SYSTEM</literal>method does block-level sampling with each block having the specified chance of being selected; all rows in each selected block are returned. The <literal>SYSTEM</literal>method is significantly faster than the <literal>BERNOULLI</literal>method when small sampling percentages are specified, but it may return a less-random sample of the table as a result of clustering effects."
+msgstr ""
+
+#: xml/ref/select.xml:471(para)
+msgid "The optional <literal>REPEATABLE</literal>clause specifies a <replaceable class=\"parameter\">seed</replaceable>number or expression to use for generating random numbers within the sampling method. The seed value can be any non-null floating-point value. Two queries that specify the same seed and <replaceable class=\"parameter\"> argument</replaceable>values will select the same sample of the table, if the table has not been changed meanwhile. But different seed values will usually produce different samples. If <literal>REPEATABLE</literal>is not given then a new random sample is selected for each query. Note that some add-on sampling methods do not accept <literal>REPEATABLE</literal>, and will always produce new samples on each use."
+msgstr ""
+
+#: xml/ref/select.xml:495(para)
+msgid "A sub- <command>SELECT</command>can appear in the <literal>FROM</literal>clause. This acts as though its output were created as a temporary table for the duration of this single <command>SELECT</command>command. Note that the sub- <command>SELECT</command>must be surrounded by parentheses, and an alias <emphasis>must</emphasis>be provided for it. A <xref linkend=\"sql-values\">command can also be used here.</xref>"
+msgstr ""
+
+#: xml/ref/select.xml:514(para)
+msgid "A <literal>WITH</literal>query is referenced by writing its name, just as though the query's name were a table name. (In fact, the <literal>WITH</literal>query hides any real table of the same name for the purposes of the primary query. If necessary, you can refer to a real table of the same name by schema-qualifying the table's name.) An alias can be provided in the same way as for a table."
+msgstr ""
+
+#: xml/ref/select.xml:531(para)
+msgid "Function calls can appear in the <literal>FROM</literal>clause. (This is especially useful for functions that return result sets, but any function can be used.) This acts as though the function's output were created as a temporary table for the duration of this single <command>SELECT</command>command. When the optional <command>WITH ORDINALITY</command>clause is added to the function call, a new column is appended after all the function's output columns with numbering for each row."
+msgstr ""
+
+#: xml/ref/select.xml:542(para)
+msgid "An alias can be provided in the same way as for a table. If an alias is written, a column alias list can also be written to provide substitute names for one or more attributes of the function's composite return type, including the column added by <literal>ORDINALITY</literal>if present."
+msgstr ""
+
+#: xml/ref/select.xml:548(para)
+msgid "Multiple function calls can be combined into a single <literal>FROM</literal>-clause item by surrounding them with <literal>ROWS FROM( ... )</literal>. The output of such an item is the concatenation of the first row from each function, then the second row from each function, etc. If some of the functions produce fewer rows than others, NULLs are substituted for the missing data, so that the total number of rows returned is always the same as for the function that produced the most rows."
+msgstr ""
+
+#: xml/ref/select.xml:560(para)
+msgid "If the function has been defined as returning the <type>record</type>data type, then an alias or the key word <literal>AS</literal>must be present, followed by a column definition list in the form <literal>( <replaceable class=\"parameter\"> column_name</replaceable><replaceable class=\"parameter\">data_type</replaceable><optional>, ...</optional>)</literal>. The column definition list must match the actual number and types of columns returned by the function."
+msgstr ""
+
+#: xml/ref/select.xml:573(para)
+msgid "When using the <literal>ROWS FROM( ... )</literal>syntax, if one of the functions requires a column definition list, it's preferred to put the column definition list after the function call inside <literal>ROWS FROM( ... )</literal>. A column definition list can be placed after the <literal>ROWS FROM( ... )</literal>construct only if there's just a single function and no <literal>WITH ORDINALITY</literal>clause."
+msgstr ""
+
+#: xml/ref/select.xml:583(para)
+msgid "To use <literal>ORDINALITY</literal>together with a column definition list, you must use the <literal>ROWS FROM( ... )</literal>syntax and put the column definition list inside <literal>ROWS FROM( ... )</literal>."
+msgstr ""
+
+#: xml/ref/select.xml:600(literal)
+msgid "[ INNER ] JOIN"
+msgstr ""
+
+#: xml/ref/select.xml:605(literal)
+msgid "LEFT [ OUTER ] JOIN"
+msgstr ""
+
+#: xml/ref/select.xml:610(literal)
+msgid "RIGHT [ OUTER ] JOIN"
+msgstr ""
+
+#: xml/ref/select.xml:615(literal)
+msgid "FULL [ OUTER ] JOIN"
+msgstr ""
+
+#: xml/ref/select.xml:620(literal)
+msgid "CROSS JOIN"
+msgstr ""
+
+#: xml/ref/select.xml:596(para)
+msgid "One of <placeholder-1/>For the <literal>INNER</literal>and <literal>OUTER</literal>join types, a join condition must be specified, namely exactly one of <literal>NATURAL</literal>, <literal>ON <replaceable class=\"parameter\"> join_condition</replaceable></literal>, or <literal>USING ( <replaceable class=\"parameter\"> join_column</replaceable>[, ...])</literal>. See below for the meaning. For <literal>CROSS JOIN</literal>, none of these clauses can appear."
+msgstr ""
+
+#: xml/ref/select.xml:637(para)
+msgid "A <literal>JOIN</literal>clause combines two <literal>FROM</literal>items, which for convenience we will refer to as <quote>tables</quote>, though in reality they can be any type of <literal>FROM</literal>item. Use parentheses if necessary to determine the order of nesting. In the absence of parentheses, <literal>JOIN</literal>s nest left-to-right. In any case <literal>JOIN</literal>binds more tightly than the commas separating <literal>FROM</literal>-list items."
+msgstr ""
+
+#: xml/ref/select.xml:651(para)
+msgid "<literal>CROSS JOIN</literal>and <literal>INNER JOIN</literal>produce a simple Cartesian product, the same result as you get from listing the two tables at the top level of <literal>FROM</literal>, but restricted by the join condition (if any). <literal>CROSS JOIN</literal>is equivalent to <literal>INNER JOIN ON (TRUE)</literal>, that is, no rows are removed by qualification. These join types are just a notational convenience, since they do nothing you couldn't do with plain <literal>FROM</literal>and <literal>WHERE</literal>."
+msgstr ""
+
+#: xml/ref/select.xml:665(para)
+msgid "<literal>LEFT OUTER JOIN</literal>returns all rows in the qualified Cartesian product (i.e., all combined rows that pass its join condition), plus one copy of each row in the left-hand table for which there was no right-hand row that passed the join condition. This left-hand row is extended to the full width of the joined table by inserting null values for the right-hand columns. Note that only the <literal>JOIN</literal>clause's own condition is considered while deciding which rows have matches. Outer conditions are applied afterwards."
+msgstr ""
+
+#: xml/ref/select.xml:677(para)
+msgid "Conversely, <literal>RIGHT OUTER JOIN</literal>returns all the joined rows, plus one row for each unmatched right-hand row (extended with nulls on the left). This is just a notational convenience, since you could convert it to a <literal>LEFT OUTER JOIN</literal>by switching the left and right tables."
+msgstr ""
+
+#: xml/ref/select.xml:685(para)
+msgid "<literal>FULL OUTER JOIN</literal>returns all the joined rows, plus one row for each unmatched left-hand row (extended with nulls on the right), plus one row for each unmatched right-hand row (extended with nulls on the left)."
+msgstr ""
+
+#: xml/ref/select.xml:695(literal)
+msgid "ON <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/select.xml:700(para)
+msgid "<replaceable class=\"parameter\"> join_condition</replaceable>is an expression resulting in a value of type <type>boolean</type>(similar to a <literal>WHERE</literal>clause) that specifies which rows in a join are considered to match."
+msgstr ""
+
+#: xml/ref/select.xml:711(literal)
+msgid "USING ( <placeholder-1/>[, ...] )"
+msgstr ""
+
+#: xml/ref/select.xml:716(para)
+msgid "A clause of the form <literal>USING ( a, b, ... )</literal>is shorthand for <literal>ON left_table.a = right_table.a AND left_table.b = right_table.b ...</literal>. Also, <literal>USING</literal>implies that only one of each pair of equivalent columns will be included in the join output, not both."
+msgstr ""
+
+#: xml/ref/select.xml:727(literal)
+msgid "NATURAL"
+msgstr ""
+
+#: xml/ref/select.xml:730(para)
+msgid "<literal>NATURAL</literal>is shorthand for a <literal>USING</literal>list that mentions all columns in the two tables that have the same names."
+msgstr ""
+
+#: xml/ref/select.xml:738(literal)
+msgid "LATERAL"
+msgstr ""
+
+#: xml/ref/select.xml:741(para)
+msgid "The <literal>LATERAL</literal>key word can precede a sub- <command>SELECT</command><literal>FROM</literal>item. This allows the sub- <command>SELECT</command>to refer to columns of <literal>FROM</literal>items that appear before it in the <literal>FROM</literal>list. (Without <literal>LATERAL</literal>, each sub- <command>SELECT</command>is evaluated independently and so cannot cross-reference any other <literal>FROM</literal>item.)"
+msgstr ""
+
+#: xml/ref/select.xml:753(para)
+msgid "<literal>LATERAL</literal>can also precede a function-call <literal>FROM</literal>item, but in this case it is a noise word, because the function expression can refer to earlier <literal>FROM</literal>items in any case."
+msgstr ""
+
+#: xml/ref/select.xml:760(para)
+msgid "A <literal>LATERAL</literal>item can appear at top level in the <literal>FROM</literal>list, or within a <literal>JOIN</literal>tree. In the latter case it can also refer to any items that are on the left-hand side of a <literal>JOIN</literal>that it is on the right-hand side of."
+msgstr ""
+
+#: xml/ref/select.xml:769(para)
+msgid "When a <literal>FROM</literal>item contains <literal>LATERAL</literal>cross-references, evaluation proceeds as follows: for each row of the <literal>FROM</literal>item providing the cross-referenced column(s), or set of rows of multiple <literal>FROM</literal>items providing the columns, the <literal>LATERAL</literal>item is evaluated using that row or row set's values of the columns. The resulting row(s) are joined as usual with the rows they were computed from. This is repeated for each row or set of rows from the column source table(s)."
+msgstr ""
+
+#: xml/ref/select.xml:782(para)
+msgid "The column source table(s) must be <literal>INNER</literal>or <literal>LEFT</literal>joined to the <literal>LATERAL</literal>item, else there would not be a well-defined set of rows from which to compute each set of rows for the <literal>LATERAL</literal>item. Thus, although a construct such as <literal><replaceable>X</replaceable>RIGHT JOIN LATERAL <replaceable>Y</replaceable></literal>is syntactically valid, it is not actually allowed for <replaceable>Y</replaceable>to reference <replaceable>X</replaceable>."
+msgstr ""
+
+#: xml/ref/select.xml:377(para)
+msgid "The <literal>FROM</literal>clause can contain the following elements: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/select.xml:801(title)
+msgid "<literal>WHERE</literal>Clause"
+msgstr ""
+
+#: xml/ref/select.xml:803(para)
+msgid "The optional <literal>WHERE</literal>clause has the general form <synopsis>WHERE \n      <replaceable class=\"parameter\">\n      condition</replaceable></synopsis>where <replaceable class=\"parameter\">condition</replaceable>is any expression that evaluates to a result of type <type>boolean</type>. Any row that does not satisfy this condition will be eliminated from the output. A row satisfies the condition if it returns true when the actual row values are substituted for any variable references."
+msgstr ""
+
+#: xml/ref/select.xml:816(title)
+msgid "<literal>GROUP BY</literal>Clause"
+msgstr ""
+
+#: xml/ref/select.xml:818(para)
+msgid "The optional <literal>GROUP BY</literal>clause has the general form <synopsis>GROUP BY \n      <replaceable class=\"parameter\">\n      grouping_element</replaceable>[, ...]</synopsis>"
+msgstr ""
+
+#: xml/ref/select.xml:823(para)
+msgid "<literal>GROUP BY</literal>will condense into a single row all selected rows that share the same values for the grouped expressions. An <replaceable class=\"parameter\">expression</replaceable>used inside a <replaceable class=\"parameter\"> grouping_element</replaceable>can be an input column name, or the name or ordinal number of an output column ( <command>SELECT</command>list item), or an arbitrary expression formed from input-column values. In case of ambiguity, a <literal>GROUP BY</literal>name will be interpreted as an input-column name rather than an output column name."
+msgstr ""
+
+#: xml/ref/select.xml:837(para)
+msgid "If any of <literal>GROUPING SETS</literal>, <literal>ROLLUP</literal>or <literal>CUBE</literal>are present as grouping elements, then the <literal>GROUP BY</literal>clause as a whole defines some number of independent <replaceable>grouping sets</replaceable>. The effect of this is equivalent to constructing a <literal>UNION ALL</literal>between subqueries with the individual grouping sets as their <literal>GROUP BY</literal>clauses. For further details on the handling of grouping sets see <xref linkend=\"queries-grouping-sets\">.</xref>"
+msgstr ""
+
+#: xml/ref/select.xml:851(para)
+msgid "Aggregate functions, if any are used, are computed across all rows making up each group, producing a separate value for each group. (If there are aggregate functions but no <literal>GROUP BY</literal>clause, the query is treated as having a single group comprising all the selected rows.) The set of rows fed to each aggregate function can be further filtered by attaching a <literal>FILTER</literal>clause to the aggregate function call; see <xref linkend=\"syntax-aggregates\">for more information. When a <literal>FILTER</literal>clause is present, only those rows matching it are included in the input to that aggregate function.</xref>"
+msgstr ""
+
+#: xml/ref/select.xml:866(para)
+msgid "When <literal>GROUP BY</literal>is present, or any aggregate functions are present, it is not valid for the <command>SELECT</command>list expressions to refer to ungrouped columns except within aggregate functions or when the ungrouped column is functionally dependent on the grouped columns, since there would otherwise be more than one possible value to return for an ungrouped column. A functional dependency exists if the grouped columns (or a subset thereof) are the primary key of the table containing the ungrouped column."
+msgstr ""
+
+#: xml/ref/select.xml:877(para)
+msgid "Keep in mind that all aggregate functions are evaluated before evaluating any <quote>scalar</quote>expressions in the <literal>HAVING</literal>clause or <literal>SELECT</literal>list. This means that, for example, a <literal>CASE</literal>expression cannot be used to skip evaluation of an aggregate function; see <xref linkend=\"syntax-express-eval\">.</xref>"
+msgstr ""
+
+#: xml/ref/select.xml:886(para)
+msgid "Currently, <literal>FOR NO KEY UPDATE</literal>, <literal>FOR UPDATE</literal>, <literal>FOR SHARE</literal>and <literal>FOR KEY SHARE</literal>cannot be specified with <literal>GROUP BY</literal>."
+msgstr ""
+
+#: xml/ref/select.xml:894(title)
+msgid "<literal>HAVING</literal>Clause"
+msgstr ""
+
+#: xml/ref/select.xml:896(para)
+msgid "The optional <literal>HAVING</literal>clause has the general form <synopsis>HAVING \n      <replaceable class=\"parameter\">\n      condition</replaceable></synopsis>where <replaceable class=\"parameter\">condition</replaceable>is the same as specified for the <literal>WHERE</literal>clause."
+msgstr ""
+
+#: xml/ref/select.xml:904(para)
+msgid "<literal>HAVING</literal>eliminates group rows that do not satisfy the condition. <literal>HAVING</literal>is different from <literal>WHERE</literal>: <literal>WHERE</literal>filters individual rows before the application of <literal>GROUP BY</literal>, while <literal>HAVING</literal>filters group rows created by <literal>GROUP BY</literal>. Each column referenced in <replaceable class=\"parameter\">condition</replaceable>must unambiguously reference a grouping column, unless the reference appears within an aggregate function or the ungrouped column is functionally dependent on the grouping columns."
+msgstr ""
+
+#: xml/ref/select.xml:919(para)
+msgid "The presence of <literal>HAVING</literal>turns a query into a grouped query even if there is no <literal>GROUP BY</literal>clause. This is the same as what happens when the query contains aggregate functions but no <literal>GROUP BY</literal>clause. All the selected rows are considered to form a single group, and the <command>SELECT</command>list and <literal>HAVING</literal>clause can only reference table columns from within aggregate functions. Such a query will emit a single row if the <literal>HAVING</literal>condition is true, zero rows if it is not true."
+msgstr ""
+
+#: xml/ref/select.xml:932(para)
+msgid "Currently, <literal>FOR NO KEY UPDATE</literal>, <literal>FOR UPDATE</literal>, <literal>FOR SHARE</literal>and <literal>FOR KEY SHARE</literal>cannot be specified with <literal>HAVING</literal>."
+msgstr ""
+
+#: xml/ref/select.xml:940(title)
+msgid "<literal>WINDOW</literal>Clause"
+msgstr ""
+
+#: xml/ref/select.xml:942(para)
+msgid "The optional <literal>WINDOW</literal>clause has the general form <synopsis>WINDOW \n      <replaceable class=\"parameter\">window_name</replaceable>AS ( \n      <replaceable class=\"parameter\">\n      window_definition</replaceable>) [, ...]</synopsis>where <replaceable class=\"parameter\">window_name</replaceable>is a name that can be referenced from <literal>OVER</literal>clauses or subsequent window definitions, and <replaceable class=\"parameter\"> window_definition</replaceable>is <synopsis>[ \n      <replaceable class=\"parameter\">\n      existing_window_name</replaceable>] [ PARTITION BY \n      <replaceable class=\"parameter\">expression</replaceable>[,\n      ...] ] [ ORDER BY \n      <replaceable class=\"parameter\">expression</replaceable>[ ASC\n      | DESC | USING \n      <replaceable class=\"parameter\">operator</replaceable>] [\n      NULLS { FIRST | LAST } ] [, ...] ] [ \n      <replaceable class=\"parameter\">\n      frame_clause</replaceable>]</synopsis>"
+msgstr ""
+
+#: xml/ref/select.xml:965(para)
+msgid "If an <replaceable class=\"parameter\"> existing_window_name</replaceable>is specified it must refer to an earlier entry in the <literal>WINDOW</literal>list; the new window copies its partitioning clause from that entry, as well as its ordering clause if any. In this case the new window cannot specify its own <literal>PARTITION BY</literal>clause, and it can specify <literal>ORDER BY</literal>only if the copied window does not have one. The new window always uses its own frame clause; the copied window must not specify a frame clause."
+msgstr ""
+
+#: xml/ref/select.xml:977(para)
+msgid "The elements of the <literal>PARTITION BY</literal>list are interpreted in much the same fashion as elements of a <xref linkend=\"sql-groupby\" endterm=\"sql-groupby-title\">, except that they are always simple expressions and never the name or number of an output column. Another difference is that these expressions can contain aggregate function calls, which are not allowed in a regular <literal>GROUP BY</literal>clause. They are allowed here because windowing occurs after grouping and aggregation.</xref>"
+msgstr ""
+
+#: xml/ref/select.xml:988(para)
+msgid "Similarly, the elements of the <literal>ORDER BY</literal>list are interpreted in much the same fashion as elements of an <xref linkend=\"sql-orderby\" endterm=\"sql-orderby-title\">, except that the expressions are always taken as simple expressions and never the name or number of an output column.</xref>"
+msgstr ""
+
+#: xml/ref/select.xml:995(para)
+msgid "The optional <replaceable class=\"parameter\"> frame_clause</replaceable>defines the <firstterm>window frame</firstterm>for window functions that depend on the frame (not all do). The window frame is a set of related rows for each row of the query (called the <firstterm>current row</firstterm>). The <replaceable class=\"parameter\">frame_clause</replaceable>can be one of <synopsis>{ RANGE | ROWS } \n      <replaceable>frame_start</replaceable>{ RANGE | ROWS }\n      BETWEEN \n      <replaceable>frame_start</replaceable>AND \n      <replaceable>frame_end</replaceable></synopsis>where <replaceable>frame_start</replaceable>and <replaceable>frame_end</replaceable>can be one of <synopsis>UNBOUNDED PRECEDING \n      <replaceable>value</replaceable>PRECEDING CURRENT ROW \n      <replaceable>value</replaceable>FOLLOWING UNBOUNDED\n      FOLLOWING</synopsis>If <replaceable>frame_end</replaceable>is omitted it defaults to <literal>CURRENT ROW</literal>. Restrictions are that <replaceable>frame_start</replaceable>cannot be <literal>UNBOUNDED FOLLOWING</literal>, <replaceable>frame_end</replaceable>cannot be <literal>UNBOUNDED PRECEDING</literal>, and the <replaceable>frame_end</replaceable>choice cannot appear earlier in the above list than the <replaceable>frame_start</replaceable>choice for example <literal>RANGE BETWEEN CURRENT ROW AND <replaceable>value</replaceable>PRECEDING</literal>is not allowed."
+msgstr ""
+
+#: xml/ref/select.xml:1028(para)
+msgid "The default framing option is <literal>RANGE UNBOUNDED PRECEDING</literal>, which is the same as <literal>RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW</literal>; it sets the frame to be all rows from the partition start up through the current row's last peer (a row that <literal>ORDER BY</literal>considers equivalent to the current row, or all rows if there is no <literal>ORDER BY</literal>). In general, <literal>UNBOUNDED PRECEDING</literal>means that the frame starts with the first row of the partition, and similarly <literal>UNBOUNDED FOLLOWING</literal>means that the frame ends with the last row of the partition (regardless of <literal>RANGE</literal>or <literal>ROWS</literal>mode). In <literal>ROWS</literal>mode, <literal>CURRENT ROW</literal>means that the frame starts or ends with the current row; but in <literal>RANGE</literal>mode it means that the frame starts or ends with the current row's first or last peer in the <literal>ORDER BY</literal>ordering. The <replaceable>value</replaceable><literal>PRECEDING</literal>and <replaceable>value</replaceable><literal>FOLLOWING</literal>cases are currently only allowed in <literal>ROWS</literal>mode. They indicate that the frame starts or ends with the row that many rows before or after the current row. <replaceable>value</replaceable>must be an integer expression not containing any variables, aggregate functions, or window functions. The value must not be null or negative; but it can be zero, which selects the current row itself."
+msgstr ""
+
+#: xml/ref/select.xml:1062(para)
+msgid "Beware that the <literal>ROWS</literal>options can produce unpredictable results if the <literal>ORDER BY</literal>ordering does not order the rows uniquely. The <literal>RANGE</literal>options are designed to ensure that rows that are peers in the <literal>ORDER BY</literal>ordering are treated alike; all peer rows will be in the same frame."
+msgstr ""
+
+#: xml/ref/select.xml:1071(para)
+msgid "The purpose of a <literal>WINDOW</literal>clause is to specify the behavior of <firstterm>window functions</firstterm>appearing in the query's <xref linkend=\"sql-select-list\" endterm=\"sql-select-list-title\">or <xref linkend=\"sql-orderby\" endterm=\"sql-orderby-title\">. These functions can reference the <literal>WINDOW</literal>clause entries by name in their <literal>OVER</literal>clauses. A <literal>WINDOW</literal>clause entry does not have to be referenced anywhere, however; if it is not used in the query it is simply ignored. It is possible to use window functions without any <literal>WINDOW</literal>clause at all, since a window function call can specify its window definition directly in its <literal>OVER</literal>clause. However, the <literal>WINDOW</literal>clause saves typing when the same window definition is needed for more than one window function.</xref></xref>"
+msgstr ""
+
+#: xml/ref/select.xml:1093(para)
+msgid "Currently, <literal>FOR NO KEY UPDATE</literal>, <literal>FOR UPDATE</literal>, <literal>FOR SHARE</literal>and <literal>FOR KEY SHARE</literal>cannot be specified with <literal>WINDOW</literal>."
+msgstr ""
+
+#: xml/ref/select.xml:1099(para)
+msgid "Window functions are described in detail in <xref linkend=\"tutorial-window\">, <xref linkend=\"syntax-window-functions\">, and <xref linkend=\"queries-window\">.</xref></xref></xref>"
+msgstr ""
+
+#: xml/ref/select.xml:1105(title)
+msgid "<command>SELECT</command>List"
+msgstr ""
+
+#: xml/ref/select.xml:1107(para)
+msgid "The <command>SELECT</command>list (between the key words <literal>SELECT</literal>and <literal>FROM</literal>) specifies expressions that form the output rows of the <command>SELECT</command>statement. The expressions can (and usually do) refer to columns computed in the <literal>FROM</literal>clause."
+msgstr ""
+
+#: xml/ref/select.xml:1115(para)
+msgid "Just as in a table, every output column of a <command>SELECT</command>has a name. In a simple <command>SELECT</command>this name is just used to label the column for display, but when the <command>SELECT</command>is a sub-query of a larger query, the name is seen by the larger query as the column name of the virtual table produced by the sub-query. To specify the name to use for an output column, write <literal>AS</literal><replaceable class=\"parameter\">output_name</replaceable>after the column's expression. (You can omit <literal>AS</literal>, but only if the desired output name does not match any <productname>PostgreSQL</productname>keyword (see <xref linkend=\"sql-keywords-appendix\">). For protection against possible future keyword additions, it is recommended that you always either write <literal>AS</literal>or double-quote the output name.) If you do not specify a column name, a name is chosen automatically by <productname>PostgreSQL</productname>. If the column's expression is a simple column reference then the chosen name is the same as that column's name. In more complex cases a function or type name may be used, or the system may fall back on a generated name such as <literal>?column?</literal>.</xref>"
+msgstr ""
+
+#: xml/ref/select.xml:1141(para)
+msgid "An output column's name can be used to refer to the column's value in <literal>ORDER BY</literal>and <literal>GROUP BY</literal>clauses, but not in the <literal>WHERE</literal>or <literal>HAVING</literal>clauses; there you must write out the expression instead."
+msgstr ""
+
+#: xml/ref/select.xml:1148(para)
+msgid "Instead of an expression, <literal>*</literal>can be written in the output list as a shorthand for all the columns of the selected rows. Also, you can write <literal><replaceable class=\"parameter\"> table_name</replaceable>.*</literal>as a shorthand for the columns coming from just that table. In these cases it is not possible to specify new names with <literal>AS</literal>; the output column names will be the same as the table columns' names."
+msgstr ""
+
+#: xml/ref/select.xml:1161(title)
+msgid "<literal>DISTINCT</literal>Clause"
+msgstr ""
+
+#: xml/ref/select.xml:1163(para)
+msgid "If <literal>SELECT DISTINCT</literal>is specified, all duplicate rows are removed from the result set (one row is kept from each group of duplicates). <literal>SELECT ALL</literal>specifies the opposite: all rows are kept; that is the default."
+msgstr ""
+
+#: xml/ref/select.xml:1180(programlisting)
+#, no-wrap
+msgid "SELECT DISTINCT ON (location) location, time,\n      report FROM weather_reports ORDER BY location, time\n      DESC;"
+msgstr ""
+
+#: xml/ref/select.xml:1169(para)
+msgid "<literal>SELECT DISTINCT ON ( <replaceable class=\"parameter\">expression</replaceable>[, ...] )</literal>keeps only the first row of each set of rows where the given expressions evaluate to equal. The <literal>DISTINCT ON</literal>expressions are interpreted using the same rules as for <literal>ORDER BY</literal>(see above). Note that the <quote>first row</quote>of each set is unpredictable unless <literal>ORDER BY</literal>is used to ensure that the desired row appears first. For example: <placeholder-1/>retrieves the most recent weather report for each location. But if we had not used <literal>ORDER BY</literal>to force descending order of time values for each location, we'd have gotten a report from an unpredictable time for each location."
+msgstr ""
+
+#: xml/ref/select.xml:1187(para)
+msgid "The <literal>DISTINCT ON</literal>expression(s) must match the leftmost <literal>ORDER BY</literal>expression(s). The <literal>ORDER BY</literal>clause will normally contain additional expression(s) that determine the desired precedence of rows within each <literal>DISTINCT ON</literal>group."
+msgstr ""
+
+#: xml/ref/select.xml:1195(para)
+msgid "Currently, <literal>FOR NO KEY UPDATE</literal>, <literal>FOR UPDATE</literal>, <literal>FOR SHARE</literal>and <literal>FOR KEY SHARE</literal>cannot be specified with <literal>DISTINCT</literal>."
+msgstr ""
+
+#: xml/ref/select.xml:1203(title)
+msgid "<literal>UNION</literal>Clause"
+msgstr ""
+
+#: xml/ref/select.xml:1205(para)
+msgid "The <literal>UNION</literal>clause has this general form: <synopsis>\n      <replaceable class=\"parameter\">\n      select_statement</replaceable>UNION [ ALL | DISTINCT ] \n      <replaceable class=\"parameter\">\n      select_statement</replaceable></synopsis><replaceable class=\"parameter\"> select_statement</replaceable>is any <command>SELECT</command>statement without an <literal>ORDER BY</literal>, <literal>LIMIT</literal>, <literal>FOR NO KEY UPDATE</literal>, <literal>FOR UPDATE</literal>, <literal>FOR SHARE</literal>, or <literal>FOR KEY SHARE</literal>clause. ( <literal>ORDER BY</literal>and <literal>LIMIT</literal>can be attached to a subexpression if it is enclosed in parentheses. Without parentheses, these clauses will be taken to apply to the result of the <literal>UNION</literal>, not to its right-hand input expression.)"
+msgstr ""
+
+#: xml/ref/select.xml:1227(para)
+msgid "The <literal>UNION</literal>operator computes the set union of the rows returned by the involved <command>SELECT</command>statements. A row is in the set union of two result sets if it appears in at least one of the result sets. The two <command>SELECT</command>statements that represent the direct operands of the <literal>UNION</literal>must produce the same number of columns, and corresponding columns must be of compatible data types."
+msgstr ""
+
+#: xml/ref/select.xml:1238(para)
+msgid "The result of <literal>UNION</literal>does not contain any duplicate rows unless the <literal>ALL</literal>option is specified. <literal>ALL</literal>prevents elimination of duplicates. (Therefore, <literal>UNION ALL</literal>is usually significantly quicker than <literal>UNION</literal>; use <literal>ALL</literal>when you can.) <literal>DISTINCT</literal>can be written to explicitly specify the default behavior of eliminating duplicate rows."
+msgstr ""
+
+#: xml/ref/select.xml:1251(para)
+msgid "Multiple <literal>UNION</literal>operators in the same <command>SELECT</command>statement are evaluated left to right, unless otherwise indicated by parentheses."
+msgstr ""
+
+#: xml/ref/select.xml:1255(para)
+msgid "Currently, <literal>FOR NO KEY UPDATE</literal>, <literal>FOR UPDATE</literal>, <literal>FOR SHARE</literal>and <literal>FOR KEY SHARE</literal>cannot be specified either for a <literal>UNION</literal>result or for any input of a <literal>UNION</literal>."
+msgstr ""
+
+#: xml/ref/select.xml:1265(title)
+msgid "<literal>INTERSECT</literal>Clause"
+msgstr ""
+
+#: xml/ref/select.xml:1267(para)
+msgid "The <literal>INTERSECT</literal>clause has this general form: <synopsis>\n      <replaceable class=\"parameter\">\n      select_statement</replaceable>INTERSECT [ ALL | DISTINCT ] \n      <replaceable class=\"parameter\">\n      select_statement</replaceable></synopsis><replaceable class=\"parameter\"> select_statement</replaceable>is any <command>SELECT</command>statement without an <literal>ORDER BY</literal>, <literal>LIMIT</literal>, <literal>FOR NO KEY UPDATE</literal>, <literal>FOR UPDATE</literal>, <literal>FOR SHARE</literal>, or <literal>FOR KEY SHARE</literal>clause."
+msgstr ""
+
+#: xml/ref/select.xml:1283(para)
+msgid "The <literal>INTERSECT</literal>operator computes the set intersection of the rows returned by the involved <command>SELECT</command>statements. A row is in the intersection of two result sets if it appears in both result sets."
+msgstr ""
+
+#: xml/ref/select.xml:1289(para)
+msgid "The result of <literal>INTERSECT</literal>does not contain any duplicate rows unless the <literal>ALL</literal>option is specified. With <literal>ALL</literal>, a row that has <replaceable>m</replaceable>duplicates in the left table and <replaceable>n</replaceable>duplicates in the right table will appear min( <replaceable>m</replaceable>, <replaceable>n</replaceable>) times in the result set. <literal>DISTINCT</literal>can be written to explicitly specify the default behavior of eliminating duplicate rows."
+msgstr ""
+
+#: xml/ref/select.xml:1302(para)
+msgid "Multiple <literal>INTERSECT</literal>operators in the same <command>SELECT</command>statement are evaluated left to right, unless parentheses dictate otherwise. <literal>INTERSECT</literal>binds more tightly than <literal>UNION</literal>. That is, <literal>A UNION B INTERSECT C</literal>will be read as <literal>A UNION (B INTERSECT C)</literal>."
+msgstr ""
+
+#: xml/ref/select.xml:1310(para)
+msgid "Currently, <literal>FOR NO KEY UPDATE</literal>, <literal>FOR UPDATE</literal>, <literal>FOR SHARE</literal>and <literal>FOR KEY SHARE</literal>cannot be specified either for an <literal>INTERSECT</literal>result or for any input of an <literal>INTERSECT</literal>."
+msgstr ""
+
+#: xml/ref/select.xml:1320(title)
+msgid "<literal>EXCEPT</literal>Clause"
+msgstr ""
+
+#: xml/ref/select.xml:1322(para)
+msgid "The <literal>EXCEPT</literal>clause has this general form: <synopsis>\n      <replaceable class=\"parameter\">\n      select_statement</replaceable>EXCEPT [ ALL | DISTINCT ] \n      <replaceable class=\"parameter\">\n      select_statement</replaceable></synopsis><replaceable class=\"parameter\"> select_statement</replaceable>is any <command>SELECT</command>statement without an <literal>ORDER BY</literal>, <literal>LIMIT</literal>, <literal>FOR NO KEY UPDATE</literal>, <literal>FOR UPDATE</literal>, <literal>FOR SHARE</literal>, or <literal>FOR KEY SHARE</literal>clause."
+msgstr ""
+
+#: xml/ref/select.xml:1338(para)
+msgid "The <literal>EXCEPT</literal>operator computes the set of rows that are in the result of the left <command>SELECT</command>statement but not in the result of the right one."
+msgstr ""
+
+#: xml/ref/select.xml:1343(para)
+msgid "The result of <literal>EXCEPT</literal>does not contain any duplicate rows unless the <literal>ALL</literal>option is specified. With <literal>ALL</literal>, a row that has <replaceable>m</replaceable>duplicates in the left table and <replaceable>n</replaceable>duplicates in the right table will appear max( <replaceable>m</replaceable>- <replaceable>n</replaceable>,0) times in the result set. <literal>DISTINCT</literal>can be written to explicitly specify the default behavior of eliminating duplicate rows."
+msgstr ""
+
+#: xml/ref/select.xml:1356(para)
+msgid "Multiple <literal>EXCEPT</literal>operators in the same <command>SELECT</command>statement are evaluated left to right, unless parentheses dictate otherwise. <literal>EXCEPT</literal>binds at the same level as <literal>UNION</literal>."
+msgstr ""
+
+#: xml/ref/select.xml:1362(para)
+msgid "Currently, <literal>FOR NO KEY UPDATE</literal>, <literal>FOR UPDATE</literal>, <literal>FOR SHARE</literal>and <literal>FOR KEY SHARE</literal>cannot be specified either for an <literal>EXCEPT</literal>result or for any input of an <literal>EXCEPT</literal>."
+msgstr ""
+
+#: xml/ref/select.xml:1372(title)
+msgid "<literal>ORDER BY</literal>Clause"
+msgstr ""
+
+#: xml/ref/select.xml:1374(para)
+msgid "The optional <literal>ORDER BY</literal>clause has this general form: <synopsis>ORDER BY \n      <replaceable class=\"parameter\">expression</replaceable>[ ASC\n      | DESC | USING \n      <replaceable class=\"parameter\">operator</replaceable>] [\n      NULLS { FIRST | LAST } ] [, ...]</synopsis>The <literal>ORDER BY</literal>clause causes the result rows to be sorted according to the specified expression(s). If two rows are equal according to the leftmost expression, they are compared according to the next expression and so on. If they are equal according to all specified expressions, they are returned in an implementation-dependent order."
+msgstr ""
+
+#: xml/ref/select.xml:1387(para)
+msgid "Each <replaceable class=\"parameter\">expression</replaceable>can be the name or ordinal number of an output column ( <command>SELECT</command>list item), or it can be an arbitrary expression formed from input-column values."
+msgstr ""
+
+#: xml/ref/select.xml:1392(para)
+msgid "The ordinal number refers to the ordinal (left-to-right) position of the output column. This feature makes it possible to define an ordering on the basis of a column that does not have a unique name. This is never absolutely necessary because it is always possible to assign a name to an output column using the <literal>AS</literal>clause."
+msgstr ""
+
+#: xml/ref/select.xml:1405(programlisting)
+#, no-wrap
+msgid "SELECT name FROM distributors ORDER BY\n      code;"
+msgstr ""
+
+#: xml/ref/select.xml:1399(para)
+msgid "It is also possible to use arbitrary expressions in the <literal>ORDER BY</literal>clause, including columns that do not appear in the <command>SELECT</command>output list. Thus the following statement is valid: <placeholder-1/>A limitation of this feature is that an <literal>ORDER BY</literal>clause applying to the result of a <literal>UNION</literal>, <literal>INTERSECT</literal>, or <literal>EXCEPT</literal>clause can only specify an output column name or number, not an expression."
+msgstr ""
+
+#: xml/ref/select.xml:1414(para)
+msgid "If an <literal>ORDER BY</literal>expression is a simple name that matches both an output column name and an input column name, <literal>ORDER BY</literal>will interpret it as the output column name. This is the opposite of the choice that <literal>GROUP BY</literal>will make in the same situation. This inconsistency is made to be compatible with the SQL standard."
+msgstr ""
+
+#: xml/ref/select.xml:1422(para)
+msgid "Optionally one can add the key word <literal>ASC</literal>(ascending) or <literal>DESC</literal>(descending) after any expression in the <literal>ORDER BY</literal>clause. If not specified, <literal>ASC</literal>is assumed by default. Alternatively, a specific ordering operator name can be specified in the <literal>USING</literal>clause. An ordering operator must be a less-than or greater-than member of some B-tree operator family. <literal>ASC</literal>is usually equivalent to <literal>USING</literal>and <literal>DESC</literal>is usually equivalent to <literal>USING</literal>. (But the creator of a user-defined data type can define exactly what the default sort ordering is, and it might correspond to operators with other names.)"
+msgstr ""
+
+#: xml/ref/select.xml:1439(para)
+msgid "If <literal>NULLS LAST</literal>is specified, null values sort after all non-null values; if <literal>NULLS FIRST</literal>is specified, null values sort before all non-null values. If neither is specified, the default behavior is <literal>NULLS LAST</literal>when <literal>ASC</literal>is specified or implied, and <literal>NULLS FIRST</literal>when <literal>DESC</literal>is specified (thus, the default is to act as though nulls are larger than non-nulls). When <literal>USING</literal>is specified, the default nulls ordering depends on whether the operator is a less-than or greater-than operator."
+msgstr ""
+
+#: xml/ref/select.xml:1453(para)
+msgid "Note that ordering options apply only to the expression they follow; for example <literal>ORDER BY x, y DESC</literal>does not mean the same thing as <literal>ORDER BY x DESC, y DESC</literal>."
+msgstr ""
+
+#: xml/ref/select.xml:1458(para)
+msgid "Character-string data is sorted according to the collation that applies to the column being sorted. That can be overridden at need by including a <literal>COLLATE</literal>clause in the <replaceable class=\"parameter\">expression</replaceable>, for example <literal>ORDER BY mycolumn COLLATE \"en_US\"</literal>. For more information see <xref linkend=\"sql-syntax-collate-exprs\">and <xref linkend=\"collation\">.</xref></xref>"
+msgstr ""
+
+#: xml/ref/select.xml:1470(title)
+msgid "<literal>LIMIT</literal>Clause"
+msgstr ""
+
+#: xml/ref/select.xml:1472(para)
+msgid "The <literal>LIMIT</literal>clause consists of two independent sub-clauses: <synopsis>LIMIT { \n      <replaceable class=\"parameter\">count</replaceable>| ALL }\n      OFFSET \n      <replaceable class=\"parameter\">start</replaceable></synopsis><replaceable class=\"parameter\">count</replaceable>specifies the maximum number of rows to return, while <replaceable class=\"parameter\">start</replaceable>specifies the number of rows to skip before starting to return rows. When both are specified, <replaceable class=\"parameter\">start</replaceable>rows are skipped before starting to count the <replaceable class=\"parameter\">count</replaceable>rows to be returned."
+msgstr ""
+
+#: xml/ref/select.xml:1488(para)
+msgid "If the <replaceable class=\"parameter\">count</replaceable>expression evaluates to NULL, it is treated as <literal>LIMIT ALL</literal>, i.e., no limit. If <replaceable class=\"parameter\">start</replaceable>evaluates to NULL, it is treated the same as <literal>OFFSET 0</literal>."
+msgstr ""
+
+#: xml/ref/select.xml:1495(para)
+msgid "SQL:2008 introduced a different syntax to achieve the same result, which <productname>PostgreSQL</productname>also supports. It is: <synopsis>OFFSET \n      <replaceable class=\"parameter\">start</replaceable>{ ROW |\n      ROWS } FETCH { FIRST | NEXT } [ \n      <replaceable class=\"parameter\">count</replaceable>] { ROW |\n      ROWS } ONLY</synopsis>In this syntax, to write anything except a simple integer constant for <replaceable class=\"parameter\">start</replaceable>or <replaceable class=\"parameter\">count</replaceable>, you must write parentheses around it. If <replaceable class=\"parameter\">count</replaceable>is omitted in a <literal>FETCH</literal>clause, it defaults to 1. <literal>ROW</literal>and <literal>ROWS</literal>as well as <literal>FIRST</literal>and <literal>NEXT</literal>are noise words that don't influence the effects of these clauses. According to the standard, the <literal>OFFSET</literal>clause must come before the <literal>FETCH</literal>clause if both are present; but <productname>PostgreSQL</productname>is laxer and allows either order."
+msgstr ""
+
+#: xml/ref/select.xml:1519(para)
+msgid "When using <literal>LIMIT</literal>, it is a good idea to use an <literal>ORDER BY</literal>clause that constrains the result rows into a unique order. Otherwise you will get an unpredictable subset of the query's rows you might be asking for the tenth through twentieth rows, but tenth through twentieth in what ordering? You don't know what ordering unless you specify <literal>ORDER BY</literal>."
+msgstr ""
+
+#: xml/ref/select.xml:1528(para)
+msgid "The query planner takes <literal>LIMIT</literal>into account when generating a query plan, so you are very likely to get different plans (yielding different row orders) depending on what you use for <literal>LIMIT</literal>and <literal>OFFSET</literal>. Thus, using different <literal>LIMIT</literal>/ <literal>OFFSET</literal>values to select different subsets of a query result <emphasis>will give inconsistent results</emphasis>unless you enforce a predictable result ordering with <literal>ORDER BY</literal>. This is not a bug; it is an inherent consequence of the fact that SQL does not promise to deliver the results of a query in any particular order unless <literal>ORDER BY</literal>is used to constrain the order."
+msgstr ""
+
+#: xml/ref/select.xml:1545(para)
+msgid "It is even possible for repeated executions of the same <literal>LIMIT</literal>query to return different subsets of the rows of a table, if there is not an <literal>ORDER BY</literal>to enforce selection of a deterministic subset. Again, this is not a bug; determinism of the results is simply not guaranteed in such a case."
+msgstr ""
+
+#: xml/ref/select.xml:1555(title)
+msgid "The Locking Clause"
+msgstr ""
+
+#: xml/ref/select.xml:1557(para)
+msgid "<literal>FOR UPDATE</literal>, <literal>FOR NO KEY UPDATE</literal>, <literal>FOR SHARE</literal>and <literal>FOR KEY SHARE</literal>are <firstterm>locking clauses</firstterm>; they affect how <literal>SELECT</literal>locks rows as they are obtained from the table."
+msgstr ""
+
+#: xml/ref/select.xml:1565(para)
+msgid "The locking clause has the general form <synopsis>FOR \n      <replaceable>lock_strength</replaceable>[ OF \n      <replaceable class=\"parameter\">table_name</replaceable>[,\n      ...] ] [ NOWAIT | SKIP LOCKED ]</synopsis>where <replaceable>lock_strength</replaceable>can be one of <synopsis>UPDATE NO KEY UPDATE SHARE KEY\n      SHARE</synopsis>"
+msgstr ""
+
+#: xml/ref/select.xml:1573(para)
+msgid "For more information on each row-level lock mode, refer to <xref linkend=\"locking-rows\">.</xref>"
+msgstr ""
+
+#: xml/ref/select.xml:1576(para)
+msgid "To prevent the operation from waiting for other transactions to commit, use either the <literal>NOWAIT</literal>or <literal>SKIP LOCKED</literal>option. With <literal>NOWAIT</literal>, the statement reports an error, rather than waiting, if a selected row cannot be locked immediately. With <literal>SKIP LOCKED</literal>, any selected rows that cannot be immediately locked are skipped. Skipping locked rows provides an inconsistent view of the data, so this is not suitable for general purpose work, but can be used to avoid lock contention with multiple consumers accessing a queue-like table. Note that <literal>NOWAIT</literal>and <literal>SKIP LOCKED</literal>apply only to the row-level lock(s) the required <literal>ROW SHARE</literal>table-level lock is still taken in the ordinary way (see <xref linkend=\"mvcc\">). You can use <xref linkend=\"sql-lock\">with the <literal>NOWAIT</literal>option first, if you need to acquire the table-level lock without waiting.</xref></xref>"
+msgstr ""
+
+#: xml/ref/select.xml:1598(para)
+msgid "If specific tables are named in a locking clause, then only rows coming from those tables are locked; any other tables used in the <command>SELECT</command>are simply read as usual. A locking clause without a table list affects all tables used in the statement. If a locking clause is applied to a view or sub-query, it affects all tables used in the view or sub-query. However, these clauses do not apply to <literal>WITH</literal>queries referenced by the primary query. If you want row locking to occur within a <literal>WITH</literal>query, specify a locking clause within the <literal>WITH</literal>query."
+msgstr ""
+
+#: xml/ref/select.xml:1611(para)
+msgid "Multiple locking clauses can be written if it is necessary to specify different locking behavior for different tables. If the same table is mentioned (or implicitly affected) by more than one locking clause, then it is processed as if it was only specified by the strongest one. Similarly, a table is processed as <literal>NOWAIT</literal>if that is specified in any of the clauses affecting it. Otherwise, it is processed as <literal>SKIP LOCKED</literal>if that is specified in any of the clauses affecting it."
+msgstr ""
+
+#: xml/ref/select.xml:1621(para)
+msgid "The locking clauses cannot be used in contexts where returned rows cannot be clearly identified with individual table rows; for example they cannot be used with aggregation."
+msgstr ""
+
+#: xml/ref/select.xml:1625(para)
+msgid "When a locking clause appears at the top level of a <command>SELECT</command>query, the rows that are locked are exactly those that are returned by the query; in the case of a join query, the rows locked are those that contribute to returned join rows. In addition, rows that satisfied the query conditions as of the query snapshot will be locked, although they will not be returned if they were updated after the snapshot and no longer satisfy the query conditions. If a <literal>LIMIT</literal>is used, locking stops once enough rows have been returned to satisfy the limit (but note that rows skipped over by <literal>OFFSET</literal>will get locked). Similarly, if a locking clause is used in a cursor's query, only rows actually fetched or stepped past by the cursor will be locked."
+msgstr ""
+
+#: xml/ref/select.xml:1647(programlisting)
+#, no-wrap
+msgid "SELECT * FROM (SELECT * FROM mytable FOR\n      UPDATE) ss WHERE col1 = 5;"
+msgstr ""
+
+#: xml/ref/select.xml:1641(para)
+msgid "When a locking clause appears in a sub- <command>SELECT</command>, the rows locked are those returned to the outer query by the sub-query. This might involve fewer rows than inspection of the sub-query alone would suggest, since conditions from the outer query might be used to optimize execution of the sub-query. For example, <placeholder-1/>will lock only rows having <literal>col1 = 5</literal>, even though that condition is not textually within the sub-query."
+msgstr ""
+
+#: xml/ref/select.xml:1654(programlisting)
+#, no-wrap
+msgid "BEGIN; SELECT * FROM mytable WHERE key = 1\n      FOR UPDATE; SAVEPOINT s; UPDATE mytable SET ... WHERE key =\n      1; ROLLBACK TO s;"
+msgstr ""
+
+#: xml/ref/select.xml:1652(para)
+msgid "Previous releases failed to preserve a lock which is upgraded by a later savepoint. For example, this code: <placeholder-1/>would fail to preserve the <literal>FOR UPDATE</literal>lock after the <command>ROLLBACK TO</command>. This has been fixed in release 9.3."
+msgstr ""
+
+#: xml/ref/select.xml:1677(programlisting)
+#, no-wrap
+msgid "SELECT * FROM (SELECT * FROM mytable FOR\n        UPDATE) ss ORDER BY column1;"
+msgstr ""
+
+#: xml/ref/select.xml:1661(para)
+msgid "It is possible for a <command>SELECT</command>command running at the <literal>READ COMMITTED</literal>transaction isolation level and using <literal>ORDER BY</literal>and a locking clause to return rows out of order. This is because <literal>ORDER BY</literal>is applied first. The command sorts the result, but might then block trying to obtain a lock on one or more of the rows. Once the <literal>SELECT</literal>unblocks, some of the ordering column values might have been modified, leading to those rows appearing to be out of order (though they are in order in terms of the original column values). This can be worked around at need by placing the <literal>FOR UPDATE/SHARE</literal>clause in a sub-query, for example <placeholder-1/>Note that this will result in locking all rows of <structname>mytable</structname>, whereas <literal>FOR UPDATE</literal>at the top level would lock only the actually returned rows. This can make for a significant performance difference, particularly if the <literal>ORDER BY</literal>is combined with <literal>LIMIT</literal>or other restrictions. So this technique is recommended only if concurrent updates of the ordering columns are expected and a strictly sorted result is required."
+msgstr ""
+
+#: xml/ref/select.xml:1689(para)
+msgid "At the <literal>REPEATABLE READ</literal>or <literal>SERIALIZABLE</literal>transaction isolation level this would cause a serialization failure (with a <literal>SQLSTATE</literal>of <literal>'40001'</literal>), so there is no possibility of receiving rows out of order under these isolation levels."
+msgstr ""
+
+#: xml/ref/select.xml:1700(title)
+msgid "<literal>TABLE</literal>Command"
+msgstr ""
+
+#: xml/ref/select.xml:1703(programlisting)
+#, no-wrap
+msgid "TABLE \n      <replaceable class=\"parameter\">\n      name</replaceable>"
+msgstr ""
+
+#: xml/ref/select.xml:1706(programlisting)
+#, no-wrap
+msgid "SELECT * FROM \n      <replaceable class=\"parameter\">\n      name</replaceable>"
+msgstr ""
+
+#: xml/ref/select.xml:1702(para)
+msgid "The command <placeholder-1/>is equivalent to <placeholder-2/>It can be used as a top-level command or as a space-saving syntax variant in parts of complex queries. Only the <literal>WITH</literal>, <literal>UNION</literal>, <literal>INTERSECT</literal>, <literal>EXCEPT</literal>, <literal>ORDER BY</literal>, <literal>LIMIT</literal>, <literal>OFFSET</literal>, <literal>FETCH</literal>and <literal>FOR</literal>locking clauses can be used with <command>TABLE</command>; the <literal>WHERE</literal>clause and any form of aggregation cannot be used."
+msgstr ""
+
+#: xml/ref/select.xml:1726(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/select.xml:1730(programlisting)
+#, no-wrap
+msgid "SELECT f.title, f.did, d.name, f.date_prod,\n    f.kind FROM distributors d, films f WHERE f.did = d.did title |\n    did | name | date_prod | kind\n    -------------------+-----+--------------+------------+----------\n    The Third Man | 101 | British Lion | 1949-12-23 | Drama The\n    African Queen | 101 | British Lion | 1951-08-11 | Romantic\n    ..."
+msgstr ""
+
+#: xml/ref/select.xml:1727(para)
+msgid "To join the table <literal>films</literal>with the table <literal>distributors</literal>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/select.xml:1740(programlisting)
+#, no-wrap
+msgid "SELECT kind, sum(len) AS total FROM films GROUP\n    BY kind; kind | total ----------+------- Action | 07:34 Comedy\n    | 02:58 Drama | 14:28 Musical | 06:42 Romantic |\n    04:38"
+msgstr ""
+
+#: xml/ref/select.xml:1737(para)
+msgid "To sum the column <literal>len</literal>of all films and group the results by <literal>kind</literal>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/select.xml:1748(programlisting)
+#, no-wrap
+msgid "SELECT kind, sum(len) AS total FROM films GROUP\n    BY kind HAVING sum(len) interval '5 hours'; kind | total\n    ----------+------- Comedy | 02:58 Romantic |\n    04:38"
+msgstr ""
+
+#: xml/ref/select.xml:1744(para)
+msgid "To sum the column <literal>len</literal>of all films, group the results by <literal>kind</literal>and show those group totals that are less than 5 hours: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/select.xml:1756(programlisting)
+#, no-wrap
+msgid "SELECT * FROM distributors ORDER BY name;\n    SELECT * FROM distributors ORDER BY 2; did | name\n    -----+------------------ 109 | 20th Century Fox 110 | Bavaria\n    Atelier 101 | British Lion 107 | Columbia 102 | Jean Luc Godard\n    113 | Luso films 104 | Mosfilm 103 | Paramount 106 | Toho 105 |\n    United Artists 111 | Walt Disney 112 | Warner Bros. 108 |\n    Westward"
+msgstr ""
+
+#: xml/ref/select.xml:1752(para)
+msgid "The following two examples are identical ways of sorting the individual results according to the contents of the second column ( <literal>name</literal>): <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/select.xml:1770(programlisting)
+#, no-wrap
+msgid "distributors: actors: did | name id | name\n    -----+-------------- ----+---------------- 108 | Westward 1 |\n    Woody Allen 111 | Walt Disney 2 | Warren Beatty 112 | Warner\n    Bros. 3 | Walter Matthau ... ... SELECT distributors.name FROM\n    distributors WHERE distributors.name LIKE 'W%' UNION SELECT\n    actors.name FROM actors WHERE actors.name LIKE 'W%'; name\n    ---------------- Walt Disney Walter Matthau Warner Bros. Warren\n    Beatty Westward Woody Allen"
+msgstr ""
+
+#: xml/ref/select.xml:1763(para)
+msgid "The next example shows how to obtain the union of the tables <literal>distributors</literal>and <literal>actors</literal>, restricting the results to those that begin with the letter W in each table. Only distinct rows are wanted, so the key word <literal>ALL</literal>is omitted. <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/select.xml:1781(programlisting)
+#, no-wrap
+msgid "CREATE FUNCTION distributors(int) RETURNS SETOF\n    distributors AS $$ SELECT * FROM distributors WHERE did = $1;\n    $$ LANGUAGE SQL; SELECT * FROM distributors(111); did | name\n    -----+------------- 111 | Walt Disney CREATE FUNCTION\n    distributors_2(int) RETURNS SETOF record AS $$ SELECT * FROM\n    distributors WHERE did = $1; $$ LANGUAGE SQL; SELECT * FROM\n    distributors_2(111) AS (f1 int, f2 text); f1 | f2\n    -----+------------- 111 | Walt Disney"
+msgstr ""
+
+#: xml/ref/select.xml:1778(para)
+msgid "This example shows how to use a function in the <literal>FROM</literal>clause, both with and without a column definition list: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/select.xml:1791(programlisting)
+#, no-wrap
+msgid "SELECT * FROM\n    unnest(ARRAY['a','b','c','d','e','f']) WITH ORDINALITY; unnest\n    | ordinality --------+---------- a | 1 b | 2 c | 3 d | 4 e | 5\n    f | 6 (6 rows)"
+msgstr ""
+
+#: xml/ref/select.xml:1789(para)
+msgid "Here is an example of a function with an ordinality column added: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/select.xml:1797(programlisting)
+#, no-wrap
+msgid "WITH t AS ( SELECT random() as x FROM\n    generate_series(1, 3) ) SELECT * FROM t UNION ALL SELECT * FROM\n    t x -------------------- 0.534150459803641 0.520092216785997\n    0.0735620250925422 0.534150459803641 0.520092216785997\n    0.0735620250925422"
+msgstr ""
+
+#: xml/ref/select.xml:1795(para)
+msgid "This example shows how to use a simple <literal>WITH</literal>clause: <placeholder-1/>Notice that the <literal>WITH</literal>query was evaluated only once, so that we got two sets of the same three random values."
+msgstr ""
+
+#: xml/ref/select.xml:1809(programlisting)
+#, no-wrap
+msgid "WITH RECURSIVE employee_recursive(distance,\n    employee_name, manager_name) AS ( SELECT 1, employee_name,\n    manager_name FROM employee WHERE manager_name = 'Mary' UNION\n    ALL SELECT er.distance + 1, e.employee_name, e.manager_name\n    FROM employee_recursive er, employee e WHERE er.employee_name =\n    e.manager_name ) SELECT distance, employee_name FROM\n    employee_recursive;"
+msgstr ""
+
+#: xml/ref/select.xml:1804(para)
+msgid "This example uses <literal>WITH RECURSIVE</literal>to find all subordinates (direct or indirect) of the employee Mary, and their level of indirectness, from a table that shows only direct subordinates: <placeholder-1/>Notice the typical form of recursive queries: an initial condition, followed by <literal>UNION</literal>, followed by the recursive part of the query. Be sure that the recursive part of the query will eventually return no tuples, or else the query will loop indefinitely. (See <xref linkend=\"queries-with\">for more examples.)</xref>"
+msgstr ""
+
+#: xml/ref/select.xml:1826(programlisting)
+#, no-wrap
+msgid "SELECT m.name AS mname, pname FROM\n    manufacturers m, LATERAL get_product_names(m.id)\n    pname;"
+msgstr ""
+
+#: xml/ref/select.xml:1832(programlisting)
+#, no-wrap
+msgid "SELECT m.name AS mname, pname FROM\n    manufacturers m LEFT JOIN LATERAL get_product_names(m.id) pname\n    ON true;"
+msgstr ""
+
+#: xml/ref/select.xml:1822(para)
+msgid "This example uses <literal>LATERAL</literal>to apply a set-returning function <function>get_product_names()</function>for each row of the <structname>manufacturers</structname>table: <placeholder-1/>Manufacturers not currently having any products would not appear in the result, since it is an inner join. If we wished to include the names of such manufacturers in the result, we could do: <placeholder-2/>"
+msgstr ""
+
+#: xml/ref/select.xml:1837(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/select.xml:1838(para)
+msgid "Of course, the <command>SELECT</command>statement is compatible with the SQL standard. But there are some extensions and some missing features."
+msgstr ""
+
+#: xml/ref/select.xml:1843(title)
+msgid "Omitted <literal>FROM</literal>Clauses"
+msgstr ""
+
+#: xml/ref/select.xml:1849(programlisting)
+#, no-wrap
+msgid "SELECT 2+2; ?column? ----------\n      4"
+msgstr ""
+
+#: xml/ref/select.xml:1845(para)
+msgid "<productname>PostgreSQL</productname>allows one to omit the <literal>FROM</literal>clause. It has a straightforward use to compute the results of simple expressions: <placeholder-1/>Some other <acronym>SQL</acronym>databases cannot do this except by introducing a dummy one-row table from which to do the <command>SELECT</command>."
+msgstr ""
+
+#: xml/ref/select.xml:1858(programlisting)
+#, no-wrap
+msgid "SELECT distributors.* WHERE distributors.name\n      = 'Westward';"
+msgstr ""
+
+#: xml/ref/select.xml:1854(para)
+msgid "Note that if a <literal>FROM</literal>clause is not specified, the query cannot reference any database tables. For example, the following query is invalid: <placeholder-1/><productname>PostgreSQL</productname>releases prior to 8.1 would accept queries of this form, and add an implicit entry to the query's <literal>FROM</literal>clause for each table referenced by the query. This is no longer allowed."
+msgstr ""
+
+#: xml/ref/select.xml:1867(title)
+msgid "Empty <literal>SELECT</literal>Lists"
+msgstr ""
+
+#: xml/ref/select.xml:1869(para)
+msgid "The list of output expressions after <literal>SELECT</literal>can be empty, producing a zero-column result table. This is not valid syntax according to the SQL standard. <productname>PostgreSQL</productname>allows it to be consistent with allowing zero-column tables. However, an empty list is not allowed when <literal>DISTINCT</literal>is used."
+msgstr ""
+
+#: xml/ref/select.xml:1879(title)
+msgid "Omitting the <literal>AS</literal>Key Word"
+msgstr ""
+
+#: xml/ref/select.xml:1881(para)
+msgid "In the SQL standard, the optional key word <literal>AS</literal>can be omitted before an output column name whenever the new column name is a valid column name (that is, not the same as any reserved keyword). <productname>PostgreSQL</productname>is slightly more restrictive: <literal>AS</literal>is required if the new column name matches any keyword at all, reserved or not. Recommended practice is to use <literal>AS</literal>or double-quote output column names, to prevent any possible conflict against future keyword additions."
+msgstr ""
+
+#: xml/ref/select.xml:1893(para)
+msgid "In <literal>FROM</literal>items, both the standard and <productname>PostgreSQL</productname>allow <literal>AS</literal>to be omitted before an alias that is an unreserved keyword. But this is impractical for output column names, because of syntactic ambiguities."
+msgstr ""
+
+#: xml/ref/select.xml:1901(title)
+msgid "<literal>ONLY</literal>and Inheritance"
+msgstr ""
+
+#: xml/ref/select.xml:1903(para)
+msgid "The SQL standard requires parentheses around the table name when writing <literal>ONLY</literal>, for example <literal>SELECT * FROM ONLY (tab1), ONLY (tab2) WHERE ...</literal>. <productname>PostgreSQL</productname>considers these parentheses to be optional."
+msgstr ""
+
+#: xml/ref/select.xml:1910(para)
+msgid "<productname>PostgreSQL</productname>allows a trailing <literal>*</literal>to be written to explicitly specify the non- <literal>ONLY</literal>behavior of including child tables. The standard does not allow this."
+msgstr ""
+
+#: xml/ref/select.xml:1916(para)
+msgid "(These points apply equally to all SQL commands supporting the <literal>ONLY</literal>option.)"
+msgstr ""
+
+#: xml/ref/select.xml:1921(title)
+msgid "<literal>TABLESAMPLE</literal>Clause Restrictions"
+msgstr ""
+
+#: xml/ref/select.xml:1923(para)
+msgid "The <literal>TABLESAMPLE</literal>clause is currently accepted only on regular tables and materialized views. According to the SQL standard it should be possible to apply it to any <literal>FROM</literal>item."
+msgstr ""
+
+#: xml/ref/select.xml:1930(title)
+msgid "Function Calls in <literal>FROM</literal>"
+msgstr ""
+
+#: xml/ref/select.xml:1932(para)
+msgid "<productname>PostgreSQL</productname>allows a function call to be written directly as a member of the <literal>FROM</literal>list. In the SQL standard it would be necessary to wrap such a function call in a sub- <command>SELECT</command>; that is, the syntax <literal>FROM <replaceable>func</replaceable>(...) <replaceable>alias</replaceable></literal>is approximately equivalent to <literal>FROM LATERAL (SELECT <replaceable>func</replaceable>(...)) <replaceable>alias</replaceable></literal>. Note that <literal>LATERAL</literal>is considered to be implicit; this is because the standard requires <literal>LATERAL</literal>semantics for an <literal>UNNEST()</literal>item in <literal>FROM</literal>. <productname>PostgreSQL</productname>treats <literal>UNNEST()</literal>the same as other set-returning functions."
+msgstr ""
+
+#: xml/ref/select.xml:1955(title)
+msgid "Namespace Available to <literal>GROUP BY</literal>and <literal>ORDER BY</literal>"
+msgstr ""
+
+#: xml/ref/select.xml:1958(para)
+msgid "In the SQL-92 standard, an <literal>ORDER BY</literal>clause can only use output column names or numbers, while a <literal>GROUP BY</literal>clause can only use expressions based on input column names. <productname>PostgreSQL</productname>extends each of these clauses to allow the other choice as well (but it uses the standard's interpretation if there is ambiguity). <productname>PostgreSQL</productname>also allows both clauses to specify arbitrary expressions. Note that names appearing in an expression will always be taken as input-column names, not as output-column names."
+msgstr ""
+
+#: xml/ref/select.xml:1970(para)
+msgid "SQL:1999 and later use a slightly different definition which is not entirely upward compatible with SQL-92. In most cases, however, <productname>PostgreSQL</productname>will interpret an <literal>ORDER BY</literal>or <literal>GROUP BY</literal>expression the same way SQL:1999 does."
+msgstr ""
+
+#: xml/ref/select.xml:1979(title)
+msgid "Functional Dependencies"
+msgstr ""
+
+#: xml/ref/select.xml:1980(para)
+msgid "<productname>PostgreSQL</productname>recognizes functional dependency (allowing columns to be omitted from <literal>GROUP BY</literal>) only when a table's primary key is included in the <literal>GROUP BY</literal>list. The SQL standard specifies additional conditions that should be recognized."
+msgstr ""
+
+#: xml/ref/select.xml:1989(title)
+msgid "<literal>WINDOW</literal>Clause Restrictions"
+msgstr ""
+
+#: xml/ref/select.xml:1991(para)
+msgid "The SQL standard provides additional options for the window <replaceable class=\"parameter\">frame_clause</replaceable>. <productname>PostgreSQL</productname>currently supports only the options listed above."
+msgstr ""
+
+#: xml/ref/select.xml:1998(title)
+msgid "<literal>LIMIT</literal>and <literal>OFFSET</literal>"
+msgstr ""
+
+#: xml/ref/select.xml:2001(para)
+msgid "The clauses <literal>LIMIT</literal>and <literal>OFFSET</literal>are <productname>PostgreSQL</productname>-specific syntax, also used by <productname>MySQL</productname>. The SQL:2008 standard has introduced the clauses <literal>OFFSET ... FETCH {FIRST|NEXT} ...</literal>for the same functionality, as shown above in <xref linkend=\"sql-limit\" endterm=\"sql-limit-title\">. This syntax is also used by <productname>IBM DB2</productname>. (Applications written for <productname>Oracle</productname>frequently use a workaround involving the automatically generated <literal>rownum</literal>column, which is not available in PostgreSQL, to implement the effects of these clauses.)</xref>"
+msgstr ""
+
+#: xml/ref/select.xml:2021(title)
+msgid "<literal>FOR NO KEY UPDATE</literal>, <literal>FOR UPDATE</literal>, <literal>FOR SHARE</literal>, <literal>FOR KEY SHARE</literal>"
+msgstr ""
+
+#: xml/ref/select.xml:2026(para)
+msgid "Although <literal>FOR UPDATE</literal>appears in the SQL standard, the standard allows it only as an option of <command>DECLARE CURSOR</command>. <productname>PostgreSQL</productname>allows it in any <command>SELECT</command>query as well as in sub- <command>SELECT</command>s, but this is an extension. The <literal>FOR NO KEY UPDATE</literal>, <literal>FOR SHARE</literal>and <literal>FOR KEY SHARE</literal>variants, as well as the <literal>NOWAIT</literal>and <literal>SKIP LOCKED</literal>options, do not appear in the standard."
+msgstr ""
+
+#: xml/ref/select.xml:2041(title)
+msgid "Data-Modifying Statements in <literal>WITH</literal>"
+msgstr ""
+
+#: xml/ref/select.xml:2043(para)
+msgid "<productname>PostgreSQL</productname>allows <command>INSERT</command>, <command>UPDATE</command>, and <command>DELETE</command>to be used as <literal>WITH</literal>queries. This is not found in the SQL standard."
+msgstr ""
+
+#: xml/ref/select.xml:2052(title)
+msgid "Nonstandard Clauses"
+msgstr ""
+
+#: xml/ref/select.xml:2053(para)
+msgid "<literal>DISTINCT ON ( ... )</literal>is an extension of the SQL standard."
+msgstr ""
+
+#: xml/ref/select.xml:2056(para)
+msgid "<literal>ROWS FROM( ... )</literal>is an extension of the SQL standard."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/select.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

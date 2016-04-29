@@ -1,0 +1,102 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/discard.xml:4(primary) xml/ref/discard.xml:7(refentrytitle) xml/ref/discard.xml:12(refname)
+msgid "DISCARD"
+msgstr ""
+
+#: xml/ref/discard.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/discard.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/discard.xml:13(refpurpose)
+msgid "discard session state"
+msgstr ""
+
+#: xml/ref/discard.xml:16(synopsis)
+#, no-wrap
+msgid "DISCARD { ALL | PLANS | SEQUENCES | TEMPORARY | TEMP\n    }"
+msgstr ""
+
+#: xml/ref/discard.xml:20(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/discard.xml:21(para)
+msgid "<command>DISCARD</command>releases internal resources associated with a database session. This command is useful for partially or fully resetting the session's state. There are several subcommands to release different types of resources; the <command>DISCARD ALL</command>variant subsumes all the others, and also resets additional state."
+msgstr ""
+
+#: xml/ref/discard.xml:31(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/discard.xml:35(literal)
+msgid "PLANS"
+msgstr ""
+
+#: xml/ref/discard.xml:38(para)
+msgid "Releases all cached query plans, forcing re-planning to occur the next time the associated prepared statement is used."
+msgstr ""
+
+#: xml/ref/discard.xml:45(literal)
+msgid "SEQUENCES"
+msgstr ""
+
+#: xml/ref/discard.xml:48(para)
+msgid "Discards all cached sequence-related state, including <function>currval()</function>/ <function>lastval()</function>information and any preallocated sequence values that have not yet been returned by <function>nextval()</function>. (See <xref linkend=\"sql-createsequence\">for a description of preallocated sequence values.)</xref>"
+msgstr ""
+
+#: xml/ref/discard.xml:60(term)
+msgid "<literal>TEMPORARY</literal>or <literal>TEMP</literal>"
+msgstr ""
+
+#: xml/ref/discard.xml:64(para)
+msgid "Drops all temporary tables created in the current session."
+msgstr ""
+
+#: xml/ref/discard.xml:70(literal)
+msgid "ALL"
+msgstr ""
+
+#: xml/ref/discard.xml:77(programlisting)
+#, no-wrap
+msgid "SET SESSION AUTHORIZATION DEFAULT; RESET\n          ALL; DEALLOCATE ALL; CLOSE ALL; UNLISTEN *; SELECT\n          pg_advisory_unlock_all(); DISCARD PLANS; DISCARD\n          SEQUENCES; DISCARD TEMP;"
+msgstr ""
+
+#: xml/ref/discard.xml:73(para)
+msgid "Releases all temporary resources associated with the current session and resets the session to its initial state. Currently, this has the same effect as executing the following sequence of statements: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/discard.xml:86(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/discard.xml:87(para)
+msgid "<command>DISCARD ALL</command>cannot be executed inside a transaction block."
+msgstr ""
+
+#: xml/ref/discard.xml:92(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/discard.xml:93(para)
+msgid "<command>DISCARD</command>is a <productname>PostgreSQL</productname>extension."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/discard.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

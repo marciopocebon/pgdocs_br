@@ -1,0 +1,2053 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:03+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/textsearch.xml:3(title)
+msgid "Full Text Search"
+msgstr ""
+
+#: xml/textsearch.xml:5(primary)
+msgid "full text search"
+msgstr ""
+
+#: xml/textsearch.xml:8(primary) xml/textsearch.xml:161(secondary) xml/textsearch.xml:2753(primary) xml/textsearch.xml:2766(tertiary) xml/textsearch.xml:2785(tertiary)
+msgid "text search"
+msgstr ""
+
+#: xml/textsearch.xml:11(title)
+msgid "Introduction"
+msgstr ""
+
+#: xml/textsearch.xml:12(para)
+msgid "Full Text Searching (or just <firstterm>text search</firstterm>) provides the capability to identify natural-language <firstterm>documents</firstterm>that satisfy a <firstterm>query</firstterm>, and optionally to sort them by relevance to the query. The most common type of search is to find all documents containing given <firstterm>query terms</firstterm>and return them in order of their <firstterm>similarity</firstterm>to the query. Notions of <varname>query</varname>and <varname>similarity</varname>are very flexible and depend on the specific application. The simplest search considers <varname>query</varname>as a set of words and <varname>similarity</varname>as the frequency of query words in the document."
+msgstr ""
+
+#: xml/textsearch.xml:28(para)
+msgid "Textual search operators have existed in databases for years. <productname>PostgreSQL</productname>has <literal>~</literal>, <literal>~*</literal>, <literal>LIKE</literal>, and <literal>ILIKE</literal>operators for textual data types, but they lack many essential properties required by modern information systems:"
+msgstr ""
+
+#: xml/textsearch.xml:39(para)
+msgid "There is no linguistic support, even for English. Regular expressions are not sufficient because they cannot easily handle derived words, e.g., <literal>satisfies</literal>and <literal>satisfy</literal>. You might miss documents that contain <literal>satisfies</literal>, although you probably would like to find them when searching for <literal>satisfy</literal>. It is possible to use <literal>OR</literal>to search for multiple derived forms, but this is tedious and error-prone (some words can have several thousand derivatives)."
+msgstr ""
+
+#: xml/textsearch.xml:53(para)
+msgid "They provide no ordering (ranking) of search results, which makes them ineffective when thousands of matching documents are found."
+msgstr ""
+
+#: xml/textsearch.xml:58(para)
+msgid "They tend to be slow because there is no index support, so they must process all documents for every search."
+msgstr ""
+
+#: xml/textsearch.xml:63(para)
+msgid "Full text indexing allows documents to be <emphasis>preprocessed</emphasis>and an index saved for later rapid searching. Preprocessing includes:"
+msgstr ""
+
+#: xml/textsearch.xml:68(para)
+msgid "<emphasis>Parsing documents into <firstterm>tokens</firstterm></emphasis>. It is useful to identify various classes of tokens, e.g., numbers, words, complex words, email addresses, so that they can be processed differently. In principle token classes depend on the specific application, but for most purposes it is adequate to use a predefined set of classes. <productname>PostgreSQL</productname>uses a <firstterm>parser</firstterm>to perform this step. A standard parser is provided, and custom parsers can be created for specific needs."
+msgstr ""
+
+#: xml/textsearch.xml:82(para)
+msgid "<emphasis>Converting tokens into <firstterm>lexemes</firstterm></emphasis>. A lexeme is a string, just like a token, but it has been <firstterm>normalized</firstterm>so that different forms of the same word are made alike. For example, normalization almost always includes folding upper-case letters to lower-case, and often involves removal of suffixes (such as <literal>s</literal>or <literal>es</literal>in English). This allows searches to find variant forms of the same word, without tediously entering all the possible variants. Also, this step typically eliminates <firstterm>stop words</firstterm>, which are words that are so common that they are useless for searching. (In short, then, tokens are raw fragments of the document text, while lexemes are words that are believed useful for indexing and searching.) <productname>PostgreSQL</productname>uses <firstterm>dictionaries</firstterm>to perform this step. Various standard dictionaries are provided, and custom ones can be created for specific needs."
+msgstr ""
+
+#: xml/textsearch.xml:107(para)
+msgid "<emphasis>Storing preprocessed documents optimized for searching</emphasis>. For example, each document can be represented as a sorted array of normalized lexemes. Along with the lexemes it is often desirable to store positional information to use for <firstterm>proximity ranking</firstterm>, so that a document that contains a more <quote>dense</quote>region of query words is assigned a higher rank than one with scattered query words."
+msgstr ""
+
+#: xml/textsearch.xml:119(para)
+msgid "Dictionaries allow fine-grained control over how tokens are normalized. With appropriate dictionaries, you can:"
+msgstr ""
+
+#: xml/textsearch.xml:123(para)
+msgid "Define stop words that should not be indexed."
+msgstr ""
+
+#: xml/textsearch.xml:126(para)
+msgid "Map synonyms to a single word using <application>Ispell</application>."
+msgstr ""
+
+#: xml/textsearch.xml:130(para)
+msgid "Map phrases to a single word using a thesaurus."
+msgstr ""
+
+#: xml/textsearch.xml:134(para)
+msgid "Map different variations of a word to a canonical form using an <application>Ispell</application>dictionary."
+msgstr ""
+
+#: xml/textsearch.xml:139(para)
+msgid "Map different variations of a word to a canonical form using <application>Snowball</application>stemmer rules."
+msgstr ""
+
+#: xml/textsearch.xml:144(para)
+msgid "A data type <type>tsvector</type>is provided for storing preprocessed documents, along with a type <type>tsquery</type>for representing processed queries ( <xref linkend=\"datatype-textsearch\">). There are many functions and operators available for these data types ( <xref linkend=\"functions-textsearch\">), the most important of which is the match operator <literal>@@</literal>, which we introduce in <xref linkend=\"textsearch-matching\">. Full text searches can be accelerated using indexes ( <xref linkend=\"textsearch-indexes\"> ).</xref></xref></xref></xref>"
+msgstr ""
+
+#: xml/textsearch.xml:158(title)
+msgid "What Is a Document?"
+msgstr ""
+
+#: xml/textsearch.xml:160(primary) xml/textsearch.xml:524(replaceable) xml/textsearch.xml:921(replaceable) xml/textsearch.xml:2469(replaceable) xml/textsearch.xml:2628(replaceable) xml/textsearch.xml:2637(replaceable)
+msgid "document"
+msgstr ""
+
+#: xml/textsearch.xml:163(para)
+msgid "A <firstterm>document</firstterm>is the unit of searching in a full text search system; for example, a magazine article or email message. The text search engine must be able to parse documents and store associations of lexemes (key words) with their parent document. Later, these associations are used to search for documents that contain query words."
+msgstr ""
+
+#: xml/textsearch.xml:177(programlisting)
+#, no-wrap
+msgid "SELECT title || ' ' || author || ' ' ||\n      abstract || ' ' || body AS document FROM messages WHERE mid =\n      12; SELECT m.title || ' ' || m.author || ' ' || m.abstract ||\n      ' ' || d.body AS document FROM messages m, docs d WHERE mid =\n      did AND mid = 12;"
+msgstr ""
+
+#: xml/textsearch.xml:170(para)
+msgid "For searches within <productname>PostgreSQL</productname>, a document is normally a textual field within a row of a database table, or possibly a combination (concatenation) of such fields, perhaps stored in several tables or obtained dynamically. In other words, a document can be constructed from different parts for indexing and it might not be stored anywhere as a whole. For example: <placeholder-1/>"
+msgstr ""
+
+#: xml/textsearch.xml:183(para)
+msgid "Actually, in these example queries, <function>coalesce</function>should be used to prevent a single <literal>NULL</literal>attribute from causing a <literal>NULL</literal>result for the whole document."
+msgstr ""
+
+#: xml/textsearch.xml:190(para)
+msgid "Another possibility is to store the documents as simple text files in the file system. In this case, the database can be used to store the full text index and to execute searches, and some unique identifier can be used to retrieve the document from the file system. However, retrieving files from outside the database requires superuser permissions or special function support, so this is usually less convenient than keeping all the data inside <productname>PostgreSQL</productname>. Also, keeping everything inside the database allows easy access to document metadata to assist in indexing and display."
+msgstr ""
+
+#: xml/textsearch.xml:201(para)
+msgid "For text search purposes, each document must be reduced to the preprocessed <type>tsvector</type>format. Searching and ranking are performed entirely on the <type>tsvector</type>representation of a document the original text need only be retrieved when the document has been selected for display to a user. We therefore often speak of the <type>tsvector</type>as being the document, but of course it is only a compact representation of the full document."
+msgstr ""
+
+#: xml/textsearch.xml:213(title)
+msgid "Basic Text Matching"
+msgstr ""
+
+#: xml/textsearch.xml:222(programlisting)
+#, no-wrap
+msgid "SELECT 'a fat cat sat on a mat and ate a fat\n      rat'::tsvector @@ 'cat rat'::tsquery; ?column? ---------- t\n      SELECT 'fat cow'::tsquery @@ 'a fat cat sat on a mat and ate\n      a fat rat'::tsvector; ?column? ----------\n      f"
+msgstr ""
+
+#: xml/textsearch.xml:214(para)
+msgid "Full text searching in <productname>PostgreSQL</productname>is based on the match operator <literal>@@</literal>, which returns <literal>true</literal>if a <type>tsvector</type>(document) matches a <type>tsquery</type>(query). It doesn't matter which data type is written first: <placeholder-1/>"
+msgstr ""
+
+#: xml/textsearch.xml:242(programlisting)
+#, no-wrap
+msgid "SELECT to_tsvector('fat cats ate fat rats')\n      @@ to_tsquery('fat rat'); ?column? ----------\n      t"
+msgstr ""
+
+#: xml/textsearch.xml:246(programlisting)
+#, no-wrap
+msgid "SELECT 'fat cats ate fat rats'::tsvector @@\n      to_tsquery('fat rat'); ?column? ----------\n      f"
+msgstr ""
+
+#: xml/textsearch.xml:227(para)
+msgid "As the above example suggests, a <type>tsquery</type>is not just raw text, any more than a <type>tsvector</type>is. A <type>tsquery</type>contains search terms, which must be already-normalized lexemes, and may combine multiple terms using AND, OR, and NOT operators. (For details see <xref linkend=\"datatype-textsearch\">.) There are functions <function>to_tsquery</function>and <function>plainto_tsquery</function>that are helpful in converting user-written text into a proper <type>tsquery</type>, for example by normalizing words appearing in the text. Similarly, <function>to_tsvector</function>is used to parse and normalize a document string. So in practice a text search match would look more like this: <placeholder-1/>Observe that this match would not succeed if written as <placeholder-2/>since here no normalization of the word <literal>rats</literal>will occur. The elements of a <type>tsvector</type>are lexemes, which are assumed already normalized, so <literal>rats</literal>does not match <literal>rat</literal>.</xref>"
+msgstr ""
+
+#: xml/textsearch.xml:261(programlisting)
+#, no-wrap
+msgid "tsvector @@ tsquery tsquery @@ tsvector text\n      @@ tsquery text @@ text"
+msgstr ""
+
+#: xml/textsearch.xml:254(para)
+msgid "The <literal>@@</literal>operator also supports <type>text</type>input, allowing explicit conversion of a text string to <type>tsvector</type>or <type>tsquery</type>to be skipped in simple cases. The variants available are: <placeholder-1/>"
+msgstr ""
+
+#: xml/textsearch.xml:263(para)
+msgid "The first two of these we saw already. The form <type>text</type><literal>@@</literal><type>tsquery</type>is equivalent to <literal>to_tsvector(x) @@ y</literal>. The form <type>text</type><literal>@@</literal><type>text</type>is equivalent to <literal>to_tsvector(x) @@ plainto_tsquery(y)</literal>."
+msgstr ""
+
+#: xml/textsearch.xml:275(title)
+msgid "Configurations"
+msgstr ""
+
+#: xml/textsearch.xml:276(para)
+msgid "The above are all simple text search examples. As mentioned before, full text search functionality includes the ability to do many more things: skip indexing certain words (stop words), process synonyms, and use sophisticated parsing, e.g., parse based on more than just white space. This functionality is controlled by <firstterm>text search configurations</firstterm>. <productname>PostgreSQL</productname>comes with predefined configurations for many languages, and you can easily create your own configurations. ( <application>psql</application>'s <command>\\dF</command>command shows all available configurations.)"
+msgstr ""
+
+#: xml/textsearch.xml:289(para)
+msgid "During installation an appropriate configuration is selected and <xref linkend=\"guc-default-text-search-config\">is set accordingly in <filename>postgresql.conf</filename>. If you are using the same text search configuration for the entire cluster you can use the value in <filename>postgresql.conf</filename>. To use different configurations throughout the cluster but the same configuration within any one database, use <command>ALTER DATABASE ... SET</command>. Otherwise, you can set <varname>default_text_search_config</varname>in each session.</xref>"
+msgstr ""
+
+#: xml/textsearch.xml:303(para)
+msgid "Each text search function that depends on a configuration has an optional <type>regconfig</type>argument, so that the configuration to use can be specified explicitly. <varname>default_text_search_config</varname>is used only when this argument is omitted."
+msgstr ""
+
+#: xml/textsearch.xml:309(para)
+msgid "To make it easier to build custom text search configurations, a configuration is built up from simpler database objects. <productname>PostgreSQL</productname>'s text search facility provides four types of configuration-related database objects:"
+msgstr ""
+
+#: xml/textsearch.xml:317(para)
+msgid "<firstterm>Text search parsers</firstterm>break documents into tokens and classify each token (for example, as words or numbers)."
+msgstr ""
+
+#: xml/textsearch.xml:323(para)
+msgid "<firstterm>Text search dictionaries</firstterm>convert tokens to normalized form and reject stop words."
+msgstr ""
+
+#: xml/textsearch.xml:328(para)
+msgid "<firstterm>Text search templates</firstterm>provide the functions underlying dictionaries. (A dictionary simply specifies a template and a set of parameters for the template.)"
+msgstr ""
+
+#: xml/textsearch.xml:335(para)
+msgid "<firstterm>Text search configurations</firstterm>select a parser and a set of dictionaries to use to normalize the tokens produced by the parser."
+msgstr ""
+
+#: xml/textsearch.xml:341(para)
+msgid "Text search parsers and templates are built from low-level C functions; therefore it requires C programming ability to develop new ones, and superuser privileges to install one into a database. (There are examples of add-on parsers and templates in the <filename>contrib/</filename>area of the <productname>PostgreSQL</productname>distribution.) Since dictionaries and configurations just parameterize and connect together some underlying parsers and templates, no special privilege is needed to create a new dictionary or configuration. Examples of creating custom dictionaries and configurations appear later in this chapter."
+msgstr ""
+
+#: xml/textsearch.xml:356(title)
+msgid "Tables and Indexes"
+msgstr ""
+
+#: xml/textsearch.xml:357(para)
+msgid "The examples in the previous section illustrated full text matching using simple constant strings. This section shows how to search table data, optionally using indexes."
+msgstr ""
+
+#: xml/textsearch.xml:361(title)
+msgid "Searching a Table"
+msgstr ""
+
+#: xml/textsearch.xml:368(programlisting)
+#, no-wrap
+msgid "SELECT title FROM pgweb WHERE\n      to_tsvector('english', body) @@ to_tsquery('english',\n      'friend');"
+msgstr ""
+
+#: xml/textsearch.xml:362(para)
+msgid "It is possible to do a full text search without an index. A simple query to print the <structname>title</structname>of each row that contains the word <literal>friend</literal>in its <structfield>body</structfield>field is: <placeholder-1/>This will also find related words such as <literal>friends</literal>and <literal>friendly</literal>, since all these are reduced to the same normalized lexeme."
+msgstr ""
+
+#: xml/textsearch.xml:379(programlisting)
+#, no-wrap
+msgid "SELECT title FROM pgweb WHERE\n      to_tsvector(body) @@\n      to_tsquery('friend');"
+msgstr ""
+
+#: xml/textsearch.xml:375(para)
+msgid "The query above specifies that the <literal>english</literal>configuration is to be used to parse and normalize the strings. Alternatively we could omit the configuration parameters: <placeholder-1/>This query will use the configuration set by <xref linkend=\"guc-default-text-search-config\"> .</xref>"
+msgstr ""
+
+#: xml/textsearch.xml:391(programlisting)
+#, no-wrap
+msgid "SELECT title FROM pgweb WHERE\n      to_tsvector(title || ' ' || body) @@ to_tsquery('create\n      table') ORDER BY last_mod_date DESC LIMIT\n      10;"
+msgstr ""
+
+#: xml/textsearch.xml:385(para)
+msgid "A more complex example is to select the ten most recent documents that contain <literal>create</literal>and <literal>table</literal>in the <structname>title</structname>or <structname>body</structname>: <placeholder-1/>For clarity we omitted the <function>coalesce</function>function calls which would be needed to find rows that contain <literal>NULL</literal>in one of the two fields."
+msgstr ""
+
+#: xml/textsearch.xml:398(para)
+msgid "Although these queries will work without an index, most applications will find this approach too slow, except perhaps for occasional ad-hoc searches. Practical use of text searching usually requires creating an index."
+msgstr ""
+
+#: xml/textsearch.xml:404(title)
+msgid "Creating Indexes"
+msgstr ""
+
+#: xml/textsearch.xml:409(programlisting)
+#, no-wrap
+msgid "CREATE INDEX pgweb_idx ON pgweb USING GIN\n      (to_tsvector('english', body));"
+msgstr ""
+
+#: xml/textsearch.xml:405(para)
+msgid "We can create a <acronym>GIN</acronym>index ( <xref linkend=\"textsearch-indexes\">) to speed up text searches: <placeholder-1/>Notice that the 2-argument version of <function>to_tsvector</function>is used. Only text search functions that specify a configuration name can be used in expression indexes ( <xref linkend=\"indexes-expressional\">). This is because the index contents must be unaffected by <xref linkend=\"guc-default-text-search-config\">. If they were affected, the index contents might be inconsistent because different entries could contain <type>tsvector</type>s that were created with different text search configurations, and there would be no way to guess which was which. It would be impossible to dump and restore such an index correctly.</xref></xref></xref>"
+msgstr ""
+
+#: xml/textsearch.xml:424(para)
+msgid "Because the two-argument version of <function>to_tsvector</function>was used in the index above, only a query reference that uses the 2-argument version of <function>to_tsvector</function>with the same configuration name will use that index. That is, <literal>WHERE to_tsvector('english', body) @@ 'a b'</literal>can use the index, but <literal>WHERE to_tsvector(body) @@ 'a b'</literal>cannot. This ensures that an index will be used only with the same configuration used to create the index entries."
+msgstr ""
+
+#: xml/textsearch.xml:437(programlisting)
+#, no-wrap
+msgid "CREATE INDEX pgweb_idx ON pgweb USING GIN\n      (to_tsvector(config_name, body));"
+msgstr ""
+
+#: xml/textsearch.xml:434(para)
+msgid "It is possible to set up more complex expression indexes wherein the configuration name is specified by another column, e.g.: <placeholder-1/>where <literal>config_name</literal>is a column in the <literal>pgweb</literal>table. This allows mixed configurations in the same index while recording which configuration was used for each index entry. This would be useful, for example, if the document collection contained documents in different languages. Again, queries that are meant to use the index must be phrased to match, e.g., <literal>WHERE to_tsvector(config_name, body) @@ 'a b'</literal>."
+msgstr ""
+
+#: xml/textsearch.xml:449(programlisting)
+#, no-wrap
+msgid "CREATE INDEX pgweb_idx ON pgweb USING GIN\n      (to_tsvector('english', title || ' ' ||\n      body));"
+msgstr ""
+
+#: xml/textsearch.xml:448(para)
+msgid "Indexes can even concatenate columns: <placeholder-1/>"
+msgstr ""
+
+#: xml/textsearch.xml:461(programlisting)
+#, no-wrap
+msgid "ALTER TABLE pgweb ADD COLUMN\n      textsearchable_index_col tsvector; UPDATE pgweb SET\n      textsearchable_index_col = to_tsvector('english',\n      coalesce(title,'') || ' ' ||\n      coalesce(body,''));"
+msgstr ""
+
+#: xml/textsearch.xml:467(programlisting)
+#, no-wrap
+msgid "CREATE INDEX textsearch_idx ON pgweb USING\n      GIN (textsearchable_index_col);"
+msgstr ""
+
+#: xml/textsearch.xml:470(programlisting)
+#, no-wrap
+msgid "SELECT title FROM pgweb WHERE\n      textsearchable_index_col @@ to_tsquery('create table') ORDER\n      BY last_mod_date DESC LIMIT 10;"
+msgstr ""
+
+#: xml/textsearch.xml:452(para)
+msgid "Another approach is to create a separate <type>tsvector</type>column to hold the output of <function>to_tsvector</function>. This example is a concatenation of <literal>title</literal>and <literal>body</literal>, using <function>coalesce</function>to ensure that one field will still be indexed when the other is <literal>NULL</literal>: <placeholder-1/>Then we create a <acronym>GIN</acronym>index to speed up the search: <placeholder-2/>Now we are ready to perform a fast full text search: <placeholder-3/>"
+msgstr ""
+
+#: xml/textsearch.xml:473(para)
+msgid "When using a separate column to store the <type>tsvector</type>representation, it is necessary to create a trigger to keep the <type>tsvector</type>column current anytime <literal>title</literal>or <literal>body</literal>changes. <xref linkend=\"textsearch-update-triggers\">explains how to do that.</xref>"
+msgstr ""
+
+#: xml/textsearch.xml:481(para)
+msgid "One advantage of the separate-column approach over an expression index is that it is not necessary to explicitly specify the text search configuration in queries in order to make use of the index. As shown in the example above, the query can depend on <varname>default_text_search_config</varname>. Another advantage is that searches will be faster, since it will not be necessary to redo the <function>to_tsvector</function>calls to verify index matches. (This is more important when using a GiST index than a GIN index; see <xref linkend=\"textsearch-indexes\">.) The expression-index approach is simpler to set up, however, and it requires less disk space since the <type>tsvector</type>representation is not stored explicitly.</xref>"
+msgstr ""
+
+#: xml/textsearch.xml:500(title)
+msgid "Controlling Text Search"
+msgstr ""
+
+#: xml/textsearch.xml:501(para)
+msgid "To implement full text searching there must be a function to create a <type>tsvector</type>from a document and a <type>tsquery</type>from a user query. Also, we need to return results in a useful order, so we need a function that compares documents with respect to their relevance to the query. It's also important to be able to display the results nicely. <productname>PostgreSQL</productname>provides support for all of these functions."
+msgstr ""
+
+#: xml/textsearch.xml:511(title)
+msgid "Parsing Documents"
+msgstr ""
+
+#: xml/textsearch.xml:512(para)
+msgid "<productname>PostgreSQL</productname>provides the function <function>to_tsvector</function>for converting a document to the <type>tsvector</type>data type."
+msgstr ""
+
+#: xml/textsearch.xml:518(primary)
+msgid "to_tsvector"
+msgstr ""
+
+#: xml/textsearch.xml:522(replaceable) xml/textsearch.xml:636(replaceable) xml/textsearch.xml:692(replaceable) xml/textsearch.xml:919(replaceable) xml/textsearch.xml:2467(replaceable)
+msgid "config"
+msgstr ""
+
+#: xml/textsearch.xml:523(type) xml/textsearch.xml:637(type) xml/textsearch.xml:693(type) xml/textsearch.xml:920(type) xml/textsearch.xml:2468(type)
+msgid "regconfig"
+msgstr ""
+
+#: xml/textsearch.xml:521(optional) xml/textsearch.xml:635(optional) xml/textsearch.xml:691(optional) xml/textsearch.xml:743(optional) xml/textsearch.xml:767(optional) xml/textsearch.xml:918(optional) xml/textsearch.xml:1475(optional) xml/textsearch.xml:2466(optional)
+msgid "<placeholder-1/><placeholder-2/>,"
+msgstr ""
+
+#: xml/textsearch.xml:525(type) xml/textsearch.xml:639(type) xml/textsearch.xml:695(type) xml/textsearch.xml:922(type) xml/textsearch.xml:927(type) xml/textsearch.xml:928(type) xml/textsearch.xml:1239(type) xml/textsearch.xml:1314(type) xml/textsearch.xml:1474(type) xml/textsearch.xml:1477(type) xml/textsearch.xml:1479(type) xml/textsearch.xml:2470(type) xml/textsearch.xml:2472(type) xml/textsearch.xml:2474(type) xml/textsearch.xml:2476(type) xml/textsearch.xml:2627(type) xml/textsearch.xml:2629(type) xml/textsearch.xml:2633(type) xml/textsearch.xml:2638(type) xml/textsearch.xml:2642(type) xml/textsearch.xml:2661(type) xml/textsearch.xml:2665(type) xml/textsearch.xml:2667(type) xml/textsearch.xml:2674(type) xml/textsearch.xml:2676(type) xml/textsearch.xml:2717(type)
+msgid "text"
+msgstr ""
+
+#: xml/textsearch.xml:526(type) xml/textsearch.xml:747(type) xml/textsearch.xml:771(type) xml/textsearch.xml:1046(type) xml/textsearch.xml:1050(type) xml/textsearch.xml:1059(type) xml/textsearch.xml:1060(type) xml/textsearch.xml:1100(type) xml/textsearch.xml:1103(type) xml/textsearch.xml:1134(type) xml/textsearch.xml:1149(type) xml/textsearch.xml:1150(type)
+msgid "tsvector"
+msgstr ""
+
+#: xml/textsearch.xml:520(synopsis)
+#, no-wrap
+msgid "to_tsvector( \n      <placeholder-1/>\n      <placeholder-2/>\n      <placeholder-3/>) returns \n      <placeholder-4/>"
+msgstr ""
+
+#: xml/textsearch.xml:527(para)
+msgid "<function>to_tsvector</function>parses a textual document into tokens, reduces the tokens to lexemes, and returns a <type>tsvector</type>which lists the lexemes together with their positions in the document. The document is processed according to the specified or default text search configuration. Here is a simple example: <screen>SELECT to_tsvector('english', 'a fat cat sat on a mat\n      - it ate a fat rats'); to_tsvector\n      ----------------------------------------------------- 'ate':9\n      'cat':3 'fat':2,11 'mat':7 'rat':12 'sat':4</screen>"
+msgstr ""
+
+#: xml/textsearch.xml:538(para)
+msgid "In the example above we see that the resulting <type>tsvector</type>does not contain the words <literal>a</literal>, <literal>on</literal>, or <literal>it</literal>, the word <literal>rats</literal>became <literal>rat</literal>, and the punctuation sign <literal>-</literal>was ignored."
+msgstr ""
+
+#: xml/textsearch.xml:546(para)
+msgid "The <function>to_tsvector</function>function internally calls a parser which breaks the document text into tokens and assigns a type to each token. For each token, a list of dictionaries ( <xref linkend=\"textsearch-dictionaries\">) is consulted, where the list can vary depending on the token type. The first dictionary that <firstterm>recognizes</firstterm>the token emits one or more normalized <firstterm>lexemes</firstterm>to represent the token. For example, <literal>rats</literal>became <literal>rat</literal>because one of the dictionaries recognized that the word <literal>rats</literal>is a plural form of <literal>rat</literal>. Some words are recognized as <firstterm>stop words</firstterm>( <xref linkend=\"textsearch-stopwords\">), which causes them to be ignored since they occur too frequently to be useful in searching. In our example these are <literal>a</literal>, <literal>on</literal>, and <literal>it</literal>. If no dictionary in the list recognizes the token then it is also ignored. In this example that happened to the punctuation sign <literal>-</literal>because there are in fact no dictionaries assigned for its token type ( <literal>Space symbols</literal>), meaning space tokens will never be indexed. The choices of parser, dictionaries and which types of tokens to index are determined by the selected text search configuration ( <xref linkend=\"textsearch-configuration\">). It is possible to have many different configurations in the same database, and predefined configurations are available for various languages. In our example we used the default configuration <literal>english</literal>for the English language.</xref></xref></xref>"
+msgstr ""
+
+#: xml/textsearch.xml:584(para)
+msgid "The function <function>setweight</function>can be used to label the entries of a <type>tsvector</type>with a given <firstterm>weight</firstterm>, where a weight is one of the letters <literal>A</literal>, <literal>B</literal>, <literal>C</literal>, or <literal>D</literal>. This is typically used to mark entries coming from different parts of a document, such as title versus body. Later, this information can be used for ranking of search results."
+msgstr ""
+
+#: xml/textsearch.xml:604(programlisting)
+#, no-wrap
+msgid "UPDATE tt SET ti =\n      setweight(to_tsvector(coalesce(title,'')), 'A') ||\n      setweight(to_tsvector(coalesce(keyword,'')), 'B') ||\n      setweight(to_tsvector(coalesce(abstract,'')), 'C') ||\n      setweight(to_tsvector(coalesce(body,'')),\n      'D');"
+msgstr ""
+
+#: xml/textsearch.xml:597(para)
+msgid "Because <function>to_tsvector</function>( <literal>NULL</literal>) will return <literal>NULL</literal>, it is recommended to use <function>coalesce</function>whenever a field might be null. Here is the recommended method for creating a <type>tsvector</type>from a structured document: <placeholder-1/>Here we have used <function>setweight</function>to label the source of each lexeme in the finished <type>tsvector</type>, and then merged the labeled <type>tsvector</type>values using the <type>tsvector</type>concatenation operator <literal>||</literal>. ( <xref linkend=\"textsearch-manipulate-tsvector\">gives details about these operations.)</xref>"
+msgstr ""
+
+#: xml/textsearch.xml:620(title)
+msgid "Parsing Queries"
+msgstr ""
+
+#: xml/textsearch.xml:621(para)
+msgid "<productname>PostgreSQL</productname>provides the functions <function>to_tsquery</function>and <function>plainto_tsquery</function>for converting a query to the <type>tsquery</type>data type. <function>to_tsquery</function>offers access to more features than <function>plainto_tsquery</function>, but is less forgiving about its input."
+msgstr ""
+
+#: xml/textsearch.xml:632(primary)
+msgid "to_tsquery"
+msgstr ""
+
+#: xml/textsearch.xml:638(replaceable) xml/textsearch.xml:694(replaceable)
+msgid "querytext"
+msgstr ""
+
+#: xml/textsearch.xml:640(type) xml/textsearch.xml:696(type) xml/textsearch.xml:749(type) xml/textsearch.xml:773(type) xml/textsearch.xml:924(type) xml/textsearch.xml:1167(type) xml/textsearch.xml:1171(type) xml/textsearch.xml:1177(type) xml/textsearch.xml:1178(type) xml/textsearch.xml:1189(type) xml/textsearch.xml:1190(type) xml/textsearch.xml:1200(type) xml/textsearch.xml:1214(type) xml/textsearch.xml:1238(type) xml/textsearch.xml:1285(type) xml/textsearch.xml:1287(type) xml/textsearch.xml:1290(type) xml/textsearch.xml:1291(type) xml/textsearch.xml:1312(type) xml/textsearch.xml:1315(type)
+msgid "tsquery"
+msgstr ""
+
+#: xml/textsearch.xml:634(synopsis)
+#, no-wrap
+msgid "to_tsquery( \n      <placeholder-1/>\n      <placeholder-2/>\n      <placeholder-3/>) returns \n      <placeholder-4/>"
+msgstr ""
+
+#: xml/textsearch.xml:641(para)
+msgid "<function>to_tsquery</function>creates a <type>tsquery</type>value from <replaceable>querytext</replaceable>, which must consist of single tokens separated by the Boolean operators <literal/>(AND), <literal>|</literal>(OR) and <literal>!</literal>(NOT). These operators can be grouped using parentheses. In other words, the input to <function>to_tsquery</function>must already follow the general rules for <type>tsquery</type>input, as described in <xref linkend=\"datatype-textsearch\">. The difference is that while basic <type>tsquery</type>input takes the tokens at face value, <function>to_tsquery</function>normalizes each token to a lexeme using the specified or default configuration, and discards any tokens that are stop words according to the configuration. For example: <screen>SELECT to_tsquery('english', 'The Fat Rats');\n      to_tsquery --------------- 'fat' 'rat'</screen>As in basic <type>tsquery</type>input, weight(s) can be attached to each lexeme to restrict it to match only <type>tsvector</type>lexemes of those weight(s). For example: <screen>SELECT to_tsquery('english', 'Fat | Rats:AB');\n      to_tsquery ------------------ 'fat' | 'rat':AB</screen>Also, <literal>*</literal>can be attached to a lexeme to specify prefix matching: <screen>SELECT to_tsquery('supern:*A star:A*B'); to_tsquery\n      -------------------------- 'supern':*A\n      'star':*AB</screen>Such a lexeme will match any word in a <type>tsvector</type>that begins with the given string.</xref>"
+msgstr ""
+
+#: xml/textsearch.xml:675(para)
+msgid "<function>to_tsquery</function>can also accept single-quoted phrases. This is primarily useful when the configuration includes a thesaurus dictionary that may trigger on such phrases. In the example below, a thesaurus contains the rule <literal>supernovae stars : sn</literal>: <screen>SELECT to_tsquery('''supernovae stars'' !crab');\n      to_tsquery --------------- 'sn' !'crab'</screen>Without quotes, <function>to_tsquery</function>will generate a syntax error for tokens that are not separated by an AND or OR operator."
+msgstr ""
+
+#: xml/textsearch.xml:688(primary)
+msgid "plainto_tsquery"
+msgstr ""
+
+#: xml/textsearch.xml:690(synopsis)
+#, no-wrap
+msgid "plainto_tsquery( \n      <placeholder-1/>\n      <placeholder-2/>\n      <placeholder-3/>) returns \n      <placeholder-4/>"
+msgstr ""
+
+#: xml/textsearch.xml:697(para)
+msgid "<function>plainto_tsquery</function>transforms unformatted text <replaceable>querytext</replaceable>to <type>tsquery</type>. The text is parsed and normalized much as for <function>to_tsvector</function>, then the <literal/>(AND) Boolean operator is inserted between surviving words."
+msgstr ""
+
+#: xml/textsearch.xml:706(para)
+msgid "Example: <screen>SELECT plainto_tsquery('english', 'The Fat Rats');\n      plainto_tsquery ----------------- 'fat' 'rat'</screen>Note that <function>plainto_tsquery</function>cannot recognize Boolean operators, weight labels, or prefix-match labels in its input: <screen>SELECT plainto_tsquery('english', 'The Fat Rats:C');\n      plainto_tsquery --------------------- 'fat' 'rat'\n      'c'</screen>Here, all the input punctuation was discarded as being space symbols."
+msgstr ""
+
+#: xml/textsearch.xml:719(title)
+msgid "Ranking Search Results"
+msgstr ""
+
+#: xml/textsearch.xml:720(para)
+msgid "Ranking attempts to measure how relevant documents are to a particular query, so that when there are many matches the most relevant ones can be shown first. <productname>PostgreSQL</productname>provides two predefined ranking functions, which take into account lexical, proximity, and structural information; that is, they consider how often the query terms appear in the document, how close together the terms are in the document, and how important is the part of the document where they occur. However, the concept of relevancy is vague and very application-specific. Different applications might require additional information for ranking, e.g., document modification time. The built-in ranking functions are only examples. You can write your own ranking functions and/or combine their results with additional factors to fit your specific needs."
+msgstr ""
+
+#: xml/textsearch.xml:740(primary)
+msgid "ts_rank"
+msgstr ""
+
+#: xml/textsearch.xml:744(replaceable) xml/textsearch.xml:768(replaceable) xml/textsearch.xml:1476(replaceable)
+msgid "weights"
+msgstr ""
+
+#: xml/textsearch.xml:745(type) xml/textsearch.xml:769(type)
+msgid "float4[]"
+msgstr ""
+
+#: xml/textsearch.xml:746(replaceable) xml/textsearch.xml:770(replaceable) xml/textsearch.xml:1099(replaceable) xml/textsearch.xml:1133(replaceable) xml/textsearch.xml:1148(replaceable)
+msgid "vector"
+msgstr ""
+
+#: xml/textsearch.xml:748(replaceable) xml/textsearch.xml:772(replaceable) xml/textsearch.xml:923(replaceable) xml/textsearch.xml:1213(replaceable) xml/textsearch.xml:1237(replaceable) xml/textsearch.xml:1284(replaceable) xml/textsearch.xml:1311(replaceable)
+msgid "query"
+msgstr ""
+
+#: xml/textsearch.xml:751(replaceable) xml/textsearch.xml:775(replaceable)
+msgid "normalization"
+msgstr ""
+
+#: xml/textsearch.xml:753(type) xml/textsearch.xml:777(type) xml/textsearch.xml:1135(type) xml/textsearch.xml:1215(type) xml/textsearch.xml:1481(type) xml/textsearch.xml:1483(type) xml/textsearch.xml:2631(type) xml/textsearch.xml:2640(type) xml/textsearch.xml:2663(type) xml/textsearch.xml:2672(type)
+msgid "integer"
+msgstr ""
+
+#: xml/textsearch.xml:750(optional) xml/textsearch.xml:774(optional) xml/textsearch.xml:925(optional)
+msgid ", <placeholder-1/><placeholder-2/>"
+msgstr ""
+
+#: xml/textsearch.xml:754(type) xml/textsearch.xml:778(type)
+msgid "float4"
+msgstr ""
+
+#: xml/textsearch.xml:742(literal)
+msgid "ts_rank( <placeholder-1/><placeholder-2/><placeholder-3/>, <placeholder-4/><placeholder-5/><placeholder-6/>) returns <placeholder-7/>"
+msgstr ""
+
+#: xml/textsearch.xml:757(para)
+msgid "Ranks vectors based on the frequency of their matching lexemes."
+msgstr ""
+
+#: xml/textsearch.xml:764(primary)
+msgid "ts_rank_cd"
+msgstr ""
+
+#: xml/textsearch.xml:766(literal)
+msgid "ts_rank_cd( <placeholder-1/><placeholder-2/><placeholder-3/>, <placeholder-4/><placeholder-5/><placeholder-6/>) returns <placeholder-7/>"
+msgstr ""
+
+#: xml/textsearch.xml:781(para)
+msgid "This function computes the <firstterm>cover density</firstterm>ranking for the given document vector and query, as described in Clarke, Cormack, and Tudhope's \"Relevance Ranking for One to Three Term Queries\" in the journal \"Information Processing and Management\", 1999. Cover density is similar to <function>ts_rank</function>ranking except that the proximity of matching lexemes to each other is taken into consideration."
+msgstr ""
+
+#: xml/textsearch.xml:791(para)
+msgid "This function requires lexeme positional information to perform its calculation. Therefore, it ignores any <quote>stripped</quote>lexemes in the <type>tsvector</type>. If there are no unstripped lexemes in the input, the result will be zero. (See <xref linkend=\"textsearch-manipulate-tsvector\">for more information about the <function>strip</function>function and positional information in <type>tsvector</type>s.)</xref>"
+msgstr ""
+
+#: xml/textsearch.xml:735(para)
+msgid "The two ranking functions currently available are: <placeholder-1/>"
+msgstr ""
+
+#: xml/textsearch.xml:815(programlisting)
+#, no-wrap
+msgid "{0.1, 0.2, 0.4,\n      1.0}"
+msgstr ""
+
+#: xml/textsearch.xml:805(para)
+msgid "For both these functions, the optional <replaceable class=\"PARAMETER\">weights</replaceable>argument offers the ability to weigh word instances more or less heavily depending on how they are labeled. The weight arrays specify how heavily to weigh each category of word, in the order: <synopsis>{D-weight, C-weight, B-weight,\n      A-weight}</synopsis>If no <replaceable class=\"PARAMETER\">weights</replaceable>are provided, then these defaults are used: <placeholder-1/>Typically weights are used to mark words from special areas of the document, like the title or an initial abstract, so they can be treated with more or less importance than words in the document body."
+msgstr ""
+
+#: xml/textsearch.xml:834(para)
+msgid "0 (the default) ignores the document length"
+msgstr ""
+
+#: xml/textsearch.xml:837(para)
+msgid "1 divides the rank by 1 + the logarithm of the document length"
+msgstr ""
+
+#: xml/textsearch.xml:841(para)
+msgid "2 divides the rank by the document length"
+msgstr ""
+
+#: xml/textsearch.xml:844(para)
+msgid "4 divides the rank by the mean harmonic distance between extents (this is implemented only by <function>ts_rank_cd</function>)"
+msgstr ""
+
+#: xml/textsearch.xml:849(para)
+msgid "8 divides the rank by the number of unique words in document"
+msgstr ""
+
+#: xml/textsearch.xml:853(para)
+msgid "16 divides the rank by 1 + the logarithm of the number of unique words in document"
+msgstr ""
+
+#: xml/textsearch.xml:857(para)
+msgid "32 divides the rank by itself + 1"
+msgstr ""
+
+#: xml/textsearch.xml:820(para)
+msgid "Since a longer document has a greater chance of containing a query term it is reasonable to take into account document size, e.g., a hundred-word document with five instances of a search word is probably more relevant than a thousand-word document with five instances. Both ranking functions take an integer <replaceable>normalization</replaceable>option that specifies whether and how a document's length should impact its rank. The integer option controls several behaviors, so it is a bit mask: you can specify one or more behaviors using <literal>|</literal>(for example, <literal>2|4</literal>). <placeholder-1/>If more than one flag bit is specified, the transformations are applied in the order listed."
+msgstr ""
+
+#: xml/textsearch.xml:861(para)
+msgid "It is important to note that the ranking functions do not use any global information, so it is impossible to produce a fair normalization to 1% or 100% as sometimes desired. Normalization option 32 ( <literal>rank/(rank+1)</literal>) can be applied to scale all ranks into the range zero to one, but of course this is just a cosmetic change; it will not affect the ordering of the search results."
+msgstr ""
+
+#: xml/textsearch.xml:869(para)
+msgid "Here is an example that selects only the ten highest-ranked matches: <screen>SELECT title, ts_rank_cd(textsearch, query) AS rank\n      FROM apod, to_tsquery('neutrino|(dark matter)') query WHERE\n      query @@ textsearch ORDER BY rank DESC LIMIT 10; title | rank\n      -----------------------------------------------+----------\n      Neutrinos in the Sun | 3.1 The Sudbury Neutrino Detector |\n      2.4 A MACHO View of Galactic Dark Matter | 2.01317 Hot Gas\n      and Dark Matter | 1.91171 The Virgo Cluster: Hot Plasma and\n      Dark Matter | 1.90953 Rafting for Solar Neutrinos | 1.9 NGC\n      4650A: Strange Galaxy and Dark Matter | 1.85774 Hot Gas and\n      Dark Matter | 1.6123 Ice Fishing for Cosmic Neutrinos | 1.6\n      Weak Lensing Distorts the Universe | 0.818218</screen>This is the same example using normalized ranking: <screen>SELECT title, ts_rank_cd(textsearch, query, 32 /*\n      rank/(rank+1) */ ) AS rank FROM apod,\n      to_tsquery('neutrino|(dark matter)') query WHERE query @@\n      textsearch ORDER BY rank DESC LIMIT 10; title | rank\n      -----------------------------------------------+-------------------\n      Neutrinos in the Sun | 0.756097569485493 The Sudbury Neutrino\n      Detector | 0.705882361190954 A MACHO View of Galactic Dark\n      Matter | 0.668123210574724 Hot Gas and Dark Matter |\n      0.65655958650282 The Virgo Cluster: Hot Plasma and Dark\n      Matter | 0.656301290640973 Rafting for Solar Neutrinos |\n      0.655172410958162 NGC 4650A: Strange Galaxy and Dark Matter |\n      0.650072921219637 Hot Gas and Dark Matter | 0.617195790024749\n      Ice Fishing for Cosmic Neutrinos | 0.615384618911517 Weak\n      Lensing Distorts the Universe |\n      0.450010798361481</screen>"
+msgstr ""
+
+#: xml/textsearch.xml:898(para)
+msgid "Ranking can be expensive since it requires consulting the <type>tsvector</type>of each matching document, which can be I/O bound and therefore slow. Unfortunately, it is almost impossible to avoid since practical queries often result in large numbers of matches."
+msgstr ""
+
+#: xml/textsearch.xml:906(title)
+msgid "Highlighting Results"
+msgstr ""
+
+#: xml/textsearch.xml:907(para)
+msgid "To present search results it is ideal to show a part of each document and how it is related to the query. Usually, search engines show fragments of the document with marked search terms. <productname>PostgreSQL</productname>provides a function <function>ts_headline</function>that implements this functionality."
+msgstr ""
+
+#: xml/textsearch.xml:915(primary)
+msgid "ts_headline"
+msgstr ""
+
+#: xml/textsearch.xml:926(replaceable)
+msgid "options"
+msgstr ""
+
+#: xml/textsearch.xml:917(synopsis)
+#, no-wrap
+msgid "ts_headline( \n      <placeholder-1/>\n      <placeholder-2/>\n      <placeholder-3/>, \n      <placeholder-4/>\n      <placeholder-5/>\n      <placeholder-6/>) returns \n      <placeholder-7/>"
+msgstr ""
+
+#: xml/textsearch.xml:929(para)
+msgid "<function>ts_headline</function>accepts a document along with a query, and returns an excerpt from the document in which terms from the query are highlighted. The configuration to be used to parse the document can be specified by <replaceable>config</replaceable>; if <replaceable>config</replaceable>is omitted, the <varname>default_text_search_config</varname>configuration is used."
+msgstr ""
+
+#: xml/textsearch.xml:947(para)
+msgid "<literal>StartSel</literal>, <literal>StopSel</literal>: the strings with which to delimit query words appearing in the document, to distinguish them from other excerpted words. You must double-quote these strings if they contain spaces or commas."
+msgstr ""
+
+#: xml/textsearch.xml:956(para)
+msgid "<literal>MaxWords</literal>, <literal>MinWords</literal>: these numbers determine the longest and shortest headlines to output."
+msgstr ""
+
+#: xml/textsearch.xml:962(para)
+msgid "<literal>ShortWord</literal>: words of this length or less will be dropped at the start and end of a headline. The default value of three eliminates common English articles."
+msgstr ""
+
+#: xml/textsearch.xml:969(para)
+msgid "<literal>HighlightAll</literal>: Boolean flag; if <literal>true</literal>the whole document will be used as the headline, ignoring the preceding three parameters."
+msgstr ""
+
+#: xml/textsearch.xml:976(para)
+msgid "<literal>MaxFragments</literal>: maximum number of text excerpts or fragments to display. The default value of zero selects a non-fragment-oriented headline generation method. A value greater than zero selects fragment-based headline generation. This method finds text fragments with as many query words as possible and stretches those fragments around the query words. As a result query words are close to the middle of each fragment and have words on each side. Each fragment will be of at most <literal>MaxWords</literal>and words of length <literal>ShortWord</literal>or less are dropped at the start and end of each fragment. If not all query words are found in the document, then a single fragment of the first <literal>MinWords</literal>in the document will be displayed."
+msgstr ""
+
+#: xml/textsearch.xml:995(para)
+msgid "<literal>FragmentDelimiter</literal>: When more than one fragment is displayed, the fragments will be separated by this string."
+msgstr ""
+
+#: xml/textsearch.xml:1002(programlisting)
+#, no-wrap
+msgid "StartSel=b, StopSel=/b, MaxWords=35,\n      MinWords=15, ShortWord=3, HighlightAll=FALSE, MaxFragments=0,\n      FragmentDelimiter=\" ... \""
+msgstr ""
+
+#: xml/textsearch.xml:938(para)
+msgid "If an <replaceable>options</replaceable>string is specified it must consist of a comma-separated list of one or more <replaceable>option</replaceable><literal>=</literal><replaceable>value</replaceable>pairs. The available options are: <placeholder-1/>Any unspecified options receive these defaults: <placeholder-2/>"
+msgstr ""
+
+#: xml/textsearch.xml:1005(para)
+msgid "For example: <screen>SELECT ts_headline('english', 'The most common type\n      of search is to find all documents containing given query\n      terms and return them in order of their similarity to the\n      query.', to_tsquery('query similarity')); ts_headline\n      ------------------------------------------------------------\n      containing given bquery/b terms and return them in order of\n      their bsimilarity/b to the bquery/b. SELECT\n      ts_headline('english', 'The most common type of search is to\n      find all documents containing given query terms and return\n      them in order of their similarity to the query.',\n      to_tsquery('query similarity'), 'StartSel = , StopSel = ');\n      ts_headline\n      -------------------------------------------------------\n      containing given query terms and return them in order of\n      their similarity to the query.</screen>"
+msgstr ""
+
+#: xml/textsearch.xml:1031(programlisting)
+#, no-wrap
+msgid "SELECT id, ts_headline(body, q), rank FROM\n      (SELECT id, body, q, ts_rank_cd(ti, q) AS rank FROM apod,\n      to_tsquery('stars') q WHERE ti @@ q ORDER BY rank DESC LIMIT\n      10) AS foo;"
+msgstr ""
+
+#: xml/textsearch.xml:1021(para)
+msgid "<function>ts_headline</function>uses the original document, not a <type>tsvector</type>summary, so it can be slow and should be used with care. A typical mistake is to call <function>ts_headline</function>for <emphasis>every</emphasis>matching document when only ten documents are to be shown. <acronym>SQL</acronym>subqueries can help; here is an example: <placeholder-1/>"
+msgstr ""
+
+#: xml/textsearch.xml:1038(title)
+msgid "Additional Features"
+msgstr ""
+
+#: xml/textsearch.xml:1039(para)
+msgid "This section describes additional functions and operators that are useful in connection with text search."
+msgstr ""
+
+#: xml/textsearch.xml:1042(title)
+msgid "Manipulating Documents"
+msgstr ""
+
+#: xml/textsearch.xml:1047(productname) xml/textsearch.xml:1168(productname)
+msgid "PostgreSQL"
+msgstr ""
+
+#: xml/textsearch.xml:1044(xref)
+msgid "showed how raw textual documents can be converted into <placeholder-1/>values. <placeholder-2/>also provides functions and operators that can be used to manipulate documents that are already in <placeholder-3/>form."
+msgstr ""
+
+#: xml/textsearch.xml:1056(primary)
+msgid "tsvector concatenation"
+msgstr ""
+
+#: xml/textsearch.xml:1058(literal) xml/textsearch.xml:1188(literal)
+msgid "<placeholder-1/>|| <placeholder-2/>"
+msgstr ""
+
+#: xml/textsearch.xml:1063(para)
+msgid "The <type>tsvector</type>concatenation operator returns a vector which combines the lexemes and positional information of the two vectors given as arguments. Positions and weight labels are retained during the concatenation. Positions appearing in the right-hand vector are offset by the largest position mentioned in the left-hand vector, so that the result is nearly equivalent to the result of performing <function>to_tsvector</function>on the concatenation of the two original document strings. (The equivalence is not exact, because any stop-words removed from the end of the left-hand argument will not affect the result, whereas they would have affected the positions of the lexemes in the right-hand argument if textual concatenation were used.)"
+msgstr ""
+
+#: xml/textsearch.xml:1079(para)
+msgid "One advantage of using concatenation in the vector form, rather than concatenating text before applying <function>to_tsvector</function>, is that you can use different configurations to parse different sections of the document. Also, because the <function>setweight</function>function marks all lexemes of the given vector the same way, it is necessary to parse the text and do <function>setweight</function>before concatenating if you want to label different parts of the document with different weights."
+msgstr ""
+
+#: xml/textsearch.xml:1096(primary)
+msgid "setweight"
+msgstr ""
+
+#: xml/textsearch.xml:1101(replaceable)
+msgid "weight"
+msgstr ""
+
+#: xml/textsearch.xml:1102(type)
+msgid "\"char\""
+msgstr ""
+
+#: xml/textsearch.xml:1098(literal)
+msgid "setweight( <placeholder-1/><placeholder-2/>, <placeholder-3/><placeholder-4/>) returns <placeholder-5/>"
+msgstr ""
+
+#: xml/textsearch.xml:1106(para)
+msgid "<function>setweight</function>returns a copy of the input vector in which every position has been labeled with the given <replaceable>weight</replaceable>, either <literal>A</literal>, <literal>B</literal>, <literal>C</literal>, or <literal>D</literal>. ( <literal>D</literal>is the default for new vectors and as such is not displayed on output.) These labels are retained when vectors are concatenated, allowing words from different parts of a document to be weighted differently by ranking functions."
+msgstr ""
+
+#: xml/textsearch.xml:1120(para)
+msgid "Note that weight labels apply to <emphasis>positions</emphasis>, not <emphasis>lexemes</emphasis>. If the input vector has been stripped of positions then <function>setweight</function>does nothing."
+msgstr ""
+
+#: xml/textsearch.xml:1130(primary)
+msgid "length(tsvector)"
+msgstr ""
+
+#: xml/textsearch.xml:1132(literal)
+msgid "length( <placeholder-1/><placeholder-2/>) returns <placeholder-3/>"
+msgstr ""
+
+#: xml/textsearch.xml:1138(para)
+msgid "Returns the number of lexemes stored in the vector."
+msgstr ""
+
+#: xml/textsearch.xml:1145(primary)
+msgid "strip"
+msgstr ""
+
+#: xml/textsearch.xml:1147(literal)
+msgid "strip( <placeholder-1/><placeholder-2/>) returns <placeholder-3/>"
+msgstr ""
+
+#: xml/textsearch.xml:1153(para)
+msgid "Returns a vector which lists the same lexemes as the given vector, but which lacks any position or weight information. While the returned vector is much less useful than an unstripped vector for relevance ranking, it will usually be much smaller."
+msgstr ""
+
+#: xml/textsearch.xml:1163(title)
+msgid "Manipulating Queries"
+msgstr ""
+
+#: xml/textsearch.xml:1165(xref)
+msgid "showed how raw textual queries can be converted into <placeholder-1/>values. <placeholder-2/>also provides functions and operators that can be used to manipulate queries that are already in <placeholder-3/>form."
+msgstr ""
+
+#: xml/textsearch.xml:1182(para)
+msgid "Returns the AND-combination of the two given queries."
+msgstr ""
+
+#: xml/textsearch.xml:1193(para)
+msgid "Returns the OR-combination of the two given queries."
+msgstr ""
+
+#: xml/textsearch.xml:1199(literal)
+msgid "!! <placeholder-1/>"
+msgstr ""
+
+#: xml/textsearch.xml:1203(para)
+msgid "Returns the negation (NOT) of the given query."
+msgstr ""
+
+#: xml/textsearch.xml:1210(primary)
+msgid "numnode"
+msgstr ""
+
+#: xml/textsearch.xml:1212(literal)
+msgid "numnode( <placeholder-1/><placeholder-2/>) returns <placeholder-3/>"
+msgstr ""
+
+#: xml/textsearch.xml:1218(para)
+msgid "Returns the number of nodes (lexemes plus operators) in a <type>tsquery</type>. This function is useful to determine if the <replaceable>query</replaceable>is meaningful (returns 0), or contains only stop words (returns 0). Examples: <screen>SELECT numnode(plainto_tsquery('the any'));\n            NOTICE: query contains only stopword(s) or doesn't\n            contain lexeme(s), ignored numnode --------- 0 SELECT\n            numnode('foo bar'::tsquery); numnode ---------\n            3</screen>"
+msgstr ""
+
+#: xml/textsearch.xml:1234(primary)
+msgid "querytree"
+msgstr ""
+
+#: xml/textsearch.xml:1236(literal)
+msgid "querytree( <placeholder-1/><placeholder-2/>) returns <placeholder-3/>"
+msgstr ""
+
+#: xml/textsearch.xml:1242(para)
+msgid "Returns the portion of a <type>tsquery</type>that can be used for searching an index. This function is useful for detecting unindexable queries, for example those containing only stop words or only negated terms. For example: <screen>SELECT querytree(to_tsquery('!defined'));\n            querytree -----------</screen>"
+msgstr ""
+
+#: xml/textsearch.xml:1253(title)
+msgid "Query Rewriting"
+msgstr ""
+
+#: xml/textsearch.xml:1255(primary)
+msgid "ts_rewrite"
+msgstr ""
+
+#: xml/textsearch.xml:1257(para)
+msgid "The <function>ts_rewrite</function>family of functions search a given <type>tsquery</type>for occurrences of a target subquery, and replace each occurrence with a substitute subquery. In essence this operation is a <type>tsquery</type>-specific version of substring replacement. A target and substitute combination can be thought of as a <firstterm>query rewrite rule</firstterm>. A collection of such rewrite rules can be a powerful search aid. For example, you can expand the search using synonyms (e.g., <literal>new york</literal>, <literal>big apple</literal>, <literal>nyc</literal>, <literal>gotham</literal>) or narrow the search to direct the user to some hot topic. There is some overlap in functionality between this feature and thesaurus dictionaries ( <xref linkend=\"textsearch-thesaurus\">). However, you can modify a set of rewrite rules on-the-fly without reindexing, whereas updating a thesaurus requires reindexing to be effective.</xref>"
+msgstr ""
+
+#: xml/textsearch.xml:1286(replaceable)
+msgid "target"
+msgstr ""
+
+#: xml/textsearch.xml:1288(replaceable)
+msgid "substitute"
+msgstr ""
+
+#: xml/textsearch.xml:1283(literal)
+msgid "ts_rewrite ( <placeholder-1/><placeholder-2/>, <placeholder-3/><placeholder-4/>, <placeholder-5/><placeholder-6/>) returns <placeholder-7/>"
+msgstr ""
+
+#: xml/textsearch.xml:1294(para)
+msgid "This form of <function>ts_rewrite</function>simply applies a single rewrite rule: <replaceable class=\"PARAMETER\">target</replaceable>is replaced by <replaceable class=\"PARAMETER\"> substitute</replaceable>wherever it appears in <replaceable class=\"PARAMETER\">query</replaceable>. For example: <screen>SELECT ts_rewrite('a b'::tsquery,\n              'a'::tsquery, 'c'::tsquery); ts_rewrite ------------\n              'b' 'c'</screen>"
+msgstr ""
+
+#: xml/textsearch.xml:1313(replaceable)
+msgid "select"
+msgstr ""
+
+#: xml/textsearch.xml:1310(literal)
+msgid "ts_rewrite ( <placeholder-1/><placeholder-2/>, <placeholder-3/><placeholder-4/>) returns <placeholder-5/>"
+msgstr ""
+
+#: xml/textsearch.xml:1318(para)
+msgid "This form of <function>ts_rewrite</function>accepts a starting <replaceable>query</replaceable>and a SQL <replaceable>select</replaceable>command, which is given as a text string. The <replaceable>select</replaceable>must yield two columns of <type>tsquery</type>type. For each row of the <replaceable>select</replaceable>result, occurrences of the first column value (the target) are replaced by the second column value (the substitute) within the current <replaceable>query</replaceable>value. For example: <screen>CREATE TABLE aliases (t tsquery PRIMARY KEY,\n              s tsquery); INSERT INTO aliases VALUES('a', 'c');\n              SELECT ts_rewrite('a b'::tsquery, 'SELECT t,s FROM\n              aliases'); ts_rewrite ------------ 'b'\n              'c'</screen>"
+msgstr ""
+
+#: xml/textsearch.xml:1336(para)
+msgid "Note that when multiple rewrite rules are applied in this way, the order of application can be important; so in practice you will want the source query to <literal>ORDER BY</literal>some ordering key."
+msgstr ""
+
+#: xml/textsearch.xml:1344(para)
+msgid "Let's consider a real-life astronomical example. We'll expand query <literal>supernovae</literal>using table-driven rewriting rules: <screen>CREATE TABLE aliases (t tsquery primary key, s\n        tsquery); INSERT INTO aliases\n        VALUES(to_tsquery('supernovae'),\n        to_tsquery('supernovae|sn')); SELECT\n        ts_rewrite(to_tsquery('supernovae crab'), 'SELECT * FROM\n        aliases'); ts_rewrite ---------------------------------\n        'crab' ( 'supernova' | 'sn' )</screen>We can change the rewriting rules just by updating the table: <screen>UPDATE aliases SET s = to_tsquery('supernovae|sn\n        !nebulae') WHERE t = to_tsquery('supernovae'); SELECT\n        ts_rewrite(to_tsquery('supernovae crab'), 'SELECT * FROM\n        aliases'); ts_rewrite\n        --------------------------------------------- 'crab' (\n        'supernova' | 'sn' !'nebula' )</screen>"
+msgstr ""
+
+#: xml/textsearch.xml:1362(para)
+msgid "Rewriting can be slow when there are many rewriting rules, since it checks every rule for a possible match. To filter out obvious non-candidate rules we can use the containment operators for the <type>tsquery</type>type. In the example below, we select only those rules which might match the original query: <screen>SELECT ts_rewrite('a b'::tsquery, 'SELECT t,s FROM\n        aliases WHERE ''a b''::tsquery @ t'); ts_rewrite\n        ------------ 'b' 'c'</screen>"
+msgstr ""
+
+#: xml/textsearch.xml:1374(title)
+msgid "Triggers for Automatic Updates"
+msgstr ""
+
+#: xml/textsearch.xml:1376(primary)
+msgid "trigger"
+msgstr ""
+
+#: xml/textsearch.xml:1377(secondary)
+msgid "for updating a derived tsvector column"
+msgstr ""
+
+#: xml/textsearch.xml:1380(para)
+msgid "When using a separate column to store the <type>tsvector</type>representation of your documents, it is necessary to create a trigger to update the <type>tsvector</type>column when the document content columns change. Two built-in trigger functions are available for this, or you can write your own."
+msgstr ""
+
+#: xml/textsearch.xml:1387(replaceable) xml/textsearch.xml:1392(replaceable)
+msgid "tsvector_column_name"
+msgstr ""
+
+#: xml/textsearch.xml:1389(replaceable)
+msgid "config_name"
+msgstr ""
+
+#: xml/textsearch.xml:1390(replaceable) xml/textsearch.xml:1396(replaceable)
+msgid "text_column_name"
+msgstr ""
+
+#: xml/textsearch.xml:1391(optional) xml/textsearch.xml:1397(optional)
+msgid ", ..."
+msgstr ""
+
+#: xml/textsearch.xml:1394(replaceable)
+msgid "config_column_name"
+msgstr ""
+
+#: xml/textsearch.xml:1386(synopsis)
+#, no-wrap
+msgid "tsvector_update_trigger( \n      <placeholder-1/>, \n      <placeholder-2/>, \n      <placeholder-3/>\n      <placeholder-4/>) tsvector_update_trigger_column( \n      <placeholder-5/>, \n      <placeholder-6/>, \n      <placeholder-7/>\n      <placeholder-8/>)"
+msgstr ""
+
+#: xml/textsearch.xml:1398(para)
+msgid "These trigger functions automatically compute a <type>tsvector</type>column from one or more textual columns, under the control of parameters specified in the <command>CREATE TRIGGER</command>command. An example of their use is: <screen>CREATE TABLE messages ( title text, body text, tsv\n      tsvector ); CREATE TRIGGER tsvectorupdate BEFORE INSERT OR\n      UPDATE ON messages FOR EACH ROW EXECUTE PROCEDURE\n      tsvector_update_trigger(tsv, 'pg_catalog.english', title,\n      body); INSERT INTO messages VALUES('title here', 'the body\n      text is here'); SELECT * FROM messages; title | body | tsv\n      ------------+-----------------------+----------------------------\n      title here | the body text is here | 'bodi':4 'text':5\n      'titl':1 SELECT title, body FROM messages WHERE tsv @@\n      to_tsquery('title body'); title | body\n      ------------+----------------------- title here | the body\n      text is here</screen>Having created this trigger, any change in <structfield>title</structfield>or <structfield>body</structfield>will automatically be reflected into <structfield>tsv</structfield>, without the application having to worry about it."
+msgstr ""
+
+#: xml/textsearch.xml:1421(para)
+msgid "The first trigger argument must be the name of the <type>tsvector</type>column to be updated. The second argument specifies the text search configuration to be used to perform the conversion. For <function>tsvector_update_trigger</function>, the configuration name is simply given as the second trigger argument. It must be schema-qualified as shown above, so that the trigger behavior will not change with changes in <varname>search_path</varname>. For <function>tsvector_update_trigger_column</function>, the second trigger argument is the name of another table column, which must be of type <type>regconfig</type>. This allows a per-row selection of configuration to be made. The remaining argument(s) are the names of textual columns (of type <type>text</type>, <type>varchar</type>, or <type>char</type>). These will be included in the document in the order given. NULL values will be skipped (but the other columns will still be indexed)."
+msgstr ""
+
+#: xml/textsearch.xml:1447(programlisting)
+#, no-wrap
+msgid "CREATE FUNCTION messages_trigger() RETURNS\n      trigger AS $$ begin new.tsv :=\n      setweight(to_tsvector('pg_catalog.english',\n      coalesce(new.title,'')), 'A') ||\n      setweight(to_tsvector('pg_catalog.english',\n      coalesce(new.body,'')), 'D'); return new; end $$ LANGUAGE\n      plpgsql; CREATE TRIGGER tsvectorupdate BEFORE INSERT OR\n      UPDATE ON messages FOR EACH ROW EXECUTE PROCEDURE\n      messages_trigger();"
+msgstr ""
+
+#: xml/textsearch.xml:1441(para)
+msgid "A limitation of these built-in triggers is that they treat all the input columns alike. To process columns differently for example, to weight title differently from body it is necessary to write a custom trigger. Here is an example using <application>PL/pgSQL</application>as the trigger language: <placeholder-1/>"
+msgstr ""
+
+#: xml/textsearch.xml:1456(para)
+msgid "Keep in mind that it is important to specify the configuration name explicitly when creating <type>tsvector</type>values inside triggers, so that the column's contents will not be affected by changes to <varname>default_text_search_config</varname>. Failure to do this is likely to lead to problems such as search results changing after a dump and reload."
+msgstr ""
+
+#: xml/textsearch.xml:1465(title)
+msgid "Gathering Document Statistics"
+msgstr ""
+
+#: xml/textsearch.xml:1467(primary)
+msgid "ts_stat"
+msgstr ""
+
+#: xml/textsearch.xml:1469(para)
+msgid "The function <function>ts_stat</function>is useful for checking your configuration and for finding stop-word candidates."
+msgstr ""
+
+#: xml/textsearch.xml:1473(replaceable)
+msgid "sqlquery"
+msgstr ""
+
+#: xml/textsearch.xml:1478(replaceable) xml/textsearch.xml:1567(literal)
+msgid "word"
+msgstr ""
+
+#: xml/textsearch.xml:1480(replaceable)
+msgid "ndoc"
+msgstr ""
+
+#: xml/textsearch.xml:1482(replaceable)
+msgid "nentry"
+msgstr ""
+
+#: xml/textsearch.xml:1484(type) xml/textsearch.xml:2634(type) xml/textsearch.xml:2643(type) xml/textsearch.xml:2668(type) xml/textsearch.xml:2677(type)
+msgid "setof record"
+msgstr ""
+
+#: xml/textsearch.xml:1472(synopsis)
+#, no-wrap
+msgid "ts_stat( \n      <placeholder-1/>\n      <placeholder-2/>, \n      <placeholder-3/>OUT \n      <placeholder-4/>\n      <placeholder-5/>, OUT \n      <placeholder-6/>\n      <placeholder-7/>, OUT \n      <placeholder-8/>\n      <placeholder-9/>) returns \n      <placeholder-10/>"
+msgstr ""
+
+#: xml/textsearch.xml:1495(para)
+msgid "<replaceable>word</replaceable><type>text</type>the value of a lexeme"
+msgstr ""
+
+#: xml/textsearch.xml:1500(para)
+msgid "<replaceable>ndoc</replaceable><type>integer</type>number of documents ( <type>tsvector</type>s) the word occurred in"
+msgstr ""
+
+#: xml/textsearch.xml:1506(para)
+msgid "<replaceable>nentry</replaceable><type>integer</type>total number of occurrences of the word"
+msgstr ""
+
+#: xml/textsearch.xml:1485(para)
+msgid "<replaceable>sqlquery</replaceable>is a text value containing an SQL query which must return a single <type>tsvector</type>column. <function>ts_stat</function>executes the query and returns statistics about each distinct lexeme (word) contained in the <type>tsvector</type>data. The columns returned are <placeholder-1/>If <replaceable>weights</replaceable>is supplied, only occurrences having one of those weights are counted."
+msgstr ""
+
+#: xml/textsearch.xml:1516(programlisting)
+#, no-wrap
+msgid "SELECT * FROM ts_stat('SELECT vector FROM\n      apod') ORDER BY nentry DESC, ndoc DESC, word LIMIT\n      10;"
+msgstr ""
+
+#: xml/textsearch.xml:1522(programlisting)
+#, no-wrap
+msgid "SELECT * FROM ts_stat('SELECT vector FROM\n      apod', 'ab') ORDER BY nentry DESC, ndoc DESC, word LIMIT\n      10;"
+msgstr ""
+
+#: xml/textsearch.xml:1514(para)
+msgid "For example, to find the ten most frequent words in a document collection: <placeholder-1/>The same, but counting only word occurrences with weight <literal>A</literal>or <literal>B</literal>: <placeholder-2/>"
+msgstr ""
+
+#: xml/textsearch.xml:1528(title)
+msgid "Parsers"
+msgstr ""
+
+#: xml/textsearch.xml:1529(para)
+msgid "Text search parsers are responsible for splitting raw document text into <firstterm>tokens</firstterm>and identifying each token's type, where the set of possible types is defined by the parser itself. Note that a parser does not modify the text at all it simply identifies plausible word boundaries. Because of this limited scope, there is less need for application-specific custom parsers than there is for custom dictionaries. At present <productname>PostgreSQL</productname>provides just one built-in parser, which has been found to be useful for a wide range of applications."
+msgstr ""
+
+#: xml/textsearch.xml:1541(para)
+msgid "The built-in parser is named <literal>pg_catalog.default</literal>. It recognizes 23 token types, shown in <xref linkend=\"textsearch-default-parser\">.</xref>"
+msgstr ""
+
+#: xml/textsearch.xml:1546(title)
+msgid "Default Parser's Token Types"
+msgstr ""
+
+#: xml/textsearch.xml:1550(entry)
+msgid "Alias"
+msgstr ""
+
+#: xml/textsearch.xml:1551(entry)
+msgid "Description"
+msgstr ""
+
+#: xml/textsearch.xml:1552(entry)
+msgid "Example"
+msgstr ""
+
+#: xml/textsearch.xml:1558(literal)
+msgid "asciiword"
+msgstr ""
+
+#: xml/textsearch.xml:1560(entry)
+msgid "Word, all ASCII letters"
+msgstr ""
+
+#: xml/textsearch.xml:1562(literal)
+msgid "elephant"
+msgstr ""
+
+#: xml/textsearch.xml:1569(entry)
+msgid "Word, all letters"
+msgstr ""
+
+#: xml/textsearch.xml:1571(literal)
+msgid "maana"
+msgstr ""
+
+#: xml/textsearch.xml:1576(literal)
+msgid "numword"
+msgstr ""
+
+#: xml/textsearch.xml:1578(entry)
+msgid "Word, letters and digits"
+msgstr ""
+
+#: xml/textsearch.xml:1580(literal) xml/textsearch.xml:1635(literal)
+msgid "beta1"
+msgstr ""
+
+#: xml/textsearch.xml:1585(literal)
+msgid "asciihword"
+msgstr ""
+
+#: xml/textsearch.xml:1587(entry)
+msgid "Hyphenated word, all ASCII"
+msgstr ""
+
+#: xml/textsearch.xml:1589(literal)
+msgid "up-to-date"
+msgstr ""
+
+#: xml/textsearch.xml:1594(literal)
+msgid "hword"
+msgstr ""
+
+#: xml/textsearch.xml:1596(entry)
+msgid "Hyphenated word, all letters"
+msgstr ""
+
+#: xml/textsearch.xml:1598(literal) xml/textsearch.xml:1627(literal)
+msgid "lgico-matemtica"
+msgstr ""
+
+#: xml/textsearch.xml:1603(literal)
+msgid "numhword"
+msgstr ""
+
+#: xml/textsearch.xml:1605(entry)
+msgid "Hyphenated word, letters and digits"
+msgstr ""
+
+#: xml/textsearch.xml:1607(literal) xml/textsearch.xml:1617(literal) xml/textsearch.xml:1636(literal)
+msgid "postgresql-beta1"
+msgstr ""
+
+#: xml/textsearch.xml:1612(literal)
+msgid "hword_asciipart"
+msgstr ""
+
+#: xml/textsearch.xml:1614(entry)
+msgid "Hyphenated word part, all ASCII"
+msgstr ""
+
+#: xml/textsearch.xml:1616(literal)
+msgid "postgresql"
+msgstr ""
+
+#: xml/textsearch.xml:1615(entry) xml/textsearch.xml:1634(entry)
+msgid "<placeholder-1/>in the context <placeholder-2/>"
+msgstr ""
+
+#: xml/textsearch.xml:1621(literal)
+msgid "hword_part"
+msgstr ""
+
+#: xml/textsearch.xml:1623(entry)
+msgid "Hyphenated word part, all letters"
+msgstr ""
+
+#: xml/textsearch.xml:1625(literal)
+msgid "lgico"
+msgstr ""
+
+#: xml/textsearch.xml:1626(literal)
+msgid "matemtica"
+msgstr ""
+
+#: xml/textsearch.xml:1624(entry)
+msgid "<placeholder-1/>or <placeholder-2/>in the context <placeholder-3/>"
+msgstr ""
+
+#: xml/textsearch.xml:1631(literal)
+msgid "hword_numpart"
+msgstr ""
+
+#: xml/textsearch.xml:1633(entry)
+msgid "Hyphenated word part, letters and digits"
+msgstr ""
+
+#: xml/textsearch.xml:1640(literal)
+msgid "email"
+msgstr ""
+
+#: xml/textsearch.xml:1642(entry)
+msgid "Email address"
+msgstr ""
+
+#: xml/textsearch.xml:1644(literal)
+msgid "foo@example.com"
+msgstr ""
+
+#: xml/textsearch.xml:1649(literal)
+msgid "protocol"
+msgstr ""
+
+#: xml/textsearch.xml:1651(entry)
+msgid "Protocol head"
+msgstr ""
+
+#: xml/textsearch.xml:1653(literal)
+msgid "http://"
+msgstr ""
+
+#: xml/textsearch.xml:1658(literal)
+msgid "url"
+msgstr ""
+
+#: xml/textsearch.xml:1660(entry)
+msgid "URL"
+msgstr ""
+
+#: xml/textsearch.xml:1662(literal)
+msgid "example.com/stuff/index.html"
+msgstr ""
+
+#: xml/textsearch.xml:1667(literal)
+msgid "host"
+msgstr ""
+
+#: xml/textsearch.xml:1669(entry)
+msgid "Host"
+msgstr ""
+
+#: xml/textsearch.xml:1671(literal)
+msgid "example.com"
+msgstr ""
+
+#: xml/textsearch.xml:1676(literal)
+msgid "url_path"
+msgstr ""
+
+#: xml/textsearch.xml:1678(entry)
+msgid "URL path"
+msgstr ""
+
+#: xml/textsearch.xml:1680(literal)
+msgid "/stuff/index.html"
+msgstr ""
+
+#: xml/textsearch.xml:1679(entry)
+msgid "<placeholder-1/>, in the context of a URL"
+msgstr ""
+
+#: xml/textsearch.xml:1685(literal)
+msgid "file"
+msgstr ""
+
+#: xml/textsearch.xml:1687(entry)
+msgid "File or path name"
+msgstr ""
+
+#: xml/textsearch.xml:1689(literal)
+msgid "/usr/local/foo.txt"
+msgstr ""
+
+#: xml/textsearch.xml:1688(entry)
+msgid "<placeholder-1/>, if not within a URL"
+msgstr ""
+
+#: xml/textsearch.xml:1694(literal)
+msgid "sfloat"
+msgstr ""
+
+#: xml/textsearch.xml:1696(entry)
+msgid "Scientific notation"
+msgstr ""
+
+#: xml/textsearch.xml:1698(literal)
+msgid "-1.234e56"
+msgstr ""
+
+#: xml/textsearch.xml:1703(literal)
+msgid "float"
+msgstr ""
+
+#: xml/textsearch.xml:1705(entry)
+msgid "Decimal notation"
+msgstr ""
+
+#: xml/textsearch.xml:1707(literal)
+msgid "-1.234"
+msgstr ""
+
+#: xml/textsearch.xml:1712(literal)
+msgid "int"
+msgstr ""
+
+#: xml/textsearch.xml:1714(entry)
+msgid "Signed integer"
+msgstr ""
+
+#: xml/textsearch.xml:1716(literal)
+msgid "-1234"
+msgstr ""
+
+#: xml/textsearch.xml:1721(literal)
+msgid "uint"
+msgstr ""
+
+#: xml/textsearch.xml:1723(entry)
+msgid "Unsigned integer"
+msgstr ""
+
+#: xml/textsearch.xml:1725(literal)
+msgid "1234"
+msgstr ""
+
+#: xml/textsearch.xml:1730(literal)
+msgid "version"
+msgstr ""
+
+#: xml/textsearch.xml:1732(entry)
+msgid "Version number"
+msgstr ""
+
+#: xml/textsearch.xml:1734(literal)
+msgid "8.3.0"
+msgstr ""
+
+#: xml/textsearch.xml:1739(literal)
+msgid "tag"
+msgstr ""
+
+#: xml/textsearch.xml:1741(entry)
+msgid "XML tag"
+msgstr ""
+
+#: xml/textsearch.xml:1743(literal)
+msgid "a href=\"dictionaries.html\""
+msgstr ""
+
+#: xml/textsearch.xml:1748(literal)
+msgid "entity"
+msgstr ""
+
+#: xml/textsearch.xml:1750(entry)
+msgid "XML entity"
+msgstr ""
+
+#: xml/textsearch.xml:1752(literal)
+msgid "amp;"
+msgstr ""
+
+#: xml/textsearch.xml:1757(literal)
+msgid "blank"
+msgstr ""
+
+#: xml/textsearch.xml:1759(entry)
+msgid "Space symbols"
+msgstr ""
+
+#: xml/textsearch.xml:1760(entry)
+msgid "(any whitespace or punctuation not otherwise recognized)"
+msgstr ""
+
+#: xml/textsearch.xml:1767(para)
+msgid "The parser's notion of a <quote>letter</quote>is determined by the database's locale setting, specifically <varname>lc_ctype</varname>. Words containing only the basic ASCII letters are reported as a separate token type, since it is sometimes useful to distinguish them. In most European languages, token types <literal>word</literal>and <literal>asciiword</literal>should be treated alike."
+msgstr ""
+
+#: xml/textsearch.xml:1776(para)
+msgid "<literal>email</literal>does not support all valid email characters as defined by RFC 5322. Specifically, the only non-alphanumeric characters supported for email user names are period, dash, and underscore."
+msgstr ""
+
+#: xml/textsearch.xml:1782(para)
+msgid "It is possible for the parser to produce overlapping tokens from the same piece of text. As an example, a hyphenated word will be reported both as the entire word and as each component: <screen>SELECT alias, description, token FROM\n    ts_debug('foo-bar-beta1'); alias | description | token\n    -----------------+------------------------------------------+---------------\n    numhword | Hyphenated word, letters and digits | foo-bar-beta1\n    hword_asciipart | Hyphenated word part, all ASCII | foo blank |\n    Space symbols | - hword_asciipart | Hyphenated word part, all\n    ASCII | bar blank | Space symbols | - hword_numpart |\n    Hyphenated word part, letters and digits | beta1</screen>This behavior is desirable since it allows searches to work for both the whole compound word and for components. Here is another instructive example: <screen>SELECT alias, description, token FROM\n    ts_debug('http://example.com/stuff/index.html'); alias |\n    description | token\n    ----------+---------------+------------------------------\n    protocol | Protocol head | http:// url | URL |\n    example.com/stuff/index.html host | Host | example.com url_path\n    | URL path | /stuff/index.html</screen>"
+msgstr ""
+
+#: xml/textsearch.xml:1806(title)
+msgid "Dictionaries"
+msgstr ""
+
+#: xml/textsearch.xml:1807(para)
+msgid "Dictionaries are used to eliminate words that should not be considered in a search ( <firstterm>stop words</firstterm>), and to <firstterm>normalize</firstterm>words so that different derived forms of the same word will match. A successfully normalized word is called a <firstterm>lexeme</firstterm>. Aside from improving search quality, normalization and removal of stop words reduce the size of the <type>tsvector</type>representation of a document, thereby improving performance. Normalization does not always have linguistic meaning and usually depends on application semantics."
+msgstr ""
+
+#: xml/textsearch.xml:1823(para)
+msgid "Linguistic - Ispell dictionaries try to reduce input words to a normalized form; stemmer dictionaries remove word endings"
+msgstr ""
+
+#: xml/textsearch.xml:1833(para)
+msgid "http://www.pgsql.ru/db/mw/index.html"
+msgstr ""
+
+#: xml/textsearch.xml:1836(para)
+msgid "http://www.pgsql.ru/db/mw/"
+msgstr ""
+
+#: xml/textsearch.xml:1839(para)
+msgid "http://www.pgsql.ru/db/../db/mw/index.html"
+msgstr ""
+
+#: xml/textsearch.xml:1828(para)
+msgid "<acronym>URL</acronym>locations can be canonicalized to make equivalent URLs match: <placeholder-1/>"
+msgstr ""
+
+#: xml/textsearch.xml:1844(para)
+msgid "Color names can be replaced by their hexadecimal values, e.g., <literal>red, green, blue, magenta -&gt; FF0000, 00FF00, 0000FF, FF00FF</literal>"
+msgstr ""
+
+#: xml/textsearch.xml:1850(para)
+msgid "If indexing numbers, we can remove some fractional digits to reduce the range of possible numbers, so for example <emphasis>3.14</emphasis>159265359, <emphasis>3.14</emphasis>15926, <emphasis>3.14</emphasis>will be the same after normalization if only two digits are kept after the decimal point."
+msgstr ""
+
+#: xml/textsearch.xml:1820(para)
+msgid "Some examples of normalization: <placeholder-1/>"
+msgstr ""
+
+#: xml/textsearch.xml:1864(para)
+msgid "an array of lexemes if the input token is known to the dictionary (notice that one token can produce more than one lexeme)"
+msgstr ""
+
+#: xml/textsearch.xml:1869(para)
+msgid "a single lexeme with the <literal>TSL_FILTER</literal>flag set, to replace the original token with a new token to be passed to subsequent dictionaries (a dictionary that does this is called a <firstterm>filtering dictionary</firstterm>)"
+msgstr ""
+
+#: xml/textsearch.xml:1876(para)
+msgid "an empty array if the dictionary knows the token, but it is a stop word"
+msgstr ""
+
+#: xml/textsearch.xml:1880(para)
+msgid "<literal>NULL</literal>if the dictionary does not recognize the input token"
+msgstr ""
+
+#: xml/textsearch.xml:1860(para)
+msgid "A dictionary is a program that accepts a token as input and returns: <placeholder-1/>"
+msgstr ""
+
+#: xml/textsearch.xml:1885(para)
+msgid "<productname>PostgreSQL</productname>provides predefined dictionaries for many languages. There are also several predefined templates that can be used to create new dictionaries with custom parameters. Each predefined dictionary template is described below. If no existing template is suitable, it is possible to create new ones; see the <filename>contrib/</filename>area of the <productname>PostgreSQL</productname>distribution for examples."
+msgstr ""
+
+#: xml/textsearch.xml:1895(para)
+msgid "A text search configuration binds a parser together with a set of dictionaries to process the parser's output tokens. For each token type that the parser can return, a separate list of dictionaries is specified by the configuration. When a token of that type is found by the parser, each dictionary in the list is consulted in turn, until some dictionary recognizes it as a known word. If it is identified as a stop word, or if no dictionary recognizes the token, it will be discarded and not indexed or searched for. Normally, the first dictionary that returns a non- <literal>NULL</literal>output determines the result, and any remaining dictionaries are not consulted; but a filtering dictionary can replace the given word with a modified word, which is then passed to subsequent dictionaries."
+msgstr ""
+
+#: xml/textsearch.xml:1921(programlisting)
+#, no-wrap
+msgid "ALTER TEXT SEARCH CONFIGURATION astro_en ADD\n    MAPPING FOR asciiword WITH astrosyn, english_ispell,\n    english_stem;"
+msgstr ""
+
+#: xml/textsearch.xml:1909(para)
+msgid "The general rule for configuring a list of dictionaries is to place first the most narrow, most specific dictionary, then the more general dictionaries, finishing with a very general dictionary, like a <application>Snowball</application>stemmer or <literal>simple</literal>, which recognizes everything. For example, for an astronomy-specific search ( <literal>astro_en</literal>configuration) one could bind token type <type>asciiword</type>(ASCII word) to a synonym dictionary of astronomical terms, a general English dictionary and a <application>Snowball</application>English stemmer: <placeholder-1/>"
+msgstr ""
+
+#: xml/textsearch.xml:1924(para)
+msgid "A filtering dictionary can be placed anywhere in the list, except at the end where it'd be useless. Filtering dictionaries are useful to partially normalize words to simplify the task of later dictionaries. For example, a filtering dictionary could be used to remove accents from accented letters, as is done by the <xref linkend=\"unaccent\">module.</xref>"
+msgstr ""
+
+#: xml/textsearch.xml:1932(title)
+msgid "Stop Words"
+msgstr ""
+
+#: xml/textsearch.xml:1933(para)
+msgid "Stop words are words that are very common, appear in almost every document, and have no discrimination value. Therefore, they can be ignored in the context of full text searching. For example, every English text contains words like <literal>a</literal>and <literal>the</literal>, so it is useless to store them in an index. However, stop words do affect the positions in <type>tsvector</type>, which in turn affect ranking: <screen>SELECT to_tsvector('english','in the list of stop\n      words'); to_tsvector ---------------------------- 'list':3\n      'stop':5 'word':6</screen>The missing positions 1,2,4 are because of stop words. Ranks calculated for documents with and without stop words are quite different: <screen>SELECT ts_rank_cd (to_tsvector('english','in the list\n      of stop words'), to_tsquery('list stop')); ts_rank_cd\n      ------------ 0.05 SELECT ts_rank_cd\n      (to_tsvector('english','list stop words'), to_tsquery('list\n      stop')); ts_rank_cd ------------ 0.1</screen>"
+msgstr ""
+
+#: xml/textsearch.xml:1952(para)
+msgid "It is up to the specific dictionary how it treats stop words. For example, <literal>ispell</literal>dictionaries first normalize words and then look at the list of stop words, while <literal>Snowball</literal>stemmers first check the list of stop words. The reason for the different behavior is an attempt to decrease noise."
+msgstr ""
+
+#: xml/textsearch.xml:1961(title)
+msgid "Simple Dictionary"
+msgstr ""
+
+#: xml/textsearch.xml:1962(para)
+msgid "The <literal>simple</literal>dictionary template operates by converting the input token to lower case and checking it against a file of stop words. If it is found in the file then an empty array is returned, causing the token to be discarded. If not, the lower-cased form of the word is returned as the normalized lexeme. Alternatively, the dictionary can be configured to report non-stop-words as unrecognized, allowing them to be passed on to the next dictionary in the list."
+msgstr ""
+
+#: xml/textsearch.xml:1975(programlisting)
+#, no-wrap
+msgid "CREATE TEXT SEARCH DICTIONARY\n      public.simple_dict ( TEMPLATE = pg_catalog.simple, STOPWORDS\n      = english );"
+msgstr ""
+
+#: xml/textsearch.xml:1972(para)
+msgid "Here is an example of a dictionary definition using the <literal>simple</literal>template: <placeholder-1/>Here, <literal>english</literal>is the base name of a file of stop words. The file's full name will be <filename>$SHAREDIR/tsearch_data/english.stop</filename>, where <literal>$SHAREDIR</literal>means the <productname>PostgreSQL</productname>installation's shared-data directory, often <filename>/usr/local/share/postgresql</filename>(use <command>pg_config --sharedir</command>to determine it if you're not sure). The file format is simply a list of words, one per line. Blank lines and trailing spaces are ignored, and upper case is folded to lower case, but no other processing is done on the file contents."
+msgstr ""
+
+#: xml/textsearch.xml:1991(para)
+msgid "Now we can test our dictionary: <screen>SELECT ts_lexize('public.simple_dict','YeS');\n      ts_lexize ----------- {yes} SELECT\n      ts_lexize('public.simple_dict','The'); ts_lexize -----------\n      {}</screen>"
+msgstr ""
+
+#: xml/textsearch.xml:1996(para)
+msgid "We can also choose to return <literal>NULL</literal>, instead of the lower-cased word, if it is not found in the stop words file. This behavior is selected by setting the dictionary's <literal>Accept</literal>parameter to <literal>false</literal>. Continuing the example: <screen>ALTER TEXT SEARCH DICTIONARY public.simple_dict (\n      Accept = false ); SELECT\n      ts_lexize('public.simple_dict','YeS'); ts_lexize -----------\n      SELECT ts_lexize('public.simple_dict','The'); ts_lexize\n      ----------- {}</screen>"
+msgstr ""
+
+#: xml/textsearch.xml:2007(para)
+msgid "With the default setting of <literal>Accept</literal>= <literal>true</literal>, it is only useful to place a <literal>simple</literal>dictionary at the end of a list of dictionaries, since it will never pass on any token to a following dictionary. Conversely, <literal>Accept</literal>= <literal>false</literal>is only useful when there is at least one following dictionary."
+msgstr ""
+
+#: xml/textsearch.xml:2017(para)
+msgid "Most types of dictionaries rely on configuration files, such as files of stop words. These files <emphasis>must</emphasis>be stored in UTF-8 encoding. They will be translated to the actual database encoding, if that is different, when they are read into the server."
+msgstr ""
+
+#: xml/textsearch.xml:2024(para)
+msgid "Normally, a database session will read a dictionary configuration file only once, when it is first used within the session. If you modify a configuration file and want to force existing sessions to pick up the new contents, issue an <command>ALTER TEXT SEARCH DICTIONARY</command>command on the dictionary. This can be a <quote>dummy</quote>update that doesn't actually change any parameter values."
+msgstr ""
+
+#: xml/textsearch.xml:2036(title)
+msgid "Synonym Dictionary"
+msgstr ""
+
+#: xml/textsearch.xml:2037(para)
+msgid "This dictionary template is used to create dictionaries that replace a word with a synonym. Phrases are not supported (use the thesaurus template ( <xref linkend=\"textsearch-thesaurus\">) for that). A synonym dictionary can be used to overcome linguistic problems, for example, to prevent an English stemmer dictionary from reducing the word <quote>Paris</quote>to <quote>pari</quote>. It is enough to have a <literal>Paris paris</literal>line in the synonym dictionary and put it before the <literal>english_stem</literal>dictionary. For example: <screen>SELECT * FROM ts_debug('english', 'Paris'); alias |\n      description | token | dictionaries | dictionary | lexemes\n      -----------+-----------------+-------+----------------+--------------+---------\n      asciiword | Word, all ASCII | Paris | {english_stem} |\n      english_stem | {pari} CREATE TEXT SEARCH DICTIONARY\n      my_synonym ( TEMPLATE = synonym, SYNONYMS = my_synonyms );\n      ALTER TEXT SEARCH CONFIGURATION english ALTER MAPPING FOR\n      asciiword WITH my_synonym, english_stem; SELECT * FROM\n      ts_debug('english', 'Paris'); alias | description | token |\n      dictionaries | dictionary | lexemes\n      -----------+-----------------+-------+---------------------------+------------+---------\n      asciiword | Word, all ASCII | Paris |\n      {my_synonym,english_stem} | my_synonym |\n      {paris}</screen></xref>"
+msgstr ""
+
+#: xml/textsearch.xml:2063(para)
+msgid "The only parameter required by the <literal>synonym</literal>template is <literal>SYNONYMS</literal>, which is the base name of its configuration file <literal>my_synonyms</literal>in the above example. The file's full name will be <filename> $SHAREDIR/tsearch_data/my_synonyms.syn</filename>(where <literal>$SHAREDIR</literal>means the <productname>PostgreSQL</productname>installation's shared-data directory). The file format is just one line per word to be substituted, with the word followed by its synonym, separated by white space. Blank lines and trailing spaces are ignored."
+msgstr ""
+
+#: xml/textsearch.xml:2077(para)
+msgid "The <literal>synonym</literal>template also has an optional parameter <literal>CaseSensitive</literal>, which defaults to <literal>false</literal>. When <literal>CaseSensitive</literal>is <literal>false</literal>, words in the synonym file are folded to lower case, as are input tokens. When it is <literal>true</literal>, words and tokens are not folded to lower case, but are compared as-is."
+msgstr ""
+
+#: xml/textsearch.xml:2098(programlisting)
+#, no-wrap
+msgid "postgres pgsql postgresql pgsql postgre pgsql\n      gogle googl indices index*"
+msgstr ""
+
+#: xml/textsearch.xml:2087(para)
+msgid "An asterisk ( <literal>*</literal>) can be placed at the end of a synonym in the configuration file. This indicates that the synonym is a prefix. The asterisk is ignored when the entry is used in <function>to_tsvector()</function>, but when it is used in <function>to_tsquery()</function>, the result will be a query item with the prefix match marker (see <xref linkend=\"textsearch-parsing-queries\">). For example, suppose we have these entries in <filename> $SHAREDIR/tsearch_data/synonym_sample.syn</filename>: <placeholder-1/>Then we will get these results: <screen>mydb=# CREATE TEXT SEARCH DICTIONARY syn\n      (template=synonym, synonyms='synonym_sample'); mydb=# SELECT\n      ts_lexize('syn','indices'); ts_lexize ----------- {index} (1\n      row) mydb=# CREATE TEXT SEARCH CONFIGURATION tst\n      (copy=simple); mydb=# ALTER TEXT SEARCH CONFIGURATION tst\n      ALTER MAPPING FOR asciiword WITH syn; mydb=# SELECT\n      to_tsvector('tst','indices'); to_tsvector -------------\n      'index':1 (1 row) mydb=# SELECT to_tsquery('tst','indices');\n      to_tsquery ------------ 'index':* (1 row) mydb=# SELECT\n      'indexes are very useful'::tsvector; tsvector\n      --------------------------------- 'are' 'indexes' 'useful'\n      'very' (1 row) mydb=# SELECT 'indexes are very\n      useful'::tsvector @@ to_tsquery('tst','indices'); ?column?\n      ---------- t (1 row)</screen></xref>"
+msgstr ""
+
+#: xml/textsearch.xml:2117(title)
+msgid "Thesaurus Dictionary"
+msgstr ""
+
+#: xml/textsearch.xml:2118(para)
+msgid "A thesaurus dictionary (sometimes abbreviated as <acronym>TZ</acronym>) is a collection of words that includes information about the relationships of words and phrases, i.e., broader terms ( <acronym>BT</acronym>), narrower terms ( <acronym>NT</acronym>), preferred terms, non-preferred terms, related terms, etc."
+msgstr ""
+
+#: xml/textsearch.xml:2133(programlisting)
+#, no-wrap
+msgid "# this is a comment sample word(s) : indexed\n      word(s) more sample word(s) : more indexed word(s)\n      ..."
+msgstr ""
+
+#: xml/textsearch.xml:2125(para)
+msgid "Basically a thesaurus dictionary replaces all non-preferred terms by one preferred term and, optionally, preserves the original terms for indexing as well. <productname>PostgreSQL</productname>'s current implementation of the thesaurus dictionary is an extension of the synonym dictionary with added <firstterm>phrase</firstterm>support. A thesaurus dictionary requires a configuration file of the following format: <placeholder-1/>where the colon ( <symbol>:</symbol>) symbol acts as a delimiter between a phrase and its replacement."
+msgstr ""
+
+#: xml/textsearch.xml:2138(para)
+msgid "A thesaurus dictionary uses a <firstterm>subdictionary</firstterm>(which is specified in the dictionary's configuration) to normalize the input text before checking for phrase matches. It is only possible to select one subdictionary. An error is reported if the subdictionary fails to recognize a word. In that case, you should remove the use of the word or teach the subdictionary about it. You can place an asterisk ( <symbol>*</symbol>) at the beginning of an indexed word to skip applying the subdictionary to it, but all sample words <emphasis>must</emphasis>be known to the subdictionary."
+msgstr ""
+
+#: xml/textsearch.xml:2150(para)
+msgid "The thesaurus dictionary chooses the longest match if there are multiple phrases matching the input, and ties are broken by using the last definition."
+msgstr ""
+
+#: xml/textsearch.xml:2160(programlisting)
+#, no-wrap
+msgid "? one ? two : swsw"
+msgstr ""
+
+#: xml/textsearch.xml:2153(para)
+msgid "Specific stop words recognized by the subdictionary cannot be specified; instead use <literal>?</literal>to mark the location where any stop word can appear. For example, assuming that <literal>a</literal>and <literal>the</literal>are stop words according to the subdictionary: <placeholder-1/>matches <literal>a one the two</literal>and <literal>the one a two</literal>; both would be replaced by <literal>swsw</literal>."
+msgstr ""
+
+#: xml/textsearch.xml:2164(para)
+msgid "Since a thesaurus dictionary has the capability to recognize phrases it must remember its state and interact with the parser. A thesaurus dictionary uses these assignments to check if it should handle the next word or stop accumulation. The thesaurus dictionary must be configured carefully. For example, if the thesaurus dictionary is assigned to handle only the <literal>asciiword</literal>token, then a thesaurus dictionary definition like <literal>one 7</literal>will not work since token type <literal>uint</literal>is not assigned to the thesaurus dictionary."
+msgstr ""
+
+#: xml/textsearch.xml:2177(para)
+msgid "Thesauruses are used during indexing so any change in the thesaurus dictionary's parameters <emphasis>requires</emphasis>reindexing. For most other dictionary types, small changes such as adding or removing stopwords does not force reindexing."
+msgstr ""
+
+#: xml/textsearch.xml:2184(title)
+msgid "Thesaurus Configuration"
+msgstr ""
+
+#: xml/textsearch.xml:2187(programlisting)
+#, no-wrap
+msgid "CREATE TEXT SEARCH DICTIONARY\n        thesaurus_simple ( TEMPLATE = thesaurus, DictFile =\n        mythesaurus, Dictionary = pg_catalog.english_stem\n        );"
+msgstr ""
+
+#: xml/textsearch.xml:2193(para)
+msgid "<literal>thesaurus_simple</literal>is the new dictionary's name"
+msgstr ""
+
+#: xml/textsearch.xml:2198(para)
+msgid "<literal>mythesaurus</literal>is the base name of the thesaurus configuration file. (Its full name will be <filename> $SHAREDIR/tsearch_data/mythesaurus.ths</filename>, where <literal>$SHAREDIR</literal>means the installation shared-data directory.)"
+msgstr ""
+
+#: xml/textsearch.xml:2208(para)
+msgid "<literal>pg_catalog.english_stem</literal>is the subdictionary (here, a Snowball English stemmer) to use for thesaurus normalization. Notice that the subdictionary will have its own configuration (for example, stop words), which is not shown here."
+msgstr ""
+
+#: xml/textsearch.xml:2219(programlisting)
+#, no-wrap
+msgid "ALTER TEXT SEARCH CONFIGURATION russian\n        ALTER MAPPING FOR asciiword, asciihword, hword_asciipart\n        WITH thesaurus_simple;"
+msgstr ""
+
+#: xml/textsearch.xml:2185(para)
+msgid "To define a new thesaurus dictionary, use the <literal>thesaurus</literal>template. For example: <placeholder-1/>Here: <placeholder-2/>Now it is possible to bind the thesaurus dictionary <literal>thesaurus_simple</literal>to the desired token types in a configuration, for example: <placeholder-3/>"
+msgstr ""
+
+#: xml/textsearch.xml:2224(title)
+msgid "Thesaurus Example"
+msgstr ""
+
+#: xml/textsearch.xml:2228(programlisting)
+#, no-wrap
+msgid "supernovae stars : sn crab nebulae :\n        crab"
+msgstr ""
+
+#: xml/textsearch.xml:2232(programlisting)
+#, no-wrap
+msgid "CREATE TEXT SEARCH DICTIONARY\n        thesaurus_astro ( TEMPLATE = thesaurus, DictFile =\n        thesaurus_astro, Dictionary = english_stem ); ALTER TEXT\n        SEARCH CONFIGURATION russian ALTER MAPPING FOR asciiword,\n        asciihword, hword_asciipart WITH thesaurus_astro,\n        english_stem;"
+msgstr ""
+
+#: xml/textsearch.xml:2225(para)
+msgid "Consider a simple astronomical thesaurus <literal>thesaurus_astro</literal>, which contains some astronomical word combinations: <placeholder-1/>Below we create a dictionary and bind some token types to an astronomical thesaurus and English stemmer: <placeholder-2/>Now we can see how it works. <function>ts_lexize</function>is not very useful for testing a thesaurus, because it treats its input as a single token. Instead we can use <function>plainto_tsquery</function>and <function>to_tsvector</function>which will break their input strings into multiple tokens: <screen>SELECT plainto_tsquery('supernova star');\n        plainto_tsquery ----------------- 'sn' SELECT\n        to_tsvector('supernova star'); to_tsvector -------------\n        'sn':1</screen>In principle, one can use <function>to_tsquery</function>if you quote the argument: <screen>SELECT to_tsquery('''supernova star'''); to_tsquery\n        ------------ 'sn'</screen>Notice that <literal>supernova star</literal>matches <literal>supernovae stars</literal>in <literal>thesaurus_astro</literal>because we specified the <literal>english_stem</literal>stemmer in the thesaurus definition. The stemmer removed the <literal>e</literal>and <literal>s</literal>."
+msgstr ""
+
+#: xml/textsearch.xml:2258(para)
+msgid "To index the original phrase as well as the substitute, just include it in the right-hand part of the definition: <screen>supernovae stars : sn supernovae stars SELECT\n        plainto_tsquery('supernova star'); plainto_tsquery\n        ----------------------------- 'sn' 'supernova'\n        'star'</screen>"
+msgstr ""
+
+#: xml/textsearch.xml:2268(title)
+msgid "<application>Ispell</application>Dictionary"
+msgstr ""
+
+#: xml/textsearch.xml:2270(para)
+msgid "The <application>Ispell</application>dictionary template supports <firstterm>morphological dictionaries</firstterm>, which can normalize many different linguistic forms of a word into the same lexeme. For example, an English <application>Ispell</application>dictionary can match all declensions and conjugations of the search term <literal>bank</literal>, e.g., <literal>banking</literal>, <literal>banked</literal>, <literal>banks</literal>, <literal>banks'</literal>, and <literal>bank's</literal>."
+msgstr ""
+
+#: xml/textsearch.xml:2284(para)
+msgid "The standard <productname>PostgreSQL</productname>distribution does not include any <application>Ispell</application>configuration files. Dictionaries for a large number of languages are available from <ulink url=\"http://ficus-www.cs.ucla.edu/geoff/ispell.html\"> Ispell</ulink>. Also, some more modern dictionary file formats are supported <ulink url=\"http://en.wikipedia.org/wiki/MySpell\"> MySpell</ulink>(OO 2.0.1) and <ulink url=\"http://sourceforge.net/projects/hunspell/\"> Hunspell</ulink>(OO = 2.0.2). A large list of dictionaries is available on the <ulink url=\"http://wiki.services.openoffice.org/wiki/Dictionaries\"> OpenOffice Wiki</ulink>."
+msgstr ""
+
+#: xml/textsearch.xml:2300(para)
+msgid "To create an <application>Ispell</application>dictionary, use the built-in <literal>ispell</literal>template and specify several parameters:"
+msgstr ""
+
+#: xml/textsearch.xml:2305(programlisting)
+#, no-wrap
+msgid "CREATE TEXT SEARCH DICTIONARY english_ispell\n      ( TEMPLATE = ispell, DictFile = english, AffFile = english,\n      StopWords = english );"
+msgstr ""
+
+#: xml/textsearch.xml:2308(para)
+msgid "Here, <literal>DictFile</literal>, <literal>AffFile</literal>, and <literal>StopWords</literal>specify the base names of the dictionary, affixes, and stop-words files. The stop-words file has the same format explained above for the <literal>simple</literal>dictionary type. The format of the other files is not specified here but is available from the above-mentioned web sites."
+msgstr ""
+
+#: xml/textsearch.xml:2317(para)
+msgid "Ispell dictionaries usually recognize a limited set of words, so they should be followed by another broader dictionary; for example, a Snowball dictionary, which recognizes everything."
+msgstr ""
+
+#: xml/textsearch.xml:2327(programlisting)
+#, no-wrap
+msgid "compoundwords controlled\n      z"
+msgstr ""
+
+#: xml/textsearch.xml:2330(programlisting)
+#, no-wrap
+msgid "SELECT ts_lexize('norwegian_ispell',\n      'overbuljongterningpakkmesterassistent');\n      {over,buljong,terning,pakk,mester,assistent} SELECT\n      ts_lexize('norwegian_ispell', 'sjokoladefabrikk');\n      {sjokoladefabrikk,sjokolade,fabrikk}"
+msgstr ""
+
+#: xml/textsearch.xml:2321(para)
+msgid "Ispell dictionaries support splitting compound words; a useful feature. Notice that the affix file should specify a special flag using the <literal>compoundwords controlled</literal>statement that marks dictionary words that can participate in compound formation: <placeholder-1/>Here are some examples for the Norwegian language: <placeholder-2/>"
+msgstr ""
+
+#: xml/textsearch.xml:2336(para)
+msgid "<application>MySpell</application>does not support compound words. <application>Hunspell</application>has sophisticated support for compound words. At present, <productname>PostgreSQL</productname>implements only the basic compound word operations of Hunspell."
+msgstr ""
+
+#: xml/textsearch.xml:2346(title)
+msgid "<application>Snowball</application>Dictionary"
+msgstr ""
+
+#: xml/textsearch.xml:2366(programlisting)
+#, no-wrap
+msgid "CREATE TEXT SEARCH DICTIONARY english_stem (\n      TEMPLATE = snowball, Language = english, StopWords = english\n      );"
+msgstr ""
+
+#: xml/textsearch.xml:2348(para)
+msgid "The <application>Snowball</application>dictionary template is based on a project by Martin Porter, inventor of the popular Porter's stemming algorithm for the English language. Snowball now provides stemming algorithms for many languages (see the <ulink url=\"http://snowballstem.org/\">Snowball site</ulink>for more information). Each algorithm understands how to reduce common variant forms of words to a base, or stem, spelling within its language. A Snowball dictionary requires a <literal>language</literal>parameter to identify which stemmer to use, and optionally can specify a <literal>stopword</literal>file name that gives a list of words to eliminate. ( <productname>PostgreSQL</productname>'s standard stopword lists are also provided by the Snowball project.) For example, there is a built-in definition equivalent to <placeholder-1/>The stopword file format is the same as already explained."
+msgstr ""
+
+#: xml/textsearch.xml:2370(para)
+msgid "A <application>Snowball</application>dictionary recognizes everything, whether or not it is able to simplify the word, so it should be placed at the end of the dictionary list. It is useless to have it before any other dictionary because a token will never pass through it to the next dictionary."
+msgstr ""
+
+#: xml/textsearch.xml:2380(title)
+msgid "Configuration Example"
+msgstr ""
+
+#: xml/textsearch.xml:2381(para)
+msgid "A text search configuration specifies all options necessary to transform a document into a <type>tsvector</type>: the parser to use to break text into tokens, and the dictionaries to use to transform each token into a lexeme. Every call of <function>to_tsvector</function>or <function>to_tsquery</function>needs a text search configuration to perform its processing. The configuration parameter <xref linkend=\"guc-default-text-search-config\">specifies the name of the default configuration, which is the one used by text search functions if an explicit configuration parameter is omitted. It can be set in <filename>postgresql.conf</filename>, or set for an individual session using the <command>SET</command>command.</xref>"
+msgstr ""
+
+#: xml/textsearch.xml:2397(para)
+msgid "Several predefined text search configurations are available, and you can create custom configurations easily. To facilitate management of text search objects, a set of <acronym>SQL</acronym>commands is available, and there are several <application>psql</application>commands that display information about text search objects ( <xref linkend=\"textsearch-psql\">).</xref>"
+msgstr ""
+
+#: xml/textsearch.xml:2408(programlisting)
+#, no-wrap
+msgid "CREATE TEXT SEARCH CONFIGURATION public.pg (\n    COPY = pg_catalog.english );"
+msgstr ""
+
+#: xml/textsearch.xml:2405(para)
+msgid "As an example we will create a configuration <literal>pg</literal>, starting by duplicating the built-in <literal>english</literal>configuration: <placeholder-1/>"
+msgstr ""
+
+#: xml/textsearch.xml:2414(programlisting)
+#, no-wrap
+msgid "postgres pg pgsql pg postgresql\n    pg"
+msgstr ""
+
+#: xml/textsearch.xml:2416(programlisting)
+#, no-wrap
+msgid "CREATE TEXT SEARCH DICTIONARY pg_dict (\n    TEMPLATE = synonym, SYNONYMS = pg_dict );"
+msgstr ""
+
+#: xml/textsearch.xml:2422(programlisting)
+#, no-wrap
+msgid "CREATE TEXT SEARCH DICTIONARY english_ispell (\n    TEMPLATE = ispell, DictFile = english, AffFile = english,\n    StopWords = english );"
+msgstr ""
+
+#: xml/textsearch.xml:2427(programlisting)
+#, no-wrap
+msgid "ALTER TEXT SEARCH CONFIGURATION pg ALTER\n    MAPPING FOR asciiword, asciihword, hword_asciipart, word,\n    hword, hword_part WITH pg_dict, english_ispell,\n    english_stem;"
+msgstr ""
+
+#: xml/textsearch.xml:2432(programlisting)
+#, no-wrap
+msgid "ALTER TEXT SEARCH CONFIGURATION pg DROP MAPPING\n    FOR email, url, url_path, sfloat,\n    float;"
+msgstr ""
+
+#: xml/textsearch.xml:2410(para)
+msgid "We will use a PostgreSQL-specific synonym list and store it in <filename>$SHAREDIR/tsearch_data/pg_dict.syn</filename>. The file contents look like: <placeholder-1/>We define the synonym dictionary like this: <placeholder-2/>Next we register the <productname>Ispell</productname>dictionary <literal>english_ispell</literal>, which has its own configuration files: <placeholder-3/>Now we can set up the mappings for words in configuration <literal>pg</literal>: <placeholder-4/>We choose not to index or search some token types that the built-in configuration does handle: <placeholder-5/>"
+msgstr ""
+
+#: xml/textsearch.xml:2436(programlisting)
+#, no-wrap
+msgid "SELECT * FROM ts_debug('public.pg', '\n    PostgreSQL, the highly scalable, SQL compliant, open source\n    object-relational database management system, is now undergoing\n    beta testing of the next version of our software.\n    ');"
+msgstr ""
+
+#: xml/textsearch.xml:2435(para)
+msgid "Now we can test our configuration: <placeholder-1/>"
+msgstr ""
+
+#: xml/textsearch.xml:2441(para)
+msgid "The next step is to set the session to use the new configuration, which was created in the <literal>public</literal>schema: <screen>= \\dF List of text search configurations Schema | Name\n    | Description ---------+------+------------- public | pg | SET\n    default_text_search_config = 'public.pg'; SET SHOW\n    default_text_search_config; default_text_search_config\n    ---------------------------- public.pg</screen>"
+msgstr ""
+
+#: xml/textsearch.xml:2451(title)
+msgid "Testing and Debugging Text Search"
+msgstr ""
+
+#: xml/textsearch.xml:2452(para)
+msgid "The behavior of a custom text search configuration can easily become confusing. The functions described in this section are useful for testing text search objects. You can test a complete configuration, or test parsers and dictionaries separately."
+msgstr ""
+
+#: xml/textsearch.xml:2458(title)
+msgid "Configuration Testing"
+msgstr ""
+
+#: xml/textsearch.xml:2459(para)
+msgid "The function <function>ts_debug</function>allows easy testing of a text search configuration."
+msgstr ""
+
+#: xml/textsearch.xml:2463(primary)
+msgid "ts_debug"
+msgstr ""
+
+#: xml/textsearch.xml:2471(replaceable) xml/textsearch.xml:2664(replaceable) xml/textsearch.xml:2673(replaceable)
+msgid "alias"
+msgstr ""
+
+#: xml/textsearch.xml:2473(replaceable) xml/textsearch.xml:2666(replaceable) xml/textsearch.xml:2675(replaceable)
+msgid "description"
+msgstr ""
+
+#: xml/textsearch.xml:2475(replaceable) xml/textsearch.xml:2632(replaceable) xml/textsearch.xml:2641(replaceable) xml/textsearch.xml:2716(replaceable)
+msgid "token"
+msgstr ""
+
+#: xml/textsearch.xml:2477(replaceable)
+msgid "dictionaries"
+msgstr ""
+
+#: xml/textsearch.xml:2478(type)
+msgid "regdictionary[]"
+msgstr ""
+
+#: xml/textsearch.xml:2479(replaceable)
+msgid "dictionary"
+msgstr ""
+
+#: xml/textsearch.xml:2480(type) xml/textsearch.xml:2715(type)
+msgid "regdictionary"
+msgstr ""
+
+#: xml/textsearch.xml:2481(replaceable)
+msgid "lexemes"
+msgstr ""
+
+#: xml/textsearch.xml:2482(type) xml/textsearch.xml:2718(type)
+msgid "text[]"
+msgstr ""
+
+#: xml/textsearch.xml:2465(synopsis)
+#, no-wrap
+msgid "ts_debug( \n      <placeholder-1/>\n      <placeholder-2/>\n      <placeholder-3/>, OUT \n      <placeholder-4/>\n      <placeholder-5/>, OUT \n      <placeholder-6/>\n      <placeholder-7/>, OUT \n      <placeholder-8/>\n      <placeholder-9/>, OUT \n      <placeholder-10/>\n      <placeholder-11/>, OUT \n      <placeholder-12/>\n      <placeholder-13/>, OUT \n      <placeholder-14/>\n      <placeholder-15/>) returns setof record"
+msgstr ""
+
+#: xml/textsearch.xml:2483(para)
+msgid "<function>ts_debug</function>displays information about every token of <replaceable class=\"PARAMETER\">document</replaceable>as produced by the parser and processed by the configured dictionaries. It uses the configuration specified by <replaceable class=\"PARAMETER\">config</replaceable>, or <varname>default_text_search_config</varname>if that argument is omitted."
+msgstr ""
+
+#: xml/textsearch.xml:2498(para)
+msgid "<replaceable>alias</replaceable><type>text</type>short name of the token type"
+msgstr ""
+
+#: xml/textsearch.xml:2503(para)
+msgid "<replaceable>description</replaceable><type>text</type>description of the token type"
+msgstr ""
+
+#: xml/textsearch.xml:2508(para)
+msgid "<replaceable>token</replaceable><type>text</type>text of the token"
+msgstr ""
+
+#: xml/textsearch.xml:2513(para)
+msgid "<replaceable>dictionaries</replaceable><type>regdictionary[]</type>the dictionaries selected by the configuration for this token type"
+msgstr ""
+
+#: xml/textsearch.xml:2519(para)
+msgid "<replaceable>dictionary</replaceable><type>regdictionary</type>the dictionary that recognized the token, or <literal>NULL</literal>if none did"
+msgstr ""
+
+#: xml/textsearch.xml:2526(para)
+msgid "<replaceable>lexemes</replaceable><type>text[]</type>the lexeme(s) produced by the dictionary that recognized the token, or <literal>NULL</literal>if none did; an empty array ( <literal>{}</literal>) means it was recognized as a stop word"
+msgstr ""
+
+#: xml/textsearch.xml:2492(para)
+msgid "<function>ts_debug</function>returns one row for each token identified in the text by the parser. The columns returned are <placeholder-1/>"
+msgstr ""
+
+#: xml/textsearch.xml:2535(para)
+msgid "Here is a simple example: <screen>SELECT * FROM ts_debug('english','a fat cat sat on a\n      mat - it ate a fat rats'); alias | description | token |\n      dictionaries | dictionary | lexemes\n      -----------+-----------------+-------+----------------+--------------+---------\n      asciiword | Word, all ASCII | a | {english_stem} |\n      english_stem | {} blank | Space symbols | | {} | | asciiword\n      | Word, all ASCII | fat | {english_stem} | english_stem |\n      {fat} blank | Space symbols | | {} | | asciiword | Word, all\n      ASCII | cat | {english_stem} | english_stem | {cat} blank |\n      Space symbols | | {} | | asciiword | Word, all ASCII | sat |\n      {english_stem} | english_stem | {sat} blank | Space symbols |\n      | {} | | asciiword | Word, all ASCII | on | {english_stem} |\n      english_stem | {} blank | Space symbols | | {} | | asciiword\n      | Word, all ASCII | a | {english_stem} | english_stem | {}\n      blank | Space symbols | | {} | | asciiword | Word, all ASCII\n      | mat | {english_stem} | english_stem | {mat} blank | Space\n      symbols | | {} | | blank | Space symbols | - | {} | |\n      asciiword | Word, all ASCII | it | {english_stem} |\n      english_stem | {} blank | Space symbols | | {} | | asciiword\n      | Word, all ASCII | ate | {english_stem} | english_stem |\n      {ate} blank | Space symbols | | {} | | asciiword | Word, all\n      ASCII | a | {english_stem} | english_stem | {} blank | Space\n      symbols | | {} | | asciiword | Word, all ASCII | fat |\n      {english_stem} | english_stem | {fat} blank | Space symbols |\n      | {} | | asciiword | Word, all ASCII | rats | {english_stem}\n      | english_stem | {rat}</screen>"
+msgstr ""
+
+#: xml/textsearch.xml:2562(para)
+msgid "For a more extensive demonstration, we first create a <literal>public.english</literal>configuration and Ispell dictionary for the English language:"
+msgstr ""
+
+#: xml/textsearch.xml:2565(programlisting)
+#, no-wrap
+msgid "CREATE TEXT SEARCH CONFIGURATION\n      public.english ( COPY = pg_catalog.english ); CREATE TEXT\n      SEARCH DICTIONARY english_ispell ( TEMPLATE = ispell,\n      DictFile = english, AffFile = english, StopWords = english );\n      ALTER TEXT SEARCH CONFIGURATION public.english ALTER MAPPING\n      FOR asciiword WITH english_ispell,\n      english_stem;"
+msgstr ""
+
+#: xml/textsearch.xml:2572(screen)
+#, no-wrap
+msgid "SELECT * FROM ts_debug('public.english','The\n      Brightest supernovaes'); alias | description | token |\n      dictionaries | dictionary | lexemes\n      -----------+-----------------+-------------+-------------------------------+----------------+-------------\n      asciiword | Word, all ASCII | The |\n      {english_ispell,english_stem} | english_ispell | {} blank |\n      Space symbols | | {} | | asciiword | Word, all ASCII |\n      Brightest | {english_ispell,english_stem} | english_ispell |\n      {bright} blank | Space symbols | | {} | | asciiword | Word,\n      all ASCII | supernovaes | {english_ispell,english_stem} |\n      english_stem | {supernova}"
+msgstr ""
+
+#: xml/textsearch.xml:2583(para)
+msgid "In this example, the word <literal>Brightest</literal>was recognized by the parser as an <literal>ASCII word</literal>(alias <literal>asciiword</literal>). For this token type the dictionary list is <literal>english_ispell</literal>and <literal>english_stem</literal>. The word was recognized by <literal>english_ispell</literal>, which reduced it to the noun <literal>bright</literal>. The word <literal>supernovaes</literal>is unknown to the <literal>english_ispell</literal>dictionary so it was passed to the next dictionary, and, fortunately, was recognized (in fact, <literal>english_stem</literal>is a Snowball dictionary which recognizes everything; that is why it was placed at the end of the dictionary list)."
+msgstr ""
+
+#: xml/textsearch.xml:2601(para)
+msgid "The word <literal>The</literal>was recognized by the <literal>english_ispell</literal>dictionary as a stop word ( <xref linkend=\"textsearch-stopwords\">) and will not be indexed. The spaces are discarded too, since the configuration provides no dictionaries at all for them.</xref>"
+msgstr ""
+
+#: xml/textsearch.xml:2608(para)
+msgid "You can reduce the width of the output by explicitly specifying which columns you want to see: <screen>SELECT alias, token, dictionary, lexemes FROM\n      ts_debug('public.english','The Brightest supernovaes'); alias\n      | token | dictionary | lexemes\n      -----------+-------------+----------------+-------------\n      asciiword | The | english_ispell | {} blank | | | asciiword |\n      Brightest | english_ispell | {bright} blank | | | asciiword |\n      supernovaes | english_stem | {supernova}</screen>"
+msgstr ""
+
+#: xml/textsearch.xml:2619(title)
+msgid "Parser Testing"
+msgstr ""
+
+#: xml/textsearch.xml:2620(para)
+msgid "The following functions allow direct testing of a text search parser."
+msgstr ""
+
+#: xml/textsearch.xml:2623(primary)
+msgid "ts_parse"
+msgstr ""
+
+#: xml/textsearch.xml:2626(replaceable) xml/textsearch.xml:2660(replaceable)
+msgid "parser_name"
+msgstr ""
+
+#: xml/textsearch.xml:2630(replaceable) xml/textsearch.xml:2639(replaceable) xml/textsearch.xml:2662(replaceable) xml/textsearch.xml:2671(replaceable)
+msgid "tokid"
+msgstr ""
+
+#: xml/textsearch.xml:2635(replaceable) xml/textsearch.xml:2669(replaceable)
+msgid "parser_oid"
+msgstr ""
+
+#: xml/textsearch.xml:2636(type) xml/textsearch.xml:2670(type)
+msgid "oid"
+msgstr ""
+
+#: xml/textsearch.xml:2625(synopsis)
+#, no-wrap
+msgid "ts_parse( \n      <placeholder-1/>\n      <placeholder-2/>, \n      <placeholder-3/>\n      <placeholder-4/>, OUT \n      <placeholder-5/>\n      <placeholder-6/>, OUT \n      <placeholder-7/>\n      <placeholder-8/>) returns \n      <placeholder-9/>ts_parse( \n      <placeholder-10/>\n      <placeholder-11/>, \n      <placeholder-12/>\n      <placeholder-13/>, OUT \n      <placeholder-14/>\n      <placeholder-15/>, OUT \n      <placeholder-16/>\n      <placeholder-17/>) returns \n      <placeholder-18/>"
+msgstr ""
+
+#: xml/textsearch.xml:2644(para)
+msgid "<function>ts_parse</function>parses the given <replaceable>document</replaceable>and returns a series of records, one for each token produced by parsing. Each record includes a <varname>tokid</varname>showing the assigned token type and a <varname>token</varname>which is the text of the token. For example: <screen>SELECT * FROM ts_parse('default', '123 - a number');\n      tokid | token -------+-------- 22 | 123 12 | 12 | - 1 | a 12\n      | 1 | number</screen>"
+msgstr ""
+
+#: xml/textsearch.xml:2657(primary)
+msgid "ts_token_type"
+msgstr ""
+
+#: xml/textsearch.xml:2659(synopsis)
+#, no-wrap
+msgid "ts_token_type( \n      <placeholder-1/>\n      <placeholder-2/>, OUT \n      <placeholder-3/>\n      <placeholder-4/>, OUT \n      <placeholder-5/>\n      <placeholder-6/>, OUT \n      <placeholder-7/>\n      <placeholder-8/>) returns \n      <placeholder-9/>ts_token_type( \n      <placeholder-10/>\n      <placeholder-11/>, OUT \n      <placeholder-12/>\n      <placeholder-13/>, OUT \n      <placeholder-14/>\n      <placeholder-15/>, OUT \n      <placeholder-16/>\n      <placeholder-17/>) returns \n      <placeholder-18/>"
+msgstr ""
+
+#: xml/textsearch.xml:2678(para)
+msgid "<function>ts_token_type</function>returns a table which describes each type of token the specified parser can recognize. For each token type, the table gives the integer <varname>tokid</varname>that the parser uses to label a token of that type, the <varname>alias</varname>that names the token type in configuration commands, and a short <varname>description</varname>. For example: <screen>SELECT * FROM ts_token_type('default'); tokid | alias\n      | description\n      -------+-----------------+------------------------------------------\n      1 | asciiword | Word, all ASCII 2 | word | Word, all letters\n      3 | numword | Word, letters and digits 4 | email | Email\n      address 5 | url | URL 6 | host | Host 7 | sfloat | Scientific\n      notation 8 | version | Version number 9 | hword_numpart |\n      Hyphenated word part, letters and digits 10 | hword_part |\n      Hyphenated word part, all letters 11 | hword_asciipart |\n      Hyphenated word part, all ASCII 12 | blank | Space symbols 13\n      | tag | XML tag 14 | protocol | Protocol head 15 | numhword |\n      Hyphenated word, letters and digits 16 | asciihword |\n      Hyphenated word, all ASCII 17 | hword | Hyphenated word, all\n      letters 18 | url_path | URL path 19 | file | File or path\n      name 20 | float | Decimal notation 21 | int | Signed integer\n      22 | uint | Unsigned integer 23 | entity | XML\n      entity</screen>"
+msgstr ""
+
+#: xml/textsearch.xml:2706(title)
+msgid "Dictionary Testing"
+msgstr ""
+
+#: xml/textsearch.xml:2707(para)
+msgid "The <function>ts_lexize</function>function facilitates dictionary testing."
+msgstr ""
+
+#: xml/textsearch.xml:2711(primary)
+msgid "ts_lexize"
+msgstr ""
+
+#: xml/textsearch.xml:2714(replaceable)
+msgid "dict"
+msgstr ""
+
+#: xml/textsearch.xml:2713(synopsis)
+#, no-wrap
+msgid "ts_lexize( \n      <placeholder-1/>\n      <placeholder-2/>, \n      <placeholder-3/>\n      <placeholder-4/>) returns \n      <placeholder-5/>"
+msgstr ""
+
+#: xml/textsearch.xml:2719(para)
+msgid "<function>ts_lexize</function>returns an array of lexemes if the input <replaceable>token</replaceable>is known to the dictionary, or an empty array if the token is known to the dictionary but it is a stop word, or <literal>NULL</literal>if it is an unknown word."
+msgstr ""
+
+#: xml/textsearch.xml:2726(para)
+msgid "Examples: <screen>SELECT ts_lexize('english_stem', 'stars'); ts_lexize\n      ----------- {star} SELECT ts_lexize('english_stem', 'a');\n      ts_lexize ----------- {}</screen>"
+msgstr ""
+
+#: xml/textsearch.xml:2731(para)
+msgid "The <function>ts_lexize</function>function expects a single <emphasis>token</emphasis>, not text. Here is a case where this can be confusing: <screen>SELECT ts_lexize('thesaurus_astro','supernovae\n        stars') is null; ?column? ---------- t</screen>The thesaurus dictionary <literal>thesaurus_astro</literal>does know the phrase <literal>supernovae stars</literal>, but <function>ts_lexize</function>fails since it does not parse the input text but treats it as a single token. Use <function>plainto_tsquery</function>or <function>to_tsvector</function>to test thesaurus dictionaries, for example: <screen>SELECT plainto_tsquery('supernovae stars');\n        plainto_tsquery ----------------- 'sn'</screen>"
+msgstr ""
+
+#: xml/textsearch.xml:2751(title)
+msgid "GIN and GiST Index Types"
+msgstr ""
+
+#: xml/textsearch.xml:2754(secondary)
+msgid "indexes"
+msgstr ""
+
+#: xml/textsearch.xml:2764(primary) xml/textsearch.xml:2783(primary)
+msgid "index"
+msgstr ""
+
+#: xml/textsearch.xml:2765(secondary)
+msgid "GIN"
+msgstr ""
+
+#: xml/textsearch.xml:2769(replaceable) xml/textsearch.xml:2788(replaceable)
+msgid "name"
+msgstr ""
+
+#: xml/textsearch.xml:2770(replaceable) xml/textsearch.xml:2789(replaceable)
+msgid "table"
+msgstr ""
+
+#: xml/textsearch.xml:2771(replaceable) xml/textsearch.xml:2790(replaceable)
+msgid "column"
+msgstr ""
+
+#: xml/textsearch.xml:2768(literal)
+msgid "CREATE INDEX <placeholder-1/>ON <placeholder-2/>USING GIN ( <placeholder-3/>);"
+msgstr ""
+
+#: xml/textsearch.xml:2774(para)
+msgid "Creates a GIN (Generalized Inverted Index)-based index. The <replaceable>column</replaceable>must be of <type>tsvector</type>type."
+msgstr ""
+
+#: xml/textsearch.xml:2784(secondary)
+msgid "GiST"
+msgstr ""
+
+#: xml/textsearch.xml:2787(literal)
+msgid "CREATE INDEX <placeholder-1/>ON <placeholder-2/>USING GIST ( <placeholder-3/>);"
+msgstr ""
+
+#: xml/textsearch.xml:2793(para)
+msgid "Creates a GiST (Generalized Search Tree)-based index. The <replaceable>column</replaceable>can be of <type>tsvector</type>or <type>tsquery</type>type."
+msgstr ""
+
+#: xml/textsearch.xml:2756(para)
+msgid "There are two kinds of indexes that can be used to speed up full text searches. Note that indexes are not mandatory for full text searching, but in cases where a column is searched on a regular basis, an index is usually desirable. <placeholder-1/>"
+msgstr ""
+
+#: xml/textsearch.xml:2801(para)
+msgid "GIN indexes are the preferred text search index type. As inverted indexes, they contain an index entry for each word (lexeme), with a compressed list of matching locations. Multi-word searches can find the first match, then use the index to remove rows that are lacking additional words. GIN indexes store only the words (lexemes) of <type>tsvector</type>values, and not their weight labels. Thus a table row recheck is needed when using a query that involves weights."
+msgstr ""
+
+#: xml/textsearch.xml:2810(para)
+msgid "A GiST index is <firstterm>lossy</firstterm>, meaning that the index might produce false matches, and it is necessary to check the actual table row to eliminate such false matches. ( <productname>PostgreSQL</productname>does this automatically when needed.) GiST indexes are lossy because each document is represented in the index by a fixed-length signature. The signature is generated by hashing each word into a single bit in an n-bit string, with all these bits OR-ed together to produce an n-bit document signature. When two words hash to the same bit position there will be a false match. If all words in the query have matches (real or false) then the table row must be retrieved to see if the match is correct."
+msgstr ""
+
+#: xml/textsearch.xml:2823(para)
+msgid "Lossiness causes performance degradation due to unnecessary fetches of table records that turn out to be false matches. Since random access to table records is slow, this limits the usefulness of GiST indexes. The likelihood of false matches depends on several factors, in particular the number of unique words, so using dictionaries to reduce this number is recommended."
+msgstr ""
+
+#: xml/textsearch.xml:2830(para)
+msgid "Note that <acronym>GIN</acronym>index build time can often be improved by increasing <xref linkend=\"guc-maintenance-work-mem\">, while <acronym>GiST</acronym>index build time is not sensitive to that parameter.</xref>"
+msgstr ""
+
+#: xml/textsearch.xml:2836(para)
+msgid "Partitioning of big collections and the proper use of GIN and GiST indexes allows the implementation of very fast searches with online update. Partitioning can be done at the database level using table inheritance, or by distributing documents over servers and collecting search results using the <xref linkend=\"dblink\">module. The latter is possible because ranking functions use only local information.</xref>"
+msgstr ""
+
+#: xml/textsearch.xml:2845(title)
+msgid "<application>psql</application>Support"
+msgstr ""
+
+#: xml/textsearch.xml:2847(para)
+msgid "Information about text search configuration objects can be obtained in <application>psql</application>using a set of commands: <synopsis>\\dF{d,p,t} \n    <optional>+</optional>\n    <optional>PATTERN</optional></synopsis>An optional <literal>+</literal>produces more details."
+msgstr ""
+
+#: xml/textsearch.xml:2854(para)
+msgid "The optional parameter <literal>PATTERN</literal>can be the name of a text search object, optionally schema-qualified. If <literal>PATTERN</literal>is omitted then information about all visible objects will be displayed. <literal>PATTERN</literal>can be a regular expression and can provide <emphasis>separate</emphasis>patterns for the schema and object names. The following examples illustrate this: <screen>= \\dF *fulltext* List of text search configurations\n    Schema | Name | Description\n    --------+--------------+------------- public | fulltext_cfg\n    |</screen><screen>= \\dF *.fulltext* List of text search configurations\n    Schema | Name | Description\n    ----------+---------------------------- fulltext | fulltext_cfg\n    | public | fulltext_cfg |</screen>The available commands are:"
+msgstr ""
+
+#: xml/textsearch.xml:2876(optional) xml/textsearch.xml:2901(optional) xml/textsearch.xml:2935(optional) xml/textsearch.xml:2970(optional)
+msgid "+"
+msgstr ""
+
+#: xml/textsearch.xml:2877(optional) xml/textsearch.xml:2902(optional) xml/textsearch.xml:2936(optional) xml/textsearch.xml:2971(optional)
+msgid "PATTERN"
+msgstr ""
+
+#: xml/textsearch.xml:2875(literal)
+msgid "\\dF <placeholder-1/><placeholder-2/>"
+msgstr ""
+
+#: xml/textsearch.xml:2880(para)
+msgid "List text search configurations (add <literal>+</literal>for more detail). <screen>= \\dF russian List of text search configurations\n          Schema | Name | Description\n          ------------+---------+------------------------------------\n          pg_catalog | russian | configuration for russian language\n          = \\dF+ russian Text search configuration\n          \"pg_catalog.russian\" Parser: \"pg_catalog.default\" Token |\n          Dictionaries -----------------+-------------- asciihword\n          | english_stem asciiword | english_stem email | simple\n          file | simple float | simple host | simple hword |\n          russian_stem hword_asciipart | english_stem hword_numpart\n          | simple hword_part | russian_stem int | simple numhword\n          | simple numword | simple sfloat | simple uint | simple\n          url | simple url_path | simple version | simple word |\n          russian_stem</screen>"
+msgstr ""
+
+#: xml/textsearch.xml:2900(literal)
+msgid "\\dFd <placeholder-1/><placeholder-2/>"
+msgstr ""
+
+#: xml/textsearch.xml:2905(para)
+msgid "List text search dictionaries (add <literal>+</literal>for more detail). <screen>= \\dFd List of text search dictionaries Schema |\n          Name | Description\n          ------------+-----------------+-----------------------------------------------------------\n          pg_catalog | danish_stem | snowball stemmer for danish\n          language pg_catalog | dutch_stem | snowball stemmer for\n          dutch language pg_catalog | english_stem | snowball\n          stemmer for english language pg_catalog | finnish_stem |\n          snowball stemmer for finnish language pg_catalog |\n          french_stem | snowball stemmer for french language\n          pg_catalog | german_stem | snowball stemmer for german\n          language pg_catalog | hungarian_stem | snowball stemmer\n          for hungarian language pg_catalog | italian_stem |\n          snowball stemmer for italian language pg_catalog |\n          norwegian_stem | snowball stemmer for norwegian language\n          pg_catalog | portuguese_stem | snowball stemmer for\n          portuguese language pg_catalog | romanian_stem | snowball\n          stemmer for romanian language pg_catalog | russian_stem |\n          snowball stemmer for russian language pg_catalog | simple\n          | simple dictionary: just lower case and check for\n          stopword pg_catalog | spanish_stem | snowball stemmer for\n          spanish language pg_catalog | swedish_stem | snowball\n          stemmer for swedish language pg_catalog | turkish_stem |\n          snowball stemmer for turkish language</screen>"
+msgstr ""
+
+#: xml/textsearch.xml:2934(literal)
+msgid "\\dFp <placeholder-1/><placeholder-2/>"
+msgstr ""
+
+#: xml/textsearch.xml:2939(para)
+msgid "List text search parsers (add <literal>+</literal>for more detail). <screen>= \\dFp List of text search parsers Schema | Name\n          | Description\n          ------------+---------+--------------------- pg_catalog |\n          default | default word parser = \\dFp+ Text search parser\n          \"pg_catalog.default\" Method | Function | Description\n          -----------------+----------------+------------- Start\n          parse | prsd_start | Get next token | prsd_nexttoken |\n          End parse | prsd_end | Get headline | prsd_headline | Get\n          token types | prsd_lextype | Token types for parser\n          \"pg_catalog.default\" Token name | Description\n          -----------------+------------------------------------------\n          asciihword | Hyphenated word, all ASCII asciiword | Word,\n          all ASCII blank | Space symbols email | Email address\n          entity | XML entity file | File or path name float |\n          Decimal notation host | Host hword | Hyphenated word, all\n          letters hword_asciipart | Hyphenated word part, all ASCII\n          hword_numpart | Hyphenated word part, letters and digits\n          hword_part | Hyphenated word part, all letters int |\n          Signed integer numhword | Hyphenated word, letters and\n          digits numword | Word, letters and digits protocol |\n          Protocol head sfloat | Scientific notation tag | XML tag\n          uint | Unsigned integer url | URL url_path | URL path\n          version | Version number word | Word, all letters (23\n          rows)</screen>"
+msgstr ""
+
+#: xml/textsearch.xml:2969(literal)
+msgid "\\dFt <placeholder-1/><placeholder-2/>"
+msgstr ""
+
+#: xml/textsearch.xml:2974(para)
+msgid "List text search templates (add <literal>+</literal>for more detail). <screen>= \\dFt List of text search templates Schema |\n          Name | Description\n          ------------+-----------+-----------------------------------------------------------\n          pg_catalog | ispell | ispell dictionary pg_catalog |\n          simple | simple dictionary: just lower case and check for\n          stopword pg_catalog | snowball | snowball stemmer\n          pg_catalog | synonym | synonym dictionary: replace word\n          by its synonym pg_catalog | thesaurus | thesaurus\n          dictionary: phrase by phrase substitution</screen>"
+msgstr ""
+
+#: xml/textsearch.xml:2990(title)
+msgid "Limitations"
+msgstr ""
+
+#: xml/textsearch.xml:2996(para)
+msgid "The length of each lexeme must be less than 2K bytes"
+msgstr ""
+
+#: xml/textsearch.xml:3000(para)
+msgid "The length of a <type>tsvector</type>(lexemes + positions) must be less than 1 megabyte"
+msgstr ""
+
+#: xml/textsearch.xml:3005(para)
+msgid "The number of lexemes must be less than 2 <superscript>64</superscript>"
+msgstr ""
+
+#: xml/textsearch.xml:3009(para)
+msgid "Position values in <type>tsvector</type>must be greater than 0 and no more than 16,383"
+msgstr ""
+
+#: xml/textsearch.xml:3014(para)
+msgid "No more than 256 positions per lexeme"
+msgstr ""
+
+#: xml/textsearch.xml:3017(para)
+msgid "The number of nodes (lexemes + operators) in a <type>tsquery</type>must be less than 32,768"
+msgstr ""
+
+#: xml/textsearch.xml:2991(para)
+msgid "The current limitations of <productname>PostgreSQL</productname>'s text search features are: <placeholder-1/>"
+msgstr ""
+
+#: xml/textsearch.xml:3021(para)
+msgid "For comparison, the <productname>PostgreSQL</productname>8.1 documentation contained 10,441 unique words, a total of 335,420 words, and the most frequent word <quote>postgresql</quote>was mentioned 6,127 times in 655 documents."
+msgstr ""
+
+#: xml/textsearch.xml:3027(para)
+msgid "Another example the <productname>PostgreSQL</productname>mailing list archives contained 910,989 unique words with 57,491,343 lexemes in 461,020 messages."
+msgstr ""
+
+#: xml/textsearch.xml:3033(title)
+msgid "Migration from Pre-8.3 Text Search"
+msgstr ""
+
+#: xml/textsearch.xml:3034(para)
+msgid "Applications that use the <xref linkend=\"tsearch2\">module for text searching will need some adjustments to work with the built-in features:</xref>"
+msgstr ""
+
+#: xml/textsearch.xml:3040(para)
+msgid "Some functions have been renamed or had small adjustments in their argument lists, and all of them are now in the <literal>pg_catalog</literal>schema, whereas in a previous installation they would have been in <literal>public</literal>or another non-system schema. There is a new version of <application>tsearch2</application>that provides a compatibility layer to solve most problems in this area."
+msgstr ""
+
+#: xml/textsearch.xml:3052(para)
+msgid "The old <application>tsearch2</application>functions and other objects <emphasis>must</emphasis>be suppressed when loading <application>pg_dump</application>output from a pre-8.3 database. While many of them won't load anyway, a few will and then cause problems. One simple way to deal with this is to load the new <application>tsearch2</application>module before restoring the dump; then it will block the old objects from being loaded."
+msgstr ""
+
+#: xml/textsearch.xml:3065(para)
+msgid "Text search configuration setup is completely different now. Instead of manually inserting rows into configuration tables, search is configured through the specialized SQL commands shown earlier in this chapter. There is no automated support for converting an existing custom configuration for 8.3; you're on your own here."
+msgstr ""
+
+#: xml/textsearch.xml:3080(para)
+msgid "Configuration files now must be placed in a single specified directory ( <filename>$SHAREDIR/tsearch_data</filename>), and must have a specific extension depending on the type of file, as noted previously in the descriptions of the various dictionary types. This restriction was added to forestall security problems."
+msgstr ""
+
+#: xml/textsearch.xml:3089(para)
+msgid "Configuration files must be encoded in UTF-8 encoding, regardless of what database encoding is used."
+msgstr ""
+
+#: xml/textsearch.xml:3094(para)
+msgid "In thesaurus configuration files, stop words must be marked with <literal>?</literal>."
+msgstr ""
+
+#: xml/textsearch.xml:3074(para)
+msgid "Most types of dictionaries rely on some outside-the-database configuration files. These are largely compatible with pre-8.3 usage, but note the following differences: <placeholder-1/>"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/textsearch.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

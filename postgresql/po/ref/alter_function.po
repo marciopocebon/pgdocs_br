@@ -1,0 +1,282 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/alter_function.xml:4(primary) xml/ref/alter_function.xml:7(refentrytitle) xml/ref/alter_function.xml:12(refname)
+msgid "ALTER FUNCTION"
+msgstr ""
+
+#: xml/ref/alter_function.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/alter_function.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/alter_function.xml:13(refpurpose)
+msgid "change the definition of a function"
+msgstr ""
+
+#: xml/ref/alter_function.xml:17(replaceable) xml/ref/alter_function.xml:24(replaceable) xml/ref/alter_function.xml:30(replaceable) xml/ref/alter_function.xml:37(replaceable) xml/ref/alter_function.xml:83(replaceable)
+msgid "name"
+msgstr ""
+
+#: xml/ref/alter_function.xml:18(replaceable) xml/ref/alter_function.xml:25(replaceable) xml/ref/alter_function.xml:31(replaceable) xml/ref/alter_function.xml:38(replaceable) xml/ref/alter_function.xml:92(replaceable)
+msgid "argmode"
+msgstr ""
+
+#: xml/ref/alter_function.xml:19(replaceable) xml/ref/alter_function.xml:26(replaceable) xml/ref/alter_function.xml:32(replaceable) xml/ref/alter_function.xml:39(replaceable) xml/ref/alter_function.xml:113(replaceable)
+msgid "argname"
+msgstr ""
+
+#: xml/ref/alter_function.xml:20(replaceable) xml/ref/alter_function.xml:27(replaceable) xml/ref/alter_function.xml:33(replaceable) xml/ref/alter_function.xml:40(replaceable) xml/ref/alter_function.xml:125(replaceable)
+msgid "argtype"
+msgstr ""
+
+#: xml/ref/alter_function.xml:22(replaceable) xml/ref/alter_function.xml:44(replaceable)
+msgid "action"
+msgstr ""
+
+#: xml/ref/alter_function.xml:29(replaceable) xml/ref/alter_function.xml:134(replaceable)
+msgid "new_name"
+msgstr ""
+
+#: xml/ref/alter_function.xml:35(replaceable) xml/ref/alter_function.xml:142(replaceable)
+msgid "new_owner"
+msgstr ""
+
+#: xml/ref/alter_function.xml:42(replaceable) xml/ref/alter_function.xml:153(replaceable)
+msgid "new_schema"
+msgstr ""
+
+#: xml/ref/alter_function.xml:43(phrase)
+msgid "where <placeholder-1/>is one of:"
+msgstr ""
+
+#: xml/ref/alter_function.xml:49(replaceable) xml/ref/alter_function.xml:231(replaceable)
+msgid "execution_cost"
+msgstr ""
+
+#: xml/ref/alter_function.xml:51(replaceable) xml/ref/alter_function.xml:244(replaceable)
+msgid "result_rows"
+msgstr ""
+
+#: xml/ref/alter_function.xml:52(replaceable) xml/ref/alter_function.xml:56(replaceable) xml/ref/alter_function.xml:58(replaceable) xml/ref/alter_function.xml:255(replaceable)
+msgid "configuration_parameter"
+msgstr ""
+
+#: xml/ref/alter_function.xml:54(replaceable) xml/ref/alter_function.xml:258(replaceable)
+msgid "value"
+msgstr ""
+
+#: xml/ref/alter_function.xml:16(synopsis)
+#, no-wrap
+msgid "ALTER FUNCTION \n    <placeholder-1/>( [ [ \n    <placeholder-2/>] [ \n    <placeholder-3/>] \n    <placeholder-4/>[, ...] ] )\n    \n    <placeholder-5/>[ ... ] [\n    RESTRICT ] ALTER FUNCTION \n    <placeholder-6/>( [ [ \n    <placeholder-7/>] [ \n    <placeholder-8/>] \n    <placeholder-9/>[, ...] ] )\n    RENAME TO \n    <placeholder-10/>ALTER FUNCTION \n    <placeholder-11/>( [ [ \n    <placeholder-12/>] [ \n    <placeholder-13/>] \n    <placeholder-14/>[, ...] ] )\n    OWNER TO { \n    <placeholder-15/>| CURRENT_USER |\n    SESSION_USER } ALTER FUNCTION \n    <placeholder-16/>( [ [ \n    <placeholder-17/>] [ \n    <placeholder-18/>] \n    <placeholder-19/>[, ...] ] )\n    SET SCHEMA \n    <placeholder-20/>\n    <placeholder-21/>CALLED ON NULL INPUT | RETURNS NULL ON NULL INPUT |\n    STRICT IMMUTABLE | STABLE | VOLATILE | [ NOT ] LEAKPROOF [\n    EXTERNAL ] SECURITY INVOKER | [ EXTERNAL ] SECURITY DEFINER\n    COST \n    <placeholder-22/>ROWS\n    \n    <placeholder-23/>SET \n    <placeholder-24/>{ TO | = } { \n    <placeholder-25/>| DEFAULT }\n    SET \n    <placeholder-26/>FROM CURRENT RESET \n    <placeholder-27/>RESET ALL"
+msgstr ""
+
+#: xml/ref/alter_function.xml:62(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/alter_function.xml:63(para)
+msgid "<command>ALTER FUNCTION</command>changes the definition of a function."
+msgstr ""
+
+#: xml/ref/alter_function.xml:66(para)
+msgid "You must own the function to use <command>ALTER FUNCTION</command>. To change a function's schema, you must also have <literal>CREATE</literal>privilege on the new schema. To alter the owner, you must also be a direct or indirect member of the new owning role, and that role must have <literal>CREATE</literal>privilege on the function's schema. (These restrictions enforce that altering the owner doesn't do anything you couldn't do by dropping and recreating the function. However, a superuser can alter ownership of any function anyway.)"
+msgstr ""
+
+#: xml/ref/alter_function.xml:79(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/alter_function.xml:86(para)
+msgid "The name (optionally schema-qualified) of an existing function."
+msgstr ""
+
+#: xml/ref/alter_function.xml:95(para)
+msgid "The mode of an argument: <literal>IN</literal>, <literal>OUT</literal>, <literal>INOUT</literal>, or <literal>VARIADIC</literal>. If omitted, the default is <literal>IN</literal>. Note that <command>ALTER FUNCTION</command>does not actually pay any attention to <literal>OUT</literal>arguments, since only the input arguments are needed to determine the function's identity. So it is sufficient to list the <literal>IN</literal>, <literal>INOUT</literal>, and <literal>VARIADIC</literal>arguments."
+msgstr ""
+
+#: xml/ref/alter_function.xml:116(para)
+msgid "The name of an argument. Note that <command>ALTER FUNCTION</command>does not actually pay any attention to argument names, since only the argument data types are needed to determine the function's identity."
+msgstr ""
+
+#: xml/ref/alter_function.xml:128(para)
+msgid "The data type(s) of the function's arguments (optionally schema-qualified), if any."
+msgstr ""
+
+#: xml/ref/alter_function.xml:137(para)
+msgid "The new name of the function."
+msgstr ""
+
+#: xml/ref/alter_function.xml:145(para)
+msgid "The new owner of the function. Note that if the function is marked <literal>SECURITY DEFINER</literal>, it will subsequently execute as the new owner."
+msgstr ""
+
+#: xml/ref/alter_function.xml:156(para)
+msgid "The new schema for the function."
+msgstr ""
+
+#: xml/ref/alter_function.xml:161(literal)
+msgid "CALLED ON NULL INPUT"
+msgstr ""
+
+#: xml/ref/alter_function.xml:164(literal)
+msgid "RETURNS NULL ON NULL INPUT"
+msgstr ""
+
+#: xml/ref/alter_function.xml:167(literal)
+msgid "STRICT"
+msgstr ""
+
+#: xml/ref/alter_function.xml:170(para)
+msgid "<literal>CALLED ON NULL INPUT</literal>changes the function so that it will be invoked when some or all of its arguments are null. <literal>RETURNS NULL ON NULL INPUT</literal>or <literal>STRICT</literal>changes the function so that it is not invoked if any of its arguments are null; instead, a null result is assumed automatically. See <xref linkend=\"sql-createfunction\">for more information.</xref>"
+msgstr ""
+
+#: xml/ref/alter_function.xml:184(literal)
+msgid "IMMUTABLE"
+msgstr ""
+
+#: xml/ref/alter_function.xml:187(literal)
+msgid "STABLE"
+msgstr ""
+
+#: xml/ref/alter_function.xml:190(literal)
+msgid "VOLATILE"
+msgstr ""
+
+#: xml/ref/alter_function.xml:193(para)
+msgid "Change the volatility of the function to the specified setting. See <xref linkend=\"sql-createfunction\">for details.</xref>"
+msgstr ""
+
+#: xml/ref/alter_function.xml:202(optional) xml/ref/alter_function.xml:206(optional)
+msgid "EXTERNAL"
+msgstr ""
+
+#: xml/ref/alter_function.xml:201(literal)
+msgid "<placeholder-1/>SECURITY INVOKER"
+msgstr ""
+
+#: xml/ref/alter_function.xml:205(literal)
+msgid "<placeholder-1/>SECURITY DEFINER"
+msgstr ""
+
+#: xml/ref/alter_function.xml:209(para)
+msgid "Change whether the function is a security definer or not. The key word <literal>EXTERNAL</literal>is ignored for SQL conformance. See <xref linkend=\"sql-createfunction\">for more information about this capability.</xref>"
+msgstr ""
+
+#: xml/ref/alter_function.xml:219(literal)
+msgid "LEAKPROOF"
+msgstr ""
+
+#: xml/ref/alter_function.xml:222(para)
+msgid "Change whether the function is considered leakproof or not. See <xref linkend=\"sql-createfunction\">for more information about this capability.</xref>"
+msgstr ""
+
+#: xml/ref/alter_function.xml:230(literal)
+msgid "COST"
+msgstr ""
+
+#: xml/ref/alter_function.xml:235(para)
+msgid "Change the estimated execution cost of the function. See <xref linkend=\"sql-createfunction\">for more information.</xref>"
+msgstr ""
+
+#: xml/ref/alter_function.xml:243(literal)
+msgid "ROWS"
+msgstr ""
+
+#: xml/ref/alter_function.xml:247(para)
+msgid "Change the estimated number of rows returned by a set-returning function. See <xref linkend=\"sql-createfunction\">for more information.</xref>"
+msgstr ""
+
+#: xml/ref/alter_function.xml:261(para)
+msgid "Add or change the assignment to be made to a configuration parameter when the function is called. If <replaceable>value</replaceable>is <literal>DEFAULT</literal>or, equivalently, <literal>RESET</literal>is used, the function-local setting is removed, so that the function executes with the value present in its environment. Use <literal>RESET ALL</literal>to clear all function-local settings. <literal>SET FROM CURRENT</literal>saves the session's current value of the parameter as the value to be applied when the function is entered."
+msgstr ""
+
+#: xml/ref/alter_function.xml:273(para)
+msgid "See <xref linkend=\"sql-set\">and <xref linkend=\"runtime-config\">for more information about allowed parameter names and values.</xref></xref>"
+msgstr ""
+
+#: xml/ref/alter_function.xml:281(literal)
+msgid "RESTRICT"
+msgstr ""
+
+#: xml/ref/alter_function.xml:284(para)
+msgid "Ignored for conformance with the SQL standard."
+msgstr ""
+
+#: xml/ref/alter_function.xml:291(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/alter_function.xml:296(programlisting)
+#, no-wrap
+msgid "ALTER FUNCTION sqrt(integer) RENAME TO\n    square_root;"
+msgstr ""
+
+#: xml/ref/alter_function.xml:292(para)
+msgid "To rename the function <literal>sqrt</literal>for type <type>integer</type>to <literal>square_root</literal>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_function.xml:302(programlisting)
+#, no-wrap
+msgid "ALTER FUNCTION sqrt(integer) OWNER TO\n    joe;"
+msgstr ""
+
+#: xml/ref/alter_function.xml:298(para)
+msgid "To change the owner of the function <literal>sqrt</literal>for type <type>integer</type>to <literal>joe</literal>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_function.xml:308(programlisting)
+#, no-wrap
+msgid "ALTER FUNCTION sqrt(integer) SET SCHEMA\n    maths;"
+msgstr ""
+
+#: xml/ref/alter_function.xml:304(para)
+msgid "To change the schema of the function <literal>sqrt</literal>for type <type>integer</type>to <literal>maths</literal>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_function.xml:312(programlisting)
+#, no-wrap
+msgid "ALTER FUNCTION check_password(text) SET\n    search_path = admin, pg_temp;"
+msgstr ""
+
+#: xml/ref/alter_function.xml:310(para)
+msgid "To adjust the search path that is automatically set for a function: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_function.xml:316(programlisting)
+#, no-wrap
+msgid "ALTER FUNCTION check_password(text) RESET\n    search_path;"
+msgstr ""
+
+#: xml/ref/alter_function.xml:314(para)
+msgid "To disable automatic setting of <varname>search_path</varname>for a function: <placeholder-1/>The function will now execute with whatever search path is used by its caller."
+msgstr ""
+
+#: xml/ref/alter_function.xml:321(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/alter_function.xml:322(para)
+msgid "This statement is partially compatible with the <command>ALTER FUNCTION</command>statement in the SQL standard. The standard allows more properties of a function to be modified, but does not provide the ability to rename a function, make a function a security definer, attach configuration parameter values to a function, or change the owner, schema, or volatility of a function. The standard also requires the <literal>RESTRICT</literal>key word, which is optional in <productname>PostgreSQL</productname>."
+msgstr ""
+
+#: xml/ref/alter_function.xml:334(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/alter_function.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

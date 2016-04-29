@@ -1,0 +1,763 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/pg_restore.xml:4(primary) xml/ref/pg_restore.xml:7(refentrytitle) xml/ref/pg_restore.xml:12(refname) xml/ref/pg_restore.xml:20(command)
+msgid "pg_restore"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:9(refmiscinfo)
+msgid "Application"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:14(productname)
+msgid "PostgreSQL"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:16(application)
+msgid "pg_dump"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:13(refpurpose)
+msgid "restore a <placeholder-1/>database from an archive file created by <placeholder-2/>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:22(replaceable)
+msgid "connection-option"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:25(replaceable)
+msgid "option"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:28(replaceable) xml/ref/pg_restore.xml:77(replaceable) xml/ref/pg_restore.xml:171(replaceable) xml/ref/pg_restore.xml:175(replaceable)
+msgid "filename"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:33(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:34(para)
+msgid "<application>pg_restore</application>is a utility for restoring a <productname>PostgreSQL</productname>database from an archive created by <xref linkend=\"app-pgdump\">in one of the non-plain-text formats. It will issue the commands necessary to reconstruct the database to the state it was in at the time it was saved. The archive files also allow <application>pg_restore</application>to be selective about what is restored, or even to reorder the items prior to being restored. The archive files are designed to be portable across architectures.</xref>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:47(para)
+msgid "<application>pg_restore</application>can operate in two modes. If a database name is specified, <application>pg_restore</application>connects to that database and restores archive contents directly into the database. Otherwise, a script containing the SQL commands necessary to rebuild the database is created and written to a file or standard output. This script output is equivalent to the plain text output format of <application>pg_dump</application>. Some of the options controlling the output are therefore analogous to <application>pg_dump</application>options."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:59(para)
+msgid "Obviously, <application>pg_restore</application>cannot restore information that is not present in the archive file. For instance, if the archive was made using the <quote>dump data as <command>INSERT</command>commands</quote>option, <application>pg_restore</application>will not be able to load the data using <command>COPY</command>statements."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:70(title)
+msgid "Options"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:80(para)
+msgid "Specifies the location of the archive file (or directory, for a directory-format archive) to be restored. If not specified, the standard input is used."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:88(option)
+msgid "-a"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:91(option)
+msgid "--data-only"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:94(para)
+msgid "Restore only the data, not the schema (data definitions). Table data, large objects, and sequence values are restored, if present in the archive."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:97(para)
+msgid "This option is similar to, but for historical reasons not identical to, specifying <option>--section=data</option>."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:104(option)
+msgid "-c"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:107(option)
+msgid "--clean"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:110(para)
+msgid "Clean (drop) database objects before recreating them. (Unless <option>--if-exists</option>is used, this might generate some harmless error messages, if any objects were not present in the destination database.)"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:119(option)
+msgid "-C"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:122(option)
+msgid "--create"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:125(para)
+msgid "Create the database before restoring into it. If <option>--clean</option>is also specified, drop and recreate the target database before connecting to it."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:129(para)
+msgid "When this option is used, the database named with <option>-d</option>is used only to issue the initial <command>DROP DATABASE</command>and <command>CREATE DATABASE</command>commands. All data is restored into the database name that appears in the archive."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:140(replaceable) xml/ref/pg_restore.xml:145(replaceable)
+msgid "dbname"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:139(option)
+msgid "-d <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:144(option)
+msgid "--dbname= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:149(para)
+msgid "Connect to database <replaceable class=\"parameter\">dbname</replaceable>and restore directly into the database."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:156(option)
+msgid "-e"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:159(option)
+msgid "--exit-on-error"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:162(para)
+msgid "Exit if an error is encountered while sending SQL commands to the database. The default is to continue and to display a count of errors at the end of the restoration."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:170(option)
+msgid "-f <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:174(option)
+msgid "--file= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:178(para)
+msgid "Specify output file for generated script, or for the listing when used with <option>-l</option>. Default is the standard output."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:187(replaceable) xml/ref/pg_restore.xml:192(replaceable)
+msgid "format"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:186(option)
+msgid "-F <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:191(option)
+msgid "--format= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:204(literal)
+msgid "c"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:207(literal)
+msgid "custom"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:210(para)
+msgid "The archive is in the custom format of <application>pg_dump</application>."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:216(literal)
+msgid "d"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:219(literal)
+msgid "directory"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:222(para)
+msgid "The archive is a directory archive."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:227(literal)
+msgid "t"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:230(literal)
+msgid "tar"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:233(para)
+msgid "The archive is a <command>tar</command>archive."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:196(para)
+msgid "Specify format of the archive. It is not necessary to specify the format, since <application>pg_restore</application>will determine the format automatically. If specified, it can be one of the following: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:243(replaceable) xml/ref/pg_restore.xml:248(replaceable)
+msgid "index"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:242(option)
+msgid "-I <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:247(option)
+msgid "--index= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:252(para)
+msgid "Restore definition of named index only. Multiple indexes may be specified with multiple <option>-I</option>switches."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:260(replaceable) xml/ref/pg_restore.xml:265(replaceable)
+msgid "number-of-jobs"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:259(option)
+msgid "-j <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:264(option)
+msgid "--jobs= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:269(para)
+msgid "Run the most time-consuming parts of <application>pg_restore</application>those which load data, create indexes, or create constraints using multiple concurrent jobs. This option can dramatically reduce the time to restore a large database to a server running on a multiprocessor machine."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:275(para)
+msgid "Each job is one process or one thread, depending on the operating system, and uses a separate connection to the server."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:278(para)
+msgid "The optimal value for this option depends on the hardware setup of the server, of the client, and of the network. Factors include the number of CPU cores and the disk setup. A good place to start is the number of CPU cores on the server, but values larger than that can also lead to faster restore times in many cases. Of course, values that are too high will lead to decreased performance because of thrashing."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:286(para)
+msgid "Only the custom and directory archive formats are supported with this option. The input must be a regular file or directory (not, for example, a pipe). This option is ignored when emitting a script rather than connecting directly to a database server. Also, multiple jobs cannot be used together with the option <option>--single-transaction</option>."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:297(option)
+msgid "-l"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:300(option)
+msgid "--list"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:303(para)
+msgid "List the contents of the archive. The output of this operation can be used as input to the <option>-L</option>option. Note that if filtering switches such as <option>-n</option>or <option>-t</option>are used with <option>-l</option>, they will restrict the items listed."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:316(replaceable) xml/ref/pg_restore.xml:321(replaceable)
+msgid "list-file"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:315(option)
+msgid "-L <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:320(option)
+msgid "--use-list= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:325(para)
+msgid "Restore only those archive elements that are listed in <replaceable class=\"PARAMETER\">list-file</replaceable>, and restore them in the order they appear in the file. Note that if filtering switches such as <option>-n</option>or <option>-t</option>are used with <option>-L</option>, they will further restrict the items restored."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:334(para)
+msgid "<replaceable class=\"PARAMETER\">list-file</replaceable>is normally created by editing the output of a previous <option>-l</option>operation. Lines can be moved or removed, and can also be commented out by placing a semicolon ( <literal>;</literal>) at the start of the line. See below for examples."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:347(replaceable)
+msgid "namespace"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:346(option)
+msgid "-n <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:352(replaceable)
+msgid "schema"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:351(option)
+msgid "--schema= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:356(para)
+msgid "Restore only objects that are in the named schema. Multiple schemas may be specified with multiple <option>-n</option>switches. This can be combined with the <option>-t</option>option to restore just a specific table."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:366(option)
+msgid "-O"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:369(option)
+msgid "--no-owner"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:372(para)
+msgid "Do not output commands to set ownership of objects to match the original database. By default, <application>pg_restore</application>issues <command>ALTER OWNER</command>or <command>SET SESSION AUTHORIZATION</command>statements to set ownership of created schema elements. These statements will fail unless the initial connection to the database is made by a superuser (or the same user that owns all of the objects in the script). With <option>-O</option>, any user name can be used for the initial connection, and this user will own all the created objects."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:389(replaceable) xml/ref/pg_restore.xml:394(replaceable)
+msgid "function-name(argtype [, ...])"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:388(option)
+msgid "-P <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:393(option)
+msgid "--function= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:398(para)
+msgid "Restore the named function only. Be careful to spell the function name and arguments exactly as they appear in the dump file's table of contents. Multiple functions may be specified with multiple <option>-P</option>switches."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:407(option)
+msgid "-R"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:410(option)
+msgid "--no-reconnect"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:413(para)
+msgid "This option is obsolete but still accepted for backwards compatibility."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:419(option)
+msgid "-s"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:422(option)
+msgid "--schema-only"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:425(para)
+msgid "Restore only the schema (data definitions), not data, to the extent that schema entries are present in the archive."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:428(para)
+msgid "This option is the inverse of <option>--data-only</option>. It is similar to, but for historical reasons not identical to, specifying <option>--section=pre-data --section=post-data</option>."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:433(para)
+msgid "(Do not confuse this with the <option>--schema</option>option, which uses the word <quote>schema</quote>in a different meaning.)"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:441(replaceable) xml/ref/pg_restore.xml:446(replaceable) xml/ref/pg_restore.xml:740(replaceable) xml/ref/pg_restore.xml:744(replaceable)
+msgid "username"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:440(option)
+msgid "-S <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:445(option)
+msgid "--superuser= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:450(para)
+msgid "Specify the superuser user name to use when disabling triggers. This is relevant only if <option>--disable-triggers</option>is used."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:458(replaceable) xml/ref/pg_restore.xml:463(replaceable)
+msgid "table"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:457(option)
+msgid "-t <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:462(option)
+msgid "--table= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:467(para)
+msgid "Restore definition and/or data of named table only. Multiple tables may be specified with multiple <option>-t</option>switches. This can be combined with the <option>-n</option>option to specify a schema."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:477(replaceable) xml/ref/pg_restore.xml:482(replaceable)
+msgid "trigger"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:476(option)
+msgid "-T <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:481(option)
+msgid "--trigger= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:486(para)
+msgid "Restore named trigger only. Multiple triggers may be specified with multiple <option>-T</option>switches."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:493(option)
+msgid "-v"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:496(option)
+msgid "--verbose"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:499(para)
+msgid "Specifies verbose mode."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:504(option)
+msgid "-V"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:507(option)
+msgid "--version"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:510(para)
+msgid "Print the <application>pg_restore</application>version and exit."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:517(option)
+msgid "-x"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:520(option)
+msgid "--no-privileges"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:523(option)
+msgid "--no-acl"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:526(para)
+msgid "Prevent restoration of access privileges (grant/revoke commands)."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:532(option)
+msgid "-1"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:535(option)
+msgid "--single-transaction"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:538(para)
+msgid "Execute the restore as a single transaction (that is, wrap the emitted commands in <command>BEGIN</command>/ <command>COMMIT</command>). This ensures that either all the commands complete successfully, or no changes are applied. This option implies <option>--exit-on-error</option>."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:549(option)
+msgid "--disable-triggers"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:552(para)
+msgid "This option is relevant only when performing a data-only restore. It instructs <application>pg_restore</application>to execute commands to temporarily disable triggers on the target tables while the data is reloaded. Use this if you have referential integrity checks or other triggers on the tables that you do not want to invoke during data reload."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:560(para)
+msgid "Presently, the commands emitted for <option>--disable-triggers</option>must be done as superuser. So you should also specify a superuser name with <option>-S</option>or, preferably, run <application>pg_restore</application>as a <productname>PostgreSQL</productname>superuser."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:571(option)
+msgid "--enable-row-security"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:574(para)
+msgid "This option is relevant only when restoring the contents of a table which has row security. By default, <application>pg_restore</application>will set <xref linkend=\"guc-row-security\">to off, to ensure that all data is restored in to the table. If the user does not have sufficient privileges to bypass row security, then an error is thrown. This parameter instructs <application>pg_restore</application>to set <xref linkend=\"guc-row-security\">to on instead, allowing the user to attempt to restore the contents of the table with row security enabled. This might still fail if the user does not have the right to insert the rows from the dump into the table.</xref></xref>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:587(para)
+msgid "Note that this option currently also requires the dump be in <command>INSERT</command>format, as <command>COPY TO</command>does not support row security."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:596(option)
+msgid "--if-exists"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:599(para)
+msgid "Use conditional commands (i.e. add an <literal>IF EXISTS</literal>clause) when cleaning database objects. This option is not valid unless <option>--clean</option>is also specified."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:607(option)
+msgid "--no-data-for-failed-tables"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:610(para)
+msgid "By default, table data is restored even if the creation command for the table failed (e.g., because it already exists). With this option, data for such a table is skipped. This behavior is useful if the target database already contains the desired table contents. For example, auxiliary tables for <productname>PostgreSQL</productname>extensions such as <productname>PostGIS</productname>might already be loaded in the target database; specifying this option prevents duplicate or obsolete data from being loaded into them."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:621(para)
+msgid "This option is effective only when restoring directly into a database, not when producing SQL script output."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:628(option)
+msgid "--no-security-labels"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:631(para)
+msgid "Do not output commands to restore security labels, even if the archive contains them."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:637(option)
+msgid "--no-tablespaces"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:640(para)
+msgid "Do not output commands to select tablespaces. With this option, all objects will be created in whichever tablespace is the default during restore."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:648(replaceable)
+msgid "sectionname"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:647(option)
+msgid "--section= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:652(para)
+msgid "Only restore the named section. The section name can be <option>pre-data</option>, <option>data</option>, or <option>post-data</option>. This option can be specified more than once to select multiple sections. The default is to restore all sections."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:659(para)
+msgid "The data section contains actual table data as well as large-object definitions. Post-data items consist of definitions of indexes, triggers, rules and constraints other than validated check constraints. Pre-data items consist of all other data definition items."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:668(option)
+msgid "--use-set-session-authorization"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:671(para)
+msgid "Output SQL-standard <command>SET SESSION AUTHORIZATION</command>commands instead of <command>ALTER OWNER</command>commands to determine object ownership. This makes the dump more standards-compatible, but depending on the history of the objects in the dump, might not restore properly."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:682(option)
+msgid "-?"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:685(option)
+msgid "--help"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:688(para)
+msgid "Show help about <application>pg_restore</application>command line arguments, and exit."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:71(para)
+msgid "<application>pg_restore</application>accepts the following command line arguments. <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:701(replaceable) xml/ref/pg_restore.xml:706(replaceable)
+msgid "host"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:700(option)
+msgid "-h <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:705(option)
+msgid "--host= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:710(para)
+msgid "Specifies the host name of the machine on which the server is running. If the value begins with a slash, it is used as the directory for the Unix domain socket. The default is taken from the <envar>PGHOST</envar>environment variable, if set, else a Unix domain socket connection is attempted."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:721(replaceable) xml/ref/pg_restore.xml:726(replaceable)
+msgid "port"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:720(option)
+msgid "-p <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:725(option)
+msgid "--port= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:730(para)
+msgid "Specifies the TCP port or local Unix domain socket file extension on which the server is listening for connections. Defaults to the <envar>PGPORT</envar>environment variable, if set, or a compiled-in default."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:739(option)
+msgid "-U <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:743(option)
+msgid "--username= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:748(para)
+msgid "User name to connect as."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:753(option)
+msgid "-w"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:756(option)
+msgid "--no-password"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:759(para)
+msgid "Never issue a password prompt. If the server requires password authentication and a password is not available by other means such as a <filename>.pgpass</filename>file, the connection attempt will fail. This option can be useful in batch jobs and scripts where no user is present to enter a password."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:770(option)
+msgid "-W"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:773(option)
+msgid "--password"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:776(para)
+msgid "Force <application>pg_restore</application>to prompt for a password before connecting to a database."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:779(para)
+msgid "This option is never essential, since <application>pg_restore</application>will automatically prompt for a password if the server demands password authentication. However, <application>pg_restore</application>will waste a connection attempt finding out that the server wants a password. In some cases it is worth typing <option>-W</option>to avoid the extra connection attempt."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:793(replaceable)
+msgid "rolename"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:792(option)
+msgid "--role= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:797(para)
+msgid "Specifies a role name to be used to perform the restore. This option causes <application>pg_restore</application>to issue a <command>SET ROLE</command><replaceable class=\"parameter\"> rolename</replaceable>command after connecting to the database. It is useful when the authenticated user (specified by <option>-U</option>) lacks privileges needed by <application>pg_restore</application>, but can switch to a role with the required rights. Some installations have a policy against logging in directly as a superuser, and use of this option allows restores to be performed without violating the policy."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:694(para)
+msgid "<application>pg_restore</application>also accepts the following command line arguments for connection parameters: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:816(title)
+msgid "Environment"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:820(envar)
+msgid "PGHOST"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:823(envar)
+msgid "PGOPTIONS"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:826(envar)
+msgid "PGPORT"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:829(envar)
+msgid "PGUSER"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:832(para)
+msgid "Default connection parameters"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:836(para)
+msgid "This utility, like most other <productname>PostgreSQL</productname>utilities, also uses the environment variables supported by <application>libpq</application>(see <xref linkend=\"libpq-envars\">). However, it does not read <envar>PGDATABASE</envar>when a database name is not supplied.</xref>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:845(title)
+msgid "Diagnostics"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:846(para)
+msgid "When a direct database connection is specified using the <option>-d</option>option, <application>pg_restore</application>internally executes <acronym>SQL</acronym>statements. If you have problems running <application>pg_restore</application>, make sure you are able to select information from the database using, for example, <xref linkend=\"app-psql\">. Also, any default connection settings and environment variables used by the <application>libpq</application>front-end library will apply.</xref>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:858(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:868(programlisting)
+#, no-wrap
+msgid "CREATE DATABASE foo WITH TEMPLATE\n    template0;"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:859(para)
+msgid "If your installation has any local additions to the <literal>template1</literal>database, be careful to load the output of <application>pg_restore</application>into a truly empty database; otherwise you are likely to get errors due to duplicate definitions of the added objects. To make an empty database without any local additions, copy from <literal>template0</literal>not <literal>template1</literal>, for example: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:874(para)
+msgid "When restoring data to a pre-existing table and the option <option>--disable-triggers</option>is used, <application>pg_restore</application>emits commands to disable triggers on user tables before inserting the data, then emits commands to re-enable them after the data has been inserted. If the restore is stopped in the middle, the system catalogs might be left in the wrong state."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:884(para)
+msgid "<application>pg_restore</application>cannot restore large objects selectively; for instance, only those for a specific table. If an archive contains large objects, then all large objects will be restored, or none of them if they are excluded via <option>-L</option>, <option>-t</option>, or other options."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:870(para)
+msgid "The limitations of <application>pg_restore</application>are detailed below. <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:894(para)
+msgid "See also the <xref linkend=\"app-pgdump\">documentation for details on limitations of <application>pg_dump</application>.</xref>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:898(para)
+msgid "Once restored, it is wise to run <command>ANALYZE</command>on each restored table so the optimizer has useful statistics; see <xref linkend=\"vacuum-for-statistics\">and <xref linkend=\"autovacuum\">for more information.</xref></xref>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:906(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:907(para)
+msgid "Assume we have dumped a database called <literal>mydb</literal>into a custom-format dump file: <screen>\n      <prompt>$</prompt>\n      <userinput>pg_dump -Fc mydb db.dump</userinput>\n    </screen>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:913(para)
+msgid "To drop the database and recreate it from the dump: <screen>\n      <prompt>$</prompt>\n      <userinput>dropdb mydb</userinput>\n      <prompt>$</prompt>\n      <userinput>pg_restore -C -d postgres db.dump</userinput>\n    </screen>The database named in the <option>-d</option>switch can be any database existing in the cluster; <application>pg_restore</application>only uses it to issue the <command>CREATE DATABASE</command>command for <literal>mydb</literal>. With <option>-C</option>, data is always restored into the database name that appears in the dump file."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:927(para)
+msgid "To reload the dump into a new database called <literal>newdb</literal>: <screen>\n      <prompt>$</prompt>\n      <userinput>createdb -T template0 newdb</userinput>\n      <prompt>$</prompt>\n      <userinput>pg_restore -d newdb db.dump</userinput>\n    </screen>Notice we don't use <option>-C</option>, and instead connect directly to the database to be restored into. Also note that we clone the new database from <literal>template0</literal>not <literal>template1</literal>, to ensure it is initially empty."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:948(programlisting)
+#, no-wrap
+msgid "; ; Archive created at Mon Sep 14 13:55:39 2009\n    ; dbname: DBDEMOS ; TOC Entries: 81 ; Compression: 9 ; Dump\n    Version: 1.10-0 ; Format: CUSTOM ; Integer: 4 bytes ; Offset: 8\n    bytes ; Dumped from database version: 8.3.5 ; Dumped by pg_dump\n    version: 8.3.8 ; ; ; Selected TOC Entries: ; 3; 2615 2200\n    SCHEMA - public pasha 1861; 0 0 COMMENT - SCHEMA public pasha\n    1862; 0 0 ACL - public pasha 317; 1247 17715 TYPE public\n    composite pasha 319; 1247 25899 DOMAIN public domain0\n    pasha"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:941(para)
+msgid "To reorder database items, it is first necessary to dump the table of contents of the archive: <screen>\n      <prompt>$</prompt>\n      <userinput>pg_restore -l db.dump db.list</userinput>\n    </screen>The listing file consists of a header and one line for each item, e.g.: <placeholder-1/>Semicolons start a comment, and the numbers at the start of lines refer to the internal archive ID assigned to each item."
+msgstr ""
+
+#: xml/ref/pg_restore.xml:961(programlisting)
+#, no-wrap
+msgid "10; 145433 TABLE map_resolutions postgres ;2;\n    145344 TABLE species postgres ;4; 145359 TABLE nt_header\n    postgres 6; 145402 TABLE species_records postgres ;8; 145416\n    TABLE ss_old postgres"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:959(para)
+msgid "Lines in the file can be commented out, deleted, and reordered. For example: <placeholder-1/>could be used as input to <application>pg_restore</application>and would only restore items 10 and 6, in that order: <screen>\n      <prompt>$</prompt>\n      <userinput>pg_restore -L db.list db.dump</userinput>\n    </screen>"
+msgstr ""
+
+#: xml/ref/pg_restore.xml:974(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/pg_restore.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

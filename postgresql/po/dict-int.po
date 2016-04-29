@@ -1,0 +1,67 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/dict-int.xml:3(title) xml/dict-int.xml:5(primary)
+msgid "dict_int"
+msgstr ""
+
+#: xml/dict-int.xml:7(para)
+msgid "<filename>dict_int</filename>is an example of an add-on dictionary template for full-text search. The motivation for this example dictionary is to control the indexing of integers (signed and unsigned), allowing such numbers to be indexed while preventing excessive growth in the number of unique words, which greatly affects the performance of searching."
+msgstr ""
+
+#: xml/dict-int.xml:15(title)
+msgid "Configuration"
+msgstr ""
+
+#: xml/dict-int.xml:16(para)
+msgid "The dictionary accepts two options:"
+msgstr ""
+
+#: xml/dict-int.xml:19(para)
+msgid "The <literal>maxlen</literal>parameter specifies the maximum number of digits allowed in an integer word. The default value is 6."
+msgstr ""
+
+#: xml/dict-int.xml:25(para)
+msgid "The <literal>rejectlong</literal>parameter specifies whether an overlength integer should be truncated or ignored. If <literal>rejectlong</literal>is <literal>false</literal>(the default), the dictionary returns the first <literal>maxlen</literal>digits of the integer. If <literal>rejectlong</literal>is <literal>true</literal>, the dictionary treats an overlength integer as a stop word, so that it will not be indexed. Note that this also means that such an integer cannot be searched for."
+msgstr ""
+
+#: xml/dict-int.xml:41(title)
+msgid "Usage"
+msgstr ""
+
+#: xml/dict-int.xml:48(programlisting)
+#, no-wrap
+msgid "mydb# ALTER TEXT SEARCH DICTIONARY intdict\n    (MAXLEN = 4, REJECTLONG = true); ALTER TEXT SEARCH\n    DICTIONARY"
+msgstr ""
+
+#: xml/dict-int.xml:42(para)
+msgid "Installing the <literal>dict_int</literal>extension creates a text search template <literal>intdict_template</literal>and a dictionary <literal>intdict</literal>based on it, with the default parameters. You can alter the parameters, for example <placeholder-1/>or create new dictionaries based on the template."
+msgstr ""
+
+#: xml/dict-int.xml:53(programlisting)
+#, no-wrap
+msgid "mydb# select ts_lexize('intdict', '12345678');\n    ts_lexize ----------- {123456}"
+msgstr ""
+
+#: xml/dict-int.xml:58(programlisting)
+#, no-wrap
+msgid "ALTER TEXT SEARCH CONFIGURATION english ALTER\n    MAPPING FOR int, uint WITH\n    intdict;"
+msgstr ""
+
+#: xml/dict-int.xml:52(para)
+msgid "To test the dictionary, you can try <placeholder-1/>but real-world usage will involve including it in a text search configuration as described in <xref linkend=\"textsearch\">. That might look like this: <placeholder-2/></xref>"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/dict-int.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

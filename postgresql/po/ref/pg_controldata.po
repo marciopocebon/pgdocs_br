@@ -1,0 +1,72 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/pg_controldata.xml:4(primary) xml/ref/pg_controldata.xml:8(application) xml/ref/pg_controldata.xml:14(refname) xml/ref/pg_controldata.xml:21(command)
+msgid "pg_controldata"
+msgstr ""
+
+#: xml/ref/pg_controldata.xml:10(manvolnum)
+msgid "1"
+msgstr ""
+
+#: xml/ref/pg_controldata.xml:11(refmiscinfo)
+msgid "Application"
+msgstr ""
+
+#: xml/ref/pg_controldata.xml:16(productname)
+msgid "PostgreSQL"
+msgstr ""
+
+#: xml/ref/pg_controldata.xml:15(refpurpose)
+msgid "display control information of a <placeholder-1/>database cluster"
+msgstr ""
+
+#: xml/ref/pg_controldata.xml:23(replaceable)
+msgid "option"
+msgstr ""
+
+#: xml/ref/pg_controldata.xml:27(option)
+msgid "-D"
+msgstr ""
+
+#: xml/ref/pg_controldata.xml:29(replaceable)
+msgid "datadir"
+msgstr ""
+
+#: xml/ref/pg_controldata.xml:34(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/pg_controldata.xml:35(para)
+msgid "<command>pg_controldata</command>prints information initialized during <command>initdb</command>, such as the catalog version. It also shows information about write-ahead logging and checkpoint processing. This information is cluster-wide, and not specific to any one database."
+msgstr ""
+
+#: xml/ref/pg_controldata.xml:42(para)
+msgid "This utility can only be run by the user who initialized the cluster because it requires read access to the data directory. You can specify the data directory on the command line, or use the environment variable <envar>PGDATA</envar>. This utility supports the options <option>-V</option>and <option>--version</option>, which print the <application>pg_controldata</application>version and exit. It also supports options <option>-?</option>and <option>--help</option>, which output the supported arguments."
+msgstr ""
+
+#: xml/ref/pg_controldata.xml:56(title)
+msgid "Environment"
+msgstr ""
+
+#: xml/ref/pg_controldata.xml:60(envar)
+msgid "PGDATA"
+msgstr ""
+
+#: xml/ref/pg_controldata.xml:63(para)
+msgid "Default data directory location"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/pg_controldata.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

@@ -1,0 +1,139 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/create_collation.xml:4(primary) xml/ref/create_collation.xml:7(refentrytitle) xml/ref/create_collation.xml:12(refname)
+msgid "CREATE COLLATION"
+msgstr ""
+
+#: xml/ref/create_collation.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/create_collation.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/create_collation.xml:13(refpurpose)
+msgid "define a new collation"
+msgstr ""
+
+#: xml/ref/create_collation.xml:17(replaceable) xml/ref/create_collation.xml:21(replaceable) xml/ref/create_collation.xml:39(replaceable)
+msgid "name"
+msgstr ""
+
+#: xml/ref/create_collation.xml:18(replaceable) xml/ref/create_collation.xml:53(replaceable)
+msgid "locale"
+msgstr ""
+
+#: xml/ref/create_collation.xml:19(replaceable) xml/ref/create_collation.xml:64(replaceable)
+msgid "lc_collate"
+msgstr ""
+
+#: xml/ref/create_collation.xml:20(replaceable) xml/ref/create_collation.xml:77(replaceable)
+msgid "lc_ctype"
+msgstr ""
+
+#: xml/ref/create_collation.xml:22(replaceable) xml/ref/create_collation.xml:89(replaceable)
+msgid "existing_collation"
+msgstr ""
+
+#: xml/ref/create_collation.xml:16(synopsis)
+#, no-wrap
+msgid "CREATE COLLATION \n    <placeholder-1/>( [ LOCALE = \n    <placeholder-2/>, ] [ LC_COLLATE = \n    <placeholder-3/>, ] [ LC_CTYPE = \n    <placeholder-4/>] ) CREATE COLLATION \n    <placeholder-5/>FROM \n    <placeholder-6/>"
+msgstr ""
+
+#: xml/ref/create_collation.xml:25(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/create_collation.xml:26(para)
+msgid "<command>CREATE COLLATION</command>defines a new collation using the specified operating system locale settings, or by copying an existing collation."
+msgstr ""
+
+#: xml/ref/create_collation.xml:30(para)
+msgid "To be able to create a collation, you must have <literal>CREATE</literal>privilege on the destination schema."
+msgstr ""
+
+#: xml/ref/create_collation.xml:35(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/create_collation.xml:42(para)
+msgid "The name of the collation. The collation name can be schema-qualified. If it is not, the collation is defined in the current schema. The collation name must be unique within that schema. (The system catalogs can contain collations with the same name for other encodings, but these are ignored if the database encoding does not match.)"
+msgstr ""
+
+#: xml/ref/create_collation.xml:56(para)
+msgid "This is a shortcut for setting <symbol>LC_COLLATE</symbol>and <symbol>LC_CTYPE</symbol>at once. If you specify this, you cannot specify either of those parameters."
+msgstr ""
+
+#: xml/ref/create_collation.xml:67(para)
+msgid "Use the specified operating system locale for the <symbol>LC_COLLATE</symbol>locale category. The locale must be applicable to the current database encoding. (See <xref linkend=\"sql-createdatabase\">for the precise rules.)</xref>"
+msgstr ""
+
+#: xml/ref/create_collation.xml:80(para)
+msgid "Use the specified operating system locale for the <symbol>LC_CTYPE</symbol>locale category. The locale must be applicable to the current database encoding. (See <xref linkend=\"sql-createdatabase\">for the precise rules.)</xref>"
+msgstr ""
+
+#: xml/ref/create_collation.xml:92(para)
+msgid "The name of an existing collation to copy. The new collation will have the same properties as the existing one, but it will be an independent object."
+msgstr ""
+
+#: xml/ref/create_collation.xml:100(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/create_collation.xml:101(para)
+msgid "Use <command>DROP COLLATION</command>to remove user-defined collations."
+msgstr ""
+
+#: xml/ref/create_collation.xml:104(para)
+msgid "See <xref linkend=\"collation\">for more information about collation support in PostgreSQL.</xref>"
+msgstr ""
+
+#: xml/ref/create_collation.xml:109(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/create_collation.xml:114(programlisting)
+#, no-wrap
+msgid "CREATE COLLATION french (LOCALE =\n    'fr_FR.utf8');"
+msgstr ""
+
+#: xml/ref/create_collation.xml:110(para)
+msgid "To create a collation from the operating system locale <literal>fr_FR.utf8</literal>(assuming the current database encoding is <literal>UTF8</literal>): <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_collation.xml:117(programlisting)
+#, no-wrap
+msgid "CREATE COLLATION german FROM\n    \"de_DE\";"
+msgstr ""
+
+#: xml/ref/create_collation.xml:116(para)
+msgid "To create a collation from an existing collation: <placeholder-1/>This can be convenient to be able to use operating-system-independent collation names in applications."
+msgstr ""
+
+#: xml/ref/create_collation.xml:123(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/create_collation.xml:124(para)
+msgid "There is a <command>CREATE COLLATION</command>statement in the SQL standard, but it is limited to copying an existing collation. The syntax to create a new collation is a <productname>PostgreSQL</productname>extension."
+msgstr ""
+
+#: xml/ref/create_collation.xml:131(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/create_collation.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

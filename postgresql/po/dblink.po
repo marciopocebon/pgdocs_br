@@ -1,0 +1,736 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/dblink.xml:3(title) xml/dblink.xml:5(primary) xml/dblink.xml:249(primary) xml/dblink.xml:252(refentrytitle) xml/dblink.xml:256(refname)
+msgid "dblink"
+msgstr ""
+
+#: xml/dblink.xml:7(para)
+msgid "<filename>dblink</filename>is a module that supports connections to other <productname>PostgreSQL</productname>databases from within a database session."
+msgstr ""
+
+#: xml/dblink.xml:12(para)
+msgid "See also <xref linkend=\"postgres-fdw\">, which provides roughly the same functionality using a more modern and standards-compliant infrastructure.</xref>"
+msgstr ""
+
+#: xml/dblink.xml:18(primary) xml/dblink.xml:21(refentrytitle) xml/dblink.xml:25(refname)
+msgid "dblink_connect"
+msgstr ""
+
+#: xml/dblink.xml:22(manvolnum) xml/dblink.xml:145(manvolnum) xml/dblink.xml:200(manvolnum) xml/dblink.xml:253(manvolnum) xml/dblink.xml:412(manvolnum) xml/dblink.xml:516(manvolnum) xml/dblink.xml:621(manvolnum) xml/dblink.xml:733(manvolnum) xml/dblink.xml:817(manvolnum) xml/dblink.xml:851(manvolnum) xml/dblink.xml:898(manvolnum) xml/dblink.xml:964(manvolnum) xml/dblink.xml:1012(manvolnum) xml/dblink.xml:1073(manvolnum) xml/dblink.xml:1189(manvolnum) xml/dblink.xml:1243(manvolnum) xml/dblink.xml:1307(manvolnum) xml/dblink.xml:1424(manvolnum) xml/dblink.xml:1525(manvolnum)
+msgid "3"
+msgstr ""
+
+#: xml/dblink.xml:26(refpurpose)
+msgid "opens a persistent connection to a remote database"
+msgstr ""
+
+#: xml/dblink.xml:30(synopsis)
+#, no-wrap
+msgid "dblink_connect(text connstr) returns text\n      dblink_connect(text connname, text connstr) returns\n      text"
+msgstr ""
+
+#: xml/dblink.xml:35(title) xml/dblink.xml:158(title) xml/dblink.xml:212(title) xml/dblink.xml:268(title) xml/dblink.xml:426(title) xml/dblink.xml:529(title) xml/dblink.xml:635(title) xml/dblink.xml:745(title) xml/dblink.xml:828(title) xml/dblink.xml:863(title) xml/dblink.xml:910(title) xml/dblink.xml:976(title) xml/dblink.xml:1026(title) xml/dblink.xml:1084(title) xml/dblink.xml:1201(title) xml/dblink.xml:1255(title) xml/dblink.xml:1322(title) xml/dblink.xml:1437(title) xml/dblink.xml:1540(title)
+msgid "Description"
+msgstr ""
+
+#: xml/dblink.xml:36(para)
+msgid "<function>dblink_connect()</function>establishes a connection to a remote <productname>PostgreSQL</productname>database. The server and database to be contacted are identified through a standard <application>libpq</application>connection string. Optionally, a name can be assigned to the connection. Multiple named connections can be open at once, but only one unnamed connection is permitted at a time. The connection will persist until closed or until the database session is ended."
+msgstr ""
+
+#: xml/dblink.xml:47(para)
+msgid "The connection string may also be the name of an existing foreign server. It is recommended to use the foreign-data wrapper <literal>dblink_fdw</literal>when defining the foreign server. See the example below, as well as <xref linkend=\"sql-createserver\">and <xref linkend=\"sql-createusermapping\">.</xref></xref>"
+msgstr ""
+
+#: xml/dblink.xml:56(title) xml/dblink.xml:220(title) xml/dblink.xml:283(title) xml/dblink.xml:441(title) xml/dblink.xml:537(title) xml/dblink.xml:642(title) xml/dblink.xml:752(title) xml/dblink.xml:869(title) xml/dblink.xml:925(title) xml/dblink.xml:982(title) xml/dblink.xml:1037(title) xml/dblink.xml:1094(title) xml/dblink.xml:1213(title) xml/dblink.xml:1263(title) xml/dblink.xml:1334(title) xml/dblink.xml:1446(title) xml/dblink.xml:1557(title)
+msgid "Arguments"
+msgstr ""
+
+#: xml/dblink.xml:60(parameter) xml/dblink.xml:224(parameter) xml/dblink.xml:287(parameter) xml/dblink.xml:445(parameter) xml/dblink.xml:541(parameter) xml/dblink.xml:646(parameter) xml/dblink.xml:756(parameter) xml/dblink.xml:873(parameter) xml/dblink.xml:929(parameter) xml/dblink.xml:986(parameter) xml/dblink.xml:1041(parameter) xml/dblink.xml:1098(parameter) xml/dblink.xml:1217(parameter)
+msgid "connname"
+msgstr ""
+
+#: xml/dblink.xml:63(para)
+msgid "The name to use for this connection; if omitted, an unnamed connection is opened, replacing any existing unnamed connection."
+msgstr ""
+
+#: xml/dblink.xml:70(parameter) xml/dblink.xml:296(parameter) xml/dblink.xml:454(parameter)
+msgid "connstr"
+msgstr ""
+
+#: xml/dblink.xml:73(para)
+msgid "<application>libpq</application>-style connection info string, for example <literal>hostaddr=127.0.0.1 port=5432 dbname=mydb user=postgres password=mypasswd</literal>. For details see <xref linkend=\"libpq-connstring\">. Alternatively, the name of a foreign server.</xref>"
+msgstr ""
+
+#: xml/dblink.xml:86(title) xml/dblink.xml:234(title) xml/dblink.xml:329(title) xml/dblink.xml:489(title) xml/dblink.xml:583(title) xml/dblink.xml:688(title) xml/dblink.xml:787(title) xml/dblink.xml:835(title) xml/dblink.xml:882(title) xml/dblink.xml:948(title) xml/dblink.xml:995(title) xml/dblink.xml:1051(title) xml/dblink.xml:1119(title) xml/dblink.xml:1226(title) xml/dblink.xml:1282(title) xml/dblink.xml:1393(title) xml/dblink.xml:1494(title) xml/dblink.xml:1616(title)
+msgid "Return Value"
+msgstr ""
+
+#: xml/dblink.xml:87(para) xml/dblink.xml:235(para)
+msgid "Returns status, which is always <literal>OK</literal>(since any error causes the function to throw an error instead of returning)."
+msgstr ""
+
+#: xml/dblink.xml:92(title) xml/dblink.xml:363(title) xml/dblink.xml:589(title) xml/dblink.xml:695(title) xml/dblink.xml:793(title) xml/dblink.xml:1133(title) xml/dblink.xml:1397(title) xml/dblink.xml:1498(title) xml/dblink.xml:1620(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/dblink.xml:93(para)
+msgid "Only superusers may use <function>dblink_connect</function>to create non-password-authenticated connections. If non-superusers need this capability, use <function>dblink_connect_u</function>instead."
+msgstr ""
+
+#: xml/dblink.xml:98(para)
+msgid "It is unwise to choose connection names that contain equal signs, as this opens a risk of confusion with connection info strings in other <filename>dblink</filename>functions."
+msgstr ""
+
+#: xml/dblink.xml:104(title) xml/dblink.xml:240(title) xml/dblink.xml:376(title) xml/dblink.xml:494(title) xml/dblink.xml:608(title) xml/dblink.xml:707(title) xml/dblink.xml:802(title) xml/dblink.xml:840(title) xml/dblink.xml:887(title) xml/dblink.xml:953(title) xml/dblink.xml:1001(title) xml/dblink.xml:1057(title) xml/dblink.xml:1154(title) xml/dblink.xml:1232(title) xml/dblink.xml:1294(title) xml/dblink.xml:1411(title) xml/dblink.xml:1512(title) xml/dblink.xml:1634(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/dblink.xml:105(screen)
+#, no-wrap
+msgid "SELECT dblink_connect('dbname=postgres');\n      dblink_connect ---------------- OK (1 row) SELECT\n      dblink_connect('myconn', 'dbname=postgres'); dblink_connect\n      ---------------- OK (1 row) -- FOREIGN DATA WRAPPER\n      functionality -- Note: local connection must require password\n      authentication for this to work properly -- Otherwise, you\n      will receive the following error from dblink_connect(): --\n      ----------------------------------------------------------------------\n      -- ERROR: password is required -- DETAIL: Non-superuser\n      cannot connect if the server does not request a password. --\n      HINT: Target server's authentication method must be changed.\n      CREATE SERVER fdtest FOREIGN DATA WRAPPER dblink_fdw OPTIONS\n      (hostaddr '127.0.0.1', dbname 'contrib_regression'); CREATE\n      USER dblink_regression_test WITH PASSWORD 'secret'; CREATE\n      USER MAPPING FOR dblink_regression_test SERVER fdtest OPTIONS\n      (user 'dblink_regression_test', password 'secret'); GRANT\n      USAGE ON FOREIGN SERVER fdtest TO dblink_regression_test;\n      GRANT SELECT ON TABLE foo TO dblink_regression_test; \\set\n      ORIGINAL_USER :USER \\c - dblink_regression_test SELECT\n      dblink_connect('myconn', 'fdtest'); dblink_connect\n      ---------------- OK (1 row) SELECT * FROM\n      dblink('myconn','SELECT * FROM foo') AS t(a int, b text, c\n      text[]); a | b | c ----+---+--------------- 0 | a |\n      {a0,b0,c0} 1 | b | {a1,b1,c1} 2 | c | {a2,b2,c2} 3 | d |\n      {a3,b3,c3} 4 | e | {a4,b4,c4} 5 | f | {a5,b5,c5} 6 | g |\n      {a6,b6,c6} 7 | h | {a7,b7,c7} 8 | i | {a8,b8,c8} 9 | j |\n      {a9,b9,c9} 10 | k | {a10,b10,c10} (11 rows) \\c -\n      :ORIGINAL_USER REVOKE USAGE ON FOREIGN SERVER fdtest FROM\n      dblink_regression_test; REVOKE SELECT ON TABLE foo FROM\n      dblink_regression_test; DROP USER MAPPING FOR\n      dblink_regression_test SERVER fdtest; DROP USER\n      dblink_regression_test; DROP SERVER fdtest;"
+msgstr ""
+
+#: xml/dblink.xml:141(primary) xml/dblink.xml:144(refentrytitle) xml/dblink.xml:148(refname)
+msgid "dblink_connect_u"
+msgstr ""
+
+#: xml/dblink.xml:149(refpurpose)
+msgid "opens a persistent connection to a remote database, insecurely"
+msgstr ""
+
+#: xml/dblink.xml:153(synopsis)
+#, no-wrap
+msgid "dblink_connect_u(text connstr) returns text\n      dblink_connect_u(text connname, text connstr) returns\n      text"
+msgstr ""
+
+#: xml/dblink.xml:159(para)
+msgid "<function>dblink_connect_u()</function>is identical to <function>dblink_connect()</function>, except that it will allow non-superusers to connect using any authentication method."
+msgstr ""
+
+#: xml/dblink.xml:164(para)
+msgid "If the remote server selects an authentication method that does not involve a password, then impersonation and subsequent escalation of privileges can occur, because the session will appear to have originated from the user as which the local <productname>PostgreSQL</productname>server runs. Also, even if the remote server does demand a password, it is possible for the password to be supplied from the server environment, such as a <filename>~/.pgpass</filename>file belonging to the server's user. This opens not only a risk of impersonation, but the possibility of exposing a password to an untrustworthy remote server. Therefore, <function>dblink_connect_u()</function>is initially installed with all privileges revoked from <literal>PUBLIC</literal>, making it un-callable except by superusers. In some situations it may be appropriate to grant <literal>EXECUTE</literal>permission for <function>dblink_connect_u()</function>to specific users who are considered trustworthy, but this should be done with care. It is also recommended that any <filename>~/.pgpass</filename>file belonging to the server's user <emphasis>not</emphasis>contain any records specifying a wildcard host name."
+msgstr ""
+
+#: xml/dblink.xml:190(para)
+msgid "For further details see <function>dblink_connect()</function>."
+msgstr ""
+
+#: xml/dblink.xml:196(primary) xml/dblink.xml:199(refentrytitle) xml/dblink.xml:203(refname)
+msgid "dblink_disconnect"
+msgstr ""
+
+#: xml/dblink.xml:204(refpurpose)
+msgid "closes a persistent connection to a remote database"
+msgstr ""
+
+#: xml/dblink.xml:208(synopsis)
+#, no-wrap
+msgid "dblink_disconnect() returns text\n      dblink_disconnect(text connname) returns text"
+msgstr ""
+
+#: xml/dblink.xml:213(para)
+msgid "<function>dblink_disconnect()</function>closes a connection previously opened by <function>dblink_connect()</function>. The form with no arguments closes an unnamed connection."
+msgstr ""
+
+#: xml/dblink.xml:227(para)
+msgid "The name of a named connection to be closed."
+msgstr ""
+
+#: xml/dblink.xml:241(screen)
+#, no-wrap
+msgid "SELECT dblink_disconnect(); dblink_disconnect\n      ------------------- OK (1 row) SELECT\n      dblink_disconnect('myconn'); dblink_disconnect\n      ------------------- OK (1 row)"
+msgstr ""
+
+#: xml/dblink.xml:257(refpurpose)
+msgid "executes a query in a remote database"
+msgstr ""
+
+#: xml/dblink.xml:261(synopsis)
+#, no-wrap
+msgid "dblink(text connname, text sql [, bool\n      fail_on_error]) returns setof record dblink(text connstr,\n      text sql [, bool fail_on_error]) returns setof record\n      dblink(text sql [, bool fail_on_error]) returns setof\n      record"
+msgstr ""
+
+#: xml/dblink.xml:269(para)
+msgid "<function>dblink</function>executes a query (usually a <command>SELECT</command>, but it can be any SQL statement that returns rows) in a remote database."
+msgstr ""
+
+#: xml/dblink.xml:273(para) xml/dblink.xml:431(para)
+msgid "When two <type>text</type>arguments are given, the first one is first looked up as a persistent connection's name; if found, the command is executed on that connection. If not found, the first argument is treated as a connection info string as for <function>dblink_connect</function>, and the indicated connection is made just for the duration of this command."
+msgstr ""
+
+#: xml/dblink.xml:290(para) xml/dblink.xml:448(para) xml/dblink.xml:544(para) xml/dblink.xml:649(para) xml/dblink.xml:759(para)
+msgid "Name of the connection to use; omit this parameter to use the unnamed connection."
+msgstr ""
+
+#: xml/dblink.xml:299(para) xml/dblink.xml:457(para)
+msgid "A connection info string, as previously described for <function>dblink_connect</function>."
+msgstr ""
+
+#: xml/dblink.xml:306(parameter) xml/dblink.xml:464(parameter) xml/dblink.xml:558(parameter) xml/dblink.xml:937(parameter)
+msgid "sql"
+msgstr ""
+
+#: xml/dblink.xml:309(para)
+msgid "The SQL query that you wish to execute in the remote database, for example <literal>select * from foo</literal>."
+msgstr ""
+
+#: xml/dblink.xml:316(parameter) xml/dblink.xml:475(parameter) xml/dblink.xml:569(parameter) xml/dblink.xml:675(parameter) xml/dblink.xml:773(parameter) xml/dblink.xml:1106(parameter)
+msgid "fail_on_error"
+msgstr ""
+
+#: xml/dblink.xml:319(para) xml/dblink.xml:678(para) xml/dblink.xml:1109(para)
+msgid "If true (the default when omitted) then an error thrown on the remote side of the connection causes an error to also be thrown locally. If false, the remote error is locally reported as a NOTICE, and the function returns no rows."
+msgstr ""
+
+#: xml/dblink.xml:339(programlisting)
+#, no-wrap
+msgid "SELECT * FROM dblink('dbname=mydb', 'select\n      proname, prosrc from pg_proc') AS t1(proname name, prosrc\n      text) WHERE proname LIKE 'bytea%';"
+msgstr ""
+
+#: xml/dblink.xml:330(para)
+msgid "The function returns the row(s) produced by the query. Since <function>dblink</function>can be used with any query, it is declared to return <type>record</type>, rather than specifying any particular set of columns. This means that you must specify the expected set of columns in the calling query otherwise <productname>PostgreSQL</productname>would not know what to expect. Here is an example: <placeholder-1/>The <quote>alias</quote>part of the <literal>FROM</literal>clause must specify the column names and types that the function will return. (Specifying column names in an alias is actually standard SQL syntax, but specifying column types is a <productname>PostgreSQL</productname>extension.) This allows the system to understand what <literal>*</literal>should expand to, and what <structname>proname</structname>in the <literal>WHERE</literal>clause refers to, in advance of trying to execute the function. At run time, an error will be thrown if the actual query result from the remote database does not have the same number of columns shown in the <literal>FROM</literal>clause. The column names need not match, however, and <function>dblink</function>does not insist on exact type matches either. It will succeed so long as the returned data strings are valid input for the column type declared in the <literal>FROM</literal>clause."
+msgstr ""
+
+#: xml/dblink.xml:369(programlisting)
+#, no-wrap
+msgid "CREATE VIEW myremote_pg_proc AS SELECT * FROM\n      dblink('dbname=postgres', 'select proname, prosrc from\n      pg_proc') AS t1(proname name, prosrc text); SELECT * FROM\n      myremote_pg_proc WHERE proname LIKE\n      'bytea%';"
+msgstr ""
+
+#: xml/dblink.xml:364(para)
+msgid "A convenient way to use <function>dblink</function>with predetermined queries is to create a view. This allows the column type information to be buried in the view, instead of having to spell it out in every query. For example, <placeholder-1/>"
+msgstr ""
+
+#: xml/dblink.xml:377(screen)
+#, no-wrap
+msgid "SELECT * FROM dblink('dbname=postgres', 'select\n      proname, prosrc from pg_proc') AS t1(proname name, prosrc\n      text) WHERE proname LIKE 'bytea%'; proname | prosrc\n      ------------+------------ byteacat | byteacat byteaeq |\n      byteaeq bytealt | bytealt byteale | byteale byteagt | byteagt\n      byteage | byteage byteane | byteane byteacmp | byteacmp\n      bytealike | bytealike byteanlike | byteanlike byteain |\n      byteain byteaout | byteaout (12 rows) SELECT\n      dblink_connect('dbname=postgres'); dblink_connect\n      ---------------- OK (1 row) SELECT * FROM dblink('select\n      proname, prosrc from pg_proc') AS t1(proname name, prosrc\n      text) WHERE proname LIKE 'bytea%'; proname | prosrc\n      ------------+------------ byteacat | byteacat byteaeq |\n      byteaeq bytealt | bytealt byteale | byteale byteagt | byteagt\n      byteage | byteage byteane | byteane byteacmp | byteacmp\n      bytealike | bytealike byteanlike | byteanlike byteain |\n      byteain byteaout | byteaout (12 rows) SELECT\n      dblink_connect('myconn', 'dbname=regression'); dblink_connect\n      ---------------- OK (1 row) SELECT * FROM dblink('myconn',\n      'select proname, prosrc from pg_proc') AS t1(proname name,\n      prosrc text) WHERE proname LIKE 'bytea%'; proname | prosrc\n      ------------+------------ bytearecv | bytearecv byteasend |\n      byteasend byteale | byteale byteagt | byteagt byteage |\n      byteage byteane | byteane byteacmp | byteacmp bytealike |\n      bytealike byteanlike | byteanlike byteacat | byteacat byteaeq\n      | byteaeq bytealt | bytealt byteain | byteain byteaout |\n      byteaout (14 rows)"
+msgstr ""
+
+#: xml/dblink.xml:408(primary) xml/dblink.xml:411(refentrytitle) xml/dblink.xml:415(refname)
+msgid "dblink_exec"
+msgstr ""
+
+#: xml/dblink.xml:416(refpurpose)
+msgid "executes a command in a remote database"
+msgstr ""
+
+#: xml/dblink.xml:420(synopsis)
+#, no-wrap
+msgid "dblink_exec(text connname, text sql [, bool\n      fail_on_error]) returns text dblink_exec(text connstr, text\n      sql [, bool fail_on_error]) returns text dblink_exec(text sql\n      [, bool fail_on_error]) returns text"
+msgstr ""
+
+#: xml/dblink.xml:427(para)
+msgid "<function>dblink_exec</function>executes a command (that is, any SQL statement that doesn't return rows) in a remote database."
+msgstr ""
+
+#: xml/dblink.xml:467(para)
+msgid "The SQL command that you wish to execute in the remote database, for example <literal>insert into foo values(0,'a','{\"a0\",\"b0\",\"c0\"}')</literal>."
+msgstr ""
+
+#: xml/dblink.xml:478(para) xml/dblink.xml:572(para) xml/dblink.xml:776(para)
+msgid "If true (the default when omitted) then an error thrown on the remote side of the connection causes an error to also be thrown locally. If false, the remote error is locally reported as a NOTICE, and the function's return value is set to <literal>ERROR</literal>."
+msgstr ""
+
+#: xml/dblink.xml:490(para)
+msgid "Returns status, either the command's status string or <literal>ERROR</literal>."
+msgstr ""
+
+#: xml/dblink.xml:495(screen)
+#, no-wrap
+msgid "SELECT dblink_connect('dbname=dblink_test_standby');\n      dblink_connect ---------------- OK (1 row) SELECT\n      dblink_exec('insert into foo\n      values(21,''z'',''{\"a0\",\"b0\",\"c0\"}'');'); dblink_exec\n      ----------------- INSERT 943366 1 (1 row) SELECT\n      dblink_connect('myconn', 'dbname=regression'); dblink_connect\n      ---------------- OK (1 row) SELECT dblink_exec('myconn',\n      'insert into foo values(21,''z'',''{\"a0\",\"b0\",\"c0\"}'');');\n      dblink_exec ------------------ INSERT 6432584 1 (1 row)\n      SELECT dblink_exec('myconn', 'insert into pg_class values\n      (''foo'')',false); NOTICE: sql error DETAIL: ERROR: null\n      value in column \"relnamespace\" violates not-null constraint\n      dblink_exec ------------- ERROR (1 row)"
+msgstr ""
+
+#: xml/dblink.xml:512(primary) xml/dblink.xml:515(refentrytitle) xml/dblink.xml:519(refname)
+msgid "dblink_open"
+msgstr ""
+
+#: xml/dblink.xml:520(refpurpose)
+msgid "opens a cursor in a remote database"
+msgstr ""
+
+#: xml/dblink.xml:523(synopsis)
+#, no-wrap
+msgid "dblink_open(text cursorname, text sql [, bool\n      fail_on_error]) returns text dblink_open(text connname, text\n      cursorname, text sql [, bool fail_on_error]) returns\n      text"
+msgstr ""
+
+#: xml/dblink.xml:530(para)
+msgid "<function>dblink_open()</function>opens a cursor in a remote database. The cursor can subsequently be manipulated with <function>dblink_fetch()</function>and <function>dblink_close()</function>."
+msgstr ""
+
+#: xml/dblink.xml:550(parameter) xml/dblink.xml:655(parameter) xml/dblink.xml:765(parameter)
+msgid "cursorname"
+msgstr ""
+
+#: xml/dblink.xml:553(para)
+msgid "The name to assign to this cursor."
+msgstr ""
+
+#: xml/dblink.xml:561(para)
+msgid "The <command>SELECT</command>statement that you wish to execute in the remote database, for example <literal>select * from pg_class</literal>."
+msgstr ""
+
+#: xml/dblink.xml:584(para) xml/dblink.xml:788(para)
+msgid "Returns status, either <literal>OK</literal>or <literal>ERROR</literal>."
+msgstr ""
+
+#: xml/dblink.xml:590(para)
+msgid "Since a cursor can only persist within a transaction, <function>dblink_open</function>starts an explicit transaction block ( <command>BEGIN</command>) on the remote side, if the remote side was not already within a transaction. This transaction will be closed again when the matching <function>dblink_close</function>is executed. Note that if you use <function>dblink_exec</function>to change data between <function>dblink_open</function>and <function>dblink_close</function>, and then an error occurs or you use <function>dblink_disconnect</function>before <function>dblink_close</function>, your change <emphasis>will be lost</emphasis>because the transaction will be aborted."
+msgstr ""
+
+#: xml/dblink.xml:609(screen)
+#, no-wrap
+msgid "SELECT dblink_connect('dbname=postgres');\n      dblink_connect ---------------- OK (1 row) SELECT\n      dblink_open('foo', 'select proname, prosrc from pg_proc');\n      dblink_open ------------- OK (1 row)"
+msgstr ""
+
+#: xml/dblink.xml:617(primary) xml/dblink.xml:620(refentrytitle) xml/dblink.xml:624(refname)
+msgid "dblink_fetch"
+msgstr ""
+
+#: xml/dblink.xml:625(refpurpose)
+msgid "returns rows from an open cursor in a remote database"
+msgstr ""
+
+#: xml/dblink.xml:629(synopsis)
+#, no-wrap
+msgid "dblink_fetch(text cursorname, int howmany [, bool\n      fail_on_error]) returns setof record dblink_fetch(text\n      connname, text cursorname, int howmany [, bool\n      fail_on_error]) returns setof record"
+msgstr ""
+
+#: xml/dblink.xml:636(para)
+msgid "<function>dblink_fetch</function>fetches rows from a cursor previously established by <function>dblink_open</function>."
+msgstr ""
+
+#: xml/dblink.xml:658(para)
+msgid "The name of the cursor to fetch from."
+msgstr ""
+
+#: xml/dblink.xml:663(parameter)
+msgid "howmany"
+msgstr ""
+
+#: xml/dblink.xml:666(para)
+msgid "The maximum number of rows to retrieve. The next <parameter>howmany</parameter>rows are fetched, starting at the current cursor position, moving forward. Once the cursor has reached its end, no more rows are produced."
+msgstr ""
+
+#: xml/dblink.xml:689(para)
+msgid "The function returns the row(s) fetched from the cursor. To use this function, you will need to specify the expected set of columns, as previously discussed for <function>dblink</function>."
+msgstr ""
+
+#: xml/dblink.xml:696(para)
+msgid "On a mismatch between the number of return columns specified in the <literal>FROM</literal>clause, and the actual number of columns returned by the remote cursor, an error will be thrown. In this event, the remote cursor is still advanced by as many rows as it would have been if the error had not occurred. The same is true for any other error occurring in the local query after the remote <command>FETCH</command>has been done."
+msgstr ""
+
+#: xml/dblink.xml:708(screen)
+#, no-wrap
+msgid "SELECT dblink_connect('dbname=postgres');\n      dblink_connect ---------------- OK (1 row) SELECT\n      dblink_open('foo', 'select proname, prosrc from pg_proc where\n      proname like ''bytea%'''); dblink_open ------------- OK (1\n      row) SELECT * FROM dblink_fetch('foo', 5) AS (funcname name,\n      source text); funcname | source ----------+----------\n      byteacat | byteacat byteacmp | byteacmp byteaeq | byteaeq\n      byteage | byteage byteagt | byteagt (5 rows) SELECT * FROM\n      dblink_fetch('foo', 5) AS (funcname name, source text);\n      funcname | source -----------+----------- byteain | byteain\n      byteale | byteale bytealike | bytealike bytealt | bytealt\n      byteane | byteane (5 rows) SELECT * FROM dblink_fetch('foo',\n      5) AS (funcname name, source text); funcname | source\n      ------------+------------ byteanlike | byteanlike byteaout |\n      byteaout (2 rows) SELECT * FROM dblink_fetch('foo', 5) AS\n      (funcname name, source text); funcname | source\n      ----------+-------- (0 rows)"
+msgstr ""
+
+#: xml/dblink.xml:729(primary) xml/dblink.xml:732(refentrytitle) xml/dblink.xml:736(refname)
+msgid "dblink_close"
+msgstr ""
+
+#: xml/dblink.xml:737(refpurpose)
+msgid "closes a cursor in a remote database"
+msgstr ""
+
+#: xml/dblink.xml:740(synopsis)
+#, no-wrap
+msgid "dblink_close(text cursorname [, bool\n      fail_on_error]) returns text dblink_close(text connname, text\n      cursorname [, bool fail_on_error]) returns text"
+msgstr ""
+
+#: xml/dblink.xml:746(para)
+msgid "<function>dblink_close</function>closes a cursor previously opened with <function>dblink_open</function>."
+msgstr ""
+
+#: xml/dblink.xml:768(para)
+msgid "The name of the cursor to close."
+msgstr ""
+
+#: xml/dblink.xml:794(para)
+msgid "If <function>dblink_open</function>started an explicit transaction block, and this is the last remaining open cursor in this connection, <function>dblink_close</function>will issue the matching <command>COMMIT</command>."
+msgstr ""
+
+#: xml/dblink.xml:803(screen)
+#, no-wrap
+msgid "SELECT dblink_connect('dbname=postgres');\n      dblink_connect ---------------- OK (1 row) SELECT\n      dblink_open('foo', 'select proname, prosrc from pg_proc');\n      dblink_open ------------- OK (1 row) SELECT\n      dblink_close('foo'); dblink_close -------------- OK (1\n      row)"
+msgstr ""
+
+#: xml/dblink.xml:813(primary) xml/dblink.xml:816(refentrytitle) xml/dblink.xml:820(refname)
+msgid "dblink_get_connections"
+msgstr ""
+
+#: xml/dblink.xml:821(refpurpose)
+msgid "returns the names of all open named dblink connections"
+msgstr ""
+
+#: xml/dblink.xml:825(synopsis)
+#, no-wrap
+msgid "dblink_get_connections() returns text[]"
+msgstr ""
+
+#: xml/dblink.xml:829(para)
+msgid "<function>dblink_get_connections</function>returns an array of the names of all open named <filename>dblink</filename>connections."
+msgstr ""
+
+#: xml/dblink.xml:836(para)
+msgid "Returns a text array of connection names, or NULL if none."
+msgstr ""
+
+#: xml/dblink.xml:841(programlisting)
+#, no-wrap
+msgid "SELECT\n      dblink_get_connections();"
+msgstr ""
+
+#: xml/dblink.xml:847(primary) xml/dblink.xml:850(refentrytitle) xml/dblink.xml:854(refname)
+msgid "dblink_error_message"
+msgstr ""
+
+#: xml/dblink.xml:855(refpurpose)
+msgid "gets last error message on the named connection"
+msgstr ""
+
+#: xml/dblink.xml:859(synopsis)
+#, no-wrap
+msgid "dblink_error_message(text connname) returns\n      text"
+msgstr ""
+
+#: xml/dblink.xml:864(para)
+msgid "<function>dblink_error_message</function>fetches the most recent remote error message for a given connection."
+msgstr ""
+
+#: xml/dblink.xml:876(para) xml/dblink.xml:932(para) xml/dblink.xml:1101(para) xml/dblink.xml:1220(para)
+msgid "Name of the connection to use."
+msgstr ""
+
+#: xml/dblink.xml:883(para)
+msgid "Returns last error message, or an empty string if there has been no error in this connection."
+msgstr ""
+
+#: xml/dblink.xml:888(programlisting)
+#, no-wrap
+msgid "SELECT\n      dblink_error_message('dtest1');"
+msgstr ""
+
+#: xml/dblink.xml:894(primary) xml/dblink.xml:897(refentrytitle) xml/dblink.xml:901(refname)
+msgid "dblink_send_query"
+msgstr ""
+
+#: xml/dblink.xml:902(refpurpose)
+msgid "sends an async query to a remote database"
+msgstr ""
+
+#: xml/dblink.xml:906(synopsis)
+#, no-wrap
+msgid "dblink_send_query(text connname, text sql) returns\n      int"
+msgstr ""
+
+#: xml/dblink.xml:911(para)
+msgid "<function>dblink_send_query</function>sends a query to be executed asynchronously, that is, without immediately waiting for the result. There must not be an async query already in progress on the connection."
+msgstr ""
+
+#: xml/dblink.xml:916(para)
+msgid "After successfully dispatching an async query, completion status can be checked with <function>dblink_is_busy</function>, and the results are ultimately collected with <function>dblink_get_result</function>. It is also possible to attempt to cancel an active async query using <function>dblink_cancel_query</function>."
+msgstr ""
+
+#: xml/dblink.xml:940(para)
+msgid "The SQL statement that you wish to execute in the remote database, for example <literal>select * from pg_class</literal>."
+msgstr ""
+
+#: xml/dblink.xml:949(para)
+msgid "Returns 1 if the query was successfully dispatched, 0 otherwise."
+msgstr ""
+
+#: xml/dblink.xml:954(programlisting)
+#, no-wrap
+msgid "SELECT dblink_send_query('dtest1', 'SELECT *\n      FROM foo WHERE f1 3');"
+msgstr ""
+
+#: xml/dblink.xml:960(primary) xml/dblink.xml:963(refentrytitle) xml/dblink.xml:967(refname)
+msgid "dblink_is_busy"
+msgstr ""
+
+#: xml/dblink.xml:968(refpurpose)
+msgid "checks if connection is busy with an async query"
+msgstr ""
+
+#: xml/dblink.xml:972(synopsis)
+#, no-wrap
+msgid "dblink_is_busy(text connname) returns\n      int"
+msgstr ""
+
+#: xml/dblink.xml:977(para)
+msgid "<function>dblink_is_busy</function>tests whether an async query is in progress."
+msgstr ""
+
+#: xml/dblink.xml:989(para)
+msgid "Name of the connection to check."
+msgstr ""
+
+#: xml/dblink.xml:996(para)
+msgid "Returns 1 if connection is busy, 0 if it is not busy. If this function returns 0, it is guaranteed that <function>dblink_get_result</function>will not block."
+msgstr ""
+
+#: xml/dblink.xml:1002(programlisting)
+#, no-wrap
+msgid "SELECT\n      dblink_is_busy('dtest1');"
+msgstr ""
+
+#: xml/dblink.xml:1008(primary) xml/dblink.xml:1011(refentrytitle) xml/dblink.xml:1015(refname)
+msgid "dblink_get_notify"
+msgstr ""
+
+#: xml/dblink.xml:1016(refpurpose)
+msgid "retrieve async notifications on a connection"
+msgstr ""
+
+#: xml/dblink.xml:1020(synopsis)
+#, no-wrap
+msgid "dblink_get_notify() returns setof (notify_name\n      text, be_pid int, extra text) dblink_get_notify(text\n      connname) returns setof (notify_name text, be_pid int, extra\n      text)"
+msgstr ""
+
+#: xml/dblink.xml:1027(para)
+msgid "<function>dblink_get_notify</function>retrieves notifications on either the unnamed connection, or on a named connection if specified. To receive notifications via dblink, <function>LISTEN</function>must first be issued, using <function>dblink_exec</function>. For details see <xref linkend=\"sql-listen\">and <xref linkend=\"sql-notify\">.</xref></xref>"
+msgstr ""
+
+#: xml/dblink.xml:1044(para)
+msgid "The name of a named connection to get notifications on."
+msgstr ""
+
+#: xml/dblink.xml:1052(para)
+msgid "Returns <type>setof (notify_name text, be_pid int, extra text)</type>, or an empty set if none."
+msgstr ""
+
+#: xml/dblink.xml:1058(screen)
+#, no-wrap
+msgid "SELECT dblink_exec('LISTEN virtual'); dblink_exec\n      ------------- LISTEN (1 row) SELECT * FROM\n      dblink_get_notify(); notify_name | be_pid | extra\n      -------------+--------+------- (0 rows) NOTIFY virtual;\n      NOTIFY SELECT * FROM dblink_get_notify(); notify_name |\n      be_pid | extra -------------+--------+------- virtual | 1229\n      | (1 row)"
+msgstr ""
+
+#: xml/dblink.xml:1069(primary) xml/dblink.xml:1072(refentrytitle) xml/dblink.xml:1076(refname)
+msgid "dblink_get_result"
+msgstr ""
+
+#: xml/dblink.xml:1077(refpurpose)
+msgid "gets an async query result"
+msgstr ""
+
+#: xml/dblink.xml:1080(synopsis)
+#, no-wrap
+msgid "dblink_get_result(text connname [, bool\n      fail_on_error]) returns setof record"
+msgstr ""
+
+#: xml/dblink.xml:1085(para)
+msgid "<function>dblink_get_result</function>collects the results of an asynchronous query previously sent with <function>dblink_send_query</function>. If the query is not already completed, <function>dblink_get_result</function>will wait until it is."
+msgstr ""
+
+#: xml/dblink.xml:1120(para)
+msgid "For an async query (that is, a SQL statement returning rows), the function returns the row(s) produced by the query. To use this function, you will need to specify the expected set of columns, as previously discussed for <function>dblink</function>."
+msgstr ""
+
+#: xml/dblink.xml:1125(para)
+msgid "For an async command (that is, a SQL statement not returning rows), the function returns a single row with a single text column containing the command's status string. It is still necessary to specify that the result will have a single text column in the calling <literal>FROM</literal>clause."
+msgstr ""
+
+#: xml/dblink.xml:1134(para)
+msgid "This function <emphasis>must</emphasis>be called if <function>dblink_send_query</function>returned 1. It must be called once for each query sent, and one additional time to obtain an empty set result, before the connection can be used again."
+msgstr ""
+
+#: xml/dblink.xml:1140(para)
+msgid "When using <function>dblink_send_query</function>and <function>dblink_get_result</function>, <application>dblink</application>fetches the entire remote query result before returning any of it to the local query processor. If the query returns a large number of rows, this can result in transient memory bloat in the local session. It may be better to open such a query as a cursor with <function>dblink_open</function>and then fetch a manageable number of rows at a time. Alternatively, use plain <function>dblink()</function>, which avoids memory bloat by spooling large result sets to disk."
+msgstr ""
+
+#: xml/dblink.xml:1155(screen)
+#, no-wrap
+msgid "contrib_regression=# SELECT dblink_connect('dtest1',\n      'dbname=contrib_regression'); dblink_connect ----------------\n      OK (1 row) contrib_regression=# SELECT * FROM\n      contrib_regression-# dblink_send_query('dtest1', 'select *\n      from foo where f1 3') AS t1; t1 ---- 1 (1 row)\n      contrib_regression=# SELECT * FROM\n      dblink_get_result('dtest1') AS t1(f1 int, f2 text, f3\n      text[]); f1 | f2 | f3 ----+----+------------ 0 | a |\n      {a0,b0,c0} 1 | b | {a1,b1,c1} 2 | c | {a2,b2,c2} (3 rows)\n      contrib_regression=# SELECT * FROM\n      dblink_get_result('dtest1') AS t1(f1 int, f2 text, f3\n      text[]); f1 | f2 | f3 ----+----+---- (0 rows)\n      contrib_regression=# SELECT * FROM contrib_regression-#\n      dblink_send_query('dtest1', 'select * from foo where f1 3;\n      select * from foo where f1 6') AS t1; t1 ---- 1 (1 row)\n      contrib_regression=# SELECT * FROM\n      dblink_get_result('dtest1') AS t1(f1 int, f2 text, f3\n      text[]); f1 | f2 | f3 ----+----+------------ 0 | a |\n      {a0,b0,c0} 1 | b | {a1,b1,c1} 2 | c | {a2,b2,c2} (3 rows)\n      contrib_regression=# SELECT * FROM\n      dblink_get_result('dtest1') AS t1(f1 int, f2 text, f3\n      text[]); f1 | f2 | f3 ----+----+--------------- 7 | h |\n      {a7,b7,c7} 8 | i | {a8,b8,c8} 9 | j | {a9,b9,c9} 10 | k |\n      {a10,b10,c10} (4 rows) contrib_regression=# SELECT * FROM\n      dblink_get_result('dtest1') AS t1(f1 int, f2 text, f3\n      text[]); f1 | f2 | f3 ----+----+---- (0 rows)"
+msgstr ""
+
+#: xml/dblink.xml:1185(primary) xml/dblink.xml:1188(refentrytitle) xml/dblink.xml:1192(refname)
+msgid "dblink_cancel_query"
+msgstr ""
+
+#: xml/dblink.xml:1193(refpurpose)
+msgid "cancels any active query on the named connection"
+msgstr ""
+
+#: xml/dblink.xml:1197(synopsis)
+#, no-wrap
+msgid "dblink_cancel_query(text connname) returns\n      text"
+msgstr ""
+
+#: xml/dblink.xml:1202(para)
+msgid "<function>dblink_cancel_query</function>attempts to cancel any query that is in progress on the named connection. Note that this is not certain to succeed (since, for example, the remote query might already have finished). A cancel request simply improves the odds that the query will fail soon. You must still complete the normal query protocol, for example by calling <function>dblink_get_result</function>."
+msgstr ""
+
+#: xml/dblink.xml:1227(para)
+msgid "Returns <literal>OK</literal>if the cancel request has been sent, or the text of an error message on failure."
+msgstr ""
+
+#: xml/dblink.xml:1233(programlisting)
+#, no-wrap
+msgid "SELECT\n      dblink_cancel_query('dtest1');"
+msgstr ""
+
+#: xml/dblink.xml:1239(primary) xml/dblink.xml:1242(refentrytitle) xml/dblink.xml:1246(refname)
+msgid "dblink_get_pkey"
+msgstr ""
+
+#: xml/dblink.xml:1247(refpurpose)
+msgid "returns the positions and field names of a relation's primary key fields"
+msgstr ""
+
+#: xml/dblink.xml:1251(synopsis)
+#, no-wrap
+msgid "dblink_get_pkey(text relname) returns setof\n      dblink_pkey_results"
+msgstr ""
+
+#: xml/dblink.xml:1256(para)
+msgid "<function>dblink_get_pkey</function>provides information about the primary key of a relation in the local database. This is sometimes useful in generating queries to be sent to remote databases."
+msgstr ""
+
+#: xml/dblink.xml:1267(parameter) xml/dblink.xml:1338(parameter) xml/dblink.xml:1450(parameter) xml/dblink.xml:1561(parameter)
+msgid "relname"
+msgstr ""
+
+#: xml/dblink.xml:1270(para) xml/dblink.xml:1341(para) xml/dblink.xml:1453(para) xml/dblink.xml:1564(para)
+msgid "Name of a local relation, for example <literal>foo</literal>or <literal>myschema.mytab</literal>. Include double quotes if the name is mixed-case or contains special characters, for example <literal>\"FooBar\"</literal>; without quotes, the string will be folded to lower case."
+msgstr ""
+
+#: xml/dblink.xml:1286(programlisting)
+#, no-wrap
+msgid "CREATE TYPE dblink_pkey_results AS (position\n      int, colname text);"
+msgstr ""
+
+#: xml/dblink.xml:1283(para)
+msgid "Returns one row for each primary key field, or no rows if the relation has no primary key. The result row type is defined as <placeholder-1/>The <literal>position</literal>column simply runs from 1 to <replaceable>N</replaceable>; it is the number of the field within the primary key, not the number within the table's columns."
+msgstr ""
+
+#: xml/dblink.xml:1295(screen)
+#, no-wrap
+msgid "CREATE TABLE foobar ( f1 int, f2 int, f3 int, PRIMARY\n      KEY (f1, f2, f3) ); CREATE TABLE SELECT * FROM\n      dblink_get_pkey('foobar'); position | colname\n      ----------+--------- 1 | f1 2 | f2 3 | f3 (3 rows)"
+msgstr ""
+
+#: xml/dblink.xml:1303(primary) xml/dblink.xml:1306(refentrytitle) xml/dblink.xml:1310(refname)
+msgid "dblink_build_sql_insert"
+msgstr ""
+
+#: xml/dblink.xml:1311(refpurpose)
+msgid "builds an INSERT statement using a local tuple, replacing the primary key field values with alternative supplied values"
+msgstr ""
+
+#: xml/dblink.xml:1316(synopsis)
+#, no-wrap
+msgid "dblink_build_sql_insert(text relname, int2vector\n      primary_key_attnums, integer num_primary_key_atts, text[]\n      src_pk_att_vals_array, text[] tgt_pk_att_vals_array) returns\n      text"
+msgstr ""
+
+#: xml/dblink.xml:1323(para)
+msgid "<function>dblink_build_sql_insert</function>can be useful in doing selective replication of a local table to a remote database. It selects a row from the local table based on primary key, and then builds a SQL <command>INSERT</command>command that will duplicate that row, but with the primary key values replaced by the values in the last argument. (To make an exact copy of the row, just specify the same values for the last two arguments.)"
+msgstr ""
+
+#: xml/dblink.xml:1352(parameter) xml/dblink.xml:1464(parameter) xml/dblink.xml:1575(parameter)
+msgid "primary_key_attnums"
+msgstr ""
+
+#: xml/dblink.xml:1355(para) xml/dblink.xml:1467(para) xml/dblink.xml:1578(para)
+msgid "Attribute numbers (1-based) of the primary key fields, for example <literal>1 2</literal>."
+msgstr ""
+
+#: xml/dblink.xml:1362(parameter) xml/dblink.xml:1474(parameter) xml/dblink.xml:1585(parameter)
+msgid "num_primary_key_atts"
+msgstr ""
+
+#: xml/dblink.xml:1365(para) xml/dblink.xml:1477(para) xml/dblink.xml:1588(para)
+msgid "The number of primary key fields."
+msgstr ""
+
+#: xml/dblink.xml:1370(parameter) xml/dblink.xml:1593(parameter)
+msgid "src_pk_att_vals_array"
+msgstr ""
+
+#: xml/dblink.xml:1373(para) xml/dblink.xml:1596(para)
+msgid "Values of the primary key fields to be used to look up the local tuple. Each field is represented in text form. An error is thrown if there is no local row with these primary key values."
+msgstr ""
+
+#: xml/dblink.xml:1381(parameter) xml/dblink.xml:1482(parameter) xml/dblink.xml:1604(parameter)
+msgid "tgt_pk_att_vals_array"
+msgstr ""
+
+#: xml/dblink.xml:1384(para)
+msgid "Values of the primary key fields to be placed in the resulting <command>INSERT</command>command. Each field is represented in text form."
+msgstr ""
+
+#: xml/dblink.xml:1394(para) xml/dblink.xml:1495(para) xml/dblink.xml:1617(para)
+msgid "Returns the requested SQL statement as text."
+msgstr ""
+
+#: xml/dblink.xml:1398(para) xml/dblink.xml:1499(para) xml/dblink.xml:1621(para)
+msgid "As of <productname>PostgreSQL</productname>9.0, the attribute numbers in <parameter>primary_key_attnums</parameter>are interpreted as logical column numbers, corresponding to the column's position in <literal>SELECT * FROM relname</literal>. Previous versions interpreted the numbers as physical column positions. There is a difference if any column(s) to the left of the indicated column have been dropped during the lifetime of the table."
+msgstr ""
+
+#: xml/dblink.xml:1412(screen)
+#, no-wrap
+msgid "SELECT dblink_build_sql_insert('foo', '1 2', 2,\n      '{\"1\", \"a\"}', '{\"1\", \"b''a\"}'); dblink_build_sql_insert\n      -------------------------------------------------- INSERT\n      INTO foo(f1,f2,f3) VALUES('1','b''a','1') (1 row)"
+msgstr ""
+
+#: xml/dblink.xml:1420(primary) xml/dblink.xml:1423(refentrytitle) xml/dblink.xml:1427(refname)
+msgid "dblink_build_sql_delete"
+msgstr ""
+
+#: xml/dblink.xml:1428(refpurpose)
+msgid "builds a DELETE statement using supplied values for primary key field values"
+msgstr ""
+
+#: xml/dblink.xml:1432(synopsis)
+#, no-wrap
+msgid "dblink_build_sql_delete(text relname, int2vector\n      primary_key_attnums, integer num_primary_key_atts, text[]\n      tgt_pk_att_vals_array) returns text"
+msgstr ""
+
+#: xml/dblink.xml:1438(para)
+msgid "<function>dblink_build_sql_delete</function>can be useful in doing selective replication of a local table to a remote database. It builds a SQL <command>DELETE</command>command that will delete the row with the given primary key values."
+msgstr ""
+
+#: xml/dblink.xml:1485(para)
+msgid "Values of the primary key fields to be used in the resulting <command>DELETE</command>command. Each field is represented in text form."
+msgstr ""
+
+#: xml/dblink.xml:1513(screen)
+#, no-wrap
+msgid "SELECT dblink_build_sql_delete('\"MyFoo\"', '1 2', 2,\n      '{\"1\", \"b\"}'); dblink_build_sql_delete\n      --------------------------------------------- DELETE FROM\n      \"MyFoo\" WHERE f1='1' AND f2='b' (1 row)"
+msgstr ""
+
+#: xml/dblink.xml:1521(primary) xml/dblink.xml:1524(refentrytitle) xml/dblink.xml:1528(refname)
+msgid "dblink_build_sql_update"
+msgstr ""
+
+#: xml/dblink.xml:1529(refpurpose)
+msgid "builds an UPDATE statement using a local tuple, replacing the primary key field values with alternative supplied values"
+msgstr ""
+
+#: xml/dblink.xml:1534(synopsis)
+#, no-wrap
+msgid "dblink_build_sql_update(text relname, int2vector\n      primary_key_attnums, integer num_primary_key_atts, text[]\n      src_pk_att_vals_array, text[] tgt_pk_att_vals_array) returns\n      text"
+msgstr ""
+
+#: xml/dblink.xml:1541(para)
+msgid "<function>dblink_build_sql_update</function>can be useful in doing selective replication of a local table to a remote database. It selects a row from the local table based on primary key, and then builds a SQL <command>UPDATE</command>command that will duplicate that row, but with the primary key values replaced by the values in the last argument. (To make an exact copy of the row, just specify the same values for the last two arguments.) The <command>UPDATE</command>command always assigns all fields of the row the main difference between this and <function>dblink_build_sql_insert</function>is that it's assumed that the target row already exists in the remote table."
+msgstr ""
+
+#: xml/dblink.xml:1607(para)
+msgid "Values of the primary key fields to be placed in the resulting <command>UPDATE</command>command. Each field is represented in text form."
+msgstr ""
+
+#: xml/dblink.xml:1635(screen)
+#, no-wrap
+msgid "SELECT dblink_build_sql_update('foo', '1 2', 2,\n      '{\"1\", \"a\"}', '{\"1\", \"b\"}'); dblink_build_sql_update\n      -------------------------------------------------------------\n      UPDATE foo SET f1='1',f2='b',f3='1' WHERE f1='1' AND f2='b'\n      (1 row)"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/dblink.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

@@ -1,0 +1,442 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/insert.xml:4(primary) xml/ref/insert.xml:7(refentrytitle) xml/ref/insert.xml:12(refname)
+msgid "INSERT"
+msgstr ""
+
+#: xml/ref/insert.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/insert.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/insert.xml:13(refpurpose)
+msgid "create new rows in a table"
+msgstr ""
+
+#: xml/ref/insert.xml:17(replaceable) xml/ref/insert.xml:147(replaceable)
+msgid "with_query"
+msgstr ""
+
+#: xml/ref/insert.xml:19(replaceable) xml/ref/insert.xml:172(replaceable)
+msgid "table_name"
+msgstr ""
+
+#: xml/ref/insert.xml:20(replaceable) xml/ref/insert.xml:181(replaceable)
+msgid "alias"
+msgstr ""
+
+#: xml/ref/insert.xml:21(replaceable) xml/ref/insert.xml:50(replaceable) xml/ref/insert.xml:53(replaceable) xml/ref/insert.xml:57(replaceable) xml/ref/insert.xml:197(replaceable)
+msgid "column_name"
+msgstr ""
+
+#: xml/ref/insert.xml:23(replaceable) xml/ref/insert.xml:51(replaceable) xml/ref/insert.xml:55(replaceable) xml/ref/insert.xml:228(replaceable)
+msgid "expression"
+msgstr ""
+
+#: xml/ref/insert.xml:25(replaceable) xml/ref/insert.xml:246(replaceable)
+msgid "query"
+msgstr ""
+
+#: xml/ref/insert.xml:27(replaceable) xml/ref/insert.xml:35(replaceable) xml/ref/insert.xml:341(replaceable)
+msgid "conflict_target"
+msgstr ""
+
+#: xml/ref/insert.xml:28(replaceable) xml/ref/insert.xml:48(replaceable) xml/ref/insert.xml:364(replaceable)
+msgid "conflict_action"
+msgstr ""
+
+#: xml/ref/insert.xml:30(replaceable) xml/ref/insert.xml:258(replaceable)
+msgid "output_expression"
+msgstr ""
+
+#: xml/ref/insert.xml:32(replaceable) xml/ref/insert.xml:274(replaceable)
+msgid "output_name"
+msgstr ""
+
+#: xml/ref/insert.xml:34(phrase)
+msgid "where <placeholder-1/>can be one of:"
+msgstr ""
+
+#: xml/ref/insert.xml:37(replaceable) xml/ref/insert.xml:396(replaceable)
+msgid "index_column_name"
+msgstr ""
+
+#: xml/ref/insert.xml:39(replaceable) xml/ref/insert.xml:412(replaceable)
+msgid "index_expression"
+msgstr ""
+
+#: xml/ref/insert.xml:41(replaceable) xml/ref/insert.xml:432(replaceable)
+msgid "collation"
+msgstr ""
+
+#: xml/ref/insert.xml:42(replaceable) xml/ref/insert.xml:449(replaceable)
+msgid "opclass"
+msgstr ""
+
+#: xml/ref/insert.xml:44(replaceable) xml/ref/insert.xml:469(replaceable)
+msgid "index_predicate"
+msgstr ""
+
+#: xml/ref/insert.xml:46(replaceable) xml/ref/insert.xml:486(replaceable)
+msgid "constraint_name"
+msgstr ""
+
+#: xml/ref/insert.xml:47(phrase)
+msgid "and <placeholder-1/>is one of:"
+msgstr ""
+
+#: xml/ref/insert.xml:59(replaceable)
+msgid "sub-SELECT"
+msgstr ""
+
+#: xml/ref/insert.xml:61(replaceable) xml/ref/insert.xml:497(replaceable)
+msgid "condition"
+msgstr ""
+
+#: xml/ref/insert.xml:16(synopsis)
+#, no-wrap
+msgid "[ WITH [ RECURSIVE ] \n    <placeholder-1/>[, ...]\n    ] INSERT INTO \n    <placeholder-2/>[ AS \n    <placeholder-3/>] [ ( \n    <placeholder-4/>[, ...]\n    ) ] { DEFAULT VALUES | VALUES ( { \n    <placeholder-5/>|\n    DEFAULT } [, ...] ) [, ...] | \n    <placeholder-6/>} [ ON\n    CONFLICT [ \n    <placeholder-7/>] \n    <placeholder-8/>] [\n    RETURNING * | \n    <placeholder-9/>[\n    [ AS ] \n    <placeholder-10/>] [,\n    ...] ] \n    <placeholder-11/>( { \n    <placeholder-12/>|\n    ( \n    <placeholder-13/>)\n    } [ COLLATE \n    <placeholder-14/>] [ \n    <placeholder-15/>] [, ...] )\n    [ WHERE \n    <placeholder-16/>]\n    ON CONSTRAINT \n    <placeholder-17/>\n    <placeholder-18/>DO NOTHING DO UPDATE SET { \n    <placeholder-19/>= { \n    <placeholder-20/>|\n    DEFAULT } | ( \n    <placeholder-21/>[, ...]\n    ) = ( { \n    <placeholder-22/>|\n    DEFAULT } [, ...] ) | ( \n    <placeholder-23/>[, ...]\n    ) = ( \n    <placeholder-24/>) } [,\n    ...] [ WHERE \n    <placeholder-25/>]"
+msgstr ""
+
+#: xml/ref/insert.xml:65(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/insert.xml:66(para)
+msgid "<command>INSERT</command>inserts new rows into a table. One can insert one or more rows specified by value expressions, or zero or more rows resulting from a query."
+msgstr ""
+
+#: xml/ref/insert.xml:70(para)
+msgid "The target column names can be listed in any order. If no list of column names is given at all, the default is all the columns of the table in their declared order; or the first <replaceable>N</replaceable>column names, if there are only <replaceable>N</replaceable>columns supplied by the <literal>VALUES</literal>clause or <replaceable>query</replaceable>. The values supplied by the <literal>VALUES</literal>clause or <replaceable>query</replaceable>are associated with the explicit or implicit column list left-to-right."
+msgstr ""
+
+#: xml/ref/insert.xml:80(para)
+msgid "Each column not present in the explicit or implicit column list will be filled with a default value, either its declared default value or null if there is none."
+msgstr ""
+
+#: xml/ref/insert.xml:83(para)
+msgid "If the expression for any column is not of the correct data type, automatic type conversion will be attempted."
+msgstr ""
+
+#: xml/ref/insert.xml:85(para)
+msgid "<literal>ON CONFLICT</literal>can be used to specify an alternative action to raising a unique constraint or exclusion constraint violation error. (See <xref linkend=\"sql-on-conflict\" endterm=\"sql-on-conflict-title\">below.)</xref>"
+msgstr ""
+
+#: xml/ref/insert.xml:91(para)
+msgid "The optional <literal>RETURNING</literal>clause causes <command>INSERT</command>to compute and return value(s) based on each row actually inserted (or updated, if an <literal>ON CONFLICT DO UPDATE</literal>clause was used). This is primarily useful for obtaining values that were supplied by defaults, such as a serial sequence number. However, any expression using the table's columns is allowed. The syntax of the <literal>RETURNING</literal>list is identical to that of the output list of <command>SELECT</command>. Only rows that were successfully inserted or updated will be returned. For example, if a row was locked but not updated because an <literal>ON CONFLICT DO UPDATE ... WHERE</literal>clause <replaceable class=\"PARAMETER\">condition</replaceable>was not satisfied, the row will not be returned."
+msgstr ""
+
+#: xml/ref/insert.xml:108(para)
+msgid "You must have <literal>INSERT</literal>privilege on a table in order to insert into it. If <literal>ON CONFLICT DO UPDATE</literal>is present, <literal>UPDATE</literal>privilege on the table is also required."
+msgstr ""
+
+#: xml/ref/insert.xml:114(para)
+msgid "If a column list is specified, you only need <literal>INSERT</literal>privilege on the listed columns. Similarly, when <literal>ON CONFLICT DO UPDATE</literal>is specified, you only need <literal>UPDATE</literal>privilege on the column(s) that are listed to be updated. However, <literal>ON CONFLICT DO UPDATE</literal>also requires <literal>SELECT</literal>privilege on any column whose values are read in the <literal>ON CONFLICT DO UPDATE</literal>expressions or <replaceable>condition</replaceable>."
+msgstr ""
+
+#: xml/ref/insert.xml:126(para)
+msgid "Use of the <literal>RETURNING</literal>clause requires <literal>SELECT</literal>privilege on all columns mentioned in <literal>RETURNING</literal>. If you use the <replaceable class=\"PARAMETER\">query</replaceable>clause to insert rows from a query, you of course need to have <literal>SELECT</literal>privilege on any table or column used in the query."
+msgstr ""
+
+#: xml/ref/insert.xml:136(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/insert.xml:138(title)
+msgid "Inserting"
+msgstr ""
+
+#: xml/ref/insert.xml:139(para)
+msgid "This section covers parameters that may be used when only inserting new rows. Parameters <emphasis>exclusively</emphasis>used with the <literal>ON CONFLICT</literal>clause are described separately."
+msgstr ""
+
+#: xml/ref/insert.xml:150(para)
+msgid "The <literal>WITH</literal>clause allows you to specify one or more subqueries that can be referenced by name in the <command>INSERT</command>query. See <xref linkend=\"queries-with\">and <xref linkend=\"sql-select\">for details.</xref></xref>"
+msgstr ""
+
+#: xml/ref/insert.xml:158(para)
+msgid "It is possible for the <replaceable class=\"parameter\">query</replaceable>( <command>SELECT</command>statement) to also contain a <literal>WITH</literal>clause. In such a case both sets of <replaceable>with_query</replaceable>can be referenced within the <replaceable class=\"parameter\">query</replaceable>, but the second one takes precedence since it is more closely nested."
+msgstr ""
+
+#: xml/ref/insert.xml:175(para)
+msgid "The name (optionally schema-qualified) of an existing table."
+msgstr ""
+
+#: xml/ref/insert.xml:184(para)
+msgid "A substitute name for <replaceable class=\"PARAMETER\"> table_name</replaceable>. When an alias is provided, it completely hides the actual name of the table. This is particularly useful when <literal>ON CONFLICT DO UPDATE</literal>targets a table named excluded, since that's also the name of the special table representing rows proposed for insertion."
+msgstr ""
+
+#: xml/ref/insert.xml:201(para)
+msgid "The name of a column in the table named by <replaceable class=\"PARAMETER\"> table_name</replaceable>. The column name can be qualified with a subfield name or array subscript, if needed. (Inserting into only some fields of a composite column leaves the other fields null.) When referencing a column with <literal>ON CONFLICT DO UPDATE</literal>, do not include the table's name in the specification of a target column. For example, <literal>INSERT ... ON CONFLICT DO UPDATE tab SET table_name.col = 1</literal>is invalid (this follows the general behavior for <command>UPDATE</command>)."
+msgstr ""
+
+#: xml/ref/insert.xml:219(literal)
+msgid "DEFAULT VALUES"
+msgstr ""
+
+#: xml/ref/insert.xml:222(para)
+msgid "All columns will be filled with their default values."
+msgstr ""
+
+#: xml/ref/insert.xml:231(para)
+msgid "An expression or value to assign to the corresponding column."
+msgstr ""
+
+#: xml/ref/insert.xml:237(literal)
+msgid "DEFAULT"
+msgstr ""
+
+#: xml/ref/insert.xml:240(para)
+msgid "The corresponding column will be filled with its default value."
+msgstr ""
+
+#: xml/ref/insert.xml:249(para)
+msgid "A query ( <command>SELECT</command>statement) that supplies the rows to be inserted. Refer to the <xref linkend=\"sql-select\">statement for a description of the syntax.</xref>"
+msgstr ""
+
+#: xml/ref/insert.xml:262(para)
+msgid "An expression to be computed and returned by the <command>INSERT</command>command after each row is inserted or updated. The expression can use any column names of the table named by <replaceable class=\"PARAMETER\"> table_name</replaceable>. Write <literal>*</literal>to return all columns of the inserted or updated row(s)."
+msgstr ""
+
+#: xml/ref/insert.xml:278(para)
+msgid "A name to use for a returned column."
+msgstr ""
+
+#: xml/ref/insert.xml:284(title)
+msgid "<literal>ON CONFLICT</literal>Clause"
+msgstr ""
+
+#: xml/ref/insert.xml:287(primary)
+msgid "UPSERT"
+msgstr ""
+
+#: xml/ref/insert.xml:290(primary)
+msgid "ON CONFLICT"
+msgstr ""
+
+#: xml/ref/insert.xml:292(para)
+msgid "The optional <literal>ON CONFLICT</literal>clause specifies an alternative action to raising a unique violation or exclusion constraint violation error. For each individual row proposed for insertion, either the insertion proceeds, or, if an <emphasis>arbiter</emphasis>constraint or index specified by <parameter>conflict_target</parameter>is violated, the alternative <parameter>conflict_action</parameter>is taken. <literal>ON CONFLICT DO NOTHING</literal>simply avoids inserting a row as its alternative action. <literal>ON CONFLICT DO UPDATE</literal>updates the existing row that conflicts with the row proposed for insertion as its alternative action."
+msgstr ""
+
+#: xml/ref/insert.xml:306(para)
+msgid "<parameter>conflict_target</parameter>can perform <emphasis>unique index inference</emphasis>. When performing inference, it consists of one or more <replaceable class=\"PARAMETER\"> index_column_name</replaceable>columns and/or <replaceable class=\"PARAMETER\"> index_expression</replaceable>expressions, and an optional <replaceable class=\"PARAMETER\">index_predicate</replaceable>. All <replaceable class=\"PARAMETER\">table_name</replaceable>unique indexes that, without regard to order, contain exactly the <parameter>conflict_target</parameter>-specified columns/expressions are inferred (chosen) as arbiter indexes. If an <replaceable class=\"PARAMETER\"> index_predicate</replaceable>is specified, it must, as a further requirement for inference, satisfy arbiter indexes. Note that this means a non-partial unique index (a unique index without a predicate) will be inferred (and thus used by <literal>ON CONFLICT</literal>) if such an index satisfying every other criteria is available. If an attempt at inference is unsuccessful, an error is raised."
+msgstr ""
+
+#: xml/ref/insert.xml:330(para)
+msgid "<literal>ON CONFLICT DO UPDATE</literal>guarantees an atomic <command>INSERT</command>or <command>UPDATE</command>outcome; provided there is no independent error, one of those two outcomes is guaranteed, even under high concurrency. This is also known as <firstterm>UPSERT</firstterm><quote>UPDATE or INSERT</quote>."
+msgstr ""
+
+#: xml/ref/insert.xml:345(para)
+msgid "Specifies which conflicts <literal>ON CONFLICT</literal>takes the alternative action on by choosing <firstterm>arbiter indexes</firstterm>. Either performs <emphasis>unique index inference</emphasis>, or names a constraint explicitly. For <literal>ON CONFLICT DO NOTHING</literal>, it is optional to specify a <parameter>conflict_target</parameter>; when omitted, conflicts with all usable constraints (and unique indexes) are handled. For <literal>ON CONFLICT DO UPDATE</literal>, a <parameter>conflict_target</parameter><emphasis>must</emphasis>be provided."
+msgstr ""
+
+#: xml/ref/insert.xml:368(para)
+msgid "<parameter>conflict_action</parameter>specifies an alternative <literal>ON CONFLICT</literal>action. It can be either <literal>DO NOTHING</literal>, or a <literal>DO UPDATE</literal>clause specifying the exact details of the <literal>UPDATE</literal>action to be performed in case of a conflict. The <literal>SET</literal>and <literal>WHERE</literal>clauses in <literal>ON CONFLICT DO UPDATE</literal>have access to the existing row using the table's name (or an alias), and to rows proposed for insertion using the special <varname>excluded</varname>table. <literal>SELECT</literal>privilege is required on any column in the target table where corresponding <varname>excluded</varname>columns are read."
+msgstr ""
+
+#: xml/ref/insert.xml:386(para)
+msgid "Note that the effects of all per-row <literal>BEFORE INSERT</literal>triggers are reflected in <varname>excluded</varname>values, since those effects may have contributed to the row being excluded from insertion."
+msgstr ""
+
+#: xml/ref/insert.xml:400(para)
+msgid "The name of a <replaceable class=\"PARAMETER\"> table_name</replaceable>column. Used to infer arbiter indexes. Follows <command>CREATE INDEX</command>format. <literal>SELECT</literal>privilege on <replaceable class=\"PARAMETER\"> index_column_name</replaceable>is required."
+msgstr ""
+
+#: xml/ref/insert.xml:416(para)
+msgid "Similar to <replaceable class=\"PARAMETER\"> index_column_name</replaceable>, but used to infer expressions on <replaceable class=\"PARAMETER\"> table_name</replaceable>columns appearing within index definitions (not simple columns). Follows <command>CREATE INDEX</command>format. <literal>SELECT</literal>privilege on any column appearing within <replaceable class=\"PARAMETER\"> index_expression</replaceable>is required."
+msgstr ""
+
+#: xml/ref/insert.xml:435(para)
+msgid "When specified, mandates that corresponding <replaceable class=\"PARAMETER\"> index_column_name</replaceable>or <replaceable class=\"PARAMETER\"> index_expression</replaceable>use a particular collation in order to be matched during inference. Typically this is omitted, as collations usually do not affect whether or not a constraint violation occurs. Follows <command>CREATE INDEX</command>format."
+msgstr ""
+
+#: xml/ref/insert.xml:452(para)
+msgid "When specified, mandates that corresponding <replaceable class=\"PARAMETER\"> index_column_name</replaceable>or <replaceable class=\"PARAMETER\"> index_expression</replaceable>use particular operator class in order to be matched during inference. Typically this is omitted, as the <emphasis>equality</emphasis>semantics are often equivalent across a type's operator classes anyway, or because it's sufficient to trust that the defined unique indexes have the pertinent definition of equality. Follows <command>CREATE INDEX</command>format."
+msgstr ""
+
+#: xml/ref/insert.xml:473(para)
+msgid "Used to allow inference of partial unique indexes. Any indexes that satisfy the predicate (which need not actually be partial indexes) can be inferred. Follows <command>CREATE INDEX</command>format. <literal>SELECT</literal>privilege on any column appearing within <replaceable class=\"PARAMETER\"> index_predicate</replaceable>is required."
+msgstr ""
+
+#: xml/ref/insert.xml:490(para)
+msgid "Explicitly specifies an arbiter <emphasis>constraint</emphasis>by name, rather than inferring a constraint or index."
+msgstr ""
+
+#: xml/ref/insert.xml:500(para)
+msgid "An expression that returns a value of type <type>boolean</type>. Only rows for which this expression returns <literal>true</literal>will be updated, although all rows will be locked when the <literal>ON CONFLICT DO UPDATE</literal>action is taken. Note that <replaceable>condition</replaceable>is evaluated last, after a conflict has been identified as a candidate to update."
+msgstr ""
+
+#: xml/ref/insert.xml:513(para)
+msgid "Note that exclusion constraints are not supported as arbiters with <literal>ON CONFLICT DO UPDATE</literal>. In all cases, only <literal>NOT DEFERRABLE</literal>constraints and unique indexes are supported as arbiters."
+msgstr ""
+
+#: xml/ref/insert.xml:518(para)
+msgid "<command>INSERT</command>with an <literal>ON CONFLICT DO UPDATE</literal>clause is a <quote>deterministic</quote>statement. This means that the command will not be allowed to affect any single existing row more than once; a cardinality violation error will be raised when this situation arises. Rows proposed for insertion should not duplicate each other in terms of attributes constrained by an arbiter index or constraint."
+msgstr ""
+
+#: xml/ref/insert.xml:528(para)
+msgid "It is often preferable to use unique index inference rather than naming a constraint directly using <literal>ON CONFLICT ON CONSTRAINT</literal><replaceable class=\"PARAMETER\"> constraint_name</replaceable>. Inference will continue to work correctly when the underlying index is replaced by another more or less equivalent index in an overlapping way, for example when using <literal>CREATE UNIQUE INDEX ... CONCURRENTLY</literal>before dropping the index being replaced."
+msgstr ""
+
+#: xml/ref/insert.xml:543(title)
+msgid "Outputs"
+msgstr ""
+
+#: xml/ref/insert.xml:544(para)
+msgid "On successful completion, an <command>INSERT</command>command returns a command tag of the form <screen>INSERT \n    <replaceable>oid</replaceable>\n    <replaceable class=\"parameter\">count</replaceable></screen>The <replaceable class=\"parameter\">count</replaceable>is the number of rows inserted or updated. If <replaceable class=\"parameter\">count</replaceable>is exactly one, and the target table has OIDs, then <replaceable class=\"parameter\">oid</replaceable>is the <acronym>OID</acronym>assigned to the inserted row. The single row must have been inserted rather than updated. Otherwise <replaceable class=\"parameter\">oid</replaceable>is zero."
+msgstr ""
+
+#: xml/ref/insert.xml:558(para)
+msgid "If the <command>INSERT</command>command contains a <literal>RETURNING</literal>clause, the result will be similar to that of a <command>SELECT</command>statement containing the columns and values defined in the <literal>RETURNING</literal>list, computed over the row(s) inserted or updated by the command."
+msgstr ""
+
+#: xml/ref/insert.xml:568(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/insert.xml:571(programlisting)
+#, no-wrap
+msgid "INSERT INTO films VALUES ('UA502', 'Bananas',\n    105, '1971-07-13', 'Comedy', '82\n    minutes');"
+msgstr ""
+
+#: xml/ref/insert.xml:569(para)
+msgid "Insert a single row into table <literal>films</literal>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/insert.xml:577(programlisting)
+#, no-wrap
+msgid "INSERT INTO films (code, title, did, date_prod,\n    kind) VALUES ('T_601', 'Yojimbo', 106, '1961-06-16',\n    'Drama');"
+msgstr ""
+
+#: xml/ref/insert.xml:574(para)
+msgid "In this example, the <literal>len</literal>column is omitted and therefore it will have the default value: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/insert.xml:583(programlisting)
+#, no-wrap
+msgid "INSERT INTO films VALUES ('UA502', 'Bananas',\n    105, DEFAULT, 'Comedy', '82 minutes'); INSERT INTO films (code,\n    title, did, date_prod, kind) VALUES ('T_601', 'Yojimbo', 106,\n    DEFAULT, 'Drama');"
+msgstr ""
+
+#: xml/ref/insert.xml:580(para)
+msgid "This example uses the <literal>DEFAULT</literal>clause for the date columns rather than specifying a value: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/insert.xml:588(programlisting)
+#, no-wrap
+msgid "INSERT INTO films DEFAULT\n    VALUES;"
+msgstr ""
+
+#: xml/ref/insert.xml:587(para)
+msgid "To insert a row consisting entirely of default values: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/insert.xml:592(programlisting)
+#, no-wrap
+msgid "INSERT INTO films (code, title, did, date_prod,\n    kind) VALUES ('B6717', 'Tampopo', 110, '1985-02-10', 'Comedy'),\n    ('HG120', 'The Dinner Game', 140, DEFAULT,\n    'Comedy');"
+msgstr ""
+
+#: xml/ref/insert.xml:590(para)
+msgid "To insert multiple rows using the multirow <command>VALUES</command>syntax: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/insert.xml:600(programlisting)
+#, no-wrap
+msgid "INSERT INTO films SELECT * FROM tmp_films WHERE\n    date_prod '2004-05-07';"
+msgstr ""
+
+#: xml/ref/insert.xml:596(para)
+msgid "This example inserts some rows into table <literal>films</literal>from a table <literal>tmp_films</literal>with the same column layout as <literal>films</literal>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/insert.xml:603(programlisting)
+#, no-wrap
+msgid "-- Create an empty 3x3 gameboard for\n    noughts-and-crosses INSERT INTO tictactoe (game,\n    board[1:3][1:3]) VALUES (1, '{{\" \",\" \",\" \"},{\" \",\" \",\" \"},{\"\n    \",\" \",\" \"}}'); -- The subscripts in the above example aren't\n    really needed INSERT INTO tictactoe (game, board) VALUES (2,\n    '{{X,\" \",\" \"},{\" \",O,\" \"},{\" \",X,\"\n    \"}}');"
+msgstr ""
+
+#: xml/ref/insert.xml:602(para)
+msgid "This example inserts into array columns: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/insert.xml:614(programlisting)
+#, no-wrap
+msgid "INSERT INTO distributors (did, dname) VALUES\n    (DEFAULT, 'XYZ Widgets') RETURNING did;"
+msgstr ""
+
+#: xml/ref/insert.xml:610(para)
+msgid "Insert a single row into table <literal>distributors</literal>, returning the sequence number generated by the <literal>DEFAULT</literal>clause: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/insert.xml:619(programlisting)
+#, no-wrap
+msgid "WITH upd AS ( UPDATE employees SET sales_count\n    = sales_count + 1 WHERE id = (SELECT sales_person FROM accounts\n    WHERE name = 'Acme Corporation') RETURNING * ) INSERT INTO\n    employees_log SELECT *, current_timestamp FROM\n    upd;"
+msgstr ""
+
+#: xml/ref/insert.xml:616(para)
+msgid "Increment the sales count of the salesperson who manages the account for Acme Corporation, and record the whole updated row along with current time in a log table: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/insert.xml:630(programlisting)
+#, no-wrap
+msgid "INSERT INTO distributors (did, dname) VALUES\n    (5, 'Gizmo Transglobal'), (6, 'Associated Computing, Inc') ON\n    CONFLICT (did) DO UPDATE SET dname =\n    EXCLUDED.dname;"
+msgstr ""
+
+#: xml/ref/insert.xml:624(para)
+msgid "Insert or update new distributors as appropriate. Assumes a unique index has been defined that constrains values appearing in the <literal>did</literal>column. Note that the special <varname>excluded</varname>table is used to reference values originally proposed for insertion: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/insert.xml:640(programlisting)
+#, no-wrap
+msgid "INSERT INTO distributors (did, dname) VALUES\n    (7, 'Redline GmbH') ON CONFLICT (did) DO\n    NOTHING;"
+msgstr ""
+
+#: xml/ref/insert.xml:634(para)
+msgid "Insert a distributor, or do nothing for rows proposed for insertion when an existing, excluded row (a row with a matching constrained column or columns after before row insert triggers fire) exists. Example assumes a unique index has been defined that constrains values appearing in the <literal>did</literal>column: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/insert.xml:650(programlisting)
+#, no-wrap
+msgid "-- Don't update existing distributors based in\n    a certain ZIP code INSERT INTO distributors AS d (did, dname)\n    VALUES (8, 'Anvil Distribution') ON CONFLICT (did) DO UPDATE\n    SET dname = EXCLUDED.dname || ' (formerly ' || d.dname || ')'\n    WHERE d.zipcode '21201'; -- Name a constraint directly in the\n    statement (uses associated -- index to arbitrate taking the DO\n    NOTHING action) INSERT INTO distributors (did, dname) VALUES\n    (9, 'Antwerp Design') ON CONFLICT ON CONSTRAINT\n    distributors_pkey DO NOTHING;"
+msgstr ""
+
+#: xml/ref/insert.xml:643(para)
+msgid "Insert or update new distributors as appropriate. Example assumes a unique index has been defined that constrains values appearing in the <literal>did</literal>column. <literal>WHERE</literal>clause is used to limit the rows actually updated (any existing row not updated will still be locked, though): <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/insert.xml:665(programlisting)
+#, no-wrap
+msgid "-- This statement could infer a partial unique\n    index on \"did\" -- with a predicate of \"WHERE is_active\", but it\n    could also -- just use a regular unique constraint on \"did\"\n    INSERT INTO distributors (did, dname) VALUES (10, 'Conrad\n    International') ON CONFLICT (did) WHERE is_active DO\n    NOTHING;"
+msgstr ""
+
+#: xml/ref/insert.xml:659(para)
+msgid "Insert new distributor if possible; otherwise <literal>DO NOTHING</literal>. Example assumes a unique index has been defined that constrains values appearing in the <literal>did</literal>column on a subset of rows where the <literal>is_active</literal>Boolean column evaluates to <literal>true</literal>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/insert.xml:673(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/insert.xml:674(para)
+msgid "<command>INSERT</command>conforms to the SQL standard, except that the <literal>RETURNING</literal>clause is a <productname>PostgreSQL</productname>extension, as is the ability to use <literal>WITH</literal>with <command>INSERT</command>, and the ability to specify an alternative action with <literal>ON CONFLICT</literal>. Also, the case in which a column name list is omitted, but not all the columns are filled from the <literal>VALUES</literal>clause or <replaceable>query</replaceable>, is disallowed by the standard."
+msgstr ""
+
+#: xml/ref/insert.xml:689(para)
+msgid "Possible limitations of the <replaceable class=\"PARAMETER\">query</replaceable>clause are documented under <xref linkend=\"sql-select\">.</xref>"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/insert.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

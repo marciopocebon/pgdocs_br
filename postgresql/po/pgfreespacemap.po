@@ -1,0 +1,81 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/pgfreespacemap.xml:3(title) xml/pgfreespacemap.xml:5(primary)
+msgid "pg_freespacemap"
+msgstr ""
+
+#: xml/pgfreespacemap.xml:7(para)
+msgid "The <filename>pg_freespacemap</filename>module provides a means for examining the free space map (FSM). It provides a function called <function>pg_freespace</function>, or two overloaded functions, to be precise. The functions show the value recorded in the free space map for a given page, or for all pages in the relation."
+msgstr ""
+
+#: xml/pgfreespacemap.xml:15(para)
+msgid "By default public access is revoked from the functions, just in case there are security issues lurking."
+msgstr ""
+
+#: xml/pgfreespacemap.xml:18(title)
+msgid "Functions"
+msgstr ""
+
+#: xml/pgfreespacemap.xml:22(function)
+msgid "pg_freespace(rel regclass IN, blkno bigint IN) returns int2"
+msgstr ""
+
+#: xml/pgfreespacemap.xml:25(primary)
+msgid "pg_freespace"
+msgstr ""
+
+#: xml/pgfreespacemap.xml:29(para)
+msgid "Returns the amount of free space on the page of the relation, specified by <literal>blkno</literal>, according to the FSM."
+msgstr ""
+
+#: xml/pgfreespacemap.xml:36(function)
+msgid "pg_freespace(rel regclass IN, blkno OUT bigint, avail OUT int2)"
+msgstr ""
+
+#: xml/pgfreespacemap.xml:40(para)
+msgid "Displays the amount of free space on each page of the relation, according to the FSM. A set of <literal>(blkno bigint, avail int2)</literal>tuples is returned, one tuple for each page in the relation."
+msgstr ""
+
+#: xml/pgfreespacemap.xml:47(para)
+msgid "The values stored in the free space map are not exact. They're rounded to precision of 1/256th of <symbol>BLCKSZ</symbol>(32 bytes with default <symbol>BLCKSZ</symbol>), and they're not kept fully up-to-date as tuples are inserted and updated."
+msgstr ""
+
+#: xml/pgfreespacemap.xml:52(para)
+msgid "For indexes, what is tracked is entirely-unused pages, rather than free space within pages. Therefore, the values are not meaningful, just whether a page is full or empty."
+msgstr ""
+
+#: xml/pgfreespacemap.xml:56(para)
+msgid "The interface was changed in version 8.4, to reflect the new FSM implementation introduced in the same version."
+msgstr ""
+
+#: xml/pgfreespacemap.xml:62(title)
+msgid "Sample Output"
+msgstr ""
+
+#: xml/pgfreespacemap.xml:63(screen)
+#, no-wrap
+msgid "postgres=# SELECT * FROM pg_freespace('foo'); blkno |\n    avail -------+------- 0 | 0 1 | 0 2 | 0 3 | 32 4 | 704 5 | 704\n    6 | 704 7 | 1216 8 | 704 9 | 704 10 | 704 11 | 704 12 | 704 13\n    | 704 14 | 704 15 | 704 16 | 704 17 | 704 18 | 704 19 | 3648\n    (20 rows) postgres=# SELECT * FROM pg_freespace('foo', 7);\n    pg_freespace -------------- 1216 (1 row)"
+msgstr ""
+
+#: xml/pgfreespacemap.xml:71(title)
+msgid "Author"
+msgstr ""
+
+#: xml/pgfreespacemap.xml:72(para)
+msgid "Original version by Mark Kirkwood <email>markir@paradise.net.nz</email>. Rewritten in version 8.4 to suit new FSM implementation by Heikki Linnakangas <email>heikki@enterprisedb.com</email>"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/pgfreespacemap.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

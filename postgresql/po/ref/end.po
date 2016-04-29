@@ -1,0 +1,98 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/end.xml:4(primary) xml/ref/end.xml:7(refentrytitle) xml/ref/end.xml:12(refname)
+msgid "END"
+msgstr ""
+
+#: xml/ref/end.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/end.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/end.xml:13(refpurpose)
+msgid "commit the current transaction"
+msgstr ""
+
+#: xml/ref/end.xml:16(synopsis)
+#, no-wrap
+msgid "END [ WORK | TRANSACTION ]"
+msgstr ""
+
+#: xml/ref/end.xml:19(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/end.xml:20(para)
+msgid "<command>END</command>commits the current transaction. All changes made by the transaction become visible to others and are guaranteed to be durable if a crash occurs. This command is a <productname>PostgreSQL</productname>extension that is equivalent to <xref linkend=\"sql-commit\">.</xref>"
+msgstr ""
+
+#: xml/ref/end.xml:30(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/end.xml:34(literal)
+msgid "WORK"
+msgstr ""
+
+#: xml/ref/end.xml:37(literal)
+msgid "TRANSACTION"
+msgstr ""
+
+#: xml/ref/end.xml:40(para)
+msgid "Optional key words. They have no effect."
+msgstr ""
+
+#: xml/ref/end.xml:46(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/end.xml:47(para)
+msgid "Use <xref linkend=\"SQL-ROLLBACK\">to abort a transaction.</xref>"
+msgstr ""
+
+#: xml/ref/end.xml:50(para)
+msgid "Issuing <command>END</command>when not inside a transaction does no harm, but it will provoke a warning message."
+msgstr ""
+
+#: xml/ref/end.xml:55(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/end.xml:58(programlisting)
+#, no-wrap
+msgid "END;"
+msgstr ""
+
+#: xml/ref/end.xml:56(para)
+msgid "To commit the current transaction and make all changes permanent: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/end.xml:61(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/end.xml:62(para)
+msgid "<command>END</command>is a <productname>PostgreSQL</productname>extension that provides functionality equivalent to <xref linkend=\"sql-commit\">, which is specified in the SQL standard.</xref>"
+msgstr ""
+
+#: xml/ref/end.xml:70(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/end.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

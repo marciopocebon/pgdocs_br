@@ -1,0 +1,66 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/btree-gist.xml:3(title) xml/btree-gist.xml:5(primary)
+msgid "btree_gist"
+msgstr ""
+
+#: xml/btree-gist.xml:7(para)
+msgid "<filename>btree_gist</filename>provides GiST index operator classes that implement B-tree equivalent behavior for the data types <type>int2</type>, <type>int4</type>, <type>int8</type>, <type>float4</type>, <type>float8</type>, <type>numeric</type>, <type>timestamp with time zone</type>, <type>timestamp without time zone</type>, <type>time with time zone</type>, <type>time without time zone</type>, <type>date</type>, <type>interval</type>, <type>oid</type>, <type>money</type>, <type>char</type>, <type>varchar</type>, <type>text</type>, <type>bytea</type>, <type>bit</type>, <type>varbit</type>, <type>macaddr</type>, <type>inet</type>, and <type>cidr</type>."
+msgstr ""
+
+#: xml/btree-gist.xml:34(para)
+msgid "In general, these operator classes will not outperform the equivalent standard B-tree index methods, and they lack one major feature of the standard B-tree code: the ability to enforce uniqueness. However, they provide some other features that are not available with a B-tree index, as described below. Also, these operator classes are useful when a multicolumn GiST index is needed, wherein some of the columns are of data types that are only indexable with GiST but other columns are just simple data types. Lastly, these operator classes are useful for GiST testing and as a base for developing other GiST operator classes."
+msgstr ""
+
+#: xml/btree-gist.xml:44(para)
+msgid "In addition to the typical B-tree search operators, <filename>btree_gist</filename>also provides index support for <literal/>( <quote>not equals</quote>). This may be useful in combination with an <link linkend=\"SQL-CREATETABLE-EXCLUDE\">exclusion constraint</link>, as described below."
+msgstr ""
+
+#: xml/btree-gist.xml:51(para)
+msgid "Also, for data types for which there is a natural distance metric, <filename>btree_gist</filename>defines a distance operator <literal>-</literal>, and provides GiST index support for nearest-neighbor searches using this operator. Distance operators are provided for <type>int2</type>, <type>int4</type>, <type>int8</type>, <type>float4</type>, <type>float8</type>, <type>timestamp with time zone</type>, <type>timestamp without time zone</type>, <type>time without time zone</type>, <type>date</type>, <type>interval</type>, <type>oid</type>, and <type>money</type>."
+msgstr ""
+
+#: xml/btree-gist.xml:70(title)
+msgid "Example Usage"
+msgstr ""
+
+#: xml/btree-gist.xml:71(para)
+msgid "Simple example using <literal>btree_gist</literal>instead of <literal>btree</literal>:"
+msgstr ""
+
+#: xml/btree-gist.xml:74(programlisting)
+#, no-wrap
+msgid "CREATE TABLE test (a int4); -- create index\n    CREATE INDEX testidx ON test USING GIST (a); -- query SELECT *\n    FROM test WHERE a 10; -- nearest-neighbor search: find the ten\n    entries closest to \"42\" SELECT *, a - 42 AS dist FROM test\n    ORDER BY a - 42 LIMIT 10;"
+msgstr ""
+
+#: xml/btree-gist.xml:79(para)
+msgid "Use an <link linkend=\"SQL-CREATETABLE-EXCLUDE\">exclusion constraint</link>to enforce the rule that a cage at a zoo can contain only one kind of animal:"
+msgstr ""
+
+#: xml/btree-gist.xml:83(programlisting)
+#, no-wrap
+msgid "= CREATE TABLE zoo ( cage INTEGER, animal TEXT,\n    EXCLUDE USING GIST (cage WITH =, animal WITH ) ); = INSERT INTO\n    zoo VALUES(123, 'zebra'); INSERT 0 1 = INSERT INTO zoo\n    VALUES(123, 'zebra'); INSERT 0 1 = INSERT INTO zoo VALUES(123,\n    'lion'); ERROR: conflicting key value violates exclusion\n    constraint \"zoo_cage_animal_excl\" DETAIL: Key (cage,\n    animal)=(123, lion) conflicts with existing key (cage,\n    animal)=(123, zebra). = INSERT INTO zoo VALUES(124, 'lion');\n    INSERT 0 1"
+msgstr ""
+
+#: xml/btree-gist.xml:94(title)
+msgid "Authors"
+msgstr ""
+
+#: xml/btree-gist.xml:95(para)
+msgid "Teodor Sigaev ( <email>teodor@stack.net</email>) , Oleg Bartunov ( <email>oleg@sai.msu.su</email>), and Janko Richter ( <email>jankorichter@yahoo.de</email>). See <placeholder-1/>for additional information."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/btree-gist.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

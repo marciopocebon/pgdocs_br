@@ -1,0 +1,264 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/create_table_as.xml:4(primary) xml/ref/create_table_as.xml:7(refentrytitle) xml/ref/create_table_as.xml:12(refname)
+msgid "CREATE TABLE AS"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:13(refpurpose)
+msgid "define a new table from the results of a query"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:19(replaceable) xml/ref/create_table_as.xml:102(replaceable)
+msgid "table_name"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:20(replaceable) xml/ref/create_table_as.xml:111(replaceable)
+msgid "column_name"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:21(replaceable) xml/ref/create_table_as.xml:122(replaceable)
+msgid "storage_parameter"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:23(replaceable) xml/ref/create_table_as.xml:124(replaceable)
+msgid "value"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:26(replaceable) xml/ref/create_table_as.xml:206(replaceable)
+msgid "tablespace_name"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:28(replaceable) xml/ref/create_table_as.xml:222(replaceable)
+msgid "query"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:17(synopsis)
+#, no-wrap
+msgid "CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } |\n    UNLOGGED ] TABLE [ IF NOT EXISTS ] \n    <placeholder-1/>[ ( \n    <placeholder-2/>[, ...] ) ] [ WITH ( \n    <placeholder-3/>[= \n    <placeholder-4/>] [, ... ] )\n    | WITH OIDS | WITHOUT OIDS ] [ ON COMMIT { PRESERVE ROWS |\n    DELETE ROWS | DROP } ] [ TABLESPACE \n    <placeholder-5/>]\n    AS \n    <placeholder-6/>[ WITH [ NO ] DATA ]"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:31(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:32(para)
+msgid "<command>CREATE TABLE AS</command>creates a table and fills it with data computed by a <command>SELECT</command>command. The table columns have the names and data types associated with the output columns of the <command>SELECT</command>(except that you can override the column names by giving an explicit list of new column names)."
+msgstr ""
+
+#: xml/ref/create_table_as.xml:40(para)
+msgid "<command>CREATE TABLE AS</command>bears some resemblance to creating a view, but it is really quite different: it creates a new table and evaluates the query just once to fill the new table initially. The new table will not track subsequent changes to the source tables of the query. In contrast, a view re-evaluates its defining <command>SELECT</command>statement whenever it is queried."
+msgstr ""
+
+#: xml/ref/create_table_as.xml:51(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:54(term)
+msgid "<literal>GLOBAL</literal>or <literal>LOCAL</literal>"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:58(para)
+msgid "Ignored for compatibility. Use of these keywords is deprecated; refer to <xref linkend=\"sql-createtable\">for details.</xref>"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:67(term)
+msgid "<literal>TEMPORARY</literal>or <literal>TEMP</literal>"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:71(para)
+msgid "If specified, the table is created as a temporary table. Refer to <xref linkend=\"sql-createtable\">for details.</xref>"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:79(literal)
+msgid "UNLOGGED"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:82(para)
+msgid "If specified, the table is created as an unlogged table. Refer to <xref linkend=\"sql-createtable\">for details.</xref>"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:90(literal)
+msgid "IF NOT EXISTS"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:93(para)
+msgid "Do not throw an error if a relation with the same name already exists. A notice is issued in this case. Refer to <xref linkend=\"sql-createtable\">for details.</xref>"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:105(para)
+msgid "The name (optionally schema-qualified) of the table to be created."
+msgstr ""
+
+#: xml/ref/create_table_as.xml:114(para)
+msgid "The name of a column in the new table. If column names are not provided, they are taken from the output column names of the query."
+msgstr ""
+
+#: xml/ref/create_table_as.xml:121(literal)
+msgid "WITH ( <placeholder-1/>[= <placeholder-2/>] [, ... ] )"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:128(para)
+msgid "This clause specifies optional storage parameters for the new table; see <xref linkend=\"sql-createtable-storage-parameters\" endterm=\"sql-createtable-storage-parameters-title\">for more information. The <literal>WITH</literal>clause can also include <literal>OIDS=TRUE</literal>(or just <literal>OIDS</literal>) to specify that rows of the new table should have OIDs (object identifiers) assigned to them, or <literal>OIDS=FALSE</literal>to specify that the rows should not have OIDs. See <xref linkend=\"sql-createtable\">for more information.</xref></xref>"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:146(literal)
+msgid "WITH OIDS"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:149(literal)
+msgid "WITHOUT OIDS"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:152(para)
+msgid "These are obsolescent syntaxes equivalent to <literal>WITH (OIDS)</literal>and <literal>WITH (OIDS=FALSE)</literal>, respectively. If you wish to give both an <literal>OIDS</literal>setting and storage parameters, you must use the <literal>WITH ( ... )</literal>syntax; see above."
+msgstr ""
+
+#: xml/ref/create_table_as.xml:163(literal)
+msgid "ON COMMIT"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:172(literal)
+msgid "PRESERVE ROWS"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:175(para)
+msgid "No special action is taken at the ends of transactions. This is the default behavior."
+msgstr ""
+
+#: xml/ref/create_table_as.xml:181(literal)
+msgid "DELETE ROWS"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:184(para)
+msgid "All rows in the temporary table will be deleted at the end of each transaction block. Essentially, an automatic <xref linkend=\"sql-truncate\">is done at each commit.</xref>"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:193(literal)
+msgid "DROP"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:196(para)
+msgid "The temporary table will be dropped at the end of the current transaction block."
+msgstr ""
+
+#: xml/ref/create_table_as.xml:166(para)
+msgid "The behavior of temporary tables at the end of a transaction block can be controlled using <literal>ON COMMIT</literal>. The three options are: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:205(literal)
+msgid "TABLESPACE <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:210(para)
+msgid "The <replaceable class=\"PARAMETER\"> tablespace_name</replaceable>is the name of the tablespace in which the new table is to be created. If not specified, <xref linkend=\"guc-default-tablespace\">is consulted, or <xref linkend=\"guc-temp-tablespaces\">if the table is temporary.</xref></xref>"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:225(para)
+msgid "A <xref linkend=\"sql-select\">, <link linkend=\"sql-table\">TABLE</link>, or <xref linkend=\"sql-values\">command, or an <xref linkend=\"sql-execute\">command that runs a prepared <command>SELECT</command>, <command>TABLE</command>, or <command> VALUES</command>query.</xref></xref></xref>"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:238(literal)
+msgid "WITH [ NO ] DATA"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:241(para)
+msgid "This clause specifies whether or not the data produced by the query should be copied into the new table. If not, only the table structure is copied. The default is to copy the data."
+msgstr ""
+
+#: xml/ref/create_table_as.xml:250(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:251(para)
+msgid "This command is functionally similar to <xref linkend=\"sql-selectinto\">, but it is preferred since it is less likely to be confused with other uses of the <command>SELECT INTO</command>syntax. Furthermore, <command>CREATE TABLE AS</command>offers a superset of the functionality offered by <command>SELECT INTO</command>.</xref>"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:258(para)
+msgid "The <command>CREATE TABLE AS</command>command allows the user to explicitly specify whether OIDs should be included. If the presence of OIDs is not explicitly specified, the <xref linkend=\"guc-default-with-oids\">configuration variable is used.</xref>"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:266(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:271(programlisting)
+#, no-wrap
+msgid "CREATE TABLE films_recent AS SELECT * FROM\n    films WHERE date_prod = '2002-01-01';"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:267(para)
+msgid "Create a new table <literal>films_recent</literal>consisting of only recent entries from the table <literal>films</literal>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:275(programlisting)
+#, no-wrap
+msgid "CREATE TABLE films2 AS TABLE\n    films;"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:273(para)
+msgid "To copy a table completely, the short form using the <literal>TABLE</literal>command can also be used: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:282(programlisting)
+#, no-wrap
+msgid "PREPARE recentfilms(date) AS SELECT * FROM\n    films WHERE date_prod $1; CREATE TEMP TABLE films_recent WITH\n    (OIDS) ON COMMIT DROP AS EXECUTE\n    recentfilms('2002-01-01');"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:277(para)
+msgid "Create a new temporary table <literal>films_recent</literal>, consisting of only recent entries from the table <literal>films</literal>, using a prepared statement. The new table has OIDs and will be dropped at commit: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:288(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:295(para)
+msgid "The standard requires parentheses around the subquery clause; in <productname>PostgreSQL</productname>, these parentheses are optional."
+msgstr ""
+
+#: xml/ref/create_table_as.xml:301(para)
+msgid "In the standard, the <literal>WITH [ NO ] DATA</literal>clause is required; in PostgreSQL it is optional."
+msgstr ""
+
+#: xml/ref/create_table_as.xml:306(para)
+msgid "<productname>PostgreSQL</productname>handles temporary tables in a way rather different from the standard; see <xref linkend=\"sql-createtable\">for details.</xref>"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:312(para)
+msgid "The <literal>WITH</literal>clause is a <productname>PostgreSQL</productname>extension; neither storage parameters nor OIDs are in the standard."
+msgstr ""
+
+#: xml/ref/create_table_as.xml:318(para)
+msgid "The <productname>PostgreSQL</productname>concept of tablespaces is not part of the standard. Hence, the clause <literal>TABLESPACE</literal>is an extension."
+msgstr ""
+
+#: xml/ref/create_table_as.xml:289(para)
+msgid "<command>CREATE TABLE AS</command>conforms to the <acronym>SQL</acronym>standard. The following are nonstandard extensions: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_table_as.xml:326(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/create_table_as.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

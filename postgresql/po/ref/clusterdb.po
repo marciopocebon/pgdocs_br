@@ -1,0 +1,312 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/clusterdb.xml:4(primary) xml/ref/clusterdb.xml:8(application) xml/ref/clusterdb.xml:14(refname) xml/ref/clusterdb.xml:20(command) xml/ref/clusterdb.xml:50(command)
+msgid "clusterdb"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:10(manvolnum)
+msgid "1"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:11(refmiscinfo)
+msgid "Application"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:16(productname)
+msgid "PostgreSQL"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:15(refpurpose)
+msgid "cluster a <placeholder-1/>database"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:22(replaceable) xml/ref/clusterdb.xml:52(replaceable)
+msgid "connection-option"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:26(option) xml/ref/clusterdb.xml:56(option) xml/ref/clusterdb.xml:175(option)
+msgid "--verbose"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:29(option) xml/ref/clusterdb.xml:59(option) xml/ref/clusterdb.xml:172(option)
+msgid "-v"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:36(option)
+msgid "--table"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:39(option)
+msgid "-t"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:42(replaceable) xml/ref/clusterdb.xml:155(replaceable) xml/ref/clusterdb.xml:160(replaceable)
+msgid "table"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:46(replaceable) xml/ref/clusterdb.xml:109(replaceable) xml/ref/clusterdb.xml:115(replaceable) xml/ref/clusterdb.xml:305(replaceable)
+msgid "dbname"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:64(option) xml/ref/clusterdb.xml:99(option)
+msgid "--all"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:67(option) xml/ref/clusterdb.xml:96(option)
+msgid "-a"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:73(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:74(para)
+msgid "<application>clusterdb</application>is a utility for reclustering tables in a <productname>PostgreSQL</productname>database. It finds tables that have previously been clustered, and clusters them again on the same index that was last used. Tables that have never been clustered are not affected."
+msgstr ""
+
+#: xml/ref/clusterdb.xml:81(para)
+msgid "<application>clusterdb</application>is a wrapper around the SQL command <xref linkend=\"SQL-CLUSTER\">. There is no effective difference between clustering databases via this utility and via other methods for accessing the server.</xref>"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:89(title)
+msgid "Options"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:102(para)
+msgid "Cluster all databases."
+msgstr ""
+
+#: xml/ref/clusterdb.xml:108(optional)
+msgid "-d"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:114(optional)
+msgid "--dbname="
+msgstr ""
+
+#: xml/ref/clusterdb.xml:119(para)
+msgid "Specifies the name of the database to be clustered. If this is not specified and <option>-a</option>(or <option>--all</option>) is not used, the database name is read from the environment variable <envar>PGDATABASE</envar>. If that is not set, the user name specified for the connection is used."
+msgstr ""
+
+#: xml/ref/clusterdb.xml:130(option)
+msgid "-e"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:133(option)
+msgid "--echo"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:136(para)
+msgid "Echo the commands that <application>clusterdb</application>generates and sends to the server."
+msgstr ""
+
+#: xml/ref/clusterdb.xml:143(option)
+msgid "-q"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:146(option)
+msgid "--quiet"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:149(para)
+msgid "Do not display progress messages."
+msgstr ""
+
+#: xml/ref/clusterdb.xml:154(option)
+msgid "-t <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:159(option)
+msgid "--table= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:164(para)
+msgid "Cluster <replaceable class=\"parameter\">table</replaceable>only. Multiple tables can be clustered by writing multiple <option>-t</option>switches."
+msgstr ""
+
+#: xml/ref/clusterdb.xml:178(para)
+msgid "Print detailed information during processing."
+msgstr ""
+
+#: xml/ref/clusterdb.xml:184(option)
+msgid "-V"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:187(option)
+msgid "--version"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:190(para)
+msgid "Print the <application>clusterdb</application>version and exit."
+msgstr ""
+
+#: xml/ref/clusterdb.xml:197(option)
+msgid "-?"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:200(option)
+msgid "--help"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:203(para)
+msgid "Show help about <application>clusterdb</application>command line arguments, and exit."
+msgstr ""
+
+#: xml/ref/clusterdb.xml:90(para)
+msgid "<application>clusterdb</application>accepts the following command-line arguments: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:216(replaceable) xml/ref/clusterdb.xml:221(replaceable)
+msgid "host"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:215(option)
+msgid "-h <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:220(option)
+msgid "--host= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:225(para)
+msgid "Specifies the host name of the machine on which the server is running. If the value begins with a slash, it is used as the directory for the Unix domain socket."
+msgstr ""
+
+#: xml/ref/clusterdb.xml:234(replaceable) xml/ref/clusterdb.xml:239(replaceable)
+msgid "port"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:233(option)
+msgid "-p <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:238(option)
+msgid "--port= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:243(para)
+msgid "Specifies the TCP port or local Unix domain socket file extension on which the server is listening for connections."
+msgstr ""
+
+#: xml/ref/clusterdb.xml:251(replaceable) xml/ref/clusterdb.xml:256(replaceable)
+msgid "username"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:250(option)
+msgid "-U <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:255(option)
+msgid "--username= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:260(para)
+msgid "User name to connect as."
+msgstr ""
+
+#: xml/ref/clusterdb.xml:265(option)
+msgid "-w"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:268(option)
+msgid "--no-password"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:271(para)
+msgid "Never issue a password prompt. If the server requires password authentication and a password is not available by other means such as a <filename>.pgpass</filename>file, the connection attempt will fail. This option can be useful in batch jobs and scripts where no user is present to enter a password."
+msgstr ""
+
+#: xml/ref/clusterdb.xml:282(option)
+msgid "-W"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:285(option)
+msgid "--password"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:288(para)
+msgid "Force <application>clusterdb</application>to prompt for a password before connecting to a database."
+msgstr ""
+
+#: xml/ref/clusterdb.xml:291(para)
+msgid "This option is never essential, since <application>clusterdb</application>will automatically prompt for a password if the server demands password authentication. However, <application>clusterdb</application>will waste a connection attempt finding out that the server wants a password. In some cases it is worth typing <option>-W</option>to avoid the extra connection attempt."
+msgstr ""
+
+#: xml/ref/clusterdb.xml:304(option)
+msgid "--maintenance-db= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:309(para)
+msgid "Specifies the name of the database to connect to discover what other databases should be clustered. If not specified, the <literal>postgres</literal>database will be used, and if that does not exist, <literal>template1</literal>will be used."
+msgstr ""
+
+#: xml/ref/clusterdb.xml:209(para)
+msgid "<application>clusterdb</application>also accepts the following command-line arguments for connection parameters: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:320(title)
+msgid "Environment"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:324(envar)
+msgid "PGDATABASE"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:327(envar)
+msgid "PGHOST"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:330(envar)
+msgid "PGPORT"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:333(envar)
+msgid "PGUSER"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:336(para)
+msgid "Default connection parameters"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:340(para)
+msgid "This utility, like most other <productname>PostgreSQL</productname>utilities, also uses the environment variables supported by <application>libpq</application>(see <xref linkend=\"libpq-envars\">).</xref>"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:347(title)
+msgid "Diagnostics"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:348(para)
+msgid "In case of difficulty, see <xref linkend=\"SQL-CLUSTER\">and <xref linkend=\"APP-PSQL\">for discussions of potential problems and error messages. The database server must be running at the targeted host. Also, any default connection settings and environment variables used by the <application>libpq</application>front-end library will apply.</xref></xref>"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:358(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:359(para)
+msgid "To cluster the database <literal>test</literal>: <screen>\n      <prompt>$</prompt>\n      <userinput>clusterdb test</userinput>\n    </screen>"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:365(para)
+msgid "To cluster a single table <literal>foo</literal>in a database named <literal>xyzzy</literal>: <screen>\n      <prompt>$</prompt>\n      <userinput>clusterdb --table foo xyzzy</userinput>\n    </screen>"
+msgstr ""
+
+#: xml/ref/clusterdb.xml:374(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/clusterdb.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

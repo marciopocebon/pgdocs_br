@@ -1,0 +1,664 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/biblio.xml:3(title)
+msgid "Bibliography"
+msgstr ""
+
+#: xml/biblio.xml:4(para)
+msgid "Selected references and readings for <acronym>SQL</acronym>and <productname>PostgreSQL</productname>."
+msgstr ""
+
+#: xml/biblio.xml:7(para)
+msgid "Some white papers and technical reports from the original <productname>POSTGRES</productname>development team are available at the University of California, Berkeley, Computer Science Department <ulink url=\"http://db.cs.berkeley.edu/papers/\">web site</ulink>."
+msgstr ""
+
+#: xml/biblio.xml:14(title)
+msgid "<acronym>SQL</acronym>Reference Books"
+msgstr ""
+
+#: xml/biblio.xml:16(para)
+msgid "Reference texts for <acronym>SQL</acronym>features."
+msgstr ""
+
+#: xml/biblio.xml:19(title)
+msgid "The Practical <acronym>SQL</acronym>Handbook"
+msgstr ""
+
+#: xml/biblio.xml:21(titleabbrev)
+msgid "Bowman et al, 2001"
+msgstr ""
+
+#: xml/biblio.xml:22(subtitle)
+msgid "Using SQL Variants"
+msgstr ""
+
+#: xml/biblio.xml:23(edition) xml/biblio.xml:53(edition) xml/biblio.xml:96(edition)
+msgid "Fourth Edition"
+msgstr ""
+
+#: xml/biblio.xml:26(firstname)
+msgid "Judith"
+msgstr ""
+
+#: xml/biblio.xml:27(surname)
+msgid "Bowman"
+msgstr ""
+
+#: xml/biblio.xml:30(firstname)
+msgid "Sandra"
+msgstr ""
+
+#: xml/biblio.xml:31(surname)
+msgid "Emerson"
+msgstr ""
+
+#: xml/biblio.xml:34(firstname)
+msgid "Marcy"
+msgstr ""
+
+#: xml/biblio.xml:35(surname)
+msgid "Darnovsky"
+msgstr ""
+
+#: xml/biblio.xml:38(isbn)
+msgid "0-201-70309-2"
+msgstr ""
+
+#: xml/biblio.xml:39(pubdate) xml/biblio.xml:44(year)
+msgid "2001"
+msgstr ""
+
+#: xml/biblio.xml:41(publishername)
+msgid "Addison-Wesley Professional"
+msgstr ""
+
+#: xml/biblio.xml:48(title)
+msgid "A Guide to the <acronym>SQL</acronym>Standard"
+msgstr ""
+
+#: xml/biblio.xml:50(titleabbrev)
+msgid "Date and Darwen, 1997"
+msgstr ""
+
+#: xml/biblio.xml:52(acronym)
+msgid "SQL"
+msgstr ""
+
+#: xml/biblio.xml:51(subtitle)
+msgid "A user's guide to the standard database language <placeholder-1/>"
+msgstr ""
+
+#: xml/biblio.xml:56(firstname) xml/biblio.xml:80(firstname)
+msgid "C. J."
+msgstr ""
+
+#: xml/biblio.xml:57(surname) xml/biblio.xml:81(surname)
+msgid "Date"
+msgstr ""
+
+#: xml/biblio.xml:60(firstname)
+msgid "Hugh"
+msgstr ""
+
+#: xml/biblio.xml:61(surname)
+msgid "Darwen"
+msgstr ""
+
+#: xml/biblio.xml:64(isbn)
+msgid "0-201-96426-0"
+msgstr ""
+
+#: xml/biblio.xml:65(pubdate) xml/biblio.xml:70(year)
+msgid "1997"
+msgstr ""
+
+#: xml/biblio.xml:67(publishername) xml/biblio.xml:87(publishername) xml/biblio.xml:110(publishername)
+msgid "Addison-Wesley"
+msgstr ""
+
+#: xml/biblio.xml:71(holder)
+msgid "Addison-Wesley Longman, Inc."
+msgstr ""
+
+#: xml/biblio.xml:75(title)
+msgid "An Introduction to Database Systems"
+msgstr ""
+
+#: xml/biblio.xml:76(titleabbrev)
+msgid "Date, 2004"
+msgstr ""
+
+#: xml/biblio.xml:77(edition)
+msgid "Eighth Edition"
+msgstr ""
+
+#: xml/biblio.xml:84(isbn)
+msgid "0-321-19784-4"
+msgstr ""
+
+#: xml/biblio.xml:85(pubdate) xml/biblio.xml:108(pubdate)
+msgid "2003"
+msgstr ""
+
+#: xml/biblio.xml:90(year) xml/biblio.xml:113(year)
+msgid "2004"
+msgstr ""
+
+#: xml/biblio.xml:91(holder)
+msgid "Pearson Education, Inc."
+msgstr ""
+
+#: xml/biblio.xml:95(title)
+msgid "Fundamentals of Database Systems"
+msgstr ""
+
+#: xml/biblio.xml:99(firstname)
+msgid "Ramez"
+msgstr ""
+
+#: xml/biblio.xml:100(surname)
+msgid "Elmasri"
+msgstr ""
+
+#: xml/biblio.xml:103(firstname)
+msgid "Shamkant"
+msgstr ""
+
+#: xml/biblio.xml:104(surname)
+msgid "Navathe"
+msgstr ""
+
+#: xml/biblio.xml:107(isbn)
+msgid "0-321-12226-7"
+msgstr ""
+
+#: xml/biblio.xml:117(title)
+msgid "Understanding the New <acronym>SQL</acronym>"
+msgstr ""
+
+#: xml/biblio.xml:119(titleabbrev)
+msgid "Melton and Simon, 1993"
+msgstr ""
+
+#: xml/biblio.xml:120(subtitle)
+msgid "A complete guide"
+msgstr ""
+
+#: xml/biblio.xml:123(firstname)
+msgid "Jim"
+msgstr ""
+
+#: xml/biblio.xml:124(surname)
+msgid "Melton"
+msgstr ""
+
+#: xml/biblio.xml:127(firstname)
+msgid "Alan R."
+msgstr ""
+
+#: xml/biblio.xml:128(surname)
+msgid "Simon"
+msgstr ""
+
+#: xml/biblio.xml:131(isbn)
+msgid "1-55860-245-3"
+msgstr ""
+
+#: xml/biblio.xml:132(pubdate) xml/biblio.xml:137(year) xml/biblio.xml:241(pubdate)
+msgid "1993"
+msgstr ""
+
+#: xml/biblio.xml:134(publishername)
+msgid "Morgan Kaufmann"
+msgstr ""
+
+#: xml/biblio.xml:138(holder)
+msgid "Morgan Kaufmann Publishers, Inc."
+msgstr ""
+
+#: xml/biblio.xml:142(title)
+msgid "Principles of Database and Knowledge"
+msgstr ""
+
+#: xml/biblio.xml:143(subtitle)
+msgid "Base Systems"
+msgstr ""
+
+#: xml/biblio.xml:144(titleabbrev)
+msgid "Ullman, 1988"
+msgstr ""
+
+#: xml/biblio.xml:147(firstname)
+msgid "Jeffrey D."
+msgstr ""
+
+#: xml/biblio.xml:148(surname)
+msgid "Ullman"
+msgstr ""
+
+#: xml/biblio.xml:151(volumenum)
+msgid "Volume 1"
+msgstr ""
+
+#: xml/biblio.xml:153(publishername)
+msgid "Computer Science Press"
+msgstr ""
+
+#: xml/biblio.xml:155(pubdate)
+msgid "1988"
+msgstr ""
+
+#: xml/biblio.xml:159(title)
+msgid "PostgreSQL-specific Documentation"
+msgstr ""
+
+#: xml/biblio.xml:160(para)
+msgid "This section is for related documentation."
+msgstr ""
+
+#: xml/biblio.xml:162(title)
+msgid "Enhancement of the ANSI SQL Implementation of PostgreSQL"
+msgstr ""
+
+#: xml/biblio.xml:164(titleabbrev)
+msgid "Simkovics, 1998"
+msgstr ""
+
+#: xml/biblio.xml:167(firstname)
+msgid "Stefan"
+msgstr ""
+
+#: xml/biblio.xml:168(surname)
+msgid "Simkovics"
+msgstr ""
+
+#: xml/biblio.xml:172(para)
+msgid "Discusses SQL history and syntax, and describes the addition of <literal>INTERSECT</literal>and <literal>EXCEPT</literal>constructs into <productname>PostgreSQL</productname>. Prepared as a Master's Thesis with the support of O. Univ. Prof. Dr. Georg Gottlob and Univ. Ass. Mag. Katrin Seyr at Vienna University of Technology."
+msgstr ""
+
+#: xml/biblio.xml:181(pubdate)
+msgid "November 29, 1998"
+msgstr ""
+
+#: xml/biblio.xml:183(publishername)
+msgid "Department of Information Systems, Vienna University of Technology"
+msgstr ""
+
+#: xml/biblio.xml:185(address)
+msgid "Vienna, Austria"
+msgstr ""
+
+#: xml/biblio.xml:189(title)
+msgid "The <productname>Postgres95</productname>User Manual"
+msgstr ""
+
+#: xml/biblio.xml:191(titleabbrev)
+msgid "Yu and Chen, 1995"
+msgstr ""
+
+#: xml/biblio.xml:194(firstname) xml/biblio.xml:310(firstname) xml/biblio.xml:497(firstname)
+msgid "A."
+msgstr ""
+
+#: xml/biblio.xml:195(surname)
+msgid "Yu"
+msgstr ""
+
+#: xml/biblio.xml:198(firstname) xml/biblio.xml:259(firstname) xml/biblio.xml:501(firstname)
+msgid "J."
+msgstr ""
+
+#: xml/biblio.xml:199(surname)
+msgid "Chen"
+msgstr ""
+
+#: xml/biblio.xml:204(collabname)
+msgid "The POSTGRES Group"
+msgstr ""
+
+#: xml/biblio.xml:207(pubdate)
+msgid "Sept. 5, 1995"
+msgstr ""
+
+#: xml/biblio.xml:209(publishername) xml/biblio.xml:244(publishername) xml/biblio.xml:268(publishername)
+msgid "University of California"
+msgstr ""
+
+#: xml/biblio.xml:210(address) xml/biblio.xml:245(address)
+msgid "Berkeley, California"
+msgstr ""
+
+#: xml/biblio.xml:217(productname) xml/biblio.xml:278(productname) xml/biblio.xml:334(productname) xml/biblio.xml:386(productname) xml/biblio.xml:407(productname) xml/biblio.xml:455(productname)
+msgid "POSTGRES"
+msgstr ""
+
+#: xml/biblio.xml:215(ulink)
+msgid "The design and implementation of the <placeholder-1/>query optimizer"
+msgstr ""
+
+#: xml/biblio.xml:220(firstname)
+msgid "Zelaine"
+msgstr ""
+
+#: xml/biblio.xml:221(surname)
+msgid "Fong"
+msgstr ""
+
+#: xml/biblio.xml:224(publishername)
+msgid "University of California, Berkeley, Computer Science Department"
+msgstr ""
+
+#: xml/biblio.xml:230(title)
+msgid "Proceedings and Articles"
+msgstr ""
+
+#: xml/biblio.xml:231(para)
+msgid "This section is for articles and newsletters."
+msgstr ""
+
+#: xml/biblio.xml:233(title)
+msgid "Partial indexing in POSTGRES: research project"
+msgstr ""
+
+#: xml/biblio.xml:234(titleabbrev)
+msgid "Olson, 1993"
+msgstr ""
+
+#: xml/biblio.xml:237(firstname)
+msgid "Nels"
+msgstr ""
+
+#: xml/biblio.xml:238(surname)
+msgid "Olson"
+msgstr ""
+
+#: xml/biblio.xml:242(pubsnumber)
+msgid "UCB Engin T7.49.1993 O676"
+msgstr ""
+
+#: xml/biblio.xml:250(title)
+msgid "A Unified Framework for Version Modeling Using Production Rules in a Database System"
+msgstr ""
+
+#: xml/biblio.xml:252(titleabbrev)
+msgid "Ong and Goh, 1990"
+msgstr ""
+
+#: xml/biblio.xml:255(firstname) xml/biblio.xml:283(firstname) xml/biblio.xml:343(firstname)
+msgid "L."
+msgstr ""
+
+#: xml/biblio.xml:256(surname)
+msgid "Ong"
+msgstr ""
+
+#: xml/biblio.xml:260(surname) xml/biblio.xml:502(surname)
+msgid "Goh"
+msgstr ""
+
+#: xml/biblio.xml:265(title)
+msgid "ERL Technical Memorandum M90/33"
+msgstr ""
+
+#: xml/biblio.xml:266(pubdate)
+msgid "April, 1990"
+msgstr ""
+
+#: xml/biblio.xml:269(address)
+msgid "Berkely, California"
+msgstr ""
+
+#: xml/biblio.xml:276(ulink)
+msgid "The <placeholder-1/>data model"
+msgstr ""
+
+#: xml/biblio.xml:280(titleabbrev)
+msgid "Rowe and Stonebraker, 1987"
+msgstr ""
+
+#: xml/biblio.xml:284(surname) xml/biblio.xml:344(surname) xml/biblio.xml:466(surname)
+msgid "Rowe"
+msgstr ""
+
+#: xml/biblio.xml:287(firstname) xml/biblio.xml:339(firstname) xml/biblio.xml:362(firstname) xml/biblio.xml:391(firstname) xml/biblio.xml:412(firstname) xml/biblio.xml:416(firstname) xml/biblio.xml:439(firstname) xml/biblio.xml:461(firstname) xml/biblio.xml:469(firstname) xml/biblio.xml:493(firstname)
+msgid "M."
+msgstr ""
+
+#: xml/biblio.xml:288(surname) xml/biblio.xml:340(surname) xml/biblio.xml:363(surname) xml/biblio.xml:392(surname) xml/biblio.xml:413(surname) xml/biblio.xml:440(surname) xml/biblio.xml:462(surname) xml/biblio.xml:494(surname)
+msgid "Stonebraker"
+msgstr ""
+
+#: xml/biblio.xml:293(conftitle) xml/biblio.xml:397(conftitle)
+msgid "VLDB Conference"
+msgstr ""
+
+#: xml/biblio.xml:294(confdates) xml/biblio.xml:398(confdates)
+msgid "Sept. 1987"
+msgstr ""
+
+#: xml/biblio.xml:295(address) xml/biblio.xml:399(address)
+msgid "Brighton, England"
+msgstr ""
+
+#: xml/biblio.xml:300(title)
+msgid "Generalized Partial Indexes <ulink url=\"http://citeseer.ist.psu.edu/seshadri95generalized.html\"> (cached version)</ulink>"
+msgstr ""
+
+#: xml/biblio.xml:303(titleabbrev)
+msgid "Seshardri, 1995"
+msgstr ""
+
+#: xml/biblio.xml:306(firstname)
+msgid "P."
+msgstr ""
+
+#: xml/biblio.xml:307(surname)
+msgid "Seshadri"
+msgstr ""
+
+#: xml/biblio.xml:311(surname)
+msgid "Swami"
+msgstr ""
+
+#: xml/biblio.xml:316(conftitle)
+msgid "Eleventh International Conference on Data Engineering"
+msgstr ""
+
+#: xml/biblio.xml:318(confdates)
+msgid "6-10 March 1995"
+msgstr ""
+
+#: xml/biblio.xml:319(address)
+msgid "Taipeh, Taiwan"
+msgstr ""
+
+#: xml/biblio.xml:321(pubdate)
+msgid "1995"
+msgstr ""
+
+#: xml/biblio.xml:322(pubsnumber)
+msgid "Cat. No.95CH35724"
+msgstr ""
+
+#: xml/biblio.xml:324(publishername)
+msgid "IEEE Computer Society Press"
+msgstr ""
+
+#: xml/biblio.xml:325(address)
+msgid "Los Alamitos, California"
+msgstr ""
+
+#: xml/biblio.xml:327(pagenums)
+msgid "420-7"
+msgstr ""
+
+#: xml/biblio.xml:332(ulink)
+msgid "The design of <placeholder-1/>"
+msgstr ""
+
+#: xml/biblio.xml:336(titleabbrev)
+msgid "Stonebraker and Rowe, 1986"
+msgstr ""
+
+#: xml/biblio.xml:349(conftitle) xml/biblio.xml:511(conftitle)
+msgid "ACM-SIGMOD Conference on Management of Data"
+msgstr ""
+
+#: xml/biblio.xml:351(confdates)
+msgid "May 1986"
+msgstr ""
+
+#: xml/biblio.xml:352(address)
+msgid "Washington, DC"
+msgstr ""
+
+#: xml/biblio.xml:357(title)
+msgid "The design of the <productname>POSTGRES</productname>rules system"
+msgstr ""
+
+#: xml/biblio.xml:359(titleabbrev)
+msgid "Stonebraker, Hanson, Hong, 1987"
+msgstr ""
+
+#: xml/biblio.xml:366(firstname)
+msgid "E."
+msgstr ""
+
+#: xml/biblio.xml:367(surname)
+msgid "Hanson"
+msgstr ""
+
+#: xml/biblio.xml:370(firstname)
+msgid "C. H."
+msgstr ""
+
+#: xml/biblio.xml:371(surname)
+msgid "Hong"
+msgstr ""
+
+#: xml/biblio.xml:376(conftitle)
+msgid "IEEE Conference on Data Engineering"
+msgstr ""
+
+#: xml/biblio.xml:377(confdates)
+msgid "Feb. 1987"
+msgstr ""
+
+#: xml/biblio.xml:378(address)
+msgid "Los Angeles, California"
+msgstr ""
+
+#: xml/biblio.xml:384(ulink)
+msgid "The design of the <placeholder-1/>storage system"
+msgstr ""
+
+#: xml/biblio.xml:388(titleabbrev)
+msgid "Stonebraker, 1987"
+msgstr ""
+
+#: xml/biblio.xml:405(ulink)
+msgid "A commentary on the <placeholder-1/>rules system"
+msgstr ""
+
+#: xml/biblio.xml:409(titleabbrev)
+msgid "Stonebraker et al, 1989"
+msgstr ""
+
+#: xml/biblio.xml:417(surname)
+msgid "Hearst"
+msgstr ""
+
+#: xml/biblio.xml:420(firstname) xml/biblio.xml:505(firstname)
+msgid "S."
+msgstr ""
+
+#: xml/biblio.xml:421(surname) xml/biblio.xml:506(surname)
+msgid "Potamianos"
+msgstr ""
+
+#: xml/biblio.xml:426(title)
+msgid "SIGMOD Record 18(3)"
+msgstr ""
+
+#: xml/biblio.xml:427(date)
+msgid "Sept. 1989"
+msgstr ""
+
+#: xml/biblio.xml:433(ulink)
+msgid "The case for partial indexes"
+msgstr ""
+
+#: xml/biblio.xml:436(titleabbrev)
+msgid "Stonebraker, M, 1989b"
+msgstr ""
+
+#: xml/biblio.xml:445(title)
+msgid "SIGMOD Record 18(4)"
+msgstr ""
+
+#: xml/biblio.xml:446(pagenums)
+msgid "4-11"
+msgstr ""
+
+#: xml/biblio.xml:447(date)
+msgid "Dec. 1989"
+msgstr ""
+
+#: xml/biblio.xml:453(ulink)
+msgid "The implementation of <placeholder-1/>"
+msgstr ""
+
+#: xml/biblio.xml:457(titleabbrev)
+msgid "Stonebraker, Rowe, Hirohama, 1990"
+msgstr ""
+
+#: xml/biblio.xml:465(firstname)
+msgid "L. A."
+msgstr ""
+
+#: xml/biblio.xml:470(surname)
+msgid "Hirohama"
+msgstr ""
+
+#: xml/biblio.xml:475(title)
+msgid "Transactions on Knowledge and Data Engineering 2(1)"
+msgstr ""
+
+#: xml/biblio.xml:478(publishername)
+msgid "IEEE"
+msgstr ""
+
+#: xml/biblio.xml:480(date)
+msgid "March 1990"
+msgstr ""
+
+#: xml/biblio.xml:486(ulink)
+msgid "On Rules, Procedures, Caching and Views in Database Systems"
+msgstr ""
+
+#: xml/biblio.xml:490(titleabbrev)
+msgid "Stonebraker et al, ACM, 1990"
+msgstr ""
+
+#: xml/biblio.xml:498(surname)
+msgid "Jhingran"
+msgstr ""
+
+#: xml/biblio.xml:513(confdates)
+msgid "June 1990"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/biblio.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

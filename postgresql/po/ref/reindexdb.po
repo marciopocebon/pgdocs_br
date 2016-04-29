@@ -1,0 +1,384 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/reindexdb.xml:4(primary) xml/ref/reindexdb.xml:8(application) xml/ref/reindexdb.xml:14(refname) xml/ref/reindexdb.xml:20(command) xml/ref/reindexdb.xml:71(command) xml/ref/reindexdb.xml:88(command)
+msgid "reindexdb"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:10(manvolnum)
+msgid "1"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:11(refmiscinfo)
+msgid "Application"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:16(productname)
+msgid "PostgreSQL"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:15(refpurpose)
+msgid "reindex a <placeholder-1/>database"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:22(replaceable) xml/ref/reindexdb.xml:73(replaceable) xml/ref/reindexdb.xml:90(replaceable)
+msgid "connection-option"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:25(replaceable) xml/ref/reindexdb.xml:76(replaceable) xml/ref/reindexdb.xml:93(replaceable)
+msgid "option"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:31(option)
+msgid "--schema"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:34(option)
+msgid "-S"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:37(replaceable) xml/ref/reindexdb.xml:217(replaceable) xml/ref/reindexdb.xml:222(replaceable)
+msgid "schema"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:44(option)
+msgid "--table"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:47(option)
+msgid "-t"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:50(replaceable) xml/ref/reindexdb.xml:235(replaceable) xml/ref/reindexdb.xml:240(replaceable)
+msgid "table"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:57(option)
+msgid "--index"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:60(option)
+msgid "-i"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:63(replaceable) xml/ref/reindexdb.xml:177(replaceable) xml/ref/reindexdb.xml:182(replaceable)
+msgid "index"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:67(replaceable) xml/ref/reindexdb.xml:104(replaceable) xml/ref/reindexdb.xml:142(replaceable) xml/ref/reindexdb.xml:148(replaceable) xml/ref/reindexdb.xml:385(replaceable)
+msgid "dbname"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:80(option) xml/ref/reindexdb.xml:132(option)
+msgid "--all"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:83(option) xml/ref/reindexdb.xml:129(option)
+msgid "-a"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:97(option) xml/ref/reindexdb.xml:208(option)
+msgid "--system"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:100(option) xml/ref/reindexdb.xml:205(option)
+msgid "-s"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:109(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:110(para)
+msgid "<application>reindexdb</application>is a utility for rebuilding indexes in a <productname>PostgreSQL</productname>database."
+msgstr ""
+
+#: xml/ref/reindexdb.xml:114(para)
+msgid "<application>reindexdb</application>is a wrapper around the SQL command <xref linkend=\"SQL-REINDEX\">. There is no effective difference between reindexing databases via this utility and via other methods for accessing the server.</xref>"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:122(title)
+msgid "Options"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:135(para)
+msgid "Reindex all databases."
+msgstr ""
+
+#: xml/ref/reindexdb.xml:141(optional)
+msgid "-d"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:147(optional)
+msgid "--dbname="
+msgstr ""
+
+#: xml/ref/reindexdb.xml:152(para)
+msgid "Specifies the name of the database to be reindexed. If this is not specified and <option>-a</option>(or <option>--all</option>) is not used, the database name is read from the environment variable <envar>PGDATABASE</envar>. If that is not set, the user name specified for the connection is used."
+msgstr ""
+
+#: xml/ref/reindexdb.xml:163(option)
+msgid "-e"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:166(option)
+msgid "--echo"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:169(para)
+msgid "Echo the commands that <application>reindexdb</application>generates and sends to the server."
+msgstr ""
+
+#: xml/ref/reindexdb.xml:176(option)
+msgid "-i <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:181(option)
+msgid "--index= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:186(para)
+msgid "Recreate <replaceable class=\"parameter\">index</replaceable>only. Multiple indexes can be recreated by writing multiple <option>-i</option>switches."
+msgstr ""
+
+#: xml/ref/reindexdb.xml:194(option)
+msgid "-q"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:197(option)
+msgid "--quiet"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:200(para)
+msgid "Do not display progress messages."
+msgstr ""
+
+#: xml/ref/reindexdb.xml:211(para)
+msgid "Reindex database's system catalogs."
+msgstr ""
+
+#: xml/ref/reindexdb.xml:216(option)
+msgid "-S <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:221(option)
+msgid "--schema= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:226(para)
+msgid "Reindex <replaceable class=\"parameter\">schema</replaceable>only. Multiple schemas can be reindexed by writing multiple <option>-S</option>switches."
+msgstr ""
+
+#: xml/ref/reindexdb.xml:234(option)
+msgid "-t <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:239(option)
+msgid "--table= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:244(para)
+msgid "Reindex <replaceable class=\"parameter\">table</replaceable>only. Multiple tables can be reindexed by writing multiple <option>-t</option>switches."
+msgstr ""
+
+#: xml/ref/reindexdb.xml:252(option)
+msgid "-v"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:255(option)
+msgid "--verbose"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:258(para)
+msgid "Print detailed information during processing."
+msgstr ""
+
+#: xml/ref/reindexdb.xml:264(option)
+msgid "-V"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:267(option)
+msgid "--version"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:270(para)
+msgid "Print the <application>reindexdb</application>version and exit."
+msgstr ""
+
+#: xml/ref/reindexdb.xml:277(option)
+msgid "-?"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:280(option)
+msgid "--help"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:283(para)
+msgid "Show help about <application>reindexdb</application>command line arguments, and exit."
+msgstr ""
+
+#: xml/ref/reindexdb.xml:123(para)
+msgid "<application>reindexdb</application>accepts the following command-line arguments: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:296(replaceable) xml/ref/reindexdb.xml:301(replaceable)
+msgid "host"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:295(option)
+msgid "-h <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:300(option)
+msgid "--host= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:305(para)
+msgid "Specifies the host name of the machine on which the server is running. If the value begins with a slash, it is used as the directory for the Unix domain socket."
+msgstr ""
+
+#: xml/ref/reindexdb.xml:314(replaceable) xml/ref/reindexdb.xml:319(replaceable)
+msgid "port"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:313(option)
+msgid "-p <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:318(option)
+msgid "--port= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:323(para)
+msgid "Specifies the TCP port or local Unix domain socket file extension on which the server is listening for connections."
+msgstr ""
+
+#: xml/ref/reindexdb.xml:331(replaceable) xml/ref/reindexdb.xml:336(replaceable)
+msgid "username"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:330(option)
+msgid "-U <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:335(option)
+msgid "--username= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:340(para)
+msgid "User name to connect as."
+msgstr ""
+
+#: xml/ref/reindexdb.xml:345(option)
+msgid "-w"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:348(option)
+msgid "--no-password"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:351(para)
+msgid "Never issue a password prompt. If the server requires password authentication and a password is not available by other means such as a <filename>.pgpass</filename>file, the connection attempt will fail. This option can be useful in batch jobs and scripts where no user is present to enter a password."
+msgstr ""
+
+#: xml/ref/reindexdb.xml:362(option)
+msgid "-W"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:365(option)
+msgid "--password"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:368(para)
+msgid "Force <application>reindexdb</application>to prompt for a password before connecting to a database."
+msgstr ""
+
+#: xml/ref/reindexdb.xml:371(para)
+msgid "This option is never essential, since <application>reindexdb</application>will automatically prompt for a password if the server demands password authentication. However, <application>reindexdb</application>will waste a connection attempt finding out that the server wants a password. In some cases it is worth typing <option>-W</option>to avoid the extra connection attempt."
+msgstr ""
+
+#: xml/ref/reindexdb.xml:384(option)
+msgid "--maintenance-db= <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:389(para)
+msgid "Specifies the name of the database to connect to discover what other databases should be reindexed. If not specified, the <literal>postgres</literal>database will be used, and if that does not exist, <literal>template1</literal>will be used."
+msgstr ""
+
+#: xml/ref/reindexdb.xml:289(para)
+msgid "<application>reindexdb</application>also accepts the following command-line arguments for connection parameters: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:400(title)
+msgid "Environment"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:404(envar)
+msgid "PGDATABASE"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:407(envar)
+msgid "PGHOST"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:410(envar)
+msgid "PGPORT"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:413(envar)
+msgid "PGUSER"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:416(para)
+msgid "Default connection parameters"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:420(para)
+msgid "This utility, like most other <productname>PostgreSQL</productname>utilities, also uses the environment variables supported by <application>libpq</application>(see <xref linkend=\"libpq-envars\">).</xref>"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:427(title)
+msgid "Diagnostics"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:428(para)
+msgid "In case of difficulty, see <xref linkend=\"SQL-REINDEX\">and <xref linkend=\"APP-PSQL\">for discussions of potential problems and error messages. The database server must be running at the targeted host. Also, any default connection settings and environment variables used by the <application>libpq</application>front-end library will apply.</xref></xref>"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:438(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:439(para)
+msgid "<application>reindexdb</application>might need to connect several times to the <productname>PostgreSQL</productname>server, asking for a password each time. It is convenient to have a <filename>~/.pgpass</filename>file in such cases. See <xref linkend=\"libpq-pgpass\">for more information.</xref>"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:449(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:450(para)
+msgid "To reindex the database <literal>test</literal>: <screen>\n      <prompt>$</prompt>\n      <userinput>reindexdb test</userinput>\n    </screen>"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:456(para)
+msgid "To reindex the table <literal>foo</literal>and the index <literal>bar</literal>in a database named <literal>abcd</literal>: <screen>\n      <prompt>$</prompt>\n      <userinput>reindexdb --table foo --index bar abcd</userinput>\n    </screen>"
+msgstr ""
+
+#: xml/ref/reindexdb.xml:466(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/reindexdb.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

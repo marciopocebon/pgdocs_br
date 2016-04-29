@@ -1,0 +1,119 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/alter_system.xml:4(primary) xml/ref/alter_system.xml:7(refentrytitle) xml/ref/alter_system.xml:12(refname)
+msgid "ALTER SYSTEM"
+msgstr ""
+
+#: xml/ref/alter_system.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/alter_system.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/alter_system.xml:13(refpurpose)
+msgid "change a server configuration parameter"
+msgstr ""
+
+#: xml/ref/alter_system.xml:18(replaceable) xml/ref/alter_system.xml:23(replaceable) xml/ref/alter_system.xml:63(replaceable)
+msgid "configuration_parameter"
+msgstr ""
+
+#: xml/ref/alter_system.xml:20(replaceable) xml/ref/alter_system.xml:21(replaceable) xml/ref/alter_system.xml:74(replaceable)
+msgid "value"
+msgstr ""
+
+#: xml/ref/alter_system.xml:17(synopsis)
+#, no-wrap
+msgid "ALTER SYSTEM SET \n    <placeholder-1/>{ TO | = } { \n    <placeholder-2/>| ' \n    <placeholder-3/>' | DEFAULT }\n    ALTER SYSTEM RESET \n    <placeholder-4/>ALTER SYSTEM RESET\n    ALL"
+msgstr ""
+
+#: xml/ref/alter_system.xml:28(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/alter_system.xml:29(para)
+msgid "<command>ALTER SYSTEM</command>is used for changing server configuration parameters across the entire database cluster. It can be more convenient than the traditional method of manually editing the <filename>postgresql.conf</filename>file. <command>ALTER SYSTEM</command>writes the given parameter setting to the <filename>postgresql.auto.conf</filename>file, which is read in addition to <filename>postgresql.conf</filename>. Setting a parameter to <literal>DEFAULT</literal>, or using the <command>RESET</command>variant, removes that configuration entry from the <filename>postgresql.auto.conf</filename>file. Use <literal>RESET ALL</literal>to remove all such configuration entries."
+msgstr ""
+
+#: xml/ref/alter_system.xml:46(para)
+msgid "Values set with <command>ALTER SYSTEM</command>will be effective after the next server configuration reload ( <systemitem>SIGHUP</systemitem>or <literal>pg_ctl reload</literal>), or after the next server restart in the case of parameters that can only be changed at server start."
+msgstr ""
+
+#: xml/ref/alter_system.xml:53(para)
+msgid "Only superusers can use <command>ALTER SYSTEM</command>. Also, since this command acts directly on the file system and cannot be rolled back, it is not allowed inside a transaction block or function."
+msgstr ""
+
+#: xml/ref/alter_system.xml:59(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/alter_system.xml:67(para)
+msgid "Name of a settable configuration parameter. Available parameters are documented in <xref linkend=\"runtime-config\">.</xref>"
+msgstr ""
+
+#: xml/ref/alter_system.xml:77(para)
+msgid "New value of the parameter. Values can be specified as string constants, identifiers, numbers, or comma-separated lists of these, as appropriate for the particular parameter. <literal>DEFAULT</literal>can be written to specify removing the parameter and its value from <filename>postgresql.auto.conf</filename>."
+msgstr ""
+
+#: xml/ref/alter_system.xml:89(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/alter_system.xml:90(para)
+msgid "This command can't be used to set <xref linkend=\"guc-data-directory\">, nor parameters that are not allowed in <filename>postgresql.conf</filename>(e.g., <link linkend=\"runtime-config-preset\">preset options</link>).</xref>"
+msgstr ""
+
+#: xml/ref/alter_system.xml:96(para)
+msgid "See <xref linkend=\"config-setting\">for other ways to set the parameters.</xref>"
+msgstr ""
+
+#: xml/ref/alter_system.xml:101(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/alter_system.xml:104(programlisting)
+#, no-wrap
+msgid "ALTER SYSTEM SET wal_level =\n    hot_standby;"
+msgstr ""
+
+#: xml/ref/alter_system.xml:102(para)
+msgid "Set the <literal>wal_level</literal>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_system.xml:108(programlisting)
+#, no-wrap
+msgid "ALTER SYSTEM RESET\n    wal_level;"
+msgstr ""
+
+#: xml/ref/alter_system.xml:106(para)
+msgid "Undo that, restoring whatever setting was effective in <filename>postgresql.conf</filename>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_system.xml:112(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/alter_system.xml:113(para)
+msgid "The <command>ALTER SYSTEM</command>statement is a <productname>PostgreSQL</productname>extension."
+msgstr ""
+
+#: xml/ref/alter_system.xml:118(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/alter_system.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

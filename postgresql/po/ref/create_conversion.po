@@ -1,0 +1,139 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/create_conversion.xml:4(primary) xml/ref/create_conversion.xml:7(refentrytitle) xml/ref/create_conversion.xml:12(refname)
+msgid "CREATE CONVERSION"
+msgstr ""
+
+#: xml/ref/create_conversion.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/create_conversion.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/create_conversion.xml:13(refpurpose)
+msgid "define a new encoding conversion"
+msgstr ""
+
+#: xml/ref/create_conversion.xml:17(replaceable) xml/ref/create_conversion.xml:55(replaceable)
+msgid "name"
+msgstr ""
+
+#: xml/ref/create_conversion.xml:18(replaceable) xml/ref/create_conversion.xml:66(replaceable)
+msgid "source_encoding"
+msgstr ""
+
+#: xml/ref/create_conversion.xml:19(replaceable) xml/ref/create_conversion.xml:74(replaceable)
+msgid "dest_encoding"
+msgstr ""
+
+#: xml/ref/create_conversion.xml:20(replaceable) xml/ref/create_conversion.xml:82(replaceable)
+msgid "function_name"
+msgstr ""
+
+#: xml/ref/create_conversion.xml:16(synopsis)
+#, no-wrap
+msgid "CREATE [ DEFAULT ] CONVERSION \n    <placeholder-1/>FOR \n    <placeholder-2/>TO \n    <placeholder-3/>FROM \n    <placeholder-4/>"
+msgstr ""
+
+#: xml/ref/create_conversion.xml:23(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/create_conversion.xml:24(para)
+msgid "<command>CREATE CONVERSION</command>defines a new conversion between character set encodings. Also, conversions that are marked <literal>DEFAULT</literal>can be used for automatic encoding conversion between client and server. For this purpose, two conversions, from encoding A to B <emphasis>and</emphasis>from encoding B to A, must be defined."
+msgstr ""
+
+#: xml/ref/create_conversion.xml:33(para)
+msgid "To be able to create a conversion, you must have <literal>EXECUTE</literal>privilege on the function and <literal>CREATE</literal>privilege on the destination schema."
+msgstr ""
+
+#: xml/ref/create_conversion.xml:39(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/create_conversion.xml:43(literal)
+msgid "DEFAULT"
+msgstr ""
+
+#: xml/ref/create_conversion.xml:46(para)
+msgid "The <literal>DEFAULT</literal>clause indicates that this conversion is the default for this particular source to destination encoding. There should be only one default encoding in a schema for the encoding pair."
+msgstr ""
+
+#: xml/ref/create_conversion.xml:58(para)
+msgid "The name of the conversion. The conversion name can be schema-qualified. If it is not, the conversion is defined in the current schema. The conversion name must be unique within a schema."
+msgstr ""
+
+#: xml/ref/create_conversion.xml:69(para)
+msgid "The source encoding name."
+msgstr ""
+
+#: xml/ref/create_conversion.xml:77(para)
+msgid "The destination encoding name."
+msgstr ""
+
+#: xml/ref/create_conversion.xml:85(para)
+msgid "The function used to perform the conversion. The function name can be schema-qualified. If it is not, the function will be looked up in the path."
+msgstr ""
+
+#: xml/ref/create_conversion.xml:89(programlisting)
+#, no-wrap
+msgid "conv_proc( integer, -- source encoding ID\n          integer, -- destination encoding ID cstring, -- source\n          string (null terminated C string) internal, --\n          destination (fill with a null terminated C string)\n          integer -- source string length ) RETURNS\n          void;"
+msgstr ""
+
+#: xml/ref/create_conversion.xml:88(para)
+msgid "The function must have the following signature: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_conversion.xml:100(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/create_conversion.xml:101(para)
+msgid "Use <command>DROP CONVERSION</command>to remove user-defined conversions."
+msgstr ""
+
+#: xml/ref/create_conversion.xml:104(para)
+msgid "The privileges required to create a conversion might be changed in a future release."
+msgstr ""
+
+#: xml/ref/create_conversion.xml:108(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/create_conversion.xml:113(programlisting)
+#, no-wrap
+msgid "CREATE CONVERSION myconv FOR 'UTF8' TO 'LATIN1'\n    FROM myfunc;"
+msgstr ""
+
+#: xml/ref/create_conversion.xml:109(para)
+msgid "To create a conversion from encoding <literal>UTF8</literal>to <literal>LATIN1</literal>using <function>myfunc</function>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_conversion.xml:117(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/create_conversion.xml:118(para)
+msgid "<command>CREATE CONVERSION</command>is a <productname>PostgreSQL</productname>extension. There is no <command>CREATE CONVERSION</command>statement in the SQL standard, but a <command>CREATE TRANSLATION</command>statement that is very similar in purpose and syntax."
+msgstr ""
+
+#: xml/ref/create_conversion.xml:127(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/create_conversion.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

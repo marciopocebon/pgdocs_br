@@ -1,0 +1,2501 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/monitoring.xml:3(title)
+msgid "Monitoring Database Activity"
+msgstr ""
+
+#: xml/monitoring.xml:5(primary) xml/monitoring.xml:10(secondary) xml/monitoring.xml:2817(secondary)
+msgid "monitoring"
+msgstr ""
+
+#: xml/monitoring.xml:6(secondary) xml/monitoring.xml:9(primary)
+msgid "database activity"
+msgstr ""
+
+#: xml/monitoring.xml:12(para)
+msgid "A database administrator frequently wonders, <quote>What is the system doing right now?</quote>This chapter discusses how to find that out."
+msgstr ""
+
+#: xml/monitoring.xml:15(para)
+msgid "Several tools are available for monitoring database activity and analyzing performance. Most of this chapter is devoted to describing <productname>PostgreSQL</productname>'s statistics collector, but one should not neglect regular Unix monitoring programs such as <command>ps</command>, <command>top</command>, <command>iostat</command>, and <command>vmstat</command>. Also, once one has identified a poorly-performing query, further investigation might be needed using <productname>PostgreSQL</productname>'s <xref linkend=\"sql-explain\">command. <xref linkend=\"using-explain\">discusses <command>EXPLAIN</command>and other methods for understanding the behavior of an individual query.</xref></xref>"
+msgstr ""
+
+#: xml/monitoring.xml:32(title)
+msgid "Standard Unix Tools"
+msgstr ""
+
+#: xml/monitoring.xml:34(primary)
+msgid "ps"
+msgstr ""
+
+#: xml/monitoring.xml:35(secondary)
+msgid "to monitor activity"
+msgstr ""
+
+#: xml/monitoring.xml:37(para)
+msgid "On most Unix platforms, <productname>PostgreSQL</productname>modifies its command title as reported by <command>ps</command>, so that individual server processes can readily be identified. A sample display is <screen>$ ps auxww | grep ^postgres postgres 15551 0.0 0.1\n    57536 7132 pts/0 S 18:02 0:00 postgres -i postgres 15554 0.0\n    0.0 57536 1184 ? Ss 18:02 0:00 postgres: writer process\n    postgres 15555 0.0 0.0 57536 916 ? Ss 18:02 0:00 postgres:\n    checkpointer process postgres 15556 0.0 0.0 57536 916 ? Ss\n    18:02 0:00 postgres: wal writer process postgres 15557 0.0 0.0\n    58504 2244 ? Ss 18:02 0:00 postgres: autovacuum launcher\n    process postgres 15558 0.0 0.0 17512 1068 ? Ss 18:02 0:00\n    postgres: stats collector process postgres 15582 0.0 0.0 58772\n    3080 ? Ss 18:04 0:00 postgres: joe runbug 127.0.0.1 idle\n    postgres 15606 0.0 0.0 58772 3052 ? Ss 18:07 0:00 postgres: tgl\n    regression [local] SELECT waiting postgres 15610 0.0 0.0 58772\n    3056 ? Ss 18:07 0:00 postgres: tgl regression [local] idle in\n    transaction</screen>(The appropriate invocation of <command>ps</command>varies across different platforms, as do the details of what is shown. This example is from a recent Linux system.) The first process listed here is the master server process. The command arguments shown for it are the same ones used when it was launched. The next five processes are background worker processes automatically launched by the master process. (The <quote>stats collector</quote>process will not be present if you have set the system not to start the statistics collector; likewise the <quote>autovacuum launcher</quote>process can be disabled.) Each of the remaining processes is a server process handling one client connection. Each such process sets its command line display in the form <screen>postgres: \n    <replaceable>user</replaceable>\n    <replaceable>database</replaceable>\n    <replaceable>host</replaceable>\n    <replaceable>activity</replaceable></screen>The user, database, and (client) host items remain the same for the life of the client connection, but the activity indicator changes. The activity can be <literal>idle</literal>(i.e., waiting for a client command), <literal>idle in transaction</literal>(waiting for client inside a <command>BEGIN</command>block), or a command type name such as <literal>SELECT</literal>. Also, <literal>waiting</literal>is appended if the server process is presently waiting on a lock held by another session. In the above example we can infer that process 15606 is waiting for process 15610 to complete its transaction and thereby release some lock. (Process 15610 must be the blocker, because there is no other active session. In more complicated cases it would be necessary to look into the <link linkend=\"view-pg-locks\"><structname>pg_locks</structname></link>system view to determine who is blocking whom.)"
+msgstr ""
+
+#: xml/monitoring.xml:93(para)
+msgid "If <xref linkend=\"guc-cluster-name\">has been configured the cluster name will also be shown in <command>ps</command>output: <screen>$ psql -c 'SHOW cluster_name' cluster_name\n    -------------- server1 (1 row) $ ps aux|grep server1 postgres\n    27093 0.0 0.0 30096 2752 ? Ss 11:34 0:00 postgres: server1:\n    writer process ...</screen></xref>"
+msgstr ""
+
+#: xml/monitoring.xml:101(para)
+msgid "If you have turned off <xref linkend=\"guc-update-process-title\">then the activity indicator is not updated; the process title is set only once when a new process is launched. On some platforms this saves a measurable amount of per-command overhead; on others it's insignificant.</xref>"
+msgstr ""
+
+#: xml/monitoring.xml:108(para)
+msgid "<productname>Solaris</productname>requires special handling. You must use <command>/usr/ucb/ps</command>, rather than <command>/bin/ps</command>. You also must use two <option>w</option>flags, not just one. In addition, your original invocation of the <command>postgres</command>command must have a shorter <command>ps</command>status display than that provided by each server process. If you fail to do all three things, the <command>ps</command>output for each server process will be the original <command>postgres</command>command line."
+msgstr ""
+
+#: xml/monitoring.xml:124(title)
+msgid "The Statistics Collector"
+msgstr ""
+
+#: xml/monitoring.xml:126(primary)
+msgid "statistics"
+msgstr ""
+
+#: xml/monitoring.xml:128(para)
+msgid "<productname>PostgreSQL</productname>'s <firstterm>statistics collector</firstterm>is a subsystem that supports collection and reporting of information about server activity. Presently, the collector can count accesses to tables and indexes in both disk-block and individual-row terms. It also tracks the total number of rows in each table, and information about vacuum and analyze actions for each table. It can also count calls to user-defined functions and the total time spent in each one."
+msgstr ""
+
+#: xml/monitoring.xml:138(para)
+msgid "<productname>PostgreSQL</productname>also supports reporting dynamic information about exactly what is going on in the system right now, such as the exact command currently being executed by other server processes, and which other connections exist in the system. This facility is independent of the collector process."
+msgstr ""
+
+#: xml/monitoring.xml:146(title)
+msgid "Statistics Collection Configuration"
+msgstr ""
+
+#: xml/monitoring.xml:147(para)
+msgid "Since collection of statistics adds some overhead to query execution, the system can be configured to collect or not collect information. This is controlled by configuration parameters that are normally set in <filename>postgresql.conf</filename>. (See <xref linkend=\"runtime-config\">for details about setting configuration parameters.)</xref>"
+msgstr ""
+
+#: xml/monitoring.xml:154(para)
+msgid "The parameter <xref linkend=\"guc-track-activities\">enables monitoring of the current command being executed by any server process.</xref>"
+msgstr ""
+
+#: xml/monitoring.xml:158(para)
+msgid "The parameter <xref linkend=\"guc-track-counts\">controls whether statistics are collected about table and index accesses.</xref>"
+msgstr ""
+
+#: xml/monitoring.xml:161(para)
+msgid "The parameter <xref linkend=\"guc-track-functions\">enables tracking of usage of user-defined functions.</xref>"
+msgstr ""
+
+#: xml/monitoring.xml:164(para)
+msgid "The parameter <xref linkend=\"guc-track-io-timing\">enables monitoring of block read and write times.</xref>"
+msgstr ""
+
+#: xml/monitoring.xml:167(para)
+msgid "Normally these parameters are set in <filename>postgresql.conf</filename>so that they apply to all server processes, but it is possible to turn them on or off in individual sessions using the <xref linkend=\"sql-set\">command. (To prevent ordinary users from hiding their activity from the administrator, only superusers are allowed to change these parameters with <command>SET</command>.)</xref>"
+msgstr ""
+
+#: xml/monitoring.xml:175(para)
+msgid "The statistics collector transmits the collected information to other <productname>PostgreSQL</productname>processes through temporary files. These files are stored in the directory named by the <xref linkend=\"guc-stats-temp-directory\">parameter, <filename>pg_stat_tmp</filename>by default. For better performance, <varname>stats_temp_directory</varname>can be pointed at a RAM-based file system, decreasing physical I/O requirements. When the server shuts down cleanly, a permanent copy of the statistics data is stored in the <filename>pg_stat</filename>subdirectory, so that statistics can be retained across server restarts. When recovery is performed at server start (e.g. after immediate shutdown, server crash, and point-in-time recovery), all statistics counters are reset.</xref>"
+msgstr ""
+
+#: xml/monitoring.xml:194(title)
+msgid "Viewing Statistics"
+msgstr ""
+
+#: xml/monitoring.xml:195(para)
+msgid "Several predefined views, listed in <xref linkend=\"monitoring-stats-dynamic-views-table\">, are available to show the current state of the system. There are also several other views, listed in <xref linkend=\"monitoring-stats-views-table\">, available to show the results of statistics collection. Alternatively, one can build custom views using the underlying statistics functions, as discussed in <xref linkend=\"monitoring-stats-functions\"> .</xref></xref></xref>"
+msgstr ""
+
+#: xml/monitoring.xml:205(para)
+msgid "When using the statistics to monitor collected data, it is important to realize that the information does not update instantaneously. Each individual server process transmits new statistical counts to the collector just before going idle; so a query or transaction still in progress does not affect the displayed totals. Also, the collector itself emits a new report at most once per <varname>PGSTAT_STAT_INTERVAL</varname>milliseconds (500 ms unless altered while building the server). So the displayed information lags behind actual activity. However, current-query information collected by <varname>track_activities</varname>is always up-to-date."
+msgstr ""
+
+#: xml/monitoring.xml:218(para)
+msgid "Another important point is that when a server process is asked to display any of these statistics, it first fetches the most recent report emitted by the collector process and then continues to use this snapshot for all statistical views and functions until the end of its current transaction. So the statistics will show static information as long as you continue the current transaction. Similarly, information about the current queries of all sessions is collected when any such information is first requested within a transaction, and the same information will be displayed throughout the transaction. This is a feature, not a bug, because it allows you to perform several queries on the statistics and correlate the results without worrying that the numbers are changing underneath you. But if you want to see new results with each query, be sure to do the queries outside any transaction block. Alternatively, you can invoke <function>pg_stat_clear_snapshot</function>(), which will discard the current transaction's statistics snapshot (if any). The next use of statistical information will cause a new snapshot to be fetched."
+msgstr ""
+
+#: xml/monitoring.xml:238(para)
+msgid "A transaction can also see its own statistics (as yet untransmitted to the collector) in the views <structname>pg_stat_xact_all_tables</structname>, <structname>pg_stat_xact_sys_tables</structname>, <structname>pg_stat_xact_user_tables</structname>, and <structname>pg_stat_xact_user_functions</structname>. These numbers do not act as stated above; instead they update continuously throughout the transaction."
+msgstr ""
+
+#: xml/monitoring.xml:247(title)
+msgid "Dynamic Statistics Views"
+msgstr ""
+
+#: xml/monitoring.xml:251(entry) xml/monitoring.xml:303(entry)
+msgid "View Name"
+msgstr ""
+
+#: xml/monitoring.xml:252(entry) xml/monitoring.xml:304(entry) xml/monitoring.xml:637(entry) xml/monitoring.xml:905(entry) xml/monitoring.xml:1094(entry) xml/monitoring.xml:1194(entry) xml/monitoring.xml:1284(entry) xml/monitoring.xml:1419(entry) xml/monitoring.xml:1645(entry) xml/monitoring.xml:1736(entry) xml/monitoring.xml:1977(entry) xml/monitoring.xml:2106(entry) xml/monitoring.xml:2238(entry) xml/monitoring.xml:2327(entry) xml/monitoring.xml:2394(entry) xml/monitoring.xml:2491(entry) xml/monitoring.xml:2664(entry) xml/monitoring.xml:2905(entry)
+msgid "Description"
+msgstr ""
+
+#: xml/monitoring.xml:258(structname) xml/monitoring.xml:260(primary) xml/monitoring.xml:2524(structname) xml/monitoring.xml:2992(structname)
+msgid "pg_stat_activity"
+msgstr ""
+
+#: xml/monitoring.xml:266(xref) xml/monitoring.xml:279(xref) xml/monitoring.xml:292(xref) xml/monitoring.xml:317(xref) xml/monitoring.xml:329(xref) xml/monitoring.xml:341(xref) xml/monitoring.xml:354(xref) xml/monitoring.xml:367(xref) xml/monitoring.xml:441(xref) xml/monitoring.xml:476(xref) xml/monitoring.xml:511(xref) xml/monitoring.xml:548(xref) xml/monitoring.xml:584(xref)
+msgid "for details."
+msgstr ""
+
+#: xml/monitoring.xml:263(entry)
+msgid "One row per server process, showing information related to the current activity of that process, such as state and current query. See <placeholder-1/>"
+msgstr ""
+
+#: xml/monitoring.xml:271(structname) xml/monitoring.xml:273(primary)
+msgid "pg_stat_replication"
+msgstr ""
+
+#: xml/monitoring.xml:276(entry)
+msgid "One row per WAL sender process, showing statistics about replication to that sender's connected standby server. See <placeholder-1/>"
+msgstr ""
+
+#: xml/monitoring.xml:284(structname) xml/monitoring.xml:286(primary)
+msgid "pg_stat_ssl"
+msgstr ""
+
+#: xml/monitoring.xml:289(entry)
+msgid "One row per connection (regular and replication), showing information about SSL used on this connection. See <placeholder-1/>"
+msgstr ""
+
+#: xml/monitoring.xml:299(title)
+msgid "Collected Statistics Views"
+msgstr ""
+
+#: xml/monitoring.xml:310(structname) xml/monitoring.xml:312(primary) xml/monitoring.xml:2597(structname)
+msgid "pg_stat_archiver"
+msgstr ""
+
+#: xml/monitoring.xml:315(entry)
+msgid "One row only, showing statistics about the WAL archiver process's activity. See <placeholder-1/>"
+msgstr ""
+
+#: xml/monitoring.xml:322(structname) xml/monitoring.xml:324(primary) xml/monitoring.xml:2592(structname)
+msgid "pg_stat_bgwriter"
+msgstr ""
+
+#: xml/monitoring.xml:327(entry)
+msgid "One row only, showing statistics about the background writer process's activity. See <placeholder-1/>"
+msgstr ""
+
+#: xml/monitoring.xml:334(structname) xml/monitoring.xml:336(primary)
+msgid "pg_stat_database"
+msgstr ""
+
+#: xml/monitoring.xml:339(entry)
+msgid "One row per database, showing database-wide statistics. See <placeholder-1/>"
+msgstr ""
+
+#: xml/monitoring.xml:346(structname) xml/monitoring.xml:348(primary)
+msgid "pg_stat_database_conflicts"
+msgstr ""
+
+#: xml/monitoring.xml:351(entry)
+msgid "One row per database, showing database-wide statistics about query cancels due to conflict with recovery on standby servers. See <placeholder-1/>"
+msgstr ""
+
+#: xml/monitoring.xml:359(structname) xml/monitoring.xml:361(primary) xml/monitoring.xml:378(structname) xml/monitoring.xml:389(structname) xml/monitoring.xml:400(structname) xml/monitoring.xml:404(structname)
+msgid "pg_stat_all_tables"
+msgstr ""
+
+#: xml/monitoring.xml:364(entry)
+msgid "One row for each table in the current database, showing statistics about accesses to that specific table. See <placeholder-1/>"
+msgstr ""
+
+#: xml/monitoring.xml:372(structname) xml/monitoring.xml:374(primary)
+msgid "pg_stat_sys_tables"
+msgstr ""
+
+#: xml/monitoring.xml:377(entry) xml/monitoring.xml:416(entry) xml/monitoring.xml:486(entry)
+msgid "Same as <placeholder-1/>, except that only system tables are shown."
+msgstr ""
+
+#: xml/monitoring.xml:383(structname) xml/monitoring.xml:385(primary)
+msgid "pg_stat_user_tables"
+msgstr ""
+
+#: xml/monitoring.xml:388(entry) xml/monitoring.xml:427(entry) xml/monitoring.xml:497(entry)
+msgid "Same as <placeholder-1/>, except that only user tables are shown."
+msgstr ""
+
+#: xml/monitoring.xml:394(structname) xml/monitoring.xml:396(primary) xml/monitoring.xml:417(structname) xml/monitoring.xml:428(structname)
+msgid "pg_stat_xact_all_tables"
+msgstr ""
+
+#: xml/monitoring.xml:403(emphasis) xml/monitoring.xml:599(emphasis)
+msgid "not"
+msgstr ""
+
+#: xml/monitoring.xml:399(entry)
+msgid "Similar to <placeholder-1/>, but counts actions taken so far within the current transaction (which are <placeholder-2/>yet included in <placeholder-3/>and related views). The columns for numbers of live and dead rows and vacuum and analyze actions are not present in this view."
+msgstr ""
+
+#: xml/monitoring.xml:411(structname) xml/monitoring.xml:413(primary)
+msgid "pg_stat_xact_sys_tables"
+msgstr ""
+
+#: xml/monitoring.xml:422(structname) xml/monitoring.xml:424(primary)
+msgid "pg_stat_xact_user_tables"
+msgstr ""
+
+#: xml/monitoring.xml:433(structname) xml/monitoring.xml:435(primary) xml/monitoring.xml:452(structname) xml/monitoring.xml:463(structname)
+msgid "pg_stat_all_indexes"
+msgstr ""
+
+#: xml/monitoring.xml:438(entry)
+msgid "One row for each index in the current database, showing statistics about accesses to that specific index. See <placeholder-1/>"
+msgstr ""
+
+#: xml/monitoring.xml:446(structname) xml/monitoring.xml:448(primary)
+msgid "pg_stat_sys_indexes"
+msgstr ""
+
+#: xml/monitoring.xml:451(entry) xml/monitoring.xml:521(entry)
+msgid "Same as <placeholder-1/>, except that only indexes on system tables are shown."
+msgstr ""
+
+#: xml/monitoring.xml:457(structname) xml/monitoring.xml:459(primary)
+msgid "pg_stat_user_indexes"
+msgstr ""
+
+#: xml/monitoring.xml:462(entry) xml/monitoring.xml:533(entry)
+msgid "Same as <placeholder-1/>, except that only indexes on user tables are shown."
+msgstr ""
+
+#: xml/monitoring.xml:468(structname) xml/monitoring.xml:470(primary) xml/monitoring.xml:487(structname) xml/monitoring.xml:498(structname)
+msgid "pg_statio_all_tables"
+msgstr ""
+
+#: xml/monitoring.xml:473(entry)
+msgid "One row for each table in the current database, showing statistics about I/O on that specific table. See <placeholder-1/>"
+msgstr ""
+
+#: xml/monitoring.xml:481(structname) xml/monitoring.xml:483(primary)
+msgid "pg_statio_sys_tables"
+msgstr ""
+
+#: xml/monitoring.xml:492(structname) xml/monitoring.xml:494(primary)
+msgid "pg_statio_user_tables"
+msgstr ""
+
+#: xml/monitoring.xml:503(structname) xml/monitoring.xml:505(primary) xml/monitoring.xml:522(structname) xml/monitoring.xml:534(structname)
+msgid "pg_statio_all_indexes"
+msgstr ""
+
+#: xml/monitoring.xml:508(entry)
+msgid "One row for each index in the current database, showing statistics about I/O on that specific index. See <placeholder-1/>"
+msgstr ""
+
+#: xml/monitoring.xml:516(structname) xml/monitoring.xml:518(primary)
+msgid "pg_statio_sys_indexes"
+msgstr ""
+
+#: xml/monitoring.xml:528(structname) xml/monitoring.xml:530(primary)
+msgid "pg_statio_user_indexes"
+msgstr ""
+
+#: xml/monitoring.xml:540(structname) xml/monitoring.xml:542(primary) xml/monitoring.xml:559(structname) xml/monitoring.xml:572(structname)
+msgid "pg_statio_all_sequences"
+msgstr ""
+
+#: xml/monitoring.xml:545(entry)
+msgid "One row for each sequence in the current database, showing statistics about I/O on that specific sequence. See <placeholder-1/>"
+msgstr ""
+
+#: xml/monitoring.xml:553(structname) xml/monitoring.xml:555(primary)
+msgid "pg_statio_sys_sequences"
+msgstr ""
+
+#: xml/monitoring.xml:558(entry)
+msgid "Same as <placeholder-1/>, except that only system sequences are shown. (Presently, no system sequences are defined, so this view is always empty.)"
+msgstr ""
+
+#: xml/monitoring.xml:566(structname) xml/monitoring.xml:568(primary)
+msgid "pg_statio_user_sequences"
+msgstr ""
+
+#: xml/monitoring.xml:571(entry)
+msgid "Same as <placeholder-1/>, except that only user sequences are shown."
+msgstr ""
+
+#: xml/monitoring.xml:577(structname) xml/monitoring.xml:579(primary) xml/monitoring.xml:596(structname) xml/monitoring.xml:600(structname)
+msgid "pg_stat_user_functions"
+msgstr ""
+
+#: xml/monitoring.xml:582(entry)
+msgid "One row for each tracked function, showing statistics about executions of that function. See <placeholder-1/>"
+msgstr ""
+
+#: xml/monitoring.xml:589(structname) xml/monitoring.xml:592(primary)
+msgid "pg_stat_xact_user_functions"
+msgstr ""
+
+#: xml/monitoring.xml:595(entry)
+msgid "Similar to <placeholder-1/>, but counts only calls during the current transaction (which are <placeholder-2/>yet included in <placeholder-3/>)."
+msgstr ""
+
+#: xml/monitoring.xml:606(para)
+msgid "The per-index statistics are particularly useful to determine which indexes are being used and how effective they are."
+msgstr ""
+
+#: xml/monitoring.xml:609(para)
+msgid "The <structname>pg_statio_</structname>views are primarily useful to determine the effectiveness of the buffer cache. When the number of actual disk reads is much smaller than the number of buffer hits, then the cache is satisfying most read requests without invoking a kernel call. However, these statistics do not give the entire story: due to the way in which <productname>PostgreSQL</productname>handles disk I/O, data that is not in the <productname>PostgreSQL</productname>buffer cache might still reside in the kernel's I/O cache, and might therefore still be fetched without requiring a physical read. Users interested in obtaining more detailed information on <productname>PostgreSQL</productname>I/O behavior are advised to use the <productname>PostgreSQL</productname>statistics collector in combination with operating system utilities that allow insight into the kernel's handling of I/O."
+msgstr ""
+
+#: xml/monitoring.xml:630(title)
+msgid "<structname>pg_stat_activity</structname>View"
+msgstr ""
+
+#: xml/monitoring.xml:635(entry) xml/monitoring.xml:903(entry) xml/monitoring.xml:1092(entry) xml/monitoring.xml:1192(entry) xml/monitoring.xml:1282(entry) xml/monitoring.xml:1417(entry) xml/monitoring.xml:1643(entry) xml/monitoring.xml:1734(entry) xml/monitoring.xml:1975(entry) xml/monitoring.xml:2104(entry) xml/monitoring.xml:2236(entry) xml/monitoring.xml:2325(entry) xml/monitoring.xml:2392(entry)
+msgid "Column"
+msgstr ""
+
+#: xml/monitoring.xml:636(entry) xml/monitoring.xml:904(entry) xml/monitoring.xml:1093(entry) xml/monitoring.xml:1193(entry) xml/monitoring.xml:1283(entry) xml/monitoring.xml:1418(entry) xml/monitoring.xml:1644(entry) xml/monitoring.xml:1735(entry) xml/monitoring.xml:1976(entry) xml/monitoring.xml:2105(entry) xml/monitoring.xml:2237(entry) xml/monitoring.xml:2326(entry) xml/monitoring.xml:2393(entry) xml/monitoring.xml:3389(entry)
+msgid "Type"
+msgstr ""
+
+#: xml/monitoring.xml:643(structfield) xml/monitoring.xml:1425(structfield) xml/monitoring.xml:1651(structfield)
+msgid "datid"
+msgstr ""
+
+#: xml/monitoring.xml:646(type) xml/monitoring.xml:675(type) xml/monitoring.xml:923(type) xml/monitoring.xml:1428(type) xml/monitoring.xml:1654(type) xml/monitoring.xml:1745(type) xml/monitoring.xml:1986(type) xml/monitoring.xml:1995(type) xml/monitoring.xml:2115(type) xml/monitoring.xml:2247(type) xml/monitoring.xml:2256(type) xml/monitoring.xml:2336(type) xml/monitoring.xml:2403(type) xml/monitoring.xml:2740(type) xml/monitoring.xml:2777(type)
+msgid "oid"
+msgstr ""
+
+#: xml/monitoring.xml:648(entry) xml/monitoring.xml:2742(entry)
+msgid "OID of the database this backend is connected to"
+msgstr ""
+
+#: xml/monitoring.xml:653(structfield) xml/monitoring.xml:1434(structfield) xml/monitoring.xml:1660(structfield)
+msgid "datname"
+msgstr ""
+
+#: xml/monitoring.xml:656(type) xml/monitoring.xml:685(type) xml/monitoring.xml:933(type) xml/monitoring.xml:1437(type) xml/monitoring.xml:1663(type) xml/monitoring.xml:1754(type) xml/monitoring.xml:1764(type) xml/monitoring.xml:2004(type) xml/monitoring.xml:2013(type) xml/monitoring.xml:2022(type) xml/monitoring.xml:2124(type) xml/monitoring.xml:2134(type) xml/monitoring.xml:2265(type) xml/monitoring.xml:2274(type) xml/monitoring.xml:2283(type) xml/monitoring.xml:2345(type) xml/monitoring.xml:2354(type) xml/monitoring.xml:2412(type) xml/monitoring.xml:2421(type)
+msgid "name"
+msgstr ""
+
+#: xml/monitoring.xml:658(entry)
+msgid "Name of the database this backend is connected to"
+msgstr ""
+
+#: xml/monitoring.xml:663(structfield) xml/monitoring.xml:911(structfield) xml/monitoring.xml:1100(structfield)
+msgid "pid"
+msgstr ""
+
+#: xml/monitoring.xml:666(type) xml/monitoring.xml:733(type) xml/monitoring.xml:914(type) xml/monitoring.xml:980(type) xml/monitoring.xml:1062(type) xml/monitoring.xml:1103(type) xml/monitoring.xml:1142(type) xml/monitoring.xml:1446(type) xml/monitoring.xml:2502(type) xml/monitoring.xml:2511(type) xml/monitoring.xml:2727(type) xml/monitoring.xml:2753(type)
+msgid "integer"
+msgstr ""
+
+#: xml/monitoring.xml:668(entry) xml/monitoring.xml:2755(entry)
+msgid "Process ID of this backend"
+msgstr ""
+
+#: xml/monitoring.xml:672(structfield) xml/monitoring.xml:920(structfield)
+msgid "usesysid"
+msgstr ""
+
+#: xml/monitoring.xml:677(entry) xml/monitoring.xml:2779(entry)
+msgid "OID of the user logged into this backend"
+msgstr ""
+
+#: xml/monitoring.xml:682(structfield) xml/monitoring.xml:930(structfield)
+msgid "usename"
+msgstr ""
+
+#: xml/monitoring.xml:687(entry)
+msgid "Name of the user logged into this backend"
+msgstr ""
+
+#: xml/monitoring.xml:692(structfield) xml/monitoring.xml:940(structfield)
+msgid "application_name"
+msgstr ""
+
+#: xml/monitoring.xml:695(type) xml/monitoring.xml:718(type) xml/monitoring.xml:801(type) xml/monitoring.xml:869(type) xml/monitoring.xml:943(type) xml/monitoring.xml:965(type) xml/monitoring.xml:1013(type) xml/monitoring.xml:1072(type) xml/monitoring.xml:1122(type) xml/monitoring.xml:1132(type) xml/monitoring.xml:1164(type) xml/monitoring.xml:1213(type) xml/monitoring.xml:1243(type) xml/monitoring.xml:2688(type)
+msgid "text"
+msgstr ""
+
+#: xml/monitoring.xml:697(entry)
+msgid "Name of the application that is connected to this backend"
+msgstr ""
+
+#: xml/monitoring.xml:702(structfield) xml/monitoring.xml:722(structfield) xml/monitoring.xml:950(structfield) xml/monitoring.xml:969(structfield)
+msgid "client_addr"
+msgstr ""
+
+#: xml/monitoring.xml:705(type) xml/monitoring.xml:953(type) xml/monitoring.xml:2714(type)
+msgid "inet"
+msgstr ""
+
+#: xml/monitoring.xml:707(entry)
+msgid "IP address of the client connected to this backend. If this field is null, it indicates either that the client is connected via a Unix socket on the server machine or that this is an internal process such as autovacuum."
+msgstr ""
+
+#: xml/monitoring.xml:715(structfield) xml/monitoring.xml:962(structfield)
+msgid "client_hostname"
+msgstr ""
+
+#: xml/monitoring.xml:725(xref) xml/monitoring.xml:972(xref)
+msgid "is enabled."
+msgstr ""
+
+#: xml/monitoring.xml:720(entry) xml/monitoring.xml:967(entry)
+msgid "Host name of the connected client, as reported by a reverse DNS lookup of <placeholder-1/>. This field will only be non-null for IP connections, and only when <placeholder-2/>"
+msgstr ""
+
+#: xml/monitoring.xml:730(structfield) xml/monitoring.xml:977(structfield)
+msgid "client_port"
+msgstr ""
+
+#: xml/monitoring.xml:737(literal) xml/monitoring.xml:984(literal)
+msgid "-1"
+msgstr ""
+
+#: xml/monitoring.xml:735(entry)
+msgid "TCP port number that the client is using for communication with this backend, or <placeholder-1/>if a Unix socket is used"
+msgstr ""
+
+#: xml/monitoring.xml:741(structfield) xml/monitoring.xml:988(structfield)
+msgid "backend_start"
+msgstr ""
+
+#: xml/monitoring.xml:744(type) xml/monitoring.xml:754(type) xml/monitoring.xml:767(type) xml/monitoring.xml:780(type) xml/monitoring.xml:991(type) xml/monitoring.xml:1223(type) xml/monitoring.xml:1253(type) xml/monitoring.xml:1263(type) xml/monitoring.xml:1398(type) xml/monitoring.xml:1623(type) xml/monitoring.xml:1879(type) xml/monitoring.xml:1890(type) xml/monitoring.xml:1900(type) xml/monitoring.xml:1910(type) xml/monitoring.xml:2538(type) xml/monitoring.xml:2701(type) xml/monitoring.xml:2765(type) xml/monitoring.xml:2803(type)
+msgid "timestamp with time zone"
+msgstr ""
+
+#: xml/monitoring.xml:746(entry)
+msgid "Time when this process was started, i.e., when the client connected to the server"
+msgstr ""
+
+#: xml/monitoring.xml:751(structfield)
+msgid "xact_start"
+msgstr ""
+
+#: xml/monitoring.xml:760(structfield) xml/monitoring.xml:764(structfield)
+msgid "query_start"
+msgstr ""
+
+#: xml/monitoring.xml:756(entry)
+msgid "Time when this process' current transaction was started, or null if no transaction is active. If the current query is the first of its transaction, this column is equal to the <placeholder-1/>column."
+msgstr ""
+
+#: xml/monitoring.xml:771(structfield) xml/monitoring.xml:783(structfield) xml/monitoring.xml:798(structfield) xml/monitoring.xml:872(structfield) xml/monitoring.xml:1010(structfield)
+msgid "state"
+msgstr ""
+
+#: xml/monitoring.xml:772(literal) xml/monitoring.xml:873(literal)
+msgid "active"
+msgstr ""
+
+#: xml/monitoring.xml:769(entry)
+msgid "Time when the currently active query was started, or if <placeholder-1/>is not <placeholder-2/>, when the last query was started"
+msgstr ""
+
+#: xml/monitoring.xml:777(structfield)
+msgid "state_change"
+msgstr ""
+
+#: xml/monitoring.xml:782(entry)
+msgid "Time when the <placeholder-1/>was last changed"
+msgstr ""
+
+#: xml/monitoring.xml:788(structfield)
+msgid "waiting"
+msgstr ""
+
+#: xml/monitoring.xml:791(type) xml/monitoring.xml:1113(type) xml/monitoring.xml:1153(type) xml/monitoring.xml:2790(type)
+msgid "boolean"
+msgstr ""
+
+#: xml/monitoring.xml:793(entry) xml/monitoring.xml:2792(entry)
+msgid "True if this backend is currently waiting on a lock"
+msgstr ""
+
+#: xml/monitoring.xml:807(para)
+msgid "<literal>active</literal>: The backend is executing a query."
+msgstr ""
+
+#: xml/monitoring.xml:812(para)
+msgid "<literal>idle</literal>: The backend is waiting for a new client command."
+msgstr ""
+
+#: xml/monitoring.xml:817(para)
+msgid "<literal>idle in transaction</literal>: The backend is in a transaction, but is not currently executing a query."
+msgstr ""
+
+#: xml/monitoring.xml:823(para)
+msgid "<literal>idle in transaction (aborted)</literal>: This state is similar to <literal>idle in transaction</literal>, except one of the statements in the transaction caused an error."
+msgstr ""
+
+#: xml/monitoring.xml:831(para)
+msgid "<literal>fastpath function call</literal>: The backend is executing a fast-path function."
+msgstr ""
+
+#: xml/monitoring.xml:836(para)
+msgid "<literal>disabled</literal>: This state is reported if <xref linkend=\"guc-track-activities\">is disabled in this backend.</xref>"
+msgstr ""
+
+#: xml/monitoring.xml:803(entry)
+msgid "Current overall state of this backend. Possible values are: <placeholder-1/>"
+msgstr ""
+
+#: xml/monitoring.xml:846(structfield)
+msgid "backend_xid"
+msgstr ""
+
+#: xml/monitoring.xml:849(type) xml/monitoring.xml:859(type) xml/monitoring.xml:1001(type)
+msgid "xid"
+msgstr ""
+
+#: xml/monitoring.xml:851(entry)
+msgid "Top-level transaction identifier of this backend, if any."
+msgstr ""
+
+#: xml/monitoring.xml:856(structfield) xml/monitoring.xml:998(structfield)
+msgid "backend_xmin"
+msgstr ""
+
+#: xml/monitoring.xml:862(literal) xml/monitoring.xml:1004(literal)
+msgid "xmin"
+msgstr ""
+
+#: xml/monitoring.xml:861(entry)
+msgid "The current backend's <placeholder-1/>horizon."
+msgstr ""
+
+#: xml/monitoring.xml:866(structfield)
+msgid "query"
+msgstr ""
+
+#: xml/monitoring.xml:871(entry)
+msgid "Text of this backend's most recent query. If <placeholder-1/>is <placeholder-2/>this field shows the currently executing query. In all other states, it shows the last query that was executed."
+msgstr ""
+
+#: xml/monitoring.xml:880(para)
+msgid "The <structname>pg_stat_activity</structname>view will have one row per server process, showing information related to the current activity of that process."
+msgstr ""
+
+#: xml/monitoring.xml:885(para)
+msgid "The <structfield>waiting</structfield>and <structfield>state</structfield>columns are independent. If a backend is in the <literal>active</literal>state, it may or may not be <literal>waiting</literal>. If the state is <literal>active</literal>and <structfield>waiting</structfield>is true, it means that a query is being executed, but is being blocked by a lock somewhere in the system."
+msgstr ""
+
+#: xml/monitoring.xml:898(title)
+msgid "<structname>pg_stat_replication</structname>View"
+msgstr ""
+
+#: xml/monitoring.xml:916(entry)
+msgid "Process ID of a WAL sender process"
+msgstr ""
+
+#: xml/monitoring.xml:925(entry)
+msgid "OID of the user logged into this WAL sender process"
+msgstr ""
+
+#: xml/monitoring.xml:935(entry)
+msgid "Name of the user logged into this WAL sender process"
+msgstr ""
+
+#: xml/monitoring.xml:945(entry)
+msgid "Name of the application that is connected to this WAL sender"
+msgstr ""
+
+#: xml/monitoring.xml:955(entry)
+msgid "IP address of the client connected to this WAL sender. If this field is null, it indicates that the client is connected via a Unix socket on the server machine."
+msgstr ""
+
+#: xml/monitoring.xml:982(entry)
+msgid "TCP port number that the client is using for communication with this WAL sender, or <placeholder-1/>if a Unix socket is used"
+msgstr ""
+
+#: xml/monitoring.xml:993(entry)
+msgid "Time when this process was started, i.e., when the client connected to this WAL sender"
+msgstr ""
+
+#: xml/monitoring.xml:1005(xref)
+msgid "."
+msgstr ""
+
+#: xml/monitoring.xml:1003(entry)
+msgid "This standby's <placeholder-1/>horizon reported by <placeholder-2/>"
+msgstr ""
+
+#: xml/monitoring.xml:1015(entry)
+msgid "Current WAL sender state"
+msgstr ""
+
+#: xml/monitoring.xml:1019(structfield)
+msgid "sent_location"
+msgstr ""
+
+#: xml/monitoring.xml:1022(type) xml/monitoring.xml:1032(type) xml/monitoring.xml:1042(type) xml/monitoring.xml:1052(type)
+msgid "pg_lsn"
+msgstr ""
+
+#: xml/monitoring.xml:1024(entry)
+msgid "Last transaction log position sent on this connection"
+msgstr ""
+
+#: xml/monitoring.xml:1029(structfield)
+msgid "write_location"
+msgstr ""
+
+#: xml/monitoring.xml:1034(entry)
+msgid "Last transaction log position written to disk by this standby server"
+msgstr ""
+
+#: xml/monitoring.xml:1039(structfield)
+msgid "flush_location"
+msgstr ""
+
+#: xml/monitoring.xml:1044(entry)
+msgid "Last transaction log position flushed to disk by this standby server"
+msgstr ""
+
+#: xml/monitoring.xml:1049(structfield)
+msgid "replay_location"
+msgstr ""
+
+#: xml/monitoring.xml:1054(entry)
+msgid "Last transaction log position replayed into the database on this standby server"
+msgstr ""
+
+#: xml/monitoring.xml:1059(structfield)
+msgid "sync_priority"
+msgstr ""
+
+#: xml/monitoring.xml:1064(entry)
+msgid "Priority of this standby server for being chosen as the synchronous standby"
+msgstr ""
+
+#: xml/monitoring.xml:1069(structfield)
+msgid "sync_state"
+msgstr ""
+
+#: xml/monitoring.xml:1074(entry)
+msgid "Synchronous state of this standby server"
+msgstr ""
+
+#: xml/monitoring.xml:1080(para)
+msgid "The <structname>pg_stat_replication</structname>view will contain one row per WAL sender process, showing statistics about replication to that sender's connected standby server. Only directly connected standbys are listed; no information is available about downstream standby servers."
+msgstr ""
+
+#: xml/monitoring.xml:1087(title)
+msgid "<structname>pg_stat_ssl</structname>View"
+msgstr ""
+
+#: xml/monitoring.xml:1105(entry)
+msgid "Process ID of a backend or WAL sender process"
+msgstr ""
+
+#: xml/monitoring.xml:1110(structfield)
+msgid "ssl"
+msgstr ""
+
+#: xml/monitoring.xml:1115(entry)
+msgid "True if SSL is used on this connection"
+msgstr ""
+
+#: xml/monitoring.xml:1119(structfield)
+msgid "version"
+msgstr ""
+
+#: xml/monitoring.xml:1124(entry)
+msgid "Version of SSL in use, or NULL if SSL is not in use on this connection"
+msgstr ""
+
+#: xml/monitoring.xml:1129(structfield)
+msgid "cipher"
+msgstr ""
+
+#: xml/monitoring.xml:1134(entry)
+msgid "Name of SSL cipher in use, or NULL if SSL is not in use on this connection"
+msgstr ""
+
+#: xml/monitoring.xml:1139(structfield)
+msgid "bits"
+msgstr ""
+
+#: xml/monitoring.xml:1144(entry)
+msgid "Number of bits in the encryption algorithm used, or NULL if SSL is not used on this connection"
+msgstr ""
+
+#: xml/monitoring.xml:1150(structfield)
+msgid "compression"
+msgstr ""
+
+#: xml/monitoring.xml:1155(entry)
+msgid "True if SSL compression is in use, false if not, or NULL if SSL is not in use on this connection"
+msgstr ""
+
+#: xml/monitoring.xml:1161(structfield)
+msgid "clientdn"
+msgstr ""
+
+#: xml/monitoring.xml:1171(symbol)
+msgid "NAMEDATALEN"
+msgstr ""
+
+#: xml/monitoring.xml:1166(entry)
+msgid "Distinguished Name (DN) field from the client certificate used, or NULL if no client certificate was supplied or if SSL is not in use on this connection. This field is truncated if the DN field is longer than <placeholder-1/>(64 characters in a standard build)"
+msgstr ""
+
+#: xml/monitoring.xml:1177(para)
+msgid "The <structname>pg_stat_ssl</structname>view will contain one row per backend or WAL sender process, showing statistics about SSL usage on this connection. It can be joined to <structname>pg_stat_activity</structname>or <structname>pg_stat_replication</structname>on the <structfield>pid</structfield>column to get more details about the connection."
+msgstr ""
+
+#: xml/monitoring.xml:1187(title)
+msgid "<structname>pg_stat_archiver</structname>View"
+msgstr ""
+
+#: xml/monitoring.xml:1200(structfield)
+msgid "archived_count"
+msgstr ""
+
+#: xml/monitoring.xml:1203(type) xml/monitoring.xml:1233(type) xml/monitoring.xml:1293(type) xml/monitoring.xml:1303(type) xml/monitoring.xml:1335(type) xml/monitoring.xml:1345(type) xml/monitoring.xml:1355(type) xml/monitoring.xml:1366(type) xml/monitoring.xml:1376(type) xml/monitoring.xml:1389(type) xml/monitoring.xml:1459(type) xml/monitoring.xml:1469(type) xml/monitoring.xml:1479(type) xml/monitoring.xml:1489(type) xml/monitoring.xml:1502(type) xml/monitoring.xml:1512(type) xml/monitoring.xml:1522(type) xml/monitoring.xml:1532(type) xml/monitoring.xml:1542(type) xml/monitoring.xml:1552(type) xml/monitoring.xml:1565(type) xml/monitoring.xml:1579(type) xml/monitoring.xml:1593(type) xml/monitoring.xml:1672(type) xml/monitoring.xml:1682(type) xml/monitoring.xml:1692(type) xml/monitoring.xml:1702(type) xml/monitoring.xml:1712(type) xml/monitoring.xml:1773(type) xml/monitoring.xml:1783(type) xml/monitoring.xml:1793(type) xml/monitoring.xml:1803(type) xml/monitoring.xml:1813(type) xml/monitoring.xml:1822(type) xml/monitoring.xml:1832(type) xml/monitoring.xml:1841(type) xml/monitoring.xml:1851(type) xml/monitoring.xml:1860(type) xml/monitoring.xml:1869(type) xml/monitoring.xml:1920(type) xml/monitoring.xml:1931(type) xml/monitoring.xml:1941(type) xml/monitoring.xml:1951(type) xml/monitoring.xml:2031(type) xml/monitoring.xml:2041(type) xml/monitoring.xml:2051(type) xml/monitoring.xml:2143(type) xml/monitoring.xml:2153(type) xml/monitoring.xml:2162(type) xml/monitoring.xml:2172(type) xml/monitoring.xml:2182(type) xml/monitoring.xml:2192(type) xml/monitoring.xml:2202(type) xml/monitoring.xml:2212(type) xml/monitoring.xml:2292(type) xml/monitoring.xml:2302(type) xml/monitoring.xml:2363(type) xml/monitoring.xml:2373(type) xml/monitoring.xml:2430(type)
+msgid "bigint"
+msgstr ""
+
+#: xml/monitoring.xml:1205(entry)
+msgid "Number of WAL files that have been successfully archived"
+msgstr ""
+
+#: xml/monitoring.xml:1210(structfield)
+msgid "last_archived_wal"
+msgstr ""
+
+#: xml/monitoring.xml:1215(entry)
+msgid "Name of the last WAL file successfully archived"
+msgstr ""
+
+#: xml/monitoring.xml:1220(structfield)
+msgid "last_archived_time"
+msgstr ""
+
+#: xml/monitoring.xml:1225(entry)
+msgid "Time of the last successful archive operation"
+msgstr ""
+
+#: xml/monitoring.xml:1230(structfield)
+msgid "failed_count"
+msgstr ""
+
+#: xml/monitoring.xml:1235(entry)
+msgid "Number of failed attempts for archiving WAL files"
+msgstr ""
+
+#: xml/monitoring.xml:1240(structfield)
+msgid "last_failed_wal"
+msgstr ""
+
+#: xml/monitoring.xml:1245(entry)
+msgid "Name of the WAL file of the last failed archival operation"
+msgstr ""
+
+#: xml/monitoring.xml:1250(structfield)
+msgid "last_failed_time"
+msgstr ""
+
+#: xml/monitoring.xml:1255(entry)
+msgid "Time of the last failed archival operation"
+msgstr ""
+
+#: xml/monitoring.xml:1260(structfield) xml/monitoring.xml:1395(structfield) xml/monitoring.xml:1620(structfield)
+msgid "stats_reset"
+msgstr ""
+
+#: xml/monitoring.xml:1265(entry) xml/monitoring.xml:1400(entry) xml/monitoring.xml:1625(entry)
+msgid "Time at which these statistics were last reset"
+msgstr ""
+
+#: xml/monitoring.xml:1271(para)
+msgid "The <structname>pg_stat_archiver</structname>view will always have a single row, containing data about the archiver process of the cluster."
+msgstr ""
+
+#: xml/monitoring.xml:1277(title)
+msgid "<structname>pg_stat_bgwriter</structname>View"
+msgstr ""
+
+#: xml/monitoring.xml:1290(structfield)
+msgid "checkpoints_timed"
+msgstr ""
+
+#: xml/monitoring.xml:1295(entry)
+msgid "Number of scheduled checkpoints that have been performed"
+msgstr ""
+
+#: xml/monitoring.xml:1300(structfield)
+msgid "checkpoints_req"
+msgstr ""
+
+#: xml/monitoring.xml:1305(entry)
+msgid "Number of requested checkpoints that have been performed"
+msgstr ""
+
+#: xml/monitoring.xml:1310(structfield)
+msgid "checkpoint_write_time"
+msgstr ""
+
+#: xml/monitoring.xml:1313(type) xml/monitoring.xml:1324(type) xml/monitoring.xml:1603(type) xml/monitoring.xml:1613(type) xml/monitoring.xml:2440(type) xml/monitoring.xml:2450(type)
+msgid "double precision"
+msgstr ""
+
+#: xml/monitoring.xml:1315(entry)
+msgid "Total amount of time that has been spent in the portion of checkpoint processing where files are written to disk, in milliseconds"
+msgstr ""
+
+#: xml/monitoring.xml:1321(structfield)
+msgid "checkpoint_sync_time"
+msgstr ""
+
+#: xml/monitoring.xml:1326(entry)
+msgid "Total amount of time that has been spent in the portion of checkpoint processing where files are synchronized to disk, in milliseconds"
+msgstr ""
+
+#: xml/monitoring.xml:1332(structfield)
+msgid "buffers_checkpoint"
+msgstr ""
+
+#: xml/monitoring.xml:1337(entry)
+msgid "Number of buffers written during checkpoints"
+msgstr ""
+
+#: xml/monitoring.xml:1342(structfield)
+msgid "buffers_clean"
+msgstr ""
+
+#: xml/monitoring.xml:1347(entry)
+msgid "Number of buffers written by the background writer"
+msgstr ""
+
+#: xml/monitoring.xml:1352(structfield)
+msgid "maxwritten_clean"
+msgstr ""
+
+#: xml/monitoring.xml:1357(entry)
+msgid "Number of times the background writer stopped a cleaning scan because it had written too many buffers"
+msgstr ""
+
+#: xml/monitoring.xml:1363(structfield)
+msgid "buffers_backend"
+msgstr ""
+
+#: xml/monitoring.xml:1368(entry)
+msgid "Number of buffers written directly by a backend"
+msgstr ""
+
+#: xml/monitoring.xml:1373(structfield)
+msgid "buffers_backend_fsync"
+msgstr ""
+
+#: xml/monitoring.xml:1380(function)
+msgid "fsync"
+msgstr ""
+
+#: xml/monitoring.xml:1378(entry)
+msgid "Number of times a backend had to execute its own <placeholder-1/>call (normally the background writer handles those even when the backend does its own write)"
+msgstr ""
+
+#: xml/monitoring.xml:1386(structfield)
+msgid "buffers_alloc"
+msgstr ""
+
+#: xml/monitoring.xml:1391(entry)
+msgid "Number of buffers allocated"
+msgstr ""
+
+#: xml/monitoring.xml:1406(para)
+msgid "The <structname>pg_stat_bgwriter</structname>view will always have a single row, containing global data for the cluster."
+msgstr ""
+
+#: xml/monitoring.xml:1412(title)
+msgid "<structname>pg_stat_database</structname>View"
+msgstr ""
+
+#: xml/monitoring.xml:1430(entry) xml/monitoring.xml:1656(entry)
+msgid "OID of a database"
+msgstr ""
+
+#: xml/monitoring.xml:1439(entry) xml/monitoring.xml:1665(entry)
+msgid "Name of this database"
+msgstr ""
+
+#: xml/monitoring.xml:1443(structfield)
+msgid "numbackends"
+msgstr ""
+
+#: xml/monitoring.xml:1448(entry)
+msgid "Number of backends currently connected to this database. This is the only column in this view that returns a value reflecting current state; all other columns return the accumulated values since the last reset."
+msgstr ""
+
+#: xml/monitoring.xml:1456(structfield)
+msgid "xact_commit"
+msgstr ""
+
+#: xml/monitoring.xml:1461(entry)
+msgid "Number of transactions in this database that have been committed"
+msgstr ""
+
+#: xml/monitoring.xml:1466(structfield)
+msgid "xact_rollback"
+msgstr ""
+
+#: xml/monitoring.xml:1471(entry)
+msgid "Number of transactions in this database that have been rolled back"
+msgstr ""
+
+#: xml/monitoring.xml:1476(structfield) xml/monitoring.xml:2360(structfield)
+msgid "blks_read"
+msgstr ""
+
+#: xml/monitoring.xml:1481(entry)
+msgid "Number of disk blocks read in this database"
+msgstr ""
+
+#: xml/monitoring.xml:1486(structfield) xml/monitoring.xml:2370(structfield)
+msgid "blks_hit"
+msgstr ""
+
+#: xml/monitoring.xml:1491(entry)
+msgid "Number of times disk blocks were found already in the buffer cache, so that a read was not necessary (this only includes hits in the PostgreSQL buffer cache, not the operating system's file system cache)"
+msgstr ""
+
+#: xml/monitoring.xml:1499(structfield)
+msgid "tup_returned"
+msgstr ""
+
+#: xml/monitoring.xml:1504(entry)
+msgid "Number of rows returned by queries in this database"
+msgstr ""
+
+#: xml/monitoring.xml:1509(structfield)
+msgid "tup_fetched"
+msgstr ""
+
+#: xml/monitoring.xml:1514(entry)
+msgid "Number of rows fetched by queries in this database"
+msgstr ""
+
+#: xml/monitoring.xml:1519(structfield)
+msgid "tup_inserted"
+msgstr ""
+
+#: xml/monitoring.xml:1524(entry)
+msgid "Number of rows inserted by queries in this database"
+msgstr ""
+
+#: xml/monitoring.xml:1529(structfield)
+msgid "tup_updated"
+msgstr ""
+
+#: xml/monitoring.xml:1534(entry)
+msgid "Number of rows updated by queries in this database"
+msgstr ""
+
+#: xml/monitoring.xml:1539(structfield)
+msgid "tup_deleted"
+msgstr ""
+
+#: xml/monitoring.xml:1544(entry)
+msgid "Number of rows deleted by queries in this database"
+msgstr ""
+
+#: xml/monitoring.xml:1549(structfield)
+msgid "conflicts"
+msgstr ""
+
+#: xml/monitoring.xml:1557(xref)
+msgid "for details.)"
+msgstr ""
+
+#: xml/monitoring.xml:1554(entry)
+msgid "Number of queries canceled due to conflicts with recovery in this database. (Conflicts occur only on standby servers; see <placeholder-1/>"
+msgstr ""
+
+#: xml/monitoring.xml:1562(structfield)
+msgid "temp_files"
+msgstr ""
+
+#: xml/monitoring.xml:1571(xref) xml/monitoring.xml:1585(xref)
+msgid "setting."
+msgstr ""
+
+#: xml/monitoring.xml:1567(entry)
+msgid "Number of temporary files created by queries in this database. All temporary files are counted, regardless of why the temporary file was created (e.g., sorting or hashing), and regardless of the <placeholder-1/>"
+msgstr ""
+
+#: xml/monitoring.xml:1576(structfield)
+msgid "temp_bytes"
+msgstr ""
+
+#: xml/monitoring.xml:1581(entry)
+msgid "Total amount of data written to temporary files by queries in this database. All temporary files are counted, regardless of why the temporary file was created, and regardless of the <placeholder-1/>"
+msgstr ""
+
+#: xml/monitoring.xml:1590(structfield)
+msgid "deadlocks"
+msgstr ""
+
+#: xml/monitoring.xml:1595(entry)
+msgid "Number of deadlocks detected in this database"
+msgstr ""
+
+#: xml/monitoring.xml:1600(structfield)
+msgid "blk_read_time"
+msgstr ""
+
+#: xml/monitoring.xml:1605(entry)
+msgid "Time spent reading data file blocks by backends in this database, in milliseconds"
+msgstr ""
+
+#: xml/monitoring.xml:1610(structfield)
+msgid "blk_write_time"
+msgstr ""
+
+#: xml/monitoring.xml:1615(entry)
+msgid "Time spent writing data file blocks by backends in this database, in milliseconds"
+msgstr ""
+
+#: xml/monitoring.xml:1631(para)
+msgid "The <structname>pg_stat_database</structname>view will contain one row for each database in the cluster, showing database-wide statistics."
+msgstr ""
+
+#: xml/monitoring.xml:1637(title)
+msgid "<structname> pg_stat_database_conflicts</structname>View"
+msgstr ""
+
+#: xml/monitoring.xml:1669(structfield)
+msgid "confl_tablespace"
+msgstr ""
+
+#: xml/monitoring.xml:1674(entry)
+msgid "Number of queries in this database that have been canceled due to dropped tablespaces"
+msgstr ""
+
+#: xml/monitoring.xml:1679(structfield)
+msgid "confl_lock"
+msgstr ""
+
+#: xml/monitoring.xml:1684(entry)
+msgid "Number of queries in this database that have been canceled due to lock timeouts"
+msgstr ""
+
+#: xml/monitoring.xml:1689(structfield)
+msgid "confl_snapshot"
+msgstr ""
+
+#: xml/monitoring.xml:1694(entry)
+msgid "Number of queries in this database that have been canceled due to old snapshots"
+msgstr ""
+
+#: xml/monitoring.xml:1699(structfield)
+msgid "confl_bufferpin"
+msgstr ""
+
+#: xml/monitoring.xml:1704(entry)
+msgid "Number of queries in this database that have been canceled due to pinned buffers"
+msgstr ""
+
+#: xml/monitoring.xml:1709(structfield)
+msgid "confl_deadlock"
+msgstr ""
+
+#: xml/monitoring.xml:1714(entry)
+msgid "Number of queries in this database that have been canceled due to deadlocks"
+msgstr ""
+
+#: xml/monitoring.xml:1720(para)
+msgid "The <structname>pg_stat_database_conflicts</structname>view will contain one row per database, showing database-wide statistics about query cancels occurring due to conflicts with recovery on standby servers. This view will only contain information on standby servers, since conflicts do not occur on master servers."
+msgstr ""
+
+#: xml/monitoring.xml:1729(title)
+msgid "<structname>pg_stat_all_tables</structname>View"
+msgstr ""
+
+#: xml/monitoring.xml:1742(structfield) xml/monitoring.xml:1983(structfield) xml/monitoring.xml:2112(structfield) xml/monitoring.xml:2244(structfield) xml/monitoring.xml:2333(structfield)
+msgid "relid"
+msgstr ""
+
+#: xml/monitoring.xml:1747(entry) xml/monitoring.xml:2117(entry)
+msgid "OID of a table"
+msgstr ""
+
+#: xml/monitoring.xml:1751(structfield) xml/monitoring.xml:2001(structfield) xml/monitoring.xml:2121(structfield) xml/monitoring.xml:2262(structfield) xml/monitoring.xml:2342(structfield) xml/monitoring.xml:2409(structfield)
+msgid "schemaname"
+msgstr ""
+
+#: xml/monitoring.xml:1756(entry) xml/monitoring.xml:2126(entry)
+msgid "Name of the schema that this table is in"
+msgstr ""
+
+#: xml/monitoring.xml:1761(structfield) xml/monitoring.xml:2010(structfield) xml/monitoring.xml:2131(structfield) xml/monitoring.xml:2271(structfield) xml/monitoring.xml:2351(structfield)
+msgid "relname"
+msgstr ""
+
+#: xml/monitoring.xml:1766(entry) xml/monitoring.xml:2136(entry)
+msgid "Name of this table"
+msgstr ""
+
+#: xml/monitoring.xml:1770(structfield)
+msgid "seq_scan"
+msgstr ""
+
+#: xml/monitoring.xml:1775(entry)
+msgid "Number of sequential scans initiated on this table"
+msgstr ""
+
+#: xml/monitoring.xml:1780(structfield)
+msgid "seq_tup_read"
+msgstr ""
+
+#: xml/monitoring.xml:1785(entry)
+msgid "Number of live rows fetched by sequential scans"
+msgstr ""
+
+#: xml/monitoring.xml:1790(structfield) xml/monitoring.xml:2028(structfield)
+msgid "idx_scan"
+msgstr ""
+
+#: xml/monitoring.xml:1795(entry)
+msgid "Number of index scans initiated on this table"
+msgstr ""
+
+#: xml/monitoring.xml:1800(structfield) xml/monitoring.xml:2048(structfield)
+msgid "idx_tup_fetch"
+msgstr ""
+
+#: xml/monitoring.xml:1805(entry)
+msgid "Number of live rows fetched by index scans"
+msgstr ""
+
+#: xml/monitoring.xml:1810(structfield)
+msgid "n_tup_ins"
+msgstr ""
+
+#: xml/monitoring.xml:1815(entry)
+msgid "Number of rows inserted"
+msgstr ""
+
+#: xml/monitoring.xml:1819(structfield)
+msgid "n_tup_upd"
+msgstr ""
+
+#: xml/monitoring.xml:1824(entry)
+msgid "Number of rows updated (includes HOT updated rows)"
+msgstr ""
+
+#: xml/monitoring.xml:1829(structfield)
+msgid "n_tup_del"
+msgstr ""
+
+#: xml/monitoring.xml:1834(entry)
+msgid "Number of rows deleted"
+msgstr ""
+
+#: xml/monitoring.xml:1838(structfield)
+msgid "n_tup_hot_upd"
+msgstr ""
+
+#: xml/monitoring.xml:1843(entry)
+msgid "Number of rows HOT updated (i.e., with no separate index update required)"
+msgstr ""
+
+#: xml/monitoring.xml:1848(structfield)
+msgid "n_live_tup"
+msgstr ""
+
+#: xml/monitoring.xml:1853(entry)
+msgid "Estimated number of live rows"
+msgstr ""
+
+#: xml/monitoring.xml:1857(structfield)
+msgid "n_dead_tup"
+msgstr ""
+
+#: xml/monitoring.xml:1862(entry)
+msgid "Estimated number of dead rows"
+msgstr ""
+
+#: xml/monitoring.xml:1866(structfield)
+msgid "n_mod_since_analyze"
+msgstr ""
+
+#: xml/monitoring.xml:1871(entry)
+msgid "Estimated number of rows modified since this table was last analyzed"
+msgstr ""
+
+#: xml/monitoring.xml:1876(structfield)
+msgid "last_vacuum"
+msgstr ""
+
+#: xml/monitoring.xml:1883(command) xml/monitoring.xml:1924(command)
+msgid "VACUUM FULL"
+msgstr ""
+
+#: xml/monitoring.xml:1881(entry)
+msgid "Last time at which this table was manually vacuumed (not counting <placeholder-1/>)"
+msgstr ""
+
+#: xml/monitoring.xml:1887(structfield)
+msgid "last_autovacuum"
+msgstr ""
+
+#: xml/monitoring.xml:1892(entry)
+msgid "Last time at which this table was vacuumed by the autovacuum daemon"
+msgstr ""
+
+#: xml/monitoring.xml:1897(structfield)
+msgid "last_analyze"
+msgstr ""
+
+#: xml/monitoring.xml:1902(entry)
+msgid "Last time at which this table was manually analyzed"
+msgstr ""
+
+#: xml/monitoring.xml:1907(structfield)
+msgid "last_autoanalyze"
+msgstr ""
+
+#: xml/monitoring.xml:1912(entry)
+msgid "Last time at which this table was analyzed by the autovacuum daemon"
+msgstr ""
+
+#: xml/monitoring.xml:1917(structfield)
+msgid "vacuum_count"
+msgstr ""
+
+#: xml/monitoring.xml:1922(entry)
+msgid "Number of times this table has been manually vacuumed (not counting <placeholder-1/>)"
+msgstr ""
+
+#: xml/monitoring.xml:1928(structfield)
+msgid "autovacuum_count"
+msgstr ""
+
+#: xml/monitoring.xml:1933(entry)
+msgid "Number of times this table has been vacuumed by the autovacuum daemon"
+msgstr ""
+
+#: xml/monitoring.xml:1938(structfield)
+msgid "analyze_count"
+msgstr ""
+
+#: xml/monitoring.xml:1943(entry)
+msgid "Number of times this table has been manually analyzed"
+msgstr ""
+
+#: xml/monitoring.xml:1948(structfield)
+msgid "autoanalyze_count"
+msgstr ""
+
+#: xml/monitoring.xml:1953(entry)
+msgid "Number of times this table has been analyzed by the autovacuum daemon"
+msgstr ""
+
+#: xml/monitoring.xml:1959(para)
+msgid "The <structname>pg_stat_all_tables</structname>view will contain one row for each table in the current database (including TOAST tables), showing statistics about accesses to that specific table. The <structname>pg_stat_user_tables</structname>and <structname>pg_stat_sys_tables</structname>views contain the same information, but filtered to only show user and system tables respectively."
+msgstr ""
+
+#: xml/monitoring.xml:1970(title)
+msgid "<structname>pg_stat_all_indexes</structname>View"
+msgstr ""
+
+#: xml/monitoring.xml:1988(entry) xml/monitoring.xml:2249(entry)
+msgid "OID of the table for this index"
+msgstr ""
+
+#: xml/monitoring.xml:1992(structfield) xml/monitoring.xml:2253(structfield)
+msgid "indexrelid"
+msgstr ""
+
+#: xml/monitoring.xml:1997(entry) xml/monitoring.xml:2258(entry)
+msgid "OID of this index"
+msgstr ""
+
+#: xml/monitoring.xml:2006(entry) xml/monitoring.xml:2267(entry)
+msgid "Name of the schema this index is in"
+msgstr ""
+
+#: xml/monitoring.xml:2015(entry) xml/monitoring.xml:2276(entry)
+msgid "Name of the table for this index"
+msgstr ""
+
+#: xml/monitoring.xml:2019(structfield) xml/monitoring.xml:2280(structfield)
+msgid "indexrelname"
+msgstr ""
+
+#: xml/monitoring.xml:2024(entry) xml/monitoring.xml:2285(entry)
+msgid "Name of this index"
+msgstr ""
+
+#: xml/monitoring.xml:2033(entry)
+msgid "Number of index scans initiated on this index"
+msgstr ""
+
+#: xml/monitoring.xml:2038(structfield)
+msgid "idx_tup_read"
+msgstr ""
+
+#: xml/monitoring.xml:2043(entry)
+msgid "Number of index entries returned by scans on this index"
+msgstr ""
+
+#: xml/monitoring.xml:2053(entry)
+msgid "Number of live table rows fetched by simple index scans using this index"
+msgstr ""
+
+#: xml/monitoring.xml:2059(para)
+msgid "The <structname>pg_stat_all_indexes</structname>view will contain one row for each index in the current database, showing statistics about accesses to that specific index. The <structname>pg_stat_user_indexes</structname>and <structname>pg_stat_sys_indexes</structname>views contain the same information, but filtered to only show user and system indexes respectively."
+msgstr ""
+
+#: xml/monitoring.xml:2067(para)
+msgid "Indexes can be used by simple index scans, <quote>bitmap</quote>index scans, and the optimizer. In a bitmap scan the output of several indexes can be combined via AND or OR rules, so it is difficult to associate individual heap row fetches with specific indexes when a bitmap scan is used. Therefore, a bitmap scan increments the <structname>pg_stat_all_indexes</structname>. <structfield>idx_tup_read</structfield>count(s) for the index(es) it uses, and it increments the <structname>pg_stat_all_tables</structname>. <structfield>idx_tup_fetch</structfield>count for the table, but it does not affect <structname>pg_stat_all_indexes</structname>. <structfield>idx_tup_fetch</structfield>. The optimizer also accesses indexes to check for supplied constants whose values are outside the recorded range of the optimizer statistics because the optimizer statistics might be stale."
+msgstr ""
+
+#: xml/monitoring.xml:2085(para)
+msgid "The <structfield>idx_tup_read</structfield>and <structfield>idx_tup_fetch</structfield>counts can be different even without any use of bitmap scans, because <structfield>idx_tup_read</structfield>counts index entries retrieved from the index while <structfield>idx_tup_fetch</structfield>counts live rows fetched from the table. The latter will be less if any dead or not-yet-committed rows are fetched using the index, or if any heap fetches are avoided by means of an index-only scan."
+msgstr ""
+
+#: xml/monitoring.xml:2099(title)
+msgid "<structname>pg_statio_all_tables</structname>View"
+msgstr ""
+
+#: xml/monitoring.xml:2140(structfield)
+msgid "heap_blks_read"
+msgstr ""
+
+#: xml/monitoring.xml:2145(entry)
+msgid "Number of disk blocks read from this table"
+msgstr ""
+
+#: xml/monitoring.xml:2150(structfield)
+msgid "heap_blks_hit"
+msgstr ""
+
+#: xml/monitoring.xml:2155(entry)
+msgid "Number of buffer hits in this table"
+msgstr ""
+
+#: xml/monitoring.xml:2159(structfield) xml/monitoring.xml:2289(structfield)
+msgid "idx_blks_read"
+msgstr ""
+
+#: xml/monitoring.xml:2164(entry)
+msgid "Number of disk blocks read from all indexes on this table"
+msgstr ""
+
+#: xml/monitoring.xml:2169(structfield) xml/monitoring.xml:2299(structfield)
+msgid "idx_blks_hit"
+msgstr ""
+
+#: xml/monitoring.xml:2174(entry)
+msgid "Number of buffer hits in all indexes on this table"
+msgstr ""
+
+#: xml/monitoring.xml:2179(structfield)
+msgid "toast_blks_read"
+msgstr ""
+
+#: xml/monitoring.xml:2184(entry)
+msgid "Number of disk blocks read from this table's TOAST table (if any)"
+msgstr ""
+
+#: xml/monitoring.xml:2189(structfield)
+msgid "toast_blks_hit"
+msgstr ""
+
+#: xml/monitoring.xml:2194(entry)
+msgid "Number of buffer hits in this table's TOAST table (if any)"
+msgstr ""
+
+#: xml/monitoring.xml:2199(structfield)
+msgid "tidx_blks_read"
+msgstr ""
+
+#: xml/monitoring.xml:2204(entry)
+msgid "Number of disk blocks read from this table's TOAST table indexes (if any)"
+msgstr ""
+
+#: xml/monitoring.xml:2209(structfield)
+msgid "tidx_blks_hit"
+msgstr ""
+
+#: xml/monitoring.xml:2214(entry)
+msgid "Number of buffer hits in this table's TOAST table indexes (if any)"
+msgstr ""
+
+#: xml/monitoring.xml:2220(para)
+msgid "The <structname>pg_statio_all_tables</structname>view will contain one row for each table in the current database (including TOAST tables), showing statistics about I/O on that specific table. The <structname>pg_statio_user_tables</structname>and <structname>pg_statio_sys_tables</structname>views contain the same information, but filtered to only show user and system tables respectively."
+msgstr ""
+
+#: xml/monitoring.xml:2231(title)
+msgid "<structname>pg_statio_all_indexes</structname>View"
+msgstr ""
+
+#: xml/monitoring.xml:2294(entry)
+msgid "Number of disk blocks read from this index"
+msgstr ""
+
+#: xml/monitoring.xml:2304(entry)
+msgid "Number of buffer hits in this index"
+msgstr ""
+
+#: xml/monitoring.xml:2309(para)
+msgid "The <structname>pg_statio_all_indexes</structname>view will contain one row for each index in the current database, showing statistics about I/O on that specific index. The <structname>pg_statio_user_indexes</structname>and <structname>pg_statio_sys_indexes</structname>views contain the same information, but filtered to only show user and system indexes respectively."
+msgstr ""
+
+#: xml/monitoring.xml:2319(title)
+msgid "<structname> pg_statio_all_sequences</structname>View"
+msgstr ""
+
+#: xml/monitoring.xml:2338(entry)
+msgid "OID of a sequence"
+msgstr ""
+
+#: xml/monitoring.xml:2347(entry)
+msgid "Name of the schema this sequence is in"
+msgstr ""
+
+#: xml/monitoring.xml:2356(entry)
+msgid "Name of this sequence"
+msgstr ""
+
+#: xml/monitoring.xml:2365(entry)
+msgid "Number of disk blocks read from this sequence"
+msgstr ""
+
+#: xml/monitoring.xml:2375(entry)
+msgid "Number of buffer hits in this sequence"
+msgstr ""
+
+#: xml/monitoring.xml:2380(para)
+msgid "The <structname>pg_statio_all_sequences</structname>view will contain one row for each sequence in the current database, showing statistics about I/O on that specific sequence."
+msgstr ""
+
+#: xml/monitoring.xml:2387(title)
+msgid "<structname>pg_stat_user_functions</structname>View"
+msgstr ""
+
+#: xml/monitoring.xml:2400(structfield)
+msgid "funcid"
+msgstr ""
+
+#: xml/monitoring.xml:2405(entry)
+msgid "OID of a function"
+msgstr ""
+
+#: xml/monitoring.xml:2414(entry)
+msgid "Name of the schema this function is in"
+msgstr ""
+
+#: xml/monitoring.xml:2418(structfield)
+msgid "funcname"
+msgstr ""
+
+#: xml/monitoring.xml:2423(entry)
+msgid "Name of this function"
+msgstr ""
+
+#: xml/monitoring.xml:2427(structfield)
+msgid "calls"
+msgstr ""
+
+#: xml/monitoring.xml:2432(entry)
+msgid "Number of times this function has been called"
+msgstr ""
+
+#: xml/monitoring.xml:2437(structfield)
+msgid "total_time"
+msgstr ""
+
+#: xml/monitoring.xml:2442(entry)
+msgid "Total time spent in this function and all other functions called by it, in milliseconds"
+msgstr ""
+
+#: xml/monitoring.xml:2447(structfield)
+msgid "self_time"
+msgstr ""
+
+#: xml/monitoring.xml:2452(entry)
+msgid "Total time spent in this function itself, not including other functions called by it, in milliseconds"
+msgstr ""
+
+#: xml/monitoring.xml:2459(para)
+msgid "The <structname>pg_stat_user_functions</structname>view will contain one row for each tracked function, showing statistics about executions of that function. The <xref linkend=\"guc-track-functions\">parameter controls exactly which functions are tracked.</xref>"
+msgstr ""
+
+#: xml/monitoring.xml:2467(title)
+msgid "Statistics Functions"
+msgstr ""
+
+#: xml/monitoring.xml:2468(para)
+msgid "Other ways of looking at the statistics can be set up by writing queries that use the same underlying statistics access functions used by the standard views shown above. For details such as the functions' names, consult the definitions of the standard views. (For example, in <application>psql</application>you could issue <literal>\\d+ pg_stat_activity</literal>.) The access functions for per-database statistics take a database OID as an argument to identify which database to report on. The per-table and per-index functions take a table or index OID. The functions for per-function statistics take a function OID. Note that only tables, indexes, and functions in the current database can be seen with these functions."
+msgstr ""
+
+#: xml/monitoring.xml:2481(para)
+msgid "Additional functions related to statistics collection are listed in <xref linkend=\"monitoring-stats-funcs-table\">.</xref>"
+msgstr ""
+
+#: xml/monitoring.xml:2485(title)
+msgid "Additional Statistics Functions"
+msgstr ""
+
+#: xml/monitoring.xml:2489(entry) xml/monitoring.xml:2662(entry)
+msgid "Function"
+msgstr ""
+
+#: xml/monitoring.xml:2490(entry) xml/monitoring.xml:2663(entry)
+msgid "Return Type"
+msgstr ""
+
+#: xml/monitoring.xml:2498(function)
+msgid "pg_backend_pid()"
+msgstr ""
+
+#: xml/monitoring.xml:2504(entry)
+msgid "Process ID of the server process handling the current session"
+msgstr ""
+
+#: xml/monitoring.xml:2510(function) xml/monitoring.xml:2513(primary)
+msgid "pg_stat_get_activity"
+msgstr ""
+
+#: xml/monitoring.xml:2509(literal)
+msgid "<placeholder-1/>( <placeholder-2/>)"
+msgstr ""
+
+#: xml/monitoring.xml:2517(type)
+msgid "setof record"
+msgstr ""
+
+#: xml/monitoring.xml:2522(symbol)
+msgid "NULL"
+msgstr ""
+
+#: xml/monitoring.xml:2519(entry)
+msgid "Returns a record of information about the backend with the specified PID, or one record for each active backend in the system if <placeholder-1/>is specified. The fields returned are a subset of those in the <placeholder-2/>view."
+msgstr ""
+
+#: xml/monitoring.xml:2530(function)
+msgid "pg_stat_get_snapshot_timestamp()"
+msgstr ""
+
+#: xml/monitoring.xml:2534(primary)
+msgid "pg_stat_get_snapshot_timestamp"
+msgstr ""
+
+#: xml/monitoring.xml:2540(entry)
+msgid "Returns the timestamp of the current statistics snapshot"
+msgstr ""
+
+#: xml/monitoring.xml:2546(function)
+msgid "pg_stat_clear_snapshot()"
+msgstr ""
+
+#: xml/monitoring.xml:2549(primary)
+msgid "pg_stat_clear_snapshot"
+msgstr ""
+
+#: xml/monitoring.xml:2553(type) xml/monitoring.xml:2568(type) xml/monitoring.xml:2584(type) xml/monitoring.xml:2611(type) xml/monitoring.xml:2628(type)
+msgid "void"
+msgstr ""
+
+#: xml/monitoring.xml:2555(entry)
+msgid "Discard the current statistics snapshot"
+msgstr ""
+
+#: xml/monitoring.xml:2561(function)
+msgid "pg_stat_reset()"
+msgstr ""
+
+#: xml/monitoring.xml:2564(primary)
+msgid "pg_stat_reset"
+msgstr ""
+
+#: xml/monitoring.xml:2570(entry)
+msgid "Reset all statistics counters for the current database to zero (requires superuser privileges)"
+msgstr ""
+
+#: xml/monitoring.xml:2577(function) xml/monitoring.xml:2580(primary)
+msgid "pg_stat_reset_shared"
+msgstr ""
+
+#: xml/monitoring.xml:2576(literal)
+msgid "<placeholder-1/>(text)"
+msgstr ""
+
+#: xml/monitoring.xml:2589(literal)
+msgid "pg_stat_reset_shared('bgwriter')"
+msgstr ""
+
+#: xml/monitoring.xml:2594(literal)
+msgid "pg_stat_reset_shared('archiver')"
+msgstr ""
+
+#: xml/monitoring.xml:2586(entry)
+msgid "Reset some cluster-wide statistics counters to zero, depending on the argument (requires superuser privileges). Calling <placeholder-1/>will zero all the counters shown in the <placeholder-2/>view. Calling <placeholder-3/>will zero all the counters shown in the <placeholder-4/>view."
+msgstr ""
+
+#: xml/monitoring.xml:2603(function) xml/monitoring.xml:2606(primary)
+msgid "pg_stat_reset_single_table_counters"
+msgstr ""
+
+#: xml/monitoring.xml:2602(literal) xml/monitoring.xml:2619(literal)
+msgid "<placeholder-1/>(oid)"
+msgstr ""
+
+#: xml/monitoring.xml:2613(entry)
+msgid "Reset statistics for a single table or index in the current database to zero (requires superuser privileges)"
+msgstr ""
+
+#: xml/monitoring.xml:2620(function) xml/monitoring.xml:2623(primary)
+msgid "pg_stat_reset_single_function_counters"
+msgstr ""
+
+#: xml/monitoring.xml:2630(entry)
+msgid "Reset statistics for a single function in the current database to zero (requires superuser privileges)"
+msgstr ""
+
+#: xml/monitoring.xml:2653(programlisting)
+#, no-wrap
+msgid "SELECT pg_stat_get_backend_pid(s.backendid)\n      AS pid, pg_stat_get_backend_activity(s.backendid) AS query\n      FROM (SELECT pg_stat_get_backend_idset() AS backendid) AS\n      s;"
+msgstr ""
+
+#: xml/monitoring.xml:2637(para)
+msgid "<function>pg_stat_get_activity</function>, the underlying function of the <structname>pg_stat_activity</structname>view, returns a set of records containing all the available information about each backend process. Sometimes it may be more convenient to obtain just a subset of this information. In such cases, an older set of per-backend statistics access functions can be used; these are shown in <xref linkend=\"monitoring-stats-backend-funcs-table\">. These access functions use a backend ID number, which ranges from one to the number of currently active backends. The function <function>pg_stat_get_backend_idset</function>provides a convenient way to generate one row for each active backend for invoking these functions. For example, to show the <acronym>PID</acronym>s and current queries of all backends: <placeholder-1/></xref>"
+msgstr ""
+
+#: xml/monitoring.xml:2658(title)
+msgid "Per-Backend Statistics Functions"
+msgstr ""
+
+#: xml/monitoring.xml:2671(function)
+msgid "pg_stat_get_backend_idset()"
+msgstr ""
+
+#: xml/monitoring.xml:2675(type)
+msgid "setof integer"
+msgstr ""
+
+#: xml/monitoring.xml:2677(entry)
+msgid "Set of currently active backend ID numbers (from 1 to the number of active backends)"
+msgstr ""
+
+#: xml/monitoring.xml:2683(function)
+msgid "pg_stat_get_backend_activity(integer)"
+msgstr ""
+
+#: xml/monitoring.xml:2690(entry)
+msgid "Text of this backend's most recent query"
+msgstr ""
+
+#: xml/monitoring.xml:2696(function)
+msgid "pg_stat_get_backend_activity_start(integer)"
+msgstr ""
+
+#: xml/monitoring.xml:2703(entry)
+msgid "Time when the most recent query was started"
+msgstr ""
+
+#: xml/monitoring.xml:2709(function)
+msgid "pg_stat_get_backend_client_addr(integer)"
+msgstr ""
+
+#: xml/monitoring.xml:2716(entry)
+msgid "IP address of the client connected to this backend"
+msgstr ""
+
+#: xml/monitoring.xml:2722(function)
+msgid "pg_stat_get_backend_client_port(integer)"
+msgstr ""
+
+#: xml/monitoring.xml:2729(entry)
+msgid "TCP port number that the client is using for communication"
+msgstr ""
+
+#: xml/monitoring.xml:2735(function)
+msgid "pg_stat_get_backend_dbid(integer)"
+msgstr ""
+
+#: xml/monitoring.xml:2748(function)
+msgid "pg_stat_get_backend_pid(integer)"
+msgstr ""
+
+#: xml/monitoring.xml:2760(function)
+msgid "pg_stat_get_backend_start(integer)"
+msgstr ""
+
+#: xml/monitoring.xml:2767(entry)
+msgid "Time when this process was started"
+msgstr ""
+
+#: xml/monitoring.xml:2772(function)
+msgid "pg_stat_get_backend_userid(integer)"
+msgstr ""
+
+#: xml/monitoring.xml:2785(function)
+msgid "pg_stat_get_backend_waiting(integer)"
+msgstr ""
+
+#: xml/monitoring.xml:2798(function)
+msgid "pg_stat_get_backend_xact_start(integer)"
+msgstr ""
+
+#: xml/monitoring.xml:2805(entry)
+msgid "Time when the current transaction was started"
+msgstr ""
+
+#: xml/monitoring.xml:2814(title)
+msgid "Viewing Locks"
+msgstr ""
+
+#: xml/monitoring.xml:2816(primary)
+msgid "lock"
+msgstr ""
+
+#: xml/monitoring.xml:2827(para)
+msgid "View all the locks currently outstanding, all the locks on relations in a particular database, all the locks on a particular relation, or all the locks held by a particular <productname>PostgreSQL</productname>session."
+msgstr ""
+
+#: xml/monitoring.xml:2834(para)
+msgid "Determine the relation in the current database with the most ungranted locks (which might be a source of contention among database clients)."
+msgstr ""
+
+#: xml/monitoring.xml:2839(para)
+msgid "Determine the effect of lock contention on overall database performance, as well as the extent to which contention varies with overall database traffic."
+msgstr ""
+
+#: xml/monitoring.xml:2819(para)
+msgid "Another useful tool for monitoring database activity is the <structname>pg_locks</structname>system table. It allows the database administrator to view information about the outstanding locks in the lock manager. For example, this capability can be used to: <placeholder-1/>Details of the <structname>pg_locks</structname>view appear in <xref linkend=\"view-pg-locks\">. For more information on locking and managing concurrency with <productname>PostgreSQL</productname>, refer to <xref linkend=\"mvcc\">.</xref></xref>"
+msgstr ""
+
+#: xml/monitoring.xml:2851(title)
+msgid "Dynamic Tracing"
+msgstr ""
+
+#: xml/monitoring.xml:2853(primary)
+msgid "DTrace"
+msgstr ""
+
+#: xml/monitoring.xml:2855(para)
+msgid "<productname>PostgreSQL</productname>provides facilities to support dynamic tracing of the database server. This allows an external utility to be called at specific points in the code and thereby trace execution."
+msgstr ""
+
+#: xml/monitoring.xml:2860(para)
+msgid "A number of probes or trace points are already inserted into the source code. These probes are intended to be used by database developers and administrators. By default the probes are not compiled into <productname>PostgreSQL</productname>; the user needs to explicitly tell the configure script to make the probes available."
+msgstr ""
+
+#: xml/monitoring.xml:2867(para)
+msgid "Currently, the <ulink url=\"https://en.wikipedia.org/wiki/DTrace\"> DTrace</ulink>utility is supported, which, at the time of this writing, is available on Solaris, OS X, FreeBSD, NetBSD, and Oracle Linux. The <ulink url=\"http://sourceware.org/systemtap/\"> SystemTap</ulink>project for Linux provides a DTrace equivalent and can also be used. Supporting other dynamic tracing utilities is theoretically possible by changing the definitions for the macros in <filename>src/include/utils/probes.h</filename>."
+msgstr ""
+
+#: xml/monitoring.xml:2879(title)
+msgid "Compiling for Dynamic Tracing"
+msgstr ""
+
+#: xml/monitoring.xml:2880(para)
+msgid "By default, probes are not available, so you will need to explicitly tell the configure script to make the probes available in <productname>PostgreSQL</productname>. To include DTrace support specify <option>--enable-dtrace</option>to configure. See <xref linkend=\"install-procedure\">for further information.</xref>"
+msgstr ""
+
+#: xml/monitoring.xml:2890(title)
+msgid "Built-in Probes"
+msgstr ""
+
+#: xml/monitoring.xml:2891(para)
+msgid "A number of standard probes are provided in the source code, as shown in <xref linkend=\"dtrace-probe-point-table\">; <xref linkend=\"typedefs-table\">shows the types used in the probes. More probes can certainly be added to enhance <productname>PostgreSQL</productname>'s observability.</xref></xref>"
+msgstr ""
+
+#: xml/monitoring.xml:2899(title)
+msgid "Built-in DTrace Probes"
+msgstr ""
+
+#: xml/monitoring.xml:2903(entry)
+msgid "Name"
+msgstr ""
+
+#: xml/monitoring.xml:2904(entry)
+msgid "Parameters"
+msgstr ""
+
+#: xml/monitoring.xml:2910(entry)
+msgid "transaction-start"
+msgstr ""
+
+#: xml/monitoring.xml:2911(entry) xml/monitoring.xml:2917(entry) xml/monitoring.xml:2923(entry)
+msgid "(LocalTransactionId)"
+msgstr ""
+
+#: xml/monitoring.xml:2912(entry)
+msgid "Probe that fires at the start of a new transaction. arg0 is the transaction ID."
+msgstr ""
+
+#: xml/monitoring.xml:2916(entry)
+msgid "transaction-commit"
+msgstr ""
+
+#: xml/monitoring.xml:2918(entry)
+msgid "Probe that fires when a transaction completes successfully. arg0 is the transaction ID."
+msgstr ""
+
+#: xml/monitoring.xml:2922(entry)
+msgid "transaction-abort"
+msgstr ""
+
+#: xml/monitoring.xml:2924(entry)
+msgid "Probe that fires when a transaction completes unsuccessfully. arg0 is the transaction ID."
+msgstr ""
+
+#: xml/monitoring.xml:2928(entry)
+msgid "query-start"
+msgstr ""
+
+#: xml/monitoring.xml:2929(entry) xml/monitoring.xml:2935(entry) xml/monitoring.xml:2941(entry) xml/monitoring.xml:2947(entry) xml/monitoring.xml:2953(entry) xml/monitoring.xml:2959(entry) xml/monitoring.xml:2989(entry)
+msgid "(const char *)"
+msgstr ""
+
+#: xml/monitoring.xml:2930(entry)
+msgid "Probe that fires when the processing of a query is started. arg0 is the query string."
+msgstr ""
+
+#: xml/monitoring.xml:2934(entry)
+msgid "query-done"
+msgstr ""
+
+#: xml/monitoring.xml:2936(entry)
+msgid "Probe that fires when the processing of a query is complete. arg0 is the query string."
+msgstr ""
+
+#: xml/monitoring.xml:2940(entry)
+msgid "query-parse-start"
+msgstr ""
+
+#: xml/monitoring.xml:2942(entry)
+msgid "Probe that fires when the parsing of a query is started. arg0 is the query string."
+msgstr ""
+
+#: xml/monitoring.xml:2946(entry)
+msgid "query-parse-done"
+msgstr ""
+
+#: xml/monitoring.xml:2948(entry)
+msgid "Probe that fires when the parsing of a query is complete. arg0 is the query string."
+msgstr ""
+
+#: xml/monitoring.xml:2952(entry)
+msgid "query-rewrite-start"
+msgstr ""
+
+#: xml/monitoring.xml:2954(entry)
+msgid "Probe that fires when the rewriting of a query is started. arg0 is the query string."
+msgstr ""
+
+#: xml/monitoring.xml:2958(entry)
+msgid "query-rewrite-done"
+msgstr ""
+
+#: xml/monitoring.xml:2960(entry)
+msgid "Probe that fires when the rewriting of a query is complete. arg0 is the query string."
+msgstr ""
+
+#: xml/monitoring.xml:2964(entry)
+msgid "query-plan-start"
+msgstr ""
+
+#: xml/monitoring.xml:2965(entry) xml/monitoring.xml:2971(entry) xml/monitoring.xml:2977(entry) xml/monitoring.xml:2983(entry) xml/monitoring.xml:3095(entry) xml/monitoring.xml:3102(entry) xml/monitoring.xml:3108(entry) xml/monitoring.xml:3114(entry) xml/monitoring.xml:3194(entry) xml/monitoring.xml:3204(entry) xml/monitoring.xml:3217(entry) xml/monitoring.xml:3377(entry)
+msgid "()"
+msgstr ""
+
+#: xml/monitoring.xml:2966(entry)
+msgid "Probe that fires when the planning of a query is started."
+msgstr ""
+
+#: xml/monitoring.xml:2970(entry)
+msgid "query-plan-done"
+msgstr ""
+
+#: xml/monitoring.xml:2972(entry)
+msgid "Probe that fires when the planning of a query is complete."
+msgstr ""
+
+#: xml/monitoring.xml:2976(entry)
+msgid "query-execute-start"
+msgstr ""
+
+#: xml/monitoring.xml:2978(entry)
+msgid "Probe that fires when the execution of a query is started."
+msgstr ""
+
+#: xml/monitoring.xml:2982(entry)
+msgid "query-execute-done"
+msgstr ""
+
+#: xml/monitoring.xml:2984(entry)
+msgid "Probe that fires when the execution of a query is complete."
+msgstr ""
+
+#: xml/monitoring.xml:2988(entry)
+msgid "statement-status"
+msgstr ""
+
+#: xml/monitoring.xml:2993(structfield)
+msgid "status"
+msgstr ""
+
+#: xml/monitoring.xml:2990(entry)
+msgid "Probe that fires anytime the server process updates its <placeholder-1/>. <placeholder-2/>. arg0 is the new status string."
+msgstr ""
+
+#: xml/monitoring.xml:2997(entry)
+msgid "checkpoint-start"
+msgstr ""
+
+#: xml/monitoring.xml:2998(entry) xml/monitoring.xml:3059(entry) xml/monitoring.xml:3077(entry)
+msgid "(int)"
+msgstr ""
+
+#: xml/monitoring.xml:2999(entry)
+msgid "Probe that fires when a checkpoint is started. arg0 holds the bitwise flags used to distinguish different checkpoint types, such as shutdown, immediate or force."
+msgstr ""
+
+#: xml/monitoring.xml:3005(entry)
+msgid "checkpoint-done"
+msgstr ""
+
+#: xml/monitoring.xml:3006(entry)
+msgid "(int, int, int, int, int)"
+msgstr ""
+
+#: xml/monitoring.xml:3007(entry)
+msgid "Probe that fires when a checkpoint is complete. (The probes listed next fire in sequence during checkpoint processing.) arg0 is the number of buffers written. arg1 is the total number of buffers. arg2, arg3 and arg4 contain the number of xlog file(s) added, removed and recycled respectively."
+msgstr ""
+
+#: xml/monitoring.xml:3016(entry)
+msgid "clog-checkpoint-start"
+msgstr ""
+
+#: xml/monitoring.xml:3017(entry) xml/monitoring.xml:3024(entry) xml/monitoring.xml:3031(entry) xml/monitoring.xml:3038(entry) xml/monitoring.xml:3045(entry) xml/monitoring.xml:3052(entry)
+msgid "(bool)"
+msgstr ""
+
+#: xml/monitoring.xml:3018(entry)
+msgid "Probe that fires when the CLOG portion of a checkpoint is started. arg0 is true for normal checkpoint, false for shutdown checkpoint."
+msgstr ""
+
+#: xml/monitoring.xml:3023(entry)
+msgid "clog-checkpoint-done"
+msgstr ""
+
+#: xml/monitoring.xml:3025(entry)
+msgid "Probe that fires when the CLOG portion of a checkpoint is complete. arg0 has the same meaning as for clog-checkpoint-start."
+msgstr ""
+
+#: xml/monitoring.xml:3030(entry)
+msgid "subtrans-checkpoint-start"
+msgstr ""
+
+#: xml/monitoring.xml:3032(entry)
+msgid "Probe that fires when the SUBTRANS portion of a checkpoint is started. arg0 is true for normal checkpoint, false for shutdown checkpoint."
+msgstr ""
+
+#: xml/monitoring.xml:3037(entry)
+msgid "subtrans-checkpoint-done"
+msgstr ""
+
+#: xml/monitoring.xml:3039(entry)
+msgid "Probe that fires when the SUBTRANS portion of a checkpoint is complete. arg0 has the same meaning as for subtrans-checkpoint-start."
+msgstr ""
+
+#: xml/monitoring.xml:3044(entry)
+msgid "multixact-checkpoint-start"
+msgstr ""
+
+#: xml/monitoring.xml:3046(entry)
+msgid "Probe that fires when the MultiXact portion of a checkpoint is started. arg0 is true for normal checkpoint, false for shutdown checkpoint."
+msgstr ""
+
+#: xml/monitoring.xml:3051(entry)
+msgid "multixact-checkpoint-done"
+msgstr ""
+
+#: xml/monitoring.xml:3053(entry)
+msgid "Probe that fires when the MultiXact portion of a checkpoint is complete. arg0 has the same meaning as for multixact-checkpoint-start."
+msgstr ""
+
+#: xml/monitoring.xml:3058(entry)
+msgid "buffer-checkpoint-start"
+msgstr ""
+
+#: xml/monitoring.xml:3060(entry)
+msgid "Probe that fires when the buffer-writing portion of a checkpoint is started. arg0 holds the bitwise flags used to distinguish different checkpoint types, such as shutdown, immediate or force."
+msgstr ""
+
+#: xml/monitoring.xml:3067(entry)
+msgid "buffer-sync-start"
+msgstr ""
+
+#: xml/monitoring.xml:3068(entry)
+msgid "(int, int)"
+msgstr ""
+
+#: xml/monitoring.xml:3069(entry)
+msgid "Probe that fires when we begin to write dirty buffers during checkpoint (after identifying which buffers must be written). arg0 is the total number of buffers. arg1 is the number that are currently dirty and need to be written."
+msgstr ""
+
+#: xml/monitoring.xml:3076(entry)
+msgid "buffer-sync-written"
+msgstr ""
+
+#: xml/monitoring.xml:3078(entry)
+msgid "Probe that fires after each buffer is written during checkpoint. arg0 is the ID number of the buffer."
+msgstr ""
+
+#: xml/monitoring.xml:3083(entry)
+msgid "buffer-sync-done"
+msgstr ""
+
+#: xml/monitoring.xml:3084(entry)
+msgid "(int, int, int)"
+msgstr ""
+
+#: xml/monitoring.xml:3085(entry)
+msgid "Probe that fires when all dirty buffers have been written. arg0 is the total number of buffers. arg1 is the number of buffers actually written by the checkpoint process. arg2 is the number that were expected to be written (arg1 of buffer-sync-start); any difference reflects other processes flushing buffers during the checkpoint."
+msgstr ""
+
+#: xml/monitoring.xml:3094(entry)
+msgid "buffer-checkpoint-sync-start"
+msgstr ""
+
+#: xml/monitoring.xml:3096(entry)
+msgid "Probe that fires after dirty buffers have been written to the kernel, and before starting to issue fsync requests."
+msgstr ""
+
+#: xml/monitoring.xml:3101(entry)
+msgid "buffer-checkpoint-done"
+msgstr ""
+
+#: xml/monitoring.xml:3103(entry)
+msgid "Probe that fires when syncing of buffers to disk is complete."
+msgstr ""
+
+#: xml/monitoring.xml:3107(entry)
+msgid "twophase-checkpoint-start"
+msgstr ""
+
+#: xml/monitoring.xml:3109(entry)
+msgid "Probe that fires when the two-phase portion of a checkpoint is started."
+msgstr ""
+
+#: xml/monitoring.xml:3113(entry)
+msgid "twophase-checkpoint-done"
+msgstr ""
+
+#: xml/monitoring.xml:3115(entry)
+msgid "Probe that fires when the two-phase portion of a checkpoint is complete."
+msgstr ""
+
+#: xml/monitoring.xml:3119(entry)
+msgid "buffer-read-start"
+msgstr ""
+
+#: xml/monitoring.xml:3120(entry)
+msgid "(ForkNumber, BlockNumber, Oid, Oid, Oid, int, bool)"
+msgstr ""
+
+#: xml/monitoring.xml:3122(entry)
+msgid "Probe that fires when a buffer read is started. arg0 and arg1 contain the fork and block numbers of the page (but arg1 will be -1 if this is a relation extension request). arg2, arg3, and arg4 contain the tablespace, database, and relation OIDs identifying the relation. arg5 is the ID of the backend which created the temporary relation for a local buffer, or InvalidBackendId (-1) for a shared buffer. arg6 is true for a relation extension request, false for normal read."
+msgstr ""
+
+#: xml/monitoring.xml:3134(entry)
+msgid "buffer-read-done"
+msgstr ""
+
+#: xml/monitoring.xml:3135(entry)
+msgid "(ForkNumber, BlockNumber, Oid, Oid, Oid, int, bool, bool)"
+msgstr ""
+
+#: xml/monitoring.xml:3137(entry)
+msgid "Probe that fires when a buffer read is complete. arg0 and arg1 contain the fork and block numbers of the page (if this is a relation extension request, arg1 now contains the block number of the newly added block). arg2, arg3, and arg4 contain the tablespace, database, and relation OIDs identifying the relation. arg5 is the ID of the backend which created the temporary relation for a local buffer, or InvalidBackendId (-1) for a shared buffer. arg6 is true for a relation extension request, false for normal read. arg7 is true if the buffer was found in the pool, false if not."
+msgstr ""
+
+#: xml/monitoring.xml:3151(entry)
+msgid "buffer-flush-start"
+msgstr ""
+
+#: xml/monitoring.xml:3152(entry) xml/monitoring.xml:3162(entry) xml/monitoring.xml:3172(entry) xml/monitoring.xml:3186(entry)
+msgid "(ForkNumber, BlockNumber, Oid, Oid, Oid)"
+msgstr ""
+
+#: xml/monitoring.xml:3154(entry)
+msgid "Probe that fires before issuing any write request for a shared buffer. arg0 and arg1 contain the fork and block numbers of the page. arg2, arg3, and arg4 contain the tablespace, database, and relation OIDs identifying the relation."
+msgstr ""
+
+#: xml/monitoring.xml:3161(entry)
+msgid "buffer-flush-done"
+msgstr ""
+
+#: xml/monitoring.xml:3164(entry)
+msgid "Probe that fires when a write request is complete. (Note that this just reflects the time to pass the data to the kernel; it's typically not actually been written to disk yet.) The arguments are the same as for buffer-flush-start."
+msgstr ""
+
+#: xml/monitoring.xml:3171(entry)
+msgid "buffer-write-dirty-start"
+msgstr ""
+
+#: xml/monitoring.xml:3177(xref)
+msgid "is too small or the bgwriter control parameters need adjustment.) arg0 and arg1 contain the fork and block numbers of the page. arg2, arg3, and arg4 contain the tablespace, database, and relation OIDs identifying the relation."
+msgstr ""
+
+#: xml/monitoring.xml:3174(entry)
+msgid "Probe that fires when a server process begins to write a dirty buffer. (If this happens often, it implies that <placeholder-1/>"
+msgstr ""
+
+#: xml/monitoring.xml:3185(entry)
+msgid "buffer-write-dirty-done"
+msgstr ""
+
+#: xml/monitoring.xml:3188(entry)
+msgid "Probe that fires when a dirty-buffer write is complete. The arguments are the same as for buffer-write-dirty-start."
+msgstr ""
+
+#: xml/monitoring.xml:3193(entry)
+msgid "wal-buffer-write-dirty-start"
+msgstr ""
+
+#: xml/monitoring.xml:3199(xref)
+msgid "is too small.)"
+msgstr ""
+
+#: xml/monitoring.xml:3195(entry)
+msgid "Probe that fires when a server process begins to write a dirty WAL buffer because no more WAL buffer space is available. (If this happens often, it implies that <placeholder-1/>"
+msgstr ""
+
+#: xml/monitoring.xml:3203(entry)
+msgid "wal-buffer-write-dirty-done"
+msgstr ""
+
+#: xml/monitoring.xml:3205(entry)
+msgid "Probe that fires when a dirty WAL buffer write is complete."
+msgstr ""
+
+#: xml/monitoring.xml:3209(entry)
+msgid "xlog-insert"
+msgstr ""
+
+#: xml/monitoring.xml:3210(entry)
+msgid "(unsigned char, unsigned char)"
+msgstr ""
+
+#: xml/monitoring.xml:3211(entry)
+msgid "Probe that fires when a WAL record is inserted. arg0 is the resource manager (rmid) for the record. arg1 contains the info flags."
+msgstr ""
+
+#: xml/monitoring.xml:3216(entry)
+msgid "xlog-switch"
+msgstr ""
+
+#: xml/monitoring.xml:3218(entry)
+msgid "Probe that fires when a WAL segment switch is requested."
+msgstr ""
+
+#: xml/monitoring.xml:3222(entry)
+msgid "smgr-md-read-start"
+msgstr ""
+
+#: xml/monitoring.xml:3223(entry) xml/monitoring.xml:3251(entry)
+msgid "(ForkNumber, BlockNumber, Oid, Oid, Oid, int)"
+msgstr ""
+
+#: xml/monitoring.xml:3225(entry)
+msgid "Probe that fires when beginning to read a block from a relation. arg0 and arg1 contain the fork and block numbers of the page. arg2, arg3, and arg4 contain the tablespace, database, and relation OIDs identifying the relation. arg5 is the ID of the backend which created the temporary relation for a local buffer, or InvalidBackendId (-1) for a shared buffer."
+msgstr ""
+
+#: xml/monitoring.xml:3235(entry)
+msgid "smgr-md-read-done"
+msgstr ""
+
+#: xml/monitoring.xml:3236(entry) xml/monitoring.xml:3264(entry)
+msgid "(ForkNumber, BlockNumber, Oid, Oid, Oid, int, int, int)"
+msgstr ""
+
+#: xml/monitoring.xml:3238(entry)
+msgid "Probe that fires when a block read is complete. arg0 and arg1 contain the fork and block numbers of the page. arg2, arg3, and arg4 contain the tablespace, database, and relation OIDs identifying the relation. arg5 is the ID of the backend which created the temporary relation for a local buffer, or InvalidBackendId (-1) for a shared buffer. arg6 is the number of bytes actually read, while arg7 is the number requested (if these are different it indicates trouble)."
+msgstr ""
+
+#: xml/monitoring.xml:3250(entry)
+msgid "smgr-md-write-start"
+msgstr ""
+
+#: xml/monitoring.xml:3253(entry)
+msgid "Probe that fires when beginning to write a block to a relation. arg0 and arg1 contain the fork and block numbers of the page. arg2, arg3, and arg4 contain the tablespace, database, and relation OIDs identifying the relation. arg5 is the ID of the backend which created the temporary relation for a local buffer, or InvalidBackendId (-1) for a shared buffer."
+msgstr ""
+
+#: xml/monitoring.xml:3263(entry)
+msgid "smgr-md-write-done"
+msgstr ""
+
+#: xml/monitoring.xml:3266(entry)
+msgid "Probe that fires when a block write is complete. arg0 and arg1 contain the fork and block numbers of the page. arg2, arg3, and arg4 contain the tablespace, database, and relation OIDs identifying the relation. arg5 is the ID of the backend which created the temporary relation for a local buffer, or InvalidBackendId (-1) for a shared buffer. arg6 is the number of bytes actually written, while arg7 is the number requested (if these are different it indicates trouble)."
+msgstr ""
+
+#: xml/monitoring.xml:3278(entry)
+msgid "sort-start"
+msgstr ""
+
+#: xml/monitoring.xml:3279(entry)
+msgid "(int, bool, int, int, bool)"
+msgstr ""
+
+#: xml/monitoring.xml:3280(entry)
+msgid "Probe that fires when a sort operation is started. arg0 indicates heap, index or datum sort. arg1 is true for unique-value enforcement. arg2 is the number of key columns. arg3 is the number of kilobytes of work memory allowed. arg4 is true if random access to the sort result is required."
+msgstr ""
+
+#: xml/monitoring.xml:3288(entry)
+msgid "sort-done"
+msgstr ""
+
+#: xml/monitoring.xml:3289(entry)
+msgid "(bool, long)"
+msgstr ""
+
+#: xml/monitoring.xml:3290(entry)
+msgid "Probe that fires when a sort is complete. arg0 is true for external sort, false for internal sort. arg1 is the number of disk blocks used for an external sort, or kilobytes of memory used for an internal sort."
+msgstr ""
+
+#: xml/monitoring.xml:3297(entry)
+msgid "lwlock-acquire"
+msgstr ""
+
+#: xml/monitoring.xml:3298(entry) xml/monitoring.xml:3316(entry) xml/monitoring.xml:3326(entry) xml/monitoring.xml:3336(entry) xml/monitoring.xml:3346(entry)
+msgid "(char *, int, LWLockMode)"
+msgstr ""
+
+#: xml/monitoring.xml:3299(entry)
+msgid "Probe that fires when an LWLock has been acquired. arg0 is the LWLock's tranche. arg1 is the LWLock's offset within its tranche. arg2 is the requested lock mode, either exclusive or shared."
+msgstr ""
+
+#: xml/monitoring.xml:3306(entry)
+msgid "lwlock-release"
+msgstr ""
+
+#: xml/monitoring.xml:3307(entry)
+msgid "(char *, int)"
+msgstr ""
+
+#: xml/monitoring.xml:3308(entry)
+msgid "Probe that fires when an LWLock has been released (but note that any released waiters have not yet been awakened). arg0 is the LWLock's tranche. arg1 is the LWLock's offset within its tranche."
+msgstr ""
+
+#: xml/monitoring.xml:3315(entry)
+msgid "lwlock-wait-start"
+msgstr ""
+
+#: xml/monitoring.xml:3317(entry)
+msgid "Probe that fires when an LWLock was not immediately available and a server process has begun to wait for the lock to become available. arg0 is the LWLock's tranche. arg1 is the LWLock's offset within its tranche. arg2 is the requested lock mode, either exclusive or shared."
+msgstr ""
+
+#: xml/monitoring.xml:3325(entry)
+msgid "lwlock-wait-done"
+msgstr ""
+
+#: xml/monitoring.xml:3327(entry)
+msgid "Probe that fires when a server process has been released from its wait for an LWLock (it does not actually have the lock yet). arg0 is the LWLock's tranche. arg1 is the LWLock's offset within its tranche. arg2 is the requested lock mode, either exclusive or shared."
+msgstr ""
+
+#: xml/monitoring.xml:3335(entry)
+msgid "lwlock-condacquire"
+msgstr ""
+
+#: xml/monitoring.xml:3337(entry)
+msgid "Probe that fires when an LWLock was successfully acquired when the caller specified no waiting. arg0 is the LWLock's tranche. arg1 is the LWLock's offset within its tranche. arg2 is the requested lock mode, either exclusive or shared."
+msgstr ""
+
+#: xml/monitoring.xml:3345(entry)
+msgid "lwlock-condacquire-fail"
+msgstr ""
+
+#: xml/monitoring.xml:3347(entry)
+msgid "Probe that fires when an LWLock was not successfully acquired when the caller specified no waiting. arg0 is the LWLock's tranche. arg1 is the LWLock's offset within its tranche. arg2 is the requested lock mode, either exclusive or shared."
+msgstr ""
+
+#: xml/monitoring.xml:3355(entry)
+msgid "lock-wait-start"
+msgstr ""
+
+#: xml/monitoring.xml:3356(entry) xml/monitoring.xml:3368(entry)
+msgid "(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, LOCKMODE)"
+msgstr ""
+
+#: xml/monitoring.xml:3358(entry)
+msgid "Probe that fires when a request for a heavyweight lock (lmgr lock) has begun to wait because the lock is not available. arg0 through arg3 are the tag fields identifying the object being locked. arg4 indicates the type of object being locked. arg5 indicates the lock type being requested."
+msgstr ""
+
+#: xml/monitoring.xml:3367(entry)
+msgid "lock-wait-done"
+msgstr ""
+
+#: xml/monitoring.xml:3370(entry)
+msgid "Probe that fires when a request for a heavyweight lock (lmgr lock) has finished waiting (i.e., has acquired the lock). The arguments are the same as for lock-wait-start."
+msgstr ""
+
+#: xml/monitoring.xml:3376(entry)
+msgid "deadlock-found"
+msgstr ""
+
+#: xml/monitoring.xml:3378(entry)
+msgid "Probe that fires when a deadlock is found by the deadlock detector."
+msgstr ""
+
+#: xml/monitoring.xml:3385(title)
+msgid "Defined Types Used in Probe Parameters"
+msgstr ""
+
+#: xml/monitoring.xml:3390(entry)
+msgid "Definition"
+msgstr ""
+
+#: xml/monitoring.xml:3395(entry)
+msgid "LocalTransactionId"
+msgstr ""
+
+#: xml/monitoring.xml:3396(entry) xml/monitoring.xml:3408(entry) xml/monitoring.xml:3412(entry)
+msgid "unsigned int"
+msgstr ""
+
+#: xml/monitoring.xml:3399(entry)
+msgid "LWLockMode"
+msgstr ""
+
+#: xml/monitoring.xml:3400(entry) xml/monitoring.xml:3404(entry) xml/monitoring.xml:3416(entry)
+msgid "int"
+msgstr ""
+
+#: xml/monitoring.xml:3403(entry)
+msgid "LOCKMODE"
+msgstr ""
+
+#: xml/monitoring.xml:3407(entry)
+msgid "BlockNumber"
+msgstr ""
+
+#: xml/monitoring.xml:3411(entry)
+msgid "Oid"
+msgstr ""
+
+#: xml/monitoring.xml:3415(entry)
+msgid "ForkNumber"
+msgstr ""
+
+#: xml/monitoring.xml:3419(entry)
+msgid "bool"
+msgstr ""
+
+#: xml/monitoring.xml:3420(entry)
+msgid "char"
+msgstr ""
+
+#: xml/monitoring.xml:3427(title)
+msgid "Using Probes"
+msgstr ""
+
+#: xml/monitoring.xml:3433(programlisting)
+#, no-wrap
+msgid "#!/usr/sbin/dtrace -qs\n      postgresql$1:::transaction-start { @start[\"Start\"] = count();\n      self-&gt;ts = timestamp; } postgresql$1:::transaction-abort {\n      @abort[\"Abort\"] = count(); }\n      postgresql$1:::transaction-commit /self-&gt;ts/ {\n      @commit[\"Commit\"] = count(); @time[\"Total time (ns)\"] =\n      sum(timestamp - self-&gt;ts); self-&gt;ts=0;\n      }"
+msgstr ""
+
+#: xml/monitoring.xml:3428(para)
+msgid "The example below shows a DTrace script for analyzing transaction counts in the system, as an alternative to snapshotting <structname>pg_stat_database</structname>before and after a performance test: <placeholder-1/>When executed, the example D script gives output such as: <screen># ./txn_count.d `pgrep -n postgres` or ./txn_count.d\n      PID ^C Start 71 Commit 70 Total time (ns)\n      2312105013</screen>"
+msgstr ""
+
+#: xml/monitoring.xml:3446(para)
+msgid "SystemTap uses a different notation for trace scripts than DTrace does, even though the underlying trace points are compatible. One point worth noting is that at this writing, SystemTap scripts must reference probe names using double underscores in place of hyphens. This is expected to be fixed in future SystemTap releases."
+msgstr ""
+
+#: xml/monitoring.xml:3453(para)
+msgid "You should remember that DTrace scripts need to be carefully written and debugged, otherwise the trace information collected might be meaningless. In most cases where problems are found it is the instrumentation that is at fault, not the underlying system. When discussing information found using dynamic tracing, be sure to enclose the script used to allow that too to be checked and discussed."
+msgstr ""
+
+#: xml/monitoring.xml:3462(title)
+msgid "Defining New Probes"
+msgstr ""
+
+#: xml/monitoring.xml:3463(para)
+msgid "New probes can be defined within the code wherever the developer desires, though this will require a recompilation. Below are the steps for inserting new probes:"
+msgstr ""
+
+#: xml/monitoring.xml:3468(para)
+msgid "Decide on probe names and data to be made available through the probes"
+msgstr ""
+
+#: xml/monitoring.xml:3472(para)
+msgid "Add the probe definitions to <filename>src/backend/utils/probes.d</filename>"
+msgstr ""
+
+#: xml/monitoring.xml:3476(para)
+msgid "Include <filename>pg_trace.h</filename>if it is not already present in the module(s) containing the probe points, and insert <literal>TRACE_POSTGRESQL</literal>probe macros at the desired locations in the source code"
+msgstr ""
+
+#: xml/monitoring.xml:3484(para)
+msgid "Recompile and verify that the new probes are available"
+msgstr ""
+
+#: xml/monitoring.xml:3489(title)
+msgid "Example:"
+msgstr ""
+
+#: xml/monitoring.xml:3490(para)
+msgid "Here is an example of how you would add a probe to trace all new transactions by transaction ID."
+msgstr ""
+
+#: xml/monitoring.xml:3495(para)
+msgid "Decide that the probe will be named <literal>transaction-start</literal>and requires a parameter of type LocalTransactionId"
+msgstr ""
+
+#: xml/monitoring.xml:3502(programlisting)
+#, no-wrap
+msgid "probe\n          transaction__start(LocalTransactionId);"
+msgstr ""
+
+#: xml/monitoring.xml:3500(para)
+msgid "Add the probe definition to <filename>src/backend/utils/probes.d</filename>: <placeholder-1/>Note the use of the double underline in the probe name. In a DTrace script using the probe, the double underline needs to be replaced with a hyphen, so <literal>transaction-start</literal>is the name to document for users."
+msgstr ""
+
+#: xml/monitoring.xml:3521(programlisting)
+#, no-wrap
+msgid "\n          TRACE_POSTGRESQL_TRANSACTION_START(vxid.localTransactionId);"
+msgstr ""
+
+#: xml/monitoring.xml:3511(para)
+msgid "At compile time, <literal>transaction__start</literal>is converted to a macro called <literal> TRACE_POSTGRESQL_TRANSACTION_START</literal>(notice the underscores are single here), which is available by including <filename>pg_trace.h</filename>. Add the macro call to the appropriate location in the source code. In this case, it looks like the following: <placeholder-1/>"
+msgstr ""
+
+#: xml/monitoring.xml:3525(para)
+msgid "After recompiling and running the new binary, check that your newly added probe is available by executing the following DTrace command. You should see similar output: <screen># dtrace -ln transaction-start ID PROVIDER MODULE\n          FUNCTION NAME 18705 postgresql49878 postgres\n          StartTransactionCommand transaction-start 18755\n          postgresql49877 postgres StartTransactionCommand\n          transaction-start 18805 postgresql49876 postgres\n          StartTransactionCommand transaction-start 18855\n          postgresql49875 postgres StartTransactionCommand\n          transaction-start 18986 postgresql49873 postgres\n          StartTransactionCommand transaction-start</screen>"
+msgstr ""
+
+#: xml/monitoring.xml:3543(para)
+msgid "You should take care that the data types specified for a probe's parameters match the data types of the variables used in the macro. Otherwise, you will get compilation errors."
+msgstr ""
+
+#: xml/monitoring.xml:3560(programlisting)
+#, no-wrap
+msgid "if\n          (TRACE_POSTGRESQL_TRANSACTION_START_ENABLED())\n          TRACE_POSTGRESQL_TRANSACTION_START(some_function(...));"
+msgstr ""
+
+#: xml/monitoring.xml:3549(para)
+msgid "On most platforms, if <productname>PostgreSQL</productname>is built with <option>--enable-dtrace</option>, the arguments to a trace macro will be evaluated whenever control passes through the macro, <emphasis>even if no tracing is being done</emphasis>. This is usually not worth worrying about if you are just reporting the values of a few local variables. But beware of putting expensive function calls into the arguments. If you need to do that, consider protecting the macro with a check to see if the trace is actually enabled: <placeholder-1/>Each trace macro has a corresponding <literal>ENABLED</literal>macro."
+msgstr ""
+
+#: xml/monitoring.xml:3539(para)
+msgid "There are a few things to be careful about when adding trace macros to the C code: <placeholder-1/>"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/monitoring.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

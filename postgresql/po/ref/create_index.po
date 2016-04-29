@@ -1,0 +1,455 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/create_index.xml:4(primary) xml/ref/create_index.xml:7(refentrytitle) xml/ref/create_index.xml:12(refname)
+msgid "CREATE INDEX"
+msgstr ""
+
+#: xml/ref/create_index.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/create_index.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/create_index.xml:13(refpurpose)
+msgid "define a new index"
+msgstr ""
+
+#: xml/ref/create_index.xml:18(replaceable) xml/ref/create_index.xml:142(replaceable)
+msgid "name"
+msgstr ""
+
+#: xml/ref/create_index.xml:19(replaceable) xml/ref/create_index.xml:155(replaceable)
+msgid "table_name"
+msgstr ""
+
+#: xml/ref/create_index.xml:20(replaceable) xml/ref/create_index.xml:164(replaceable)
+msgid "method"
+msgstr ""
+
+#: xml/ref/create_index.xml:21(replaceable) xml/ref/create_index.xml:180(replaceable)
+msgid "column_name"
+msgstr ""
+
+#: xml/ref/create_index.xml:22(replaceable) xml/ref/create_index.xml:188(replaceable)
+msgid "expression"
+msgstr ""
+
+#: xml/ref/create_index.xml:24(replaceable) xml/ref/create_index.xml:200(replaceable)
+msgid "collation"
+msgstr ""
+
+#: xml/ref/create_index.xml:25(replaceable) xml/ref/create_index.xml:213(replaceable)
+msgid "opclass"
+msgstr ""
+
+#: xml/ref/create_index.xml:27(replaceable) xml/ref/create_index.xml:259(replaceable)
+msgid "storage_parameter"
+msgstr ""
+
+#: xml/ref/create_index.xml:29(replaceable)
+msgid "value"
+msgstr ""
+
+#: xml/ref/create_index.xml:31(replaceable) xml/ref/create_index.xml:272(replaceable)
+msgid "tablespace_name"
+msgstr ""
+
+#: xml/ref/create_index.xml:33(replaceable) xml/ref/create_index.xml:285(replaceable)
+msgid "predicate"
+msgstr ""
+
+#: xml/ref/create_index.xml:16(synopsis)
+#, no-wrap
+msgid "CREATE [ UNIQUE ] INDEX [ CONCURRENTLY ] [ [ IF NOT\n    EXISTS ] \n    <placeholder-1/>] ON \n    <placeholder-2/>[ USING \n    <placeholder-3/>] ( { \n    <placeholder-4/>| ( \n    <placeholder-5/>) } [\n    COLLATE \n    <placeholder-6/>] [ \n    <placeholder-7/>] [ ASC |\n    DESC ] [ NULLS { FIRST | LAST } ] [, ...] ) [ WITH ( \n    <placeholder-8/>=\n    \n    <placeholder-9/>[, ... ] ) ]\n    [ TABLESPACE \n    <placeholder-10/>] [\n    WHERE \n    <placeholder-11/>]"
+msgstr ""
+
+#: xml/ref/create_index.xml:37(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/create_index.xml:38(para)
+msgid "<command>CREATE INDEX</command>constructs an index on the specified column(s) of the specified relation, which can be a table or a materialized view. Indexes are primarily used to enhance database performance (though inappropriate use can result in slower performance)."
+msgstr ""
+
+#: xml/ref/create_index.xml:44(para)
+msgid "The key field(s) for the index are specified as column names, or alternatively as expressions written in parentheses. Multiple fields can be specified if the index method supports multicolumn indexes."
+msgstr ""
+
+#: xml/ref/create_index.xml:48(para)
+msgid "An index field can be an expression computed from the values of one or more columns of the table row. This feature can be used to obtain fast access to data based on some transformation of the basic data. For example, an index computed on <literal>upper(col)</literal>would allow the clause <literal>WHERE upper(col) = 'JIM'</literal>to use an index."
+msgstr ""
+
+#: xml/ref/create_index.xml:56(para)
+msgid "<productname>PostgreSQL</productname>provides the index methods B-tree, hash, GiST, SP-GiST, GIN, and BRIN. Users can also define their own index methods, but that is fairly complicated."
+msgstr ""
+
+#: xml/ref/create_index.xml:61(para)
+msgid "When the <literal>WHERE</literal>clause is present, a <firstterm>partial index</firstterm>is created. A partial index is an index that contains entries for only a portion of a table, usually a portion that is more useful for indexing than the rest of the table. For example, if you have a table that contains both billed and unbilled orders where the unbilled orders take up a small fraction of the total table and yet that is an often used section, you can improve performance by creating an index on just that portion. Another possible application is to use <literal>WHERE</literal>with <literal>UNIQUE</literal>to enforce uniqueness over a subset of a table. See <xref linkend=\"indexes-partial\">for more discussion.</xref>"
+msgstr ""
+
+#: xml/ref/create_index.xml:77(para)
+msgid "The expression used in the <literal>WHERE</literal>clause can refer only to columns of the underlying table, but it can use all columns, not just the ones being indexed. Presently, subqueries and aggregate expressions are also forbidden in <literal>WHERE</literal>. The same restrictions apply to index fields that are expressions."
+msgstr ""
+
+#: xml/ref/create_index.xml:84(para)
+msgid "All functions and operators used in an index definition must be <quote>immutable</quote>, that is, their results must depend only on their arguments and never on any outside influence (such as the contents of another table or the current time). This restriction ensures that the behavior of the index is well-defined. To use a user-defined function in an index expression or <literal>WHERE</literal>clause, remember to mark the function immutable when you create it."
+msgstr ""
+
+#: xml/ref/create_index.xml:96(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/create_index.xml:100(literal)
+msgid "UNIQUE"
+msgstr ""
+
+#: xml/ref/create_index.xml:103(para)
+msgid "Causes the system to check for duplicate values in the table when the index is created (if data already exist) and each time data is added. Attempts to insert or update data which would result in duplicate entries will generate an error."
+msgstr ""
+
+#: xml/ref/create_index.xml:112(literal)
+msgid "CONCURRENTLY"
+msgstr ""
+
+#: xml/ref/create_index.xml:115(para)
+msgid "When this option is used, <productname>PostgreSQL</productname>will build the index without taking any locks that prevent concurrent inserts, updates, or deletes on the table; whereas a standard index build locks out writes (but not reads) on the table until it's done. There are several caveats to be aware of when using this option see <xref linkend=\"SQL-CREATEINDEX-CONCURRENTLY\" endterm=\"SQL-CREATEINDEX-CONCURRENTLY-title\"> .</xref>"
+msgstr ""
+
+#: xml/ref/create_index.xml:129(literal)
+msgid "IF NOT EXISTS"
+msgstr ""
+
+#: xml/ref/create_index.xml:132(para)
+msgid "Do not throw an error if a relation with the same name already exists. A notice is issued in this case. Note that there is no guarantee that the existing index is anything like the one that would have been created. Index name is required when <literal>IF NOT EXISTS</literal>is specified."
+msgstr ""
+
+#: xml/ref/create_index.xml:145(para)
+msgid "The name of the index to be created. No schema name can be included here; the index is always created in the same schema as its parent table. If the name is omitted, <productname>PostgreSQL</productname>chooses a suitable name based on the parent table's name and the indexed column name(s)."
+msgstr ""
+
+#: xml/ref/create_index.xml:158(para)
+msgid "The name (possibly schema-qualified) of the table to be indexed."
+msgstr ""
+
+#: xml/ref/create_index.xml:167(para)
+msgid "The name of the index method to be used. Choices are <literal>btree</literal>, <literal>hash</literal>, <literal>gist</literal>, <literal>spgist</literal>, <literal>gin</literal>, and <literal>brin</literal>. The default method is <literal>btree</literal>."
+msgstr ""
+
+#: xml/ref/create_index.xml:183(para)
+msgid "The name of a column of the table."
+msgstr ""
+
+#: xml/ref/create_index.xml:191(para)
+msgid "An expression based on one or more columns of the table. The expression usually must be written with surrounding parentheses, as shown in the syntax. However, the parentheses can be omitted if the expression has the form of a function call."
+msgstr ""
+
+#: xml/ref/create_index.xml:203(para)
+msgid "The name of the collation to use for the index. By default, the index uses the collation declared for the column to be indexed or the result collation of the expression to be indexed. Indexes with non-default collations can be useful for queries that involve expressions using non-default collations."
+msgstr ""
+
+#: xml/ref/create_index.xml:216(para)
+msgid "The name of an operator class. See below for details."
+msgstr ""
+
+#: xml/ref/create_index.xml:222(literal)
+msgid "ASC"
+msgstr ""
+
+#: xml/ref/create_index.xml:225(para)
+msgid "Specifies ascending sort order (which is the default)."
+msgstr ""
+
+#: xml/ref/create_index.xml:231(literal)
+msgid "DESC"
+msgstr ""
+
+#: xml/ref/create_index.xml:234(para)
+msgid "Specifies descending sort order."
+msgstr ""
+
+#: xml/ref/create_index.xml:239(literal)
+msgid "NULLS FIRST"
+msgstr ""
+
+#: xml/ref/create_index.xml:242(para)
+msgid "Specifies that nulls sort before non-nulls. This is the default when <literal>DESC</literal>is specified."
+msgstr ""
+
+#: xml/ref/create_index.xml:249(literal)
+msgid "NULLS LAST"
+msgstr ""
+
+#: xml/ref/create_index.xml:252(para)
+msgid "Specifies that nulls sort after non-nulls. This is the default when <literal>DESC</literal>is not specified."
+msgstr ""
+
+#: xml/ref/create_index.xml:263(para)
+msgid "The name of an index-method-specific storage parameter. See <xref linkend=\"sql-createindex-storage-parameters\" endterm=\"sql-createindex-storage-parameters-title\">for details.</xref>"
+msgstr ""
+
+#: xml/ref/create_index.xml:276(para)
+msgid "The tablespace in which to create the index. If not specified, <xref linkend=\"guc-default-tablespace\">is consulted, or <xref linkend=\"guc-temp-tablespaces\">for indexes on temporary tables.</xref></xref>"
+msgstr ""
+
+#: xml/ref/create_index.xml:288(para)
+msgid "The constraint expression for a partial index."
+msgstr ""
+
+#: xml/ref/create_index.xml:294(title)
+msgid "Index Storage Parameters"
+msgstr ""
+
+#: xml/ref/create_index.xml:296(para)
+msgid "The optional <literal>WITH</literal>clause specifies <firstterm>storage parameters</firstterm>for the index. Each index method has its own set of allowed storage parameters. The B-tree, hash, GiST and SP-GiST index methods all accept this parameter:"
+msgstr ""
+
+#: xml/ref/create_index.xml:305(literal)
+msgid "fillfactor"
+msgstr ""
+
+#: xml/ref/create_index.xml:308(para)
+msgid "The fillfactor for an index is a percentage that determines how full the index method will try to pack index pages. For B-trees, leaf pages are filled to this percentage during initial index build, and also when extending the index at the right (adding new largest key values). If pages subsequently become completely full, they will be split, leading to gradual degradation in the index's efficiency. B-trees use a default fillfactor of 90, but any integer value from 10 to 100 can be selected. If the table is static then fillfactor 100 is best to minimize the index's physical size, but for heavily updated tables a smaller fillfactor is better to minimize the need for page splits. The other index methods use fillfactor in different but roughly analogous ways; the default fillfactor varies between methods."
+msgstr ""
+
+#: xml/ref/create_index.xml:327(para)
+msgid "GiST indexes additionally accept this parameter:"
+msgstr ""
+
+#: xml/ref/create_index.xml:331(literal)
+msgid "buffering"
+msgstr ""
+
+#: xml/ref/create_index.xml:334(para)
+msgid "Determines whether the buffering build technique described in <xref linkend=\"gist-buffering-build\">is used to build the index. With <literal>OFF</literal>it is disabled, with <literal>ON</literal>it is enabled, and with <literal>AUTO</literal>it is initially disabled, but turned on on-the-fly once the index size reaches <xref linkend=\"guc-effective-cache-size\">. The default is <literal>AUTO</literal>.</xref></xref>"
+msgstr ""
+
+#: xml/ref/create_index.xml:348(para)
+msgid "GIN indexes accept different parameters:"
+msgstr ""
+
+#: xml/ref/create_index.xml:352(literal)
+msgid "fastupdate"
+msgstr ""
+
+#: xml/ref/create_index.xml:355(para)
+msgid "This setting controls usage of the fast update technique described in <xref linkend=\"gin-fast-update\">. It is a Boolean parameter: <literal>ON</literal>enables fast update, <literal>OFF</literal>disables it. (Alternative spellings of <literal>ON</literal>and <literal>OFF</literal>are allowed as described in <xref linkend=\"config-setting\">.) The default is <literal>ON</literal>.</xref></xref>"
+msgstr ""
+
+#: xml/ref/create_index.xml:367(para)
+msgid "Turning <literal>fastupdate</literal>off via <command>ALTER INDEX</command>prevents future insertions from going into the list of pending index entries, but does not in itself flush previous entries. You might want to <command>VACUUM</command>the table afterward to ensure the pending list is emptied."
+msgstr ""
+
+#: xml/ref/create_index.xml:382(literal)
+msgid "gin_pending_list_limit"
+msgstr ""
+
+#: xml/ref/create_index.xml:385(para)
+msgid "Custom <xref linkend=\"guc-gin-pending-list-limit\">parameter. This value is specified in kilobytes.</xref>"
+msgstr ""
+
+#: xml/ref/create_index.xml:391(para)
+msgid "<acronym>BRIN</acronym>indexes accept a different parameter:"
+msgstr ""
+
+#: xml/ref/create_index.xml:397(literal)
+msgid "pages_per_range"
+msgstr ""
+
+#: xml/ref/create_index.xml:400(para)
+msgid "Defines the number of table blocks that make up one block range for each entry of a <acronym>BRIN</acronym>index (see <xref linkend=\"brin-intro\">for more details). The default is <literal>128</literal>.</xref>"
+msgstr ""
+
+#: xml/ref/create_index.xml:411(title)
+msgid "Building Indexes Concurrently"
+msgstr ""
+
+#: xml/ref/create_index.xml:414(primary)
+msgid "index"
+msgstr ""
+
+#: xml/ref/create_index.xml:415(secondary)
+msgid "building concurrently"
+msgstr ""
+
+#: xml/ref/create_index.xml:417(para)
+msgid "Creating an index can interfere with regular operation of a database. Normally <productname>PostgreSQL</productname>locks the table to be indexed against writes and performs the entire index build with a single scan of the table. Other transactions can still read the table, but if they try to insert, update, or delete rows in the table they will block until the index build is finished. This could have a severe effect if the system is a live production database. Very large tables can take many hours to be indexed, and even for smaller tables, an index build can lock out writers for periods that are unacceptably long for a production system."
+msgstr ""
+
+#: xml/ref/create_index.xml:429(para)
+msgid "<productname>PostgreSQL</productname>supports building indexes without locking out writes. This method is invoked by specifying the <literal>CONCURRENTLY</literal>option of <command>CREATE INDEX</command>. When this option is used, <productname>PostgreSQL</productname>must perform two scans of the table, and in addition it must wait for all existing transactions that could potentially use the index to terminate. Thus this method requires more total work than a standard index build and takes significantly longer to complete. However, since it allows normal operations to continue while the index is built, this method is useful for adding new indexes in a production environment. Of course, the extra CPU and I/O load imposed by the index creation might slow other operations."
+msgstr ""
+
+#: xml/ref/create_index.xml:445(para)
+msgid "In a concurrent index build, the index is actually entered into the system catalogs in one transaction, then two table scans occur in two more transactions. Any transaction active when the second table scan starts can block concurrent index creation until it completes, even transactions that only reference the table after the second table scan starts. Concurrent index creation serially waits for each old transaction to complete using the method outlined in section <xref linkend=\"view-pg-locks\">.</xref>"
+msgstr ""
+
+#: xml/ref/create_index.xml:464(programlisting)
+#, no-wrap
+msgid "postgres=# \\d tab Table \"public.tab\" Column |\n      Type | Modifiers --------+---------+----------- col | integer\n      | Indexes: \"idx\" btree (col) INVALID"
+msgstr ""
+
+#: xml/ref/create_index.xml:454(para)
+msgid "If a problem arises while scanning the table, such as a deadlock or a uniqueness violation in a unique index, the <command>CREATE INDEX</command>command will fail but leave behind an <quote>invalid</quote>index. This index will be ignored for querying purposes because it might be incomplete; however it will still consume update overhead. The <application>psql</application><command>\\d</command>command will report such an index as <literal>INVALID</literal>: <placeholder-1/>The recommended recovery method in such cases is to drop the index and try again to perform <command>CREATE INDEX CONCURRENTLY</command>. (Another possibility is to rebuild the index with <command>REINDEX</command>. However, since <command>REINDEX</command>does not support concurrent builds, this option is unlikely to seem attractive.)"
+msgstr ""
+
+#: xml/ref/create_index.xml:474(para)
+msgid "Another caveat when building a unique index concurrently is that the uniqueness constraint is already being enforced against other transactions when the second table scan begins. This means that constraint violations could be reported in other queries prior to the index becoming available for use, or even in cases where the index build eventually fails. Also, if a failure does occur in the second scan, the <quote>invalid</quote>index continues to enforce its uniqueness constraint afterwards."
+msgstr ""
+
+#: xml/ref/create_index.xml:484(para)
+msgid "Concurrent builds of expression indexes and partial indexes are supported. Errors occurring in the evaluation of these expressions could cause behavior similar to that described above for unique constraint violations."
+msgstr ""
+
+#: xml/ref/create_index.xml:488(para)
+msgid "Regular index builds permit other regular index builds on the same table to occur in parallel, but only one concurrent index build can occur on a table at a time. In both cases, no other types of schema modification on the table are allowed meanwhile. Another difference is that a regular <command>CREATE INDEX</command>command can be performed within a transaction block, but <command>CREATE INDEX CONCURRENTLY</command>cannot."
+msgstr ""
+
+#: xml/ref/create_index.xml:500(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/create_index.xml:501(para)
+msgid "See <xref linkend=\"indexes\">for information about when indexes can be used, when they are not used, and in which particular situations they can be useful.</xref>"
+msgstr ""
+
+#: xml/ref/create_index.xml:506(para)
+msgid "Hash index operations are not presently WAL-logged, so hash indexes might need to be rebuilt with <command>REINDEX</command>after a database crash if there were unwritten changes. Also, changes to hash indexes are not replicated over streaming or file-based replication after the initial base backup, so they give wrong answers to queries that subsequently use them. Hash indexes are also not properly restored during point-in-time recovery. For these reasons, hash index use is presently discouraged."
+msgstr ""
+
+#: xml/ref/create_index.xml:516(para)
+msgid "Currently, only the B-tree, GiST, GIN, and BRIN index methods support multicolumn indexes. Up to 32 fields can be specified by default. (This limit can be altered when building <productname>PostgreSQL</productname>.) Only B-tree currently supports unique indexes."
+msgstr ""
+
+#: xml/ref/create_index.xml:521(para)
+msgid "An <firstterm>operator class</firstterm>can be specified for each column of an index. The operator class identifies the operators to be used by the index for that column. For example, a B-tree index on four-byte integers would use the <literal>int4_ops</literal>class; this operator class includes comparison functions for four-byte integers. In practice the default operator class for the column's data type is usually sufficient. The main point of having operator classes is that for some data types, there could be more than one meaningful ordering. For example, we might want to sort a complex-number data type either by absolute value or by real part. We could do this by defining two operator classes for the data type and then selecting the proper class when making an index. More information about operator classes is in <xref linkend=\"indexes-opclass\">and in <xref linkend=\"xindex\">.</xref></xref>"
+msgstr ""
+
+#: xml/ref/create_index.xml:538(para)
+msgid "For index methods that support ordered scans (currently, only B-tree), the optional clauses <literal>ASC</literal>, <literal>DESC</literal>, <literal>NULLS FIRST</literal>, and/or <literal>NULLS LAST</literal>can be specified to modify the sort ordering of the index. Since an ordered index can be scanned either forward or backward, it is not normally useful to create a single-column <literal>DESC</literal>index that sort ordering is already available with a regular index. The value of these options is that multicolumn indexes can be created that match the sort ordering requested by a mixed-ordering query, such as <literal>SELECT ... ORDER BY x ASC, y DESC</literal>. The <literal>NULLS</literal>options are useful if you need to support <quote>nulls sort low</quote>behavior, rather than the default <quote>nulls sort high</quote>, in queries that depend on indexes to avoid sorting steps."
+msgstr ""
+
+#: xml/ref/create_index.xml:557(para)
+msgid "For most index methods, the speed of creating an index is dependent on the setting of <xref linkend=\"guc-maintenance-work-mem\">. Larger values will reduce the time needed for index creation, so long as you don't make it larger than the amount of memory really available, which would drive the machine into swapping. For hash indexes, the value of <xref linkend=\"guc-effective-cache-size\">is also relevant to index creation time: <productname>PostgreSQL</productname>will use one of two different hash index creation methods depending on whether the estimated index size is more or less than <varname>effective_cache_size</varname>. For best results, make sure that this parameter is also set to something reflective of available memory, and be careful that the sum of <varname>maintenance_work_mem</varname>and <varname>effective_cache_size</varname>is less than the machine's RAM less whatever space is needed by other programs.</xref></xref>"
+msgstr ""
+
+#: xml/ref/create_index.xml:576(para)
+msgid "Use <xref linkend=\"sql-dropindex\">to remove an index.</xref>"
+msgstr ""
+
+#: xml/ref/create_index.xml:578(para)
+msgid "Prior releases of <productname>PostgreSQL</productname>also had an R-tree index method. This method has been removed because it had no significant advantages over the GiST method. If <literal>USING rtree</literal>is specified, <command>CREATE INDEX</command>will interpret it as <literal>USING gist</literal>, to simplify conversion of old databases to GiST."
+msgstr ""
+
+#: xml/ref/create_index.xml:588(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/create_index.xml:592(programlisting)
+#, no-wrap
+msgid "CREATE UNIQUE INDEX title_idx ON films\n    (title);"
+msgstr ""
+
+#: xml/ref/create_index.xml:589(para)
+msgid "To create a B-tree index on the column <literal>title</literal>in the table <literal>films</literal>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_index.xml:597(programlisting)
+#, no-wrap
+msgid "CREATE INDEX ON films\n    ((lower(title)));"
+msgstr ""
+
+#: xml/ref/create_index.xml:594(para)
+msgid "To create an index on the expression <literal>lower(title)</literal>, allowing efficient case-insensitive searches: <placeholder-1/>(In this example we have chosen to omit the index name, so the system will choose a name, typically <literal>films_lower_idx</literal>.)"
+msgstr ""
+
+#: xml/ref/create_index.xml:603(programlisting)
+#, no-wrap
+msgid "CREATE INDEX title_idx_german ON films (title\n    COLLATE \"de_DE\");"
+msgstr ""
+
+#: xml/ref/create_index.xml:602(para)
+msgid "To create an index with non-default collation: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_index.xml:607(programlisting)
+#, no-wrap
+msgid "CREATE INDEX title_idx_nulls_low ON films\n    (title NULLS FIRST);"
+msgstr ""
+
+#: xml/ref/create_index.xml:605(para)
+msgid "To create an index with non-default sort ordering of nulls: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_index.xml:610(programlisting)
+#, no-wrap
+msgid "CREATE UNIQUE INDEX title_idx ON films (title)\n    WITH (fillfactor = 70);"
+msgstr ""
+
+#: xml/ref/create_index.xml:609(para)
+msgid "To create an index with non-default fill factor: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_index.xml:614(programlisting)
+#, no-wrap
+msgid "CREATE INDEX gin_idx ON documents_table USING\n    GIN (locations) WITH (fastupdate =\n    off);"
+msgstr ""
+
+#: xml/ref/create_index.xml:612(para)
+msgid "To create a <acronym>GIN</acronym>index with fast updates disabled: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_index.xml:622(programlisting)
+#, no-wrap
+msgid "CREATE INDEX code_idx ON films (code)\n    TABLESPACE indexspace;"
+msgstr ""
+
+#: xml/ref/create_index.xml:617(para)
+msgid "To create an index on the column <literal>code</literal>in the table <literal>films</literal>and have the index reside in the tablespace <literal>indexspace</literal>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_index.xml:627(programlisting)
+#, no-wrap
+msgid "CREATE INDEX pointloc ON points USING gist\n    (box(location,location)); SELECT * FROM points WHERE\n    box(location,location)\n    '(0,0),(1,1)'::box;"
+msgstr ""
+
+#: xml/ref/create_index.xml:624(para)
+msgid "To create a GiST index on a point attribute so that we can efficiently use box operators on the result of the conversion function: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_index.xml:633(programlisting)
+#, no-wrap
+msgid "CREATE INDEX CONCURRENTLY sales_quantity_index\n    ON sales_table (quantity);"
+msgstr ""
+
+#: xml/ref/create_index.xml:631(para)
+msgid "To create an index without locking out writes to the table: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_index.xml:637(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/create_index.xml:638(para)
+msgid "<command>CREATE INDEX</command>is a <productname>PostgreSQL</productname>language extension. There are no provisions for indexes in the SQL standard."
+msgstr ""
+
+#: xml/ref/create_index.xml:644(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/create_index.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

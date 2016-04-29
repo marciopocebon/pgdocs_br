@@ -1,0 +1,443 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/alter_foreign_table.xml:4(primary) xml/ref/alter_foreign_table.xml:7(refentrytitle) xml/ref/alter_foreign_table.xml:12(refname)
+msgid "ALTER FOREIGN TABLE"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:13(refpurpose)
+msgid "change the definition of a foreign table"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:18(replaceable) xml/ref/alter_foreign_table.xml:21(replaceable) xml/ref/alter_foreign_table.xml:26(replaceable) xml/ref/alter_foreign_table.xml:29(replaceable) xml/ref/alter_foreign_table.xml:408(replaceable)
+msgid "name"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:19(replaceable) xml/ref/alter_foreign_table.xml:32(replaceable)
+msgid "action"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:23(replaceable) xml/ref/alter_foreign_table.xml:34(replaceable) xml/ref/alter_foreign_table.xml:40(replaceable) xml/ref/alter_foreign_table.xml:42(replaceable) xml/ref/alter_foreign_table.xml:48(replaceable) xml/ref/alter_foreign_table.xml:52(replaceable) xml/ref/alter_foreign_table.xml:54(replaceable) xml/ref/alter_foreign_table.xml:56(replaceable) xml/ref/alter_foreign_table.xml:60(replaceable) xml/ref/alter_foreign_table.xml:64(replaceable) xml/ref/alter_foreign_table.xml:68(replaceable) xml/ref/alter_foreign_table.xml:71(replaceable) xml/ref/alter_foreign_table.xml:425(replaceable)
+msgid "column_name"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:24(replaceable) xml/ref/alter_foreign_table.xml:433(replaceable)
+msgid "new_column_name"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:27(replaceable) xml/ref/alter_foreign_table.xml:442(replaceable)
+msgid "new_name"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:30(replaceable) xml/ref/alter_foreign_table.xml:545(replaceable)
+msgid "new_schema"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:31(phrase)
+msgid "where <placeholder-1/>is one of:"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:35(replaceable) xml/ref/alter_foreign_table.xml:44(replaceable) xml/ref/alter_foreign_table.xml:450(replaceable)
+msgid "data_type"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:37(replaceable) xml/ref/alter_foreign_table.xml:46(replaceable)
+msgid "collation"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:38(replaceable)
+msgid "column_constraint"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:50(replaceable)
+msgid "expression"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:58(replaceable)
+msgid "integer"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:61(replaceable) xml/ref/alter_foreign_table.xml:66(replaceable) xml/ref/alter_foreign_table.xml:183(replaceable) xml/ref/alter_foreign_table.xml:190(replaceable)
+msgid "attribute_option"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:62(replaceable) xml/ref/alter_foreign_table.xml:74(replaceable) xml/ref/alter_foreign_table.xml:97(replaceable) xml/ref/alter_foreign_table.xml:185(replaceable) xml/ref/alter_foreign_table.xml:341(replaceable)
+msgid "value"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:73(replaceable) xml/ref/alter_foreign_table.xml:96(replaceable) xml/ref/alter_foreign_table.xml:340(replaceable)
+msgid "option"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:76(replaceable) xml/ref/alter_foreign_table.xml:216(replaceable) xml/ref/alter_foreign_table.xml:459(replaceable)
+msgid "table_constraint"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:78(replaceable) xml/ref/alter_foreign_table.xml:80(replaceable) xml/ref/alter_foreign_table.xml:468(replaceable)
+msgid "constraint_name"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:82(replaceable) xml/ref/alter_foreign_table.xml:84(replaceable) xml/ref/alter_foreign_table.xml:86(replaceable) xml/ref/alter_foreign_table.xml:88(replaceable) xml/ref/alter_foreign_table.xml:497(replaceable)
+msgid "trigger_name"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:90(replaceable) xml/ref/alter_foreign_table.xml:92(replaceable) xml/ref/alter_foreign_table.xml:306(replaceable) xml/ref/alter_foreign_table.xml:320(replaceable) xml/ref/alter_foreign_table.xml:528(replaceable)
+msgid "parent_table"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:94(replaceable) xml/ref/alter_foreign_table.xml:537(replaceable)
+msgid "new_owner"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:17(synopsis)
+#, no-wrap
+msgid "ALTER FOREIGN TABLE [ IF EXISTS ] [ ONLY ] \n    <placeholder-1/>[ * ] \n    <placeholder-2/>[, ... ]\n    ALTER FOREIGN TABLE [ IF EXISTS ] [ ONLY ] \n    <placeholder-3/>[ * ] RENAME [\n    COLUMN ] \n    <placeholder-4/>TO \n    <placeholder-5/>ALTER FOREIGN TABLE [ IF EXISTS ] \n    <placeholder-6/>RENAME TO \n    <placeholder-7/>ALTER\n    FOREIGN TABLE [ IF EXISTS ] \n    <placeholder-8/>SET SCHEMA \n    <placeholder-9/>\n    <placeholder-10/>ADD [ COLUMN ] \n    <placeholder-11/>\n    <placeholder-12/>[ COLLATE\n    \n    <placeholder-13/>] [ \n    <placeholder-14/>[\n    ... ] ] DROP [ COLUMN ] [ IF EXISTS ] \n    <placeholder-15/>[\n    RESTRICT | CASCADE ] ALTER [ COLUMN ] \n    <placeholder-16/>[ SET\n    DATA ] TYPE \n    <placeholder-17/>[ COLLATE\n    \n    <placeholder-18/>] ALTER [\n    COLUMN ] \n    <placeholder-19/>SET\n    DEFAULT \n    <placeholder-20/>ALTER [\n    COLUMN ] \n    <placeholder-21/>DROP\n    DEFAULT ALTER [ COLUMN ] \n    <placeholder-22/>{ SET |\n    DROP } NOT NULL ALTER [ COLUMN ] \n    <placeholder-23/>SET\n    STATISTICS \n    <placeholder-24/>ALTER [\n    COLUMN ] \n    <placeholder-25/>SET ( \n    <placeholder-26/>= \n    <placeholder-27/>[, ... ] )\n    ALTER [ COLUMN ] \n    <placeholder-28/>RESET (\n    \n    <placeholder-29/>[,\n    ... ] ) ALTER [ COLUMN ] \n    <placeholder-30/>SET\n    STORAGE { PLAIN | EXTERNAL | EXTENDED | MAIN } ALTER [ COLUMN ]\n    \n    <placeholder-31/>OPTIONS\n    ( [ ADD | SET | DROP ] \n    <placeholder-32/>[' \n    <placeholder-33/>'] [, ... ])\n    ADD \n    <placeholder-34/>[\n    NOT VALID ] VALIDATE CONSTRAINT \n    <placeholder-35/>DROP CONSTRAINT [ IF EXISTS ] \n    <placeholder-36/>[\n    RESTRICT | CASCADE ] DISABLE TRIGGER [ \n    <placeholder-37/>| ALL\n    | USER ] ENABLE TRIGGER [ \n    <placeholder-38/>| ALL\n    | USER ] ENABLE REPLICA TRIGGER \n    <placeholder-39/>ENABLE\n    ALWAYS TRIGGER \n    <placeholder-40/>SET\n    WITH OIDS SET WITHOUT OIDS INHERIT \n    <placeholder-41/>NO\n    INHERIT \n    <placeholder-42/>OWNER\n    TO { \n    <placeholder-43/>|\n    CURRENT_USER | SESSION_USER } OPTIONS ( [ ADD | SET | DROP ] \n    <placeholder-44/>[' \n    <placeholder-45/>'] [, ...\n    ])"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:101(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:108(literal)
+msgid "ADD COLUMN"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:111(para)
+msgid "This form adds a new column to the foreign table, using the same syntax as <xref linkend=\"SQL-CREATEFOREIGNTABLE\">. Unlike the case when adding a column to a regular table, nothing happens to the underlying storage: this action simply declares that some new column is now accessible through the foreign table.</xref>"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:122(literal)
+msgid "DROP COLUMN [ IF EXISTS ]"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:125(para)
+msgid "This form drops a column from a foreign table. You will need to say <literal>CASCADE</literal>if anything outside the table depends on the column; for example, views. If <literal>IF EXISTS</literal>is specified and the column does not exist, no error is thrown. In this case a notice is issued instead."
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:136(literal)
+msgid "SET DATA TYPE"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:139(para)
+msgid "This form changes the type of a column of a foreign table. Again, this has no effect on any underlying storage: this action simply changes the type that <productname>PostgreSQL</productname>believes the column to have."
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:147(term)
+msgid "<literal>SET</literal>/ <literal>DROP DEFAULT</literal>"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:151(para)
+msgid "These forms set or remove the default value for a column. Default values only apply in subsequent <command>INSERT</command>or <command>UPDATE</command>commands; they do not cause rows already in the table to change."
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:159(term)
+msgid "<literal>SET</literal>/ <literal>DROP NOT NULL</literal>"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:163(para)
+msgid "Mark a column as allowing, or not allowing, null values."
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:169(literal)
+msgid "SET STATISTICS"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:172(para)
+msgid "This form sets the per-column statistics-gathering target for subsequent <xref linkend=\"sql-analyze\">operations. See the similar form of <xref linkend=\"sql-altertable\">for more details.</xref></xref>"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:182(literal)
+msgid "SET ( <placeholder-1/>= <placeholder-2/>[, ... ] )"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:189(literal)
+msgid "RESET ( <placeholder-1/>[, ... ] )"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:194(para)
+msgid "This form sets or resets per-attribute options. See the similar form of <xref linkend=\"sql-altertable\">for more details.</xref>"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:202(literal)
+msgid "SET STORAGE"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:205(para)
+msgid "This form sets the storage mode for a column. See the similar form of <xref linkend=\"sql-altertable\">for more details. Note that the storage mode has no effect unless the table's foreign-data wrapper chooses to pay attention to it.</xref>"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:215(literal)
+msgid "ADD <placeholder-1/>[ NOT VALID ]"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:220(para)
+msgid "This form adds a new constraint to a foreign table, using the same syntax as <xref linkend=\"SQL-CREATEFOREIGNTABLE\">. Currently only <literal>CHECK</literal>constraints are supported.</xref>"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:225(para)
+msgid "Unlike the case when adding a constraint to a regular table, nothing is done to verify the constraint is correct; rather, this action simply declares that some new condition should be assumed to hold for all rows in the foreign table. (See the discussion in <xref linkend=\"SQL-CREATEFOREIGNTABLE\">.) If the constraint is marked <literal>NOT VALID</literal>, then it isn't assumed to hold, but is only recorded for possible future use.</xref>"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:239(literal)
+msgid "VALIDATE CONSTRAINT"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:242(para)
+msgid "This form marks as valid a constraint that was previously marked as <literal>NOT VALID</literal>. No action is taken to verify the constraint, but future queries will assume that it holds."
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:251(literal)
+msgid "DROP CONSTRAINT [ IF EXISTS ]"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:254(para)
+msgid "This form drops the specified constraint on a foreign table. If <literal>IF EXISTS</literal>is specified and the constraint does not exist, no error is thrown. In this case a notice is issued instead."
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:262(term)
+msgid "<literal>DISABLE</literal>/ <literal>ENABLE [ REPLICA | ALWAYS ] TRIGGER</literal>"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:267(para)
+msgid "These forms configure the firing of trigger(s) belonging to the foreign table. See the similar form of <xref linkend=\"sql-altertable\">for more details.</xref>"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:275(literal)
+msgid "SET WITH OIDS"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:278(para)
+msgid "This form adds an <literal>oid</literal>system column to the table (see <xref linkend=\"ddl-system-columns\">). It does nothing if the table already has OIDs. Unless the table's foreign-data wrapper supports OIDs, this column will simply read as zeroes.</xref>"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:284(para)
+msgid "Note that this is not equivalent to <literal>ADD COLUMN oid oid</literal>; that would add a normal column that happened to be named <literal>oid</literal>, not a system column."
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:292(literal)
+msgid "SET WITHOUT OIDS"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:295(para)
+msgid "This form removes the <literal>oid</literal>system column from the table. This is exactly equivalent to <literal>DROP COLUMN oid RESTRICT</literal>, except that it will not complain if there is already no <literal>oid</literal>column."
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:305(literal)
+msgid "INHERIT <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:310(para)
+msgid "This form adds the target foreign table as a new child of the specified parent table. See the similar form of <xref linkend=\"sql-altertable\">for more details.</xref>"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:319(literal)
+msgid "NO INHERIT <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:324(para)
+msgid "This form removes the target foreign table from the list of children of the specified parent table."
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:330(literal)
+msgid "OWNER"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:333(para)
+msgid "This form changes the owner of the foreign table to the specified user."
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:339(literal)
+msgid "OPTIONS ( [ ADD | SET | DROP ] <placeholder-1/>[' <placeholder-2/>'] [, ... ] )"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:345(para)
+msgid "Change options for the foreign table or one of its columns. <literal>ADD</literal>, <literal>SET</literal>, and <literal>DROP</literal>specify the action to be performed. <literal>ADD</literal>is assumed if no operation is explicitly specified. Duplicate option names are not allowed (although it's OK for a table option and a column option to have the same name). Option names and values are also validated using the foreign data wrapper library."
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:361(literal)
+msgid "RENAME"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:364(para)
+msgid "The <literal>RENAME</literal>forms change the name of a foreign table or the name of an individual column in a foreign table."
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:372(literal)
+msgid "SET SCHEMA"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:375(para)
+msgid "This form moves the foreign table into another schema."
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:102(para)
+msgid "<command>ALTER FOREIGN TABLE</command>changes the definition of an existing foreign table. There are several subforms: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:380(para)
+msgid "All the actions except <literal>RENAME</literal>and <literal>SET SCHEMA</literal>can be combined into a list of multiple alterations to apply in parallel. For example, it is possible to add several columns and/or alter the type of several columns in a single command."
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:386(para)
+msgid "If the command is written as <literal>ALTER FOREIGN TABLE IF EXISTS ...</literal>and the foreign table does not exist, no error is thrown. A notice is issued in this case."
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:390(para)
+msgid "You must own the table to use <command>ALTER FOREIGN TABLE</command>. To change the schema of a foreign table, you must also have <literal>CREATE</literal>privilege on the new schema. To alter the owner, you must also be a direct or indirect member of the new owning role, and that role must have <literal>CREATE</literal>privilege on the table's schema. (These restrictions enforce that altering the owner doesn't do anything you couldn't do by dropping and recreating the table. However, a superuser can alter ownership of any table anyway.) To add a column or alter a column type, you must also have <literal>USAGE</literal>privilege on the data type."
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:404(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:411(para)
+msgid "The name (possibly schema-qualified) of an existing foreign table to alter. If <literal>ONLY</literal>is specified before the table name, only that table is altered. If <literal>ONLY</literal>is not specified, the table and all its descendant tables (if any) are altered. Optionally, <literal>*</literal>can be specified after the table name to explicitly indicate that descendant tables are included."
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:428(para)
+msgid "Name of a new or existing column."
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:437(para)
+msgid "New name for an existing column."
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:445(para)
+msgid "New name for the table."
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:453(para)
+msgid "Data type of the new column, or new data type for an existing column."
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:463(para)
+msgid "New table constraint for the foreign table."
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:472(para)
+msgid "Name of an existing constraint to drop."
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:477(literal)
+msgid "CASCADE"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:480(para)
+msgid "Automatically drop objects that depend on the dropped column or constraint (for example, views referencing the column)."
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:487(literal)
+msgid "RESTRICT"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:490(para)
+msgid "Refuse to drop the column or constraint if there are any dependent objects. This is the default behavior."
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:500(para)
+msgid "Name of a single trigger to disable or enable."
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:506(literal)
+msgid "ALL"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:509(para)
+msgid "Disable or enable all triggers belonging to the foreign table. (This requires superuser privilege if any of the triggers are internally generated triggers. The core system does not add such triggers to foreign tables, but add-on code could do so.)"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:518(literal)
+msgid "USER"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:521(para)
+msgid "Disable or enable all triggers belonging to the foreign table except for internally generated triggers."
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:531(para)
+msgid "A parent table to associate or de-associate with this foreign table."
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:540(para)
+msgid "The user name of the new owner of the table."
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:548(para)
+msgid "The name of the schema to which the table will be moved."
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:555(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:556(para)
+msgid "The key word <literal>COLUMN</literal>is noise and can be omitted."
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:558(para)
+msgid "Consistency with the foreign server is not checked when a column is added or removed with <literal>ADD COLUMN</literal>or <literal>DROP COLUMN</literal>, a <literal>NOT NULL</literal>or <literal>CHECK</literal>constraint is added, or a column type is changed with <literal>SET DATA TYPE</literal>. It is the user's responsibility to ensure that the table definition matches the remote side."
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:568(para)
+msgid "Refer to <xref linkend=\"sql-createforeigntable\">for a further description of valid parameters.</xref>"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:573(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:575(programlisting)
+#, no-wrap
+msgid "ALTER FOREIGN TABLE distributors ALTER COLUMN\n    street SET NOT NULL;"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:574(para)
+msgid "To mark a column as not-null: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:578(programlisting)
+#, no-wrap
+msgid "ALTER FOREIGN TABLE myschema.distributors\n    OPTIONS (ADD opt1 'value', SET opt2 'value2', DROP opt3\n    'value3');"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:577(para)
+msgid "To change options of a foreign table: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:583(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:584(para)
+msgid "The forms <literal>ADD</literal>, <literal>DROP</literal>, and <literal>SET DATA TYPE</literal>conform with the SQL standard. The other forms are <productname>PostgreSQL</productname>extensions of the SQL standard. Also, the ability to specify more than one manipulation in a single <command>ALTER FOREIGN TABLE</command>command is an extension."
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:594(para)
+msgid "<command>ALTER FOREIGN TABLE DROP COLUMN</command>can be used to drop the only column of a foreign table, leaving a zero-column table. This is an extension of SQL, which disallows zero-column foreign tables."
+msgstr ""
+
+#: xml/ref/alter_foreign_table.xml:601(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/alter_foreign_table.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

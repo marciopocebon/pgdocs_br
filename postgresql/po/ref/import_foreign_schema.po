@@ -1,0 +1,151 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/import_foreign_schema.xml:4(primary) xml/ref/import_foreign_schema.xml:7(refentrytitle) xml/ref/import_foreign_schema.xml:12(refname)
+msgid "IMPORT FOREIGN SCHEMA"
+msgstr ""
+
+#: xml/ref/import_foreign_schema.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/import_foreign_schema.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/import_foreign_schema.xml:13(refpurpose)
+msgid "import table definitions from a foreign server"
+msgstr ""
+
+#: xml/ref/import_foreign_schema.xml:18(replaceable) xml/ref/import_foreign_schema.xml:53(replaceable)
+msgid "remote_schema"
+msgstr ""
+
+#: xml/ref/import_foreign_schema.xml:20(replaceable) xml/ref/import_foreign_schema.xml:65(replaceable) xml/ref/import_foreign_schema.xml:77(replaceable)
+msgid "table_name"
+msgstr ""
+
+#: xml/ref/import_foreign_schema.xml:22(replaceable) xml/ref/import_foreign_schema.xml:88(replaceable)
+msgid "server_name"
+msgstr ""
+
+#: xml/ref/import_foreign_schema.xml:23(replaceable) xml/ref/import_foreign_schema.xml:96(replaceable)
+msgid "local_schema"
+msgstr ""
+
+#: xml/ref/import_foreign_schema.xml:25(replaceable) xml/ref/import_foreign_schema.xml:106(replaceable)
+msgid "option"
+msgstr ""
+
+#: xml/ref/import_foreign_schema.xml:26(replaceable) xml/ref/import_foreign_schema.xml:107(replaceable)
+msgid "value"
+msgstr ""
+
+#: xml/ref/import_foreign_schema.xml:17(synopsis)
+#, no-wrap
+msgid "IMPORT FOREIGN SCHEMA \n    <placeholder-1/>[ {\n    LIMIT TO | EXCEPT } ( \n    <placeholder-2/>[, ...]\n    ) ] FROM SERVER \n    <placeholder-3/>INTO \n    <placeholder-4/>[\n    OPTIONS ( \n    <placeholder-5/>' \n    <placeholder-6/>' [, ... ] )\n    ]"
+msgstr ""
+
+#: xml/ref/import_foreign_schema.xml:30(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/import_foreign_schema.xml:31(para)
+msgid "<command>IMPORT FOREIGN SCHEMA</command>creates foreign tables that represent tables existing on a foreign server. The new foreign tables will be owned by the user issuing the command and are created with the correct column definitions and options to match the remote tables."
+msgstr ""
+
+#: xml/ref/import_foreign_schema.xml:37(para)
+msgid "By default, all tables and views existing in a particular schema on the foreign server are imported. Optionally, the list of tables can be limited to a specified subset, or specific tables can be excluded. The new foreign tables are all created in the target schema, which must already exist."
+msgstr ""
+
+#: xml/ref/import_foreign_schema.xml:42(para)
+msgid "To use <command>IMPORT FOREIGN SCHEMA</command>, the user must have <literal>USAGE</literal>privilege on the foreign server, as well as <literal>CREATE</literal>privilege on the target schema."
+msgstr ""
+
+#: xml/ref/import_foreign_schema.xml:49(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/import_foreign_schema.xml:57(para)
+msgid "The remote schema to import from. The specific meaning of a remote schema depends on the foreign data wrapper in use."
+msgstr ""
+
+#: xml/ref/import_foreign_schema.xml:64(literal)
+msgid "LIMIT TO ( <placeholder-1/>[, ...] )"
+msgstr ""
+
+#: xml/ref/import_foreign_schema.xml:69(para)
+msgid "Import only foreign tables matching one of the given table names. Other tables existing in the foreign schema will be ignored."
+msgstr ""
+
+#: xml/ref/import_foreign_schema.xml:76(literal)
+msgid "EXCEPT ( <placeholder-1/>[, ...] )"
+msgstr ""
+
+#: xml/ref/import_foreign_schema.xml:81(para)
+msgid "Exclude specified foreign tables from the import. All tables existing in the foreign schema will be imported except the ones listed here."
+msgstr ""
+
+#: xml/ref/import_foreign_schema.xml:91(para)
+msgid "The foreign server to import from."
+msgstr ""
+
+#: xml/ref/import_foreign_schema.xml:99(para)
+msgid "The schema in which the imported foreign tables will be created."
+msgstr ""
+
+#: xml/ref/import_foreign_schema.xml:105(literal)
+msgid "OPTIONS ( <placeholder-1/>' <placeholder-2/>' [, ...] )"
+msgstr ""
+
+#: xml/ref/import_foreign_schema.xml:111(para)
+msgid "Options to be used during the import. The allowed option names and values are specific to each foreign data wrapper."
+msgstr ""
+
+#: xml/ref/import_foreign_schema.xml:119(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/import_foreign_schema.xml:125(programlisting)
+#, no-wrap
+msgid "IMPORT FOREIGN SCHEMA foreign_films FROM SERVER\n    film_server INTO films;"
+msgstr ""
+
+#: xml/ref/import_foreign_schema.xml:120(para)
+msgid "Import table definitions from a remote schema <structname>foreign_films</structname>on server <structname>film_server</structname>, creating the foreign tables in local schema <structname>films</structname>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/import_foreign_schema.xml:130(programlisting)
+#, no-wrap
+msgid "IMPORT FOREIGN SCHEMA foreign_films LIMIT TO\n    (actors, directors) FROM SERVER film_server INTO\n    films;"
+msgstr ""
+
+#: xml/ref/import_foreign_schema.xml:127(para)
+msgid "As above, but import only the two tables <structname>actors</structname>and <literal>directors</literal>(if they exist): <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/import_foreign_schema.xml:135(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/import_foreign_schema.xml:136(para)
+msgid "The <command>IMPORT FOREIGN SCHEMA</command>command conforms to the <acronym>SQL</acronym>standard, except that the <literal>OPTIONS</literal>clause is a <productname>PostgreSQL</productname>extension."
+msgstr ""
+
+#: xml/ref/import_foreign_schema.xml:144(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/import_foreign_schema.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

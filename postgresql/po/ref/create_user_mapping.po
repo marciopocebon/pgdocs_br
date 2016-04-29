@@ -1,0 +1,110 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/ref/create_user_mapping.xml:4(primary) xml/ref/create_user_mapping.xml:7(refentrytitle) xml/ref/create_user_mapping.xml:12(refname)
+msgid "CREATE USER MAPPING"
+msgstr ""
+
+#: xml/ref/create_user_mapping.xml:8(manvolnum)
+msgid "7"
+msgstr ""
+
+#: xml/ref/create_user_mapping.xml:9(refmiscinfo)
+msgid "SQL - Language Statements"
+msgstr ""
+
+#: xml/ref/create_user_mapping.xml:13(refpurpose)
+msgid "define a new mapping of a user to a foreign server"
+msgstr ""
+
+#: xml/ref/create_user_mapping.xml:18(replaceable) xml/ref/create_user_mapping.xml:45(replaceable)
+msgid "user_name"
+msgstr ""
+
+#: xml/ref/create_user_mapping.xml:20(replaceable) xml/ref/create_user_mapping.xml:60(replaceable)
+msgid "server_name"
+msgstr ""
+
+#: xml/ref/create_user_mapping.xml:22(replaceable) xml/ref/create_user_mapping.xml:70(replaceable)
+msgid "option"
+msgstr ""
+
+#: xml/ref/create_user_mapping.xml:23(replaceable) xml/ref/create_user_mapping.xml:71(replaceable)
+msgid "value"
+msgstr ""
+
+#: xml/ref/create_user_mapping.xml:17(synopsis)
+#, no-wrap
+msgid "CREATE USER MAPPING FOR { \n    <placeholder-1/>| USER |\n    CURRENT_USER | PUBLIC } SERVER \n    <placeholder-2/>[\n    OPTIONS ( \n    <placeholder-3/>' \n    <placeholder-4/>' [ , ... ] )\n    ]"
+msgstr ""
+
+#: xml/ref/create_user_mapping.xml:27(title)
+msgid "Description"
+msgstr ""
+
+#: xml/ref/create_user_mapping.xml:28(para)
+msgid "<command>CREATE USER MAPPING</command>defines a mapping of a user to a foreign server. A user mapping typically encapsulates connection information that a foreign-data wrapper uses together with the information encapsulated by a foreign server to access an external data resource."
+msgstr ""
+
+#: xml/ref/create_user_mapping.xml:34(para)
+msgid "The owner of a foreign server can create user mappings for that server for any user. Also, a user can create a user mapping for his own user name if <literal>USAGE</literal>privilege on the server has been granted to the user."
+msgstr ""
+
+#: xml/ref/create_user_mapping.xml:41(title)
+msgid "Parameters"
+msgstr ""
+
+#: xml/ref/create_user_mapping.xml:48(para)
+msgid "The name of an existing user that is mapped to foreign server. <literal>CURRENT_USER</literal>and <literal>USER</literal>match the name of the current user. When <literal>PUBLIC</literal>is specified, a so-called public mapping is created that is used when no user-specific mapping is applicable."
+msgstr ""
+
+#: xml/ref/create_user_mapping.xml:63(para)
+msgid "The name of an existing server for which the user mapping is to be created."
+msgstr ""
+
+#: xml/ref/create_user_mapping.xml:69(literal)
+msgid "OPTIONS ( <placeholder-1/>' <placeholder-2/>' [, ... ] )"
+msgstr ""
+
+#: xml/ref/create_user_mapping.xml:75(para)
+msgid "This clause specifies the options of the user mapping. The options typically define the actual user name and password of the mapping. Option names must be unique. The allowed option names and values are specific to the server's foreign-data wrapper."
+msgstr ""
+
+#: xml/ref/create_user_mapping.xml:85(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/ref/create_user_mapping.xml:89(programlisting)
+#, no-wrap
+msgid "CREATE USER MAPPING FOR bob SERVER foo OPTIONS\n    (user 'bob', password 'secret');"
+msgstr ""
+
+#: xml/ref/create_user_mapping.xml:86(para)
+msgid "Create a user mapping for user <literal>bob</literal>, server <literal>foo</literal>: <placeholder-1/>"
+msgstr ""
+
+#: xml/ref/create_user_mapping.xml:93(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/ref/create_user_mapping.xml:94(para)
+msgid "<command>CREATE USER MAPPING</command>conforms to ISO/IEC 9075-9 (SQL/MED)."
+msgstr ""
+
+#: xml/ref/create_user_mapping.xml:99(title)
+msgid "See Also"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/ref/create_user_mapping.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

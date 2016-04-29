@@ -1,0 +1,3625 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/datatype.xml:3(title) xml/datatype.xml:26(title)
+msgid "Data Types"
+msgstr ""
+
+#: xml/datatype.xml:5(primary) xml/datatype.xml:9(see) xml/datatype.xml:416(primary) xml/datatype.xml:3034(secondary) xml/datatype.xml:3145(primary) xml/datatype.xml:3860(secondary) xml/datatype.xml:4316(secondary)
+msgid "data type"
+msgstr ""
+
+#: xml/datatype.xml:8(primary)
+msgid "type"
+msgstr ""
+
+#: xml/datatype.xml:11(para)
+msgid "<productname>PostgreSQL</productname>has a rich set of native data types available to users. Users can add new types to <productname>PostgreSQL</productname>using the <xref linkend=\"sql-createtype\">command.</xref>"
+msgstr ""
+
+#: xml/datatype.xml:20(quote) xml/datatype.xml:31(entry)
+msgid "Aliases"
+msgstr ""
+
+#: xml/datatype.xml:21(productname) xml/datatype.xml:242(productname) xml/datatype.xml:1088(productname)
+msgid "PostgreSQL"
+msgstr ""
+
+#: xml/datatype.xml:17(xref)
+msgid "shows all the built-in general-purpose data types. Most of the alternative names listed in the <placeholder-1/>column are the names used internally by <placeholder-2/>for historical reasons. In addition, some internally used or deprecated types are available, but are not listed here."
+msgstr ""
+
+#: xml/datatype.xml:30(entry) xml/datatype.xml:429(entry) xml/datatype.xml:972(entry) xml/datatype.xml:1055(entry) xml/datatype.xml:1252(entry) xml/datatype.xml:1293(entry) xml/datatype.xml:1624(entry) xml/datatype.xml:3057(entry) xml/datatype.xml:3241(entry) xml/datatype.xml:3585(entry) xml/datatype.xml:4418(entry) xml/datatype.xml:4707(entry)
+msgid "Name"
+msgstr ""
+
+#: xml/datatype.xml:32(entry) xml/datatype.xml:431(entry) xml/datatype.xml:974(entry) xml/datatype.xml:1056(entry) xml/datatype.xml:1254(entry) xml/datatype.xml:1295(entry) xml/datatype.xml:1404(entry) xml/datatype.xml:1519(entry) xml/datatype.xml:1626(entry) xml/datatype.xml:1841(entry) xml/datatype.xml:1966(entry) xml/datatype.xml:2054(entry) xml/datatype.xml:2235(entry) xml/datatype.xml:2368(entry) xml/datatype.xml:2902(entry) xml/datatype.xml:3059(entry) xml/datatype.xml:3243(entry) xml/datatype.xml:3587(entry) xml/datatype.xml:4420(entry) xml/datatype.xml:4708(entry)
+msgid "Description"
+msgstr ""
+
+#: xml/datatype.xml:38(type) xml/datatype.xml:454(type) xml/datatype.xml:538(primary) xml/datatype.xml:550(see)
+msgid "bigint"
+msgstr ""
+
+#: xml/datatype.xml:41(type) xml/datatype.xml:549(primary)
+msgid "int8"
+msgstr ""
+
+#: xml/datatype.xml:43(entry)
+msgid "signed eight-byte integer"
+msgstr ""
+
+#: xml/datatype.xml:47(type) xml/datatype.xml:513(type) xml/datatype.xml:848(primary)
+msgid "bigserial"
+msgstr ""
+
+#: xml/datatype.xml:50(type) xml/datatype.xml:857(primary)
+msgid "serial8"
+msgstr ""
+
+#: xml/datatype.xml:52(entry)
+msgid "autoincrementing eight-byte integer"
+msgstr ""
+
+#: xml/datatype.xml:57(replaceable) xml/datatype.xml:65(replaceable) xml/datatype.xml:99(replaceable) xml/datatype.xml:103(replaceable) xml/datatype.xml:110(replaceable) xml/datatype.xml:114(replaceable) xml/datatype.xml:1063(replaceable) xml/datatype.xml:1065(replaceable) xml/datatype.xml:1071(replaceable) xml/datatype.xml:1073(replaceable)
+msgid "n"
+msgstr ""
+
+#: xml/datatype.xml:56(type)
+msgid "bit [ ( <placeholder-1/>) ]"
+msgstr ""
+
+#: xml/datatype.xml:60(entry)
+msgid "fixed-length bit string"
+msgstr ""
+
+#: xml/datatype.xml:64(type)
+msgid "bit varying [ ( <placeholder-1/>) ]"
+msgstr ""
+
+#: xml/datatype.xml:68(type)
+msgid "varbit"
+msgstr ""
+
+#: xml/datatype.xml:70(entry)
+msgid "variable-length bit string"
+msgstr ""
+
+#: xml/datatype.xml:74(type) xml/datatype.xml:3065(type) xml/datatype.xml:3128(type)
+msgid "boolean"
+msgstr ""
+
+#: xml/datatype.xml:77(type)
+msgid "bool"
+msgstr ""
+
+#: xml/datatype.xml:79(entry)
+msgid "logical Boolean (true/false)"
+msgstr ""
+
+#: xml/datatype.xml:83(type) xml/datatype.xml:3274(type)
+msgid "box"
+msgstr ""
+
+#: xml/datatype.xml:86(entry)
+msgid "rectangular box on a plane"
+msgstr ""
+
+#: xml/datatype.xml:90(type) xml/datatype.xml:1282(primary) xml/datatype.xml:1301(type)
+msgid "bytea"
+msgstr ""
+
+#: xml/datatype.xml:94(quote)
+msgid "byte array"
+msgstr ""
+
+#: xml/datatype.xml:93(entry)
+msgid "binary data ( <placeholder-1/>)"
+msgstr ""
+
+#: xml/datatype.xml:98(type)
+msgid "character [ ( <placeholder-1/>) ]"
+msgstr ""
+
+#: xml/datatype.xml:102(type)
+msgid "char [ ( <placeholder-1/>) ]"
+msgstr ""
+
+#: xml/datatype.xml:105(entry)
+msgid "fixed-length character string"
+msgstr ""
+
+#: xml/datatype.xml:109(type)
+msgid "character varying [ ( <placeholder-1/>) ]"
+msgstr ""
+
+#: xml/datatype.xml:113(type)
+msgid "varchar [ ( <placeholder-1/>) ]"
+msgstr ""
+
+#: xml/datatype.xml:116(entry) xml/datatype.xml:301(entry)
+msgid "variable-length character string"
+msgstr ""
+
+#: xml/datatype.xml:120(type) xml/datatype.xml:3593(type) xml/datatype.xml:3654(type) xml/datatype.xml:3657(primary) xml/datatype.xml:3686(type) xml/datatype.xml:3688(type) xml/datatype.xml:3692(type)
+msgid "cidr"
+msgstr ""
+
+#: xml/datatype.xml:123(entry)
+msgid "IPv4 or IPv6 network address"
+msgstr ""
+
+#: xml/datatype.xml:127(type) xml/datatype.xml:3306(type) xml/datatype.xml:3538(primary)
+msgid "circle"
+msgstr ""
+
+#: xml/datatype.xml:130(entry)
+msgid "circle on a plane"
+msgstr ""
+
+#: xml/datatype.xml:134(type) xml/datatype.xml:1580(primary) xml/datatype.xml:1658(type) xml/datatype.xml:1828(primary) xml/datatype.xml:1833(type) xml/datatype.xml:2209(primary) xml/datatype.xml:2244(type) xml/datatype.xml:2254(type) xml/datatype.xml:2263(type) xml/datatype.xml:2272(type) xml/datatype.xml:2282(type) xml/datatype.xml:2291(type) xml/datatype.xml:2300(type) xml/datatype.xml:2335(primary)
+msgid "date"
+msgstr ""
+
+#: xml/datatype.xml:137(entry)
+msgid "calendar date (year, month, day)"
+msgstr ""
+
+#: xml/datatype.xml:141(type) xml/datatype.xml:489(type) xml/datatype.xml:705(primary) xml/datatype.xml:713(see) xml/datatype.xml:775(secondary)
+msgid "double precision"
+msgstr ""
+
+#: xml/datatype.xml:144(type) xml/datatype.xml:712(primary)
+msgid "float8"
+msgstr ""
+
+#: xml/datatype.xml:146(entry)
+msgid "double precision floating-point number (8 bytes)"
+msgstr ""
+
+#: xml/datatype.xml:151(type) xml/datatype.xml:3600(type) xml/datatype.xml:3623(type)
+msgid "inet"
+msgstr ""
+
+#: xml/datatype.xml:154(entry)
+msgid "IPv4 or IPv6 host address"
+msgstr ""
+
+#: xml/datatype.xml:158(type) xml/datatype.xml:446(type) xml/datatype.xml:532(primary) xml/datatype.xml:542(see) xml/datatype.xml:4504(literal)
+msgid "integer"
+msgstr ""
+
+#: xml/datatype.xml:161(type)
+msgid "int"
+msgstr ""
+
+#: xml/datatype.xml:162(type) xml/datatype.xml:541(primary)
+msgid "int4"
+msgstr ""
+
+#: xml/datatype.xml:160(entry) xml/datatype.xml:1061(entry) xml/datatype.xml:1069(entry) xml/datatype.xml:2243(entry) xml/datatype.xml:2253(entry) xml/datatype.xml:2262(entry) xml/datatype.xml:2281(entry) xml/datatype.xml:2290(entry) xml/datatype.xml:2299(entry)
+msgid "<placeholder-1/>, <placeholder-2/>"
+msgstr ""
+
+#: xml/datatype.xml:163(entry)
+msgid "signed four-byte integer"
+msgstr ""
+
+#: xml/datatype.xml:168(replaceable) xml/datatype.xml:1692(replaceable)
+msgid "fields"
+msgstr ""
+
+#: xml/datatype.xml:169(replaceable) xml/datatype.xml:219(replaceable) xml/datatype.xml:224(replaceable) xml/datatype.xml:306(replaceable) xml/datatype.xml:315(replaceable) xml/datatype.xml:325(replaceable) xml/datatype.xml:334(replaceable) xml/datatype.xml:1636(replaceable) xml/datatype.xml:1648(replaceable) xml/datatype.xml:1669(replaceable) xml/datatype.xml:1681(replaceable) xml/datatype.xml:1693(replaceable)
+msgid "p"
+msgstr ""
+
+#: xml/datatype.xml:167(type) xml/datatype.xml:1691(type)
+msgid "interval [ <placeholder-1/>] [ ( <placeholder-2/>) ]"
+msgstr ""
+
+#: xml/datatype.xml:172(entry) xml/datatype.xml:1607(primary)
+msgid "time span"
+msgstr ""
+
+#: xml/datatype.xml:176(type)
+msgid "json"
+msgstr ""
+
+#: xml/datatype.xml:179(entry)
+msgid "textual JSON data"
+msgstr ""
+
+#: xml/datatype.xml:183(type)
+msgid "jsonb"
+msgstr ""
+
+#: xml/datatype.xml:186(entry)
+msgid "binary JSON data, decomposed"
+msgstr ""
+
+#: xml/datatype.xml:190(type) xml/datatype.xml:3258(type) xml/datatype.xml:3342(primary)
+msgid "line"
+msgstr ""
+
+#: xml/datatype.xml:193(entry)
+msgid "infinite line on a plane"
+msgstr ""
+
+#: xml/datatype.xml:197(type) xml/datatype.xml:3266(type) xml/datatype.xml:3385(primary)
+msgid "lseg"
+msgstr ""
+
+#: xml/datatype.xml:200(entry)
+msgid "line segment on a plane"
+msgstr ""
+
+#: xml/datatype.xml:204(type) xml/datatype.xml:3607(type) xml/datatype.xml:3803(type) xml/datatype.xml:3810(see)
+msgid "macaddr"
+msgstr ""
+
+#: xml/datatype.xml:207(entry)
+msgid "MAC (Media Access Control) address"
+msgstr ""
+
+#: xml/datatype.xml:211(type) xml/datatype.xml:980(entry)
+msgid "money"
+msgstr ""
+
+#: xml/datatype.xml:214(entry) xml/datatype.xml:982(entry)
+msgid "currency amount"
+msgstr ""
+
+#: xml/datatype.xml:220(replaceable) xml/datatype.xml:225(replaceable)
+msgid "s"
+msgstr ""
+
+#: xml/datatype.xml:218(type)
+msgid "numeric [ ( <placeholder-1/>, <placeholder-2/>) ]"
+msgstr ""
+
+#: xml/datatype.xml:223(type)
+msgid "decimal [ ( <placeholder-1/>, <placeholder-2/>) ]"
+msgstr ""
+
+#: xml/datatype.xml:227(entry)
+msgid "exact numeric of selectable precision"
+msgstr ""
+
+#: xml/datatype.xml:231(type) xml/datatype.xml:3282(type) xml/datatype.xml:3290(type)
+msgid "path"
+msgstr ""
+
+#: xml/datatype.xml:234(entry)
+msgid "geometric path on a plane"
+msgstr ""
+
+#: xml/datatype.xml:238(type) xml/datatype.xml:4617(primary)
+msgid "pg_lsn"
+msgstr ""
+
+#: xml/datatype.xml:241(entry)
+msgid "<placeholder-1/>Log Sequence Number"
+msgstr ""
+
+#: xml/datatype.xml:247(type) xml/datatype.xml:3250(type) xml/datatype.xml:3323(primary)
+msgid "point"
+msgstr ""
+
+#: xml/datatype.xml:250(entry)
+msgid "geometric point on a plane"
+msgstr ""
+
+#: xml/datatype.xml:254(type) xml/datatype.xml:3298(type) xml/datatype.xml:3505(primary)
+msgid "polygon"
+msgstr ""
+
+#: xml/datatype.xml:257(entry)
+msgid "closed geometric path on a plane"
+msgstr ""
+
+#: xml/datatype.xml:261(type) xml/datatype.xml:481(type) xml/datatype.xml:702(primary) xml/datatype.xml:709(see)
+msgid "real"
+msgstr ""
+
+#: xml/datatype.xml:264(type) xml/datatype.xml:708(primary)
+msgid "float4"
+msgstr ""
+
+#: xml/datatype.xml:266(entry)
+msgid "single precision floating-point number (4 bytes)"
+msgstr ""
+
+#: xml/datatype.xml:271(type) xml/datatype.xml:438(type) xml/datatype.xml:535(primary) xml/datatype.xml:546(see)
+msgid "smallint"
+msgstr ""
+
+#: xml/datatype.xml:274(type) xml/datatype.xml:545(primary)
+msgid "int2"
+msgstr ""
+
+#: xml/datatype.xml:276(entry)
+msgid "signed two-byte integer"
+msgstr ""
+
+#: xml/datatype.xml:280(type) xml/datatype.xml:497(type) xml/datatype.xml:842(primary)
+msgid "smallserial"
+msgstr ""
+
+#: xml/datatype.xml:283(type) xml/datatype.xml:851(primary)
+msgid "serial2"
+msgstr ""
+
+#: xml/datatype.xml:285(entry)
+msgid "autoincrementing two-byte integer"
+msgstr ""
+
+#: xml/datatype.xml:289(type) xml/datatype.xml:505(type) xml/datatype.xml:845(primary) xml/datatype.xml:861(see)
+msgid "serial"
+msgstr ""
+
+#: xml/datatype.xml:292(type) xml/datatype.xml:854(primary)
+msgid "serial4"
+msgstr ""
+
+#: xml/datatype.xml:294(entry)
+msgid "autoincrementing four-byte integer"
+msgstr ""
+
+#: xml/datatype.xml:298(type) xml/datatype.xml:1042(primary) xml/datatype.xml:1078(type)
+msgid "text"
+msgstr ""
+
+#: xml/datatype.xml:305(type) xml/datatype.xml:1668(type)
+msgid "time [ ( <placeholder-1/>) ] [ without time zone ]"
+msgstr ""
+
+#: xml/datatype.xml:310(entry)
+msgid "time of day (no time zone)"
+msgstr ""
+
+#: xml/datatype.xml:314(type) xml/datatype.xml:1680(type)
+msgid "time [ ( <placeholder-1/>) ] with time zone"
+msgstr ""
+
+#: xml/datatype.xml:318(type)
+msgid "timetz"
+msgstr ""
+
+#: xml/datatype.xml:320(entry)
+msgid "time of day, including time zone"
+msgstr ""
+
+#: xml/datatype.xml:324(type) xml/datatype.xml:1635(type)
+msgid "timestamp [ ( <placeholder-1/>) ] [ without time zone ]"
+msgstr ""
+
+#: xml/datatype.xml:329(entry)
+msgid "date and time (no time zone)"
+msgstr ""
+
+#: xml/datatype.xml:333(type) xml/datatype.xml:1647(type)
+msgid "timestamp [ ( <placeholder-1/>) ] with time zone"
+msgstr ""
+
+#: xml/datatype.xml:337(type) xml/datatype.xml:1595(primary)
+msgid "timestamptz"
+msgstr ""
+
+#: xml/datatype.xml:339(entry)
+msgid "date and time, including time zone"
+msgstr ""
+
+#: xml/datatype.xml:343(type) xml/datatype.xml:4021(type)
+msgid "tsquery"
+msgstr ""
+
+#: xml/datatype.xml:346(entry)
+msgid "text search query"
+msgstr ""
+
+#: xml/datatype.xml:350(type) xml/datatype.xml:3942(type)
+msgid "tsvector"
+msgstr ""
+
+#: xml/datatype.xml:353(entry)
+msgid "text search document"
+msgstr ""
+
+#: xml/datatype.xml:357(type)
+msgid "txid_snapshot"
+msgstr ""
+
+#: xml/datatype.xml:360(entry)
+msgid "user-level transaction ID snapshot"
+msgstr ""
+
+#: xml/datatype.xml:364(type)
+msgid "uuid"
+msgstr ""
+
+#: xml/datatype.xml:367(entry)
+msgid "universally unique identifier"
+msgstr ""
+
+#: xml/datatype.xml:371(type)
+msgid "xml"
+msgstr ""
+
+#: xml/datatype.xml:374(entry)
+msgid "XML data"
+msgstr ""
+
+#: xml/datatype.xml:380(title)
+msgid "Compatibility"
+msgstr ""
+
+#: xml/datatype.xml:381(para)
+msgid "The following types (or spellings thereof) are specified by <acronym>SQL</acronym>: <type>bigint</type>, <type>bit</type>, <type>bit varying</type>, <type>boolean</type>, <type>char</type>, <type>character varying</type>, <type>character</type>, <type>varchar</type>, <type>date</type>, <type>double precision</type>, <type>integer</type>, <type>interval</type>, <type>numeric</type>, <type>decimal</type>, <type>real</type>, <type>smallint</type>, <type>time</type>(with or without time zone), <type>timestamp</type>(with or without time zone), <type>xml</type>."
+msgstr ""
+
+#: xml/datatype.xml:404(para)
+msgid "Each data type has an external representation determined by its input and output functions. Many of the built-in types have obvious external formats. However, several types are either unique to <productname>PostgreSQL</productname>, such as geometric paths, or have several possible formats, such as the date and time types. Some of the input and output functions are not invertible, i.e., the result of an output function might lose accuracy when compared to the original input."
+msgstr ""
+
+#: xml/datatype.xml:414(title) xml/datatype.xml:425(title)
+msgid "Numeric Types"
+msgstr ""
+
+#: xml/datatype.xml:417(secondary) xml/datatype.xml:472(type) xml/datatype.xml:590(see)
+msgid "numeric"
+msgstr ""
+
+#: xml/datatype.xml:419(para)
+msgid "Numeric types consist of two-, four-, and eight-byte integers, four- and eight-byte floating-point numbers, and selectable-precision decimals. <xref linkend=\"datatype-numeric-table\">lists the available types.</xref>"
+msgstr ""
+
+#: xml/datatype.xml:430(entry) xml/datatype.xml:973(entry) xml/datatype.xml:1253(entry) xml/datatype.xml:1294(entry) xml/datatype.xml:1625(entry) xml/datatype.xml:3058(entry) xml/datatype.xml:3242(entry) xml/datatype.xml:3586(entry)
+msgid "Storage Size"
+msgstr ""
+
+#: xml/datatype.xml:432(entry) xml/datatype.xml:975(entry)
+msgid "Range"
+msgstr ""
+
+#: xml/datatype.xml:440(entry) xml/datatype.xml:499(entry)
+msgid "2 bytes"
+msgstr ""
+
+#: xml/datatype.xml:441(entry)
+msgid "small-range integer"
+msgstr ""
+
+#: xml/datatype.xml:442(entry)
+msgid "-32768 to +32767"
+msgstr ""
+
+#: xml/datatype.xml:448(entry) xml/datatype.xml:483(entry) xml/datatype.xml:507(entry) xml/datatype.xml:1660(entry)
+msgid "4 bytes"
+msgstr ""
+
+#: xml/datatype.xml:449(entry)
+msgid "typical choice for integer"
+msgstr ""
+
+#: xml/datatype.xml:450(entry)
+msgid "-2147483648 to +2147483647"
+msgstr ""
+
+#: xml/datatype.xml:456(entry) xml/datatype.xml:491(entry) xml/datatype.xml:515(entry) xml/datatype.xml:981(entry) xml/datatype.xml:1639(entry) xml/datatype.xml:1650(entry) xml/datatype.xml:1672(entry)
+msgid "8 bytes"
+msgstr ""
+
+#: xml/datatype.xml:457(entry)
+msgid "large-range integer"
+msgstr ""
+
+#: xml/datatype.xml:458(entry)
+msgid "-9223372036854775808 to +9223372036854775807"
+msgstr ""
+
+#: xml/datatype.xml:463(type) xml/datatype.xml:589(primary)
+msgid "decimal"
+msgstr ""
+
+#: xml/datatype.xml:465(entry) xml/datatype.xml:474(entry)
+msgid "variable"
+msgstr ""
+
+#: xml/datatype.xml:466(entry) xml/datatype.xml:475(entry)
+msgid "user-specified precision, exact"
+msgstr ""
+
+#: xml/datatype.xml:467(entry) xml/datatype.xml:476(entry)
+msgid "up to 131072 digits before the decimal point; up to 16383 digits after the decimal point"
+msgstr ""
+
+#: xml/datatype.xml:484(entry) xml/datatype.xml:492(entry)
+msgid "variable-precision, inexact"
+msgstr ""
+
+#: xml/datatype.xml:485(entry)
+msgid "6 decimal digits precision"
+msgstr ""
+
+#: xml/datatype.xml:493(entry)
+msgid "15 decimal digits precision"
+msgstr ""
+
+#: xml/datatype.xml:500(entry)
+msgid "small autoincrementing integer"
+msgstr ""
+
+#: xml/datatype.xml:501(entry)
+msgid "1 to 32767"
+msgstr ""
+
+#: xml/datatype.xml:508(entry)
+msgid "autoincrementing integer"
+msgstr ""
+
+#: xml/datatype.xml:509(entry)
+msgid "1 to 2147483647"
+msgstr ""
+
+#: xml/datatype.xml:516(entry)
+msgid "large autoincrementing integer"
+msgstr ""
+
+#: xml/datatype.xml:517(entry)
+msgid "1 to 9223372036854775807"
+msgstr ""
+
+#: xml/datatype.xml:522(para)
+msgid "The syntax of constants for the numeric types is described in <xref linkend=\"sql-syntax-constants\">. The numeric types have a full set of corresponding arithmetic operators and functions. Refer to <xref linkend=\"functions\">for more information. The following sections describe the types in detail.</xref></xref>"
+msgstr ""
+
+#: xml/datatype.xml:530(title)
+msgid "Integer Types"
+msgstr ""
+
+#: xml/datatype.xml:552(para)
+msgid "The types <type>smallint</type>, <type>integer</type>, and <type>bigint</type>store whole numbers, that is, numbers without fractional components, of various ranges. Attempts to store values outside of the allowed range will result in an error."
+msgstr ""
+
+#: xml/datatype.xml:559(para)
+msgid "The type <type>integer</type>is the common choice, as it offers the best balance between range, storage size, and performance. The <type>smallint</type>type is generally only used if disk space is at a premium. The <type>bigint</type>type is designed to be used when the range of the <type>integer</type>type is insufficient."
+msgstr ""
+
+#: xml/datatype.xml:568(para)
+msgid "<acronym>SQL</acronym>only specifies the integer types <type>integer</type>(or <type>int</type>), <type>smallint</type>, and <type>bigint</type>. The type names <type>int2</type>, <type>int4</type>, and <type>int8</type>are extensions, which are also used by some other <acronym>SQL</acronym>database systems."
+msgstr ""
+
+#: xml/datatype.xml:581(title)
+msgid "Arbitrary Precision Numbers"
+msgstr ""
+
+#: xml/datatype.xml:583(primary) xml/datatype.xml:666(secondary)
+msgid "numeric (data type)"
+msgstr ""
+
+#: xml/datatype.xml:586(primary)
+msgid "arbitrary precision numbers"
+msgstr ""
+
+#: xml/datatype.xml:592(para)
+msgid "The type <type>numeric</type>can store numbers with a very large number of digits. It is especially recommended for storing monetary amounts and other quantities where exactness is required. Calculations with <type>numeric</type>values yield exact results where possible, e.g. addition, subtraction, multiplication. However, calculations on <type>numeric</type>values are very slow compared to the integer types, or to the floating-point types described in the next section."
+msgstr ""
+
+#: xml/datatype.xml:603(para)
+msgid "We use the following terms below: The <firstterm>scale</firstterm>of a <type>numeric</type>is the count of decimal digits in the fractional part, to the right of the decimal point. The <firstterm>precision</firstterm>of a <type>numeric</type>is the total count of significant digits in the whole number, that is, the number of digits to both sides of the decimal point. So the number 23.5141 has a precision of 6 and a scale of 4. Integers can be considered to have a scale of zero."
+msgstr ""
+
+#: xml/datatype.xml:617(programlisting)
+#, no-wrap
+msgid "NUMERIC( \n      <replaceable>precision</replaceable>, \n      <replaceable>scale</replaceable>)"
+msgstr ""
+
+#: xml/datatype.xml:622(programlisting)
+#, no-wrap
+msgid "NUMERIC( \n      <replaceable>precision</replaceable>)"
+msgstr ""
+
+#: xml/datatype.xml:625(programlisting)
+#, no-wrap
+msgid "NUMERIC"
+msgstr ""
+
+#: xml/datatype.xml:613(para)
+msgid "Both the maximum precision and the maximum scale of a <type>numeric</type>column can be configured. To declare a column of type <type>numeric</type>use the syntax: <placeholder-1/>The precision must be positive, the scale zero or positive. Alternatively: <placeholder-2/>selects a scale of 0. Specifying: <placeholder-3/>without any precision or scale creates a column in which numeric values of any precision and scale can be stored, up to the implementation limit on precision. A column of this kind will not coerce input values to any particular scale, whereas <type>numeric</type>columns with a declared scale will coerce input values to that scale. (The <acronym>SQL</acronym>standard requires a default scale of 0, i.e., coercion to integer precision. We find this a bit useless. If you're concerned about portability, always specify the precision and scale explicitly.)"
+msgstr ""
+
+#: xml/datatype.xml:637(para)
+msgid "The maximum allowed precision when explicitly specified in the type declaration is 1000; <type>NUMERIC</type>without a specified precision is subject to the limits described in <xref linkend=\"datatype-numeric-table\">.</xref>"
+msgstr ""
+
+#: xml/datatype.xml:643(para)
+msgid "If the scale of a value to be stored is greater than the declared scale of the column, the system will round the value to the specified number of fractional digits. Then, if the number of digits to the left of the decimal point exceeds the declared precision minus the declared scale, an error is raised."
+msgstr ""
+
+#: xml/datatype.xml:649(para)
+msgid "Numeric values are physically stored without any extra leading or trailing zeroes. Thus, the declared precision and scale of a column are maximums, not fixed allocations. (In this sense the <type>numeric</type>type is more akin to <type>varchar( <replaceable>n</replaceable>)</type>than to <type>char( <replaceable>n</replaceable>)</type>.) The actual storage requirement is two bytes for each group of four decimal digits, plus three to eight bytes overhead."
+msgstr ""
+
+#: xml/datatype.xml:661(primary)
+msgid "NaN"
+msgstr ""
+
+#: xml/datatype.xml:662(see) xml/datatype.xml:665(primary) xml/datatype.xml:774(primary)
+msgid "not a number"
+msgstr ""
+
+#: xml/datatype.xml:668(para)
+msgid "In addition to ordinary numeric values, the <type>numeric</type>type allows the special value <literal>NaN</literal>, meaning <quote>not-a-number</quote>. Any operation on <literal>NaN</literal>yields another <literal>NaN</literal>. When writing this value as a constant in an SQL command, you must put quotes around it, for example <literal>UPDATE table SET x = 'NaN'</literal>. On input, the string <literal>NaN</literal>is recognized in a case-insensitive manner."
+msgstr ""
+
+#: xml/datatype.xml:681(para)
+msgid "In most implementations of the <quote>not-a-number</quote>concept, <literal>NaN</literal>is not considered equal to any other numeric value (including <literal>NaN</literal>). In order to allow <type>numeric</type>values to be sorted and used in tree-based indexes, <productname>PostgreSQL</productname>treats <literal>NaN</literal>values as equal, and greater than all non- <literal>NaN</literal>values."
+msgstr ""
+
+#: xml/datatype.xml:693(para)
+msgid "The types <type>decimal</type>and <type>numeric</type>are equivalent. Both types are part of the <acronym>SQL</acronym>standard."
+msgstr ""
+
+#: xml/datatype.xml:700(title)
+msgid "Floating-Point Types"
+msgstr ""
+
+#: xml/datatype.xml:716(primary)
+msgid "floating point"
+msgstr ""
+
+#: xml/datatype.xml:718(para)
+msgid "The data types <type>real</type>and <type>double precision</type>are inexact, variable-precision numeric types. In practice, these types are usually implementations of <acronym>IEEE</acronym>Standard 754 for Binary Floating-Point Arithmetic (single and double precision, respectively), to the extent that the underlying processor, operating system, and compiler support it."
+msgstr ""
+
+#: xml/datatype.xml:736(para)
+msgid "If you require exact storage and calculations (such as for monetary amounts), use the <type>numeric</type>type instead."
+msgstr ""
+
+#: xml/datatype.xml:741(para)
+msgid "If you want to do complicated calculations with these types for anything important, especially if you rely on certain behavior in boundary cases (infinity, underflow), you should evaluate the implementation carefully."
+msgstr ""
+
+#: xml/datatype.xml:748(para)
+msgid "Comparing two floating-point values for equality might not always work as expected."
+msgstr ""
+
+#: xml/datatype.xml:727(para)
+msgid "Inexact means that some values cannot be converted exactly to the internal format and are stored as approximations, so that storing and retrieving a value might show slight discrepancies. Managing these errors and how they propagate through calculations is the subject of an entire branch of mathematics and computer science and will not be discussed here, except for the following points: <placeholder-1/>"
+msgstr ""
+
+#: xml/datatype.xml:752(para)
+msgid "On most platforms, the <type>real</type>type has a range of at least 1E-37 to 1E+37 with a precision of at least 6 decimal digits. The <type>double precision</type>type typically has a range of around 1E-307 to 1E+308 with a precision of at least 15 digits. Values that are too large or too small will cause an error. Rounding might take place if the precision of an input number is too high. Numbers too close to zero that are not representable as distinct from zero will cause an underflow error."
+msgstr ""
+
+#: xml/datatype.xml:763(para)
+msgid "The <xref linkend=\"guc-extra-float-digits\">setting controls the number of extra significant digits included when a floating point value is converted to text for output. With the default value of <literal>0</literal>, the output is the same on every platform supported by PostgreSQL. Increasing it will produce output that more accurately represents the stored value, but may be unportable.</xref>"
+msgstr ""
+
+#: xml/datatype.xml:777(para)
+msgid "In addition to ordinary numeric values, the floating-point types have several special values: <literallayout>\n        <literal>Infinity</literal>\n        <literal>-Infinity</literal>\n        <literal>NaN</literal>\n      </literallayout>These represent the IEEE 754 special values <quote>infinity</quote>, <quote>negative infinity</quote>, and <quote>not-a-number</quote>, respectively. (On a machine whose floating-point arithmetic does not follow IEEE 754, these values will probably not work as expected.) When writing these values as constants in an SQL command, you must put quotes around them, for example <literal>UPDATE table SET x = 'Infinity'</literal>. On input, these strings are recognized in a case-insensitive manner."
+msgstr ""
+
+#: xml/datatype.xml:795(para)
+msgid "IEEE754 specifies that <literal>NaN</literal>should not compare equal to any other floating-point value (including <literal>NaN</literal>). In order to allow floating-point values to be sorted and used in tree-based indexes, <productname>PostgreSQL</productname>treats <literal>NaN</literal>values as equal, and greater than all non- <literal>NaN</literal>values."
+msgstr ""
+
+#: xml/datatype.xml:805(para)
+msgid "<productname>PostgreSQL</productname>also supports the SQL-standard notations <type>float</type>and <type>float( <replaceable>p</replaceable>)</type>for specifying inexact numeric types. Here, <replaceable>p</replaceable>specifies the minimum acceptable precision in <emphasis>binary</emphasis>digits. <productname>PostgreSQL</productname>accepts <type>float(1)</type>to <type>float(24)</type>as selecting the <type>real</type>type, while <type>float(25)</type>to <type>float(53)</type>select <type>double precision</type>. Values of <replaceable>p</replaceable>outside the allowed range draw an error. <type>float</type>with no precision specified is taken to mean <type>double precision</type>."
+msgstr ""
+
+#: xml/datatype.xml:828(para)
+msgid "The assumption that <type>real</type>and <type>double precision</type>have exactly 24 and 53 bits in the mantissa respectively is correct for IEEE-standard floating point implementations. On non-IEEE platforms it might be off a little, but for simplicity the same ranges of <replaceable>p</replaceable>are used on all platforms."
+msgstr ""
+
+#: xml/datatype.xml:840(title)
+msgid "Serial Types"
+msgstr ""
+
+#: xml/datatype.xml:860(primary)
+msgid "auto-increment"
+msgstr ""
+
+#: xml/datatype.xml:864(primary)
+msgid "sequence"
+msgstr ""
+
+#: xml/datatype.xml:865(secondary)
+msgid "and serial type"
+msgstr ""
+
+#: xml/datatype.xml:875(programlisting)
+#, no-wrap
+msgid "CREATE TABLE \n      <replaceable class=\"parameter\">tablename</replaceable>( \n      <replaceable class=\"parameter\">colname</replaceable>SERIAL\n      );"
+msgstr ""
+
+#: xml/datatype.xml:879(programlisting)
+#, no-wrap
+msgid "CREATE SEQUENCE \n      <replaceable class=\"parameter\">tablename</replaceable>_ \n      <replaceable class=\"parameter\">colname</replaceable>_seq;\n      CREATE TABLE \n      <replaceable class=\"parameter\">tablename</replaceable>( \n      <replaceable class=\"parameter\">colname</replaceable>integer\n      NOT NULL DEFAULT nextval(' \n      <replaceable class=\"parameter\">tablename</replaceable>_ \n      <replaceable class=\"parameter\">colname</replaceable>_seq') );\n      ALTER SEQUENCE \n      <replaceable class=\"parameter\">tablename</replaceable>_ \n      <replaceable class=\"parameter\">colname</replaceable>_seq\n      OWNED BY \n      <replaceable class=\"parameter\">tablename</replaceable>. \n      <replaceable class=\"parameter\">\n      colname</replaceable>;"
+msgstr ""
+
+#: xml/datatype.xml:867(para)
+msgid "The data types <type>smallserial</type>, <type>serial</type>and <type>bigserial</type>are not true types, but merely a notational convenience for creating unique identifier columns (similar to the <literal>AUTO_INCREMENT</literal>property supported by some other databases). In the current implementation, specifying: <placeholder-1/>is equivalent to specifying: <placeholder-2/>Thus, we have created an integer column and arranged for its default values to be assigned from a sequence generator. A <literal>NOT NULL</literal>constraint is applied to ensure that a null value cannot be inserted. (In most cases you would also want to attach a <literal>UNIQUE</literal>or <literal>PRIMARY KEY</literal>constraint to prevent duplicate values from being inserted by accident, but this is not automatic.) Lastly, the sequence is marked as <quote>owned by</quote>the column, so that it will be dropped if the column or table is dropped."
+msgstr ""
+
+#: xml/datatype.xml:907(para)
+msgid "Because <type>smallserial</type>, <type>serial</type>and <type>bigserial</type>are implemented using sequences, there may be \"holes\" or gaps in the sequence of values which appears in the column, even if no rows are ever deleted. A value allocated from the sequence is still \"used up\" even if a row containing that value is never successfully inserted into the table column. This may happen, for example, if the inserting transaction rolls back. See <literal>nextval()</literal>in <xref linkend=\"functions-sequence\">for details.</xref>"
+msgstr ""
+
+#: xml/datatype.xml:922(para)
+msgid "To insert the next value of the sequence into the <type>serial</type>column, specify that the <type>serial</type>column should be assigned its default value. This can be done either by excluding the column from the list of columns in the <command>INSERT</command>statement, or through the use of the <literal>DEFAULT</literal>key word."
+msgstr ""
+
+#: xml/datatype.xml:930(para)
+msgid "The type names <type>serial</type>and <type>serial4</type>are equivalent: both create <type>integer</type>columns. The type names <type>bigserial</type>and <type>serial8</type>work the same way, except that they create a <type>bigint</type>column. <type>bigserial</type>should be used if you anticipate the use of more than 2 <superscript>31</superscript>identifiers over the lifetime of the table. The type names <type>smallserial</type>and <type>serial2</type>also work the same way, except that they create a <type>smallint</type>column."
+msgstr ""
+
+#: xml/datatype.xml:946(para)
+msgid "The sequence created for a <type>serial</type>column is automatically dropped when the owning column is dropped. You can drop the sequence without dropping the column, but this will force removal of the column default expression."
+msgstr ""
+
+#: xml/datatype.xml:954(title) xml/datatype.xml:968(title)
+msgid "Monetary Types"
+msgstr ""
+
+#: xml/datatype.xml:955(para)
+msgid "The <type>money</type>type stores a currency amount with a fixed fractional precision; see <xref linkend=\"datatype-money-table\">. The fractional precision is determined by the database's <xref linkend=\"guc-lc-monetary\">setting. The range shown in the table assumes there are two fractional digits. Input is accepted in a variety of formats, including integer and floating-point literals, as well as typical currency formatting, such as <literal>'$1,000.00'</literal>. Output is generally in the latter form but depends on the locale.</xref></xref>"
+msgstr ""
+
+#: xml/datatype.xml:983(entry)
+msgid "-92233720368547758.08 to +92233720368547758.07"
+msgstr ""
+
+#: xml/datatype.xml:989(para)
+msgid "Since the output of this data type is locale-sensitive, it might not work to load <type>money</type>data into a database that has a different setting of <varname>lc_monetary</varname>. To avoid problems, before restoring a dump into a new database make sure <varname>lc_monetary</varname>has the same or equivalent value as in the database that was dumped."
+msgstr ""
+
+#: xml/datatype.xml:1006(programlisting)
+#, no-wrap
+msgid "SELECT\n    '12.34'::float8::numeric::money;"
+msgstr ""
+
+#: xml/datatype.xml:997(para)
+msgid "Values of the <type>numeric</type>, <type>int</type>, and <type>bigint</type>data types can be cast to <type>money</type>. Conversion from the <type>real</type>and <type>double precision</type>data types can be done by casting to <type>numeric</type>first, for example: <placeholder-1/>However, this is not recommended. Floating point numbers should not be used to handle money due to the potential for rounding errors."
+msgstr ""
+
+#: xml/datatype.xml:1016(programlisting)
+#, no-wrap
+msgid "SELECT\n    '52093.89'::money::numeric::float8;"
+msgstr ""
+
+#: xml/datatype.xml:1011(para)
+msgid "A <type>money</type>value can be cast to <type>numeric</type>without loss of precision. Conversion to other types could potentially lose precision, and must also be done in two stages: <placeholder-1/>"
+msgstr ""
+
+#: xml/datatype.xml:1018(para)
+msgid "When a <type>money</type>value is divided by another <type>money</type>value, the result is <type>double precision</type>(i.e., a pure number, not money); the currency units cancel each other out in the division."
+msgstr ""
+
+#: xml/datatype.xml:1026(title) xml/datatype.xml:1051(title)
+msgid "Character Types"
+msgstr ""
+
+#: xml/datatype.xml:1028(primary) xml/datatype.xml:1033(see)
+msgid "character string"
+msgstr ""
+
+#: xml/datatype.xml:1029(secondary) xml/datatype.xml:3570(secondary) xml/datatype.xml:3920(secondary) xml/datatype.xml:3924(secondary)
+msgid "data types"
+msgstr ""
+
+#: xml/datatype.xml:1032(primary)
+msgid "string"
+msgstr ""
+
+#: xml/datatype.xml:1036(primary)
+msgid "character"
+msgstr ""
+
+#: xml/datatype.xml:1039(primary)
+msgid "character varying"
+msgstr ""
+
+#: xml/datatype.xml:1045(primary)
+msgid "char"
+msgstr ""
+
+#: xml/datatype.xml:1048(primary)
+msgid "varchar"
+msgstr ""
+
+#: xml/datatype.xml:1062(type)
+msgid "character varying( <placeholder-1/>)"
+msgstr ""
+
+#: xml/datatype.xml:1064(type)
+msgid "varchar( <placeholder-1/>)"
+msgstr ""
+
+#: xml/datatype.xml:1066(entry)
+msgid "variable-length with limit"
+msgstr ""
+
+#: xml/datatype.xml:1070(type)
+msgid "character( <placeholder-1/>)"
+msgstr ""
+
+#: xml/datatype.xml:1072(type)
+msgid "char( <placeholder-1/>)"
+msgstr ""
+
+#: xml/datatype.xml:1074(entry)
+msgid "fixed-length, blank padded"
+msgstr ""
+
+#: xml/datatype.xml:1080(entry)
+msgid "variable unlimited length"
+msgstr ""
+
+#: xml/datatype.xml:1086(xref)
+msgid "shows the general-purpose character types available in <placeholder-1/>."
+msgstr ""
+
+#: xml/datatype.xml:1090(para)
+msgid "<acronym>SQL</acronym>defines two primary character types: <type>character varying( <replaceable>n</replaceable>)</type>and <type>character( <replaceable>n</replaceable>)</type>, where <replaceable>n</replaceable>is a positive integer. Both of these types can store strings up to <replaceable>n</replaceable>characters (not bytes) in length. An attempt to store a longer string into a column of these types will result in an error, unless the excess characters are all spaces, in which case the string will be truncated to the maximum length. (This somewhat bizarre exception is required by the <acronym>SQL</acronym>standard.) If the string to be stored is shorter than the declared length, values of type <type>character</type>will be space-padded; values of type <type>character varying</type>will simply store the shorter string."
+msgstr ""
+
+#: xml/datatype.xml:1109(para)
+msgid "If one explicitly casts a value to <type>character varying( <replaceable>n</replaceable>)</type>or <type>character( <replaceable>n</replaceable>)</type>, then an over-length value will be truncated to <replaceable>n</replaceable>characters without raising an error. (This too is required by the <acronym>SQL</acronym>standard.)"
+msgstr ""
+
+#: xml/datatype.xml:1118(para)
+msgid "The notations <type>varchar( <replaceable>n</replaceable>)</type>and <type>char( <replaceable>n</replaceable>)</type>are aliases for <type>character varying( <replaceable>n</replaceable>)</type>and <type>character( <replaceable>n</replaceable>)</type>, respectively. <type>character</type>without length specifier is equivalent to <type>character(1)</type>. If <type>character varying</type>is used without length specifier, the type accepts strings of any size. The latter is a <productname>PostgreSQL</productname>extension."
+msgstr ""
+
+#: xml/datatype.xml:1133(para)
+msgid "In addition, <productname>PostgreSQL</productname>provides the <type>text</type>type, which stores strings of any length. Although the type <type>text</type>is not in the <acronym>SQL</acronym>standard, several other SQL database management systems have it as well."
+msgstr ""
+
+#: xml/datatype.xml:1140(para)
+msgid "Values of type <type>character</type>are physically padded with spaces to the specified width <replaceable>n</replaceable>, and are stored and displayed that way. However, trailing spaces are treated as semantically insignificant and disregarded when comparing two values of type <type>character</type>. In collations where whitespace is significant, this behavior can produce unexpected results; for example <command>SELECT 'a '::CHAR(2) collate \"C\" E'a\\n'::CHAR(2)</command>returns true, even though <literal>C</literal>locale would consider a space to be greater than a newline. Trailing spaces are removed when converting a <type>character</type>value to one of the other string types. Note that trailing spaces <emphasis>are</emphasis>semantically significant in <type>character varying</type>and <type>text</type>values, and when using pattern matching, that is <literal>LIKE</literal>and regular expressions."
+msgstr ""
+
+#: xml/datatype.xml:1161(para)
+msgid "The storage requirement for a short string (up to 126 bytes) is 1 byte plus the actual string, which includes the space padding in the case of <type>character</type>. Longer strings have 4 bytes of overhead instead of 1. Long strings are compressed by the system automatically, so the physical requirement on disk might be less. Very long values are also stored in background tables so that they do not interfere with rapid access to shorter column values. In any case, the longest possible character string that can be stored is about 1 GB. (The maximum value that will be allowed for <replaceable>n</replaceable>in the data type declaration is less than that. It wouldn't be useful to change this because with multibyte character encodings the number of characters and bytes can be quite different. If you desire to store long strings with no specific upper limit, use <type>text</type>or <type>character varying</type>without a length specifier, rather than making up an arbitrary length limit.)"
+msgstr ""
+
+#: xml/datatype.xml:1181(para)
+msgid "There is no performance difference among these three types, apart from increased storage space when using the blank-padded type, and a few extra CPU cycles to check the length when storing into a length-constrained column. While <type>character( <replaceable>n</replaceable>)</type>has performance advantages in some other database systems, there is no such advantage in <productname>PostgreSQL</productname>; in fact <type>character( <replaceable>n</replaceable>)</type>is usually the slowest of the three because of its additional storage costs and slower sorting. In most situations <type>text</type>or <type>character varying</type>should be used instead."
+msgstr ""
+
+#: xml/datatype.xml:1197(para)
+msgid "Refer to <xref linkend=\"sql-syntax-strings\">for information about the syntax of string literals, and to <xref linkend=\"functions\">for information about available operators and functions. The database character set determines the character set used to store textual values; for more information on character set support, refer to <xref linkend=\"multibyte\">.</xref></xref></xref>"
+msgstr ""
+
+#: xml/datatype.xml:1206(title)
+msgid "Using the Character Types"
+msgstr ""
+
+#: xml/datatype.xml:1207(programlisting)
+#, no-wrap
+msgid "CREATE TABLE test1 (a character(4)); INSERT\n      INTO test1 VALUES ('ok'); SELECT a, char_length(a) FROM\n      test1; -- \n      <co id=\"co.datatype-char\">\n      <computeroutput>a | char_length ------+------------- ok |\n      2</computeroutput>CREATE TABLE test2 (b varchar(5)); INSERT\n      INTO test2 VALUES ('ok'); INSERT INTO test2 VALUES ('good ');\n      INSERT INTO test2 VALUES ('too long'); \n      <computeroutput>ERROR: value too long for type character\n      varying(5)</computeroutput>INSERT INTO test2 VALUES ('too\n      long'::varchar(5)); -- explicit truncation SELECT b,\n      char_length(b) FROM test2; \n      <computeroutput>b | char_length -------+------------- ok | 2\n      good | 5 too l | 5</computeroutput></co>"
+msgstr ""
+
+#: xml/datatype.xml:1223(para)
+msgid "The <function>char_length</function>function is discussed in <xref linkend=\"functions-string\">.</xref>"
+msgstr ""
+
+#: xml/datatype.xml:1229(para)
+msgid "There are two other fixed-length character types in <productname>PostgreSQL</productname>, shown in <xref linkend=\"datatype-character-special-table\">. The <type>name</type>type exists <emphasis>only</emphasis>for the storage of identifiers in the internal system catalogs and is not intended for use by the general user. Its length is currently defined as 64 bytes (63 usable characters plus terminator) but should be referenced using the constant <symbol>NAMEDATALEN</symbol>in <literal>C</literal>source code. The length is set at compile time (and is therefore adjustable for special uses); the default maximum length might change in a future release. The type <type>\"char\"</type>(note the quotes) is different from <type>char(1)</type>in that it only uses one byte of storage. It is internally used in the system catalogs as a simplistic enumeration type.</xref>"
+msgstr ""
+
+#: xml/datatype.xml:1248(title)
+msgid "Special Character Types"
+msgstr ""
+
+#: xml/datatype.xml:1260(type)
+msgid "\"char\""
+msgstr ""
+
+#: xml/datatype.xml:1262(entry) xml/datatype.xml:3067(entry)
+msgid "1 byte"
+msgstr ""
+
+#: xml/datatype.xml:1263(entry)
+msgid "single-byte internal type"
+msgstr ""
+
+#: xml/datatype.xml:1267(type)
+msgid "name"
+msgstr ""
+
+#: xml/datatype.xml:1269(entry)
+msgid "64 bytes"
+msgstr ""
+
+#: xml/datatype.xml:1270(entry)
+msgid "internal type for object names"
+msgstr ""
+
+#: xml/datatype.xml:1277(title) xml/datatype.xml:1289(title)
+msgid "Binary Data Types"
+msgstr ""
+
+#: xml/datatype.xml:1279(primary)
+msgid "binary data"
+msgstr ""
+
+#: xml/datatype.xml:1284(para)
+msgid "The <type>bytea</type>data type allows storage of binary strings; see <xref linkend=\"datatype-binary-table\">.</xref>"
+msgstr ""
+
+#: xml/datatype.xml:1303(entry)
+msgid "1 or 4 bytes plus the actual binary string"
+msgstr ""
+
+#: xml/datatype.xml:1305(entry)
+msgid "variable-length binary string"
+msgstr ""
+
+#: xml/datatype.xml:1310(para)
+msgid "A binary string is a sequence of octets (or bytes). Binary strings are distinguished from character strings in two ways. First, binary strings specifically allow storing octets of value zero and other <quote>non-printable</quote>octets (usually, octets outside the range 32 to 126). Character strings disallow zero octets, and also disallow any other octet values and sequences of octet values that are invalid according to the database's selected character set encoding. Second, operations on binary strings process the actual bytes, whereas the processing of character strings depends on locale settings. In short, binary strings are appropriate for storing data that the programmer thinks of as <quote>raw bytes</quote>, whereas character strings are appropriate for storing text."
+msgstr ""
+
+#: xml/datatype.xml:1325(para)
+msgid "The <type>bytea</type>type supports two external formats for input and output: <productname>PostgreSQL</productname>'s historical <quote>escape</quote>format, and <quote>hex</quote>format. Both of these are always accepted on input. The output format depends on the configuration parameter <xref linkend=\"guc-bytea-output\">; the default is hex. (Note that the hex format was introduced in <productname>PostgreSQL</productname>9.0; earlier versions and some tools don't understand it.)</xref>"
+msgstr ""
+
+#: xml/datatype.xml:1337(para)
+msgid "The <acronym>SQL</acronym>standard defines a different binary string type, called <type>BLOB</type>or <type>BINARY LARGE OBJECT</type>. The input format is different from <type>bytea</type>, but the provided functions and operators are mostly the same."
+msgstr ""
+
+#: xml/datatype.xml:1346(title)
+msgid "<type>bytea</type>Hex Format"
+msgstr ""
+
+#: xml/datatype.xml:1348(para)
+msgid "The <quote>hex</quote>format encodes binary data as 2 hexadecimal digits per byte, most significant nibble first. The entire string is preceded by the sequence <literal>\\x</literal>(to distinguish it from the escape format). In some contexts, the initial backslash may need to be escaped by doubling it, in the same cases in which backslashes have to be doubled in escape format; details appear below. The hexadecimal digits can be either upper or lower case, and whitespace is permitted between digit pairs (but not within a digit pair nor in the starting <literal>\\x</literal>sequence). The hex format is compatible with a wide range of external applications and protocols, and it tends to be faster to convert than the escape format, so its use is preferred."
+msgstr ""
+
+#: xml/datatype.xml:1364(programlisting)
+#, no-wrap
+msgid "SELECT\n      E'\\\\xDEADBEEF';"
+msgstr ""
+
+#: xml/datatype.xml:1363(para)
+msgid "Example: <placeholder-1/>"
+msgstr ""
+
+#: xml/datatype.xml:1368(title)
+msgid "<type>bytea</type>Escape Format"
+msgstr ""
+
+#: xml/datatype.xml:1370(para)
+msgid "The <quote>escape</quote>format is the traditional <productname>PostgreSQL</productname>format for the <type>bytea</type>type. It takes the approach of representing a binary string as a sequence of ASCII characters, while converting those bytes that cannot be represented as an ASCII character into special escape sequences. If, from the point of view of the application, representing bytes as characters makes sense, then this representation can be convenient. But in practice it is usually confusing because it fuzzes up the distinction between binary strings and character strings, and also the particular escape mechanism that was chosen is somewhat unwieldy. So this format should probably be avoided for most new applications."
+msgstr ""
+
+#: xml/datatype.xml:1384(para)
+msgid "When entering <type>bytea</type>values in escape format, octets of certain values <emphasis>must</emphasis>be escaped, while all octet values <emphasis>can</emphasis>be escaped. In general, to escape an octet, convert it into its three-digit octal value and precede it by a backslash (or two backslashes, if writing the value as a literal using escape string syntax). Backslash itself (octet value 92) can alternatively be represented by double backslashes. <xref linkend=\"datatype-binary-sqlesc\">shows the characters that must be escaped, and gives the alternative escape sequences where applicable.</xref>"
+msgstr ""
+
+#: xml/datatype.xml:1398(title)
+msgid "<type>bytea</type>Literal Escaped Octets"
+msgstr ""
+
+#: xml/datatype.xml:1403(entry) xml/datatype.xml:1518(entry)
+msgid "Decimal Octet Value"
+msgstr ""
+
+#: xml/datatype.xml:1405(entry)
+msgid "Escaped Input Representation"
+msgstr ""
+
+#: xml/datatype.xml:1406(entry) xml/datatype.xml:1521(entry) xml/datatype.xml:1840(entry) xml/datatype.xml:1965(entry) xml/datatype.xml:2053(entry) xml/datatype.xml:2369(entry) xml/datatype.xml:2901(entry)
+msgid "Example"
+msgstr ""
+
+#: xml/datatype.xml:1407(entry)
+msgid "Output Representation"
+msgstr ""
+
+#: xml/datatype.xml:1412(entry)
+msgid "0"
+msgstr ""
+
+#: xml/datatype.xml:1413(entry)
+msgid "zero octet"
+msgstr ""
+
+#: xml/datatype.xml:1415(literal)
+msgid "E'\\\\000'"
+msgstr ""
+
+#: xml/datatype.xml:1418(literal)
+msgid "SELECT E'\\\\000'::bytea;"
+msgstr ""
+
+#: xml/datatype.xml:1421(literal)
+msgid "\\000"
+msgstr ""
+
+#: xml/datatype.xml:1425(entry)
+msgid "39"
+msgstr ""
+
+#: xml/datatype.xml:1426(entry)
+msgid "single quote"
+msgstr ""
+
+#: xml/datatype.xml:1428(literal)
+msgid "''''"
+msgstr ""
+
+#: xml/datatype.xml:1429(literal)
+msgid "E'\\\\047'"
+msgstr ""
+
+#: xml/datatype.xml:1427(entry) xml/datatype.xml:1440(entry) xml/datatype.xml:4479(entry)
+msgid "<placeholder-1/>or <placeholder-2/>"
+msgstr ""
+
+#: xml/datatype.xml:1431(literal)
+msgid "SELECT E'\\''::bytea;"
+msgstr ""
+
+#: xml/datatype.xml:1434(literal)
+msgid "'"
+msgstr ""
+
+#: xml/datatype.xml:1438(entry) xml/datatype.xml:1527(entry)
+msgid "92"
+msgstr ""
+
+#: xml/datatype.xml:1439(entry) xml/datatype.xml:1528(entry)
+msgid "backslash"
+msgstr ""
+
+#: xml/datatype.xml:1441(literal)
+msgid "E'\\\\\\\\'"
+msgstr ""
+
+#: xml/datatype.xml:1442(literal)
+msgid "E'\\\\134'"
+msgstr ""
+
+#: xml/datatype.xml:1444(literal)
+msgid "SELECT E'\\\\\\\\'::bytea;"
+msgstr ""
+
+#: xml/datatype.xml:1447(literal) xml/datatype.xml:1530(literal) xml/datatype.xml:1536(literal)
+msgid "\\\\"
+msgstr ""
+
+#: xml/datatype.xml:1451(entry) xml/datatype.xml:1540(entry)
+msgid "0 to 31 and 127 to 255"
+msgstr ""
+
+#: xml/datatype.xml:1453(quote) xml/datatype.xml:1542(quote)
+msgid "non-printable"
+msgstr ""
+
+#: xml/datatype.xml:1452(entry) xml/datatype.xml:1541(entry) xml/datatype.xml:1556(entry)
+msgid "<placeholder-1/>octets"
+msgstr ""
+
+#: xml/datatype.xml:1456(replaceable)
+msgid "xxx'"
+msgstr ""
+
+#: xml/datatype.xml:1455(literal)
+msgid "E'\\\\ <placeholder-1/>"
+msgstr ""
+
+#: xml/datatype.xml:1454(entry) xml/datatype.xml:1543(entry)
+msgid "<placeholder-1/>(octal value)"
+msgstr ""
+
+#: xml/datatype.xml:1459(literal) xml/datatype.xml:1548(literal)
+msgid "SELECT E'\\\\001'::bytea;"
+msgstr ""
+
+#: xml/datatype.xml:1462(literal) xml/datatype.xml:1551(literal)
+msgid "\\001"
+msgstr ""
+
+#: xml/datatype.xml:1468(para)
+msgid "The requirement to escape <emphasis>non-printable</emphasis>octets varies depending on locale settings. In some instances you can get away with leaving them unescaped. Note that the result in each of the examples in <xref linkend=\"datatype-binary-sqlesc\">was exactly one octet in length, even though the output representation is sometimes more than one character.</xref>"
+msgstr ""
+
+#: xml/datatype.xml:1476(para)
+msgid "The reason multiple backslashes are required, as shown in <xref linkend=\"datatype-binary-sqlesc\">, is that an input string written as a string literal must pass through two parse phases in the <productname>PostgreSQL</productname>server. The first backslash of each pair is interpreted as an escape character by the string-literal parser (assuming escape string syntax is used) and is therefore consumed, leaving the second backslash of the pair. (Dollar-quoted strings can be used to avoid this level of escaping.) The remaining backslash is then recognized by the <type>bytea</type>input function as starting either a three digit octal value or escaping another backslash. For example, a string literal passed to the server as <literal>E'\\\\001'</literal>becomes <literal>\\001</literal>after passing through the escape string parser. The <literal>\\001</literal>is then sent to the <type>bytea</type>input function, where it is converted to a single octet with a decimal value of 1. Note that the single-quote character is not treated specially by <type>bytea</type>, so it follows the normal rules for string literals. (See also <xref linkend=\"sql-syntax-strings\">.)</xref></xref>"
+msgstr ""
+
+#: xml/datatype.xml:1501(para)
+msgid "<type>Bytea</type>octets are sometimes escaped when output. In general, each <quote>non-printable</quote>octet is converted into its equivalent three-digit octal value and preceded by one backslash. Most <quote>printable</quote>octets are represented by their standard representation in the client character set. The octet with decimal value 92 (backslash) is doubled in the output. Details are in <xref linkend=\"datatype-binary-resesc\">.</xref>"
+msgstr ""
+
+#: xml/datatype.xml:1513(title)
+msgid "<type>bytea</type>Output Escaped Octets"
+msgstr ""
+
+#: xml/datatype.xml:1520(entry)
+msgid "Escaped Output Representation"
+msgstr ""
+
+#: xml/datatype.xml:1522(entry)
+msgid "Output Result"
+msgstr ""
+
+#: xml/datatype.xml:1533(literal)
+msgid "SELECT E'\\\\134'::bytea;"
+msgstr ""
+
+#: xml/datatype.xml:1545(replaceable)
+msgid "xxx"
+msgstr ""
+
+#: xml/datatype.xml:1544(literal)
+msgid "\\ <placeholder-1/>"
+msgstr ""
+
+#: xml/datatype.xml:1555(entry)
+msgid "32 to 126"
+msgstr ""
+
+#: xml/datatype.xml:1557(quote)
+msgid "printable"
+msgstr ""
+
+#: xml/datatype.xml:1558(entry)
+msgid "client character set representation"
+msgstr ""
+
+#: xml/datatype.xml:1560(literal)
+msgid "SELECT E'\\\\176'::bytea;"
+msgstr ""
+
+#: xml/datatype.xml:1563(literal)
+msgid "~"
+msgstr ""
+
+#: xml/datatype.xml:1569(para)
+msgid "Depending on the front end to <productname>PostgreSQL</productname>you use, you might have additional work to do in terms of escaping and unescaping <type>bytea</type>strings. For example, you might also have to escape line feeds and carriage returns if your interface automatically translates these."
+msgstr ""
+
+#: xml/datatype.xml:1578(title) xml/datatype.xml:1620(title)
+msgid "Date/Time Types"
+msgstr ""
+
+#: xml/datatype.xml:1583(primary) xml/datatype.xml:1930(primary) xml/datatype.xml:2205(primary) xml/datatype.xml:2273(type) xml/datatype.xml:2309(type) xml/datatype.xml:2340(primary)
+msgid "time"
+msgstr ""
+
+#: xml/datatype.xml:1586(primary) xml/datatype.xml:1933(primary)
+msgid "time without time zone"
+msgstr ""
+
+#: xml/datatype.xml:1589(primary) xml/datatype.xml:1936(primary)
+msgid "time with time zone"
+msgstr ""
+
+#: xml/datatype.xml:1592(primary) xml/datatype.xml:2118(primary) xml/datatype.xml:2245(type) xml/datatype.xml:2255(type) xml/datatype.xml:2264(type) xml/datatype.xml:2274(type) xml/datatype.xml:2283(type) xml/datatype.xml:2292(type) xml/datatype.xml:2301(type)
+msgid "timestamp"
+msgstr ""
+
+#: xml/datatype.xml:1598(primary) xml/datatype.xml:2121(primary)
+msgid "timestamp with time zone"
+msgstr ""
+
+#: xml/datatype.xml:1601(primary) xml/datatype.xml:2124(primary)
+msgid "timestamp without time zone"
+msgstr ""
+
+#: xml/datatype.xml:1604(primary) xml/datatype.xml:2692(primary) xml/datatype.xml:2894(type) xml/datatype.xml:2940(primary)
+msgid "interval"
+msgstr ""
+
+#: xml/datatype.xml:1609(para)
+msgid "<productname>PostgreSQL</productname>supports the full set of <acronym>SQL</acronym>date and time types, shown in <xref linkend=\"datatype-datetime-table\">. The operations available on these data types are described in <xref linkend=\"functions-datetime\">. Dates are counted according to the Gregorian calendar, even in years before that calendar was introduced (see <xref linkend=\"datetime-units-history\">for more information).</xref></xref></xref>"
+msgstr ""
+
+#: xml/datatype.xml:1627(entry)
+msgid "Low Value"
+msgstr ""
+
+#: xml/datatype.xml:1628(entry)
+msgid "High Value"
+msgstr ""
+
+#: xml/datatype.xml:1629(entry)
+msgid "Resolution"
+msgstr ""
+
+#: xml/datatype.xml:1640(entry)
+msgid "both date and time (no time zone)"
+msgstr ""
+
+#: xml/datatype.xml:1641(entry) xml/datatype.xml:1652(entry) xml/datatype.xml:1662(entry)
+msgid "4713 BC"
+msgstr ""
+
+#: xml/datatype.xml:1642(entry) xml/datatype.xml:1653(entry)
+msgid "294276 AD"
+msgstr ""
+
+#: xml/datatype.xml:1643(entry) xml/datatype.xml:1654(entry) xml/datatype.xml:1676(entry) xml/datatype.xml:1687(entry) xml/datatype.xml:1699(entry)
+msgid "1 microsecond / 14 digits"
+msgstr ""
+
+#: xml/datatype.xml:1651(entry)
+msgid "both date and time, with time zone"
+msgstr ""
+
+#: xml/datatype.xml:1661(entry)
+msgid "date (no time of day)"
+msgstr ""
+
+#: xml/datatype.xml:1663(entry)
+msgid "5874897 AD"
+msgstr ""
+
+#: xml/datatype.xml:1664(entry)
+msgid "1 day"
+msgstr ""
+
+#: xml/datatype.xml:1673(entry)
+msgid "time of day (no date)"
+msgstr ""
+
+#: xml/datatype.xml:1674(entry)
+msgid "00:00:00"
+msgstr ""
+
+#: xml/datatype.xml:1675(entry)
+msgid "24:00:00"
+msgstr ""
+
+#: xml/datatype.xml:1683(entry)
+msgid "12 bytes"
+msgstr ""
+
+#: xml/datatype.xml:1684(entry)
+msgid "times of day only, with time zone"
+msgstr ""
+
+#: xml/datatype.xml:1685(entry)
+msgid "00:00:00+1459"
+msgstr ""
+
+#: xml/datatype.xml:1686(entry)
+msgid "24:00:00-1459"
+msgstr ""
+
+#: xml/datatype.xml:1695(entry) xml/datatype.xml:3252(entry)
+msgid "16 bytes"
+msgstr ""
+
+#: xml/datatype.xml:1696(entry)
+msgid "time interval"
+msgstr ""
+
+#: xml/datatype.xml:1697(entry)
+msgid "-178000000 years"
+msgstr ""
+
+#: xml/datatype.xml:1698(entry)
+msgid "178000000 years"
+msgstr ""
+
+#: xml/datatype.xml:1705(para)
+msgid "The SQL standard requires that writing just <type>timestamp</type>be equivalent to <type>timestamp without time zone</type>, and <productname>PostgreSQL</productname>honors that behavior. <type>timestamptz</type>is accepted as an abbreviation for <type>timestamp with time zone</type>; this is a <productname>PostgreSQL</productname>extension."
+msgstr ""
+
+#: xml/datatype.xml:1713(para)
+msgid "<type>time</type>, <type>timestamp</type>, and <type>interval</type>accept an optional precision value <replaceable>p</replaceable>which specifies the number of fractional digits retained in the seconds field. By default, there is no explicit bound on precision. The allowed range of <replaceable>p</replaceable>is from 0 to 6 for the <type>timestamp</type>and <type>interval</type>types."
+msgstr ""
+
+#: xml/datatype.xml:1724(para)
+msgid "When <type>timestamp</type>values are stored as eight-byte integers (currently the default), microsecond precision is available over the full range of values. When <type>timestamp</type>values are stored as double precision floating-point numbers instead (a deprecated compile-time option), the effective limit of precision might be less than 6. <type>timestamp</type>values are stored as seconds before or after midnight 2000-01-01. When <type>timestamp</type>values are implemented using floating-point numbers, microsecond precision is achieved for dates within a few years of 2000-01-01, but the precision degrades for dates further away. Note that using floating-point datetimes allows a larger range of <type>timestamp</type>values to be represented than shown above: from 4713 BC up to 5874897 AD."
+msgstr ""
+
+#: xml/datatype.xml:1741(para)
+msgid "The same compile-time option also determines whether <type>time</type>and <type>interval</type>values are stored as floating-point numbers or eight-byte integers. In the floating-point case, large <type>interval</type>values degrade in precision as the size of the interval increases."
+msgstr ""
+
+#: xml/datatype.xml:1749(para)
+msgid "For the <type>time</type>types, the allowed range of <replaceable>p</replaceable>is from 0 to 6 when eight-byte integer storage is used, or from 0 to 10 when floating-point storage is used."
+msgstr ""
+
+#: xml/datatype.xml:1754(para)
+msgid "The <type>interval</type>type has an additional option, which is to restrict the set of stored fields by writing one of these phrases: <literallayout class=\"monospaced\">YEAR MONTH DAY HOUR MINUTE\n    SECOND YEAR TO MONTH DAY TO HOUR DAY TO MINUTE DAY TO SECOND\n    HOUR TO MINUTE HOUR TO SECOND MINUTE TO\n    SECOND</literallayout>Note that if both <replaceable>fields</replaceable>and <replaceable>p</replaceable>are specified, the <replaceable>fields</replaceable>must include <literal>SECOND</literal>, since the precision applies only to the seconds."
+msgstr ""
+
+#: xml/datatype.xml:1767(para)
+msgid "The type <type>time with time zone</type>is defined by the SQL standard, but the definition exhibits properties which lead to questionable usefulness. In most cases, a combination of <type>date</type>, <type>time</type>, <type>timestamp without time zone</type>, and <type>timestamp with time zone</type>should provide a complete range of date/time functionality required by any application."
+msgstr ""
+
+#: xml/datatype.xml:1777(para)
+msgid "The types <type>abstime</type>and <type>reltime</type>are lower precision types which are used internally. You are discouraged from using these types in applications; these internal types might disappear in a future release."
+msgstr ""
+
+#: xml/datatype.xml:1784(title)
+msgid "Date/Time Input"
+msgstr ""
+
+#: xml/datatype.xml:1785(para)
+msgid "Date and time input is accepted in almost any reasonable format, including ISO 8601, <acronym>SQL</acronym>-compatible, traditional <productname>POSTGRES</productname>, and others. For some formats, ordering of day, month, and year in date input is ambiguous and there is support for specifying the expected ordering of these fields. Set the <xref linkend=\"guc-datestyle\">parameter to <literal>MDY</literal>to select month-day-year interpretation, <literal>DMY</literal>to select day-month-year interpretation, or <literal>YMD</literal>to select year-month-day interpretation.</xref>"
+msgstr ""
+
+#: xml/datatype.xml:1799(para)
+msgid "<productname>PostgreSQL</productname>is more flexible in handling date/time input than the <acronym>SQL</acronym>standard requires. See <xref linkend=\"datetime-appendix\">for the exact parsing rules of date/time input and for the recognized text fields including months, days of the week, and time zones.</xref>"
+msgstr ""
+
+#: xml/datatype.xml:1807(para)
+msgid "Remember that any date or time literal input needs to be enclosed in single quotes, like text strings. Refer to <xref linkend=\"sql-syntax-constants-generic\">for more information. <acronym>SQL</acronym>requires the following syntax <synopsis>\n      <replaceable>type</replaceable>[ ( \n      <replaceable>p</replaceable>) ] ' \n      <replaceable>value</replaceable>'</synopsis>where <replaceable>p</replaceable>is an optional precision specification giving the number of fractional digits in the seconds field. Precision can be specified for <type>time</type>, <type>timestamp</type>, and <type>interval</type>types. The allowed values are mentioned above. If no precision is specified in a constant specification, it defaults to the precision of the literal value.</xref>"
+msgstr ""
+
+#: xml/datatype.xml:1826(title)
+msgid "Dates"
+msgstr ""
+
+#: xml/datatype.xml:1831(xref)
+msgid "shows some possible inputs for the <placeholder-1/>type."
+msgstr ""
+
+#: xml/datatype.xml:1836(title)
+msgid "Date Input"
+msgstr ""
+
+#: xml/datatype.xml:1846(entry)
+msgid "1999-01-08"
+msgstr ""
+
+#: xml/datatype.xml:1847(entry)
+msgid "ISO 8601; January 8 in any mode (recommended format)"
+msgstr ""
+
+#: xml/datatype.xml:1851(entry)
+msgid "January 8, 1999"
+msgstr ""
+
+#: xml/datatype.xml:1853(varname) xml/datatype.xml:2435(varname)
+msgid "datestyle"
+msgstr ""
+
+#: xml/datatype.xml:1852(entry)
+msgid "unambiguous in any <placeholder-1/>input mode"
+msgstr ""
+
+#: xml/datatype.xml:1856(entry)
+msgid "1/8/1999"
+msgstr ""
+
+#: xml/datatype.xml:1858(literal) xml/datatype.xml:1864(literal) xml/datatype.xml:1870(literal)
+msgid "MDY"
+msgstr ""
+
+#: xml/datatype.xml:1859(literal) xml/datatype.xml:1871(literal)
+msgid "DMY"
+msgstr ""
+
+#: xml/datatype.xml:1857(entry)
+msgid "January 8 in <placeholder-1/>mode; August 1 in <placeholder-2/>mode"
+msgstr ""
+
+#: xml/datatype.xml:1862(entry)
+msgid "1/18/1999"
+msgstr ""
+
+#: xml/datatype.xml:1863(entry)
+msgid "January 18 in <placeholder-1/>mode; rejected in other modes"
+msgstr ""
+
+#: xml/datatype.xml:1868(entry)
+msgid "01/02/03"
+msgstr ""
+
+#: xml/datatype.xml:1872(literal) xml/datatype.xml:1889(literal) xml/datatype.xml:1894(literal) xml/datatype.xml:1899(literal)
+msgid "YMD"
+msgstr ""
+
+#: xml/datatype.xml:1869(entry)
+msgid "January 2, 2003 in <placeholder-1/>mode; February 1, 2003 in <placeholder-2/>mode; February 3, 2001 in <placeholder-3/>mode"
+msgstr ""
+
+#: xml/datatype.xml:1875(entry)
+msgid "1999-Jan-08"
+msgstr ""
+
+#: xml/datatype.xml:1876(entry) xml/datatype.xml:1880(entry) xml/datatype.xml:1884(entry)
+msgid "January 8 in any mode"
+msgstr ""
+
+#: xml/datatype.xml:1879(entry)
+msgid "Jan-08-1999"
+msgstr ""
+
+#: xml/datatype.xml:1883(entry)
+msgid "08-Jan-1999"
+msgstr ""
+
+#: xml/datatype.xml:1887(entry)
+msgid "99-Jan-08"
+msgstr ""
+
+#: xml/datatype.xml:1888(entry)
+msgid "January 8 in <placeholder-1/>mode, else error"
+msgstr ""
+
+#: xml/datatype.xml:1892(entry)
+msgid "08-Jan-99"
+msgstr ""
+
+#: xml/datatype.xml:1893(entry) xml/datatype.xml:1898(entry)
+msgid "January 8, except error in <placeholder-1/>mode"
+msgstr ""
+
+#: xml/datatype.xml:1897(entry)
+msgid "Jan-08-99"
+msgstr ""
+
+#: xml/datatype.xml:1902(entry)
+msgid "19990108"
+msgstr ""
+
+#: xml/datatype.xml:1903(entry) xml/datatype.xml:1908(entry)
+msgid "ISO 8601; January 8, 1999 in any mode"
+msgstr ""
+
+#: xml/datatype.xml:1907(entry)
+msgid "990108"
+msgstr ""
+
+#: xml/datatype.xml:1912(entry)
+msgid "1999.008"
+msgstr ""
+
+#: xml/datatype.xml:1913(entry)
+msgid "year and day of year"
+msgstr ""
+
+#: xml/datatype.xml:1916(entry)
+msgid "J2451187"
+msgstr ""
+
+#: xml/datatype.xml:1917(entry)
+msgid "Julian date"
+msgstr ""
+
+#: xml/datatype.xml:1920(entry)
+msgid "January 8, 99 BC"
+msgstr ""
+
+#: xml/datatype.xml:1921(entry)
+msgid "year 99 BC"
+msgstr ""
+
+#: xml/datatype.xml:1928(title)
+msgid "Times"
+msgstr ""
+
+#: xml/datatype.xml:1938(para)
+msgid "The time-of-day types are <type>time [ ( <replaceable>p</replaceable>) ] without time zone</type>and <type>time [ ( <replaceable>p</replaceable>) ] with time zone</type>. <type>time</type>alone is equivalent to <type>time without time zone</type>."
+msgstr ""
+
+#: xml/datatype.xml:1946(para)
+msgid "Valid input for these types consists of a time of day followed by an optional time zone. (See <xref linkend=\"datatype-datetime-time-table\">and <xref linkend=\"datatype-timezone-table\">.) If a time zone is specified in the input for <type>time without time zone</type>, it is silently ignored. You can also specify a date but it will be ignored, except when you use a time zone name that involves a daylight-savings rule, such as <literal>America/New_York</literal>. In this case specifying the date is required in order to determine whether standard or daylight-savings time applies. The appropriate time zone offset is recorded in the <type>time with time zone</type>value.</xref></xref>"
+msgstr ""
+
+#: xml/datatype.xml:1961(title)
+msgid "Time Input"
+msgstr ""
+
+#: xml/datatype.xml:1972(literal)
+msgid "04:05:06.789"
+msgstr ""
+
+#: xml/datatype.xml:1974(entry) xml/datatype.xml:1980(entry) xml/datatype.xml:1986(entry) xml/datatype.xml:1992(entry) xml/datatype.xml:2012(entry) xml/datatype.xml:2018(entry) xml/datatype.xml:2024(entry) xml/datatype.xml:2030(entry)
+msgid "ISO 8601"
+msgstr ""
+
+#: xml/datatype.xml:1978(literal)
+msgid "04:05:06"
+msgstr ""
+
+#: xml/datatype.xml:1984(literal)
+msgid "04:05"
+msgstr ""
+
+#: xml/datatype.xml:1990(literal)
+msgid "040506"
+msgstr ""
+
+#: xml/datatype.xml:1996(literal)
+msgid "04:05 AM"
+msgstr ""
+
+#: xml/datatype.xml:1998(entry)
+msgid "same as 04:05; AM does not affect value"
+msgstr ""
+
+#: xml/datatype.xml:2003(literal)
+msgid "04:05 PM"
+msgstr ""
+
+#: xml/datatype.xml:2005(entry)
+msgid "same as 16:05; input hour must be = 12"
+msgstr ""
+
+#: xml/datatype.xml:2010(literal)
+msgid "04:05:06.789-8"
+msgstr ""
+
+#: xml/datatype.xml:2016(literal)
+msgid "04:05:06-08:00"
+msgstr ""
+
+#: xml/datatype.xml:2022(literal)
+msgid "04:05-08:00"
+msgstr ""
+
+#: xml/datatype.xml:2028(literal)
+msgid "040506-08"
+msgstr ""
+
+#: xml/datatype.xml:2034(literal)
+msgid "04:05:06 PST"
+msgstr ""
+
+#: xml/datatype.xml:2036(entry)
+msgid "time zone specified by abbreviation"
+msgstr ""
+
+#: xml/datatype.xml:2040(literal)
+msgid "2003-04-12 04:05:06 America/New_York"
+msgstr ""
+
+#: xml/datatype.xml:2043(entry)
+msgid "time zone specified by full name"
+msgstr ""
+
+#: xml/datatype.xml:2049(title)
+msgid "Time Zone Input"
+msgstr ""
+
+#: xml/datatype.xml:2060(literal)
+msgid "PST"
+msgstr ""
+
+#: xml/datatype.xml:2062(entry)
+msgid "Abbreviation (for Pacific Standard Time)"
+msgstr ""
+
+#: xml/datatype.xml:2067(literal)
+msgid "America/New_York"
+msgstr ""
+
+#: xml/datatype.xml:2069(entry)
+msgid "Full time zone name"
+msgstr ""
+
+#: xml/datatype.xml:2073(literal)
+msgid "PST8PDT"
+msgstr ""
+
+#: xml/datatype.xml:2075(entry)
+msgid "POSIX-style time zone specification"
+msgstr ""
+
+#: xml/datatype.xml:2079(literal)
+msgid "-8:00"
+msgstr ""
+
+#: xml/datatype.xml:2081(entry) xml/datatype.xml:2087(entry) xml/datatype.xml:2093(entry)
+msgid "ISO-8601 offset for PST"
+msgstr ""
+
+#: xml/datatype.xml:2085(literal)
+msgid "-800"
+msgstr ""
+
+#: xml/datatype.xml:2091(literal)
+msgid "-8"
+msgstr ""
+
+#: xml/datatype.xml:2097(literal) xml/datatype.xml:2106(literal)
+msgid "zulu"
+msgstr ""
+
+#: xml/datatype.xml:2099(entry)
+msgid "Military abbreviation for UTC"
+msgstr ""
+
+#: xml/datatype.xml:2103(literal)
+msgid "z"
+msgstr ""
+
+#: xml/datatype.xml:2105(entry)
+msgid "Short form of <placeholder-1/>"
+msgstr ""
+
+#: xml/datatype.xml:2111(para)
+msgid "Refer to <xref linkend=\"datatype-timezones\">for more information on how to specify time zones.</xref>"
+msgstr ""
+
+#: xml/datatype.xml:2116(title)
+msgid "Time Stamps"
+msgstr ""
+
+#: xml/datatype.xml:2134(programlisting)
+#, no-wrap
+msgid "1999-01-08 04:05:06"
+msgstr ""
+
+#: xml/datatype.xml:2135(programlisting)
+#, no-wrap
+msgid "1999-01-08 04:05:06\n        -8:00"
+msgstr ""
+
+#: xml/datatype.xml:2139(programlisting)
+#, no-wrap
+msgid "January 8 04:05:06 1999\n        PST"
+msgstr ""
+
+#: xml/datatype.xml:2126(para)
+msgid "Valid input for the time stamp types consists of the concatenation of a date and a time, followed by an optional time zone, followed by an optional <literal>AD</literal>or <literal>BC</literal>. (Alternatively, <literal>AD</literal>/ <literal>BC</literal>can appear before the time zone, but this is not the preferred ordering.) Thus: <placeholder-1/>and: <placeholder-2/>are valid values, which follow the <acronym>ISO</acronym>8601 standard. In addition, the common format: <placeholder-3/>is supported."
+msgstr ""
+
+#: xml/datatype.xml:2149(programlisting)
+#, no-wrap
+msgid "TIMESTAMP '2004-10-19\n        10:23:54'"
+msgstr ""
+
+#: xml/datatype.xml:2152(programlisting)
+#, no-wrap
+msgid "TIMESTAMP '2004-10-19\n        10:23:54+02'"
+msgstr ""
+
+#: xml/datatype.xml:2162(programlisting)
+#, no-wrap
+msgid "TIMESTAMP WITH TIME ZONE '2004-10-19\n        10:23:54+02'"
+msgstr ""
+
+#: xml/datatype.xml:2141(para)
+msgid "The <acronym>SQL</acronym>standard differentiates <type>timestamp without time zone</type>and <type>timestamp with time zone</type>literals by the presence of a <quote>+</quote>or <quote>-</quote>symbol and time zone offset after the time. Hence, according to the standard, <placeholder-1/>is a <type>timestamp without time zone</type>, while <placeholder-2/>is a <type>timestamp with time zone</type>. <productname>PostgreSQL</productname>never examines the content of a literal string before determining its type, and therefore will treat both of the above as <type>timestamp without time zone</type>. To ensure that a literal is treated as <type>timestamp with time zone</type>, give it the correct explicit type: <placeholder-3/>In a literal that has been determined to be <type>timestamp without time zone</type>, <productname>PostgreSQL</productname>will silently ignore any time zone indication. That is, the resulting value is derived from the date/time fields in the input value, and is not adjusted for time zone."
+msgstr ""
+
+#: xml/datatype.xml:2170(para)
+msgid "For <type>timestamp with time zone</type>, the internally stored value is always in UTC (Universal Coordinated Time, traditionally known as Greenwich Mean Time, <acronym>GMT</acronym>). An input value that has an explicit time zone specified is converted to UTC using the appropriate offset for that time zone. If no time zone is stated in the input string, then it is assumed to be in the time zone indicated by the system's <xref linkend=\"guc-timezone\">parameter, and is converted to UTC using the offset for the <varname>timezone</varname>zone.</xref>"
+msgstr ""
+
+#: xml/datatype.xml:2182(para)
+msgid "When a <type>timestamp with time zone</type>value is output, it is always converted from UTC to the current <varname>timezone</varname>zone, and displayed as local time in that zone. To see the time in another time zone, either change <varname>timezone</varname>or use the <literal>AT TIME ZONE</literal>construct (see <xref linkend=\"functions-datetime-zoneconvert\"> ).</xref>"
+msgstr ""
+
+#: xml/datatype.xml:2192(para)
+msgid "Conversions between <type>timestamp without time zone</type>and <type>timestamp with time zone</type>normally assume that the <type>timestamp without time zone</type>value should be taken or given as <varname>timezone</varname>local time. A different time zone can be specified for the conversion using <literal>AT TIME ZONE</literal>."
+msgstr ""
+
+#: xml/datatype.xml:2203(title)
+msgid "Special Values"
+msgstr ""
+
+#: xml/datatype.xml:2206(secondary) xml/datatype.xml:2210(secondary)
+msgid "constants"
+msgstr ""
+
+#: xml/datatype.xml:2212(para)
+msgid "<productname>PostgreSQL</productname>supports several special date/time input values for convenience, as shown in <xref linkend=\"datatype-datetime-special-table\">. The values <literal>infinity</literal>and <literal>-infinity</literal>are specially represented inside the system and will be displayed unchanged; but the others are simply notational shorthands that will be converted to ordinary date/time values when read. (In particular, <literal>now</literal>and related strings are converted to a specific time value as soon as they are read.) All of these values need to be enclosed in single quotes when used as constants in SQL commands.</xref>"
+msgstr ""
+
+#: xml/datatype.xml:2229(title)
+msgid "Special Date/Time Inputs"
+msgstr ""
+
+#: xml/datatype.xml:2233(entry)
+msgid "Input String"
+msgstr ""
+
+#: xml/datatype.xml:2234(entry)
+msgid "Valid Types"
+msgstr ""
+
+#: xml/datatype.xml:2241(literal)
+msgid "epoch"
+msgstr ""
+
+#: xml/datatype.xml:2246(entry)
+msgid "1970-01-01 00:00:00+00 (Unix system time zero)"
+msgstr ""
+
+#: xml/datatype.xml:2251(literal)
+msgid "infinity"
+msgstr ""
+
+#: xml/datatype.xml:2256(entry)
+msgid "later than all other time stamps"
+msgstr ""
+
+#: xml/datatype.xml:2260(literal)
+msgid "-infinity"
+msgstr ""
+
+#: xml/datatype.xml:2265(entry)
+msgid "earlier than all other time stamps"
+msgstr ""
+
+#: xml/datatype.xml:2269(literal)
+msgid "now"
+msgstr ""
+
+#: xml/datatype.xml:2271(entry)
+msgid "<placeholder-1/>, <placeholder-2/>, <placeholder-3/>"
+msgstr ""
+
+#: xml/datatype.xml:2275(entry)
+msgid "current transaction's start time"
+msgstr ""
+
+#: xml/datatype.xml:2279(literal)
+msgid "today"
+msgstr ""
+
+#: xml/datatype.xml:2284(entry)
+msgid "midnight today"
+msgstr ""
+
+#: xml/datatype.xml:2288(literal)
+msgid "tomorrow"
+msgstr ""
+
+#: xml/datatype.xml:2293(entry)
+msgid "midnight tomorrow"
+msgstr ""
+
+#: xml/datatype.xml:2297(literal)
+msgid "yesterday"
+msgstr ""
+
+#: xml/datatype.xml:2302(entry)
+msgid "midnight yesterday"
+msgstr ""
+
+#: xml/datatype.xml:2306(literal)
+msgid "allballs"
+msgstr ""
+
+#: xml/datatype.xml:2311(entry)
+msgid "00:00:00.00 UTC"
+msgstr ""
+
+#: xml/datatype.xml:2316(para)
+msgid "The following <acronym>SQL</acronym>-compatible functions can also be used to obtain the current time value for the corresponding data type: <literal>CURRENT_DATE</literal>, <literal>CURRENT_TIME</literal>, <literal>CURRENT_TIMESTAMP</literal>, <literal>LOCALTIME</literal>, <literal>LOCALTIMESTAMP</literal>. The latter four accept an optional subsecond precision specification. (See <xref linkend=\"functions-datetime-current\">.) Note that these are SQL functions and are <emphasis>not</emphasis>recognized in data input strings.</xref>"
+msgstr ""
+
+#: xml/datatype.xml:2333(title)
+msgid "Date/Time Output"
+msgstr ""
+
+#: xml/datatype.xml:2336(secondary) xml/datatype.xml:2341(secondary) xml/datatype.xml:2941(secondary)
+msgid "output format"
+msgstr ""
+
+#: xml/datatype.xml:2337(seealso) xml/datatype.xml:2342(seealso) xml/datatype.xml:2942(seealso)
+msgid "formatting"
+msgstr ""
+
+#: xml/datatype.xml:2344(para)
+msgid "The output format of the date/time types can be set to one of the four styles ISO 8601, <acronym>SQL</acronym>(Ingres), traditional <productname>POSTGRES</productname>(Unix <application>date</application>format), or German. The default is the <acronym>ISO</acronym>format. (The <acronym>SQL</acronym>standard requires the use of the ISO 8601 format. The name of the <quote>SQL</quote>output format is a historical accident.) <xref linkend=\"datatype-datetime-output-table\">shows examples of each output style. The output of the <type>date</type>and <type>time</type>types is generally only the date or time part in accordance with the given examples. However, the <productname>POSTGRES</productname>style outputs date-only values in <acronym>ISO</acronym>format.</xref>"
+msgstr ""
+
+#: xml/datatype.xml:2363(title)
+msgid "Date/Time Output Styles"
+msgstr ""
+
+#: xml/datatype.xml:2367(entry) xml/datatype.xml:2985(entry)
+msgid "Style Specification"
+msgstr ""
+
+#: xml/datatype.xml:2375(literal)
+msgid "ISO"
+msgstr ""
+
+#: xml/datatype.xml:2377(entry)
+msgid "ISO 8601, SQL standard"
+msgstr ""
+
+#: xml/datatype.xml:2379(literal)
+msgid "1997-12-17 07:37:16-08"
+msgstr ""
+
+#: xml/datatype.xml:2384(literal)
+msgid "SQL"
+msgstr ""
+
+#: xml/datatype.xml:2386(entry)
+msgid "traditional style"
+msgstr ""
+
+#: xml/datatype.xml:2388(literal) xml/datatype.xml:2462(literal)
+msgid "12/17/1997 07:37:16.00 PST"
+msgstr ""
+
+#: xml/datatype.xml:2393(literal)
+msgid "Postgres"
+msgstr ""
+
+#: xml/datatype.xml:2395(entry)
+msgid "original style"
+msgstr ""
+
+#: xml/datatype.xml:2397(literal)
+msgid "Wed Dec 17 07:37:16 1997 PST"
+msgstr ""
+
+#: xml/datatype.xml:2402(literal)
+msgid "German"
+msgstr ""
+
+#: xml/datatype.xml:2404(entry)
+msgid "regional style"
+msgstr ""
+
+#: xml/datatype.xml:2406(literal)
+msgid "17.12.1997 07:37:16.00 PST"
+msgstr ""
+
+#: xml/datatype.xml:2413(para)
+msgid "ISO 8601 specifies the use of uppercase letter <literal>T</literal>to separate the date and time. <productname>PostgreSQL</productname>accepts that format on input, but on output it uses a space rather than <literal>T</literal>, as shown above. This is for readability and for consistency with RFC 3339 as well as some other database systems."
+msgstr ""
+
+#: xml/datatype.xml:2421(para)
+msgid "In the <acronym>SQL</acronym>and POSTGRES styles, day appears before month if DMY field ordering has been specified, otherwise month appears before day. (See <xref linkend=\"datatype-datetime-input\">for how this setting also affects interpretation of input values.) <xref linkend=\"datatype-datetime-output2-table\">shows examples.</xref></xref>"
+msgstr ""
+
+#: xml/datatype.xml:2430(title)
+msgid "Date Order Conventions"
+msgstr ""
+
+#: xml/datatype.xml:2434(entry)
+msgid "<placeholder-1/>Setting"
+msgstr ""
+
+#: xml/datatype.xml:2436(entry)
+msgid "Input Ordering"
+msgstr ""
+
+#: xml/datatype.xml:2437(entry)
+msgid "Example Output"
+msgstr ""
+
+#: xml/datatype.xml:2443(literal)
+msgid "SQL, DMY"
+msgstr ""
+
+#: xml/datatype.xml:2446(replaceable) xml/datatype.xml:2459(replaceable) xml/datatype.xml:2470(replaceable)
+msgid "day"
+msgstr ""
+
+#: xml/datatype.xml:2447(replaceable) xml/datatype.xml:2458(replaceable) xml/datatype.xml:2471(replaceable)
+msgid "month"
+msgstr ""
+
+#: xml/datatype.xml:2448(replaceable) xml/datatype.xml:2460(replaceable) xml/datatype.xml:2472(replaceable)
+msgid "year"
+msgstr ""
+
+#: xml/datatype.xml:2445(entry) xml/datatype.xml:2457(entry) xml/datatype.xml:2469(entry)
+msgid "<placeholder-1/>/ <placeholder-2/>/ <placeholder-3/>"
+msgstr ""
+
+#: xml/datatype.xml:2450(literal)
+msgid "17/12/1997 15:37:16.00 CET"
+msgstr ""
+
+#: xml/datatype.xml:2455(literal)
+msgid "SQL, MDY"
+msgstr ""
+
+#: xml/datatype.xml:2467(literal)
+msgid "Postgres, DMY"
+msgstr ""
+
+#: xml/datatype.xml:2474(literal)
+msgid "Wed 17 Dec 07:37:16 1997 PST"
+msgstr ""
+
+#: xml/datatype.xml:2480(para)
+msgid "The date/time style can be selected by the user using the <command>SET datestyle</command>command, the <xref linkend=\"guc-datestyle\">parameter in the <filename>postgresql.conf</filename>configuration file, or the <envar>PGDATESTYLE</envar>environment variable on the server or client.</xref>"
+msgstr ""
+
+#: xml/datatype.xml:2488(para)
+msgid "The formatting function <function>to_char</function>(see <xref linkend=\"functions-formatting\">) is also available as a more flexible way to format date/time output.</xref>"
+msgstr ""
+
+#: xml/datatype.xml:2494(title)
+msgid "Time Zones"
+msgstr ""
+
+#: xml/datatype.xml:2496(primary)
+msgid "time zone"
+msgstr ""
+
+#: xml/datatype.xml:2498(para)
+msgid "Time zones, and time-zone conventions, are influenced by political decisions, not just earth geometry. Time zones around the world became somewhat standardized during the 1900s, but continue to be prone to arbitrary changes, particularly with respect to daylight-savings rules. <productname>PostgreSQL</productname>uses the widely-used IANA (Olson) time zone database for information about historical time zone rules. For times in the future, the assumption is that the latest known rules for a given time zone will continue to be observed indefinitely far into the future."
+msgstr ""
+
+#: xml/datatype.xml:2518(para)
+msgid "Although the <type>date</type>type cannot have an associated time zone, the <type>time</type>type can. Time zones in the real world have little meaning unless associated with a date as well as a time, since the offset can vary through the year with daylight-saving time boundaries."
+msgstr ""
+
+#: xml/datatype.xml:2527(para)
+msgid "The default time zone is specified as a constant numeric offset from <acronym>UTC</acronym>. It is therefore impossible to adapt to daylight-saving time when doing date/time arithmetic across <acronym>DST</acronym>boundaries."
+msgstr ""
+
+#: xml/datatype.xml:2509(para)
+msgid "<productname>PostgreSQL</productname>endeavors to be compatible with the <acronym>SQL</acronym>standard definitions for typical usage. However, the <acronym>SQL</acronym>standard has an odd mix of date and time types and capabilities. Two obvious problems are: <placeholder-1/>"
+msgstr ""
+
+#: xml/datatype.xml:2535(para)
+msgid "To address these difficulties, we recommend using date/time types that contain both date and time when using time zones. We do <emphasis>not</emphasis>recommend using the type <type>time with time zone</type>(though it is supported by <productname>PostgreSQL</productname>for legacy applications and for compliance with the <acronym>SQL</acronym>standard). <productname>PostgreSQL</productname>assumes your local time zone for any type containing only date or time."
+msgstr ""
+
+#: xml/datatype.xml:2545(para)
+msgid "All timezone-aware dates and times are stored internally in <acronym>UTC</acronym>. They are converted to local time in the zone specified by the <xref linkend=\"guc-timezone\">configuration parameter before being displayed to the client.</xref>"
+msgstr ""
+
+#: xml/datatype.xml:2556(para)
+msgid "A full time zone name, for example <literal>America/New_York</literal>. The recognized time zone names are listed in the <literal>pg_timezone_names</literal>view (see <xref linkend=\"view-pg-timezone-names\">). <productname>PostgreSQL</productname>uses the widely-used IANA time zone data for this purpose, so the same time zone names are also recognized by much other software.</xref>"
+msgstr ""
+
+#: xml/datatype.xml:2567(para)
+msgid "A time zone abbreviation, for example <literal>PST</literal>. Such a specification merely defines a particular offset from UTC, in contrast to full time zone names which can imply a set of daylight savings transition-date rules as well. The recognized abbreviations are listed in the <literal>pg_timezone_abbrevs</literal>view (see <xref linkend=\"view-pg-timezone-abbrevs\">). You cannot set the configuration parameters <xref linkend=\"guc-timezone\">or <xref linkend=\"guc-log-timezone\">to a time zone abbreviation, but you can use abbreviations in date/time input values and with the <literal>AT TIME ZONE</literal>operator.</xref></xref></xref>"
+msgstr ""
+
+#: xml/datatype.xml:2584(para)
+msgid "In addition to the timezone names and abbreviations, <productname>PostgreSQL</productname>will accept POSIX-style time zone specifications of the form <replaceable>STD</replaceable><replaceable>offset</replaceable>or <replaceable>STD</replaceable><replaceable>offset</replaceable><replaceable>DST</replaceable>, where <replaceable>STD</replaceable>is a zone abbreviation, <replaceable>offset</replaceable>is a numeric offset in hours west from UTC, and <replaceable>DST</replaceable>is an optional daylight-savings zone abbreviation, assumed to stand for one hour ahead of the given offset. For example, if <literal>EST5EDT</literal>were not already a recognized zone name, it would be accepted and would be functionally equivalent to United States East Coast time. In this syntax, a zone abbreviation can be a string of letters, or an arbitrary string surrounded by angle brackets ( <literal/>). When a daylight-savings zone abbreviation is present, it is assumed to be used according to the same daylight-savings transition rules used in the IANA time zone database's <filename>posixrules</filename>entry. In a standard <productname>PostgreSQL</productname>installation, <filename>posixrules</filename>is the same as <literal>US/Eastern</literal>, so that POSIX-style time zone specifications follow USA daylight-savings rules. If needed, you can adjust this behavior by replacing the <filename>posixrules</filename>file."
+msgstr ""
+
+#: xml/datatype.xml:2551(para)
+msgid "<productname>PostgreSQL</productname>allows you to specify time zones in three different forms: <placeholder-1/>In short, this is the difference between abbreviations and full names: abbreviations represent a specific offset from UTC, whereas many of the full names imply a local daylight-savings time rule, and so have two possible UTC offsets. As an example, <literal>2014-06-04 12:00 America/New_York</literal>represents noon local time in New York, which for this particular date was Eastern Daylight Time (UTC-4). So <literal>2014-06-04 12:00 EDT</literal>specifies that same time instant. But <literal>2014-06-04 12:00 EST</literal>specifies noon Eastern Standard Time (UTC-5), regardless of whether daylight savings was nominally in effect on that date."
+msgstr ""
+
+#: xml/datatype.xml:2630(para)
+msgid "To complicate matters, some jurisdictions have used the same timezone abbreviation to mean different UTC offsets at different times; for example, in Moscow <literal>MSK</literal>has meant UTC+3 in some years and UTC+4 in others. <application>PostgreSQL</application>interprets such abbreviations according to whatever they meant (or had most recently meant) on the specified date; but, as with the <literal>EST</literal>example above, this is not necessarily the same as local civil time on that date."
+msgstr ""
+
+#: xml/datatype.xml:2640(para)
+msgid "One should be wary that the POSIX-style time zone feature can lead to silently accepting bogus input, since there is no check on the reasonableness of the zone abbreviations. For example, <literal>SET TIMEZONE TO FOOBAR0</literal>will work, leaving the system effectively using a rather peculiar abbreviation for UTC. Another issue to keep in mind is that in POSIX time zone names, positive offsets are used for locations <emphasis>west</emphasis>of Greenwich. Everywhere else, <productname>PostgreSQL</productname>follows the ISO-8601 convention that positive timezone offsets are <emphasis>east</emphasis>of Greenwich."
+msgstr ""
+
+#: xml/datatype.xml:2652(para)
+msgid "In all cases, timezone names and abbreviations are recognized case-insensitively. (This is a change from <productname>PostgreSQL</productname>versions prior to 8.2, which were case-sensitive in some contexts but not others.)"
+msgstr ""
+
+#: xml/datatype.xml:2657(para)
+msgid "Neither timezone names nor abbreviations are hard-wired into the server; they are obtained from configuration files stored under <filename>.../share/timezone/</filename>and <filename>.../share/timezonesets/</filename>of the installation directory (see <xref linkend=\"datetime-config-files\">).</xref>"
+msgstr ""
+
+#: xml/datatype.xml:2673(para)
+msgid "The <acronym>SQL</acronym>command <command>SET TIME ZONE</command>sets the time zone for the session. This is an alternative spelling of <command>SET TIMEZONE TO</command>with a more SQL-spec-compatible syntax."
+msgstr ""
+
+#: xml/datatype.xml:2681(para)
+msgid "The <envar>PGTZ</envar>environment variable is used by <application>libpq</application>clients to send a <command>SET TIME ZONE</command>command to the server upon connection."
+msgstr ""
+
+#: xml/datatype.xml:2664(para)
+msgid "The <xref linkend=\"guc-timezone\">configuration parameter can be set in the file <filename>postgresql.conf</filename>, or in any of the other standard ways described in <xref linkend=\"runtime-config\">. There are also some special ways to set it: <placeholder-1/></xref></xref>"
+msgstr ""
+
+#: xml/datatype.xml:2690(title) xml/datatype.xml:2897(title)
+msgid "Interval Input"
+msgstr ""
+
+#: xml/datatype.xml:2694(para)
+msgid "<type>interval</type>values can be written using the following verbose syntax: <synopsis>\n        <optional>@</optional>\n        <replaceable>quantity</replaceable>\n        <replaceable>unit</replaceable>\n        <optional>\n        <replaceable>quantity</replaceable>\n        <replaceable>unit</replaceable>...</optional>\n        <optional>\n          <replaceable>direction</replaceable>\n        </optional>\n      </synopsis>where <replaceable>quantity</replaceable>is a number (possibly signed); <replaceable>unit</replaceable>is <literal>microsecond</literal>, <literal>millisecond</literal>, <literal>second</literal>, <literal>minute</literal>, <literal>hour</literal>, <literal>day</literal>, <literal>week</literal>, <literal>month</literal>, <literal>year</literal>, <literal>decade</literal>, <literal>century</literal>, <literal>millennium</literal>, or abbreviations or plurals of these units; <replaceable>direction</replaceable>can be <literal>ago</literal>or empty. The at sign ( <literal>@</literal>) is optional noise. The amounts of the different units are implicitly added with appropriate sign accounting. <literal>ago</literal>negates all the fields. This syntax is also used for interval output, if <xref linkend=\"guc-intervalstyle\">is set to <literal>postgres_verbose</literal>.</xref>"
+msgstr ""
+
+#: xml/datatype.xml:2733(para)
+msgid "Quantities of days, hours, minutes, and seconds can be specified without explicit unit markings. For example, <literal>'1 12:59:10'</literal>is read the same as <literal>'1 day 12 hours 59 min 10 sec'</literal>. Also, a combination of years and months can be specified with a dash; for example <literal>'200-10'</literal>is read the same as <literal>'200 years 10 months'</literal>. (These shorter forms are in fact the only ones allowed by the <acronym>SQL</acronym>standard, and are used for output when <varname>IntervalStyle</varname>is set to <literal>sql_standard</literal>.)"
+msgstr ""
+
+#: xml/datatype.xml:2745(para)
+msgid "Interval values can also be written as ISO 8601 time intervals, using either the <quote>format with designators</quote>of the standard's section 4.4.3.2 or the <quote>alternative format</quote>of section 4.4.3.3. The format with designators looks like this: <synopsis>P \n      <replaceable>quantity</replaceable>\n      <replaceable>unit</replaceable>\n      <optional>\n      <replaceable>quantity</replaceable>\n      <replaceable>unit</replaceable>...</optional>\n      <optional>T \n      <optional>\n      <replaceable>quantity</replaceable>\n      <replaceable>\n      unit</replaceable>...</optional></optional></synopsis>The string must start with a <literal>P</literal>, and may include a <literal>T</literal>that introduces the time-of-day units. The available unit abbreviations are given in <xref linkend=\"datatype-interval-iso8601-units\">. Units may be omitted, and may be specified in any order, but units smaller than a day must appear after <literal>T</literal>. In particular, the meaning of <literal>M</literal>depends on whether it is before or after <literal>T</literal>.</xref>"
+msgstr ""
+
+#: xml/datatype.xml:2773(title)
+msgid "ISO 8601 Interval Unit Abbreviations"
+msgstr ""
+
+#: xml/datatype.xml:2777(entry)
+msgid "Abbreviation"
+msgstr ""
+
+#: xml/datatype.xml:2778(entry)
+msgid "Meaning"
+msgstr ""
+
+#: xml/datatype.xml:2783(entry)
+msgid "Y"
+msgstr ""
+
+#: xml/datatype.xml:2784(entry)
+msgid "Years"
+msgstr ""
+
+#: xml/datatype.xml:2787(entry) xml/datatype.xml:2803(entry)
+msgid "M"
+msgstr ""
+
+#: xml/datatype.xml:2788(entry)
+msgid "Months (in the date part)"
+msgstr ""
+
+#: xml/datatype.xml:2791(entry)
+msgid "W"
+msgstr ""
+
+#: xml/datatype.xml:2792(entry)
+msgid "Weeks"
+msgstr ""
+
+#: xml/datatype.xml:2795(entry)
+msgid "D"
+msgstr ""
+
+#: xml/datatype.xml:2796(entry)
+msgid "Days"
+msgstr ""
+
+#: xml/datatype.xml:2799(entry)
+msgid "H"
+msgstr ""
+
+#: xml/datatype.xml:2800(entry)
+msgid "Hours"
+msgstr ""
+
+#: xml/datatype.xml:2804(entry)
+msgid "Minutes (in the time part)"
+msgstr ""
+
+#: xml/datatype.xml:2807(entry)
+msgid "S"
+msgstr ""
+
+#: xml/datatype.xml:2808(entry)
+msgid "Seconds"
+msgstr ""
+
+#: xml/datatype.xml:2813(para)
+msgid "In the alternative format: <synopsis>P \n      <optional>\n      <replaceable>years</replaceable>- \n      <replaceable>months</replaceable>- \n      <replaceable>days</replaceable></optional>\n      <optional>T \n      <replaceable>hours</replaceable>: \n      <replaceable>minutes</replaceable>: \n      <replaceable>seconds</replaceable></optional></synopsis>the string must begin with <literal>P</literal>, and a <literal>T</literal>separates the date and time parts of the interval. The values are given as numbers similar to ISO 8601 dates."
+msgstr ""
+
+#: xml/datatype.xml:2828(para)
+msgid "When writing an interval constant with a <replaceable>fields</replaceable>specification, or when assigning a string to an interval column that was defined with a <replaceable>fields</replaceable>specification, the interpretation of unmarked quantities depends on the <replaceable>fields</replaceable>. For example <literal>INTERVAL '1' YEAR</literal>is read as 1 year, whereas <literal>INTERVAL '1'</literal>means 1 second. Also, field values <quote>to the right</quote>of the least significant field allowed by the <replaceable>fields</replaceable>specification are silently discarded. For example, writing <literal>INTERVAL '1 day 2:03:04' HOUR TO MINUTE</literal>results in dropping the seconds field, but not the day field."
+msgstr ""
+
+#: xml/datatype.xml:2846(para)
+msgid "According to the <acronym>SQL</acronym>standard all fields of an interval value must have the same sign, so a leading negative sign applies to all fields; for example the negative sign in the interval literal <literal>'-1 2:03:04'</literal>applies to both the days and hour/minute/second parts. <productname>PostgreSQL</productname>allows the fields to have different signs, and traditionally treats each field in the textual representation as independently signed, so that the hour/minute/second part is considered positive in this example. If <varname>IntervalStyle</varname>is set to <literal>sql_standard</literal>then a leading sign is considered to apply to all fields (but only if no additional signs appear). Otherwise the traditional <productname>PostgreSQL</productname>interpretation is used. To avoid ambiguity, it's recommended to attach an explicit sign to each field if any field is negative."
+msgstr ""
+
+#: xml/datatype.xml:2865(para)
+msgid "Internally <type>interval</type>values are stored as months, days, and seconds. This is done because the number of days in a month varies, and a day can have 23 or 25 hours if a daylight savings time adjustment is involved. The months and days fields are integers while the seconds field can store fractions. Because intervals are usually created from constant strings or <type>timestamp</type>subtraction, this storage method works well in most cases. Functions <function>justify_days</function>and <function>justify_hours</function>are available for adjusting days and hours that overflow their normal ranges."
+msgstr ""
+
+#: xml/datatype.xml:2878(para)
+msgid "In the verbose input format, and in some fields of the more compact input formats, field values can have fractional parts; for example <literal>'1.5 week'</literal>or <literal>'01:02:03.45'</literal>. Such input is converted to the appropriate number of months, days, and seconds for storage. When this would result in a fractional number of months or days, the fraction is added to the lower-order fields using the conversion factors 1 month = 30 days and 1 day = 24 hours. For example, <literal>'1.5 month'</literal>becomes 1 month and 15 days. Only seconds will ever be shown as fractional on output."
+msgstr ""
+
+#: xml/datatype.xml:2892(xref)
+msgid "shows some examples of valid <placeholder-1/>input."
+msgstr ""
+
+#: xml/datatype.xml:2907(entry) xml/datatype.xml:2996(entry)
+msgid "1-2"
+msgstr ""
+
+#: xml/datatype.xml:2908(entry)
+msgid "SQL standard format: 1 year 2 months"
+msgstr ""
+
+#: xml/datatype.xml:2911(entry) xml/datatype.xml:2997(entry)
+msgid "3 4:05:06"
+msgstr ""
+
+#: xml/datatype.xml:2912(entry)
+msgid "SQL standard format: 3 days 4 hours 5 minutes 6 seconds"
+msgstr ""
+
+#: xml/datatype.xml:2916(entry)
+msgid "1 year 2 months 3 days 4 hours 5 minutes 6 seconds"
+msgstr ""
+
+#: xml/datatype.xml:2918(entry)
+msgid "Traditional Postgres format: 1 year 2 months 3 days 4 hours 5 minutes 6 seconds"
+msgstr ""
+
+#: xml/datatype.xml:2922(entry)
+msgid "P1Y2M3DT4H5M6S"
+msgstr ""
+
+#: xml/datatype.xml:2924(quote)
+msgid "format with designators"
+msgstr ""
+
+#: xml/datatype.xml:2923(entry) xml/datatype.xml:2929(entry)
+msgid "ISO 8601 <placeholder-1/>: same meaning as above"
+msgstr ""
+
+#: xml/datatype.xml:2928(entry)
+msgid "P0001-02-03T04:05:06"
+msgstr ""
+
+#: xml/datatype.xml:2930(quote)
+msgid "alternative format"
+msgstr ""
+
+#: xml/datatype.xml:2938(title)
+msgid "Interval Output"
+msgstr ""
+
+#: xml/datatype.xml:2944(para)
+msgid "The output format of the interval type can be set to one of the four styles <literal>sql_standard</literal>, <literal>postgres</literal>, <literal>postgres_verbose</literal>, or <literal>iso_8601</literal>, using the command <literal>SET intervalstyle</literal>. The default is the <literal>postgres</literal>format. <xref linkend=\"interval-style-output-table\">shows examples of each output style.</xref>"
+msgstr ""
+
+#: xml/datatype.xml:2954(para)
+msgid "The <literal>sql_standard</literal>style produces output that conforms to the SQL standard's specification for interval literal strings, if the interval value meets the standard's restrictions (either year-month only or day-time only, with no mixing of positive and negative components). Otherwise the output looks like a standard year-month literal string followed by a day-time literal string, with explicit signs added to disambiguate mixed-sign intervals."
+msgstr ""
+
+#: xml/datatype.xml:2963(para)
+msgid "The output of the <literal>postgres</literal>style matches the output of <productname>PostgreSQL</productname>releases prior to 8.4 when the <xref linkend=\"guc-datestyle\">parameter was set to <literal>ISO</literal>.</xref>"
+msgstr ""
+
+#: xml/datatype.xml:2969(para)
+msgid "The output of the <literal>postgres_verbose</literal>style matches the output of <productname>PostgreSQL</productname>releases prior to 8.4 when the <varname>DateStyle</varname>parameter was set to non- <literal>ISO</literal>output."
+msgstr ""
+
+#: xml/datatype.xml:2976(para)
+msgid "The output of the <literal>iso_8601</literal>style matches the <quote>format with designators</quote>described in section 4.4.3.2 of the ISO 8601 standard."
+msgstr ""
+
+#: xml/datatype.xml:2981(title)
+msgid "Interval Output Style Examples"
+msgstr ""
+
+#: xml/datatype.xml:2986(entry)
+msgid "Year-Month Interval"
+msgstr ""
+
+#: xml/datatype.xml:2987(entry)
+msgid "Day-Time Interval"
+msgstr ""
+
+#: xml/datatype.xml:2988(entry)
+msgid "Mixed Interval"
+msgstr ""
+
+#: xml/datatype.xml:2994(literal)
+msgid "sql_standard"
+msgstr ""
+
+#: xml/datatype.xml:2998(entry)
+msgid "-1-2 +3 -4:05:06"
+msgstr ""
+
+#: xml/datatype.xml:3002(literal)
+msgid "postgres"
+msgstr ""
+
+#: xml/datatype.xml:3004(entry)
+msgid "1 year 2 mons"
+msgstr ""
+
+#: xml/datatype.xml:3005(entry)
+msgid "3 days 04:05:06"
+msgstr ""
+
+#: xml/datatype.xml:3006(entry)
+msgid "-1 year -2 mons +3 days -04:05:06"
+msgstr ""
+
+#: xml/datatype.xml:3010(literal)
+msgid "postgres_verbose"
+msgstr ""
+
+#: xml/datatype.xml:3012(entry)
+msgid "@ 1 year 2 mons"
+msgstr ""
+
+#: xml/datatype.xml:3013(entry)
+msgid "@ 3 days 4 hours 5 mins 6 secs"
+msgstr ""
+
+#: xml/datatype.xml:3014(entry)
+msgid "@ 1 year 2 mons -3 days 4 hours 5 mins 6 secs ago"
+msgstr ""
+
+#: xml/datatype.xml:3019(literal)
+msgid "iso_8601"
+msgstr ""
+
+#: xml/datatype.xml:3021(entry)
+msgid "P1Y2M"
+msgstr ""
+
+#: xml/datatype.xml:3022(entry)
+msgid "P3DT4H5M6S"
+msgstr ""
+
+#: xml/datatype.xml:3023(entry)
+msgid "P-1Y-2M3DT-4H-5M-6S"
+msgstr ""
+
+#: xml/datatype.xml:3031(title)
+msgid "Boolean Type"
+msgstr ""
+
+#: xml/datatype.xml:3033(primary)
+msgid "Boolean"
+msgstr ""
+
+#: xml/datatype.xml:3037(primary)
+msgid "true"
+msgstr ""
+
+#: xml/datatype.xml:3040(primary)
+msgid "false"
+msgstr ""
+
+#: xml/datatype.xml:3042(para)
+msgid "<productname>PostgreSQL</productname>provides the standard <acronym>SQL</acronym>type <type>boolean</type>; see <xref linkend=\"datatype-boolean-table\">. The <type>boolean</type>type can have several states: <quote>true</quote>, <quote>false</quote>, and a third state, <quote>unknown</quote>, which is represented by the <acronym>SQL</acronym>null value.</xref>"
+msgstr ""
+
+#: xml/datatype.xml:3053(title)
+msgid "Boolean Data Type"
+msgstr ""
+
+#: xml/datatype.xml:3068(entry)
+msgid "state of true or false"
+msgstr ""
+
+#: xml/datatype.xml:3077(literal)
+msgid "TRUE"
+msgstr ""
+
+#: xml/datatype.xml:3080(literal)
+msgid "'t'"
+msgstr ""
+
+#: xml/datatype.xml:3083(literal)
+msgid "'true'"
+msgstr ""
+
+#: xml/datatype.xml:3086(literal)
+msgid "'y'"
+msgstr ""
+
+#: xml/datatype.xml:3089(literal)
+msgid "'yes'"
+msgstr ""
+
+#: xml/datatype.xml:3092(literal)
+msgid "'on'"
+msgstr ""
+
+#: xml/datatype.xml:3095(literal)
+msgid "'1'"
+msgstr ""
+
+#: xml/datatype.xml:3101(literal)
+msgid "FALSE"
+msgstr ""
+
+#: xml/datatype.xml:3104(literal)
+msgid "'f'"
+msgstr ""
+
+#: xml/datatype.xml:3107(literal)
+msgid "'false'"
+msgstr ""
+
+#: xml/datatype.xml:3110(literal)
+msgid "'n'"
+msgstr ""
+
+#: xml/datatype.xml:3113(literal)
+msgid "'no'"
+msgstr ""
+
+#: xml/datatype.xml:3116(literal)
+msgid "'off'"
+msgstr ""
+
+#: xml/datatype.xml:3119(literal)
+msgid "'0'"
+msgstr ""
+
+#: xml/datatype.xml:3073(para)
+msgid "Valid literal values for the <quote>true</quote>state are: <placeholder-1/>For the <quote>false</quote>state, the following values can be used: <placeholder-2/>Leading or trailing whitespace is ignored, and case does not matter. The key words <literal>TRUE</literal>and <literal>FALSE</literal>are the preferred ( <acronym>SQL</acronym>-compliant) usage."
+msgstr ""
+
+#: xml/datatype.xml:3129(literal)
+msgid "t"
+msgstr ""
+
+#: xml/datatype.xml:3130(literal)
+msgid "f"
+msgstr ""
+
+#: xml/datatype.xml:3127(xref)
+msgid "shows that <placeholder-1/>values are output using the letters <placeholder-2/>and <placeholder-3/>."
+msgstr ""
+
+#: xml/datatype.xml:3133(title)
+msgid "Using the <type>boolean</type>Type"
+msgstr ""
+
+#: xml/datatype.xml:3135(programlisting)
+#, no-wrap
+msgid "CREATE TABLE test1 (a boolean, b text);\n      INSERT INTO test1 VALUES (TRUE, 'sic est'); INSERT INTO test1\n      VALUES (FALSE, 'non est'); SELECT * FROM test1; a | b\n      ---+--------- t | sic est f | non est SELECT * FROM test1\n      WHERE a; a | b ---+--------- t | sic est"
+msgstr ""
+
+#: xml/datatype.xml:3143(title)
+msgid "Enumerated Types"
+msgstr ""
+
+#: xml/datatype.xml:3146(secondary)
+msgid "enumerated (enum)"
+msgstr ""
+
+#: xml/datatype.xml:3149(primary)
+msgid "enumerated types"
+msgstr ""
+
+#: xml/datatype.xml:3151(para)
+msgid "Enumerated (enum) types are data types that comprise a static, ordered set of values. They are equivalent to the <type>enum</type>types supported in a number of programming languages. An example of an enum type might be the days of the week, or a set of status values for a piece of data."
+msgstr ""
+
+#: xml/datatype.xml:3157(title)
+msgid "Declaration of Enumerated Types"
+msgstr ""
+
+#: xml/datatype.xml:3160(programlisting)
+#, no-wrap
+msgid "CREATE TYPE mood AS ENUM ('sad', 'ok',\n      'happy');"
+msgstr ""
+
+#: xml/datatype.xml:3164(programlisting)
+#, no-wrap
+msgid "CREATE TYPE mood AS ENUM ('sad', 'ok',\n      'happy'); CREATE TABLE person ( name text, current_mood mood\n      ); INSERT INTO person VALUES ('Moe', 'happy'); SELECT * FROM\n      person WHERE current_mood = 'happy'; name | current_mood\n      ------+-------------- Moe | happy (1\n      row)"
+msgstr ""
+
+#: xml/datatype.xml:3158(para)
+msgid "Enum types are created using the <xref linkend=\"sql-createtype\">command, for example: <placeholder-1/>Once created, the enum type can be used in table and function definitions much like any other type: <placeholder-2/></xref>"
+msgstr ""
+
+#: xml/datatype.xml:3172(title)
+msgid "Ordering"
+msgstr ""
+
+#: xml/datatype.xml:3177(programlisting)
+#, no-wrap
+msgid "INSERT INTO person VALUES ('Larry', 'sad');\n      INSERT INTO person VALUES ('Curly', 'ok'); SELECT * FROM\n      person WHERE current_mood &gt; 'sad'; name | current_mood\n      -------+-------------- Moe | happy Curly | ok (2 rows) SELECT\n      * FROM person WHERE current_mood &gt; 'sad' ORDER BY\n      current_mood; name | current_mood -------+--------------\n      Curly | ok Moe | happy (2 rows) SELECT name FROM person WHERE\n      current_mood = (SELECT MIN(current_mood) FROM person); name\n      ------- Larry (1 row)"
+msgstr ""
+
+#: xml/datatype.xml:3173(para)
+msgid "The ordering of the values in an enum type is the order in which the values were listed when the type was created. All standard comparison operators and related aggregate functions are supported for enums. For example: <placeholder-1/>"
+msgstr ""
+
+#: xml/datatype.xml:3188(title)
+msgid "Type Safety"
+msgstr ""
+
+#: xml/datatype.xml:3191(programlisting)
+#, no-wrap
+msgid "CREATE TYPE happiness AS ENUM ('happy', 'very\n      happy', 'ecstatic'); CREATE TABLE holidays ( num_weeks\n      integer, happiness happiness ); INSERT INTO\n      holidays(num_weeks,happiness) VALUES (4, 'happy'); INSERT\n      INTO holidays(num_weeks,happiness) VALUES (6, 'very happy');\n      INSERT INTO holidays(num_weeks,happiness) VALUES (8,\n      'ecstatic'); INSERT INTO holidays(num_weeks,happiness) VALUES\n      (2, 'sad'); ERROR: invalid input value for enum happiness:\n      \"sad\" SELECT person.name, holidays.num_weeks FROM person,\n      holidays WHERE person.current_mood = holidays.happiness;\n      ERROR: operator does not exist: mood =\n      happiness"
+msgstr ""
+
+#: xml/datatype.xml:3189(para)
+msgid "Each enumerated data type is separate and cannot be compared with other enumerated types. See this example: <placeholder-1/>"
+msgstr ""
+
+#: xml/datatype.xml:3206(programlisting)
+#, no-wrap
+msgid "SELECT person.name, holidays.num_weeks FROM\n      person, holidays WHERE person.current_mood::text =\n      holidays.happiness::text; name | num_weeks ------+-----------\n      Moe | 4 (1 row)"
+msgstr ""
+
+#: xml/datatype.xml:3203(para)
+msgid "If you really need to do something like that, you can either write a custom operator or add explicit casts to your query: <placeholder-1/>"
+msgstr ""
+
+#: xml/datatype.xml:3212(title)
+msgid "Implementation Details"
+msgstr ""
+
+#: xml/datatype.xml:3213(para)
+msgid "An enum value occupies four bytes on disk. The length of an enum value's textual label is limited by the <symbol>NAMEDATALEN</symbol>setting compiled into <productname>PostgreSQL</productname>; in standard builds this means at most 63 bytes."
+msgstr ""
+
+#: xml/datatype.xml:3218(para)
+msgid "Enum labels are case sensitive, so <type>'happy'</type>is not the same as <type>'HAPPY'</type>. White space in the labels is significant too."
+msgstr ""
+
+#: xml/datatype.xml:3222(para)
+msgid "The translations from internal enum values to textual labels are kept in the system catalog <link linkend=\"catalog-pg-enum\"><structname>pg_enum</structname></link>. Querying this catalog directly can be useful."
+msgstr ""
+
+#: xml/datatype.xml:3230(title) xml/datatype.xml:3237(title)
+msgid "Geometric Types"
+msgstr ""
+
+#: xml/datatype.xml:3231(para)
+msgid "Geometric data types represent two-dimensional spatial objects. <xref linkend=\"datatype-geo-table\">shows the geometric types available in <productname>PostgreSQL</productname>.</xref>"
+msgstr ""
+
+#: xml/datatype.xml:3244(entry)
+msgid "Representation"
+msgstr ""
+
+#: xml/datatype.xml:3253(entry)
+msgid "Point on a plane"
+msgstr ""
+
+#: xml/datatype.xml:3254(entry)
+msgid "(x,y)"
+msgstr ""
+
+#: xml/datatype.xml:3260(entry) xml/datatype.xml:3268(entry) xml/datatype.xml:3276(entry)
+msgid "32 bytes"
+msgstr ""
+
+#: xml/datatype.xml:3261(entry)
+msgid "Infinite line"
+msgstr ""
+
+#: xml/datatype.xml:3262(entry)
+msgid "{A,B,C}"
+msgstr ""
+
+#: xml/datatype.xml:3269(entry)
+msgid "Finite line segment"
+msgstr ""
+
+#: xml/datatype.xml:3270(entry) xml/datatype.xml:3278(entry)
+msgid "((x1,y1),(x2,y2))"
+msgstr ""
+
+#: xml/datatype.xml:3277(entry)
+msgid "Rectangular box"
+msgstr ""
+
+#: xml/datatype.xml:3284(entry) xml/datatype.xml:3292(entry)
+msgid "16+16n bytes"
+msgstr ""
+
+#: xml/datatype.xml:3285(entry)
+msgid "Closed path (similar to polygon)"
+msgstr ""
+
+#: xml/datatype.xml:3286(entry) xml/datatype.xml:3302(entry)
+msgid "((x1,y1),...)"
+msgstr ""
+
+#: xml/datatype.xml:3293(entry)
+msgid "Open path"
+msgstr ""
+
+#: xml/datatype.xml:3294(entry)
+msgid "[(x1,y1),...]"
+msgstr ""
+
+#: xml/datatype.xml:3300(entry)
+msgid "40+16n bytes"
+msgstr ""
+
+#: xml/datatype.xml:3301(entry)
+msgid "Polygon (similar to closed path)"
+msgstr ""
+
+#: xml/datatype.xml:3308(entry)
+msgid "24 bytes"
+msgstr ""
+
+#: xml/datatype.xml:3309(entry)
+msgid "Circle"
+msgstr ""
+
+#: xml/datatype.xml:3310(entry)
+msgid "(x,y),r (center point and radius)"
+msgstr ""
+
+#: xml/datatype.xml:3315(para)
+msgid "A rich set of functions and operators is available to perform various geometric operations such as scaling, translation, rotation, and determining intersections. They are explained in <xref linkend=\"functions-geometry\">.</xref>"
+msgstr ""
+
+#: xml/datatype.xml:3321(title)
+msgid "Points"
+msgstr ""
+
+#: xml/datatype.xml:3325(para)
+msgid "Points are the fundamental two-dimensional building block for geometric types. Values of type <type>point</type>are specified using either of the following syntaxes: <synopsis>( \n      <replaceable>x</replaceable>, \n      <replaceable>y</replaceable>) \n      <replaceable>x</replaceable>, \n      <replaceable>y</replaceable></synopsis>where <replaceable>x</replaceable>and <replaceable>y</replaceable>are the respective coordinates, as floating-point numbers."
+msgstr ""
+
+#: xml/datatype.xml:3337(para)
+msgid "Points are output using the first syntax."
+msgstr ""
+
+#: xml/datatype.xml:3340(title)
+msgid "Lines"
+msgstr ""
+
+#: xml/datatype.xml:3344(para)
+msgid "Lines are represented by the linear equation <replaceable>A</replaceable>x + <replaceable>B</replaceable>y + <replaceable>C</replaceable>= 0, where <replaceable>A</replaceable>and <replaceable>B</replaceable>are not both zero. Values of type <type>line</type>are input and output in the following form: <synopsis>{ \n      <replaceable>A</replaceable>, \n      <replaceable>B</replaceable>, \n      <replaceable>C</replaceable>}</synopsis>Alternatively, any of the following forms can be used for input: <synopsis>[ ( \n      <replaceable>x1</replaceable>, \n      <replaceable>y1</replaceable>) , ( \n      <replaceable>x2</replaceable>, \n      <replaceable>y2</replaceable>) ] ( ( \n      <replaceable>x1</replaceable>, \n      <replaceable>y1</replaceable>) , ( \n      <replaceable>x2</replaceable>, \n      <replaceable>y2</replaceable>) ) ( \n      <replaceable>x1</replaceable>, \n      <replaceable>y1</replaceable>) , ( \n      <replaceable>x2</replaceable>, \n      <replaceable>y2</replaceable>) \n      <replaceable>x1</replaceable>, \n      <replaceable>y1</replaceable>, \n      <replaceable>x2</replaceable>, \n      <replaceable>y2</replaceable></synopsis>where <literal>( <replaceable>x1</replaceable>, <replaceable>y1</replaceable>)</literal>and <literal>( <replaceable>x2</replaceable>, <replaceable>y2</replaceable>)</literal>are two different points on the line."
+msgstr ""
+
+#: xml/datatype.xml:3383(title)
+msgid "Line Segments"
+msgstr ""
+
+#: xml/datatype.xml:3388(primary)
+msgid "line segment"
+msgstr ""
+
+#: xml/datatype.xml:3390(para)
+msgid "Line segments are represented by pairs of points that are the endpoints of the segment. Values of type <type>lseg</type>are specified using any of the following syntaxes: <synopsis>[ ( \n      <replaceable>x1</replaceable>, \n      <replaceable>y1</replaceable>) , ( \n      <replaceable>x2</replaceable>, \n      <replaceable>y2</replaceable>) ] ( ( \n      <replaceable>x1</replaceable>, \n      <replaceable>y1</replaceable>) , ( \n      <replaceable>x2</replaceable>, \n      <replaceable>y2</replaceable>) ) ( \n      <replaceable>x1</replaceable>, \n      <replaceable>y1</replaceable>) , ( \n      <replaceable>x2</replaceable>, \n      <replaceable>y2</replaceable>) \n      <replaceable>x1</replaceable>, \n      <replaceable>y1</replaceable>, \n      <replaceable>x2</replaceable>, \n      <replaceable>y2</replaceable></synopsis>where <literal>( <replaceable>x1</replaceable>, <replaceable>y1</replaceable>)</literal>and <literal>( <replaceable>x2</replaceable>, <replaceable>y2</replaceable>)</literal>are the end points of the line segment."
+msgstr ""
+
+#: xml/datatype.xml:3418(para)
+msgid "Line segments are output using the first syntax."
+msgstr ""
+
+#: xml/datatype.xml:3421(title)
+msgid "Boxes"
+msgstr ""
+
+#: xml/datatype.xml:3423(primary)
+msgid "box (data type)"
+msgstr ""
+
+#: xml/datatype.xml:3426(primary)
+msgid "rectangle"
+msgstr ""
+
+#: xml/datatype.xml:3428(para)
+msgid "Boxes are represented by pairs of points that are opposite corners of the box. Values of type <type>box</type>are specified using any of the following syntaxes: <synopsis>( ( \n      <replaceable>x1</replaceable>, \n      <replaceable>y1</replaceable>) , ( \n      <replaceable>x2</replaceable>, \n      <replaceable>y2</replaceable>) ) ( \n      <replaceable>x1</replaceable>, \n      <replaceable>y1</replaceable>) , ( \n      <replaceable>x2</replaceable>, \n      <replaceable>y2</replaceable>) \n      <replaceable>x1</replaceable>, \n      <replaceable>y1</replaceable>, \n      <replaceable>x2</replaceable>, \n      <replaceable>y2</replaceable></synopsis>where <literal>( <replaceable>x1</replaceable>, <replaceable>y1</replaceable>)</literal>and <literal>( <replaceable>x2</replaceable>, <replaceable>y2</replaceable>)</literal>are any two opposite corners of the box."
+msgstr ""
+
+#: xml/datatype.xml:3452(para)
+msgid "Boxes are output using the second syntax."
+msgstr ""
+
+#: xml/datatype.xml:3453(para)
+msgid "Any two opposite corners can be supplied on input, but the values will be reordered as needed to store the upper right and lower left corners, in that order."
+msgstr ""
+
+#: xml/datatype.xml:3458(title)
+msgid "Paths"
+msgstr ""
+
+#: xml/datatype.xml:3460(primary)
+msgid "path (data type)"
+msgstr ""
+
+#: xml/datatype.xml:3462(para)
+msgid "Paths are represented by lists of connected points. Paths can be <firstterm>open</firstterm>, where the first and last points in the list are considered not connected, or <firstterm>closed</firstterm>, where the first and last points are considered connected."
+msgstr ""
+
+#: xml/datatype.xml:3468(para)
+msgid "Values of type <type>path</type>are specified using any of the following syntaxes: <synopsis>[ ( \n      <replaceable>x1</replaceable>, \n      <replaceable>y1</replaceable>) , ... , ( \n      <replaceable>xn</replaceable>, \n      <replaceable>yn</replaceable>) ] ( ( \n      <replaceable>x1</replaceable>, \n      <replaceable>y1</replaceable>) , ... , ( \n      <replaceable>xn</replaceable>, \n      <replaceable>yn</replaceable>) ) ( \n      <replaceable>x1</replaceable>, \n      <replaceable>y1</replaceable>) , ... , ( \n      <replaceable>xn</replaceable>, \n      <replaceable>yn</replaceable>) ( \n      <replaceable>x1</replaceable>, \n      <replaceable>y1</replaceable>, ... , \n      <replaceable>xn</replaceable>, \n      <replaceable>yn</replaceable>) \n      <replaceable>x1</replaceable>, \n      <replaceable>y1</replaceable>, ... , \n      <replaceable>xn</replaceable>, \n      <replaceable>yn</replaceable></synopsis>where the points are the end points of the line segments comprising the path. Square brackets ( <literal>[]</literal>) indicate an open path, while parentheses ( <literal>()</literal>) indicate a closed path. When the outermost parentheses are omitted, as in the third through fifth syntaxes, a closed path is assumed."
+msgstr ""
+
+#: xml/datatype.xml:3499(para)
+msgid "Paths are output using the first or second syntax, as appropriate."
+msgstr ""
+
+#: xml/datatype.xml:3503(title)
+msgid "Polygons"
+msgstr ""
+
+#: xml/datatype.xml:3507(para)
+msgid "Polygons are represented by lists of points (the vertexes of the polygon). Polygons are very similar to closed paths, but are stored differently and have their own set of support routines."
+msgstr ""
+
+#: xml/datatype.xml:3511(para)
+msgid "Values of type <type>polygon</type>are specified using any of the following syntaxes: <synopsis>( ( \n      <replaceable>x1</replaceable>, \n      <replaceable>y1</replaceable>) , ... , ( \n      <replaceable>xn</replaceable>, \n      <replaceable>yn</replaceable>) ) ( \n      <replaceable>x1</replaceable>, \n      <replaceable>y1</replaceable>) , ... , ( \n      <replaceable>xn</replaceable>, \n      <replaceable>yn</replaceable>) ( \n      <replaceable>x1</replaceable>, \n      <replaceable>y1</replaceable>, ... , \n      <replaceable>xn</replaceable>, \n      <replaceable>yn</replaceable>) \n      <replaceable>x1</replaceable>, \n      <replaceable>y1</replaceable>, ... , \n      <replaceable>xn</replaceable>, \n      <replaceable>yn</replaceable></synopsis>where the points are the end points of the line segments comprising the boundary of the polygon."
+msgstr ""
+
+#: xml/datatype.xml:3533(para)
+msgid "Polygons are output using the first syntax."
+msgstr ""
+
+#: xml/datatype.xml:3536(title)
+msgid "Circles"
+msgstr ""
+
+#: xml/datatype.xml:3540(para)
+msgid "Circles are represented by a center point and radius. Values of type <type>circle</type>are specified using any of the following syntaxes: <synopsis>( \n      <replaceable>x</replaceable>, \n      <replaceable>y</replaceable>) , \n      <replaceable>r</replaceable>( ( \n      <replaceable>x</replaceable>, \n      <replaceable>y</replaceable>) , \n      <replaceable>r</replaceable>) ( \n      <replaceable>x</replaceable>, \n      <replaceable>y</replaceable>) , \n      <replaceable>r</replaceable>\n      <replaceable>x</replaceable>, \n      <replaceable>y</replaceable>, \n      <replaceable>r</replaceable></synopsis>where <literal>( <replaceable>x</replaceable>, <replaceable>y</replaceable>)</literal>is the center point and <replaceable>r</replaceable>is the radius of the circle."
+msgstr ""
+
+#: xml/datatype.xml:3563(para)
+msgid "Circles are output using the first syntax."
+msgstr ""
+
+#: xml/datatype.xml:3567(title) xml/datatype.xml:3581(title)
+msgid "Network Address Types"
+msgstr ""
+
+#: xml/datatype.xml:3569(primary)
+msgid "network"
+msgstr ""
+
+#: xml/datatype.xml:3572(para)
+msgid "<productname>PostgreSQL</productname>offers data types to store IPv4, IPv6, and MAC addresses, as shown in <xref linkend=\"datatype-net-types-table\">. It is better to use these types instead of plain text types to store network addresses, because these types offer input error checking and specialized operators and functions (see <xref linkend=\"functions-net\">).</xref></xref>"
+msgstr ""
+
+#: xml/datatype.xml:3595(entry) xml/datatype.xml:3602(entry)
+msgid "7 or 19 bytes"
+msgstr ""
+
+#: xml/datatype.xml:3596(entry)
+msgid "IPv4 and IPv6 networks"
+msgstr ""
+
+#: xml/datatype.xml:3603(entry)
+msgid "IPv4 and IPv6 hosts and networks"
+msgstr ""
+
+#: xml/datatype.xml:3609(entry)
+msgid "6 bytes"
+msgstr ""
+
+#: xml/datatype.xml:3610(entry)
+msgid "MAC addresses"
+msgstr ""
+
+#: xml/datatype.xml:3615(para)
+msgid "When sorting <type>inet</type>or <type>cidr</type>data types, IPv4 addresses will always sort before IPv6 addresses, including IPv4 addresses encapsulated or mapped to IPv6 addresses, such as ::10.2.3.4 or ::ffff:10.4.3.2."
+msgstr ""
+
+#: xml/datatype.xml:3626(primary)
+msgid "inet (data type)"
+msgstr ""
+
+#: xml/datatype.xml:3628(para)
+msgid "The <type>inet</type>type holds an IPv4 or IPv6 host address, and optionally its subnet, all in one field. The subnet is represented by the number of network address bits present in the host address (the <quote>netmask</quote>). If the netmask is 32 and the address is IPv4, then the value does not indicate a subnet, only a single host. In IPv6, the address length is 128 bits, so 128 bits specify a unique host address. Note that if you want to accept only networks, you should use the <type>cidr</type>type rather than <type>inet</type>."
+msgstr ""
+
+#: xml/datatype.xml:3640(para)
+msgid "The input format for this type is <replaceable class=\"parameter\">address/y</replaceable>where <replaceable class=\"parameter\">address</replaceable>is an IPv4 or IPv6 address and <replaceable class=\"parameter\">y</replaceable>is the number of bits in the netmask. If the <replaceable class=\"parameter\">/y</replaceable>portion is missing, the netmask is 32 for IPv4 and 128 for IPv6, so the value represents just a single host. On display, the <replaceable class=\"parameter\">/y</replaceable>portion is suppressed if the netmask specifies a single host."
+msgstr ""
+
+#: xml/datatype.xml:3659(para)
+msgid "The <type>cidr</type>type holds an IPv4 or IPv6 network specification. Input and output formats follow Classless Internet Domain Routing conventions. The format for specifying networks is <replaceable class=\"parameter\">address/y</replaceable>where <replaceable class=\"parameter\">address</replaceable>is the network represented as an IPv4 or IPv6 address, and <replaceable class=\"parameter\">y</replaceable>is the number of bits in the netmask. If <replaceable class=\"parameter\">y</replaceable>is omitted, it is calculated using assumptions from the older classful network numbering system, except it will be at least large enough to include all of the octets written in the input. It is an error to specify a network address that has bits set to the right of the specified netmask."
+msgstr ""
+
+#: xml/datatype.xml:3676(xref)
+msgid "shows some examples."
+msgstr ""
+
+#: xml/datatype.xml:3680(title)
+msgid "<type>cidr</type>Type Input Examples"
+msgstr ""
+
+#: xml/datatype.xml:3685(entry)
+msgid "<placeholder-1/>Input"
+msgstr ""
+
+#: xml/datatype.xml:3687(entry)
+msgid "<placeholder-1/>Output"
+msgstr ""
+
+#: xml/datatype.xml:3691(function)
+msgid "abbrev( <placeholder-1/>)"
+msgstr ""
+
+#: xml/datatype.xml:3699(entry) xml/datatype.xml:3700(entry) xml/datatype.xml:3701(entry)
+msgid "192.168.100.128/25"
+msgstr ""
+
+#: xml/datatype.xml:3704(entry)
+msgid "192.168/24"
+msgstr ""
+
+#: xml/datatype.xml:3705(entry) xml/datatype.xml:3720(entry)
+msgid "192.168.0.0/24"
+msgstr ""
+
+#: xml/datatype.xml:3706(entry) xml/datatype.xml:3721(entry)
+msgid "192.168.0/24"
+msgstr ""
+
+#: xml/datatype.xml:3709(entry)
+msgid "192.168/25"
+msgstr ""
+
+#: xml/datatype.xml:3710(entry) xml/datatype.xml:3711(entry)
+msgid "192.168.0.0/25"
+msgstr ""
+
+#: xml/datatype.xml:3714(entry)
+msgid "192.168.1"
+msgstr ""
+
+#: xml/datatype.xml:3715(entry)
+msgid "192.168.1.0/24"
+msgstr ""
+
+#: xml/datatype.xml:3716(entry)
+msgid "192.168.1/24"
+msgstr ""
+
+#: xml/datatype.xml:3719(entry)
+msgid "192.168"
+msgstr ""
+
+#: xml/datatype.xml:3724(entry)
+msgid "128.1"
+msgstr ""
+
+#: xml/datatype.xml:3725(entry)
+msgid "128.1.0.0/16"
+msgstr ""
+
+#: xml/datatype.xml:3726(entry)
+msgid "128.1/16"
+msgstr ""
+
+#: xml/datatype.xml:3729(entry)
+msgid "128"
+msgstr ""
+
+#: xml/datatype.xml:3730(entry)
+msgid "128.0.0.0/16"
+msgstr ""
+
+#: xml/datatype.xml:3731(entry)
+msgid "128.0/16"
+msgstr ""
+
+#: xml/datatype.xml:3734(entry)
+msgid "128.1.2"
+msgstr ""
+
+#: xml/datatype.xml:3735(entry)
+msgid "128.1.2.0/24"
+msgstr ""
+
+#: xml/datatype.xml:3736(entry)
+msgid "128.1.2/24"
+msgstr ""
+
+#: xml/datatype.xml:3739(entry)
+msgid "10.1.2"
+msgstr ""
+
+#: xml/datatype.xml:3740(entry)
+msgid "10.1.2.0/24"
+msgstr ""
+
+#: xml/datatype.xml:3741(entry)
+msgid "10.1.2/24"
+msgstr ""
+
+#: xml/datatype.xml:3744(entry)
+msgid "10.1"
+msgstr ""
+
+#: xml/datatype.xml:3745(entry)
+msgid "10.1.0.0/16"
+msgstr ""
+
+#: xml/datatype.xml:3746(entry)
+msgid "10.1/16"
+msgstr ""
+
+#: xml/datatype.xml:3749(entry)
+msgid "10"
+msgstr ""
+
+#: xml/datatype.xml:3750(entry)
+msgid "10.0.0.0/8"
+msgstr ""
+
+#: xml/datatype.xml:3751(entry)
+msgid "10/8"
+msgstr ""
+
+#: xml/datatype.xml:3754(entry) xml/datatype.xml:3755(entry) xml/datatype.xml:3756(entry)
+msgid "10.1.2.3/32"
+msgstr ""
+
+#: xml/datatype.xml:3759(entry) xml/datatype.xml:3760(entry) xml/datatype.xml:3761(entry)
+msgid "2001:4f8:3:ba::/64"
+msgstr ""
+
+#: xml/datatype.xml:3764(entry) xml/datatype.xml:3765(entry)
+msgid "2001:4f8:3:ba:2e0:81ff:fe22:d1f1/128"
+msgstr ""
+
+#: xml/datatype.xml:3766(entry)
+msgid "2001:4f8:3:ba:2e0:81ff:fe22:d1f1"
+msgstr ""
+
+#: xml/datatype.xml:3769(entry) xml/datatype.xml:3770(entry)
+msgid "::ffff:1.2.3.0/120"
+msgstr ""
+
+#: xml/datatype.xml:3771(entry)
+msgid "::ffff:1.2.3/120"
+msgstr ""
+
+#: xml/datatype.xml:3774(entry) xml/datatype.xml:3775(entry) xml/datatype.xml:3776(entry)
+msgid "::ffff:1.2.3.0/128"
+msgstr ""
+
+#: xml/datatype.xml:3783(title)
+msgid "<type>inet</type>vs. <type>cidr</type>"
+msgstr ""
+
+#: xml/datatype.xml:3786(para)
+msgid "The essential difference between <type>inet</type>and <type>cidr</type>data types is that <type>inet</type>accepts values with nonzero bits to the right of the netmask, whereas <type>cidr</type>does not."
+msgstr ""
+
+#: xml/datatype.xml:3793(para)
+msgid "If you do not like the output format for <type>inet</type>or <type>cidr</type>values, try the functions <function>host</function>, <function>text</function>, and <function>abbrev</function>."
+msgstr ""
+
+#: xml/datatype.xml:3806(primary)
+msgid "macaddr (data type)"
+msgstr ""
+
+#: xml/datatype.xml:3809(primary)
+msgid "MAC address"
+msgstr ""
+
+#: xml/datatype.xml:3819(literal)
+msgid "'08:00:2b:01:02:03'"
+msgstr ""
+
+#: xml/datatype.xml:3822(literal)
+msgid "'08-00-2b-01-02-03'"
+msgstr ""
+
+#: xml/datatype.xml:3825(literal)
+msgid "'08002b:010203'"
+msgstr ""
+
+#: xml/datatype.xml:3828(literal)
+msgid "'08002b-010203'"
+msgstr ""
+
+#: xml/datatype.xml:3831(literal)
+msgid "'0800.2b01.0203'"
+msgstr ""
+
+#: xml/datatype.xml:3834(literal)
+msgid "'0800-2b01-0203'"
+msgstr ""
+
+#: xml/datatype.xml:3837(literal)
+msgid "'08002b010203'"
+msgstr ""
+
+#: xml/datatype.xml:3812(para)
+msgid "The <type>macaddr</type>type stores MAC addresses, known for example from Ethernet card hardware addresses (although MAC addresses are used for other purposes as well). Input is accepted in the following formats: <placeholder-1/>These examples would all specify the same address. Upper and lower case is accepted for the digits <literal>a</literal>through <literal>f</literal>. Output is always in the first of the forms shown."
+msgstr ""
+
+#: xml/datatype.xml:3844(para)
+msgid "IEEE Std 802-2001 specifies the second shown form (with hyphens) as the canonical form for MAC addresses, and specifies the first form (with colons) as the bit-reversed notation, so that 08-00-2b-01-02-03 = 01:00:4D:08:04:0C. This convention is widely ignored nowadays, and it is relevant only for obsolete network protocols (such as Token Ring). PostgreSQL makes no provisions for bit reversal, and all accepted formats use the canonical LSB order."
+msgstr ""
+
+#: xml/datatype.xml:3852(para)
+msgid "The remaining five input formats are not part of any standard."
+msgstr ""
+
+#: xml/datatype.xml:3857(title)
+msgid "Bit String Types"
+msgstr ""
+
+#: xml/datatype.xml:3859(primary)
+msgid "bit string"
+msgstr ""
+
+#: xml/datatype.xml:3862(para)
+msgid "Bit strings are strings of 1's and 0's. They can be used to store or visualize bit masks. There are two SQL bit types: <type>bit( <replaceable>n</replaceable>)</type>and <type>bit varying( <replaceable>n</replaceable>)</type>, where <replaceable>n</replaceable>is a positive integer."
+msgstr ""
+
+#: xml/datatype.xml:3869(para)
+msgid "<type>bit</type>type data must match the length <replaceable>n</replaceable>exactly; it is an error to attempt to store shorter or longer bit strings. <type>bit varying</type>data is of variable length up to the maximum length <replaceable>n</replaceable>; longer strings will be rejected. Writing <type>bit</type>without a length is equivalent to <literal>bit(1)</literal>, while <type>bit varying</type>without a length specification means unlimited length."
+msgstr ""
+
+#: xml/datatype.xml:3882(para)
+msgid "If one explicitly casts a bit-string value to <type>bit( <replaceable>n</replaceable>)</type>, it will be truncated or zero-padded on the right to be exactly <replaceable>n</replaceable>bits, without raising an error. Similarly, if one explicitly casts a bit-string value to <type>bit varying( <replaceable>n</replaceable>)</type>, it will be truncated on the right if it is more than <replaceable>n</replaceable>bits."
+msgstr ""
+
+#: xml/datatype.xml:3893(para)
+msgid "Refer to <xref linkend=\"sql-syntax-bit-strings\">for information about the syntax of bit string constants. Bit-logical operators and string manipulation functions are available; see <xref linkend=\"functions-bitstring\">.</xref></xref>"
+msgstr ""
+
+#: xml/datatype.xml:3899(title)
+msgid "Using the Bit String Types"
+msgstr ""
+
+#: xml/datatype.xml:3900(programlisting)
+#, no-wrap
+msgid "CREATE TABLE test (a BIT(3), b BIT\n      VARYING(5)); INSERT INTO test VALUES (B'101', B'00'); INSERT\n      INTO test VALUES (B'10', B'101'); \n      <computeroutput>ERROR: bit string length 2 does not match\n      type bit(3)</computeroutput>INSERT INTO test VALUES\n      (B'10'::bit(3), B'101'); SELECT * FROM test; \n      <computeroutput>a | b -----+----- 101 | 00 100 |\n      101</computeroutput>"
+msgstr ""
+
+#: xml/datatype.xml:3909(para)
+msgid "A bit string value requires 1 byte for each group of 8 bits, plus 5 or 8 bytes overhead depending on the length of the string (but long values may be compressed or moved out-of-line, as explained in <xref linkend=\"datatype-character\">for character strings).</xref>"
+msgstr ""
+
+#: xml/datatype.xml:3917(title)
+msgid "Text Search Types"
+msgstr ""
+
+#: xml/datatype.xml:3919(primary)
+msgid "full text search"
+msgstr ""
+
+#: xml/datatype.xml:3923(primary)
+msgid "text search"
+msgstr ""
+
+#: xml/datatype.xml:3926(para)
+msgid "<productname>PostgreSQL</productname>provides two data types that are designed to support full text search, which is the activity of searching through a collection of natural-language <firstterm>documents</firstterm>to locate those that best match a <firstterm>query</firstterm>. The <type>tsvector</type>type represents a document in a form optimized for text search; the <type>tsquery</type>type similarly represents a text query. <xref linkend=\"textsearch\">provides a detailed explanation of this facility, and <xref linkend=\"functions-textsearch\">summarizes the related functions and operators.</xref></xref>"
+msgstr ""
+
+#: xml/datatype.xml:3945(primary)
+msgid "tsvector (data type)"
+msgstr ""
+
+#: xml/datatype.xml:3956(programlisting)
+#, no-wrap
+msgid "SELECT 'a fat cat sat on a mat and ate a fat\n      rat'::tsvector; tsvector\n      ---------------------------------------------------- 'a'\n      'and' 'ate' 'cat' 'fat' 'mat' 'on' 'rat'\n      'sat'"
+msgstr ""
+
+#: xml/datatype.xml:3962(programlisting)
+#, no-wrap
+msgid "SELECT $$the lexeme ' ' contains\n      spaces$$::tsvector; tsvector\n      ------------------------------------------- ' ' 'contains'\n      'lexeme' 'spaces' 'the'"
+msgstr ""
+
+#: xml/datatype.xml:3969(programlisting)
+#, no-wrap
+msgid "SELECT $$the lexeme 'Joe''s' contains a\n      quote$$::tsvector; tsvector\n      ------------------------------------------------ 'Joe''s' 'a'\n      'contains' 'lexeme' 'quote' 'the'"
+msgstr ""
+
+#: xml/datatype.xml:3975(programlisting)
+#, no-wrap
+msgid "SELECT 'a:1 fat:2 cat:3 sat:4 on:5 a:6 mat:7\n      and:8 ate:9 a:10 fat:11 rat:12'::tsvector; tsvector\n      -------------------------------------------------------------------------------\n      'a':1,6,10 'and':8 'ate':9 'cat':3 'fat':2,11 'mat':7 'on':5\n      'rat':12 'sat':4"
+msgstr ""
+
+#: xml/datatype.xml:3947(para)
+msgid "A <type>tsvector</type>value is a sorted list of distinct <firstterm>lexemes</firstterm>, which are words that have been <firstterm>normalized</firstterm>to merge different variants of the same word (see <xref linkend=\"textsearch\">for details). Sorting and duplicate-elimination are done automatically during input, as shown in this example: <placeholder-1/>To represent lexemes containing whitespace or punctuation, surround them with quotes: <placeholder-2/>(We use dollar-quoted string literals in this example and the next one to avoid the confusion of having to double quote marks within the literals.) Embedded quotes and backslashes must be doubled: <placeholder-3/>Optionally, integer <firstterm>positions</firstterm>can be attached to lexemes: <placeholder-4/>A position normally indicates the source word's location in the document. Positional information can be used for <firstterm>proximity ranking</firstterm>. Position values can range from 1 to 16383; larger numbers are silently set to 16383. Duplicate positions for the same lexeme are discarded.</xref>"
+msgstr ""
+
+#: xml/datatype.xml:3995(programlisting)
+#, no-wrap
+msgid "SELECT 'a:1A fat:2B,4C cat:5D'::tsvector;\n      tsvector ---------------------------- 'a':1A 'cat':5\n      'fat':2B,4C"
+msgstr ""
+
+#: xml/datatype.xml:3986(para)
+msgid "Lexemes that have positions can further be labeled with a <firstterm>weight</firstterm>, which can be <literal>A</literal>, <literal>B</literal>, <literal>C</literal>, or <literal>D</literal>. <literal>D</literal>is the default and hence is not shown on output: <placeholder-1/>Weights are typically used to reflect document structure, for example by marking title words differently from body words. Text search ranking functions can assign different priorities to the different weight markers."
+msgstr ""
+
+#: xml/datatype.xml:4006(programlisting)
+#, no-wrap
+msgid "select 'The Fat Rats'::tsvector; tsvector\n      -------------------- 'Fat' 'Rats' 'The'"
+msgstr ""
+
+#: xml/datatype.xml:4014(programlisting)
+#, no-wrap
+msgid "SELECT to_tsvector('english', 'The Fat\n      Rats'); to_tsvector ----------------- 'fat':2\n      'rat':3"
+msgstr ""
+
+#: xml/datatype.xml:4002(para)
+msgid "It is important to understand that the <type>tsvector</type>type itself does not perform any normalization; it assumes the words it is given are normalized appropriately for the application. For example, <placeholder-1/>For most English-text-searching applications the above words would be considered non-normalized, but <type>tsvector</type>doesn't care. Raw document text should usually be passed through <function>to_tsvector</function>to normalize the words appropriately for searching: <placeholder-2/>Again, see <xref linkend=\"textsearch\">for more detail.</xref>"
+msgstr ""
+
+#: xml/datatype.xml:4024(primary)
+msgid "tsquery (data type)"
+msgstr ""
+
+#: xml/datatype.xml:4034(programlisting)
+#, no-wrap
+msgid "SELECT 'fat rat'::tsquery; tsquery\n      --------------- 'fat' 'rat' SELECT 'fat (rat |\n      cat)'::tsquery; tsquery --------------------------- 'fat' (\n      'rat' | 'cat' ) SELECT 'fat rat ! cat'::tsquery; tsquery\n      ------------------------ 'fat' 'rat'\n      !'cat'"
+msgstr ""
+
+#: xml/datatype.xml:4026(para)
+msgid "A <type>tsquery</type>value stores lexemes that are to be searched for, and combines them honoring the Boolean operators <literal/>(AND), <literal>|</literal>(OR), and <literal>!</literal>(NOT). Parentheses can be used to enforce grouping of the operators: <placeholder-1/>In the absence of parentheses, <literal>!</literal>(NOT) binds most tightly, and <literal/>(AND) binds more tightly than <literal>|</literal>(OR)."
+msgstr ""
+
+#: xml/datatype.xml:4047(programlisting)
+#, no-wrap
+msgid "SELECT 'fat:ab cat'::tsquery; tsquery\n      ------------------ 'fat':AB 'cat'"
+msgstr ""
+
+#: xml/datatype.xml:4043(para)
+msgid "Optionally, lexemes in a <type>tsquery</type>can be labeled with one or more weight letters, which restricts them to match only <type>tsvector</type>lexemes with matching weights: <placeholder-1/>"
+msgstr ""
+
+#: xml/datatype.xml:4052(programlisting)
+#, no-wrap
+msgid "SELECT 'super:*'::tsquery; tsquery\n      ----------- 'super':*"
+msgstr ""
+
+#: xml/datatype.xml:4059(programlisting)
+#, no-wrap
+msgid "SELECT to_tsvector( 'postgraduate' ) @@\n      to_tsquery( 'postgres:*' ); ?column? ---------- t (1\n      row)"
+msgstr ""
+
+#: xml/datatype.xml:4064(programlisting)
+#, no-wrap
+msgid "SELECT to_tsquery('postgres:*'); to_tsquery\n      ------------ 'postgr':* (1 row)"
+msgstr ""
+
+#: xml/datatype.xml:4049(para)
+msgid "Also, lexemes in a <type>tsquery</type>can be labeled with <literal>*</literal>to specify prefix matching: <placeholder-1/>This query will match any word in a <type>tsvector</type>that begins with <quote>super</quote>. Note that prefixes are first processed by text search configurations, which means this comparison returns true: <placeholder-2/>because <literal>postgres</literal>gets stemmed to <literal>postgr</literal>: <placeholder-3/>which then matches <literal>postgraduate</literal>."
+msgstr ""
+
+#: xml/datatype.xml:4076(programlisting)
+#, no-wrap
+msgid "SELECT to_tsquery('Fat:ab Cats'); to_tsquery\n      ------------------ 'fat':AB 'cat'"
+msgstr ""
+
+#: xml/datatype.xml:4068(para)
+msgid "Quoting rules for lexemes are the same as described previously for lexemes in <type>tsvector</type>; and, as with <type>tsvector</type>, any required normalization of words must be done before converting to the <type>tsquery</type>type. The <function>to_tsquery</function>function is convenient for performing such normalization: <placeholder-1/>"
+msgstr ""
+
+#: xml/datatype.xml:4081(title)
+msgid "<acronym>UUID</acronym>Type"
+msgstr ""
+
+#: xml/datatype.xml:4084(primary)
+msgid "UUID"
+msgstr ""
+
+#: xml/datatype.xml:4086(para)
+msgid "The data type <type>uuid</type>stores Universally Unique Identifiers (UUID) as defined by RFC 4122, ISO/IEC 9834-8:2005, and related standards. (Some systems refer to this data type as a globally unique identifier, or GUID, <indexterm><primary>GUID</primary></indexterm>instead.) This identifier is a 128-bit quantity that is generated by an algorithm chosen to make it very unlikely that the same identifier will be generated by anyone else in the known universe using the same algorithm. Therefore, for distributed systems, these identifiers provide a better uniqueness guarantee than sequence generators, which are only unique within a single database."
+msgstr ""
+
+#: xml/datatype.xml:4105(programlisting)
+#, no-wrap
+msgid "\n    a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11"
+msgstr ""
+
+#: xml/datatype.xml:4112(programlisting)
+#, no-wrap
+msgid "A0EEBC99-9C0B-4EF8-BB6D-6BB9BD380A11\n    {a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11}\n    a0eebc999c0b4ef8bb6d6bb9bd380a11\n    a0ee-bc99-9c0b-4ef8-bb6d-6bb9-bd38-0a11\n    {a0eebc99-9c0b4ef8-bb6d6bb9-bd380a11}"
+msgstr ""
+
+#: xml/datatype.xml:4100(para)
+msgid "A UUID is written as a sequence of lower-case hexadecimal digits, in several groups separated by hyphens, specifically a group of 8 digits followed by three groups of 4 digits followed by a group of 12 digits, for a total of 32 digits representing the 128 bits. An example of a UUID in this standard form is: <placeholder-1/><productname>PostgreSQL</productname>also accepts the following alternative forms for input: use of upper-case digits, the standard format surrounded by braces, omitting some or all hyphens, adding a hyphen after any group of four digits. Examples are: <placeholder-2/>Output is always in the standard form."
+msgstr ""
+
+#: xml/datatype.xml:4118(para)
+msgid "<productname>PostgreSQL</productname>provides storage and comparison functions for UUIDs, but the core database does not include any function for generating UUIDs, because no single algorithm is well suited for every application. The <xref linkend=\"uuid-ossp\">module provides functions that implement several standard algorithms. The <xref linkend=\"pgcrypto\">module also provides a generation function for random UUIDs. Alternatively, UUIDs could be generated by client applications or other libraries invoked through a server-side function.</xref></xref>"
+msgstr ""
+
+#: xml/datatype.xml:4131(title)
+msgid "<acronym>XML</acronym>Type"
+msgstr ""
+
+#: xml/datatype.xml:4134(primary)
+msgid "XML"
+msgstr ""
+
+#: xml/datatype.xml:4136(para)
+msgid "The <type>xml</type>data type can be used to store XML data. Its advantage over storing XML data in a <type>text</type>field is that it checks the input values for well-formedness, and there are support functions to perform type-safe operations on it; see <xref linkend=\"functions-xml\">. Use of this data type requires the installation to have been built with <command>configure --with-libxml</command>.</xref>"
+msgstr ""
+
+#: xml/datatype.xml:4145(para)
+msgid "The <type>xml</type>type can store well-formed <quote>documents</quote>, as defined by the XML standard, as well as <quote>content</quote>fragments, which are defined by the production <literal>XMLDecl? content</literal>in the XML standard. Roughly, this means that content fragments can have more than one top-level element or character node. The expression <literal><replaceable>xmlvalue</replaceable>IS DOCUMENT</literal>can be used to evaluate whether a particular <type>xml</type>value is a full document or only a content fragment."
+msgstr ""
+
+#: xml/datatype.xml:4160(title)
+msgid "Creating XML Values"
+msgstr ""
+
+#: xml/datatype.xml:4169(programlisting)
+#, no-wrap
+msgid "XMLPARSE (DOCUMENT '&lt;?xml\n      version=\"1.0\"?&gt;&lt;book&gt;&lt;title&gt;Manual&lt;/title&gt;&lt;chapter&gt;...&lt;/chapter&gt;&lt;/book&gt;')\n      XMLPARSE (CONTENT\n      'abc&lt;foo&gt;bar&lt;/foo&gt;&lt;bar&gt;foo&lt;/bar&gt;')"
+msgstr ""
+
+#: xml/datatype.xml:4176(programlisting)
+#, no-wrap
+msgid "xml '&lt;foo&gt;bar&lt;/foo&gt;'\n      '&lt;foo&gt;bar&lt;/foo&gt;'::xml"
+msgstr ""
+
+#: xml/datatype.xml:4161(para)
+msgid "To produce a value of type <type>xml</type>from character data, use the function <function>xmlparse</function>: <indexterm><primary>xmlparse</primary></indexterm><synopsis>XMLPARSE ( { DOCUMENT | CONTENT } \n      <replaceable>value</replaceable>)</synopsis>Examples: <placeholder-1/>While this is the only way to convert character strings into XML values according to the SQL standard, the PostgreSQL-specific syntaxes: <placeholder-2/>can also be used."
+msgstr ""
+
+#: xml/datatype.xml:4179(para)
+msgid "The <type>xml</type>type does not validate input values against a document type declaration (DTD), <indexterm><primary>DTD</primary></indexterm>even when the input value specifies a DTD. There is also currently no built-in support for validating against other XML schema languages such as XML Schema."
+msgstr ""
+
+#: xml/datatype.xml:4187(para)
+msgid "The inverse operation, producing a character string value from <type>xml</type>, uses the function <function>xmlserialize</function>: <indexterm><primary>xmlserialize</primary></indexterm><synopsis>XMLSERIALIZE ( { DOCUMENT | CONTENT } \n      <replaceable>value</replaceable>AS \n      <replaceable>type</replaceable>)</synopsis><replaceable>type</replaceable>can be <type>character</type>, <type>character varying</type>, or <type>text</type>(or an alias for one of those). Again, according to the SQL standard, this is the only way to convert between type <type>xml</type>and character types, but PostgreSQL also allows you to simply cast the value."
+msgstr ""
+
+#: xml/datatype.xml:4205(para)
+msgid "When a character string value is cast to or from type <type>xml</type>without going through <type>XMLPARSE</type>or <type>XMLSERIALIZE</type>, respectively, the choice of <literal>DOCUMENT</literal>versus <literal>CONTENT</literal>is determined by the <quote>XML option</quote><indexterm><primary>XML option</primary></indexterm>session configuration parameter, which can be set using the standard command: <synopsis>SET XML OPTION { DOCUMENT | CONTENT };</synopsis>or the more PostgreSQL-like syntax <synopsis>SET xmloption TO { DOCUMENT | CONTENT\n      };</synopsis>The default is <literal>CONTENT</literal>, so all forms of XML data are allowed."
+msgstr ""
+
+#: xml/datatype.xml:4223(para)
+msgid "With the default XML option setting, you cannot directly cast character strings to type <type>xml</type>if they contain a document type declaration, because the definition of XML content fragment does not accept them. If you need to do that, either use <literal>XMLPARSE</literal>or change the XML option."
+msgstr ""
+
+#: xml/datatype.xml:4232(title)
+msgid "Encoding Handling"
+msgstr ""
+
+#: xml/datatype.xml:4233(para)
+msgid "Care must be taken when dealing with multiple character encodings on the client, server, and in the XML data passed through them. When using the text mode to pass queries to the server and query results to the client (which is the normal mode), PostgreSQL converts all character data passed between the client and the server and vice versa to the character encoding of the respective end; see <xref linkend=\"multibyte\">. This includes string representations of XML values, such as in the above examples. This would ordinarily mean that encoding declarations contained in XML data can become invalid as the character data is converted to other encodings while traveling between client and server, because the embedded encoding declaration is not changed. To cope with this behavior, encoding declarations contained in character strings presented for input to the <type>xml</type>type are <emphasis>ignored</emphasis>, and content is assumed to be in the current server encoding. Consequently, for correct processing, character strings of XML data must be sent from the client in the current client encoding. It is the responsibility of the client to either convert documents to the current client encoding before sending them to the server, or to adjust the client encoding appropriately. On output, values of type <type>xml</type>will not have an encoding declaration, and clients should assume all data is in the current client encoding.</xref>"
+msgstr ""
+
+#: xml/datatype.xml:4261(para)
+msgid "When using binary mode to pass query parameters to the server and query results back to the client, no character set conversion is performed, so the situation is different. In this case, an encoding declaration in the XML data will be observed, and if it is absent, the data will be assumed to be in UTF-8 (as required by the XML standard; note that PostgreSQL does not support UTF-16). On output, data will have an encoding declaration specifying the client encoding, unless the client encoding is UTF-8, in which case it will be omitted."
+msgstr ""
+
+#: xml/datatype.xml:4271(para)
+msgid "Needless to say, processing XML data with PostgreSQL will be less error-prone and more efficient if the XML data encoding, client encoding, and server encoding are the same. Since XML data is internally processed in UTF-8, computations will be most efficient if the server encoding is also UTF-8."
+msgstr ""
+
+#: xml/datatype.xml:4278(para)
+msgid "Some XML-related functions may not work at all on non-ASCII data when the server encoding is not UTF-8. This is known to be an issue for <function>xpath()</function>in particular."
+msgstr ""
+
+#: xml/datatype.xml:4285(title)
+msgid "Accessing XML Values"
+msgstr ""
+
+#: xml/datatype.xml:4286(para)
+msgid "The <type>xml</type>data type is unusual in that it does not provide any comparison operators. This is because there is no well-defined and universally useful comparison algorithm for XML data. One consequence of this is that you cannot retrieve rows by comparing an <type>xml</type>column against a search value. XML values should therefore typically be accompanied by a separate key field such as an ID. An alternative solution for comparing XML values is to convert them to character strings first, but note that character string comparison has little to do with a useful XML comparison method."
+msgstr ""
+
+#: xml/datatype.xml:4298(para)
+msgid "Since there are no comparison operators for the <type>xml</type>data type, it is not possible to create an index directly on a column of this type. If speedy searches in XML data are desired, possible workarounds include casting the expression to a character string type and indexing that, or indexing an XPath expression. Of course, the actual query would have to be adjusted to search by the indexed expression."
+msgstr ""
+
+#: xml/datatype.xml:4306(para)
+msgid "The text-search functionality in PostgreSQL can also be used to speed up full-document searches of XML data. The necessary preprocessing support is, however, not yet available in the PostgreSQL distribution."
+msgstr ""
+
+#: xml/datatype.xml:4313(title) xml/datatype.xml:4414(title)
+msgid "Object Identifier Types"
+msgstr ""
+
+#: xml/datatype.xml:4315(primary)
+msgid "object identifier"
+msgstr ""
+
+#: xml/datatype.xml:4319(primary) xml/datatype.xml:4427(type)
+msgid "oid"
+msgstr ""
+
+#: xml/datatype.xml:4322(primary) xml/datatype.xml:4437(type)
+msgid "regproc"
+msgstr ""
+
+#: xml/datatype.xml:4325(primary) xml/datatype.xml:4449(type)
+msgid "regprocedure"
+msgstr ""
+
+#: xml/datatype.xml:4328(primary) xml/datatype.xml:4461(type)
+msgid "regoper"
+msgstr ""
+
+#: xml/datatype.xml:4331(primary) xml/datatype.xml:4473(type)
+msgid "regoperator"
+msgstr ""
+
+#: xml/datatype.xml:4334(primary) xml/datatype.xml:4485(type)
+msgid "regclass"
+msgstr ""
+
+#: xml/datatype.xml:4337(primary) xml/datatype.xml:4497(type)
+msgid "regtype"
+msgstr ""
+
+#: xml/datatype.xml:4340(primary) xml/datatype.xml:4533(type)
+msgid "regconfig"
+msgstr ""
+
+#: xml/datatype.xml:4343(primary) xml/datatype.xml:4545(type)
+msgid "regdictionary"
+msgstr ""
+
+#: xml/datatype.xml:4346(primary)
+msgid "xid"
+msgstr ""
+
+#: xml/datatype.xml:4349(primary)
+msgid "cid"
+msgstr ""
+
+#: xml/datatype.xml:4352(primary)
+msgid "tid"
+msgstr ""
+
+#: xml/datatype.xml:4354(para)
+msgid "Object identifiers (OIDs) are used internally by <productname>PostgreSQL</productname>as primary keys for various system tables. OIDs are not added to user-created tables, unless <literal>WITH OIDS</literal>is specified when the table is created, or the <xref linkend=\"guc-default-with-oids\">configuration variable is enabled. Type <type>oid</type>represents an object identifier. There are also several alias types for <type>oid</type>: <type>regproc</type>, <type>regprocedure</type>, <type>regoper</type>, <type>regoperator</type>, <type>regclass</type>, <type>regtype</type>, <type>regrole</type>, <type>regnamespace</type>, <type>regconfig</type>, and <type>regdictionary</type>. <xref linkend=\"datatype-oid-table\">shows an overview.</xref></xref>"
+msgstr ""
+
+#: xml/datatype.xml:4377(para)
+msgid "The <type>oid</type>type is currently implemented as an unsigned four-byte integer. Therefore, it is not large enough to provide database-wide uniqueness in large databases, or even in large individual tables. So, using a user-created table's OID column as a primary key is discouraged. OIDs are best used only for references to system tables."
+msgstr ""
+
+#: xml/datatype.xml:4384(para)
+msgid "The <type>oid</type>type itself has few operations beyond comparison. It can be cast to integer, however, and then manipulated using the standard integer operators. (Beware of possible signed-versus-unsigned confusion if you do this.)"
+msgstr ""
+
+#: xml/datatype.xml:4398(programlisting)
+#, no-wrap
+msgid "SELECT * FROM pg_attribute WHERE attrelid =\n    'mytable'::regclass;"
+msgstr ""
+
+#: xml/datatype.xml:4400(programlisting)
+#, no-wrap
+msgid "SELECT * FROM pg_attribute WHERE attrelid =\n    (SELECT oid FROM pg_class WHERE relname =\n    'mytable');"
+msgstr ""
+
+#: xml/datatype.xml:4390(para)
+msgid "The OID alias types have no operations of their own except for specialized input and output routines. These routines are able to accept and display symbolic names for system objects, rather than the raw numeric value that type <type>oid</type>would use. The alias types allow simplified lookup of OID values for objects. For example, to examine the <structname>pg_attribute</structname>rows related to a table <literal>mytable</literal>, one could write: <placeholder-1/>rather than: <placeholder-2/>While that doesn't look all that bad by itself, it's still oversimplified. A far more complicated sub-select would be needed to select the right OID if there are multiple tables named <literal>mytable</literal>in different schemas. The <type>regclass</type>input converter handles the table lookup according to the schema path setting, and so it does the <quote>right thing</quote>automatically. Similarly, casting a table's OID to <type>regclass</type>is handy for symbolic display of a numeric OID."
+msgstr ""
+
+#: xml/datatype.xml:4419(entry)
+msgid "References"
+msgstr ""
+
+#: xml/datatype.xml:4421(entry)
+msgid "Value Example"
+msgstr ""
+
+#: xml/datatype.xml:4429(entry) xml/datatype.xml:4643(primary) xml/datatype.xml:4714(type)
+msgid "any"
+msgstr ""
+
+#: xml/datatype.xml:4430(entry)
+msgid "numeric object identifier"
+msgstr ""
+
+#: xml/datatype.xml:4432(literal)
+msgid "564182"
+msgstr ""
+
+#: xml/datatype.xml:4440(structname) xml/datatype.xml:4452(structname)
+msgid "pg_proc"
+msgstr ""
+
+#: xml/datatype.xml:4442(entry)
+msgid "function name"
+msgstr ""
+
+#: xml/datatype.xml:4444(literal)
+msgid "sum"
+msgstr ""
+
+#: xml/datatype.xml:4454(entry)
+msgid "function with argument types"
+msgstr ""
+
+#: xml/datatype.xml:4456(literal)
+msgid "sum(int4)"
+msgstr ""
+
+#: xml/datatype.xml:4464(structname) xml/datatype.xml:4476(structname)
+msgid "pg_operator"
+msgstr ""
+
+#: xml/datatype.xml:4466(entry)
+msgid "operator name"
+msgstr ""
+
+#: xml/datatype.xml:4468(literal)
+msgid "+"
+msgstr ""
+
+#: xml/datatype.xml:4478(entry)
+msgid "operator with argument types"
+msgstr ""
+
+#: xml/datatype.xml:4480(literal)
+msgid "*(integer,integer)"
+msgstr ""
+
+#: xml/datatype.xml:4481(literal)
+msgid "-(NONE,integer)"
+msgstr ""
+
+#: xml/datatype.xml:4488(structname)
+msgid "pg_class"
+msgstr ""
+
+#: xml/datatype.xml:4490(entry)
+msgid "relation name"
+msgstr ""
+
+#: xml/datatype.xml:4492(literal) xml/datatype.xml:4500(structname)
+msgid "pg_type"
+msgstr ""
+
+#: xml/datatype.xml:4502(entry)
+msgid "data type name"
+msgstr ""
+
+#: xml/datatype.xml:4509(type)
+msgid "regrole"
+msgstr ""
+
+#: xml/datatype.xml:4512(structname)
+msgid "pg_authid"
+msgstr ""
+
+#: xml/datatype.xml:4514(entry)
+msgid "role name"
+msgstr ""
+
+#: xml/datatype.xml:4516(literal)
+msgid "smithee"
+msgstr ""
+
+#: xml/datatype.xml:4521(type)
+msgid "regnamespace"
+msgstr ""
+
+#: xml/datatype.xml:4524(structname)
+msgid "pg_namespace"
+msgstr ""
+
+#: xml/datatype.xml:4526(entry)
+msgid "namespace name"
+msgstr ""
+
+#: xml/datatype.xml:4528(literal)
+msgid "pg_catalog"
+msgstr ""
+
+#: xml/datatype.xml:4536(structname)
+msgid "pg_ts_config"
+msgstr ""
+
+#: xml/datatype.xml:4538(entry)
+msgid "text search configuration"
+msgstr ""
+
+#: xml/datatype.xml:4540(literal)
+msgid "english"
+msgstr ""
+
+#: xml/datatype.xml:4548(structname)
+msgid "pg_ts_dict"
+msgstr ""
+
+#: xml/datatype.xml:4550(entry)
+msgid "text search dictionary"
+msgstr ""
+
+#: xml/datatype.xml:4552(literal)
+msgid "simple"
+msgstr ""
+
+#: xml/datatype.xml:4558(para)
+msgid "All of the OID alias types for objects grouped by namespace accept schema-qualified names, and will display schema-qualified names on output if the object would not be found in the current search path without being qualified. The <type>regproc</type>and <type>regoper</type>alias types will only accept input names that are unique (not overloaded), so they are of limited use; for most uses <type>regprocedure</type>or <type>regoperator</type>are more appropriate. For <type>regoperator</type>, unary operators are identified by writing <literal>NONE</literal>for the unused operand."
+msgstr ""
+
+#: xml/datatype.xml:4571(para)
+msgid "An additional property of most of the OID alias types is the creation of dependencies. If a constant of one of these types appears in a stored expression (such as a column default expression or view), it creates a dependency on the referenced object. For example, if a column has a default expression <literal>nextval('my_seq'::regclass)</literal>, <productname>PostgreSQL</productname>understands that the default expression depends on the sequence <literal>my_seq</literal>; the system will not let the sequence be dropped without first removing the default expression. <type>regrole</type>is the only exception for the property. Constants of this type are not allowed in such expressions."
+msgstr ""
+
+#: xml/datatype.xml:4585(para)
+msgid "The OID alias types do not completely follow transaction isolation rules. The planner also treats them as simple constants, which may result in sub-optimal planning."
+msgstr ""
+
+#: xml/datatype.xml:4590(para)
+msgid "Another identifier type used by the system is <type>xid</type>, or transaction (abbreviated <abbrev>xact</abbrev>) identifier. This is the data type of the system columns <structfield>xmin</structfield>and <structfield>xmax</structfield>. Transaction identifiers are 32-bit quantities."
+msgstr ""
+
+#: xml/datatype.xml:4597(para)
+msgid "A third identifier type used by the system is <type>cid</type>, or command identifier. This is the data type of the system columns <structfield>cmin</structfield>and <structfield>cmax</structfield>. Command identifiers are also 32-bit quantities."
+msgstr ""
+
+#: xml/datatype.xml:4603(para)
+msgid "A final identifier type used by the system is <type>tid</type>, or tuple identifier (row identifier). This is the data type of the system column <structfield>ctid</structfield>. A tuple ID is a pair (block number, tuple index within block) that identifies the physical location of the row within its table."
+msgstr ""
+
+#: xml/datatype.xml:4609(para)
+msgid "(The system columns are further explained in <xref linkend=\"ddl-system-columns\">.)</xref>"
+msgstr ""
+
+#: xml/datatype.xml:4614(acronym)
+msgid "pg_lsn Type"
+msgstr ""
+
+#: xml/datatype.xml:4619(para)
+msgid "The <type>pg_lsn</type>data type can be used to store LSN (Log Sequence Number) data which is a pointer to a location in the XLOG. This type is a representation of <type>XLogRecPtr</type>and an internal system type of <productname>PostgreSQL</productname>."
+msgstr ""
+
+#: xml/datatype.xml:4625(para)
+msgid "Internally, an LSN is a 64-bit integer, representing a byte position in the write-ahead log stream. It is printed as two hexadecimal numbers of up to 8 digits each, separated by a slash; for example, <literal>16/B374D848</literal>. The <type>pg_lsn</type>type supports the standard comparison operators, like <literal>=</literal>and <literal/>. Two LSNs can be subtracted using the <literal>-</literal>operator; the result is the number of bytes separating those write-ahead log positions."
+msgstr ""
+
+#: xml/datatype.xml:4638(title) xml/datatype.xml:4703(title)
+msgid "Pseudo-Types"
+msgstr ""
+
+#: xml/datatype.xml:4640(primary) xml/datatype.xml:4804(type)
+msgid "record"
+msgstr ""
+
+#: xml/datatype.xml:4646(primary) xml/datatype.xml:4721(type)
+msgid "anyelement"
+msgstr ""
+
+#: xml/datatype.xml:4649(primary) xml/datatype.xml:4730(type)
+msgid "anyarray"
+msgstr ""
+
+#: xml/datatype.xml:4652(primary) xml/datatype.xml:4739(type)
+msgid "anynonarray"
+msgstr ""
+
+#: xml/datatype.xml:4655(primary) xml/datatype.xml:4748(type)
+msgid "anyenum"
+msgstr ""
+
+#: xml/datatype.xml:4658(primary) xml/datatype.xml:4757(type)
+msgid "anyrange"
+msgstr ""
+
+#: xml/datatype.xml:4661(primary) xml/datatype.xml:4832(type)
+msgid "void"
+msgstr ""
+
+#: xml/datatype.xml:4664(primary) xml/datatype.xml:4811(type)
+msgid "trigger"
+msgstr ""
+
+#: xml/datatype.xml:4667(primary) xml/datatype.xml:4818(type)
+msgid "event_trigger"
+msgstr ""
+
+#: xml/datatype.xml:4670(primary) xml/datatype.xml:4825(type)
+msgid "pg_ddl_command"
+msgstr ""
+
+#: xml/datatype.xml:4673(primary) xml/datatype.xml:4780(type) xml/datatype.xml:4784(type)
+msgid "language_handler"
+msgstr ""
+
+#: xml/datatype.xml:4676(primary) xml/datatype.xml:4788(type) xml/datatype.xml:4792(type)
+msgid "fdw_handler"
+msgstr ""
+
+#: xml/datatype.xml:4679(primary) xml/datatype.xml:4796(type) xml/datatype.xml:4800(type)
+msgid "tsm_handler"
+msgstr ""
+
+#: xml/datatype.xml:4682(primary) xml/datatype.xml:4766(type)
+msgid "cstring"
+msgstr ""
+
+#: xml/datatype.xml:4685(primary) xml/datatype.xml:4773(type)
+msgid "internal"
+msgstr ""
+
+#: xml/datatype.xml:4688(primary) xml/datatype.xml:4839(type)
+msgid "opaque"
+msgstr ""
+
+#: xml/datatype.xml:4690(para)
+msgid "The <productname>PostgreSQL</productname>type system contains a number of special-purpose entries that are collectively called <firstterm>pseudo-types</firstterm>. A pseudo-type cannot be used as a column data type, but it can be used to declare a function's argument or result type. Each of the available pseudo-types is useful in situations where a function's behavior does not correspond to simply taking or returning a value of a specific <acronym>SQL</acronym>data type. <xref linkend=\"datatype-pseudotypes-table\">lists the existing pseudo-types.</xref>"
+msgstr ""
+
+#: xml/datatype.xml:4716(entry)
+msgid "Indicates that a function accepts any input data type."
+msgstr ""
+
+#: xml/datatype.xml:4725(xref) xml/datatype.xml:4734(xref) xml/datatype.xml:4743(xref) xml/datatype.xml:4753(xref) xml/datatype.xml:4762(xref)
+msgid ")."
+msgstr ""
+
+#: xml/datatype.xml:4723(entry)
+msgid "Indicates that a function accepts any data type (see <placeholder-1/>"
+msgstr ""
+
+#: xml/datatype.xml:4732(entry)
+msgid "Indicates that a function accepts any array data type (see <placeholder-1/>"
+msgstr ""
+
+#: xml/datatype.xml:4741(entry)
+msgid "Indicates that a function accepts any non-array data type (see <placeholder-1/>"
+msgstr ""
+
+#: xml/datatype.xml:4752(xref) xml/datatype.xml:4761(xref)
+msgid "and <placeholder-1/>"
+msgstr ""
+
+#: xml/datatype.xml:4750(entry)
+msgid "Indicates that a function accepts any enum data type (see <placeholder-1/>"
+msgstr ""
+
+#: xml/datatype.xml:4759(entry)
+msgid "Indicates that a function accepts any range data type (see <placeholder-1/>"
+msgstr ""
+
+#: xml/datatype.xml:4768(entry)
+msgid "Indicates that a function accepts or returns a null-terminated C string."
+msgstr ""
+
+#: xml/datatype.xml:4775(entry)
+msgid "Indicates that a function accepts or returns a server-internal data type."
+msgstr ""
+
+#: xml/datatype.xml:4782(entry)
+msgid "A procedural language call handler is declared to return <placeholder-1/>."
+msgstr ""
+
+#: xml/datatype.xml:4790(entry)
+msgid "A foreign-data wrapper handler is declared to return <placeholder-1/>."
+msgstr ""
+
+#: xml/datatype.xml:4798(entry)
+msgid "A tablesample method handler is declared to return <placeholder-1/>."
+msgstr ""
+
+#: xml/datatype.xml:4806(entry)
+msgid "Identifies a function taking or returning an unspecified row type."
+msgstr ""
+
+#: xml/datatype.xml:4814(type)
+msgid "trigger."
+msgstr ""
+
+#: xml/datatype.xml:4813(entry)
+msgid "A trigger function is declared to return <placeholder-1/>"
+msgstr ""
+
+#: xml/datatype.xml:4821(type)
+msgid "event_trigger."
+msgstr ""
+
+#: xml/datatype.xml:4820(entry)
+msgid "An event trigger function is declared to return <placeholder-1/>"
+msgstr ""
+
+#: xml/datatype.xml:4827(entry)
+msgid "Identifies a represention of DDL commands that is available to event triggers."
+msgstr ""
+
+#: xml/datatype.xml:4834(entry)
+msgid "Indicates that a function returns no value."
+msgstr ""
+
+#: xml/datatype.xml:4841(entry)
+msgid "An obsolete type name that formerly served all the above purposes."
+msgstr ""
+
+#: xml/datatype.xml:4847(para)
+msgid "Functions coded in C (whether built-in or dynamically loaded) can be declared to accept or return any of these pseudo data types. It is up to the function author to ensure that the function will behave safely when a pseudo-type is used as an argument type."
+msgstr ""
+
+#: xml/datatype.xml:4852(para)
+msgid "Functions coded in procedural languages can use pseudo-types only as allowed by their implementation languages. At present most procedural languages forbid use of a pseudo-type as an argument type, and allow only <type>void</type>and <type>record</type>as a result type (plus <type>trigger</type>or <type>event_trigger</type>when the function is used as a trigger or event trigger). Some also support polymorphic functions using the types <type>anyelement</type>, <type>anyarray</type>, <type>anynonarray</type>, <type>anyenum</type>, and <type>anyrange</type>."
+msgstr ""
+
+#: xml/datatype.xml:4867(para)
+msgid "The <type>internal</type>pseudo-type is used to declare functions that are meant only to be called internally by the database system, and not by direct invocation in an <acronym>SQL</acronym>query. If a function has at least one <type>internal</type>-type argument then it cannot be called from <acronym>SQL</acronym>. To preserve the type safety of this restriction it is important to follow this coding rule: do not create any function that is declared to return <type>internal</type>unless it has at least one <type>internal</type>argument."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/datatype.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

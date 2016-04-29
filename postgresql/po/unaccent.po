@@ -1,0 +1,142 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/unaccent.xml:3(title) xml/unaccent.xml:5(primary) xml/unaccent.xml:123(primary)
+msgid "unaccent"
+msgstr ""
+
+#: xml/unaccent.xml:7(para)
+msgid "<filename>unaccent</filename>is a text search dictionary that removes accents (diacritic signs) from lexemes. It's a filtering dictionary, which means its output is always passed to the next dictionary (if any), unlike the normal behavior of dictionaries. This allows accent-insensitive processing for full text search."
+msgstr ""
+
+#: xml/unaccent.xml:14(para)
+msgid "The current implementation of <filename>unaccent</filename>cannot be used as a normalizing dictionary for the <filename>thesaurus</filename>dictionary."
+msgstr ""
+
+#: xml/unaccent.xml:19(title)
+msgid "Configuration"
+msgstr ""
+
+#: xml/unaccent.xml:20(para)
+msgid "An <literal>unaccent</literal>dictionary accepts the following options:"
+msgstr ""
+
+#: xml/unaccent.xml:25(para)
+msgid "<literal>RULES</literal>is the base name of the file containing the list of translation rules. This file must be stored in <filename>$SHAREDIR/tsearch_data/</filename>(where <literal>$SHAREDIR</literal>means the <productname>PostgreSQL</productname>installation's shared-data directory). Its name must end in <literal>.rules</literal>(which is not to be included in the <literal>RULES</literal>parameter)."
+msgstr ""
+
+#: xml/unaccent.xml:38(para)
+msgid "The rules file has the following format:"
+msgstr ""
+
+#: xml/unaccent.xml:45(programlisting)
+#, no-wrap
+msgid "A A A A A A A"
+msgstr ""
+
+#: xml/unaccent.xml:41(para)
+msgid "Each line represents one translation rule, consisting of a character with accent followed by a character without accent. The first is translated into the second. For example, <placeholder-1/>The two characters must be separated by whitespace, and any leading or trailing whitespace on a line is ignored."
+msgstr ""
+
+#: xml/unaccent.xml:50(para)
+msgid "Alternatively, if only one character is given on a line, instances of that character are deleted; this is useful in languages where accents are represented by separate characters."
+msgstr ""
+
+#: xml/unaccent.xml:56(para)
+msgid "Actually, each <quote>character</quote>can be any string not containing whitespace, so <filename>unaccent</filename>dictionaries could be used for other sorts of substring substitutions besides diacritic removal."
+msgstr ""
+
+#: xml/unaccent.xml:64(para)
+msgid "As with other <productname>PostgreSQL</productname>text search configuration files, the rules file must be stored in UTF-8 encoding. The data is automatically translated into the current database's encoding when loaded. Any lines containing untranslatable characters are silently ignored, so that rules files can contain rules that are not applicable in the current encoding."
+msgstr ""
+
+#: xml/unaccent.xml:74(para)
+msgid "A more complete example, which is directly useful for most European languages, can be found in <filename>unaccent.rules</filename>, which is installed in <filename>$SHAREDIR/tsearch_data/</filename>when the <filename>unaccent</filename>module is installed."
+msgstr ""
+
+#: xml/unaccent.xml:81(title)
+msgid "Usage"
+msgstr ""
+
+#: xml/unaccent.xml:93(programlisting)
+#, no-wrap
+msgid "mydb=# ALTER TEXT SEARCH DICTIONARY unaccent\n    (RULES='my_rules');"
+msgstr ""
+
+#: xml/unaccent.xml:82(para)
+msgid "Installing the <literal>unaccent</literal>extension creates a text search template <literal>unaccent</literal>and a dictionary <literal>unaccent</literal>based on it. The <literal>unaccent</literal>dictionary has the default parameter setting <literal>RULES='unaccent'</literal>, which makes it immediately usable with the standard <filename>unaccent.rules</filename>file. If you wish, you can alter the parameter, for example <placeholder-1/>or create new dictionaries based on the template."
+msgstr ""
+
+#: xml/unaccent.xml:97(programlisting)
+#, no-wrap
+msgid "mydb=# select ts_lexize('unaccent','Htel');\n    ts_lexize ----------- {Hotel} (1 row)"
+msgstr ""
+
+#: xml/unaccent.xml:96(para)
+msgid "To test the dictionary, you can try: <placeholder-1/>"
+msgstr ""
+
+#: xml/unaccent.xml:102(programlisting)
+#, no-wrap
+msgid "mydb=# CREATE TEXT SEARCH CONFIGURATION fr (\n    COPY = french ); mydb=# ALTER TEXT SEARCH CONFIGURATION fr\n    ALTER MAPPING FOR hword, hword_part, word WITH unaccent,\n    french_stem; mydb=# select to_tsvector('fr','Htels de la Mer');\n    to_tsvector ------------------- 'hotel':1 'mer':4 (1 row)\n    mydb=# select to_tsvector('fr','Htel de la Mer') @@\n    to_tsquery('fr','Hotels'); ?column? ---------- t (1 row) mydb=#\n    select ts_headline('fr','Htel de la\n    Mer',to_tsquery('fr','Hotels')); ts_headline\n    ------------------------ bHtel/b de la Mer (1\n    row)"
+msgstr ""
+
+#: xml/unaccent.xml:99(para)
+msgid "Here is an example showing how to insert the <filename>unaccent</filename>dictionary into a text search configuration: <placeholder-1/>"
+msgstr ""
+
+#: xml/unaccent.xml:115(title)
+msgid "Functions"
+msgstr ""
+
+#: xml/unaccent.xml:116(para)
+msgid "The <function>unaccent()</function>function removes accents (diacritic signs) from a given string. Basically, it's a wrapper around <filename>unaccent</filename>-type dictionaries, but it can be used outside normal text search contexts."
+msgstr ""
+
+#: xml/unaccent.xml:127(replaceable)
+msgid "dictionary"
+msgstr ""
+
+#: xml/unaccent.xml:126(optional)
+msgid "<placeholder-1/>,"
+msgstr ""
+
+#: xml/unaccent.xml:129(replaceable)
+msgid "string"
+msgstr ""
+
+#: xml/unaccent.xml:130(type)
+msgid "text"
+msgstr ""
+
+#: xml/unaccent.xml:125(synopsis)
+#, no-wrap
+msgid "unaccent( \n    <placeholder-1/>\n    <placeholder-2/>) returns \n    <placeholder-3/>"
+msgstr ""
+
+#: xml/unaccent.xml:131(para)
+msgid "If the <replaceable class=\"PARAMETER\">dictionary</replaceable>argument is omitted, <literal>unaccent</literal>is assumed."
+msgstr ""
+
+#: xml/unaccent.xml:136(programlisting)
+#, no-wrap
+msgid "SELECT unaccent('unaccent', 'Htel'); SELECT\n    unaccent('Htel');"
+msgstr ""
+
+#: xml/unaccent.xml:135(para)
+msgid "For example: <placeholder-1/>"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/unaccent.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

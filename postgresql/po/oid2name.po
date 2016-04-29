@@ -1,0 +1,265 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-04-29 18:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: xml/oid2name.xml:4(primary) xml/oid2name.xml:7(refentrytitle) xml/oid2name.xml:12(refname) xml/oid2name.xml:19(command)
+msgid "oid2name"
+msgstr ""
+
+#: xml/oid2name.xml:8(manvolnum)
+msgid "1"
+msgstr ""
+
+#: xml/oid2name.xml:9(refmiscinfo)
+msgid "Application"
+msgstr ""
+
+#: xml/oid2name.xml:14(productname)
+msgid "PostgreSQL"
+msgstr ""
+
+#: xml/oid2name.xml:13(refpurpose)
+msgid "resolve OIDs and file nodes in a <placeholder-1/>data directory"
+msgstr ""
+
+#: xml/oid2name.xml:21(replaceable)
+msgid "option"
+msgstr ""
+
+#: xml/oid2name.xml:26(title)
+msgid "Description"
+msgstr ""
+
+#: xml/oid2name.xml:27(para)
+msgid "<application>oid2name</application>is a utility program that helps administrators to examine the file structure used by PostgreSQL. To make use of it, you need to be familiar with the database file structure, which is described in <xref linkend=\"storage\">.</xref>"
+msgstr ""
+
+#: xml/oid2name.xml:34(para)
+msgid "The name <quote>oid2name</quote>is historical, and is actually rather misleading, since most of the time when you use it, you will really be concerned with tables' filenode numbers (which are the file names visible in the database directories). Be sure you understand the difference between table OIDs and table filenodes!"
+msgstr ""
+
+#: xml/oid2name.xml:42(para)
+msgid "<application>oid2name</application>connects to a target database and extracts OID, filenode, and/or table name information. You can also have it show database OIDs or tablespace OIDs."
+msgstr ""
+
+#: xml/oid2name.xml:49(title)
+msgid "Options"
+msgstr ""
+
+#: xml/oid2name.xml:56(option)
+msgid "-f"
+msgstr ""
+
+#: xml/oid2name.xml:57(replaceable)
+msgid "filenode"
+msgstr ""
+
+#: xml/oid2name.xml:60(para)
+msgid "show info for table with filenode <replaceable>filenode</replaceable>"
+msgstr ""
+
+#: xml/oid2name.xml:66(option)
+msgid "-i"
+msgstr ""
+
+#: xml/oid2name.xml:69(para)
+msgid "include indexes and sequences in the listing"
+msgstr ""
+
+#: xml/oid2name.xml:74(option)
+msgid "-o"
+msgstr ""
+
+#: xml/oid2name.xml:75(replaceable)
+msgid "oid"
+msgstr ""
+
+#: xml/oid2name.xml:78(para)
+msgid "show info for table with OID <replaceable>oid</replaceable>"
+msgstr ""
+
+#: xml/oid2name.xml:84(option)
+msgid "-q"
+msgstr ""
+
+#: xml/oid2name.xml:87(para)
+msgid "omit headers (useful for scripting)"
+msgstr ""
+
+#: xml/oid2name.xml:92(option)
+msgid "-s"
+msgstr ""
+
+#: xml/oid2name.xml:95(para)
+msgid "show tablespace OIDs"
+msgstr ""
+
+#: xml/oid2name.xml:100(option)
+msgid "-S"
+msgstr ""
+
+#: xml/oid2name.xml:103(para)
+msgid "include system objects (those in <option>information_schema</option>, <option>pg_toast</option>and <option>pg_catalog</option>schemas)"
+msgstr ""
+
+#: xml/oid2name.xml:111(option)
+msgid "-t"
+msgstr ""
+
+#: xml/oid2name.xml:112(replaceable)
+msgid "tablename_pattern"
+msgstr ""
+
+#: xml/oid2name.xml:115(para)
+msgid "show info for table(s) matching <replaceable>tablename_pattern</replaceable>"
+msgstr ""
+
+#: xml/oid2name.xml:121(option)
+msgid "-V"
+msgstr ""
+
+#: xml/oid2name.xml:124(option)
+msgid "--version"
+msgstr ""
+
+#: xml/oid2name.xml:127(para)
+msgid "Print the <application>oid2name</application>version and exit."
+msgstr ""
+
+#: xml/oid2name.xml:134(option)
+msgid "-x"
+msgstr ""
+
+#: xml/oid2name.xml:137(para)
+msgid "display more information about each object shown: tablespace name, schema name, and OID"
+msgstr ""
+
+#: xml/oid2name.xml:143(option)
+msgid "-?"
+msgstr ""
+
+#: xml/oid2name.xml:146(option)
+msgid "--help"
+msgstr ""
+
+#: xml/oid2name.xml:149(para)
+msgid "Show help about <application>oid2name</application>command line arguments, and exit."
+msgstr ""
+
+#: xml/oid2name.xml:50(para)
+msgid "<application>oid2name</application>accepts the following command-line arguments: <placeholder-1/>"
+msgstr ""
+
+#: xml/oid2name.xml:161(option)
+msgid "-d"
+msgstr ""
+
+#: xml/oid2name.xml:162(replaceable)
+msgid "database"
+msgstr ""
+
+#: xml/oid2name.xml:165(para)
+msgid "database to connect to"
+msgstr ""
+
+#: xml/oid2name.xml:170(option)
+msgid "-H"
+msgstr ""
+
+#: xml/oid2name.xml:171(replaceable)
+msgid "host"
+msgstr ""
+
+#: xml/oid2name.xml:174(para)
+msgid "database server's host"
+msgstr ""
+
+#: xml/oid2name.xml:179(option)
+msgid "-p"
+msgstr ""
+
+#: xml/oid2name.xml:180(replaceable)
+msgid "port"
+msgstr ""
+
+#: xml/oid2name.xml:183(para)
+msgid "database server's port"
+msgstr ""
+
+#: xml/oid2name.xml:188(option)
+msgid "-U"
+msgstr ""
+
+#: xml/oid2name.xml:189(replaceable)
+msgid "username"
+msgstr ""
+
+#: xml/oid2name.xml:192(para)
+msgid "user name to connect as"
+msgstr ""
+
+#: xml/oid2name.xml:197(option)
+msgid "-P"
+msgstr ""
+
+#: xml/oid2name.xml:198(replaceable)
+msgid "password"
+msgstr ""
+
+#: xml/oid2name.xml:201(para)
+msgid "password (deprecated putting this on the command line is a security hazard)"
+msgstr ""
+
+#: xml/oid2name.xml:155(para)
+msgid "<application>oid2name</application>also accepts the following command-line arguments for connection parameters: <placeholder-1/>"
+msgstr ""
+
+#: xml/oid2name.xml:206(para)
+msgid "To display specific tables, select which tables to show by using <option>-o</option>, <option>-f</option>and/or <option>-t</option>. <option>-o</option>takes an OID, <option>-f</option>takes a filenode, and <option>-t</option>takes a table name (actually, it's a <literal>LIKE</literal>pattern, so you can use things like <literal>foo%</literal>). You can use as many of these options as you like, and the listing will include all objects matched by any of the options. But note that these options can only show objects in the database given by <option>-d</option>."
+msgstr ""
+
+#: xml/oid2name.xml:220(para)
+msgid "If you don't give any of <option>-o</option>, <option>-f</option>or <option>-t</option>, but do give <option>-d</option>, it will list all tables in the database named by <option>-d</option>. In this mode, the <option>-S</option>and <option>-i</option>options control what gets listed."
+msgstr ""
+
+#: xml/oid2name.xml:229(para)
+msgid "If you don't give <option>-d</option>either, it will show a listing of database OIDs. Alternatively you can give <option>-s</option>to get a tablespace listing."
+msgstr ""
+
+#: xml/oid2name.xml:235(title)
+msgid "Notes"
+msgstr ""
+
+#: xml/oid2name.xml:236(para)
+msgid "<application>oid2name</application>requires a running database server with non-corrupt system catalogs. It is therefore of only limited use for recovering from catastrophic database corruption situations."
+msgstr ""
+
+#: xml/oid2name.xml:243(title)
+msgid "Examples"
+msgstr ""
+
+#: xml/oid2name.xml:244(screen)
+#, no-wrap
+msgid "$ # what's in this database server, anyway? $ oid2name\n    All databases: Oid Database Name Tablespace\n    ---------------------------------- 17228 alvherre pg_default\n    17255 regression pg_default 17227 template0 pg_default 1\n    template1 pg_default $ oid2name -s All tablespaces: Oid\n    Tablespace Name ------------------------- 1663 pg_default 1664\n    pg_global 155151 fastdisk 155152 bigdisk $ # OK, let's look\n    into database alvherre $ cd $PGDATA/base/17228 $ # get top 10\n    db objects in the default tablespace, ordered by size $ ls -lS\n    * | head -10 -rw------- 1 alvherre alvherre 136536064 sep 14\n    09:51 155173 -rw------- 1 alvherre alvherre 17965056 sep 14\n    09:51 1155291 -rw------- 1 alvherre alvherre 1204224 sep 14\n    09:51 16717 -rw------- 1 alvherre alvherre 581632 sep 6 17:51\n    1255 -rw------- 1 alvherre alvherre 237568 sep 14 09:50 16674\n    -rw------- 1 alvherre alvherre 212992 sep 14 09:51 1249\n    -rw------- 1 alvherre alvherre 204800 sep 14 09:51 16684\n    -rw------- 1 alvherre alvherre 196608 sep 14 09:50 16700\n    -rw------- 1 alvherre alvherre 163840 sep 14 09:50 16699\n    -rw------- 1 alvherre alvherre 122880 sep 6 17:51 16751 $ # I\n    wonder what file 155173 is ... $ oid2name -d alvherre -f 155173\n    From database \"alvherre\": Filenode Table Name\n    ---------------------- 155173 accounts $ # you can ask for more\n    than one object $ oid2name -d alvherre -f 155173 -f 1155291\n    From database \"alvherre\": Filenode Table Name\n    ------------------------- 155173 accounts 1155291 accounts_pkey\n    $ # you can mix the options, and get more details with -x $\n    oid2name -d alvherre -t accounts -f 1155291 -x From database\n    \"alvherre\": Filenode Table Name Oid Schema Tablespace\n    ------------------------------------------------------ 155173\n    accounts 155173 public pg_default 1155291 accounts_pkey 1155291\n    public pg_default $ # show disk space for every db object $ du\n    [0-9]* | &gt; while read SIZE FILENODE &gt; do &gt; echo \"$SIZE\n    `oid2name -q -d alvherre -i -f $FILENODE`\" &gt; done 16 1155287\n    branches_pkey 16 1155289 tellers_pkey 17561 1155291\n    accounts_pkey ... $ # same, but sort by size $ du [0-9]* | sort\n    -rn | while read SIZE FN &gt; do &gt; echo \"$SIZE `oid2name -q\n    -d alvherre -f $FN`\" &gt; done 133466 155173 accounts 17561\n    1155291 accounts_pkey 1177 16717 pg_proc_proname_args_nsp_index\n    ... $ # If you want to see what's in tablespaces, use the\n    pg_tblspc directory $ cd $PGDATA/pg_tblspc $ oid2name -s All\n    tablespaces: Oid Tablespace Name ------------------------- 1663\n    pg_default 1664 pg_global 155151 fastdisk 155152 bigdisk $ #\n    what databases have objects in tablespace \"fastdisk\"? $ ls -d\n    155151/* 155151/17228/ 155151/PG_VERSION $ # Oh, what was\n    database 17228 again? $ oid2name All databases: Oid Database\n    Name Tablespace ---------------------------------- 17228\n    alvherre pg_default 17255 regression pg_default 17227 template0\n    pg_default 1 template1 pg_default $ # Let's see what objects\n    does this database have in the tablespace. $ cd 155151/17228 $\n    ls -l total 0 -rw------- 1 postgres postgres 0 sep 13 23:20\n    155156 $ # OK, this is a pretty small table ... but which one\n    is it? $ oid2name -d alvherre -f 155156 From database\n    \"alvherre\": Filenode Table Name ---------------------- 155156\n    foo"
+msgstr ""
+
+#: xml/oid2name.xml:300(title)
+msgid "Author"
+msgstr ""
+
+#: xml/oid2name.xml:301(para)
+msgid "B. Palmer <email>bpalmer@crimelabs.net</email>"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: xml/oid2name.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+
